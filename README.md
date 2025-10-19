@@ -89,6 +89,17 @@ ashwa-racing-website/
 3. Make your changes
 4. Submit a pull request
 
+## Subsystem Requirements 
+
+1. Chassis : High-resolution images showing the chassis across all phases: Design, Procurement, Manufacturing, and Testing, A brief description of the Chassis  subsystem itself, Detailed text explaining the key functions/verticals: Chassis Design, Fixtures, MasterCAD, Simulation, and Bodyworks.
+2.  Drivetrain (DT) and Human Resources (HR) : Needs more elaborate content on the technical aspects, No specific content requirements from HR at this time.
+3.  Brakes and Logistics : Standard Brakes content required (rotor specs, caliper type, safety features, key facts), Mention Wilwood Brakes (key component supplier) on the Brakes Technical page, Uniflex sponsors brake hoses.
+4.  Electrical and Testing : Will update soon
+5. Suspension and Admin : Will update soon
+6. Engine : Will update soon
+
+
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
