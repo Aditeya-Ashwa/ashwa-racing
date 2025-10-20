@@ -8,7 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
+<body class="bg-[#ef4444] bg-[radial-gradient(#ffffff33_1px,#000000_1px)] bg-[size:20px_20px] min-h-screen">
   <nav class="bg-black text-white m-0 flex justify-between items-center">
     <div class="logo">
       <div class="image">
@@ -28,6 +28,58 @@
       </ul>
     </div>
   </nav>
+  <div class="">
+    <!-- <div
+      class="container absolute top-0 z-[-2] h-screen w-screen bg-[#ff0000] bg-[radial-gradient(#00000033_1px,#000000_1px)] bg-[size:20px_20px] w-full ">
+    </div> -->
+    <div class="contact  border-1 border-red-500 bg-[#0a0a0a] rounded-xl m-7 p-7 w-[40vw]">
+      <div class="getInTouch mb-7">
+        <h2 class="text-red-500 font-bold text-3xl">Get In Touch</h2>
+      </div>
+      <div class="form">
+        <form action="">
+          <div class="fullname text-white font-bold ">Full Name *</div>
+          <div class="inp">
+            <input type="text" class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400" required>
+          </div>
+          <div class="email text-white font-bold ">Email *</div>
+          <div class="inp">
+            <input type="email"
+              class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400"
+              required placeholder="example@gmail.com">
+          </div>
+          <div class="phone text-white font-bold ">Phone Number *</div>
+          <div class="inp">
+            <input type="text"
+              class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400"
+              required>
+          </div>
+          <div class="subject text-white font-bold ">Subject *</div>  
+          <div class="select">
+            <select name="" id="" class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400 ">
+              <option value="">Select a subject</option>
+              <option value="">General Inquiry</option>
+              <option value="">Partnership</option>
+              <option value="">Sponsorship</option>
+              <option value="">Media Request</option>
+              <option value="">Technical Support</option>
+            </select>
+          </div>
+          <div class="message text-white font-bold ">Message *</div>
+          <div class="textarea">
+            <textarea
+              class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 rounded-lg mt-5 mb-5 outline-none focus:border-red-400 resize-y"
+              placeholder="Enter a message" rows="5" required></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="button text-white ">
+        <button class="bg-red-500 p-4 w-full rounded-xl font-bold text-xl hover:bg-red-600">Send Message</button>
+      </div>
+    </div>
+  </div>
 </body>
 
+
 </html>
+  
