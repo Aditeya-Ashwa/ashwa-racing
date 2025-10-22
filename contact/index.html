@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ashwa Racing - Contact Us </title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </head>
 
 <body class="bg-[#ef4444] bg-[radial-gradient(#ffffff33_1px,#000000_1px)] bg-[size:20px_20px] min-h-screen">
@@ -28,7 +29,7 @@
       </ul>
     </div>
   </nav>
-  <div class="">
+  <div class="flex justify-evenly">
     <!-- <div
       class="container absolute top-0 z-[-2] h-screen w-screen bg-[#ff0000] bg-[radial-gradient(#00000033_1px,#000000_1px)] bg-[size:20px_20px] w-full ">
     </div> -->
@@ -40,7 +41,9 @@
         <form action="">
           <div class="fullname text-white font-bold ">Full Name *</div>
           <div class="inp">
-            <input type="text" class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400" required>
+            <input type="text"
+              class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400"
+              required>
           </div>
           <div class="email text-white font-bold ">Email *</div>
           <div class="inp">
@@ -54,9 +57,10 @@
               class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400"
               required>
           </div>
-          <div class="subject text-white font-bold ">Subject *</div>  
+          <div class="subject text-white font-bold ">Subject *</div>
           <div class="select">
-            <select name="" id="" class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400 ">
+            <select name="" id=""
+              class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400 ">
               <option value="">Select a subject</option>
               <option value="">General Inquiry</option>
               <option value="">Partnership</option>
@@ -77,9 +81,86 @@
         <button class="bg-red-500 p-4 w-full rounded-xl font-bold text-xl hover:bg-red-600">Send Message</button>
       </div>
     </div>
+    <!-- Contact info -->
+    <div class="right_side">
+      <div class="contact  border-1 border-red-500 bg-[#0a0a0a] rounded-xl m-7 p-7 w-[40vw]">
+        <div class="contact-info mb-7">
+          <h2 class="text-red-500 font-bold text-3xl">Contact Information</h2>
+        </div>
+        <div class="email flex gap-4">
+          <div class="logo">
+            <lord-icon src="https://cdn.lordicon.com/jfhecnmz.json" trigger="hover" colors="primary:#e83a30"
+              style="width:30px;height:30px">
+            </lord-icon>
+          </div>
+          <div class="email-text text-white  text-xl">
+            <p>info@ashwaracing.com</p>
+          </div>
+        </div>
+        <div class="phone flex gap-4 mt-3">
+          <div class="logo ">
+            <lord-icon src="https://cdn.lordicon.com/fpvaxfly.json" trigger="hover" colors="primary:#e83a30"
+              style="width:30px;height:30px">
+            </lord-icon>
+          </div>
+          <div class="phone text-white  text-xl">
+            <p>+91 99999 99999</p>
+          </div>
+        </div>
+
+        <div class="location flex gap-4 mt-3">
+          <div class="logo ">
+            <lord-icon src="https://cdn.lordicon.com/ewtxwele.json" trigger="hover" colors="primary:#e83a30"
+              style="width:30px;height:30px">
+            </lord-icon>
+          </div>
+          <div class="location text-white  text-xl">
+            <p>Near DTH at RVCE, Banglore</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Business hours  -->
+      <div class="business  border-1 border-red-500 bg-[#0a0a0a] rounded-xl m-7 p-7 w-[40vw] h-[25.5vh]">
+        <div class="contact-info mb-7">
+          <h2 class="text-red-500 font-bold text-3xl">Business Hours</h2>
+        </div>
+        <div class="time flex gap-4">
+          <div class="logo">
+            <lord-icon src="https://cdn.lordicon.com/kiqyrejq.json" trigger="hover" colors="primary:#e83a30"
+              style="width:30px;height:30px">
+            </lord-icon>
+          </div>
+          <div class="email-text text-white  text-xl">
+            <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
+          </div>
+        </div>
+        <div class="time flex gap-4 mt-3">
+          <div class="logo">
+            <lord-icon src="https://cdn.lordicon.com/kiqyrejq.json" trigger="hover" colors="primary:#e83a30"
+              style="width:30px;height:30px">
+            </lord-icon>
+          </div>
+          <div class="email-text text-white  text-xl">
+            <p>Saturday: 10:00 AM - 4:00 PM</p>
+          </div>
+        </div>
+        <div class="time flex gap-4 mt-3">
+          <div class="logo">
+            <lord-icon src="https://cdn.lordicon.com/kiqyrejq.json" trigger="hover" colors="primary:#e83a30"
+              style="width:30px;height:30px">
+            </lord-icon>
+          </div>
+          <div class="email-text text-white  text-xl">
+            <p>Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 </body>
 
 
 </html>
-  
