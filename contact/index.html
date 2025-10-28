@@ -38,42 +38,42 @@
         <h2 class="text-red-500 font-bold text-3xl">Get In Touch</h2>
       </div>
       <div class="form">
-        <form action="">
+        <form action="" id="form">
           <div class="fullname text-white font-bold ">Full Name *</div>
           <div class="inp">
             <input type="text"
               class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400"
-              required>
+              required id="fullname">
           </div>
           <div class="email text-white font-bold ">Email *</div>
           <div class="inp">
             <input type="email"
               class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400"
-              required placeholder="example@gmail.com">
+              required placeholder="example@gmail.com" id="email">
           </div>
           <div class="phone text-white font-bold ">Phone Number *</div>
           <div class="inp">
             <input type="text"
               class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400"
-              required>
+              required id="phone">
           </div>
           <div class="subject text-white font-bold ">Subject *</div>
           <div class="select">
-            <select name="" id=""
+            <select name="" id="subject"
               class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 focus:border-red-200 rounded-lg mt-5 mb-5 outline-none focus:border-red-400 ">
               <option value="">Select a subject</option>
-              <option value="">General Inquiry</option>
-              <option value="">Partnership</option>
-              <option value="">Sponsorship</option>
-              <option value="">Media Request</option>
-              <option value="">Technical Support</option>
+              <option value="general">General Inquiry</option>
+              <option value="partnership">Partnership</option>
+              <option value="sponsorship">Sponsorship</option>
+              <option value="media">Media Request</option>
+              <option value="support">Technical Support</option>
             </select>
           </div>
           <div class="message text-white font-bold ">Message *</div>
           <div class="textarea">
             <textarea
               class="w-full bg-[#1a1a1a] border border-gray-500 text-white p-2 rounded-lg mt-5 mb-5 outline-none focus:border-red-400 resize-y"
-              placeholder="Enter a message" rows="5" required></textarea>
+              placeholder="Enter a message" rows="5" required id="message"></textarea>
           </div>
         </form>
       </div>
@@ -122,7 +122,7 @@
       </div>
 
       <!-- Business hours  -->
-      <div class="follow  border-1 border-red-500 bg-[#0a0a0a] rounded-xl m-7 p-7 w-[40vw] h-[25.5vh]">
+      <div class="follow  border-1 border-red-500 bg-[#0a0a0a] rounded-xl m-7 p-7 w-[40vw]">
         <div class="time-info mb-7">
           <h2 class="text-red-500 font-bold text-3xl">Business Hours</h2>
         </div>
@@ -157,7 +157,7 @@
           </div>
         </div>
       </div>
-      <div class="follow  border-1 border-red-500 bg-[#0a0a0a] rounded-xl m-7 p-7 w-[40vw] h-[18vh]">
+      <div class="follow  border-1 border-red-500 bg-[#0a0a0a] rounded-xl m-7 p-7 w-[40vw]">
         <div class="floow mb-7">
           <h2 class="text-red-500 font-bold text-3xl">Follow Us</h2>
         </div>
@@ -179,6 +179,7 @@
     </div>
   </div>
   </div>
+  <script src="./script.js"></script>
 </body>
 
 
