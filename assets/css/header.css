@@ -1,0 +1,148 @@
+/* -------------------- SPONSOR TICKER --------------------- */
+.sponsor-strip {
+    width: 100%;
+    background: #111;
+    overflow: hidden;
+    border-bottom: 1px solid #222;
+}
+
+.sponsor-track {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    animation: scroll 25s linear infinite;
+    align-items: center; /* centers vertically */
+    height: 110px; /* allows bigger logos */
+}
+
+.sponsor-track img {
+    height: 100px !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Duplicate track trick for infinite effect */
+.sponsor-track:hover {
+    animation-play-state: paused;
+}
+
+.sponsor-logo {
+    height: 120px !important;
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+
+
+/* ---------------------- MAIN NAV ------------------------- */
+.navbar {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 40px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* ------------------ DROPDOWN ------------------ */
+.dropdown {
+    position: relative;
+}
+
+.drop-btn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background: #111;
+    padding: 10px 0;
+    display: none;
+    flex-direction: column;
+    min-width: 220px;
+    border: 1px solid #222;
+}
+
+.dropdown-content a {
+    padding: 8px 15px;
+    white-space: nowrap;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/* ------------------ HAMBURGER ------------------ */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    .nav-links {
+        position: absolute;
+        top: 110px;
+        right: 0;
+        background: #000;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        padding: 20px 0;
+    }
+
+    .nav-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}

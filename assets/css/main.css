@@ -1,0 +1,77 @@
+/* ---------- GLOBAL RESETS ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #111;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- GENERAL PAGE LAYOUT ---------- */
+section {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #e60023; /* Ferrari Red */
+    color: white;
+    border-radius: 4px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b8001c;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+    background: url("../images/hero.jpg") center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #ddd;
+    font-size: 1.2rem;
+}
+
+/* ---------- PREVIEW SECTION ---------- */
+.preview h2 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.preview p {
+    max-width: 700px;
+    margin-bottom: 20px;
+}
