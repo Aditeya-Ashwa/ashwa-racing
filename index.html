@@ -18,21 +18,103 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Ashwa Racing</h1>
-            <p>Being the fastest • Since 2003</p>
+        <!-- Video or Image Background -->
+        <video autoplay muted loop class="hero-bg">
+            <source src="assets/videos/hero.mp4" type="video/mp4">
+        </video>
+        <!-- Optional fallback image -->
+        <!-- <div class="hero-bg" style="background-image: url('assets/images/hero_car.jpg')"></div> -->
+
+        <div class="hero-overlay">
+            <h1 class="hero-title animate-fade">Ashwa Racing</h1>
+            <p class="hero-sub animate-slide">Formula Student • Since 2003</p>
+            <p class="hero-tagline animate-fade">
+                Live it. Love it. <span>Race it.</span>
+            </p>
+            <div class="hero-buttons">
+                <a href="/about.html" class="hero-btn animate-bounce">Explore the Team</a>
+                <a href="/gallery.html" class="hero-btn-outline animate-bounce">See Our Cars</a>
+            </div>
+            <div class="hero-scroll-hint animate-bounce">
+                <span>↓</span> Scroll
+            </div>
         </div>
     </section>
 
     <!-- ABOUT PREVIEW -->
     <section class="preview">
         <h2>Who We Are</h2>
-        <p>Ashwa Racing is India’s premier Formula Student team, designing, building, and racing high-performance formula vehicles.</p>
+        <p>
+            Ashwa Racing is a Formula Student combustion team from RV College of Engineering, 
+            dedicated to designing, engineering, and manufacturing high-performance formula-style 
+            race cars. With over two decades of innovation, Ashwa remains one of India’s leading 
+            collegiate motorsports teams.
+        </p>
         <a href="/about.html" class="btn">Learn More</a>
+    </section>
+
+    <!-- TECHNICAL CAPABILITIES -->
+    <section class="tech-section">
+        <h2>Engineering Focus</h2>
+        <div class="tech-grid">
+
+            <div class="tech-card">
+                <h3>Powertrain Engineering</h3>
+                <p>
+                    Development of an optimized combustion engine system with custom intake, exhaust, 
+                    and fuel delivery solutions designed for maximum efficiency and dynamic performance.
+                </p>
+            </div>
+
+            <div class="tech-card">
+                <h3>Aerodynamic Design</h3>
+                <p>
+                    Full aerodynamic package development using CFD, including wings, undertray, 
+                    and cooling ducts to improve downforce and vehicle stability.
+                </p>
+            </div>
+
+            <div class="tech-card">
+                <h3>Vehicle Dynamics</h3>
+                <p>
+                    Suspension geometry, brake modeling, steering design, and simulation-driven 
+                    optimization to maximize handling, stability, and driver feedback.
+                </p>
+            </div>
+
+            <div class="tech-card">
+                <h3>Electronics & Testing</h3>
+                <p>
+                    Custom sensor integration, data acquisition, wiring harness design, and 
+                    on-track validation to improve reliability and performance metrics.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VEHICLE PREVIEW -->
+    <section class="car-preview">
+        <h2>Our Cars</h2>
+        <p>
+            Every Ashwa generation represents engineering progression — pushing boundaries in 
+            design, manufacturing, simulation, and on-track performance.
+        </p>
+        <a href="/projects.html" class="btn">View All Cars</a>
+    </section>
+
+    <!-- SPONSOR SPOTLIGHT -->
+    <section class="sponsor-highlight">
+        <h2>Our Sponsors</h2>
+        <p>
+            Backed by industry leaders in engineering, manufacturing, simulation, and motorsports technology.
+        </p>
+        <a href="/sponsors.html" class="btn">Meet Our Sponsors</a>
     </section>
 
     <!-- FOOTER -->
     <footer id="main-footer"></footer>
+
 
     <!-- JS FILES -->
     <script src="assets/js/header.js"></script>

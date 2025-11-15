@@ -1,8 +1,9 @@
 /* ===============================
-   HEADER.JS (MERGED + FIXED)
-   - Loads header.html + footer.html
-   - Initializes sponsor animations
-   - FIX: Marquee waits for image load → no empty gap
+   HEADER.JS (CLEAN + MERGED)
+   - Loads header + footer
+   - Initializes sponsor system safely ONCE
+   - Prevents marquee double-start bug
+   - Fixes mobile close button
 ================================ */
 
 /* ---------- LOAD HEADER ---------- */
@@ -11,8 +12,17 @@ fetch("components/header.html")
   .then(data => {
       document.getElementById("main-header").innerHTML = data;
 
-      // Initialize sponsor animations AFTER header loads
+      // Initialize all sponsor animations safely
       initializeSponsors();
+
+      // Mobile X close button logic
+      const closeBtn = document.getElementById("mobileClose");
+      const navToggle = document.getElementById("nav-toggle");
+      if (closeBtn && navToggle) {
+          closeBtn.addEventListener("click", () => {
+              navToggle.checked = false;
+          });
+      }
   });
 
 /* ---------- LOAD FOOTER ---------- */
@@ -22,66 +32,42 @@ fetch("components/footer.html")
       document.getElementById("main-footer").innerHTML = data;
   });
 
-/* ---------- SPONSOR SYSTEM ---------- */
+/* ==========================================================
+   SPONSOR SYSTEM — SAFELY INITIALIZED, NO JUMPS, NO RESETS
+========================================================== */
+
+let sponsorsInitialized = false;
+
 function initializeSponsors() {
+    if (sponsorsInitialized) return;
+    sponsorsInitialized = true;
 
-    const SPONSOR_COUNT = 7;
+    const SPONSOR_COUNT = 12;
     const SPONSOR_PATH = "assets/images/sponsors/";
-    const ROTATE_INTERVAL = 3000;
+    const ROTATE_INTERVAL = 2000;  // ms
+    const SCROLL_SPEED = 1;        // px per frame (~60px/sec)
 
-    /* ----------------------------
-       TOP RIGHT ROTATING SPONSOR
-    ----------------------------- */
-    let currentSponsor = 1;
+    /* ================================
+       1) TOP-RIGHT ROTATING SPONSOR
+    ================================= */
     const rotatingImg = document.getElementById("top-rotating-sponsor");
+    let currentSponsor = 1;
 
-    function rotateSponsor() {
+    function rotateTopSponsor() {
         currentSponsor = (currentSponsor % SPONSOR_COUNT) + 1;
         if (rotatingImg) rotatingImg.src = `${SPONSOR_PATH}s${currentSponsor}.png`;
     }
 
-    if (rotatingImg) setInterval(rotateSponsor, ROTATE_INTERVAL);
-
-
-    /* ----------------------------
-       INFINITE MARQUEE STRIP
-    ----------------------------- */
-    const track = document.getElementById("sponsor-track");
-
-    function loadAllSponsors() {
-        for (let i = 1; i <= SPONSOR_COUNT; i++) {
-            const img = document.createElement("img");
-            img.src = `${SPONSOR_PATH}s${i}.png`;
-            img.className = "sponsor-logo";
-            track.appendChild(img);
-        }
+    if (rotatingImg) {
+        rotateTopSponsor();
+        setInterval(rotateTopSponsor, ROTATE_INTERVAL);
     }
 
-    if (track) {
-        loadAllSponsors();
-        loadAllSponsors(); // duplicate for infinite loop
-
-        /* ---- FIX: Wait for images to load before animation starts ---- */
-        const images = track.querySelectorAll("img");
-
-        Promise.all(
-            Array.from(images).map(img => {
-                return new Promise(res => {
-                    if (img.complete) res();
-                    else img.onload = res;
-                });
-            })
-        ).then(() => {
-            track.classList.add("scroll-start"); // start animation only now
-        });
-    }
-
-
-    /* ----------------------------
-       INLINE FADE-IN SPONSOR BOX
-    ----------------------------- */
-    let inlineIndex = 1;
+    /* ================================
+       2) INLINE CROSSFADE SPONSOR
+    ================================= */
     const inlineImg = document.getElementById("inline-sponsor");
+    let inlineIndex = 1;
 
     if (inlineImg) {
         inlineImg.src = `${SPONSOR_PATH}s1.png`;
@@ -89,7 +75,6 @@ function initializeSponsors() {
 
         function rotateInlineSponsor() {
             inlineImg.style.opacity = 0;
-
             setTimeout(() => {
                 inlineIndex = (inlineIndex % SPONSOR_COUNT) + 1;
                 inlineImg.src = `${SPONSOR_PATH}s${inlineIndex}.png`;
@@ -98,5 +83,56 @@ function initializeSponsors() {
         }
 
         setInterval(rotateInlineSponsor, ROTATE_INTERVAL);
+    }
+
+    /* ================================
+       3) CIRCULAR SCROLLING MARQUEE
+    ================================= */
+    const track = document.getElementById("sponsor-track");
+
+    if (track) {
+        // Prevent double-loading
+        if (track.children.length === 0) {
+            for (let i = 1; i <= SPONSOR_COUNT; i += 2) {
+                const img1 = document.createElement("img");
+                img1.src = `${SPONSOR_PATH}s${i}.png`;
+                img1.className = "sponsor-logo";
+                track.appendChild(img1);
+
+                const nextIndex = i + 1 > SPONSOR_COUNT ? 1 : i + 1;
+                const img2 = document.createElement("img"); // duplicate for seamless scroll
+                img2.src = `${SPONSOR_PATH}s${nextIndex}.png`;
+                img2.className = "sponsor-logo";
+                track.appendChild(img2);
+            }
+        }
+
+
+        let pos = 0;
+
+        function scrollLoop() {
+            pos -= SCROLL_SPEED;
+            track.style.transform = `translateX(${pos}px)`;
+
+            const first = track.children[0];
+            const firstWidth = first.offsetWidth + 32; // logo + gap
+
+            if (-pos >= firstWidth) {
+                track.appendChild(first);
+                pos += firstWidth;
+            }
+
+            requestAnimationFrame(scrollLoop);
+        }
+
+        const images = track.querySelectorAll("img");
+        Promise.all(
+            [...images].map(img => img.complete ? Promise.resolve() : new Promise(res => img.onload = res))
+        ).then(() => {
+            if (!track.classList.contains("scroll-start")) {
+                track.classList.add("scroll-start");
+                scrollLoop();
+            }
+        });
     }
 }
