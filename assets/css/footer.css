@@ -1,12 +1,122 @@
+/* ================================
+   FOOTER (Black Theme)
+================================= */
 .footer {
+    background: #000;
+    color: #ddd;
+    padding: 50px 40px;
     text-align: center;
-    padding: 35px 10px;
-    background: #f6f6f6;
-    border-top: 1px solid #ddd;
-    font-size: 14px;
-    color: #555;
+    border-top: 4px solid #e60023; /* racing red */
+    font-family: Arial, sans-serif;
+    width: 100%;
 }
 
-.footer p {
+/* ----- TOP LOGO + TITLE ----- */
+.footer-top {
+    margin-bottom: 35px;
+}
+
+.footer-logo {
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1); /* makes the logo white */
+}
+
+.footer-top h2 {
+    margin: 5px 0 0 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+}
+
+.footer-top p {
+    margin: 5px 0;
+    color: #bbb;
+    font-size: 15px;
+}
+
+/* ----- COLUMNS (Team | Projects | Subsystems | Contact) ----- */
+.footer-sections {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.footer-column h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 12px;
+    border-left: 3px solid #e60023;
+    padding-left: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin: 6px 0;
+    color: #ccc;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+.footer-column ul li a:hover {
+    color: #e60023;
+}
+
+/* ----- BOTTOM COPYRIGHT ----- */
+.footer-bottom {
+    position: relative;
+    padding-top: 25px;
+    color: #aaa;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer-bottom::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;         /* instead of 100vw */
+    height: 3px;
+    background: #e60023;
+}
+
+.footer-bottom p {
     margin: 5px 0;
 }
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 800px) {
+    .footer-sections {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+}
+
+html, body {
+    overflow-x: hidden;
+}
+

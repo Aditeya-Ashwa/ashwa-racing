@@ -1,90 +1,151 @@
-/* -------------------- SPONSOR TICKER --------------------- */
-.sponsor-strip {
-    width: 100%;
-    background: #111;
-    overflow: hidden;
-    border-bottom: 1px solid #222;
+/* ============================================
+   FONTS
+=============================================== */
+@font-face {
+    font-family: 'Samarkan';
+    src: url('/ashwa-racing/assets/fonts/SAMAN___.TTF') format('truetype');
+}
+@font-face {
+    font-family: 'Xenotron';
+    src: url('/ashwa-racing/assets/fonts/XENOTRON.TTF') format('truetype');
 }
 
-.sponsor-track {
-    display: flex;
-    gap: 20px;
-    padding: 10px 0;
-    animation: scroll 25s linear infinite;
-    align-items: center; /* centers vertically */
-    height: 110px; /* allows bigger logos */
-}
-
-.sponsor-track img {
-    height: 100px !important;
-    width: auto !important;
-    object-fit: contain !important;
-}
-
-
-@keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-
-/* Duplicate track trick for infinite effect */
-.sponsor-track:hover {
-    animation-play-state: paused;
-}
-
-.sponsor-logo {
-    height: 120px !important;
-    width: auto !important;
-    object-fit: contain !important;
-}
-
-
-
-/* ---------------------- MAIN NAV ------------------------- */
+/* ============================================
+   HEADER / NAVBAR WRAPPER
+=============================================== */
 .navbar {
     width: 100%;
-    background: #000;
-    color: #fff;
+    background: white;
     position: sticky;
     top: 0;
-    z-index: 1000;
-    font-family: Arial, sans-serif;
+    z-index: 5000;
 }
 
+/* ============================================
+   TOP BRAND BAR
+=============================================== */
+.top-brand-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 40px;
+    background: white;
+    border-bottom: 7px solid #e60023;
+    position: relative;
+    flex-wrap: nowrap;
+}
+
+/* ---- Left Logo ---- */
+.top-brand-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;         /* avoids pushing the right logo */
+    min-width: 0;           /* necessary for overflow control */
+}
+
+.brand-logo {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.brand-logo img {
+    height: 70px;
+    width: auto;
+}
+
+.brand-text-vertical {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    line-height: 0.9;
+    position: relative;
+    padding-right: 20px;
+}
+
+.brand-text-vertical::after {
+    content: "";
+    width: 2px;
+    height: 60%;
+    background: #e60023;
+    position: absolute;
+    right: 0;
+    top: 20%;
+}
+
+.brand-ashwa {
+    font-family: 'Samarkan', serif;
+    font-size: 38px;
+    color: #e60023;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.brand-racing {
+    font-family: 'Xenotron', sans-serif;
+    font-size: 22px;
+    color: black;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+/* ============================================
+   INLINE SPONSOR (single rotating sponsor)
+=============================================== */
+.scrolling-inline-sponsor {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin-left: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+#inline-sponsor {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* ============================================
+   NAVIGATION (DESKTOP)
+=============================================== */
 .nav-main {
     display: flex;
-    justify-content: space-between;
-    padding: 12px 40px;
+    position: absolute;
+    right: 40px;
     align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px;
 }
 
-.logo {
-    font-size: 26px;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: 1px;
-}
-
-/* NAV LINKS */
 .nav-links {
     display: flex;
-    gap: 25px;
     align-items: center;
+    gap: 25px;
 }
 
 .nav-links a {
+    font-size: 16px;
+    font-weight: 800;
     text-decoration: none;
-    color: #ddd;
-    font-size: 15px;
-    transition: 0.2s;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: 0.25s ease;
+    color: black;
 }
 
 .nav-links a:hover {
-    color: #fff;
+    border-bottom: 2px solid #e60023;
 }
 
-/* ------------------ DROPDOWN ------------------ */
+/* ============================================
+   DROPDOWN MENU
+=============================================== */
 .dropdown {
     position: relative;
 }
@@ -94,55 +155,128 @@
 }
 
 .dropdown-content {
-    position: absolute;
-    top: 25px;
-    left: 0;
-    background: #111;
-    padding: 10px 0;
     display: none;
-    flex-direction: column;
-    min-width: 220px;
-    border: 1px solid #222;
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    min-width: 230px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    z-index: 3000;
 }
 
 .dropdown-content a {
-    padding: 8px 15px;
-    white-space: nowrap;
     display: block;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: black;
 }
 
 .dropdown:hover .dropdown-content {
-    display: flex;
+    display: block;
 }
 
-/* ------------------ HAMBURGER ------------------ */
-.menu-icon {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-}
-
+/* ============================================
+   MOBILE MENU
+=============================================== */
 .nav-toggle {
     display: none;
 }
 
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ---- MOBILE BREAKPOINT ---- */
 @media (max-width: 850px) {
+
+    .menu-icon {
+        display: block;
+        z-index: 4000;
+    }
+
+    /* NEW: clean sliding panel */
     .nav-links {
         position: absolute;
         top: 110px;
         right: 0;
-        background: #000;
         width: 100%;
+        height: auto;
+        background: white;
         flex-direction: column;
-        display: none;
-        padding: 20px 0;
+        align-items: flex-start;
+        padding: 20px;
+
+        /* 🔥 FIX: no display:none — use transform instead */
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+
+        border-top: 3px solid #e60023;
+        z-index: 3500;
     }
 
+    /* Slide-in when toggle checked */
     .nav-toggle:checked ~ .nav-links {
-        display: flex;
+        transform: translateX(0%);
     }
 
-    .menu-icon {
+    .nav-links a {
+        padding: 15px 0;
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: relative;
+        border: none;
+        box-shadow: none;
+        padding-left: 10px;
+        display: none;
+    }
+
+    .dropdown:active .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
         display: block;
     }
+}
+
+/* ============================================
+   SPONSOR (FULL WIDTH)
+=============================================== */  
+
+/* ---- Sponsor strip container ---- */
+.sponsor-strip {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #fff;
+    padding: 20px 0;
+}
+
+/* Container that holds 2 identical rows */
+#sponsor-track {
+    display: flex;
+    gap:0px 40px;
+    will-change: transform;
+}
+
+/* Start animation only after JS ensures images are loaded */
+#sponsor-track.scroll-start {
+    animation: marquee 5s linear infinite;
+}
+
+/* Each sponsor logo */
+.sponsor-logo {
+    width: 144px;
+    height: 144px;
+    object-fit: contain;
+}
+
+
+/* Seamless infinite scroll */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }

@@ -1,4 +1,6 @@
-/* ---------- GLOBAL RESETS ---------- */
+/* ===========================================
+   GLOBAL RESETS
+=========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +24,9 @@ a {
     text-decoration: none;
 }
 
-/* ---------- GENERAL PAGE LAYOUT ---------- */
+/* ===========================================
+   GENERAL PAGE LAYOUT
+=========================================== */
 section {
     width: 100%;
     max-width: 1200px;
@@ -44,7 +48,9 @@ section {
     background: #b8001c;
 }
 
-/* ---------- HERO SECTION ---------- */
+/* ===========================================
+   HERO SECTION
+=========================================== */
 .hero {
     background: url("../images/hero.jpg") center/cover no-repeat;
     height: 60vh;
@@ -65,7 +71,9 @@ section {
     font-size: 1.2rem;
 }
 
-/* ---------- PREVIEW SECTION ---------- */
+/* ===========================================
+   PREVIEW SECTION
+=========================================== */
 .preview h2 {
     margin-bottom: 15px;
     font-size: 2rem;
@@ -74,4 +82,48 @@ section {
 .preview p {
     max-width: 700px;
     margin-bottom: 20px;
+}
+
+/* ===========================================
+   RESPONSIVE (MERGED)
+=========================================== */
+
+/* Tablets */
+@media(max-width: 900px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Phones + smaller screens */
+@media(max-width: 1233px) {
+
+    /* Burger Menu (navbar.css still handles structure) */
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        right: 20px;
+        background: white;
+        width: 200px;
+        flex-direction: column;
+        padding: 20px;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    .dropdown-content {
+        position: relative;
+        border: none;
+        box-shadow: none;
+        padding-left: 10px;
+    }
 }
