@@ -1,3 +1,15 @@
+/* ============================================
+   FONTS
+=============================================== */
+@font-face {
+    font-family: 'Samarkan';
+    src: url('/ashwa-racing/assets/fonts/SAMAN___.TTF') format('truetype');
+}
+@font-face {
+    font-family: 'Xenotron';
+    src: url('/ashwa-racing/assets/fonts/XENOTRON.TTF') format('truetype');
+}
+
 /* ===========================================
    GLOBAL RESETS
 =========================================== */
@@ -5,7 +17,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 body {
@@ -37,28 +49,102 @@ section {
 .btn {
     display: inline-block;
     padding: 12px 24px;
-    background: #e60023; /* Ferrari Red */
+    background: #e60023;
     color: white;
     border-radius: 4px;
     margin-top: 20px;
-    transition: 0.3s;
+    transition: 0.3s ease;
+    border: none;
 }
 
 .btn:hover {
-    background: #b8001c;
+    color: #b8001c;
+    background: white;
 }
 
+
 /* ===========================================
-   PREVIEW SECTION
+   PREVIEW SECTION (Split Layout)
 =========================================== */
+
+.preview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    padding: 80px 10%;
+    background: white;
+    color: black;
+
+    /* FULL-WIDTH OVERRIDES */
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+
+.preview-content {
+    flex: 1;
+    text-align: left;     /* aligns paragraph to the left */
+}
+
 .preview h2 {
     margin-bottom: 15px;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .preview p {
-    max-width: 700px;
-    margin-bottom: 20px;
+    max-width: 500px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.preview .btn {
+    padding: 12px 30px;
+    background: #e60023;
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.preview .btn:hover {
+    color: #b8001c;
+    background: white;
+}
+
+/* IMAGE SECTION */
+.preview-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.preview-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+    .preview {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .preview-content {
+        text-align: center;
+    }
+
+    .preview p {
+        margin: 0 auto 25px auto;
+    }
 }
 
 /* ===========================================
@@ -152,27 +238,38 @@ section {
 
 .hero-title {
     font-size: 4rem;
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: -2px;
     margin-bottom: 10px;
     text-transform: uppercase;
+    font-family: Samarkan,sans-serif;
+    color: #e60023;
+}
+
+.hero-title span{
+    font-family: Xenotron,sans-serif;
+    color: white;
 }
 
 .hero-sub {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     letter-spacing: 3px;
     margin-bottom: 15px;
     opacity: 0.85;
+    font-family: Samarkan, sans-serif;
+    
 }
 
 .hero-tagline {
     font-size: 1.6rem;
     margin-bottom: 40px;
     font-weight: 600;
+    font-family: Xenotron,sans-serif;
 }
 
 .hero-tagline span {
     color: #e60023; /* Ferrari Red accent */
+    font-family: Xenotron, sans-serif;
 }
 
 .hero-btn {
@@ -205,9 +302,15 @@ section {
    ================================ */
 .tech-section {
     padding: 80px 5%;
-    background: #0f0f0f;
-    color: #ffffff;
+    background: #0d0d0d;
+    color: white;
     text-align: center;
+
+    /* TRUE FULL-WIDTH FIX */
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 }
 
 .tech-section h2 {
@@ -228,8 +331,8 @@ section {
 
 /* Tech cards */
 .tech-card {
-    background: #181818;
-    border: 1px solid #272727;
+    background: #161616;
+    border: 1px solid #2a2a2a;
     padding: 25px 20px;
     border-radius: 10px;
     transition: transform 0.2s ease, border-color 0.2s ease;
@@ -251,9 +354,8 @@ section {
 /* Hover effect */
 .tech-card:hover {
     transform: translateY(-5px);
-    border-color: #d71a1a;
+    border-color: #e60023;
 }
-
 
 /* ================================
    CAR PREVIEW SECTION
@@ -261,49 +363,91 @@ section {
 .car-preview {
     padding: 80px 5%;
     background: #ffffff;
-    text-align: center;
+    width: 100%;          /* full width */
 }
 
-.car-preview h2 {
+.car-preview-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.car-preview-img {
+    width: 350px;
+    border-radius: 10px;
+}
+
+.car-preview-text {
+    max-width: 600px;
+}
+
+.car-preview-text h2 {
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.car-preview p {
-    max-width: 750px;
-    margin: 0 auto 30px auto;
-    color: #444444;
+.car-preview-text p {
+    color: #444;
     font-size: 1rem;
     line-height: 1.6;
+    margin-bottom: 30px;
 }
 
-.car-preview .btn {
+.car-preview-text .btn {
     display: inline-block;
     padding: 12px 26px;
-    border: 2px solid #d71a1a;
-    color: #d71a1a;
+    border: 2px solid #e60023;
+    color: white;
     border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s ease;
 }
 
-.car-preview .btn:hover {
-    background: #d71a1a;
-    color: #ffffff;
+.car-preview-text .btn:hover {
+    background: white;
+    color: #e60023;
 }
 
+@media (max-width: 900px) {
+    .car-preview-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .car-preview-img {
+        width: 280px;
+    }
+
+    .car-preview-text {
+        text-align: center;
+    }
+
+    .car-preview-text p {
+        margin: 0 auto 25px auto;
+    }
+}
 
 /* ================================
    SPONSOR HIGHLIGHT SECTION
    ================================ */
 .sponsor-highlight {
     padding: 80px 5%;
-    background: #111111;
+    background: #0d0d0d;
     color: #ffffff;
     text-align: center;
+
+    /* FORCE TRUE FULL WIDTH */
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 }
+
 
 .sponsor-highlight h2 {
     font-size: 2.2rem;
@@ -322,9 +466,9 @@ section {
 .sponsor-highlight .btn {
     display: inline-block;
     padding: 12px 26px;
+    border: 2px solid #e60023;
+    color: #e60023;
     background: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
     border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
@@ -332,8 +476,8 @@ section {
 }
 
 .sponsor-highlight .btn:hover {
-    background: #ffffff;
-    color: #111111;
+    background: #e60023;
+    color: white;
 }
 
 
