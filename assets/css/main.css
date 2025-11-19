@@ -5,6 +5,7 @@
     font-family: 'Samarkan';
     src: url('/ashwa-racing/assets/fonts/SAMAN___.TTF') format('truetype');
 }
+
 @font-face {
     font-family: 'Xenotron';
     src: url('/ashwa-racing/assets/fonts/XENOTRON.TTF') format('truetype');
@@ -26,7 +27,9 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 700;
     letter-spacing: -0.5px;
 }
@@ -87,7 +90,8 @@ section {
 
 .preview-content {
     flex: 1;
-    text-align: left;     /* aligns paragraph to the left */
+    text-align: left;
+    /* aligns paragraph to the left */
 }
 
 .preview h2 {
@@ -166,7 +170,7 @@ section {
         display: block;
     }
 
-    .nav-toggle:checked ~ .nav-links {
+    .nav-toggle:checked~.nav-links {
         display: flex;
     }
 
@@ -180,7 +184,7 @@ section {
         flex-direction: column;
         padding: 20px;
         border: 1px solid #ddd;
-        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
     }
 
     .dropdown-content {
@@ -218,9 +222,11 @@ section {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 100vw;                /* TRUE full width */
+    width: 100vw;
+    /* TRUE full width */
     height: 100%;
-    transform: translateX(-50%); /* Perfect center */
+    transform: translateX(-50%);
+    /* Perfect center */
     background: url("/ashwa-racing/assets/images/prototypes/fuck.jpg") center/cover no-repeat;
     opacity: 0.55;
     filter: brightness(0.6) saturate(1.2);
@@ -242,12 +248,12 @@ section {
     letter-spacing: -2px;
     margin-bottom: 10px;
     text-transform: uppercase;
-    font-family: Samarkan,sans-serif;
+    font-family: Samarkan, sans-serif;
     color: #e60023;
 }
 
-.hero-title span{
-    font-family: Xenotron,sans-serif;
+.hero-title span {
+    font-family: Xenotron, sans-serif;
     color: white;
 }
 
@@ -257,18 +263,19 @@ section {
     margin-bottom: 15px;
     opacity: 0.85;
     font-family: Samarkan, sans-serif;
-    
+
 }
 
 .hero-tagline {
     font-size: 1.6rem;
     margin-bottom: 40px;
     font-weight: 600;
-    font-family: Xenotron,sans-serif;
+    font-family: Xenotron, sans-serif;
 }
 
 .hero-tagline span {
-    color: #e60023; /* Ferrari Red accent */
+    color: #e60023;
+    /* Ferrari Red accent */
     font-family: Xenotron, sans-serif;
 }
 
@@ -292,6 +299,7 @@ section {
     .hero-title {
         font-size: 2.8rem;
     }
+
     .hero-tagline {
         font-size: 1.3rem;
     }
@@ -363,7 +371,8 @@ section {
 .car-preview {
     padding: 80px 5%;
     background: #ffffff;
-    width: 100%;          /* full width */
+    width: 100%;
+    /* full width */
 }
 
 .car-preview-content {
@@ -485,6 +494,7 @@ section {
    RESPONSIVE TWEAKS
    ================================ */
 @media (max-width: 768px) {
+
     .tech-section h2,
     .car-preview h2,
     .sponsor-highlight h2 {
@@ -500,9 +510,176 @@ section {
     }
 }
 
+/* =======================================
+           TEAM PAGE CUSTOM STYLES
+           ======================================= */
+
+/* Reusing .hero class from main.css */
+.team-hero {
+    height: 60vh;
+}
+
+/* Reusing general section padding */
+.team-filter-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+/* --- Filter Bar Styles (Required for single-item scroll) --- */
+.year-display-wrapper {
+    overflow-x: hidden;
+    white-space: nowrap;
+    margin: 20px auto 30px;
+    width: auto;
+    max-width: 90%;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    display: flex;
+    /* Ensures content centers */
+    justify-content: center;
+}
+
+.year-display-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.year-item {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    scroll-snap-align: center;
+    padding: 0 10px;
+    flex-shrink: 0;
+}
+
+.filter-btn {
+    padding: 10px 30px;
+    background: #f7f7f7;
+    color: #111;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+    font-size: 1.2rem;
+    width: auto;
+    white-space: normal;
+    /* Allow text wrapping inside long buttons */
+}
+
+.filter-btn.active {
+    background: #e60023;
+    /* Primary red from main.css */
+    color: white;
+    border-color: #e60023;
+}
+
+/* --- Member Card Styling (Based on your sketch) --- */
+.member-grid {
+    /* Reusing .tech-grid style from main.css */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.member-card {
+    background: #111111;
+    /* Dark grey/black card background */
+    border: 1px solid #333333;
+    /* Dark border */
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease;
+    color: #ffffff;
+    /* Default text color */
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    border-color: #e60023;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-img-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #e60023;
+    margin-bottom: 15px;
+    background: #2a2a2a;
+    /* Placeholder background */
+}
+
+.profile-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.member-role {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #e60023;
+    margin-bottom: 15px;
+}
+
+.member-experience h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e60023;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.member-experience p {
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.4;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.member-social {
+    padding-top: 15px;
+    border-top: 1px solid #333333;
+}
+
+.member-social a {
+    font-size: 24px;
+    color: #cccccc;
+    margin: 0 10px;
+    transition: color 0.2s;
+}
+
+.member-social a:hover {
+    color: #e60023;
+}   
+
 /* ===========================================
    ABOUT PAGE – BASE STYLING
-=========================================== */
 
 .about {
     width: 100%;
@@ -545,7 +722,6 @@ section {
 
 /* ===========================================
    FULL-WIDTH BLACK SECTION
-=========================================== */
 
 .about-section-black {
     background: #0d0d0d;
@@ -593,7 +769,6 @@ section {
 
 /* ===========================================
    ROW LAYOUT (IMAGE + TEXT)
-=========================================== */
 
 .about-row {
     display: flex;
@@ -625,7 +800,7 @@ section {
 
 
 /* ===========================================
-   RESPONSIVE
+   RESPONSIVE (TABLET / MOBILE)
 =========================================== */
 
 @media(max-width: 900px) {
