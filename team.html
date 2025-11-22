@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 
 <body>
@@ -20,15 +21,91 @@
         <p class="hero-tagline">The Engine of Innovation <span>Driving Ashwa Forward</span></p>
     </div>
 </section>
+<section class="team-filter-section" id="filters-start">
+    <h2 style="margin-bottom: 20px; font-size: 1.8rem; color: #111;">Select Team Year</h2>
 
-<section class="tech-section" style="padding: 60px 0;">
-    <h2 style="margin-bottom: 40px;">Team Member Profiles</h2>
+    <!-- Desktop Year Filter Wrapper with Arrows -->
+    <div class="filter-controls year-filter-container-desktop">
+        <button class="nav-arrow left" id="year-left" aria-label="Previous Year"><i
+                class="fas fa-chevron-left"></i></button>
+        <div id="year-filter" class="year-display-wrapper">
+            <div class="scroll-spacer"></div> <!-- START SPACER -->
+            <div class="year-item" data-year="2028"><button class="filter-btn active">2028</button></div>
+            <div class="year-item" data-year="2027"><button class="filter-btn">2027</button></div>
+            <div class="year-item" data-year="2026"><button class="filter-btn">2026</button></div>
+            <div class="year-item" data-year="2025"><button class="filter-btn">2025</button></div>
+            <div class="scroll-spacer"></div> <!-- END SPACER -->
+        </div>
+        <button class="nav-arrow right" id="year-right" aria-label="Next Year"><i
+                class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <h2 style="margin-bottom: 20px; font-size: 1.8rem; color: #111;">Filter by Subsystem</h2>
+
+    <!-- Subsystem Filter Wrapper with Arrows -->
+    <div class="filter-controls">
+        <button class="nav-arrow left" id="subsystem-left" aria-label="Previous Subsystem"><i
+                class="fas fa-chevron-left"></i></button>
+        <div id="subsystem-filter-wrapper" class="year-display-wrapper">
+            <div class="scroll-spacer"></div> <!-- START SPACER -->
+            <div class="year-item" data-subsystem="All" data-desc="View all team members across every subsystem.">
+                <button class="filter-btn active">All Subsystems</button></div>
+            <div class="year-item" data-subsystem="Leads"
+                data-desc="Team Leads, Project Managers, and Technical Directors driving the vision."><button
+                    class="filter-btn">Leads (PM, TC, CE)</button></div>
+            <div class="year-item" data-subsystem="Chassis"
+                data-desc="Designing and fabricating the structural frame for safety and performance."><button
+                    class="filter-btn">Chassis</button></div>
+            <!-- ADDED AERODYNAMICS HERE -->
+            <div class="year-item" data-subsystem="Aerodynamics"
+                data-desc="Responsible for designing and manufacturing the aerodynamic package to maximize downforce.">
+                <button class="filter-btn">Aerodynamics</button></div>
+            <div class="year-item" data-subsystem="Brakes"
+                data-desc="Developing high-performance braking systems and managing logistics."><button
+                    class="filter-btn">Brakes & Logistics</button></div>
+            <div class="year-item" data-subsystem="Drivetrain"
+                data-desc="Optimizing power delivery from engine to wheels."><button
+                    class="filter-btn">Drivetrain</button></div>
+            <div class="year-item" data-subsystem="Suspension"
+                data-desc="Ensuring optimal handling and vehicle dynamics on track."><button
+                    class="filter-btn">Suspension</button></div>
+            <div class="year-item" data-subsystem="Electrical"
+                data-desc="Wiring, sensors, and data acquisition systems for vehicle intelligence."><button
+                    class="filter-btn">Electrical & Testing</button></div>
+            <div class="year-item" data-subsystem="Engine"
+                data-desc="Tuning and maintaining the powertrain for maximum output and reliability."><button
+                    class="filter-btn">Engine</button></div>
+            <div class="year-item" data-subsystem="SMP"
+                data-desc="Static events, Media, and Publicity team managing our brand."><button
+                    class="filter-btn">SMP</button></div>
+            <div class="year-item" data-subsystem="IT"
+                data-desc="Managing software, simulations, and IT infrastructure."><button
+                    class="filter-btn">IT</button></div>
+            <div class="year-item" data-subsystem="Finance"
+                data-desc="Budgeting, sponsorship, and financial planning for the team."><button
+                    class="filter-btn">Finance</button></div>
+            <div class="scroll-spacer"></div> <!-- END SPACER -->
+        </div>
+        <button class="nav-arrow right" id="subsystem-right" aria-label="Next Subsystem"><i
+                class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Dynamic Subsystem Description -->
+    <div id="subsystem-desc" class="subsystem-description">View all team members across every subsystem.</div>
+
+</section>
+
+<!-- Team Member Grid (For Profiles) -->
+<section class="tech-section" style="padding: 60px 0; background-color: #0d0d0d;">
+    <h2 style="margin-bottom: 50px; font-size: 2.5rem; color: #fff; text-align: center;">Team Member Profiles</h2>
 
     <div id="member-profiles-grid" class="member-grid">
         <!-- Profiles will be populated here by JavaScript -->
     </div>
 </section>
 
+<!-- Back to Top Button -->
+<button id="back-to-top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
 <footer id="main-footer"></footer>
 
 <script src="assets/js/header.js"></script>
