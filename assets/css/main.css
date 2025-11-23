@@ -364,6 +364,68 @@ section {
     border-color: #e60023;
 }
 
+/* Tablets – 2 cards per row */
+@media (max-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+        gap: 25px;
+    }
+
+    .card-section h2 {
+        font-size: 2.1rem;
+    }
+}
+
+/* Mobile – 1 card per row */
+@media (max-width: 768px) {
+    .card-section {
+        padding: 60px 6%;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        max-width: 500px;
+    }
+
+    .card {
+        padding: 22px 18px;
+    }
+
+    .card h3 {
+        font-size: 1.25rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .card-section h2 {
+        font-size: 1.9rem;
+        margin-bottom: 30px;
+    }
+}
+
+/* Small phones – tighter layout */
+@media (max-width: 480px) {
+    .card-section {
+        padding: 50px 7%;
+    }
+
+    .card {
+        padding: 20px 16px;
+    }
+
+    .card-section h2 {
+        font-size: 1.7rem;
+    }
+
+    .card p {
+        font-size: 0.88rem;
+        line-height: 1.5;
+    }
+}
+
 /* ================================
    SPONSOR HIGHLIGHT SECTION
    ================================ */
@@ -958,6 +1020,7 @@ section {
     }
 }
 
+
 @media(max-width: 768px) {
     .about-section-black {
         padding: 60px 0;
@@ -971,4 +1034,4 @@ section {
         font-size: 1rem;
     }
 }
-
+}
