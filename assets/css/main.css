@@ -3,12 +3,12 @@
 =============================================== */
 @font-face {
     font-family: 'Samarkan';
-    src: url('/ashwa-racing/assets/fonts/SAMAN___.TTF') format('truetype');
+    src: url('../assets/fonts/SAMAN___.TTF') format('truetype');
 }
 
 @font-face {
     font-family: 'Xenotron';
-    src: url('/ashwa-racing/assets/fonts/XENOTRON.TTF') format('truetype');
+    src: url('../assets/fonts/XENOTRON.TTF') format('truetype');
 }
 
 /* ===========================================
@@ -228,7 +228,6 @@ section {
     height: 100%;
     transform: translateX(-50%);
     /* Perfect center */
-    background: url("/ashwa-racing/assets/images/prototypes/fuck.jpg") center/cover no-repeat;
     opacity: 0.55;
     filter: brightness(0.6) saturate(1.2);
     z-index: 1;

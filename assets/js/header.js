@@ -6,8 +6,22 @@
    - Fixes mobile close button
 ================================ */
 
+/* ------ REAL FIX: detect path AFTER 'ashwa-racing' ------ */
+const fullPath = window.location.pathname;
+const base = "/ashwa-racing/";
+
+// everything after /ashwa-racing/
+const afterBase = fullPath.replace(base, "");
+
+// count folders after project root
+const depth = afterBase === "" ? 0 : afterBase.split("/").length - 1;
+
+// build prefix
+let prefix = "";
+for (let i = 0; i < depth; i++) prefix += "../";
+
 /* ---------- LOAD HEADER ---------- */
-fetch("components/header.html")
+fetch(prefix + "components/header.html")
   .then(res => res.text())
   .then(data => {
       document.getElementById("main-header").innerHTML = data;
@@ -26,7 +40,7 @@ fetch("components/header.html")
   });
 
 /* ---------- LOAD FOOTER ---------- */
-fetch("components/footer.html")
+fetch(prefix + "components/footer.html")
   .then(res => res.text())
   .then(data => {
       document.getElementById("main-footer").innerHTML = data;
@@ -43,13 +57,11 @@ function initializeSponsors() {
     sponsorsInitialized = true;
 
     const SPONSOR_COUNT = 12;
-    const SPONSOR_PATH = "assets/images/sponsors/";
-    const ROTATE_INTERVAL = 2500;  // ms
-    const SCROLL_SPEED = 0.55;        // px per frame (~60px/sec)
+    const SPONSOR_PATH = prefix + "assets/images/sponsors/";   /* <--- ONLY ADDED prefix */
+    const ROTATE_INTERVAL = 2500;  
+    const SCROLL_SPEED = 0.55;
 
-    /* ================================
-       1) TOP-RIGHT ROTATING SPONSOR
-    ================================= */
+    /* 1) TOP-RIGHT ROTATING SPONSOR */
     const rotatingImg = document.getElementById("top-rotating-sponsor");
     let currentSponsor = 1;
 
@@ -63,9 +75,7 @@ function initializeSponsors() {
         setInterval(rotateTopSponsor, ROTATE_INTERVAL);
     }
 
-    /* ================================
-       2) INLINE CROSSFADE SPONSOR
-    ================================= */
+    /* 2) INLINE CROSSFADE SPONSOR */
     const inlineImg = document.getElementById("inline-sponsor");
     let inlineIndex = 1;
 
@@ -85,13 +95,10 @@ function initializeSponsors() {
         setInterval(rotateInlineSponsor, ROTATE_INTERVAL);
     }
 
-    /* ================================
-       3) CIRCULAR SCROLLING MARQUEE
-    ================================= */
+    /* 3) CIRCULAR MARQUEE */
     const track = document.getElementById("sponsor-track");
 
     if (track) {
-        // Prevent double-loading
         if (track.children.length === 0) {
             for (let i = 1; i <= SPONSOR_COUNT; i += 2) {
                 const img1 = document.createElement("img");
@@ -100,13 +107,12 @@ function initializeSponsors() {
                 track.appendChild(img1);
 
                 const nextIndex = i + 1 > SPONSOR_COUNT ? 1 : i + 1;
-                const img2 = document.createElement("img"); // duplicate for seamless scroll
+                const img2 = document.createElement("img");
                 img2.src = `${SPONSOR_PATH}s${nextIndex}.png`;
                 img2.className = "sponsor-logo";
                 track.appendChild(img2);
             }
         }
-
 
         let pos = 0;
 
@@ -115,7 +121,7 @@ function initializeSponsors() {
             track.style.transform = `translateX(${pos}px)`;
 
             const first = track.children[0];
-            const firstWidth = first.offsetWidth + 32; // logo + gap
+            const firstWidth = first.offsetWidth + 32;
 
             if (-pos >= firstWidth) {
                 track.appendChild(first);
