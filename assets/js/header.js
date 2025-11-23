@@ -44,8 +44,8 @@ function initializeSponsors() {
 
     const SPONSOR_COUNT = 12;
     const SPONSOR_PATH = "assets/images/sponsors/";
-    const ROTATE_INTERVAL = 2000;  // ms
-    const SCROLL_SPEED = 1;        // px per frame (~60px/sec)
+    const ROTATE_INTERVAL = 2500;  // ms
+    const SCROLL_SPEED = 0.55;        // px per frame (~60px/sec)
 
     /* ================================
        1) TOP-RIGHT ROTATING SPONSOR
