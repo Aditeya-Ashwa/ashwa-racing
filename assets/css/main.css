@@ -433,177 +433,397 @@ section {
     }
 }
 
-/* =======================================
+ /* =======================================
            TEAM PAGE CUSTOM STYLES
            ======================================= */
 
-/* Reusing .hero class from main.css */
-.team-hero {
-    height: 60vh;
-}
+ /* Reusing .hero class from main.css */
+ .team-hero {
+     height: 60vh;
+ }
 
-/* Reusing general section padding */
-.team-filter-section {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 20px 20px;
-    text-align: center;
-}
+ /* Reusing general section padding */
+ .team-filter-section {
+     width: 100%;
+     max-width: 1200px;
+     margin: auto;
+     padding: 40px 20px 20px;
+     text-align: center;
+     /* Sticky header for better UX on long lists */
+     position: sticky;
+     top: 0;
+     background: white;
+     /* Ensure background covers content behind it */
+     z-index: 100;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+ }
 
-/* --- Filter Bar Styles (Required for single-item scroll) --- */
-.year-display-wrapper {
-    overflow-x: hidden;
-    white-space: nowrap;
-    margin: 20px auto 30px;
-    width: auto;
-    max-width: 90%;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    display: flex;
-    /* Ensures content centers */
-    justify-content: center;
-}
+ /* --- New: Subsystem Description --- */
+ .subsystem-description {
+     max-width: 800px;
+     margin: 10px auto 0;
+     color: #666;
+     font-size: 0.95rem;
+     font-style: italic;
+     min-height: 1.5em;
+     /* Prevent layout shift */
+     transition: opacity 0.3s ease;
+ }
 
-.year-display-wrapper::-webkit-scrollbar {
-    display: none;
-}
+ /* --- New: Arrow Controls Container --- */
+ .filter-controls {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 20px auto 30px;
+     max-width: 90%;
+ }
 
-.year-item {
-    display: inline-block;
-    width: auto;
-    text-align: center;
-    scroll-snap-align: center;
-    padding: 0 10px;
-    flex-shrink: 0;
-}
+ /* --- New: Arrow Button Styling (REFINED) --- */
+ .nav-arrow {
+     position: absolute;
+     background: white;
+     color: #e60023;
+     border: 1px solid #e60023;
+     border-radius: 50%;
+     width: 36px;
+     height: 36px;
+     cursor: pointer;
+     z-index: 10;
+     opacity: 1;
+     transition: all 0.3s ease;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+ }
 
-.filter-btn {
-    padding: 10px 30px;
-    background: #f7f7f7;
-    color: #111;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: 600;
-    font-size: 1.2rem;
-    width: auto;
-    white-space: normal;
-    /* Allow text wrapping inside long buttons */
-}
+ .nav-arrow:hover {
+     transform: scale(1.1);
+     background: #e60023;
+     color: white;
+     box-shadow: 0 4px 12px rgba(230, 0, 35, 0.3);
+ }
 
-.filter-btn.active {
-    background: #e60023;
-    /* Primary red from main.css */
-    color: white;
-    border-color: #e60023;
-}
+ .nav-arrow.left {
+     left: -10px;
+     /* Adjusted for cleaner look */
+ }
 
-/* --- Member Card Styling (Based on your sketch) --- */
-.member-grid {
-    /* Reusing .tech-grid style from main.css */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto 60px;
-    padding: 0 20px;
-}
+ .nav-arrow.right {
+     right: -10px;
+     /* Adjusted for cleaner look */
+ }
 
-.member-card {
-    background: #111111;
-    /* Dark grey/black card background */
-    border: 1px solid #333333;
-    /* Dark border */
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s ease;
-    color: #ffffff;
-    /* Default text color */
-}
 
-.member-card:hover {
-    transform: translateY(-5px);
-    border-color: #e60023;
-}
+ /* --- Filter Bar Styles (Required for single-item scroll) --- */
+ .year-display-wrapper {
+     /* Scroll is now instantaneous ('auto') in JS to fix the race condition */
+     overflow-x: scroll;
+     white-space: nowrap;
+     width: auto;
+     max-width: 90%;
+     scroll-snap-type: x mandatory;
+     scroll-behavior: smooth;
+     /* Keep smooth behavior for mouse wheel for now */
+     scrollbar-width: none;
+     display: flex;
+     align-items: center;
+     /* Vertically align items */
 
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
+     /* FIX: Add vertical padding to allow hover transform scale without clipping */
+     padding-top: 10px;
+     padding-bottom: 10px;
+ }
 
-.profile-img-container {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid #e60023;
-    margin-bottom: 15px;
-    background: #2a2a2a;
-    /* Placeholder background */
-}
+ .year-display-wrapper::-webkit-scrollbar {
+     display: none;
+ }
 
-.profile-img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+ /* NEW CSS: Spacer element */
+ .scroll-spacer {
+     display: inline-block;
+     /* **FINAL FIX:** Increased fixed value (250px) aggressively to guarantee centering. */
+     width: calc(50% - 250px);
+     min-width: 10px;
+     height: 1px;
+     flex-shrink: 0;
+     white-space: normal;
+ }
 
-.member-name {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 2px;
-}
 
-.member-role {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #e60023;
-    margin-bottom: 15px;
-}
+ .year-item {
+     display: inline-block;
+     width: auto;
+     text-align: center;
+     scroll-snap-align: center;
+     padding: 0 8px;
+     /* Tighter padding */
+     flex-shrink: 0;
+ }
 
-.member-experience h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #e60023;
-    margin-bottom: 10px;
-    text-align: left;
-}
+ .filter-btn {
+     padding: 8px 24px;
+     /* Slightly smaller for cleaner look */
+     background: #f7f7f7;
+     color: #444;
+     border: 1px solid #ddd;
+     border-radius: 50px;
+     /* Fully rounded pill shape */
+     cursor: pointer;
+     transition: all 0.2s ease;
+     font-weight: 500;
+     font-size: 1rem;
+     width: auto;
+     white-space: nowrap;
+     /* Fix for button clipping issue on hover */
+     transform-origin: center;
+ }
 
-.member-experience p {
-    font-size: 0.95rem;
-    color: #cccccc;
-    line-height: 1.4;
-    text-align: left;
-    margin-bottom: 20px;
-}
+ .filter-btn:hover {
+     background: #f0f0f0;
+     border-color: #ccc;
+     /* Reduced scale slightly to prevent excessive overflow, or ensure container padding covers it */
+     transform: translateY(-1px) scale(1.02);
+ }
 
-.member-social {
-    padding-top: 15px;
-    border-top: 1px solid #333333;
-}
+ .filter-btn.active {
+     background: #e60023;
+     color: white;
+     border-color: #e60023;
+     box-shadow: 0 4px 10px rgba(230, 0, 35, 0.3);
+     /* Glow effect */
+     font-weight: 600;
+ }
 
-.member-social a {
-    font-size: 24px;
-    color: #cccccc;
-    margin: 0 10px;
-    transition: color 0.2s;
-}
+ /* --- Member Card Styling (Based on your sketch) --- */
+ .member-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+     /* Slightly narrower cards */
+     gap: 30px;
+     max-width: 1200px;
+     margin: 0 auto 60px;
+     padding: 0 20px;
+     /* Add fade-in animation */
+     animation: fadeIn 0.5s ease-in-out;
+ }
 
-.member-social a:hover {
-    color: #e60023;
-}   
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+         transform: translateY(10px);
+     }
 
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ .member-card {
+     background: #1a1a1a;
+     /* Slightly lighter dark grey */
+     border: 1px solid #333;
+     border-radius: 16px;
+     padding: 30px 25px;
+     text-align: center;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+     transition: all 0.3s ease;
+     color: #e0e0e0;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .member-card:hover {
+     transform: translateY(-8px);
+     border-color: #e60023;
+     box-shadow: 0 12px 30px rgba(230, 0, 35, 0.15);
+ }
+
+ /* Subtle red accent bar at top */
+ .member-card::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 4px;
+     background: #e60023;
+     transform: scaleX(0);
+     transition: transform 0.3s ease;
+     transform-origin: left;
+ }
+
+ .member-card:hover::before {
+     transform: scaleX(1);
+ }
+
+ .profile-header {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 20px;
+ }
+
+ .profile-img-container {
+     width: 130px;
+     height: 130px;
+     border-radius: 50%;
+     overflow: hidden;
+     border: 3px solid #e60023;
+     padding: 3px;
+     /* Space between border and image */
+     background: transparent;
+     margin-bottom: 18px;
+     transition: transform 0.3s ease;
+ }
+
+ .member-card:hover .profile-img-container {
+     transform: scale(1.05);
+ }
+
+ .profile-img-container img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     border-radius: 50%;
+ }
+
+ .member-name {
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: #ffffff;
+     margin-bottom: 5px;
+     letter-spacing: 0.5px;
+ }
+
+ .member-role {
+     font-size: 0.95rem;
+     font-weight: 500;
+     color: #e60023;
+     margin-bottom: 15px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+ }
+
+ .member-experience h3 {
+     font-size: 1.1rem;
+     font-weight: 600;
+     color: #fff;
+     margin-bottom: 8px;
+     text-align: left;
+     border-bottom: 1px solid #333;
+     padding-bottom: 5px;
+ }
+
+ .member-experience p {
+     font-size: 0.9rem;
+     color: #aaa;
+     line-height: 1.6;
+     text-align: left;
+     margin-bottom: 25px;
+     min-height: 4.8em;
+     /* Consistent height for 3 lines */
+ }
+
+ .member-social {
+     padding-top: 15px;
+     border-top: 1px solid #333;
+     display: flex;
+     justify-content: center;
+     gap: 15px;
+ }
+
+ .member-social a {
+     font-size: 1.3rem;
+     color: #888;
+     transition: all 0.2s;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     background: #252525;
+ }
+
+ .member-social a:hover {
+     color: white;
+     background: #e60023;
+     transform: translateY(-3px);
+ }
+
+ /* Empty state styling */
+ .no-members {
+     grid-column: 1 / -1;
+     text-align: center;
+     padding: 60px;
+     background: #111;
+     border-radius: 12px;
+     border: 1px dashed #444;
+     color: #888;
+ }
+
+ /* --- Back to Top Button --- */
+ #back-to-top {
+     position: fixed;
+     bottom: 30px;
+     right: 30px;
+     background: #e60023;
+     color: white;
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     border: none;
+     font-size: 1.2rem;
+     display: none;
+     /* Hidden by default */
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+     z-index: 999;
+     transition: transform 0.3s ease, opacity 0.3s ease;
+ }
+
+ #back-to-top:hover {
+     transform: translateY(-5px);
+     background: #b8001c;
+ }
+
+ /* Responsive tweaks */
+ @media(max-width: 768px) {
+     .team-filter-section {
+         position: relative;
+         /* Unstick on mobile if screen is short */
+         padding: 20px 10px;
+     }
+
+     .filter-btn {
+         padding: 6px 16px;
+         font-size: 0.85rem;
+         /* Smaller text */
+         border-radius: 20px;
+         /* Pill shape */
+     }
+
+     .nav-arrow {
+         width: 30px;
+         height: 30px;
+         font-size: 0.8rem;
+     }
+
+     /* Adjust subsystem filter for mobile */
+     #subsystem-filter-wrapper .filter-btn {
+         padding: 6px 12px;
+         font-size: 0.8rem;
+     }
+ }
 /* ===========================================
    ABOUT PAGE – BASE STYLING
-
+*/
 .about {
     width: 100%;
     max-width: 1100px;
@@ -643,6 +863,26 @@ section {
     margin-bottom: 70px;
 }
 
+
+/* ===========================================
+   FULL-WIDTH BLACK SECTION
+*/
+.about-section-black {
+    padding: 80px 5%;
+    margin: 80px 0;
+
+    background: #0d0d0d;
+    color: white;
+
+    /* Full-width alignment fix */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    box-sizing: border-box;
 /* Inner container (keeps content aligned like other sections) */
 .about-section-black .black-inner {
     max-width: 1100px;
@@ -671,7 +911,7 @@ section {
 
 /* ===========================================
    ROW LAYOUT (IMAGE + TEXT)
-
+*/
 .about-row {
     display: flex;
     align-items: center;
@@ -701,9 +941,9 @@ section {
 }
 
 
-/* ===========================================
+/*===========================================
    RESPONSIVE (TABLET / MOBILE)
-=========================================== */
+*/
 
 @media(max-width: 900px) {
     .about-row,
@@ -731,3 +971,4 @@ section {
         font-size: 1rem;
     }
 }
+
