@@ -898,3 +898,161 @@ section {
          font-size: 0.8rem;
      }
  }
+/* ===========================================
+   ABOUT PAGE – BASE STYLING
+*/
+.about {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 20px;
+
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #222;
+}
+
+.about h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #e60023;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.about p {
+    margin-bottom: 35px;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+.about h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 40px 0 15px;
+    color: #111;
+}
+
+/* Section spacing */
+.about-section {
+    margin-bottom: 70px;
+}
+
+
+/* ===========================================
+   FULL-WIDTH BLACK SECTION
+*/
+.about-section-black {
+    padding: 80px 5%;
+    margin: 80px 0;
+
+    background: #0d0d0d;
+    color: white;
+
+    /* Full-width alignment fix */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    box-sizing: border-box;
+}
+
+.about-section-black h1,
+.about-section-black h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-left: 180px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #e60023;
+}
+
+.about-section-black p {
+    max-width: 900px;
+    font-size: 1.05rem;
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    margin-left: 180px;
+}
+
+/* ===========================================
+   ROW LAYOUT (IMAGE + TEXT)
+*/
+.about-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.about-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-text {
+    flex: 1.2;
+}
+
+.about-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-img img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+
+/*===========================================
+   RESPONSIVE (TABLET / MOBILE)
+*/
+@media(max-width: 900px) {
+    .about {
+        padding: 60px 20px;
+    }
+
+    .about h1 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    .about-row,
+    .about-row.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img img {
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    .about-section-black {
+        padding: 60px 20px;
+        text-align: left;
+    }
+
+    .about-section-black h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-section-black p {
+        font-size: 1rem;
+    }
+}
+
