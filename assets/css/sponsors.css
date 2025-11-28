@@ -1,0 +1,153 @@
+/* ===========================
+   GLOBAL PAGE STYLING
+=========================== */
+.sponsor-container {
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    color: #111;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+.sponsor-hero {
+    padding: 100px 6%;
+    background: #ffffff; 
+    text-align: left;
+}
+
+.sponsor-title {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #111;
+}
+
+.sponsor-desc {
+    margin-top: 20px;
+    max-width: 600px;
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Thin minimal divider like Google pages */
+.metal-divider {
+    width: 60px;
+    height: 4px;
+    margin-top: 30px;
+    background: #e63946;
+    border-radius: 2px;
+}
+
+
+#sponsor-sections {
+    width: 100%;
+}
+
+/* Category wrapper */
+.sponsor-section {
+    position: relative;
+    padding: 80px 6%;
+}
+
+/* full-width background */
+.sponsor-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: calc(50% - 50vw);
+    width: 100vw;
+    z-index: -1;
+}
+
+/* Alternating backgrounds */
+.sponsor-section:nth-child(odd)::before {
+    background: #efefef;
+}
+
+.sponsor-section:nth-child(even)::before {
+    background: #202124;
+}
+
+/* Title colors */
+.sponsor-section:nth-child(odd) .sponsor-section-title {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #111;
+}
+
+.sponsor-section:nth-child(even) .sponsor-section-title {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #e8eaed;
+}
+
+/* ===========================
+   SPONSOR CARD GRID
+=========================== */
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+/* ===========================
+   SPONSOR CARD
+=========================== */
+.sponsor-card {
+    position: relative;
+    background: #fff;
+    padding: 24px;
+    border: 2px solid transparent;   /* neutral border */
+    border-radius: 20px;
+    transition: 
+        transform 0.35s ease,
+        border-color 0.35s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+}
+
+/* LOGO */
+.sponsor-card img {
+    max-width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* ===========================
+   SIMPLE RED RING OUTLINE
+=========================== */
+.sponsor-card::after {
+    content: "";
+    position: absolute;
+    inset: -3px;                        /* small offset around box */
+    border-radius: 22px;                /* matches card shape, circular feeling */
+    border: 2px solid #e63946;          /* thin red line */
+    opacity: 0;
+    transform: scale(0.9);              /* snug circle animation */
+    transition: 
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    pointer-events: none;
+}
+
+.sponsor-card:hover::after {
+    opacity: 1;
+    transform: scale(1);                /* smooth reveal */
+}
+
+/* Lift + clean hover */
+.sponsor-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Slight logo scale on hover */
+.sponsor-card:hover img {
+    transform: scale(1.05);
+}
