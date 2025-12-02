@@ -1174,21 +1174,220 @@ section {
 }
 
 .btn-secondary:hover {
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.about-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-text {
+    flex: 1.2;
+}
+
+.about-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-img img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+
+/*===========================================
+   RESPONSIVE (TABLET / MOBILE)
+*/
+
+@media(max-width: 900px) {
+
+    .about-row,
+    .about-row.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img img {
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media(max-width: 768px) {
+    .about-section-black {
+        padding: 60px 0;
+    }
+
+    .about-section-black h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-section-black p {
+        font-size: 1rem;
+    }
+}
+
+
+/* =======================================
+                   RECRUITMENT PAGE STYLES
+                   ======================================= */
+
+/* --- Hero Section --- */
+.recruit-hero {
+    /* OVERRIDE GLOBAL SECTION STYLES for Full Width */
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 5% !important;
+    /* Keep internal padding, reset external */
+
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align text to left */
+    overflow: hidden;
+    color: white;
+}
+
+.recruit-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Use the car image provided or similar */
+    background: url('assets/images/prototypes/car-preview.png') center/cover no-repeat;
+    /* Overlay gradient to make text readable */
+    filter: brightness(0.4);
+    z-index: 1;
+}
+
+/* Gradient overlay for better text contrast on the left */
+.recruit-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
+    z-index: 2;
+}
+
+.recruit-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 700px;
+    text-align: left;
+}
+
+.status-badge {
+    display: inline-block;
+    background: rgba(230, 0, 35, 0.2);
+    border: 1px solid #e60023;
+    color: #ff4d6d;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.recruit-title {
+    font-size: 5rem;
+    line-height: 1;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    /* Ensure robust font */
+}
+
+.recruit-title span {
+    color: #e60023;
+    display: block;
+}
+
+.recruit-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.recruit-desc {
+    font-size: 1.1rem;
+    color: #bbb;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary {
+    padding: 10px 30px;
+    background: #e60023;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-size: medium;
+    border: 2px solid #e60023;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: #e60023;
+}
+
+.btn-secondary {
+    padding: 15px 35px;
+    background: transparent;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 2px solid white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
     background: white;
     color: #111;
 }
 
 /* --- Stats Bar --- */
 .stats-bar {
-    background: #111;
+    background: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: white;
     padding: 60px 5%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
-    /* Ensure full width */
+    position: relative;
+    z-index: 20;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .stat-item {
@@ -1269,8 +1468,9 @@ section {
 }
 
 .benefit-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.02);
     border-color: #e60023;
+    box-shadow: 0 10px 30px rgba(230, 0, 35, 0.15);
 }
 
 .card-icon {
@@ -1352,8 +1552,8 @@ section {
 }
 
 .timeline-dot {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: #111;
     border: 3px solid #e60023;
     border-radius: 50%;
@@ -1363,6 +1563,15 @@ section {
     justify-content: center;
     font-weight: bold;
     color: #e60023;
+    box-shadow: 0 0 0 5px rgba(230, 0, 35, 0.2);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    background: #e60023;
+    color: white;
+    box-shadow: 0 0 0 8px rgba(230, 0, 35, 0.3);
+    transform: scale(1.1);
 }
 
 .timeline-date {
@@ -1418,4 +1627,255 @@ section {
     .timeline-dot {
         margin: 0;
     }
+}
+
+/* ===========================================
+   SCROLL ANIMATIONS
+   =========================================== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays */
+.benefit-card.animate-on-scroll:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.benefit-card.animate-on-scroll:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.benefit-card.animate-on-scroll:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.benefit-card.animate-on-scroll:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.timeline-item.animate-on-scroll:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.timeline-item.animate-on-scroll:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(230, 0, 35, 0.1);
+    color: #e60023;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.card-text {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* --- Departments Preview --- */
+.dept-preview {
+    /* OVERRIDE GLOBAL SECTION STYLES */
+    max-width: 100% !important;
+    margin: 0 !important;
+    background: #fff;
+    padding: 100px 5% !important;
+    text-align: center;
+}
+
+.centered-header {
+    text-align: center;
+    margin: 0 auto 60px;
+    max-width: 800px;
+}
+
+/* --- Timeline Section --- */
+.timeline-section {
+    /* OVERRIDE GLOBAL SECTION STYLES */
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 80px 5% !important;
+    background: #111;
+    color: white;
+}
+
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 50px auto 0;
+    position: relative;
+}
+
+/* Line connecting items */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    z-index: 0;
+}
+
+.timeline-item {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex: 1;
+}
+
+.timeline-dot {
+    width: 50px;
+    height: 50px;
+    background: #111;
+    border: 3px solid #e60023;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #e60023;
+    box-shadow: 0 0 0 5px rgba(230, 0, 35, 0.2);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    background: #e60023;
+    color: white;
+    box-shadow: 0 0 0 8px rgba(230, 0, 35, 0.3);
+    transform: scale(1.1);
+}
+
+.timeline-date {
+    display: block;
+    color: #e60023;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.timeline-label {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .recruit-title {
+        font-size: 3rem;
+    }
+
+    .stats-bar {
+        flex-direction: column;
+    }
+
+    .stat-item {
+        margin: 20px 0;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .timeline-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .timeline-container::before {
+        width: 2px;
+        height: 100%;
+        left: 19px;
+        top: 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        gap: 20px;
+    }
+
+    .timeline-dot {
+        margin: 0;
+    }
+}
+
+/* ===========================================
+   SCROLL ANIMATIONS
+   =========================================== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delays */
+.benefit-card.animate-on-scroll:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.benefit-card.animate-on-scroll:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.benefit-card.animate-on-scroll:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.benefit-card.animate-on-scroll:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.timeline-item.animate-on-scroll:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.timeline-item.animate-on-scroll:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.timeline-item.animate-on-scroll:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+.timeline-item.animate-on-scroll:nth-child(4) {
+    transition-delay: 0.7s;
+}
+
+/* FORCE BODY BLOCK TO FIX LAYOUT */
+body {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: hidden;
 }
