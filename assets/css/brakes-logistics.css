@@ -1,0 +1,239 @@
+html, body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+}
+
+/* -------------------------------
+   BACKGROUND 3D CANVAS
+-------------------------------- */
+.br-page #rotor-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100svh;
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* ==========================================================
+   HERO — transparent white
+========================================================== */
+.br-page .br-hero {
+    max-width: 1060px;
+    min-height: 100svh;
+    text-align: center;
+    margin: auto;
+    padding: 60px;
+
+    background: rgba(255,255,255,0.10);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: white;
+}
+
+.br-page .br-hero-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.br-page .hero-badge {
+    display: inline-block;
+    padding: 10px 22px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    color: #ff1744;
+    background: rgba(255,23,68,0.15);
+    border-radius: 999px;
+}
+
+.br-page .br-hero h1 {
+    font-size: clamp(42px, 7vw, 68px);
+    font-weight: 700;
+    margin-top: 25px;
+    letter-spacing: -0.5px;
+}
+
+.br-page .subtitle {
+    margin-top: 18px;
+    font-size: clamp(16px, 2vw, 20px);
+    color: rgba(255,255,255,0.85);
+}
+
+/* -----------------------
+   HERO STATS (material cards)
+------------------------ */
+.br-page .hero-stats {
+    margin-top: 55px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.br-page .stat {
+    padding: 22px 28px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+
+.br-page .num {
+    font-size: 38px;
+    font-weight: 700;
+    color: #ff1744;
+}
+
+.br-page .label {
+    font-size: 12px;
+    margin-top: 6px;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   PAGE CONTENT — Google alternating sections
+========================================================== */
+.br-page .page-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    color: white  ;
+}
+
+.br-page section {
+    padding: 60px;
+    border-radius: 24px;
+    backdrop-filter: blur(6px);
+    transition: 0.25s ease;
+}
+
+/* Alternating theme: white → dark → white */
+.br-page section:nth-of-type(1) { background: rgba(255,255,255,0.10); }
+.br-page section:nth-of-type(2) { background: rgba(255,255,255,0.10); }
+.br-page section:nth-of-type(3) { background: rgba(255,255,255,0.10); }
+
+.br-page h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 600;
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.br-page .idx {
+    padding: 6px 12px;
+    font-size: 14px;
+
+    background: rgba(255,23,68,0.18);
+    color: #ff1744;
+    border-radius: 8px;
+}
+
+/* ==========================================================
+   ABOUT SECTION
+========================================================== */
+.br-page .br-about p {
+    max-width: 900px;
+    margin-bottom: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+}
+
+
+/* ==========================================================
+   DOMAIN CARDS — Elevated cards
+========================================================== */
+.br-page .domains-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.br-page .domain-card {
+    padding: 32px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(6px);
+    transition: 0.25s ease;
+
+    box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+}
+
+.br-page .domain-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.18);
+}
+
+.br-page .card-head {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.br-page .card-num {
+    padding: 6px 10px;
+    background: rgba(255,23,68,0.18);
+    color: #ff1744;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* ==========================================================
+   VISION / ROADMAP (material cards)
+========================================================== */
+.br-page .vision-intro {
+    background: rgba(255,255,255,0.12);
+    padding: 25px 30px;
+    border-radius: 20px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+
+    box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+}
+
+.br-page .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.br-page .roadmap-card {
+    padding: 30px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(6px);
+
+    transition: 0.25s ease;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+}
+
+.br-page .roadmap-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.18);
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+@media (max-width: 768px) {
+    .br-page .br-hero { padding: 80px 20px 60px; }
+    .br-page .page-container { padding: 50px 20px; }
+    .br-page section { padding: 40px; }
+}
