@@ -1,37 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELE | Ashwa Racing</title>
-    <link rel="icon" type="image/x-icon" href="../assets/images/ashwa white favicon.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" />
+  <title>Brakes & Logistics | Ashwa Racing</title>
 
-    <!-- CSS FILES -->
-    <link rel="stylesheet" href="../assets/css/main.css">"
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../assets/images/ashwa white favicon.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/brakes-logistics.css" />
+  <link rel="stylesheet" href="../assets/css/header.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- 3D Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/utils/BufferGeometryUtils.js" defer></script>
 </head>
 
 <body>
+<div class="br-page">
 
-<header id="main-header"></header>
+  <!-- Background Canvas -->
+  <canvas id="rotor-canvas" aria-hidden="true"></canvas>
 
-<section>
-    <h1>Meet the Team</h1>
-    <p>
-        The Ashwa Racing team consists of highly passionate students from various engineering 
-        disciplines. This page displays members by subsystem and year.
-    </p>
+  <!-- Header -->
+  <header id="main-header"></header>
 
-    <div class="team-grid">
-        <!-- You can add photos + names here -->
+  <!-- Hero Section -->
+  <section class="br-hero">
+    <div class="br-hero-content">
+      <div class="hero-badge">BRAKES & LOGISTICS</div>
+
+      <h1>Braking System & Logistics</h1>
+      <p class="subtitle">Precision, safety and race-ready supply chain for Ashwa Racing</p>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="num">4</div>
+          <div class="label">Brake Subsystems</div>
+        </div>
+
+        <div class="stat">
+          <div class="num">120</div>
+          <div class="label">Test Runs / Season</div>
+        </div>
+
+        <div class="stat">
+          <div class="num">100%</div>
+          <div class="label">Safety & Compliance</div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<footer id="main-footer"></footer>
+  <!-- Main Content -->
+  <main class="page-container">
 
-<script src="../assets/js/header.js"></script>
+    <!-- About Section -->
+    <section class="br-about">
+      <h2><span class="idx">01</span>Role & Responsibility</h2>
+
+      <div class="about-text">
+        <p>
+          The Brakes & Logistics subsystem ensures the vehicle stops reliably and that parts, tools and test logistics
+          are handled efficiently. We design, test and maintain braking assemblies — calipers, discs, pads, hydraulics —
+          while managing spares, workshops, transport, and race-day logistics.
+        </p>
+
+        <p>
+          Safety, repeatability and thermal performance are the primary engineering goals. The subsystem collaborates
+          closely with Chassis, Electronics and Driverless teams to ensure braking integration and reliable data capture
+          during development and racing.
+        </p>
+      </div>
+    </section>
+
+    <!-- Domains Section -->
+    <section class="br-domains">
+      <h2><span class="idx">02</span>Core Areas</h2>
+
+      <div class="domains-grid">
+
+        <article class="domain-card">
+          <div class="card-head">
+            <div class="card-num">01</div>
+            <h3>Mechanical Braking Design</h3>
+          </div>
+          <p>Design and validate calipers, discs, mounting interfaces and brake cooling paths using CAD and simulation.</p>
+        </article>
+
+        <article class="domain-card">
+          <div class="card-head">
+            <div class="card-num">02</div>
+            <h3>Hydraulics & Control</h3>
+          </div>
+          <p>Select and tune master cylinders, proportioning valves and ABS interfaces, integrating brake-by-wire signals where applicable.</p>
+        </article>
+
+        <article class="domain-card">
+          <div class="card-head">
+            <div class="card-num">03</div>
+            <h3>Testing & Validation</h3>
+          </div>
+          <p>Conduct dynamometer, bench and on-track tests. Measure deceleration, pad wear, rotor temps and fade behaviour.</p>
+        </article>
+
+        <article class="domain-card">
+          <div class="card-head">
+            <div class="card-num">04</div>
+            <h3>Logistics & Workshop</h3>
+          </div>
+          <p>Manage spare inventories, toolkits, transport logistics, workshop scheduling and race-day setups.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="br-vision">
+      <h2><span class="idx">03</span>Vision & Roadmap</h2>
+
+      <p class="vision-intro">
+        We aim to build braking systems that are predictable under load, light yet robust, supported by efficient
+        logistics processes. Our roadmap emphasizes thermal management, tighter integration with control systems and
+        streamlined spare-parts flow.
+      </p>
+
+      <div class="roadmap-grid">
+
+        <div class="roadmap-card">
+          <strong>Short-term</strong>
+          <h4>Thermal Mapping & Cooling</h4>
+          <p>Improve ducts and evaluate coatings to reduce brake fade.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <strong>Short-term</strong>
+          <h4>Test Automation</h4>
+          <p>Automate logging for faster component validation cycles.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <strong>Mid-term</strong>
+          <h4>Integrated Brake Telemetry</h4>
+          <p>Enable real-time monitoring of pad and rotor condition.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <strong>Mid-term</strong>
+          <h4>Supply Chain Resilience</h4>
+          <p>Improve supplier redundancy and implement parts tracking.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <strong>Long-term</strong>
+          <h4>Brake-by-Wire Research</h4>
+          <p>Explore electronic actuation paths for future systems.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <strong>Ongoing</strong>
+          <h4>Safety & Compliance</h4>
+          <p>Continuous safety review and race-specific compliance checks.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="main-footer"></footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="../assets/js/brakes-logistics.js" type="module" defer></script>
+<script src="../assets/js/header.js" defer></script>
 
 </body>
 </html>

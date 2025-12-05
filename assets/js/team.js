@@ -8,7 +8,7 @@ let activeSubsystem = "All";
 /* Sample team data stays SAME as yours */
 const teamData = [
   {
-    name: "Rahul Sharma",
+    name: "Ranjit DSouza",
     role: "Project Manager (PM)",
     subsystem: "Leads",
     year: "2028",
@@ -16,7 +16,7 @@ const teamData = [
     social: { linkedin: "#", github: "#" }
   },
   {
-    name: "Priya Varma",
+    name: "Ranjit DSouza",
     role: "Chassis Subsystem Lead",
     subsystem: "Chassis",
     year: "2028",
@@ -25,7 +25,7 @@ const teamData = [
   },
   // ADDED AERO MEMBER FOR TESTING
   {
-    name: "Aditya Singh",
+    name: "Ranjit DSouza",
     role: "Aerodynamics Lead",
     subsystem: "Aerodynamics",
     year: "2028",
@@ -33,7 +33,7 @@ const teamData = [
     social: { linkedin: "#", github: "#" }
   },
   {
-    name: "Arjun Reddy",
+    name: "Ranjit DSouza",
     role: "Engine & Powertrain Specialist",
     subsystem: "Engine",
     year: "2027",
@@ -41,7 +41,7 @@ const teamData = [
     social: { linkedin: "#", github: "#" }
   },
   {
-    name: "Sneha Patel",
+    name: "Ranjit DSouza",
     role: "Electrical & Testing Lead",
     subsystem: "Electrical",
     year: "2028",
@@ -49,7 +49,7 @@ const teamData = [
     social: { linkedin: "#", github: "#" }
   },
   {
-    name: "Vikram S.",
+    name: "Ranjit DSouza",
     role: "Suspension Member",
     subsystem: "Suspension",
     year: "2028",
@@ -57,7 +57,7 @@ const teamData = [
     social: { linkedin: "#", github: null }
   },
   {
-    name: "Ashwa Member 5",
+    name: "Ranjit DSouza",
     role: "Finance Lead",
     subsystem: "Finance",
     year: "2028",
@@ -65,7 +65,7 @@ const teamData = [
     social: { linkedin: "#", github: null }
   },
   {
-    name: "Old Lead",
+    name: "Ranjit DSouza",
     role: "Project Manager (2027)",
     subsystem: "Leads",
     year: "2027",
@@ -74,7 +74,7 @@ const teamData = [
   }
 ];
 
-const PROFILE_IMAGE_URL = 'assets/images/prototypes/car-preview.png';
+const PROFILE_IMAGE_URL = 'assets/images/team/members/2028/image.jpeg';
 
 
 /* -------------------------------
