@@ -1,106 +1,58 @@
 # Ashwa Racing Website
 
-A modern, responsive website for Ashwa Racing team built with HTML, CSS, and JavaScript.
+A modern, responsive website for the Ashwa Racing team, presenting our projects, team, and sponsors with a cutting-edge design.
 
 ## Project Structure
 
+The project follows a standard web development structure with HTML files in the root and assets organized in dedicated folders.
+
 ```
 ashwa-racing-website/
-├── home/
-│   ├── index.html         # Home page
-│   ├── style.css          # Home page styles
-│   └── script.js          # Home page scripts
-├── about/
-│   ├── index.html         # About us page
-│   ├── style.css          # About page styles
-│   └── script.js          # About page scripts
-├── contact/
-│   ├── index.html         # Contact page
-│   ├── style.css          # Contact page styles
-│   └── script.js          # Contact page scripts
-├── sponsors/
-│   ├── index.html         # Sponsors page
-│   ├── style.css          # Sponsors page styles
-│   └── script.js          # Sponsors page scripts
-├── recruitment/
-│   ├── index.html         # Recruitment page
-│   ├── style.css          # Recruitment page styles
-│   └── script.js          # Recruitment page scripts
-├── announcements/
-│   ├── index.html         # Announcements page
-│   ├── style.css          # Announcements page styles
-│   └── script.js          # Announcements page scripts
-├── gallery/
-│   ├── index.html         # Gallery page
-│   ├── style.css          # Gallery page styles
-│   └── script.js          # Gallery page scripts
-├── team/
-│   ├── index.html         # Team page
-│   ├── style.css          # Team page styles
-│   └── script.js          # Team page scripts
-├── projects/
-│   ├── index.html         # Projects page
-│   ├── style.css          # Projects page styles
-│   └── script.js          # Projects page scripts
-├── images/                # Shared image assets folder
-└── README.md              # Project documentation
+├── index.html           # Home page
+├── projects.html        # Projects showcase and prototypes
+├── about.html           # Information about the team and mission
+├── contact.html         # Contact form and details
+├── team.html            # Team member profiles
+├── recruitment.html     # Recruitment and open positions
+├── sponsors.html        # Our partners and sponsors
+├── subsystems/          # Detailed pages for specific vehicle subsystems
+├── assets/
+│   ├── css/             # Global and page-specific stylesheets
+│   ├── js/              # JavaScript functionality
+│   ├── images/          # Image assets and icons
+│   └── fonts/           # Custom font files
+└── README.md            # Project documentation
 ```
 
-## Pages
+## Key Features
 
-- **Home** - Landing page with hero section and latest news
-- **About** - Information about the team, mission, and achievements
-- **Contact** - Contact form and team information
-- **Sponsors** - List of sponsors and partners
-- **Recruitment** - Job openings and team positions
-- **Announcements** - Latest news and updates
-- **Gallery** - Photo gallery of events and vehicles
-- **Team** - Team member profiles and roles
-- **Projects** - Current and past racing projects
-
-## Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- Responsive Design
-- Modern Web Standards
+- **Responsive Design:** Optimized for desktops, tablets, and mobile devices.
+- **Dynamic Content:** Interactive elements for project showcases and team filtration.
+- **Modern Aesthetics:** Features a bold, "Next Gen" visual style using custom fonts like Poppins and high-contrast themes.
+- **Subsystem Breakdown:** Detailed technical sections for chassis, aerodynamics, powertrain, and more.
 
 ## Getting Started
 
-1. Clone the repository
-2. Navigate to any page folder (e.g., `home/`) and open `index.html` in your web browser
-3. Start developing by editing the HTML, CSS, and JavaScript files in each respective folder
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   ```
+2. **Open the project:**
+   Navigate to the project folder and open `index.html` in your web browser. No complex build step is required for standard viewing.
 
-## Features
+## Technologies Used
 
-- Responsive design for all devices
-- Modern and clean UI
-- Interactive navigation
-- Contact form functionality
-- Image gallery
-- Team member profiles
-- Project showcase
+- **HTML5:** Semantic structure.
+- **CSS3:** Advanced styling with variables, flexbox, and grid.
+- **JavaScript:** Interactivity and DOM manipulation.
+- **FontAwesome:** Scalable vector icons.
 
-## Contributing
+## Content Requirements (Internal Notes)
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## Subsystem Requirements 
-
-1. Chassis : High-resolution images showing the chassis across all phases: Design, Procurement, Manufacturing, and Testing, A brief description of the Chassis  subsystem itself, Detailed text explaining the key functions/verticals: Chassis Design, Fixtures, MasterCAD, Simulation, and Bodyworks.
-2.  Drivetrain (DT) and Human Resources (HR) : Needs more elaborate content on the technical aspects, No specific content requirements from HR at this time.
-3.  Brakes and Logistics : Standard Brakes content required (rotor specs, caliper type, safety features, key facts), Mention Wilwood Brakes (key component supplier) on the Brakes Technical page, Uniflex sponsors brake hoses.
-4.  Electrical and Testing : Will update soon
-5. Suspension and Admin : Will update soon
-6. Engine : Will update soon
-
-
+- **Chassis:** Requires high-resolution images of design, manufacturing, and testing phases.
+- **Drivetrain:** Needs expanded technical content.
+- **Brakes:** Update with rotor specs and Wilwood partnership details.
 
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
