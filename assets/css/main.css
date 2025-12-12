@@ -1897,9 +1897,8 @@ body {
 /* =======================================
            CONTACT PAGE SPECIFIC STYLES
            ======================================= */
-body {
+.contact-body {
     background-color: #f8f9fa;
-    /* Light grey background for the whole page */
     font-family: 'Poppins', sans-serif;
 }
 
