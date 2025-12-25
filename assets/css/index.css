@@ -1,37 +1,19 @@
-/* RESET */
-html, body {
+
+* {
     margin: 0;
     padding: 0;
-    font-family: "Poppins", sans-serif;
-    background: #f2f2f7; /* M3 Neutral-98 surface */
-    color: #1c1b1f;      /* M3 Neutral-10 text */
-    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
 }
-
-/* UNIVERSAL SECTION LAYOUT (Material vertical rhythm = 64–96px) */
-section {
-    padding: clamp(64px, 8vw, 96px) 6%;
-}
-
-/* Section tonal variations — Material tonal palettes */
-section:nth-of-type(odd)   { background: #ffffff; } /* Surface-100 */
-section:nth-of-type(even)  { background: #f4f4f8; } /* Surface-95 */
-
-/* Smooth container alignment */
-.container {
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
 /* ---------------------------------------------------
-   HERO — MATERIAL 3 “Key Visual”
+   HERO — Material 3 Key Visual
 --------------------------------------------------- */
+
 .hero {
     position: relative;
     min-height: 92vh;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-start;
     background: #000;
     overflow: hidden;
 }
@@ -49,68 +31,73 @@ section:nth-of-type(even)  { background: #f4f4f8; } /* Surface-95 */
 .hero-overlay {
     position: relative;
     z-index: 2;
-    margin-bottom: 14vh;
     padding-left: 6%;
+    padding-bottom: 14vh;
 }
 
 .hero-title {
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
     font-weight: 700;
-    letter-spacing: -1px;
-    margin: 0;
     color: #fff;
+    letter-spacing: -0.5px;
+    margin: 0;
 }
 
 .hero-title span {
-    color: #e53935; /* Material Red-600 */
+    color: #e53935;
 }
 
 .hero-sub {
     margin-top: 8px;
-    font-size: 1.15rem;
-    color: #f2f2f2;
-    opacity: 0.9;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
 }
 
 .hero-tagline {
     margin-top: 10px;
-    font-size: 1.35rem;
-    color: #fff;
+    font-size: 1.3rem;
     font-weight: 300;
+    color: #fff;
 }
 
 .hero-tagline span {
-    color: #ff5b5b; /* Material Red-A200 accent */
+    color: #ff5252;
 }
 
-/* Material 3 Elevated Button */
 .hero-btn {
-    margin-top: 28px;
+    margin-top: 26px;
     display: inline-block;
-    padding: 14px 32px;
+    padding: 14px 30px;
+    background: #e53935;
+    color: #fff;
     border-radius: 14px;
     font-weight: 600;
-    background: #e53935; /* Primary */
-    color: #fff;
     text-decoration: none;
-    box-shadow: 0 3px 12px rgba(229, 57, 53, 0.35);
+    box-shadow: 0 4px 14px rgba(229,57,53,0.35);
     transition: 0.25s ease;
 }
 
 .hero-btn:hover {
     background: #d32f2f;
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 }
 
 /* ---------------------------------------------------
-   GENERAL FLEX (Material content block)
+   CONTENT SECTIONS (Who We Are, Our Cars)
 --------------------------------------------------- */
+
 .general-flex {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: clamp(40px, 6vw, 80px);
+    justify-content: space-between;
+    padding: clamp(60px, 9vw, 90px) 6%;
+    gap: clamp(40px, 6vw, 90px);
     flex-wrap: wrap;
+    background: #fff;
+}
+
+.general-flex:nth-of-type(even) {
+    background: white; /* soft Material surface */
 }
 
 .general-flex-content {
@@ -118,228 +105,131 @@ section:nth-of-type(even)  { background: #f4f4f8; } /* Surface-95 */
 }
 
 .general-flex-content h2 {
-    font-size: clamp(2.2rem, 4vw, 2.8rem);
-    font-weight: 700;
-    margin-bottom: 16px;
+    font-size: clamp(2.1rem, 4vw, 2.8rem);
+    margin-bottom: 14px;
 }
 
 .general-flex-content p {
-    color: #4a4a4a;
+    color: black;
     line-height: 1.65;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
-/* Material Filled Button */
 .btn {
     display: inline-block;
-    padding: 12px 26px;
+    padding: 12px 24px;
     border-radius: 12px;
     background: #e53935;
     color: #fff;
     font-weight: 600;
+    box-shadow: 0 3px 12px rgba(229,57,53,0.25);
     text-decoration: none;
     transition: 0.25s ease;
-    box-shadow: 0 3px 10px rgba(229,57,53,0.25);
 }
 
 .btn:hover {
-    background: #d32f2f;
-    transform: translateY(-2px);
-}
-
-.general-flex-image {
-    flex: 0 1 520px;
+    background: #c62828;
+    transform: translateY(-3px);
 }
 
 .general-flex-image img {
     width: 100%;
-    border-radius: 28px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.20);
-    object-fit: cover;
+    max-width: 520px;
+    border-radius: 24px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
 }
 
 /* ---------------------------------------------------
-   CARD GRID — M3 Elevated Cards
+   CARD SECTION — Engineering Focus
 --------------------------------------------------- */
-.card-section h2 {
+
+.card-section {
+    padding: clamp(60px, 9vw, 100px) 6%;
+    background: #0f0f0f;
     text-align: center;
-    font-size: clamp(2.2rem, 4vw, 2.8rem);
-    font-weight: 700;
+}
+
+.card-section h2 {
+    font-size: clamp(2.1rem, 4vw, 2.8rem);
+    margin-bottom: 20px;
+    color: white;
 }
 
 .card-grid {
-    margin-top: 48px;
+    margin-top: 36px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 24px;
 }
 
 .card {
-    background: #ffffff;
-    padding: 28px;
+    background:white;
+    padding: 26px;
     border-radius: 22px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    min-height: 160px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.10);
     transition: 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.15);
 }
 
 .card h3 {
-    margin: 0 0 12px;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    margin: 0 0 10px;
 }
 
 .card p {
-    margin: 0;
-    color: #444;
-    line-height: 1.6;
+    color: black;
+    line-height: 1.55;
 }
 
 /* ---------------------------------------------------
-   SPONSOR SECTION — Centered M3 content
+   MOBILE FIXES
 --------------------------------------------------- */
-.sponsor-highlight {
-    text-align: center;
-}
 
-.sponsor-highlight h2 {
-    font-size: clamp(2.2rem, 4vw, 2.8rem);
-    font-weight: 700;
+@media (min-width: 1200px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr); /* EXACTLY 3 cards */
+    }
 }
-
-.sponsor-highlight p {
-    max-width: 620px;
-    margin: 16px auto 24px;
-    color: #555;
-}
-
-/* =========================================
-   MOBILE FIXES — Material 3 Responsive
-   ========================================= */
 
 @media (max-width: 768px) {
 
-    /* Reduce global padding */
-    section {
-        padding: 40px 20px !important;
-    }
-
-    /* HERO */
-    .hero {
-        min-height: 80vh;
-        padding: 60px 20px;
+    .general-flex-content{
+        flex: auto;
     }
 
     .hero-overlay {
-        left: 0;
-        right: 0;
-        bottom: 10%;
-        padding: 0 20px;
+        padding-left: 0;
+        padding-bottom: 10vh;
         text-align: center;
+        width: 100%;
     }
 
-    .hero-title {
-        font-size: 2.2rem;
-    }
-
-    .hero-tagline {
-        font-size: 1rem;
-    }
-
-    .hero-btn {
-        padding: 12px 22px;
-        font-size: 0.9rem;
-        border-radius: 12px;
-    }
-
-
-    /* WHO WE ARE / OUR CARS section */
     .general-flex {
-        padding: 40px 20px !important;
         flex-direction: column;
-        gap: 20px;
         text-align: center;
     }
 
-    .general-flex-content {
-        max-width: 100%;
-    }
-
-    .general-flex-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .general-flex-image {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .general-flex-image img {
-        width: 100%;
-        max-width: 100%;
+    .general-flex-image img{
         border-radius: 18px;
-    }
-
-    /* ENGINEERING FOCUS — card grid */
-    .card-section {
-        padding: 60px 20px;
+        aspect-ratio: auto;
     }
 
     .card-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
-        padding: 0;
     }
 
     .card {
-        padding: 20px;
-        border-radius: 18px;
-    }
-
-
-    /* SPONSORS */
-    .sponsor-highlight {
-        padding: 50px 20px;
-        text-align: center;
-    }
-
-
-    /* Typography adjustments */
-    h2 {
-        font-size: 1.9rem !important;
-    }
-
-    p {
-        font-size: 0.95rem;
-        line-height: 1.55;
+        min-height: auto;
     }
 }
 
-/* =========================================
-   ULTRA-SMALL DEVICES (iPhone SE)
-   ========================================= */
 @media (max-width: 420px) {
     .hero-title {
-        font-size: 1.75rem;
-    }
-
-    .general-flex {
-        padding: 35px 16px !important;
-    }
-
-    section {
-        padding: 35px 16px !important;
-    }
-
-    .card {
-        padding: 18px;
-    }
-
-    h2 {
-        font-size: 1.65rem !important;
+        font-size: 1.9rem;
     }
 }
-

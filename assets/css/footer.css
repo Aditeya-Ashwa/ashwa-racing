@@ -1,188 +1,154 @@
-/* ================================
-   FOOTER (Black Theme)
-================================= */
+/* ============================
+   FOOTER — Material 3 Dark
+============================ */
 .footer {
-    background: #0d0d0d;
-    color: #ddd;
-    padding: 50px 40px;
-    text-align: center;
-    border-top: 4px solid #e60023;
-    font-family: 'Poppins', sans-serif;
+    border-top: 4px solid #e53935;
+    background: #0b0b0b;
+    color: #e6e6e6;
+    padding: 20px 0;
     width: 100%;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
 }
 
-/* ----- TOP LOGO + TITLE ----- */
-.footer-top {
-    width: 100%;
-    margin-bottom: 35px;
-    text-align: center;
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+}
+
+/* BRAND SECTION */
+.footer-brand {
+    max-width: 320px;
 }
 
 .footer-logo {
-    height: 70px;
+    width: 160px;
+    height: auto;
     object-fit: contain;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-.footer-top h2 {
-    margin: 5px 0 0 0;
+.footer-brand h2 {
+    margin: 0 0 6px 0;
     font-size: 26px;
     font-weight: 700;
-    color: white;
 }
 
-.footer-top p {
-    margin: 5px 0;
-    color: #bbb;
-    font-size: 15px;
-}
-
-/* ----- DESKTOP COLUMNS ----- */
-.footer-sections {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    text-align: left;
-}
-
-.footer-column {
-    min-width: 150px;
-}
-
-.footer-column h3 {
-    color: #fff;
-    font-size: 18px;
-    margin-bottom: 12px;
-    border-left: 3px solid #e60023;
-    padding-left: 10px;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-column ul li {
-    margin: 6px 0;
-    color: #ccc;
-}
-
-.footer-column ul li a {
-    color: #ccc;
-    text-decoration: none;
-    transition: 0.2s;
-    font-size: 15px;
-}
-
-.footer-column ul li a:hover {
-    color: #e60023;
-}
-
-/* ----- COPYRIGHT TEXT ----- */
-.footer-bottom {
-    position: relative;
-    padding-top: 25px;
-    color: #aaa;
+.footer-brand p {
+    margin: 4px 0;
+    opacity: 0.75;
     font-size: 14px;
-    text-align: center;
 }
 
-.footer-bottom::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: #e60023;
+/* NAV COLUMNS */
+.footer-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
 }
 
-.footer-bottom p {
-    margin: 5px 0;
+.footer-col h3 {
+    margin-bottom: 14px;
+    font-size: 17px;
+    font-weight: 600;
+
+    padding-left: 10px;
+    border-left: 3px solid #e53935;
 }
 
-/* ----------------------------------------------
-   MOBILE DROPDOWNS (Using <details> accordion)
------------------------------------------------ */
+.footer-col a {
+    display: block;
+    margin: 7px 0;
+    color: #cccccc;
+    text-decoration: none;
+    transition: 0.2s ease;
+    font-size: 15px;
+}
 
-/* Hide dropdowns on desktop */
-.footer-dropdown {
+.footer-col a:hover {
+    color: #e53935;
+}
+
+/* Social links group */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.footer-socials a {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.footer-socials a:hover {
+    color: #e53935;
+}
+
+/* MOBILE ACCORDIONS */
+.footer-mobile {
     display: none;
+    flex-direction: column;
+    gap: 14px;
 }
 
-/* MOBILE MODE */
-@media (max-width: 750px) {
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 900px) {
 
-    /* Hide desktop columns */
-    .footer-column {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-nav {
         display: none;
     }
 
-    /* Show mobile dropdowns */
-    .footer-dropdown {
-        display: block;
-        width: 100%;
-        text-align: left;
-        border-bottom: 1px solid #333;
-        padding: 10px 0;
-        color: white;
-        margin-bottom: 5px;
+    .footer-mobile {
+        display: flex;
     }
 
-    /* Dropdown Header */
-    .footer-dropdown summary {
-        cursor: pointer;
+    .footer-mobile details {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-mobile summary {
         font-size: 18px;
         font-weight: 600;
-        padding: 10px 5px;
-        color: white;
-        outline: none;
+        cursor: pointer;
         list-style: none;
+        color: #fff;
     }
 
-    /* Remove default arrow */
-    .footer-dropdown summary::-webkit-details-marker {
+    .footer-mobile summary::-webkit-details-marker {
         display: none;
     }
 
-    /* Custom arrow */
-    .footer-dropdown summary::after {
+    .footer-mobile summary::after {
         content: "▾";
         float: right;
-        font-size: 18px;
+        opacity: 0.7;
         transition: transform 0.2s ease;
     }
 
-    /* Arrow rotates on open */
-    .footer-dropdown[open] summary::after {
+    .footer-mobile details[open] summary::after {
         transform: rotate(180deg);
     }
 
-    /* Dropdown list */
-    .footer-dropdown ul {
-        padding-left: 15px;
-        margin-top: 10px;
-    }
-
-    .footer-dropdown ul li {
-        margin: 6px 0;
-    }
-
-    .footer-dropdown ul li a {
-        color: #ccc;
+    .footer-mobile a {
+        display: block;
+        margin: 8px 0;
+        color: #cccccc;
         text-decoration: none;
         font-size: 15px;
     }
-
-    .footer-dropdown ul li a:hover {
-        color: #e60023;
-    }
-}
-
-/* Prevent horizontal scroll */
-html, body {
-    overflow-x: hidden;
 }

@@ -1,0 +1,186 @@
+/* ============================================================
+   FULL-WIDTH ABOUT PAGE — MATERIAL 3 CLEAN REWORK
+============================================================ */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* prevent horizontal scroll without clipping header dropdowns */
+body {
+    overflow-x: clip; /* safer than hidden */
+}
+
+
+/* ---------------------------------------------
+   FULL-WIDTH SECTIONS (Edge-to-edge)
+--------------------------------------------- */
+.full-section {
+    width: 100%;
+    padding: clamp(60px, 7vw, 110px) clamp(6%, 8vw, 12%);
+}
+
+.full-section.full-bleed {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+
+.full-section.dark {
+    background: #0f0f0f;
+    color: white;
+}
+
+.full-section.light {
+    background: #ffffff;
+    color: #111;
+}
+
+/* ---------------------------------------------
+   SECTION CONTENT (Flex layout)
+--------------------------------------------- */
+.section-content {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(40px, 6vw, 90px);
+}
+
+.section-content.reverse {
+    flex-direction: row-reverse;
+}
+
+/* ---------------------------------------------
+   TEXT BLOCK
+--------------------------------------------- */
+.text-block {
+    flex: 1 1 480px;
+}
+
+.text-block h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.text-block p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    opacity: 0.9;
+}
+
+/* Dark section text override */
+.dark .text-block p {
+    color: #e2e2e2;
+}
+
+/* ---------------------------------------------
+   IMAGE BLOCK
+--------------------------------------------- */
+.image-block {
+    flex: 1 1 480px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-block img {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 22px;
+    object-fit: cover;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+}
+
+/* Stronger on dark background */
+.dark .image-block img {
+    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+}
+
+/* ---------------------------------------------
+   TESTIMONIALS
+--------------------------------------------- */
+.testimonial-section {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    background: #f5f5f7;
+    padding: clamp(70px, 7vw, 120px) clamp(6%, 8vw, 12%);
+    text-align: center;
+}
+
+.testimonial-section h2 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 32px;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    transition: 0.25s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+.testimonial-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 18px;
+}
+
+.testimonial-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.testimonial-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #444;
+}
+
+/* ---------------------------------------------
+   RESPONSIVE
+--------------------------------------------- */
+@media (max-width: 900px) {
+    .section-content,
+    .section-content.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-block img {
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 500px) {
+    .testimonial-photo {
+        width: 100px;
+        height: 100px;
+    }
+}

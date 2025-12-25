@@ -5,13 +5,15 @@
     width: 100%;
     font-family: "Poppins", sans-serif;
     color: #111;
+    padding: 0px 0px;
+    margin: auto;
 }
 
 /* ===========================
    HERO SECTION
 =========================== */
 .sponsor-hero {
-    padding: 100px 6%;
+    padding: 50px 0px 0px 0px;
     background: #ffffff; 
     text-align: left;
 }
@@ -48,7 +50,7 @@
 /* Category wrapper */
 .sponsor-section {
     position: relative;
-    padding: 80px 6%;
+    padding: 80px 0px;
 }
 
 /* full-width background */
