@@ -13,8 +13,8 @@
    HERO SECTION
 =========================== */
 .sponsor-hero {
-    padding: 50px 0px 0px 0px;
-    background: #ffffff; 
+    padding: 100px 6%;
+    background: #ffffff;
     text-align: left;
 }
 
@@ -103,9 +103,10 @@
     position: relative;
     background: #fff;
     padding: 24px;
-    border: 2px solid transparent;   /* neutral border */
+    border: 2px solid transparent;
+    /* neutral border */
     border-radius: 20px;
-    transition: 
+    transition:
         transform 0.35s ease,
         border-color 0.35s ease;
     display: flex;
@@ -128,12 +129,16 @@
 .sponsor-card::after {
     content: "";
     position: absolute;
-    inset: -3px;                        /* small offset around box */
-    border-radius: 22px;                /* matches card shape, circular feeling */
-    border: 2px solid #e63946;          /* thin red line */
+    inset: -3px;
+    /* small offset around box */
+    border-radius: 22px;
+    /* matches card shape, circular feeling */
+    border: 2px solid #e63946;
+    /* thin red line */
     opacity: 0;
-    transform: scale(0.9);              /* snug circle animation */
-    transition: 
+    transform: scale(0.9);
+    /* snug circle animation */
+    transition:
         opacity 0.35s ease,
         transform 0.35s ease;
     pointer-events: none;
@@ -141,7 +146,8 @@
 
 .sponsor-card:hover::after {
     opacity: 1;
-    transform: scale(1);                /* smooth reveal */
+    transform: scale(1);
+    /* smooth reveal */
 }
 
 /* Lift + clean hover */
