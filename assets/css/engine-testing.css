@@ -1,0 +1,395 @@
+/* ===============================
+   Engine Subsystem Page
+================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* =======================
+   BACKGROUND ELEMENTS
+======================= */
+#engine-hero-canvas,
+.floating-bits {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+#engine-hero-canvas {
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+}
+
+.floating-bits {
+  z-index: -1;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* =======================
+   HERO SECTION
+======================= */
+.engine-hero {
+  position: relative;
+  padding: 160px 60px 120px;
+  min-height: 80vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-size: 100px 100px;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  z-index: -1;
+}
+
+.engine-hero-content {
+  max-width: 1000px;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #e63946;
+  padding: 8px 16px;
+  border: 1px solid rgba(230, 57, 70, 0.3);
+  background: rgba(230, 57, 70, 0.05);
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.engine-hero h1 {
+  margin: 0;
+  font-size: clamp(48px, 8vw, 72px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  text-transform: capitalize;
+}
+
+.subtitle {
+  margin-top: 16px;
+  font-size: clamp(16px, 2vw, 20px);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 60px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 44px;
+  font-weight: 700;
+  color: #e63946;
+}
+
+.stat-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =======================
+   PAGE CONTENT
+======================= */
+.page-container {
+  max-width: 1400px;
+  padding: 80px 60px;
+  margin: 0 auto;
+  position: relative;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+section h2 {
+  margin-bottom: 40px;
+  font-size: clamp(36px, 5vw, 48px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-number {
+  color: #e63946;
+  min-width: 50px;
+}
+
+/* =======================
+   ABOUT SECTION
+======================= */
+.engine-about {
+  padding: 10px;
+  background: linear-gradient(135deg, rgba(230, 57, 70, 0.03), transparent);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+}
+
+.about-content {
+  max-width: 900px;
+}
+
+.lead-text {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.engine-about p {
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.engine-about strong {
+  color: #e63946;
+}
+
+/* =======================
+   DOMAINS
+======================= */
+.domains-grid {
+  display: grid;
+  gap: 24px;
+  /* Optimized grid to prevent cards looking too big. 
+     Uses auto-fill to pack them tighter if space allows. */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  margin-top: 40px;
+}
+
+.domain-card {
+  padding: 30px 28px;
+  /* Slightly reduced padding */
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.domain-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -100%;
+  background: linear-gradient(90deg, transparent, rgba(230, 57, 70, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.domain-card:hover::before {
+  left: 100%;
+}
+
+.domain-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(230, 57, 70, 0.4);
+  box-shadow: 0 20px 40px rgba(230, 57, 70, 0.1);
+}
+
+.card-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #e63946;
+  margin-bottom: 10px;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(230, 57, 70, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #e63946;
+  transition: 0.3s;
+}
+
+.domain-card:hover .card-icon {
+  background: rgba(230, 57, 70, 0.2);
+  transform: scale(1.1);
+}
+
+.domain-card h3 {
+  font-size: 22px;
+  margin: 0 0 12px 0;
+  color: #fff;
+}
+
+.domain-card p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  flex-grow: 1;
+  /* Pushes content to fill space evenly */
+}
+
+/* =======================
+   VISION & ROADMAP
+======================= */
+.vision-intro {
+  max-width: 900px;
+  padding: 24px;
+  border-left: 3px solid #e63946;
+  background: rgba(230, 57, 70, 0.05);
+  margin-bottom: 60px;
+}
+
+.roadmap-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.roadmap-card {
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.roadmap-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: #e63946;
+  transition: height 0.3s;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(230, 57, 70, 0.3);
+  box-shadow: 0 15px 35px rgba(230, 57, 70, 0.08);
+}
+
+.roadmap-card:hover::before {
+  height: 100%;
+}
+
+/* =======================
+   Gallery SECTION
+======================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 200px;
+  background: #222;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* =======================
+   RESPONSIVE ADJUSTMENTS
+======================= */
+@media (max-width: 1024px) {
+  .page-container {
+    padding: 60px 40px;
+  }
+
+  .engine-hero {
+    padding: 120px 40px 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 40px 20px;
+  }
+
+  .engine-hero {
+    padding: 80px 20px;
+  }
+
+  .engine-hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .domain-card {
+    padding: 28px 20px;
+  }
+
+  .vision-intro {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 20px;
+  }
+
+  .engine-hero {
+    padding: 60px 20px;
+  }
+
+  .engine-hero h1 {
+    font-size: 28px;
+  }
+
+  .domain-card {
+    padding: 20px;
+  }
+}
