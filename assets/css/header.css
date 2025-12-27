@@ -1,11 +1,11 @@
 /* Fonts */
 @font-face {
     font-family: 'Samarkan';
-    src: url('assets/fonts/SAMAN___.TTF') format('truetype');
+    src: url('/assets/fonts/SAMAN___.TTF') format('truetype');
 }
 @font-face {
     font-family: 'Xenotron';
-    src: url('assets/fonts/XENOTRON.TTF') format('truetype');
+    src: url('/assets/fonts/XENOTRON.TTF') format('truetype');
 }
 
 /* Header */

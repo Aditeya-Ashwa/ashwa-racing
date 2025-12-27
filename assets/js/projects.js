@@ -48,6 +48,60 @@ const projectData = {
         ]
       }
     }
+  },
+
+  hyb: {
+    title: "Next-Generation Electric Prototype",
+    years: {
+      2025: {
+        image: "assets/images/prototypes/ev_2025.jpg",
+        changes: `
+          • New accumulator architecture<br>
+          • In-house BMS v2
+        `,
+        desc: "Electric platform optimized for safety, efficiency, and energy density.",
+        achievements: [
+          "Passed accumulator inspection",
+          "Improved energy efficiency"
+        ]
+      }
+    }
+  },
+
+  dv: {
+    title: "Next-Generation Electric Prototype",
+    years: {
+      2025: {
+        image: "assets/images/prototypes/ev_2025.jpg",
+        changes: `
+          • New accumulator architecture<br>
+          • In-house BMS v2
+        `,
+        desc: "Electric platform optimized for safety, efficiency, and energy density.",
+        achievements: [
+          "Passed accumulator inspection",
+          "Improved energy efficiency"
+        ]
+      }
+    }
+  },
+
+  hyp: {
+    title: "Next-Generation Electric Prototype",
+    years: {
+      2025: {
+        image: "assets/images/prototypes/ev_2025.jpg",
+        changes: `
+          • New accumulator architecture<br>
+          • In-house BMS v2
+        `,
+        desc: "Electric platform optimized for safety, efficiency, and energy density.",
+        achievements: [
+          "Passed accumulator inspection",
+          "Improved energy efficiency"
+        ]
+      }
+    }
   }
   // hybrid, hyperloop, driverless follow same structure
 };
@@ -97,4 +151,4 @@ function selectYear(prototypeKey, year) {
 }
 
 // INIT ALL PROTOTYPES
-["cv", "ev", "hybrid", "hyperloop", "driverless"].forEach(initPrototype);
+["cv", "ev", "hyb", "hyp", "dv"].forEach(initPrototype);

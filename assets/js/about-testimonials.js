@@ -1,39 +1,9 @@
 const voices = [
   {
-    name: "Arun Raj",
-    role: "Founding Member (2003)",
+    name: "Alumni !",
+    role: "Designated Role",
     image: "/assets/images/team/members/2028/image.jpeg",
-    quote: "Ashwa was built on the belief that Indian students can engineer world-class race cars."
-  },
-  {
-    name: "Prof. R. S. Kulkarni",
-    role: "Faculty Advisor",
-    image: "/assets/images/team/members/2028/image.jpeg",
-    quote: "Ashwa Racing builds engineers who are industry-ready from day one."
-  },
-  {
-    name: "Alumni Engineer",
-    role: "Class of 2020",
-    image: "/assets/images/team/members/2028/image.jpeg",
-    quote: "The experience at Ashwa shaped my entire engineering career."
-  },
-  {
-    name: "Alumni Engineer",
-    role: "Class of 2018",
-    image: "/assets/images/team/members/2028/image.jpeg",
-    quote: "From CAD to fabrication, Ashwa gave me hands-on exposure unmatched elsewhere."
-  },
-  {
-    name: "Alumni Engineer",
-    role: "Class of 2015",
-    image: "/assets/images/team/members/2028/image.jpeg",
-    quote: "Ashwa taught me systems thinking and real engineering discipline."
-  },
-  {
-    name: "Alumni Engineer",
-    role: "Class of 2012",
-    image: "/assets/images/team/members/2028/image.jpeg",
-    quote: "Competing internationally was a defining experience of my student life."
+    quote: "Testimonials coming soon!"
   }
 ];
 

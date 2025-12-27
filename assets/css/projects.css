@@ -153,7 +153,7 @@ body {
 .projects-hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('assets/images/prototypes/Prototypesbanner.png'); /* change image */
+  background-image: url('/assets/images/prototypes/Prototypesbanner.png'); /* change image */
   background-size: cover;
   background-position: center;
   filter: brightness(30%);
