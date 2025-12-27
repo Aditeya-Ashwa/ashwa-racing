@@ -17,7 +17,7 @@ body {
 .recruit-hero-bg {
   position: absolute;
   inset: 0;
-  background: url('/assets/images/team/2021 hybrd.jpg') center / cover no-repeat;
+  background: url('assets/images/team/2021 hybrd.jpg') center / cover no-repeat;
   opacity: 0.9;
 }
 
