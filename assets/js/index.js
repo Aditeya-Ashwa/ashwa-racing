@@ -1,8 +1,8 @@
 const heroImages = [
-  "/assets/images/team/2021 hybrd.jpg",
-  "/assets/images/team/2025.jpg",
-  "/assets/images/team/Consulate.jpg",
-  "/assets/images/team/Hyperloop.jpg"
+  "assets/images/team/2021 hybrd.jpg",
+  "assets/images/team/2025.jpg",
+  "assets/images/team/Consulate.jpg",
+  "assets/images/team/Hyperloop.jpg"
 ];
 
 const heroBg = document.querySelector(".hero-bg");

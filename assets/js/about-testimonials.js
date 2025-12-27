@@ -2,7 +2,7 @@ const voices = [
   {
     name: "Alumni !",
     role: "Designated Role",
-    image: "/assets/images/team/members/2028/image.jpeg",
+    image: "assets/images/team/members/2028/image.jpeg",
     quote: "Testimonials coming soon!"
   }
 ];
