@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Ashwa Racing</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/ashwa white favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/ashwa white favicon.png" />
 
     <!-- CSS FILES -->
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/footer.css?v=2">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+
+    <link rel="stylesheet" href="/assets/css/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
@@ -19,30 +21,38 @@
     <!-- HEADER -->
     <header id="main-header"></header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <!-- Video or Image Background -->
-        <video autoplay muted loop class="hero-bg">
-            <source src="assets/videos/hero.mp4" type="video/mp4">
-        </video>
-        <!-- Optional fallback image -->
-        <!-- <div class="hero-bg" style="background-image: url('assets/images/hero_car.jpg')"></div> -->
+    <section class="hero-ti-real">
+        <!-- Background image -->
+        <div class="hero-bg"
+            style="background-image:url('/assets/images/team/2021\ hybrd.jpg')"></div>
 
-        <div class="hero-overlay">
-            <h1 class="hero-title animate-fade">Ashwa <span>Racing</span></h1>
-            <p class="hero-sub animate-slide">वेगः अस्मात् प्रवर्तते • Since 2003</p>
-            <p class="hero-tagline animate-fade">
-                Live it. Love it. <span>Race it.</span>
+        <!-- Left content panel -->
+        <div class="hero-panel">
+            <p class="hero-eyebrow">
+                Since 2003
             </p>
-            <div class="hero-buttons">
-                <a href="team.html" class="hero-btn animate-bounce">Explore the Team</a>
-            </div>
+
+            <h1 class="hero-title">
+                Ashwa <span>Racing</span>
+            </h1>
+
+            <p class="hero-desc">
+                From precision engineering to uncompromising speed,
+                Ashwa Racing continues to push limits on and off the track.
+            </p>
+
+            <a href="team.html" class="hero-btn-outline">
+                Explore the Team
+            </a>
         </div>
     </section>
 
-    <!-- ABOUT PREVIEW -->
-    <section class="general-flex">
-        <div class="general-flex-content">
+    <section class="about-preview-soft">
+        <div class="about-preview-image">
+            <img src="/assets/images/team/Costwin.jpg" alt="Ashwa Racing Team">
+        </div>
+
+        <div class="about-preview-text">
             <h2>Who We Are</h2>
             <p>
                 Ashwa Racing is a Formula Student combustion team from RV College of Engineering,
@@ -52,107 +62,78 @@
             </p>
             <a href="about.html" class="btn">Learn More</a>
         </div>
-
-        <div class="general-flex-image">
-            <img src="assets/images/team/2025_team_fb25.png" alt="Ashwa Racing Car">
-        </div>
     </section>
 
-    <!-- TECHNICAL CAPABILITIES -->
-    <section class="card-section">
-        <h2>Engineering Focus</h2>
+    <!-- ENGINEERING FOCUS -->
+    <section class="engineering-focus">
+        <div class="engineering-header">
+            <h2>Engineering Focus</h2>
+            <p>
+                Our team operates across multidisciplinary domains, combining engineering rigor,
+                operational excellence, and strategic coordination to deliver competitive race cars.
+            </p>
+        </div>
 
-        <div class="card-grid">
-
-            <div class="card">
+        <div class="engineering-grid">
+            <div class="focus-card">
                 <h3>Electrical & Testing</h3>
-                <p>
-                    Development and integration of electrical systems for EV and CV platforms,
-                    including testing, diagnostics, sensors, and vehicle validation.
-                </p>
+                <p>Electrical system development, diagnostics, sensor integration, and vehicle validation.</p>
             </div>
 
-            <div class="card">
+            <div class="focus-card">
                 <h3>Suspension & Administration</h3>
-                <p>
-                    Design of kinematics, geometry, and compliance systems alongside team
-                    administration, documentation, and operational coordination.
-                </p>
+                <p>Kinematics design, geometry optimization, documentation, and operational coordination.</p>
             </div>
 
-            <div class="card">
-                <h3>Chassis & Workshop Management</h3>
-                <p>
-                    Structural frame design, manufacturing supervision, and workshop
-                    resource management ensuring quality and safety in fabrication.
-                </p>
+            <div class="focus-card">
+                <h3>Chassis & Workshop</h3>
+                <p>Structural frame design, fabrication supervision, and workshop resource management.</p>
             </div>
 
-            <div class="card">
+            <div class="focus-card">
                 <h3>Aerodynamics</h3>
-                <p>
-                    End-to-end aerodynamic development including CFD-driven wing sets,
-                    cooling ducts, underbody flow, and drag–downforce optimization.
-                </p>
+                <p>CFD-driven aero development including wings, cooling ducts, and underbody flow.</p>
             </div>
 
-            <div class="card">
+            <div class="focus-card">
                 <h3>Brakes & Logistics</h3>
-                <p>
-                    Brake system modeling, calibration, and test planning combined with
-                    transport, inventory, and event logistics for competition readiness.
-                </p>
+                <p>Brake system modeling, testing, transport planning, and competition logistics.</p>
             </div>
 
-            <div class="card">
+            <div class="focus-card">
                 <h3>IT Systems</h3>
-                <p>
-                    Software tools, website development, telemetry processing, and
-                    digital automation supporting team operations and engineering.
-                </p>
+                <p>Telemetry processing, internal tools, automation, and digital infrastructure.</p>
             </div>
 
-            <div class="card">
+            <div class="focus-card">
                 <h3>Sponsorship & Marketing</h3>
-                <p>
-                    Corporate outreach, branding, social media management, and
-                    partner relations strengthening the team's industrial presence.
-                </p>
+                <p>Industry outreach, branding, media strategy, and partner relations.</p>
             </div>
 
-            <div class="card">
+            <div class="focus-card">
                 <h3>Finance</h3>
-                <p>
-                    Budgeting, procurement planning, cost optimization, and
-                    resource allocation ensuring efficient team operations.
-                </p>
+                <p>Budgeting, procurement planning, cost optimization, and financial governance.</p>
             </div>
 
-            <div>
-                <div class="card">
-                    <h3>Drivetrain & HR</h3>
-                    <p>
-                        Powertrain design, integration, and performance tuning alongside
-                        human resources management and team development.
-                    </p>
-                </div>
+            <div class="focus-card">
+                <h3>Drivetrain & HR</h3>
+                <p>Powertrain integration, performance tuning, and team development.</p>
             </div>
-
         </div>
     </section>
 
-    <section class="general-flex">
-        <div class="general-flex-content">
+    <section class="about-preview-soft">
+        <div class="about-preview-image">
+            <img src="/assets/images/prototypes/XX5C.jpg" alt="XX5C Prototype">
+        </div>
+
+        <div class="about-preview-text">
             <h2>Our Cars</h2>
             <p>
                 Every Ashwa generation represents engineering progression — pushing boundaries in
                 design, manufacturing, simulation, and on-track performance.
             </p>
-            <a href="projects.html" class="btn">View All Cars</a>
-        </div>
-        <div class="general-flex-image">
-            <img src="assets/images/prototypes/xx5c_fb25.png" alt="Ashwa Racing Car">
-        </div>
+            <a href="projects.html" class="btn">Learn More</a>
         </div>
     </section>
 
@@ -162,6 +143,7 @@
 
     <!-- JS FILES -->
     <script src="assets/js/header.js"></script>
+    <script src="assets/js/index.js"></script>
 
 </body>
 

@@ -1,165 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Ashwa Racing</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/ashwa white favicon.png" />
 
-    <!-- CSS FILES -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" href="assets/images/ashwa white favicon.png">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/projects.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header id="main-header"></header>
+<header id="main-header"></header>
 
-    <!-- Background Elements -->
-    <div class="bg-shape shape-1"></div>
-    <div class="bg-shape shape-2"></div>
-    <div class="bg-shape shape-3"></div>
+<!-- HERO -->
+<section class="projects-hero">
+    <div class="projects-hero-bg"></div>
 
-    <!-- Hero Section -->
-    <section class="projects-hero">
-        <div class="hero-container">
-            <div class="hero-text">
-                <span class="hero-subtitle">Innovation in Motion</span>
-                <h1 class="hero-title">NEXT GEN<br><span>PROTOTYPES</span></h1>
-                <p class="hero-desc">
-                    Pushing the boundaries of speed and efficiency. Explore the cutting-edge machines designed, built,
-                    and raced by Ashwa Racing.
-                </p>
-                <div class="btn-group">
-                    <a href="#current" class="btn-main">Latest Projects</a>
-                    <a href="#past" class="btn-outline">Archive</a>
-                </div>
-            </div>
-            <div class="hero-image-wrapper">
-                <div class="hero-circle"></div>
-                <!-- Using a placeholder car image -->
-                <img src="assets/images/prototypes/xx5x_fb25_bg_remover.png" alt="Futuristic Race Car" class="hero-img">
-            </div>
+    <div class="projects-hero-content">
+        <p class="hero-eyebrow">Engineering Portfolio</p>
+        <h1 class="hero-title">Our <span>Projects</span></h1>
+        <p class="hero-desc">
+            Across combustion, electric, hybrid, and autonomous systems,
+            Ashwa Racing engineers high-performance prototypes built for competition.
+        </p>
+    </div>
+</section>
+
+
+<!-- ===== PROTOTYPE SECTIONS ===== -->
+
+<section class="prototype-section">
+
+    <!-- CV -->
+    <section class="prototype-block" data-prototype="cv">
+        <div class="prototype-image">
+            <img id="cv-image" src="" alt="Combustion Vehicle">
+        </div>
+
+        <div class="prototype-content">
+            <span class="prototype-tag">Combustion Vehicle (CV)</span>
+            <h2 id="cv-title"></h2>
+
+            <!-- YEAR SELECTOR -->
+            <div class="year-selector" id="cv-years"></div>
+
+            <p class="prototype-changes" id="cv-changes"></p>
+
+            <p class="prototype-desc" id="cv-desc"></p>
+
+            <ul class="prototype-achievements" id="cv-achievements"></ul>
         </div>
     </section>
 
-    <!-- Current Projects Grid -->
-    <div class="section-header" id="current">
-        <h2>Current Focus</h2>
-    </div>
-
-    <div class="projects-grid">
-        <!-- Card 1 -->
-        <div class="project-card">
-            <div class="card-img-wrapper">
-                <img src="assets/images/prototypes/xx5x_fb25_bg_remover.png" alt="Powertrain" class="card-img">
-            </div>
-            <span class="card-category">R&D 2025</span>
-            <h3 class="card-title">Powertrain Optimization</h3>
-            <p class="card-desc">Advanced dyno tuning and custom intake manifolds to extract maximum efficiency from our
-                CBR600RR engine.</p>
-            <a href="#" class="card-btn">Learn More</a>
+    <!-- EV -->
+    <section class="prototype-block" data-prototype="ev">
+        <div class="prototype-image">
+            <img id="ev-image" src="" alt="Electric Vehicle">
         </div>
 
-        <!-- Card 2 -->
-        <div class="project-card">
-            <div class="card-img-wrapper">
-                <img src="assets/images/prototypes/xx5x_fb25_bg_remover.png" alt="Aero" class="card-img">
-            </div>
-            <span class="card-category">Aerodynamics</span>
-            <h3 class="card-title">Aero Package Redesign</h3>
-            <p class="card-desc">Complete overhaul of the front and rear wing elements using CFD to increase downforce
-                by 25%.</p>
-            <a href="#" class="card-btn">View Simulations</a>
+        <div class="prototype-content">
+            <span class="prototype-tag">Electric Vehicle (EV)</span>
+            <h2 id="ev-title"></h2>
+
+            <!-- YEAR SELECTOR -->
+            <div class="year-selector" id="ev-years"></div>
+
+            <p class="prototype-changes" id="ev-changes"></p>
+
+            <p class="prototype-desc" id="ev-desc"></p>
+
+            <ul class="prototype-achievements" id="ev-achievements"></ul>
+        </div>
+    </section>
+
+    <!-- HYBRID -->
+    <section class="prototype-block" data-prototype="hybrid">
+        <div class="prototype-image">
+            <img id="hybrid-image" src="" alt="Hybrid Vehicle">
         </div>
 
-        <!-- Card 3 -->
-        <div class="project-card">
-            <div class="card-img-wrapper">
-                <img src="assets/images/prototypes/xx5x_fb25_bg_remover.png" alt="Telemetry" class="card-img">
-            </div>
-            <span class="card-category">Electronics</span>
-            <h3 class="card-title">Live Telemetry</h3>
-            <p class="card-desc">Implementing a new long-range data acquisition system for real-time vehicle health
-                monitoring.</p>
-            <a href="#" class="card-btn">System Specs</a>
+        <div class="prototype-content">
+            <span class="prototype-tag">Hybrid Vehicle (HYB)</span>
+            <h2 id="hybrid-title"></h2>
+
+            <!-- YEAR SELECTOR -->
+            <div class="year-selector" id="hybrid-years"></div>
+
+            <p class="prototype-changes" id="hybrid-changes"></p>
+
+            <p class="prototype-desc" id="hybrid-desc"></p>
+
+            <ul class="prototype-achievements" id="hybrid-achievements"></ul>
+        </div>
+    </section>
+
+    <!-- HYPERLOOP -->
+    <section class="prototype-block" data-prototype="hyperloop">
+        <div class="prototype-image">
+            <img id="hyperloop-image" src="" alt="Hyperloop Vehicle">
         </div>
 
-        <!-- Card 4 -->
-        <div class="project-card">
-            <div class="card-img-wrapper">
-                <img src="assets/images/prototypes/xx5x_fb25_bg_remover.png" alt="Battery" class="card-img">
-            </div>
-            <span class="card-category">Hybrid Systems</span>
-            <h3 class="card-title">BMS Upgrade</h3>
-            <p class="card-desc">Designing a custom Battery Management System for our hybrid accumulator to ensure
-                safety and longevity.</p>
-            <a href="#" class="card-btn">Tech details</a>
-        </div>
-    </div>
+        <div class="prototype-content">
+            <span class="prototype-tag">Hyperloop(HYL)</span>
+            <h2 id="hyperloop-title"></h2>
 
-    <!-- Featured / Past Project Highlight -->
-    <div class="featured-row" id="past">
-        <div class="featured-content">
-            <span
-                style="color: var(--theme-primary); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 700; display:block; margin-bottom:10px;">Hall
-                of Fame</span>
-            <h2 style="font-size: 2.8rem; margin: 0 0 20px; line-height: 1;">RZ-X6 Hybrid</h2>
-            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #ccc;">
-                The car that defined our legacy. Featuring our first successful integration of a parallel hybrid system,
-                the RZ-X6 secured multiple podiums and set the benchmark for future iterations.
-            </p>
-            <a href="#"
-                style="padding: 12px 35px; background: #fff; color: #000; text-decoration: none; border-radius: 30px; font-weight: 700; transition:0.3s;">View
-                Specs</a>
-        </div>
-        <div class="featured-image">
-            <img src="assets/images/prototypes/xx5x_fb25_bg_remover.png" alt="RZ-X6 Car">
-        </div>
-    </div>
+            <!-- YEAR SELECTOR -->
+            <div class="year-selector" id="hyperloop-years"></div>
 
-    <!-- Past Projects List -->
-    <div class="section-header">
-        <h2>Project Archive</h2>
-    </div>
+            <p class="prototype-changes" id="hyperloop-changes"></p>
 
-    <div class="projects-grid">
-        <!-- Card 5 -->
-        <div class="archive-card">
-            <span class="archive-year">2024</span>
-            <span class="card-category" style="margin-top:20px;">Powertrain</span>
-            <h3 class="card-title" style="margin-top:10px;">Hybrid Integration</h3>
-            <p class="card-desc">Successful coupling of electric motor with combustion engine for seamless power
-                delivery.</p>
+            <p class="prototype-desc" id="hyperloop-desc"></p>
+
+            <ul class="prototype-achievements" id="hyperloop-achievements"></ul>
+        </div>
+    </section>
+
+    <!-- DRIVERLESS -->
+    <section class="prototype-block" data-prototype="driverless">
+        <div class="prototype-image">
+            <img id="driverless-image" src="" alt="Driverless Vehicle">
         </div>
 
-        <!-- Card 6 -->
-        <div class="archive-card">
-            <span class="archive-year">2023</span>
-            <span class="card-category" style="margin-top:20px;">Structure</span>
-            <h3 class="card-title" style="margin-top:10px;">Lightweight Chassis</h3>
-            <p class="card-desc">Switching to 4130 Chromoly steel spaceframe to reduce weight by 12kg while maintaining
-                stiffness.</p>
+        <div class="prototype-content">
+            <span class="prototype-tag">Driverless Vehicle (DRV)</span>
+            <h2 id="driverless-title"></h2>
+
+            <!-- YEAR SELECTOR -->
+            <div class="year-selector" id="driverless-years"></div>
+
+            <p class="prototype-changes" id="driverless-changes"></p>
+
+            <p class="prototype-desc" id="driverless-desc"></p>
+
+            <ul class="prototype-achievements" id="driverless-achievements"></ul>
         </div>
+    </section>
 
-        <!-- Card 7 -->
-        <div class="archive-card">
-            <span class="archive-year">2022</span>
-            <span class="card-category" style="margin-top:20px;">Dynamics</span>
-            <h3 class="card-title" style="margin-top:10px;">Suspension Overhaul</h3>
-            <p class="card-desc">Redesigning suspension geometry for better tire contact patch and cornering speeds.</p>
-        </div>
-    </div>
+</section>
 
-    <footer id="main-footer"></footer>
+<footer id="main-footer"></footer>
 
-    <script src="assets/js/header.js"></script>
+<script src="assets/js/header.js"></script>
+<script src="assets/js/projects.js"></script>
 
 </body>
-
 </html>

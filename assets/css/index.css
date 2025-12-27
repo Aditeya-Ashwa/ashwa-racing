@@ -1,235 +1,369 @@
+/* ===== BASE ===== */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
 }
-/* ---------------------------------------------------
-   HERO — Material 3 Key Visual
---------------------------------------------------- */
 
-.hero {
-    position: relative;
-    min-height: 92vh;
-    display: flex;
-    align-items: flex-end;
-    background: #000;
-    overflow: hidden;
+body {
+  overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+
+.hero-ti-real {
+  position: relative;
+  height: 70vh;
+  background: #000;
+  overflow: hidden;
 }
 
 .hero-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(55%);
-    z-index: 0;
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.2s ease, transform 6s ease;
 }
 
-.hero-overlay {
-    position: relative;
-    z-index: 2;
-    padding-left: 6%;
-    padding-bottom: 14vh;
+.hero-bg.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-panel {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 45%;
+  min-width: 400px;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.92),
+    rgba(0,0,0,0.85) 60%,
+    rgba(0,0,0,0.5) 80%,
+    rgba(0,0,0,0)
+  );
+}
+
+.hero-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 8px;
 }
 
 .hero-title {
-    font-size: clamp(2.6rem, 6vw, 4.5rem);
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: -0.5px;
-    margin: 0;
+  font-size: clamp(1.5rem, 2vw, 1.75rem);
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 
 .hero-title span {
-    color: #e53935;
+  color: #e53935;
 }
 
-.hero-sub {
-    margin-top: 8px;
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.9);
+.hero-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.8);
+  max-width: 450px;
+  margin-bottom: 20px;
 }
 
-.hero-tagline {
-    margin-top: 10px;
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: #fff;
+.hero-btn-outline {
+  padding: 9px 22px;
+  border: 1px solid #fff;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.25s;
 }
 
-.hero-tagline span {
-    color: #ff5252;
+.hero-btn-outline:hover {
+  background: #fff;
+  color: #000;
 }
 
-.hero-btn {
-    margin-top: 26px;
-    display: inline-block;
-    padding: 14px 30px;
-    background: #e53935;
-    color: #fff;
-    border-radius: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(229,57,53,0.35);
-    transition: 0.25s ease;
-}
-
-.hero-btn:hover {
-    background: #d32f2f;
-    transform: translateY(-4px);
-}
-
-/* ---------------------------------------------------
-   CONTENT SECTIONS (Who We Are, Our Cars)
---------------------------------------------------- */
+/* ===== GENERAL FLEX SECTIONS ===== */
 
 .general-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: clamp(60px, 9vw, 90px) 6%;
-    gap: clamp(40px, 6vw, 90px);
-    flex-wrap: wrap;
-    background: #fff;
+  display: flex;
+  gap: clamp(25px, 3.5vw, 45px);
+  padding: clamp(40px, 4.5vw, 55px) 5%;
+  align-items: center;
 }
 
 .general-flex:nth-of-type(even) {
-    background: white; /* soft Material surface */
+  background: #f8f8f8;
+  flex-direction: row-reverse;
 }
 
 .general-flex-content {
-    flex: 1 1 460px;
+  flex: 1;
+  max-width: 580px;
 }
 
 .general-flex-content h2 {
-    font-size: clamp(2.1rem, 4vw, 2.8rem);
-    margin-bottom: 14px;
+  font-size: clamp(1.5rem, 2.6vw, 1.85rem);
+  margin-bottom: 10px;
 }
 
 .general-flex-content p {
-    color: black;
-    line-height: 1.65;
-    margin-bottom: 20px;
+  font-size: clamp(0.85rem, 1.4vw, 0.94rem);
+  line-height: 1.55;
+  margin-bottom: 16px;
+  color: #444;
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 12px;
-    background: #e53935;
-    color: #fff;
-    font-weight: 600;
-    box-shadow: 0 3px 12px rgba(229,57,53,0.25);
-    text-decoration: none;
-    transition: 0.25s ease;
+  padding: 9px 22px;
+  border: 1px solid #000;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: 0.25s;
+  color:#000
 }
 
 .btn:hover {
-    background: #c62828;
-    transform: translateY(-3px);
+  background: #000;
+  color: #fff;
+}
+
+.general-flex-image {
+  flex: 1;
+  max-width: 520px;
 }
 
 .general-flex-image img {
-    width: 100%;
-    max-width: 520px;
-    border-radius: 24px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  width: 100%;
+  border-radius: 0px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
 }
 
-/* ---------------------------------------------------
-   CARD SECTION — Engineering Focus
---------------------------------------------------- */
+/* ===== CARD SECTION ===== */
 
 .card-section {
-    padding: clamp(60px, 9vw, 100px) 6%;
-    background: #0f0f0f;
-    text-align: center;
+  background: #0f0f0f;
+  padding: clamp(40px, 4.5vw, 60px) 5%;
+  text-align: center;
 }
 
 .card-section h2 {
-    font-size: clamp(2.1rem, 4vw, 2.8rem);
-    margin-bottom: 20px;
-    color: white;
+  color: #fff;
+  margin-bottom: 12px;
 }
 
 .card-grid {
-    margin-top: 36px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1350px;
+  margin: 26px auto 0;
 }
 
 .card {
-    background:white;
-    padding: 26px;
-    border-radius: 22px;
-    min-height: 160px;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.10);
-    transition: 0.25s ease;
+  background: #fff;
+  padding: 24px;
+  border-radius: 18px;
+  text-align: left;
+  transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 36px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
 }
 
 .card h3 {
-    font-size: 1.25rem;
-    margin: 0 0 10px;
+  margin-bottom: 10px;
 }
 
 .card p {
-    color: black;
-    line-height: 1.55;
+  font-size: 0.87rem;
+  line-height: 1.55;
+  color: #555;
 }
 
-/* ---------------------------------------------------
-   MOBILE FIXES
---------------------------------------------------- */
+/* ===== ABOUT PREVIEW ===== */
 
-@media (min-width: 1200px) {
-    .card-grid {
-        grid-template-columns: repeat(3, 1fr); /* EXACTLY 3 cards */
-    }
+.about-preview-soft {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  padding: 80px 6%;
+  align-items: center;
+}
+
+.about-preview-image img {
+  width: 100%;
+  border-radius: 0px;
+}
+
+.about-preview-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+}
+
+.about-preview-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ===== ENGINEERING FOCUS ===== */
+
+.engineering-focus {
+  background: #b60002;
+  padding: 100px 6%;
+  color: #fff;
+}
+
+.engineering-header {
+  max-width: 720px;
+  margin-bottom: 56px;
+}
+
+.engineering-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.focus-card {
+  background: #b60002;
+  border: 2px solid #fff; /* simplest & recommended */
+  color: #fff;
+  padding: 28px;
+  border-radius: 0px;
+  transition: 0.25s;
+}
+
+.focus-card:hover {
+  background: #fff;
+  color: #b60002;
+  transform: translateY(-6px);
+}
+
+/* ===== VOICES (ENGINEERING STYLE) ===== */
+
+.voices-focus {
+  overflow: hidden;
+}
+
+/* cards behave exactly like focus cards */
+.voices-grid {
+  position: relative;
+}
+
+/* testimonial cards reuse focus-card */
+.voice-card {
+  background: #b60002;
+  border: 2px solid #fff;
+  padding: 28px;
+  border-radius: 0;
+  color: #fff;
+  display: none;
+}
+
+.voice-card:hover {
+  background: #fff;
+  color: #b60002;
+  transform: translateY(-6px);
+}
+
+.voice-card.active {
+  display: block;
+}
+
+/* content */
+.voice-quote {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.voice-meta {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.voice-meta span {
+  font-weight: 600;
+}
+
+/* grid behavior remains same */
+@media (max-width: 1100px) {
+  .voices-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .voices-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1100px) {
+  .card-grid,
+  .engineering-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
 
-    .general-flex-content{
-        flex: auto;
-    }
+  .hero-ti-real {
+    height: 60vh;
+  }
 
-    .hero-overlay {
-        padding-left: 0;
-        padding-bottom: 10vh;
-        text-align: center;
-        width: 100%;
-    }
+  .hero-panel {
+    width: 100%;
+    min-width: unset;
+    background: rgba(0,0,0,0.88);
+  }
 
-    .general-flex {
-        flex-direction: column;
-        text-align: center;
-    }
+  .general-flex {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .general-flex-image img{
-        border-radius: 18px;
-        aspect-ratio: auto;
-    }
+  .general-flex-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 16px;
+  }
 
-    .card-grid {
-        grid-template-columns: 1fr;
-    }
+  .general-flex-image img {
+    height: 100%;
+    object-fit: cover;
+  }
 
-    .card {
-        min-height: auto;
-    }
+  .card-grid,
+  .engineering-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-preview-soft {
+    grid-template-columns: 1fr;
+    padding: 56px 20px;
+  }
 }
 
-@media (max-width: 420px) {
-    .hero-title {
-        font-size: 1.9rem;
-    }
+@media (max-width: 480px) {
+  .hero-ti-real {
+    height: 55vh;
+  }
 }

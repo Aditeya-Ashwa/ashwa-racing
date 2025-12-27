@@ -1,11 +1,11 @@
 /* ==========================================================
-       COMPLETE FULLY FIXED SCROLLING & FILTERING LOGIC
-       ========================================================== */
+   TEAM PAGE - COMPLETE FILTERING & SCROLLING LOGIC
+   ========================================================== */
 
 let activeYear = "2028";
 let activeSubsystem = "All";
 
-/* Sample team data stays SAME as yours */
+/* Sample team data */
 const teamData = [
   {
     name: "Ranjit DSouza",
@@ -23,7 +23,6 @@ const teamData = [
     experience: "Designed lightweight steel space-frame chassis and managed fabrication, achieving a 15% weight reduction over the previous prototype.",
     social: { linkedin: "#", github: null }
   },
-  // ADDED AERO MEMBER FOR TESTING
   {
     name: "Ranjit DSouza",
     role: "Aerodynamics Lead",
@@ -89,24 +88,26 @@ function createMemberCard(member) {
     : "";
 
   card.innerHTML = `
-            <div class="profile-header">
-                <div class="profile-img-container">
-                    <img src="${PROFILE_IMAGE_URL}" alt="${member.name}">
-                </div>
-                <h3 class="member-name">${member.name}</h3>
-                <p class="member-role">${member.role}</p>
-            </div>
+    <div class="profile-header">
+      <div class="profile-img-container">
+        <img src="${PROFILE_IMAGE_URL}" alt="${member.name}">
+      </div>
+      <h3 class="member-name">${member.name}</h3>
+      <p class="member-role">${member.role}</p>
+    </div>
 
-            <div class="member-experience">
-                <h3>Contribution</h3>
-                <p>${member.experience}</p>
-            </div>
+    <div class="member-experience">
+      <h3>Contribution</h3>
+      <p>${member.experience}</p>
+    </div>
 
-            <div class="member-social">
-                <a href="${member.social.linkedin}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                ${githubLink}
-            </div>
-        `;
+    <div class="member-social">
+      <a href="${member.social.linkedin}" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      ${githubLink}
+    </div>
+  `;
 
   return card;
 }
@@ -118,7 +119,7 @@ function createMemberCard(member) {
 function renderMembers(year, subsystem) {
   const grid = document.getElementById("member-profiles-grid");
 
-  // Add a fade out effect before changing content (optional polish)
+  // Fade out effect
   grid.style.opacity = '0';
 
   setTimeout(() => {
@@ -131,73 +132,68 @@ function renderMembers(year, subsystem) {
 
     if (results.length === 0) {
       grid.innerHTML = `
-                    <div class="no-members">
-                        <i class="fas fa-users-slash" style="font-size: 3rem; margin-bottom: 20px; display: block;"></i>
-                        <p style="font-size: 1.2rem;">No team members found for <strong>${subsystem}</strong> in <strong>${year}</strong>.</p>
-                    </div>`;
+        <div class="no-members">
+          <i class="fas fa-users-slash" style="font-size: 3rem; margin-bottom: 20px; display: block;"></i>
+          <p style="font-size: 1.2rem;">No team members found for <strong>${subsystem}</strong> in <strong>${year}</strong>.</p>
+        </div>`;
     } else {
       results.forEach(m => grid.appendChild(createMemberCard(m)));
     }
 
     // Fade in
     grid.style.opacity = '1';
-    // Reset animation
-    grid.style.animation = 'none';
-    grid.offsetHeight; /* trigger reflow */
-    grid.style.animation = 'fadeIn 0.5s ease-in-out';
-
-  }, 150); // Short delay for transition
+  }, 150);
 }
 
 
 /* -------------------------------
-   Fix: Include spacers using `.children`
+   Get Filter Items (includes spacers)
 -------------------------------- */
 const yearFilter = document.getElementById("year-filter");
-const subsystemFilter = document.getElementById("subsystem-filter-wrapper");
+const subsystemFilter = document.getElementById("subsystem-filter");
 
-const yearItems = yearFilter.children;       // ✔ includes spacers
+const yearItems = yearFilter.children;
 const subsystemItems = subsystemFilter.children;
 
 
 /* -------------------------------
-   Scrolling Logic (Fixed)
+   Scrolling Logic
 -------------------------------- */
 function scrollStep(direction, wrapper, items) {
   let activeIndex = -1;
 
+  // Find the currently active button
   for (let i = 0; i < items.length; i++) {
     const btn = items[i].querySelector(".filter-btn");
-    if (btn && btn.classList.contains("active")) activeIndex = i;
+    if (btn && btn.classList.contains("active")) {
+      activeIndex = i;
+      break;
+    }
   }
 
-  // If no active button found (e.g., initial load), default to index 1 (first real item)
+  // Default to first real item if none active
   if (activeIndex === -1) activeIndex = 1;
 
   let targetIndex = activeIndex + direction;
 
-  // boundaries: skip spacers at 0 and last index
+  // Clamp to valid range (skip spacers at start and end)
   const last = items.length - 1;
-
-  // If we try to go to index 0 (spacer), clamp to 1
   if (targetIndex <= 0) targetIndex = 1;
-
-  // If we try to go to last index (spacer), clamp to last-1
   if (targetIndex >= last) targetIndex = last - 1;
 
   const target = items[targetIndex];
 
-  // center scroll
+  // Center scroll
   const x = target.offsetLeft - wrapper.clientWidth / 2 + target.clientWidth / 2;
   wrapper.scroll({ left: x, behavior: "smooth" });
 
-  // activate button
+  // Activate button
   target.querySelector(".filter-btn")?.click();
 }
 
 
 /* -------------------------------
-   Attach Event Listeners
+   Attach Arrow Button Listeners
 -------------------------------- */
 document.getElementById("year-left").onclick = () =>
   scrollStep(-1, yearFilter, yearItems);
@@ -212,60 +208,66 @@ document.getElementById("subsystem-right").onclick = () =>
   scrollStep(1, subsystemFilter, subsystemItems);
 
 
-/* Wheel scroll */
+/* -------------------------------
+   Wheel Scroll Support
+-------------------------------- */
 yearFilter.addEventListener("wheel", e => {
   e.preventDefault();
   scrollStep(e.deltaY > 0 ? 1 : -1, yearFilter, yearItems);
 });
+
 subsystemFilter.addEventListener("wheel", e => {
   e.preventDefault();
   scrollStep(e.deltaY > 0 ? 1 : -1, subsystemFilter, subsystemItems);
 });
 
 
-/* Click activate & Update Description */
+/* -------------------------------
+   Click Activation & Description Update
+-------------------------------- */
 document.querySelectorAll(".filter-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const item = btn.closest(".year-item");
 
-    const wrapper =
-      item.parentElement.id === "year-filter"
-        ? yearFilter
-        : subsystemFilter;
-
+    const wrapper = item.parentElement;
     const type = wrapper.id === "year-filter" ? "year" : "subsystem";
-
     const val = item.dataset[type];
 
-    // Update Description if it's a subsystem click
+    // Update subsystem description
     if (type === 'subsystem') {
-      const desc = item.dataset.desc;
+      const desc = item.dataset.desc || "Members of Ashwa Racing.";
       const descBox = document.getElementById('subsystem-desc');
-      descBox.style.opacity = 0;
+      descBox.style.opacity = '0';
+      
       setTimeout(() => {
-        descBox.textContent = desc || "Members of Ashwa Racing.";
-        descBox.style.opacity = 1;
-      }, 200);
+        descBox.textContent = desc;
+        descBox.style.opacity = '1';
+      }, 150);
     }
 
-    // deactivate siblings
+    // Deactivate all siblings
     wrapper.querySelectorAll(".filter-btn").forEach(x =>
       x.classList.remove("active")
     );
     btn.classList.add("active");
 
+    // Update active state
     if (type === "year") {
       activeYear = val;
+    } else {
+      activeSubsystem = val;
     }
-    else activeSubsystem = val;
 
     renderMembers(activeYear, activeSubsystem);
   });
 });
 
 
-/* Back to Top Logic */
+/* -------------------------------
+   Back to Top Button
+-------------------------------- */
 const backToTopBtn = document.getElementById("back-to-top");
+
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
     backToTopBtn.style.display = "flex";
@@ -275,28 +277,33 @@ window.addEventListener("scroll", () => {
 });
 
 backToTopBtn.addEventListener("click", () => {
-  document.getElementById('filters-start').scrollIntoView({
-    behavior: 'smooth'
-  });
+  const filtersSection = document.getElementById('filters-start');
+  if (filtersSection) {
+    filtersSection.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 });
 
 
-/* Initial render */
+/* -------------------------------
+   Initial Load
+-------------------------------- */
 window.onload = () => {
-  // Trigger initial render without delay to show something immediately
+  // Initial render
   renderMembers(activeYear, activeSubsystem);
 
-  // Then perform the centering scroll
+  // Center filters after a short delay
   setTimeout(() => {
-    // Center Year Filter initially
-    const initialYearItem = yearItems[1]; // 2028
+    // Center Year Filter
+    const initialYearItem = yearItems[1]; // First real item (2028)
     if (initialYearItem) {
       const x = initialYearItem.offsetLeft - yearFilter.clientWidth / 2 + initialYearItem.clientWidth / 2;
       yearFilter.scrollLeft = x;
     }
 
-    // Center Subsystem Filter initially
-    const initialSubItem = subsystemItems[1]; // All
+    // Center Subsystem Filter
+    const initialSubItem = subsystemItems[1]; // First real item (All)
     if (initialSubItem) {
       const x = initialSubItem.offsetLeft - subsystemFilter.clientWidth / 2 + initialSubItem.clientWidth / 2;
       subsystemFilter.scrollLeft = x;

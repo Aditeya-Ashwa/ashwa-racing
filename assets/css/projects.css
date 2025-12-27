@@ -1,0 +1,231 @@
+/* ===== BASE ===== */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+
+.projects-hero {
+  background: #000;
+  padding: 100px 6%;
+}
+
+.projects-hero-content {
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.hero-title span {
+  color: #e53935;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+}
+
+/* ===== PROTOTYPE SECTION ===== */
+
+.prototype-section {
+  padding: 80px 6%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.prototype-block {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  margin-bottom: 80px;
+  align-items: center;
+}
+
+.prototype-block.reverse {
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.prototype-block.reverse .prototype-image {
+  order: 2;
+}
+
+/* ===== IMAGE ===== */
+
+.prototype-image img {
+  width: 100%;
+  display: block;
+}
+
+/* ===== CONTENT ===== */
+
+.prototype-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b60002;
+}
+
+.prototype-content h2 {
+  font-size: 2rem;
+  margin: 8px 0 14px;
+}
+
+.prototype-changes {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.prototype-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+.prototype-achievements {
+  padding-left: 18px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.prototype-achievements li {
+  margin-bottom: 6px;
+}
+
+/* ===== YEAR SELECTOR ===== */
+
+.year-selector {
+  display: flex;
+  gap: 10px;
+  margin: 14px 0 18px;
+  flex-wrap: wrap;
+}
+
+.year-btn {
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  background: transparent;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.year-btn.active,
+.year-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/* ===== PROJECTS HERO ===== */
+
+.projects-hero {
+  position: relative;
+  height: 70vh;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Background image */
+.projects-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/prototypes/Prototypesbanner.png'); /* change image */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(30%);
+}
+
+/* Content */
+.projects-hero-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  max-width: 720px;
+  padding: 0 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Text reuse */
+.hero-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.hero-title span {
+  color: #e53935;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+  max-width: 600px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .projects-hero {
+    height: 60vh;
+  }
+
+  .projects-hero-content {
+    padding: 0 20px;
+  }
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .prototype-block,
+  .prototype-block.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .prototype-image {
+    order: unset;
+  }
+
+  .projects-hero {
+    padding: 80px 20px;
+  }
+
+  .prototype-section {
+    padding: 60px 20px;
+  }
+}

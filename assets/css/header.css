@@ -1,46 +1,39 @@
-/* ============================================
-   FONTS
-=============================================== */
+/* Fonts */
 @font-face {
     font-family: 'Samarkan';
-    src: url('/ashwa-racing/assets/fonts/SAMAN___.TTF') format('truetype');
+    src: url('/assets/fonts/SAMAN___.TTF') format('truetype');
 }
 @font-face {
     font-family: 'Xenotron';
-    src: url('/ashwa-racing/assets/fonts/XENOTRON.TTF') format('truetype');
+    src: url('/assets/fonts/XENOTRON.TTF') format('truetype');
 }
 
-/* ============================================
-   HEADER / NAVBAR WRAPPER
-=============================================== */
+/* Header */
 .navbar {
     width: 100%;
     background: white;
     position: sticky;
     top: 0;
-    z-index: 5000;
+    z-index: 1000;
 }
 
-/* ============================================
-   TOP BRAND BAR
-=============================================== */
+/* Top Brand Bar */
 .top-brand-bar {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 0px 40px;
+    justify-content: space-between;
+    padding: 0 40px;
     background: white;
     border-bottom: 7px solid #e60023;
     position: relative;
-    flex-wrap: nowrap;
+    min-height: 90px;
 }
 
-/* ---- Left Logo ---- */
+/* Left Logo Section */
 .top-brand-left {
     display: flex;
     align-items: center;
-    flex-shrink: 1;         /* avoids pushing the right logo */
-    min-width: 0;           /* necessary for overflow control */
+    flex-shrink: 0;
 }
 
 .brand-logo {
@@ -81,6 +74,7 @@
     letter-spacing: 1px;
     margin: 0;
 }
+
 .brand-racing {
     font-family: 'Xenotron', sans-serif;
     font-size: 22px;
@@ -89,9 +83,7 @@
     margin-top: 2px;
 }
 
-/* ============================================
-   INLINE SPONSOR (single rotating sponsor)
-=============================================== */
+/* Inline Sponsor */
 .scrolling-inline-sponsor {
     width: 120px;
     height: 120px;
@@ -100,7 +92,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
 }
 
 #inline-sponsor {
@@ -111,16 +102,11 @@
     transition: opacity 0.5s ease-in-out;
 }
 
-/* ============================================
-   NAVIGATION (DESKTOP)
-=============================================== */
+/* Navigation Main */
 .nav-main {
     display: flex;
-    position: absolute;
-    right: 40px;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 10px;
 }
 
 .nav-links {
@@ -131,21 +117,20 @@
 
 .nav-links a {
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 600;
     text-decoration: none;
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
-    transition: 0.25s ease;
+    transition: border-bottom 0.25s ease;
     color: black;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
     border-bottom: 2px solid #e60023;
 }
 
-/* ============================================
-   DROPDOWN MENU
-=============================================== */
+/* Dropdown */
 .dropdown {
     position: relative;
 }
@@ -157,30 +142,35 @@
 .dropdown-content {
     display: none;
     position: absolute;
+    top: 100%;
     left: 50%;
-    transform: translateX(-30%); /* shifts it left so it never overflows */
+    transform: translateX(-50%);
     background: white;
     border: 1px solid #ddd;
     min-width: 230px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 10px 0;
-    z-index: 3000;
+    z-index: 1100;
+    margin-top: 4px;
 }
 
 .dropdown-content a {
     display: block;
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 16px;
     color: black;
+    border-bottom: none !important;
+}
+
+.dropdown-content a:hover {
+    background: #f5f5f5;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* ============================================
-   MOBILE MENU
-=============================================== */
+/* Mobile Toggle */
 .nav-toggle {
     display: none;
 }
@@ -189,6 +179,8 @@
     display: none;
     font-size: 28px;
     cursor: pointer;
+    color: black;
+    z-index: 1200;
 }
 
 .icon-close {
@@ -203,97 +195,11 @@
     display: inline;
 }
 
-/* ---- MOBILE BREAKPOINT ---- */
-
-@media (max-width: 1233px) {
-
-    .menu-icon {
-        display: block;
-        z-index: 4000;
-    }
-
-    .nav-links {
-        position: fixed !important;
-        top: 0 !important;
-        right: 0;
-        left: 0;
-        width: 100% !important;
-        height: 100vh !important;
-        overflow-y: auto;
-        background: white;
-        padding: 80px 30px; /* space below logo + hamburger */
-
-        transform: translateX(100%);
-        transition: transform 0.35s ease-in-out;
-        z-index: 9999 !important; /* above everything */
-    }
-
-    /* Slide-in when toggle checked */
-    .nav-toggle:checked ~ .nav-links {
-        transform: translateX(0%);
-    }
-
-    .nav-links a {
-        padding: 15px 0;
-        font-size: 18px;
-        width: 100%;
-    }
-
-    .dropdown-content {
-        position: relative;
-        border: none;
-        box-shadow: none;
-        padding-left: 10px;
-        display: none;
-    }
-
-    .dropdown:active .dropdown-content,
-    .dropdown:focus-within .dropdown-content {
-        display: block;
-    }
-}
-
-@media (min-width: 1234px) {
-
-    .dropdown-content {
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        display: none !important;
-        background: white;
-        padding: 10px 0;
-        box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
-        z-index: 999 !important;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block !important;
-    }
-}
-
 .mobile-close {
     display: none;
 }
 
-@media (max-width: 1233px) {
-    .mobile-close {
-        position: fixed;
-        top: 22px;
-        right: 30px;
-        font-size: 32px;
-        font-weight: bold;
-        cursor: pointer;
-        z-index: 10000;
-        display: none;
-    }
-
-    /* show close button when menu open */
-    .nav-toggle:checked ~ .mobile-close {
-        display: block;
-    }
-}
-
-
+/* Sponsor Strip */
 .sponsor-strip {
     width: 100%;
     overflow: hidden;
@@ -315,60 +221,171 @@
     object-fit: contain;
 }
 
-
-/* ==========================================================
-   SUPER-SMALL MOBILE FIX (<420px)
-   Moves hamburger BELOW logos
-========================================================== */
-@media (max-width: 420px) {
-
-    /* Allow wrapping */
+/* ===== TABLET/MOBILE BREAKPOINT ===== */
+@media (max-width: 1233px) {
+    
     .top-brand-bar {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        padding: 10px 10px !important;
+        padding: 0 20px;
     }
 
-    /* Keep Ashwa + Sponsor in first row */
-    .top-brand-left,
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 400px;
+        height: 100vh;
+        overflow-y: auto;
+        background: white;
+        padding: 80px 30px 30px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1150;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-toggle:checked ~ .nav-links {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        padding: 14px 0;
+        font-size: 16px;
+        width: 100%;
+        font-weight: 600;
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
+
+    .nav-links a:hover {
+        background: #f9f9f9;
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
+
+    /* Dropdown in mobile */
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        margin-top: 0 !important;
+        padding-left: 20px;
+        border-left: 3px solid #e60023;
+        background: #f9f9f9;
+    }
+
+    .dropdown-content a {
+        font-size: 16px;
+        font-weight: 400;
+        padding: 10px 0;
+        color: #333;
+        border-bottom: none !important;
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+
+    .mobile-close {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 32px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1200;
+        color: black;
+        display: none;
+    }
+
+    .nav-toggle:checked ~ .mobile-close {
+        display: block;
+    }
+}
+
+/* ===== SMALL MOBILE (<600px) ===== */
+@media (max-width: 600px) {
+    
+    .top-brand-bar {
+        padding: 10px 15px;
+        min-height: auto;
+    }
+
+    .brand-logo img {
+        height: 55px;
+    }
+
+    .brand-ashwa {
+        font-size: 30px;
+    }
+
+    .brand-racing {
+        font-size: 18px;
+    }
+
     .scrolling-inline-sponsor {
+        width: 80px;
+        height: 80px;
+        margin-left: 15px;
+    }
+
+    .nav-links {
+        max-width: 100%;
+        padding: 70px 20px 20px;
+    }
+}
+
+/* ===== EXTRA SMALL MOBILE (<420px) ===== */
+@media (max-width: 420px) {
+    
+    .top-brand-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .top-brand-left {
         order: 1;
     }
 
-    /* Force hamburger to second row */
-    .nav-main {
-        order: 2 !important;
-        position: static !important;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 8px;
-    }
-
-    /* Center hamburger nicely */
-    .menu-icon {
-        display: block !important;
-        font-size: 32px !important;
-        margin: auto;
-    }
-
-    /* Shrink inline sponsor */
     .scrolling-inline-sponsor {
-        width: 65px !important;
-        height: 65px !important;
+        order: 2;
+        width: 65px;
+        height: 65px;
         margin-left: 10px;
     }
 
-    /* Shrink Ashwa logo slightly */
-    .brand-logo img {
-        height: 55px !important;
+    .nav-main {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
     }
-    .brand-ashwa { font-size: 28px !important; }
-    .brand-racing { font-size: 16px !important; }
 
-    /* Fix mobile close button */
+    .brand-logo img {
+        height: 50px;
+    }
+
+    .brand-ashwa {
+        font-size: 26px;
+    }
+
+    .brand-racing {
+        font-size: 16px;
+    }
+
     .mobile-close {
-        top: 16px !important;
-        right: 20px !important;
+        top: 15px;
+        right: 15px;
     }
 }
