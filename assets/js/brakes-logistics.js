@@ -26,7 +26,7 @@ let model = null;
 
 // GLTF load + geometry merge + wireframe conversion
 new THREE.GLTFLoader().load(
-    "../assets/models/brakes_bg.glb",
+    "assets/models/brakes_bg.glb",
     (gltf) => {
         const geometries = [];
 
