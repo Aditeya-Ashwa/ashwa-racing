@@ -63,7 +63,7 @@
     padding-right: 20px;
 }
 
-.brand-text-vertical::after {
+/* .brand-text-vertical::after {
     content: "";
     width: 2px;
     height: 60%;
@@ -71,7 +71,7 @@
     position: absolute;
     right: 0;
     top: 20%;
-}
+} */
 
 .brand-ashwa {
     font-family: 'Samarkan', serif;
