@@ -228,7 +228,7 @@
 }
 
 /* ===== TABLET/MOBILE BREAKPOINT ===== */
-@media (max-width: 1233px) {
+@media (max-width: 950px) {
     
     .top-brand-bar {
         padding: 0 20px;

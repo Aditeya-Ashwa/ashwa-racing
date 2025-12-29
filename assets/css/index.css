@@ -326,13 +326,15 @@ body {
 @media (max-width: 768px) {
 
   .hero-ti-real {
-    height: 60vh;
+    height: 60vh;    
   }
+
+
 
   .hero-panel {
     width: 100%;
     min-width: unset;
-    background: rgba(0,0,0,0.88);
+    background: rgba(0,0,0,0.50);
   }
 
   .general-flex {
