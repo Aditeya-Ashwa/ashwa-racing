@@ -153,9 +153,9 @@ body {
 ========================= */
 
 @media (max-width: 768px) {
-  .sponsor-container {
+  /* .sponsor-container {
     padding: 70px 20px 60px;
-  }
+  } */
 
   .sponsor-grid {
     grid-template-columns: repeat(2, 1fr);
