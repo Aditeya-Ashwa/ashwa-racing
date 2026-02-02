@@ -4,37 +4,215 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Engine | Ashwa Racing</title>
+    <title>Electrical & Testing | Ashwa Racing</title>
+
     <link rel="icon" type="image/x-icon" href="assets/images/ashwa white favicon.png" />
-    <link rel="stylesheet" href="assets/css/engine-testing.css" />
-    <link rel="stylesheet" href="assets/css/footer.css?v=2" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/electrical-testing.css" />
     <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css?v=2" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"/>
+
 </head>
 
 <body>
-    <canvas id="engine-hero-canvas"></canvas>
 
-    <div class="floating-bits"></div>
-
+    <!-- HEADER -->
     <header id="main-header"></header>
 
-    <section class="engine-hero" id="hero-section">
-        <!-- Dynamic Content -->
-    </section>
+    <!-- MAIN CONTENT -->
+    <main>
 
-    <div class="page-container" id="main-content">
-        <!-- Dynamic Content will be injected here -->
-    </div>
+        <!-- SUBSYSTEM HERO -->
+        <section class="subsystem-hero">
+        <div class="container subsystem-hero-inner">
+            <p class="subsystem-eyebrow">Subsystem</p>
 
+            <h1>Electrical & Testing</h1>
+
+            <p class="subsystem-tagline">
+            Engineering the car’s electrical nervous system — encompassing custom power electronics, 
+            accumulator architecture, embedded firmware, real-time data acquisition, and vehicle control software.
+            </p>
+
+            <p class="subsystem-metric">
+            End-to-end development of a distributed vehicle electronics platform comprising <span> 25+ </span> custom ECUs for data acquisition, energy management, control, and safety.
+            </p>
+        </div>
+        </section>
+
+
+        <!-- RESPONSIBILITY -->
+        <section class="subsystem-scope">
+        <div class="container">
+            <h2>Subsystem Scope & Ownership</h2>
+
+            <p>
+            The Electrical & Testing subsystem owns the vehicle’s complete electrical and electronic
+            stack — from energy storage and power distribution to sensing, computation, communication,
+            and vehicle-level validation.
+            </p>
+
+            <ul class="scope-list">
+            <li>End-to-end low-voltage and high-voltage electrical architecture</li>
+            <li>Design and integration of safety-critical HV systems including AMS and protection logic</li>
+            <li>Custom electronic control units for sensing, actuation, and vehicle control</li>
+            <li>In-house data acquisition hardware, firmware, and communication networks</li>
+            <li>System-level testing, validation, and fault diagnosis across operating conditions</li>
+            </ul>
+
+            <p class="scope-note">
+            This subsystem interfaces directly with all vehicle domains, acting as the integration layer
+            between hardware, software, and on-track performance.
+            </p>
+        </div>
+        </section>
+
+
+        <section class="subsystem-architecture">
+        <div class="container">
+            <h2>System Architecture Overview</h2>
+
+            <p>
+            The vehicle electronics are structured around three core systems: the motor controller,
+            the data acquisition and low-voltage electronics, and the accumulator with its associated
+            battery management and safety systems.
+            </p>
+
+            <ul class="architecture-list">
+            <li>
+                Motor controller responsible for traction power delivery, torque control,
+                and real-time interaction with vehicle-level commands
+            </li>
+            <li>
+                DAQ and low-voltage electronics handling sensing, communication, logging,
+                and interface with other vehicle subsystems
+            </li>
+            <li>
+                Accumulator system integrating the AMS, protection circuits, and safety logic
+                required for high-voltage energy storage and operation
+            </li>
+            </ul>
+        </div>
+        </section>
+
+
+        <!-- TESTING PHILOSOPHY -->
+        <section class="subsystem-testing">
+            <div class="container">
+                <h2>Testing & Validation</h2>
+                <p>
+                    Testing is approached as a progressive validation process rather than a final-stage activity.
+                    Each level of integration is validated before advancing to full vehicle operation.
+                </p>
+
+                <div class="testing-stages">
+                    <div class="testing-stage">
+                        <h3>Bench Testing</h3>
+                        <p>Component-level verification of sensors, wiring, and protection circuits.</p>
+                    </div>
+
+                    <div class="testing-stage">
+                        <h3>Subsystem Testing</h3>
+                        <p>Validation of electrical modules under simulated operating conditions.</p>
+                    </div>
+
+                    <div class="testing-stage">
+                        <h3>Vehicle Integration</h3>
+                        <p>System-level testing during static and dynamic vehicle operation.</p>
+                    </div>
+
+                    <div class="testing-stage">
+                        <h3>Track Validation</h3>
+                        <p>Data-driven evaluation of reliability, performance, and repeatability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="subsystem-tools">
+            <div class="container tools-layout">
+
+                <!-- LEFT: TEXT -->
+                <div class="tools-text">
+                <h2>Tools, Platforms & Technologies</h2>
+
+                <p>
+                The subsystem develops and validates its electronics using a combination of
+                in-house hardware, embedded software platforms, and automotive communication
+                and analysis tools.
+                </p>
+
+                <ul class="tools-list">
+                <li>Custom-designed PCBs for motor control, DAQ/LV electronics, and AMS</li>
+                <li>Embedded firmware development on microcontroller-based platforms</li>
+                <li>CAN-based communication and diagnostics for inter-system coordination</li>
+                <li>In-house data logging, analysis, and visualization pipelines</li>
+                </ul>
+
+                </div>
+
+                <!-- RIGHT: VISUAL -->
+                <div class="tools-visual">
+                    <div class="tool-card active">
+                        <img src="assets/images/tools/stm32cubeide.png" alt="STM32CubeIDE">
+                    </div>
+
+                    <div class="tool-card">
+                        <img src="assets/images/tools/kicad.png" alt="KiCad">
+                    </div>
+
+                    <div class="tool-card">
+                        <img src="assets/images/tools/ltspice.png" alt="LTspice">
+                    </div>
+
+                    <div class="tool-card">
+                        <img src="assets/images/tools/ndrive.png" alt="nDrive">
+                    </div>
+
+                    <div class="tool-card">
+                        <img src="assets/images/tools/motececu.png" alt="MoTeC ECU">
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- OUTCOMES -->
+        <section class="subsystem-outcomes">
+        <div class="container">
+            <h2>Engineering Outcomes</h2>
+
+            <p>
+            The Electrical & Testing subsystem translates detailed design and validation work
+            into measurable vehicle-level confidence, safety, and performance readiness.
+            </p>
+
+            <ul class="outcomes-list">
+            <li>Verified safe operation of the accumulator and high-voltage systems under all operating conditions</li>
+            <li>Reliable traction power delivery and control through validated motor controller behavior</li>
+            <li>Consistent, high-quality vehicle data enabling informed setup and development decisions</li>
+            <li>Reduced integration risk through early detection and isolation of electrical and control issues</li>
+            </ul>
+        </div>
+        </section>
+
+
+    </main>
+
+    <!-- FOOTER -->
     <footer id="main-footer"></footer>
 
+    <!-- JS -->
     <script src="assets/js/header.js"></script>
-    <script type="module" src="assets/js/engine-testing.js"></script>
-</body>
+    <script type="module" src="assets/js/electrical-testing.js"></script>  
 
+</body>
 </html>

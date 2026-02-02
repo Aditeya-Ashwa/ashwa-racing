@@ -18,7 +18,7 @@ const teamData = [
   {
     name: "Ranjit DSouza",
     role: "Chassis Subsystem Lead",
-    subsystem: "Chassis",
+    subsystem: "Chassis & Workshop Mangement",
     year: "2028",
     experience: "Designed lightweight steel space-frame chassis and managed fabrication, achieving a 15% weight reduction over the previous prototype.",
     social: { linkedin: "#", github: null }
@@ -42,7 +42,7 @@ const teamData = [
   {
     name: "Ranjit DSouza",
     role: "Electrical & Testing Lead",
-    subsystem: "Electrical",
+    subsystem: "Electrical and Testing",
     year: "2028",
     experience: "Implemented high-speed CAN bus communication system and designed the custom ECU harness for improved reliability.",
     social: { linkedin: "#", github: "#" }
@@ -70,7 +70,16 @@ const teamData = [
     year: "2027",
     experience: "Managed the 2027 project cycle.",
     social: { linkedin: "#", github: null }
-  }
+  },
+    {
+    name: "Vibin",
+    role: "Motorcontroller Lead",
+    subsystem: "Electrical and Testing",
+    year: "2026",
+    experience: "Designed and implemented 600W motor controller, laid foundations for AWD hub motor system, developed the VCU and CAN watchdog. Led electrical team to successful competition debut.",
+    social: { linkedin: "#", github: null },
+    easterEgg: true 
+  },
 ];
 
 const PROFILE_IMAGE_URL = 'assets/images/team/members/2028/image.jpeg';
@@ -86,6 +95,10 @@ function createMemberCard(member) {
   const githubLink = member.social.github
     ? `<a href="${member.social.github}" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>`
     : "";
+  
+   const threeLayer = member.easterEgg
+  ? `<div class="member-3d"><canvas></canvas></div>`
+  : "";
 
   card.innerHTML = `
     <div class="profile-header">
@@ -95,6 +108,8 @@ function createMemberCard(member) {
       <h3 class="member-name">${member.name}</h3>
       <p class="member-role">${member.role}</p>
     </div>
+
+    ${threeLayer}
 
     <div class="member-experience">
       <h3>Contribution</h3>
@@ -112,15 +127,10 @@ function createMemberCard(member) {
   return card;
 }
 
-
-/* -------------------------------
-   Render Members
--------------------------------- */
 function renderMembers(year, subsystem) {
   const grid = document.getElementById("member-profiles-grid");
 
-  // Fade out effect
-  grid.style.opacity = '0';
+  grid.style.opacity = "0";
 
   setTimeout(() => {
     grid.innerHTML = "";
@@ -133,18 +143,108 @@ function renderMembers(year, subsystem) {
     if (results.length === 0) {
       grid.innerHTML = `
         <div class="no-members">
-          <i class="fas fa-users-slash" style="font-size: 3rem; margin-bottom: 20px; display: block;"></i>
-          <p style="font-size: 1.2rem;">No team members found for <strong>${subsystem}</strong> in <strong>${year}</strong>.</p>
+          <i class="fas fa-users-slash" style="font-size: 3rem; margin-bottom: 20px;"></i>
+          <p>No team members found.</p>
         </div>`;
     } else {
-      results.forEach(m => grid.appendChild(createMemberCard(m)));
+      results.forEach(member => {
+        console.log("Rendering:", member.name, member.easterEgg);
+
+        const card = createMemberCard(member);
+
+        if (member.easterEgg) {
+          card.classList.add("easter-egg");
+          initCard3D(card);
+        }
+
+        grid.appendChild(card);
+      });
     }
 
-    // Fade in
-    grid.style.opacity = '1';
+    grid.style.opacity = "1";
   }, 150);
 }
 
+function initCard3D(card) {
+  const canvas = card.querySelector(".member-3d canvas");
+  if (!canvas) return;
+
+  // Scene
+  const scene = new THREE.Scene();
+
+  // Camera
+  const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+  camera.position.z = 2.5;
+
+  // Renderer
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    alpha: true,
+    antialias: true
+  });
+
+  function resize() {
+    const rect = card.getBoundingClientRect();
+    renderer.setSize(rect.width, rect.height, false);
+    camera.aspect = rect.width / rect.height;
+    camera.updateProjectionMatrix();
+  }
+
+  resize();
+
+  // Light
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x222222, 1.2));
+
+const loader = new THREE.TextureLoader();
+
+const faceTexture = loader.load(
+  "assets/images/team/members/2026/easteregg.png",
+  () => renderer.render(scene, camera)
+);
+
+// Improve quality
+faceTexture.colorSpace = THREE.SRGBColorSpace;
+faceTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+
+// Materials for each cube face
+const materials = [
+  new THREE.MeshStandardMaterial({ map: faceTexture }), // right
+  new THREE.MeshStandardMaterial({ map: faceTexture }), // left
+  new THREE.MeshStandardMaterial({ map: faceTexture }), // top
+  new THREE.MeshStandardMaterial({ map: faceTexture }), // bottom
+  new THREE.MeshStandardMaterial({ map: faceTexture }), // front 👈 FACE
+  new THREE.MeshStandardMaterial({ map: faceTexture })  // back
+];
+
+const cube = new THREE.Mesh(
+  new THREE.BoxGeometry(1, 1, 1),
+  materials
+);
+
+scene.add(cube);
+
+  scene.add(cube);
+
+  let running = false;
+
+  function animate() {
+    if (!running) return;
+    requestAnimationFrame(animate);
+    cube.rotation.y += 0.01;
+    cube.rotation.x += 0.005;
+    renderer.render(scene, camera);
+  }
+
+  card.addEventListener("mouseenter", () => {
+    resize();
+    running = true;
+    animate();
+  });
+
+  card.addEventListener("mouseleave", () => {
+    running = false;
+  });
+}
 
 /* -------------------------------
    Get Filter Items (includes spacers)

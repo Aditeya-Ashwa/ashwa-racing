@@ -90,22 +90,6 @@ body {
   align-items: center;
 }
 
-/* =========================
-   CARDS (JS)
-========================= */
-
-/* .sponsor-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  background-clip: padding-box;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.25s ease;
-} */
-
 .sponsor-card img {
   max-width: 100%;
   max-height: 80px;

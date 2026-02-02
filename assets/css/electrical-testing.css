@@ -1,0 +1,344 @@
+/* ===== BASE ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background: #fff;
+  color: #111;
+}
+
+/* shared container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* section headers */
+main section h2 {
+  position: relative;
+}
+
+main section:not(.subsystem-hero) h2::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  background: #b60002;
+  margin-top: 10px;
+}
+
+/* ===== SUBSYSTEM HERO ===== */
+
+.subsystem-hero {
+  position: relative;
+  background: #0f0f0f;
+  color: #fff;
+  padding: clamp(90px, 11vw, 130px) 6%;
+  overflow: hidden;
+}
+
+/* vertical engineering anchor */
+.subsystem-hero::before {
+  content: "";
+  position: absolute;
+  left: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 140px;
+  background: #b60002;
+}
+
+/* subtle technical grid texture (softened) */
+.subsystem-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+
+/* inner content */
+.subsystem-hero-inner {
+  max-width: 1100px;
+  position: relative;
+  z-index: 1;
+}
+
+/* eyebrow */
+.subsystem-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 12px;
+}
+
+/* title */
+.subsystem-hero h1 {
+  font-size: clamp(2.2rem, 4.2vw, 3.1rem);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+/* description */
+.subsystem-tagline {
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 620px;
+  color: rgba(255,255,255,0.85);
+}
+
+/* metrics */
+.subsystem-metric {
+  margin-top: 26px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.subsystem-metric span {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ===== HERO RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .subsystem-hero {
+    padding: 80px 20px;
+  }
+
+  .subsystem-hero::before {
+    display: none;
+  }
+
+  .subsystem-hero-inner {
+    max-width: 100%;
+  }
+}
+
+/* ===== SECTION BASE ===== */
+
+main section {
+  padding: clamp(60px, 7vw, 90px) 6%;
+}
+
+main section:nth-of-type(even) {
+  background: #f8f8f8;
+}
+
+main h2 {
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  margin-bottom: 18px;
+}
+
+main p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  max-width: 720px;
+}
+
+/* ===== RESPONSIBILITY / SCOPE ===== */
+
+.scope-note {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: #666;
+  max-width: 700px;
+}
+
+.scope-list {
+  margin-top: 22px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.scope-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.scope-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #b60002;
+  font-weight: 600;
+}
+
+/* ===== ARCHITECTURE ===== */
+
+.subsystem-architecture p {
+  margin-bottom: 14px;
+}
+
+/* ===== TESTING ===== */
+
+.testing-stages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 36px;
+}
+
+.testing-stage {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 24px;
+  transition: 0.25s;
+}
+
+.testing-stage:hover {
+  transform: translateY(-6px);
+  background: #000;
+  color: #fff;
+}
+
+.testing-stage h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.testing-stage p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: inherit;
+}
+
+/* ===== TOOLS ===== */
+
+.tools-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.tools-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 22px;
+}
+
+.tools-list li {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* ===== TOOLS VISUAL ===== */
+
+.tools-visual {
+  position: relative;
+  height: 260px;
+  perspective: 1200px;
+}
+
+.tool-card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: rotateY(-28deg) scale(0.96);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tool-card.active {
+  opacity: 1;
+  transform: rotateY(-28deg) scale(1);
+}
+
+.tool-card img {
+  max-height: 288px;
+  max-width: 512px;
+  object-fit: contain;
+  filter: drop-shadow(0 26px 40px rgba(0,0,0,0.3));
+}
+
+/* ===== OUTCOMES ===== */
+
+.subsystem-outcomes {
+  background: #b60002;
+  color: #fff;
+}
+
+.subsystem-outcomes h2 {
+  color: #fff;
+}
+
+.subsystem-outcomes p {
+  color: rgba(255,255,255,0.85);
+}
+
+.outcomes-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 22px;
+}
+
+.outcomes-list li {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1100px) {
+  .testing-stages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  main section {
+    padding: 56px 20px;
+  }
+
+  .testing-stages {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== TOOLS RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .tools-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .tools-visual {
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .tool-card,
+  .tool-card.active {
+    transform: none;
+  }
+
+  .tool-card img {
+    max-width: 320px;
+    max-height: 180px;
+  }
+}

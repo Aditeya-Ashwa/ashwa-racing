@@ -3,20 +3,20 @@
 ================================ */
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background: #111;
+  color: #fff;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: #000;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  overflow-x: hidden;
-  line-height: 1.6;
 }
 
 /* =======================

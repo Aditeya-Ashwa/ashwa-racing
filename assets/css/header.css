@@ -63,16 +63,6 @@
     padding-right: 20px;
 }
 
-/* .brand-text-vertical::after {
-    content: "";
-    width: 2px;
-    height: 60%;
-    background: #e60023;
-    position: absolute;
-    right: 0;
-    top: 20%;
-} */
-
 .brand-ashwa {
     font-family: 'Samarkan', serif;
     font-size: 38px;
@@ -223,7 +213,7 @@
 
 .sponsor-logo {
     width: 140px;
-    height: 140px;
+    height: 100px;
     object-fit: contain;
 }
 

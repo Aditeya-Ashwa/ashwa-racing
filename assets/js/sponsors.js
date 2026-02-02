@@ -1,6 +1,8 @@
 const sponsorData = {
     "EXECUTIVE SPONSOR": [
-        "assets/images/sponsors/infineon.svg"
+        "assets/images/sponsors/infineon.svg",
+        "assets/images/sponsors/bosch.svg",
+        "assets/images/sponsors/adani.svg",
     ],
 
     "PLATINUM SPONSOR": [
