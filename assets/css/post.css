@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* =========================
+   BLOG POST LAYOUT
+========================= */
+
+.blog-post {
+  padding: 100px 20px 120px;
+  background: #ffffff;
+}
+
+.blog-article {
+  max-width: 760px;
+  margin: 0 auto;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.blog-article h1 {
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 14px;
+  color: #111;
+}
+
+.blog-article h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 48px;
+  margin-bottom: 14px;
+  color: #111;
+}
+
+.blog-article h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-top: 36px;
+  margin-bottom: 12px;
+}
+
+.blog-article p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   META INFO
+========================= */
+
+.blog-article strong {
+  font-weight: 500;
+}
+
+.blog-article hr {
+  border: none;
+  height: 1px;
+  background: #e6e6e6;
+  margin: 28px 0 36px;
+}
+
+/* =========================
+   LISTS
+========================= */
+
+.blog-article ul {
+  padding-left: 18px;
+  margin: 16px 0 24px;
+}
+
+.blog-article li {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.blog-article a {
+  color: #b60002;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(182,0,2,0.3);
+}
+
+.blog-article a:hover {
+  border-bottom-color: #b60002;
+}
+
+/* =========================
+   BLOCKQUOTE (future use)
+========================= */
+
+.blog-article blockquote {
+  margin: 32px 0;
+  padding-left: 18px;
+  border-left: 3px solid #b60002;
+  color: #555;
+  font-style: italic;
+}
+
+.blog-article img {
+  width: 100%;
+  border-radius: 6px;
+  margin: 28px 0 36px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .blog-post {
+    padding: 80px 18px 100px;
+  }
+
+  .blog-article h1 {
+    font-size: 2rem;
+  }
+}

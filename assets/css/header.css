@@ -329,12 +329,6 @@
         font-size: 18px;
     }
 
-    .scrolling-inline-sponsor {
-        width: 80px;
-        height: 80px;
-        margin-left: 15px;
-    }
-
     .nav-links {
         max-width: 100%;
         padding: 70px 20px 20px;
@@ -345,27 +339,17 @@
 @media (max-width: 420px) {
     
     .top-brand-bar {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 10px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .nav-main {
+        width: auto;
+        margin-top: 0;
     }
 
     .top-brand-left {
         order: 1;
-    }
-
-    .scrolling-inline-sponsor {
-        order: 2;
-        width: 65px;
-        height: 65px;
-        margin-left: 10px;
-    }
-
-    .nav-main {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
     }
 
     .brand-logo img {
