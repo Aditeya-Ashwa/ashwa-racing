@@ -1,239 +1,794 @@
-html, body {
+/* ===== BASE ===== */
+
+* {
     margin: 0;
-    font-family: Poppins, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
-/* -------------------------------
-   BACKGROUND 3D CANVAS
--------------------------------- */
-.br-page #rotor-canvas {
-    position: fixed;
+body {
+    overflow-x: hidden;
+    background: #fff;
+    color: #111;
+}
+
+/* shared container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* section headers with enhanced animation */
+main section h2 {
+    position: relative;
+}
+
+main section:not(.subsystem-hero) h2::after {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 3px;
+    background: linear-gradient(90deg, #b60002, #e60004);
+    margin-top: 12px;
+    animation: expandUnderline 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(182, 0, 2, 0.3);
+}
+
+@keyframes expandUnderline {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 42px;
+        opacity: 1;
+    }
+}
+
+/* ===== SUBSYSTEM HERO ===== */
+
+.subsystem-hero {
+    position: relative;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: #fff;
+    padding: clamp(100px, 12vw, 140px) 6%;
+    overflow: hidden;
+}
+
+/* animated vertical engineering anchor */
+.subsystem-hero::before {
+    content: "";
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 160px;
+    background: linear-gradient(180deg, transparent, #b60002, #e60004, transparent);
+    box-shadow: 0 0 20px rgba(182, 0, 2, 0.6);
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        opacity: 0.7;
+        box-shadow: 0 0 20px rgba(182, 0, 2, 0.6);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 30px rgba(230, 0, 4, 0.8);
+    }
+}
+
+/* enhanced technical grid with racing stripe accent */
+.subsystem-hero::after {
+    content: "";
+    position: absolute;
     inset: 0;
-    width: 100vw;
-    height: 100svh;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
     pointer-events: none;
-    z-index: -2;
+    opacity: 0.5;
 }
 
-/* ==========================================================
-   HERO — transparent white
-========================================================== */
-.br-page .br-hero {
-    max-width: 1060px;
-    min-height: 100svh;
-    text-align: center;
-    margin: auto;
-    padding: 60px;
-
-    background: rgba(255,255,255,0.10);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    color: white;
+/* inner content */
+.subsystem-hero-inner {
+    max-width: 1100px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out;
 }
 
-.br-page .br-hero-content {
-    max-width: 900px;
-    margin: auto;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.br-page .hero-badge {
+/* eyebrow with racing accent */
+.subsystem-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #b60002;
+    margin-bottom: 14px;
+    font-weight: 600;
+    position: relative;
     display: inline-block;
-    padding: 10px 22px;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 600;
-
-    color: #ff1744;
-    background: rgba(255,23,68,0.15);
-    border-radius: 999px;
+    padding-left: 20px;
 }
 
-.br-page .br-hero h1 {
-    font-size: clamp(42px, 7vw, 68px);
+.subsystem-eyebrow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 2px;
+    background: #b60002;
+}
+
+/* title with gradient */
+.subsystem-hero h1 {
+    font-size: clamp(2.4rem, 4.5vw, 3.4rem);
     font-weight: 700;
-    margin-top: 25px;
-    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
-.br-page .subtitle {
-    margin-top: 18px;
-    font-size: clamp(16px, 2vw, 20px);
-    color: rgba(255,255,255,0.85);
+/* description */
+.subsystem-tagline {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 640px;
+    color: rgba(255, 255, 255, 0.88);
 }
 
-/* -----------------------
-   HERO STATS (material cards)
------------------------- */
-.br-page .hero-stats {
-    margin-top: 55px;
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    flex-wrap: wrap;
+/* enhanced metrics display */
+.subsystem-metric {
+    margin-top: 32px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #b60002;
+    backdrop-filter: blur(10px);
 }
 
-.br-page .stat {
-    padding: 22px 28px;
-    border-radius: 18px;
-
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(6px);
-
-    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
-}
-
-.br-page .num {
-    font-size: 38px;
+.subsystem-metric span {
     font-weight: 700;
-    color: #ff1744;
+    color: #fff;
+    font-size: 1.1em;
 }
 
-.br-page .label {
-    font-size: 12px;
-    margin-top: 6px;
-    color: rgba(255,255,255,0.65);
-    text-transform: uppercase;
+/* ===== HERO RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .subsystem-hero {
+        padding: 90px 20px;
+    }
+
+    .subsystem-hero::before {
+        display: none;
+    }
+
+    .subsystem-hero-inner {
+        max-width: 100%;
+    }
+
+    .subsystem-hero h1 {
+        background: #ffffff;
+        -webkit-text-fill-color: #ffffff;
+    }
 }
 
+/* ===== SECTION BASE ===== */
 
-/* ==========================================================
-   PAGE CONTENT — Google alternating sections
-========================================================== */
-.br-page .page-container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 80px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 90px;
-    color: white  ;
+main section {
+    padding: clamp(70px, 8vw, 100px) 6%;
+    position: relative;
+    transition: background 0.3s ease;
 }
 
-.br-page section {
-    padding: 60px;
-    border-radius: 24px;
-    backdrop-filter: blur(6px);
-    transition: 0.25s ease;
+main section:nth-of-type(even) {
+    background: #fafafa;
 }
 
-/* Alternating theme: white → dark → white */
-.br-page section:nth-of-type(1) { background: rgba(255,255,255,0.10); }
-.br-page section:nth-of-type(2) { background: rgba(255,255,255,0.10); }
-.br-page section:nth-of-type(3) { background: rgba(255,255,255,0.10); }
+main h2 {
+    font-size: clamp(1.5rem, 2.8vw, 2rem);
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
 
-.br-page h2 {
-    font-size: clamp(28px, 4vw, 38px);
-    font-weight: 600;
-    margin-bottom: 25px;
+main p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #444;
+    max-width: 740px;
+}
 
+/* ===== RESPONSIBILITY / SCOPE ===== */
+
+.scope-note {
+    margin-top: 20px;
+    font-size: 0.88rem;
+    color: #666;
+    max-width: 720px;
+    border-left: 3px solid #e0e0e0;
+    padding-left: 18px;
+}
+
+.scope-list {
+    margin-top: 28px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.scope-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 14px;
+    font-size: 0.92rem;
+    color: #333;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.scope-list li:hover {
+    transform: translateX(4px);
+    color: #b60002;
+}
+
+.scope-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 10px;
+    height: 2px;
+    background: linear-gradient(90deg, #b60002, #e60004);
+    transition: width 0.2s ease;
+}
+
+.scope-list li:hover::before {
+    width: 14px;
+}
+
+/* ===== ARCHITECTURE ===== */
+
+.subsystem-architecture p {
+    margin-bottom: 16px;
+}
+
+/* ===== TESTING ===== */
+
+.testing-stages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 42px;
+}
+
+.testing-stage {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testing-stage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #b60002, #e60004);
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testing-stage:hover {
+    transform: translateY(-8px);
+    background: #000;
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.testing-stage:hover::before {
+    transform: translateX(0);
+}
+
+.testing-stage h3 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.testing-stage p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: inherit;
+    opacity: 0.9;
+}
+
+.testing-stage:hover p {
+    opacity: 0.95;
+}
+
+/* ===== TOOLS ===== */
+
+.tools-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.tools-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 26px;
+}
+
+.tools-list li {
+    font-size: 0.92rem;
+    margin-bottom: 14px;
+    color: #333;
+    padding-left: 20px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.tools-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #b60002;
+    font-size: 0.85em;
+    transition: transform 0.2s ease;
+}
+
+.tools-list li:hover {
+    color: #b60002;
+    transform: translateX(4px);
+}
+
+.tools-list li:hover::before {
+    transform: translateX(3px);
+}
+
+/* ===== TOOLS VISUAL ===== */
+
+.tools-visual {
+    position: relative;
+    height: 280px;
+    perspective: 1400px;
+}
+
+.tool-card {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+
+    opacity: 0;
+    transform: rotateY(-32deg) scale(0.94);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.br-page .idx {
-    padding: 6px 12px;
-    font-size: 14px;
-
-    background: rgba(255,23,68,0.18);
-    color: #ff1744;
-    border-radius: 8px;
+.tool-card.active {
+    opacity: 1;
+    transform: rotateY(-32deg) scale(1);
 }
 
-/* ==========================================================
-   ABOUT SECTION
-========================================================== */
-.br-page .br-about p {
-    max-width: 900px;
+.tool-card img {
+    max-height: 320px;
+    max-width: 540px;
+    object-fit: contain;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.35));
+    transition: filter 0.3s ease;
+}
+
+.tool-card:hover img {
+    filter: drop-shadow(0 35px 60px rgba(182, 0, 2, 0.25));
+}
+
+/* ===== OUTCOMES ===== */
+
+.subsystem-outcomes {
+    background: #fff;
+    color: #111;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+}
+
+.subsystem-outcomes::before {
+    display: none;
+    /* Remove the radial gradient overlay used for the red background */
+}
+
+.subsystem-outcomes h2 {
+    color: #111;
+}
+
+.subsystem-outcomes h2::after {
+    background: linear-gradient(90deg, #b60002, #e60004);
+    box-shadow: 0 2px 8px rgba(182, 0, 2, 0.3);
+}
+
+.subsystem-outcomes p {
+    color: #444;
+}
+
+.outcomes-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 28px;
+}
+
+.outcomes-list li {
+    font-size: 0.92rem;
     margin-bottom: 14px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.85);
+    color: #333;
+    padding-left: 24px;
+    position: relative;
+    transition: all 0.2s ease;
 }
 
-
-/* ==========================================================
-   DOMAIN CARDS — Elevated cards
-========================================================== */
-.br-page .domains-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+.outcomes-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: #b60002;
+    transition: transform 0.2s ease;
 }
 
-.br-page .domain-card {
-    padding: 32px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.12);
-
-    backdrop-filter: blur(6px);
-    transition: 0.25s ease;
-
-    box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+.outcomes-list li:hover {
+    transform: translateX(4px);
+    color: #b60002;
 }
 
-.br-page .domain-card:hover {
-    transform: translateY(-4px);
-    background: rgba(255,255,255,0.18);
+.outcomes-list li:hover::before {
+    transform: scale(1.2);
 }
 
-.br-page .card-head {
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1100px) {
+    .testing-stages {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    main section {
+        padding: 64px 20px;
+    }
+
+    .testing-stages {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .testing-stage {
+        padding: 24px;
+    }
+}
+
+/* ===== TOOLS RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+    .tools-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .tools-visual {
+        height: 220px;
+        margin: 0 auto;
+    }
+
+    .tool-card,
+    .tool-card.active {
+        transform: none;
+    }
+
+    .tool-card img {
+        max-width: 340px;
+        max-height: 200px;
+    }
+}
+
+/* ===== ADDITIONAL PROFESSIONAL TOUCHES ===== */
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection color matching brand */
+::selection {
+    background: #b60002;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #b60002;
+    color: #fff;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+    outline: 2px solid #b60002;
+    outline-offset: 3px;
+}
+
+/* Subtle fade-in for sections on scroll */
+@media (prefers-reduced-motion: no-preference) {
+    main section {
+        animation: fadeIn 0.6s ease-out;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== WE TRAVELLED (Expanding Cards) ===== */
+
+.section-travelled {
+    background: #f9f9f9;
+    overflow: hidden;
+}
+
+.travel-cards-container {
     display: flex;
     gap: 12px;
-    margin-bottom: 10px;
+    height: 450px;
+    margin-top: 40px;
+    width: 100%;
 }
 
-.br-page .card-num {
-    padding: 6px 10px;
-    background: rgba(255,23,68,0.18);
-    color: #ff1744;
-    border-radius: 8px;
-    font-weight: 600;
-}
-
-/* ==========================================================
-   VISION / ROADMAP (material cards)
-========================================================== */
-.br-page .vision-intro {
-    background: rgba(255,255,255,0.12);
-    padding: 25px 30px;
+.travel-card {
+    position: relative;
+    flex: 1;
+    background: #fff;
     border-radius: 20px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.85);
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 
-    box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+    /* Default visuals */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
 }
 
-.br-page .roadmap-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+/* Striped/Gradient backgrounds for variety without images */
+.travel-card:nth-child(1) {
+    background: linear-gradient(135deg, #fce4ec 0%, #fff 100%);
 }
 
-.br-page .roadmap-card {
-    padding: 30px;
-    border-radius: 20px;
-
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(6px);
-
-    transition: 0.25s ease;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+/* NH */
+.travel-card:nth-child(2) {
+    background: linear-gradient(135deg, #e3f2fd 0%, #fff 100%);
 }
 
-.br-page .roadmap-card:hover {
-    transform: translateY(-4px);
-    background: rgba(255,255,255,0.18);
+/* Aus */
+.travel-card:nth-child(3) {
+    background: linear-gradient(135deg, #e8f5e9 0%, #fff 100%);
 }
 
+/* Italy */
+.travel-card:nth-child(4) {
+    background: linear-gradient(135deg, #fff3e0 0%, #fff 100%);
+}
 
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
-@media (max-width: 768px) {
-    .br-page .br-hero { padding: 80px 20px 60px; }
-    .br-page .page-container { padding: 50px 20px; }
-    .br-page section { padding: 40px; }
+/* Germany */
+.travel-card:nth-child(5) {
+    background: linear-gradient(135deg, #f3e5f5 0%, #fff 100%);
+}
+
+/* India */
+.travel-card:nth-child(6) {
+    background: linear-gradient(135deg, #ffebee 0%, #fff 100%);
+}
+
+/* Czech */
+.travel-card:nth-child(7) {
+    background: linear-gradient(135deg, #e0f7fa 0%, #fff 100%);
+}
+
+/* Hyperloop */
+
+
+.travel-card:hover {
+    flex: 5;
+    /* Expand factor */
+    background: #fff;
+    /* Reset to white on open for clean read */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    /* Align text to left when expanded */
+    text-align: left;
+    border-left: 6px solid #b60002;
+    /* Accent on active */
+}
+
+/* Internal Content */
+.card-content {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    /* Prevent breaking initially */
+    transition: all 0.5s ease;
+}
+
+.travel-card h3 {
+    font-size: 1.2rem;
+    color: #b60002;
+    margin-bottom: 8px;
+    transform: rotate(0deg);
+    transition: all 0.5s ease;
+}
+
+.travel-card h4 {
+    font-size: 0.9rem;
+    color: #444;
+    opacity: 0;
+    /* Hidden by default in collapsed state if narrow, or just minimal */
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    font-weight: 500;
+}
+
+.card-details {
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease 0.1s;
+    /* Slight delay */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-details p {
+    font-size: 0.95rem;
+    color: #555;
+    white-space: normal;
+    /* Allow wrap when expanded */
+    line-height: 1.5;
+}
+
+/* Hover States */
+.travel-card:hover h3 {
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+.travel-card:hover h4 {
+    opacity: 1;
+    transform: translateY(0);
+    font-size: 1.1rem;
+}
+
+.travel-card:hover .card-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Vertical text for collapsed state (optional aesthetic) */
+@media (min-width: 900px) {
+    .travel-card:not(:hover) h3 {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-size: 1rem;
+        letter-spacing: 2px;
+        margin: 0;
+    }
+
+    .travel-card:not(:hover) .card-content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 900px) {
+    .travel-cards-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .travel-card {
+        flex: none;
+        width: 100%;
+        height: 120px;
+        /* Collapsed height */
+        padding: 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid #eee;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .travel-card:nth-child(n) {
+        background: #fff;
+    }
+
+    /* Reset gradients on mobile */
+
+    .travel-card h3 {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
+
+    .travel-card h4 {
+        opacity: 1;
+        transform: none;
+        font-size: 0.9rem;
+    }
+
+    .card-details {
+        display: none;
+        /* Hide details on mobile list to save space */
+    }
+
+    .travel-card:hover {
+        height: auto;
+        padding: 30px;
+    }
+
+    .travel-card:hover .card-details {
+        display: flex;
+        margin-top: 15px;
+    }
 }

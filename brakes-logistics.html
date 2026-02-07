@@ -1,173 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brakes & Logistics | Ashwa Racing</title>
 
   <link rel="icon" type="image/x-icon" href="assets/images/ashwa white favicon.png" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/brakes-logistics.css" />
+  <!-- CSS -->
+  <!-- Reusing existing electrical-testing css for the theme, 
+         or we can create a specific one if needed, but request asked for "similar layout and theme" -->
+  <link rel="stylesheet" href="assets/css/brakes-logistics.css?v=final_fix" />
+  <link rel="stylesheet" href="assets/css/components/travel-carousel.css" />
   <link rel="stylesheet" href="assets/css/header.css" />
-  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/footer.css?v=2" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
 
-  <!-- 3D Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/utils/BufferGeometryUtils.js" defer></script>
 </head>
 
 <body>
-<div class="br-page">
 
-  <!-- Background Canvas -->
-  <canvas id="rotor-canvas" aria-hidden="true"></canvas>
-
-  <!-- Header -->
+  <!-- HEADER -->
   <header id="main-header"></header>
 
-  <!-- Hero Section -->
-  <section class="br-hero">
-    <div class="br-hero-content">
+  <!-- MAIN CONTENT -->
+  <main>
 
-      <h1>Brakes & Logistics</h1>
-      <p class="subtitle">Ensure car stops and designing a reliable brake system for car and logistics and in logistics we ensure safe and something  shipping of car and team. Also is responsible for dealing with documentation pertaining to logistics</p>
+    <!-- SUBSYSTEM HERO -->
+    <section class="subsystem-hero">
+      <div class="container subsystem-hero-inner">
+        <p class="subsystem-eyebrow">Subsystem</p>
 
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="num">2 Lakh +</div>
-          <div class="label">In Logistics handled</div>
-        </div>
+        <h1>Brakes & Logistics</h1>
 
-        <div class="stat">
-          <div class="num">50 + </div>
-          <div class="label">Peoples transportation handled</div>
-        </div>
-
-        <div class="stat">
-          <div class="num">100%</div>
-          <div class="label">Safety & Compliance</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main Content -->
-  <main class="page-container">
-
-    <!-- About Section -->
-    <section class="br-about">
-      <h2><span class="idx">01</span>Role & Responsibility</h2>
-
-      <div class="about-text">
-        <p>
-          The Brakes & Logistics subsystem ensures the vehicle stops reliably and logistics;car and team;
-          are handled efficiently. We design, test and maintain hydraulic braking assemblies, parts of which are — calipers, discs, brake pads—
-          while managing spares, workshops, transport, and race-day logistics.
+        <p class="subsystem-tagline">
+          Ensure the car stops consistently and safely while managing the complex logistics of team transportation,
+          shipping, and documentation.
         </p>
 
-        <p>
-          Safety, repeatability and thermal performance are the primary engineering goals. The subsystem collaborates
-          closely with Chassis, Electrical and Suspension subsystems to ensure braking integration and reliable data capture
-          during development and racing.
+        <!-- Metrics from original page -->
+        <p class="subsystem-metric">
+          <span>2 Lakh+</span> INR in Logistics handled &bull; <span>50+</span> Team members transported &bull;
+          <span>100%</span> Safety & Compliance
         </p>
       </div>
     </section>
 
-    <!-- Domains Section -->
-    <section class="br-domains">
-      <h2><span class="idx">02</span>Core Areas</h2>
 
-      <div class="domains-grid">
+    <!-- RESPONSIBILITY -->
+    <section class="subsystem-scope">
+      <div class="container">
+        <h2>Role & Responsibility</h2>
 
-        <article class="domain-card">
-          <div class="card-head">
-            <div class="card-num">01</div>
-            <h3>Mechanical Braking Design</h3>
-          </div>
-          <p>Design and validate brake pedal, clutch pedal, pedal box and brake rotors using CAD and simulation.</p>
-        </article>
+        <p>
+          The Brakes & Logistics subsystem ensures the vehicle stops reliably and logistics (car and team) are handled
+          efficiently.
+          We design, test, and maintain hydraulic braking assemblies while managing spares, workshops, transport, and
+          race-day logistics.
+        </p>
 
-        <article class="domain-card">
-          <div class="card-head">
-            <div class="card-num">02</div>
-            <h3>Hydraulics & Control</h3>
-          </div>
-          <p>Tuning the brake pressure by biasing the braking force to front and rear wheels</p>
-        </article>
+        <ul class="scope-list">
+          <li>Design and validation of brake pedal, clutch pedal, and pedal box using CAD</li>
+          <li>Hydraulic system tuning for optimal front/rear brake bias</li>
+          <li>Thermal and structural stability of brake rotors</li>
+          <li>Safe transportation of team and shipping of the race car</li>
+          <li>Management of documentation and compliance for shipping</li>
+        </ul>
 
-        <article class="domain-card">
-          <div class="card-head">
-            <div class="card-num">03</div>
-            <h3>Testing & Validation</h3>
-          </div>
-          <p>We ensure that brake rotors lock and are thermally and structurally stable, pedal assembly is designed upto driver ergonomics and ensure zero leaks in the brake lines</p>
-        </article>
-
-        <article class="domain-card">
-          <div class="card-head">
-            <div class="card-num">04</div>
-            <h3>Logistics</h3>
-          </div>
-          <p>We ensure that safe transportation of team, safe shipping of car and manage all sorts of documentation required for shipping of the car</p>
-        </article>
+        <p class="scope-note">
+          Safety, repeatability, and thermal performance are the primary engineering goals. We collaborate with Chassis,
+          Electrical, and Suspension for integration.
+        </p>
       </div>
     </section>
 
-    <!-- Vision Section -->
-    <section class="br-vision">
-      <h2><span class="idx">03</span>Vision & Roadmap</h2>
 
-      <p class="vision-intro">
-        We aim to build braking systems that are predictable under load, light yet robust, supported by efficient
-        logistics processes. Our roadmap emphasizes thermal and structural management, tighter integration with control systems and
-        streamlined spare-parts flow.
-      </p>
+    <section class="subsystem-architecture">
+      <div class="container">
+        <h2>Core Areas</h2>
 
-      <div class="roadmap-grid">
+        <p>
+          The subsystem is divided into key engineering and operational domains:
+        </p>
 
-        <div class="roadmap-card">
-          <strong>Short-term</strong>
-          <h4>Mechanical brake bias</h4>
-          <p>Desigining a Mechanical system where the driver can change the brake bias of the car on the go reliably</p>
-        </div>
-
-        <div class="roadmap-card">
-          <strong>Short-term</strong>
-          <h4>Design and manudacture brake rotors</h4>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate temporibus sequi rem voluptates eaque, exercitationem neque blanditiis voluptatibus perspiciatis possimus minus non ipsam culpa modi doloribus nesciunt tempora quidem vitae.</p>
-        </div>
-
-        <div class="roadmap-card">
-          <strong>Mid-term</strong>
-          <h4>Electronic Brake bias</h4>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate temporibus sequi rem voluptates eaque, exercitationem neque blanditiis voluptatibus perspiciatis possimus minus non ipsam culpa modi doloribus nesciunt tempora quidem vitae.</p>
-        </div>
-
-        <div class="roadmap-card">
-          <strong>Long-term</strong>
-          <h4>Automatic brake bias</h4>
-          <p>Improve supplier redundancy and implement parts tracking.</p>
-        </div>
-
+        <ul class="architecture-list">
+          <li>
+            <strong>Mechanical Braking Design:</strong> Design and validate brake pedal, clutch pedal, pedal box, and
+            brake rotors using CAD and simulation.
+          </li>
+          <li>
+            <strong>Hydraulics & Control:</strong> Tuning brake pressure by biasing the braking force to front and rear
+            wheels.
+          </li>
+          <li>
+            <strong>Logistics:</strong> ensuring safe transportation of the team, safe shipping of the car, and managing
+            all required documentation.
+          </li>
+        </ul>
       </div>
     </section>
+
+
+    <!-- TESTING PHILOSOPHY -->
+    <section class="subsystem-testing">
+      <div class="container">
+        <h2>Testing & Validation</h2>
+        <p>
+          We ensure that brake rotors lock effectively and are thermally and structurally stable.
+          The pedal assembly is designed for driver ergonomics with zero leaks in the brake lines.
+        </p>
+
+        <div class="testing-stages">
+          <div class="testing-stage">
+            <h3>Thermal Stability</h3>
+            <p>Ensuring rotors and pads perform under high-heat racing conditions.</p>
+          </div>
+
+          <div class="testing-stage">
+            <h3>Structural Integrity</h3>
+            <p>Validating pedal box and caliper mounts against extreme braking forces.</p>
+          </div>
+
+          <div class="testing-stage">
+            <h3>Leak Testing</h3>
+            <p>Zero-tolerance validation for hydraulic line integrity.</p>
+          </div>
+
+          <div class="testing-stage">
+            <h3>Logistics Compliance</h3>
+            <p>Verifying all documentation and shipping protocols for zero delays.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTCOMES (Mapped from Vision & Roadmap) -->
+    <section class="subsystem-outcomes">
+      <div class="container">
+        <h2>Vision & Roadmap</h2>
+
+        <p>
+          We aim to build braking systems that are predictable under load, light yet robust, supported by efficient
+          logistics processes.
+        </p>
+
+        <ul class="outcomes-list">
+          <li><strong>Short-term:</strong> Design a mechanical system where the driver can change brake bias on the go.
+          </li>
+          <li><strong>Short-term:</strong> In-house design and manufacture of brake rotors.</li>
+          <li><strong>Mid-term:</strong> Electronic brake bias control.</li>
+          <li><strong>Long-term:</strong> Automatic brake bias and improved supplier redundancy.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WE TRAVELLED (Expanding Cards) -->
+    <!-- WE TRAVELLED (3D Animated Carousel) -->
+    <section class="section-travelled">
+      <div class="container">
+        <h2>We Travelled</h2>
+        <p class="section-intro">
+          Our team has competed globally, demonstrating engineering excellence and logistical capability across
+          continents.
+        </p>
+
+        <!-- Carousel Layout -->
+        <div class="carousel-layout-container">
+
+          <!-- Image Stack Column -->
+          <div>
+            <div class="carousel-image-container">
+              <!-- Images injected by JS -->
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="carousel-content-column">
+            <div class="carousel-text-wrapper">
+              <h3 class="carousel-title">Title</h3>
+              <p class="carousel-designation">Designation</p>
+              <p class="carousel-quote">Quote</p>
+            </div>
+
+            <!-- Nav Buttons -->
+            <div class="carousel-nav">
+              <button id="carousel-prev" class="nav-btn prev" aria-label="Previous">
+                <!-- Icon Arrow Left -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+              </button>
+              <button id="carousel-next" class="nav-btn next" aria-label="Next">
+                <!-- Icon Arrow Right -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
 
   </main>
 
+  <!-- FOOTER -->
   <footer id="main-footer"></footer>
 
-</div>
-
-<!-- Scripts -->
-<script src="assets/js/brakes-logistics.js" type="module" defer></script>
-<script src="assets/js/header.js" defer></script>
+  <!-- JS -->
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/travel-carousel.js"></script>
+  <!-- We can reuse the electrical testing js for the tool cards animation if we add that section back, 
+         or just generic script if needed. For now, no specific script needed for this static content unless we add the carousel. -->
 
 </body>
+
 </html>

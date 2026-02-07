@@ -40,6 +40,7 @@ main section:not(.subsystem-hero) h2::after {
     width: 0;
     opacity: 0;
   }
+
   to {
     width: 42px;
     opacity: 1;
@@ -71,10 +72,13 @@ main section:not(.subsystem-hero) h2::after {
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.7;
     box-shadow: 0 0 20px rgba(182, 0, 2, 0.6);
   }
+
   50% {
     opacity: 1;
     box-shadow: 0 0 30px rgba(230, 0, 4, 0.8);
@@ -87,8 +91,8 @@ main section:not(.subsystem-hero) h2::after {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 48px 48px;
   pointer-events: none;
   opacity: 0.5;
@@ -107,6 +111,7 @@ main section:not(.subsystem-hero) h2::after {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -155,17 +160,17 @@ main section:not(.subsystem-hero) h2::after {
   font-size: 1.05rem;
   line-height: 1.7;
   max-width: 640px;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 /* enhanced metrics display */
 .subsystem-metric {
   margin-top: 32px;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   display: inline-block;
   padding: 12px 24px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border-left: 3px solid #b60002;
   backdrop-filter: blur(10px);
 }
@@ -190,7 +195,7 @@ main section:not(.subsystem-hero) h2::after {
   .subsystem-hero-inner {
     max-width: 100%;
   }
-  
+
   .subsystem-hero h1 {
     background: #ffffff;
     -webkit-text-fill-color: #ffffff;
@@ -407,7 +412,7 @@ main p {
   max-height: 320px;
   max-width: 540px;
   object-fit: contain;
-  filter: drop-shadow(0 30px 50px rgba(0,0,0,0.35));
+  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.35));
   transition: filter 0.3s ease;
 }
 
@@ -431,7 +436,7 @@ main p {
   right: -10%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -440,12 +445,12 @@ main p {
 }
 
 .subsystem-outcomes h2::after {
-  background: rgba(0,0,0,0.9);
-  box-shadow: 0 2px 12px rgba(255,255,255,0.4);
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.4);
 }
 
 .subsystem-outcomes p {
-  color: rgba(0,0,0,0.92);
+  color: rgba(0, 0, 0, 0.92);
 }
 
 .outcomes-list {
@@ -457,7 +462,7 @@ main p {
 .outcomes-list li {
   font-size: 0.92rem;
   margin-bottom: 14px;
-  color: rgba(0,0,0,0.95);
+  color: rgba(0, 0, 0, 0.95);
   padding-left: 24px;
   position: relative;
   transition: all 0.2s ease;
@@ -498,7 +503,7 @@ main p {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .testing-stage {
     padding: 24px;
   }
@@ -563,6 +568,7 @@ html {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
