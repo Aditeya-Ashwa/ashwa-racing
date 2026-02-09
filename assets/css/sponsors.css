@@ -34,9 +34,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -120,7 +120,7 @@ body {
   background: #fff;
   border-radius: 16px;
   padding: 32px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(20px);
@@ -128,18 +128,6 @@ body {
   overflow: hidden;
 }
 
-.sponsor-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #b60002, #ff4444);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
 
 .sponsor-card.visible {
   opacity: 1;
@@ -147,12 +135,8 @@ body {
 }
 
 .sponsor-card:hover {
-  box-shadow: 0 8px 24px rgba(182,0,2,0.12);
+  box-shadow: 0 8px 24px rgba(182, 0, 2, 0.12);
   transform: translateY(-4px);
-}
-
-.sponsor-card:hover::before {
-  transform: scaleX(1);
 }
 
 /* =========================
@@ -188,27 +172,107 @@ body {
    EXECUTIVE / PLATINUM
 ========================= */
 
-.sponsor-executive-sponsor .sponsor-grid,
-.sponsor-platinum-sponsor .sponsor-grid {
+.sponsor-executive-sponsor .sponsor-grid {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.sponsor-executive-sponsor .sponsor-card,
-.sponsor-platinum-sponsor .sponsor-card {
+.sponsor-platinum-sponsor .sponsor-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+/* First card (RVCE) spans full width */
+.sponsor-platinum-sponsor .sponsor-card:first-child {
+  grid-column: 1 / -1;
   text-align: left;
   padding: 40px;
 }
 
-.sponsor-executive-sponsor .sponsor-image-wrapper,
-.sponsor-platinum-sponsor .sponsor-image-wrapper {
+.sponsor-platinum-sponsor .sponsor-card:first-child .sponsor-image-wrapper {
   justify-content: flex-start;
   margin-bottom: 24px;
-  min-height: 80px;
-  max-height: 120px;
+  min-height: 90px;
+  max-height: 130px;
+  padding: 8px 8px 8px 16px;
 }
 
-.sponsor-executive-sponsor img,
-.sponsor-platinum-sponsor img {
+.sponsor-platinum-sponsor .sponsor-card:first-child img {
+  height: 80px;
+  width: auto;
+  max-width: 220px;
+  filter: none;
+  opacity: 1;
+}
+
+/* Other platinum cards (smaller grid) */
+.sponsor-platinum-sponsor .sponsor-card:not(:first-child) {
+  padding: 28px;
+  text-align: center;
+}
+
+.sponsor-platinum-sponsor .sponsor-card:not(:first-child) .sponsor-image-wrapper {
+  margin-bottom: 0;
+  min-height: 70px;
+  max-height: 90px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor-platinum-sponsor .sponsor-card:not(:first-child) img {
+  height: 60px;
+  width: auto;
+  max-width: 160px;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: all 0.35s ease;
+}
+
+.sponsor-platinum-sponsor .sponsor-card:not(:first-child):hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.sponsor-platinum-sponsor .sponsor-card:not(:first-child) .sponsor-image-wrapper a {
+  width: auto;
+}
+
+/* Platinum shine sweep effect */
+.sponsor-platinum-sponsor .sponsor-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(229, 228, 226, 0.35),
+      transparent);
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+
+.sponsor-platinum-sponsor .sponsor-card:hover::after {
+  left: 100%;
+}
+
+.sponsor-executive-sponsor .sponsor-card {
+  text-align: left;
+  padding: 40px;
+}
+
+.sponsor-executive-sponsor .sponsor-image-wrapper {
+  justify-content: flex-start;
+  margin-bottom: 24px;
+  min-height: 90px;
+  max-height: 130px;
+  padding: 8px 8px 8px 16px;
+}
+
+.sponsor-executive-sponsor img {
   height: 80px;
   width: auto;
   max-width: 220px;
@@ -255,8 +319,18 @@ body {
 .sponsor-silver-sponsor .sponsor-image-wrapper,
 .sponsor-technical-partners .sponsor-image-wrapper {
   margin-bottom: 0;
-  min-height: 70px;
-  max-height: 90px;
+  min-height: 80px;
+  max-height: 100px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor-gold-sponsor .sponsor-image-wrapper a,
+.sponsor-silver-sponsor .sponsor-image-wrapper a,
+.sponsor-technical-partners .sponsor-image-wrapper a {
+  width: auto;
 }
 
 .sponsor-gold-sponsor img,
@@ -268,6 +342,7 @@ body {
   filter: grayscale(100%);
   opacity: 0.75;
   transition: all 0.35s ease;
+  transform-origin: center;
 }
 
 .sponsor-gold-sponsor .sponsor-card:hover img,
@@ -286,13 +361,51 @@ body {
 }
 
 .sponsor-gold-sponsor .sponsor-card:hover {
-  border-color: #FFD700;
-  box-shadow: 0 8px 24px rgba(255,215,0,0.15);
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.4);
 }
 
 .sponsor-silver-sponsor .sponsor-card:hover {
-  border-color: #C0C0C0;
-  box-shadow: 0 8px 24px rgba(192,192,192,0.15);
+  box-shadow: 0 8px 32px rgba(192, 192, 192, 0.5);
+}
+
+/* Gold shine sweep effect */
+.sponsor-gold-sponsor .sponsor-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 215, 0, 0.2),
+      transparent);
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+
+.sponsor-gold-sponsor .sponsor-card:hover::after {
+  left: 100%;
+}
+
+/* Silver shine sweep effect */
+.sponsor-silver-sponsor .sponsor-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+
+.sponsor-silver-sponsor .sponsor-card:hover::after {
+  left: 100%;
 }
 
 /* =========================
@@ -314,6 +427,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -324,6 +438,7 @@ body {
   0% {
     background-position: -200% center;
   }
+
   100% {
     background-position: 200% center;
   }
@@ -419,6 +534,7 @@ body {
 ========================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
