@@ -1,19 +1,19 @@
 const sponsorData = {
   "EXECUTIVE SPONSOR": [
     {
-    //   name: "Infineon",
+      //   name: "Infineon",
       logo: "assets/images/sponsors/infineon.svg",
       url: "https://www.infineon.com",
       description: "Semiconductor solutions supporting power electronics and control systems."
     },
     {
-    //   name: "Bosch",
+      //   name: "Bosch",
       logo: "assets/images/sponsors/bosch.svg",
       url: "https://www.bosch.com",
       description: "The Bosch Group is a leading global supplier of technology and services. It employs roughly 412,000 associates worldwide (as of December 31, 2025). According to preliminary figures, the company generated sales of 91 billion euros in 2025. Its operations are divided into four business sectors: Mobility, Industrial Technology, Consumer Goods, and Energy and Building Technology."
     },
     {
-    //   name: "Adani",
+      //   name: "Adani",
       logo: "assets/images/sponsors/adani.svg",
       url: "https://www.adani.com",
       description: "Over the years, Adani Group has positioned itself to be the market leader in its transport logistics and energy utility portfolio businesses focusing on large scale infrastructure development in India with O&M practices benchmarked to global standards. With four IG rated businesses, it is the only Infrastructure Investment Grade issuer in India."
@@ -22,72 +22,87 @@ const sponsorData = {
 
   "PLATINUM SPONSOR": [
     {
-    //   name: "RV College of Engineering",
+      //   name: "RV College of Engineering",
       logo: "assets/images/sponsors/rvce.svg",
       url: "https://rvce.edu.in",
-      description: "Established in 1963 with three engineering branches (Civil, Mechanical and Electrical), RVCE now offers 13 undergraduate engineering programmes, 13 master’s degree programmes and doctoral studies. Rated as one of the top ten self-financing engineering institutions in the country. The current annual student intake for UG and PG programmes is over 2,000. With a highly qualified and dedicated faculty, it utilises its expertise in various disciplines to conduct Research and Development (R&D) for industry and defence establishments in the country."
+      description: "Established in 1963 with three engineering branches (Civil, Mechanical and Electrical), RVCE now offers 13 undergraduate engineering programmes, 13 master's degree programmes and doctoral studies. Rated as one of the top ten self-financing engineering institutions in the country. The current annual student intake for UG and PG programmes is over 2,000. With a highly qualified and dedicated faculty, it utilises its expertise in various disciplines to conduct Research and Development (R&D) for industry and defence establishments in the country."
+    },
+    {
+      logo: "assets/images/sponsors/motul.svg",
+      url: "https://www.motul.com"
+    },
+    {
+      logo: "assets/images/sponsors/skf.svg",
+      url: "https://www.skf.com"
+    },
+    {
+      logo: "assets/images/sponsors/henkel.svg",
+      url: "https://www.henkel.com"
+    },
+    {
+      logo: "assets/images/sponsors/lapp.svg",
+      url: "https://lapp.com"
+    },
+    {
+      logo: "assets/images/sponsors/delhivery.svg",
+      url: "https://www.delhivery.com"
     }
   ],
 
-"GOLD SPONSOR": [
-  {
-    // name: "VRL Logistics",
-    logo: "assets/images/sponsors/vrl.svg",
-    url: "https://www.vrlgroup.in"
-  }
-],
+  "GOLD SPONSOR": [
+    {
+      logo: "assets/images/sponsors/vrl.svg",
+      url: "https://www.vrlgroup.in"
+    },
+    {
+      logo: "assets/images/sponsors/aruanigrid.svg",
+      url: "https://www.aruanigrid.com"
+    }
+  ],
 
-"SILVER SPONSOR": [
-  {
-    // name: "Pegasys Systems",
-    logo: "assets/images/sponsors/pegasyssystemspvtltd.svg",
-    url: "https://www.pegasys.co.in"
-  }
-],
+  "SILVER SPONSOR": [
+    {
+      logo: "assets/images/sponsors/pegasyssystemspvtltd.svg",
+      url: "https://www.pegasys.co.in"
+    },
+    {
+      logo: "assets/images/sponsors/fastolex.svg",
+      url: "https://www.fastolex.com"
+    },
+    {
+      logo: "assets/images/sponsors/speedworks.svg",
+      url: "https://www.speedworks.in"
+    },
+    {
+      logo: "assets/images/sponsors/huntsman.svg",
+      url: "https://www.huntsman.com"
+    }
+  ],
 
-"TECHNICAL PARTNERS": [
-  {
-    logo: "assets/images/sponsors/skf.svg",
-    url: "https://www.skf.com"
-  },
-  {
-    logo: "assets/images/sponsors/uniflex.svg",
-    url: "https://www.uniflexcables.com"
-  },
-  {
-    logo: "assets/images/sponsors/lapp.svg",
-    url: "https://lapp.com"
-  },
-  {
-    logo: "assets/images/sponsors/lioncircuits.svg",
-    url: "https://www.lioncircuits.com"
-  },
-  {
-    logo: "assets/images/sponsors/pcbpower.webp",
-    url: "https://www.pcbpower.com"
-  },
-  {
-    logo: "assets/images/sponsors/delhivery.svg",
-    url: "https://www.delhivery.com"
-  },
-  {
-    logo: "assets/images/sponsors/motul.svg",
-    url: "https://www.motul.com"
-  },
-  {
-    logo: "assets/images/sponsors/analogdevices.svg",
-    url: "https://www.analog.com"
-  },
-  {
-    logo: "assets/images/sponsors/dmgmori.svg",
-    url: "https://www.dmgmori.com"
-  },
-  {
-    logo: "assets/images/sponsors/huntsman.svg",
-    url: "https://www.huntsman.com"
-  }
-]
+  "TECHNICAL PARTNERS": [
+    {
+      logo: "assets/images/sponsors/uniflex.svg",
+      url: "https://www.uniflexcables.com"
+    },
+    {
+      logo: "assets/images/sponsors/lioncircuits.svg",
+      url: "https://www.lioncircuits.com"
+    },
+    {
+      logo: "assets/images/sponsors/pcbpower.webp",
+      url: "https://www.pcbpower.com"
+    },
+    {
+      logo: "assets/images/sponsors/analogdevices.svg",
+      url: "https://www.analog.com"
+    },
+    {
+      logo: "assets/images/sponsors/dmgmori.svg",
+      url: "https://www.dmgmori.com"
+    }
+  ]
 };
+
 
 const container = document.getElementById("sponsor-sections");
 
@@ -101,7 +116,7 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      
+
       // Stagger animation for cards
       const cards = entry.target.querySelectorAll('.sponsor-card');
       cards.forEach((card, index) => {
@@ -121,12 +136,12 @@ Object.entries(sponsorData).forEach(([category, sponsors]) => {
 
   const heading = document.createElement("h2");
   heading.className = "sponsor-section-title";
-  
+
   // Add decorative line before heading
   const decorativeLine = document.createElement("span");
   decorativeLine.className = "title-decoration";
   heading.appendChild(decorativeLine);
-  
+
   const titleText = document.createTextNode(category);
   heading.appendChild(titleText);
 
