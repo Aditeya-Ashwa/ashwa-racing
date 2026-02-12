@@ -1,0 +1,15 @@
+User-agent: *
+Disallow:
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Sitemap location (update with your real domain)
+Sitemap: https://ashwa-racing.github.io/sitemap.xml
