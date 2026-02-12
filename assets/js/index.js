@@ -1,8 +1,8 @@
 const heroImages = [
   "assets/images/team/2021 hybrd.webp",
   "assets/images/team/2025.webp",
-  "assets/images/team/consulate.webp",
-  "assets/images/team/hyperloop.webp"
+  "assets/images/team/Consulate.webp",
+  "assets/images/team/Hyperloop.webp"
 ];
 
 const heroBg = document.querySelector(".hero-bg");
