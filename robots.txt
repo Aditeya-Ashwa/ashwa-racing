@@ -13,3 +13,4 @@ Allow: /
 
 # Sitemap location (update with your real domain)
 Sitemap: https://ashwa-racing.github.io/sitemap.xml
+Sitemap: https://ashwa-racing.github.io/sitemap.txt
