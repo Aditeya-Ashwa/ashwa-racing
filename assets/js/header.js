@@ -1,26 +1,13 @@
-/* ===============================
-   HEADER.JS (CLEAN + MERGED)
-   - Loads header + footer
-   - Initializes sponsor system safely ONCE
-   - Prevents marquee double-start bug
-   - Fixes mobile close button
-================================ */
-
-/* ------ REAL FIX: detect path AFTER 'ashwa-racing' ------ */
 const fullPath = window.location.pathname;
 const base = "/ashwa-racing/";
 
-// everything after /ashwa-racing/
 const afterBase = fullPath.replace(base, "");
 
-// count folders after project root
 const depth = afterBase === "" ? 0 : afterBase.split("/").length - 1;
 
-// build prefix
 let prefix = "";
 for (let i = 0; i < depth; i++) prefix += "../";
 
-/* ---------- LOAD HEADER ---------- */
 fetch(prefix + "components/header.html")
   .then(res => res.text())
   .then(data => {
@@ -53,8 +40,8 @@ async function initializeSponsors() {
     sponsorsInitialized = true;
 
     const SPONSOR_PATH = prefix + "assets/images/sponsors/";
-    const ROTATE_INTERVAL = 2500;
-    const SCROLL_SPEED = 0.55;
+    const ROTATE_INTERVAL = 5000;
+    const SCROLL_SPEED = 1;
 
     // Load manifest
     const manifest = await fetch(SPONSOR_PATH + "manifest.json").then(res => res.json());
@@ -116,7 +103,7 @@ async function initializeSponsors() {
         track.innerHTML += track.innerHTML;
 
         let pos = 0;
-        const SPEED = 0.6;
+        const SPEED = 1.5;
 
         function animate() {
             pos -= SPEED;

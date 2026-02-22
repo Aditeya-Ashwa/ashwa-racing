@@ -11,6 +11,6 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-# Sitemap location (update with your real domain)
+# Sitemap location
 Sitemap: https://ashwa-racing.github.io/sitemap.xml
 Sitemap: https://ashwa-racing.github.io/sitemap.txt
