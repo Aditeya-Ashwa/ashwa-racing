@@ -95,44 +95,52 @@ async function initializeSponsors() {
         setInterval(rotateInlineSponsor, ROTATE_INTERVAL);
     }
 
-    /* 3) CIRCULAR MARQUEE */
+    /* 3) ULTRA-SMOOTH MARQUEE */
     const track = document.getElementById("sponsor-track");
 
     if (track) {
-        if (track.children.length === 0) {
-            sponsorList.forEach(name => {
-                const img = document.createElement("img");
-                img.src = SPONSOR_PATH + name;
-                img.className = "sponsor-logo";
-                track.appendChild(img);
-            });
-        }
+
+        // Prevent double init
+        if (track.dataset.initialized) return;
+        track.dataset.initialized = "true";
+
+        // Populate once
+        sponsorList.forEach(name => {
+            const img = document.createElement("img");
+            img.src = SPONSOR_PATH + name;
+            img.className = "sponsor-logo";
+            track.appendChild(img);
+        });
+
+        // Duplicate content for seamless loop
+        track.innerHTML += track.innerHTML;
 
         let pos = 0;
+        const SPEED = 0.6;
 
-        function scrollLoop() {
-            pos -= SCROLL_SPEED;
-            track.style.transform = `translateX(${pos}px)`;
+        function animate() {
+            pos -= SPEED;
 
-            const first = track.children[0];
-            const firstWidth = first.offsetWidth + 32;
+            const halfWidth = track.scrollWidth / 2;
 
-            if (-pos >= firstWidth) {
-                track.appendChild(first);
-                pos += firstWidth;
+            if (Math.abs(pos) >= halfWidth) {
+                pos = 0; // clean reset
             }
 
-            requestAnimationFrame(scrollLoop);
+            track.style.transform = `translate3d(${pos}px, 0, 0)`;
+            requestAnimationFrame(animate);
         }
 
+        // Wait until all images are decoded
         const images = track.querySelectorAll("img");
+
         Promise.all(
-            [...images].map(img => img.complete ? Promise.resolve() : new Promise(res => img.onload = res))
+            [...images].map(img =>
+                img.decode ? img.decode().catch(() => {}) :
+                new Promise(res => img.complete ? res() : img.onload = res)
+            )
         ).then(() => {
-            if (!track.classList.contains("scroll-start")) {
-                track.classList.add("scroll-start");
-                scrollLoop();
-            }
+            animate();
         });
     }
 }
