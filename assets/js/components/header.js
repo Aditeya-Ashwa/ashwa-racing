@@ -1,133 +1,189 @@
-const fullPath = window.location.pathname;
-const base = "/ashwa-racing/";
+"use strict";
+let   prefix    = "";
+fetch("components/header.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("main-header").innerHTML = html;
+    initNav();
+    initSponsorMarquee();
+    initScrollShrink();
+    markActivePage();
+  })
+  .catch(err => console.warn("Header load failed:", err));
 
-const afterBase = fullPath.replace(base, "");
+fetch("components/footer.html")
+  .then(r => r.text())
+  .then(html => { document.getElementById("main-footer").innerHTML = html; })
+  .catch(err => console.warn("Footer load failed:", err));
 
-const depth = afterBase === "" ? 0 : afterBase.split("/").length - 1;
+function initNav() {
 
-let prefix = "";
-for (let i = 0; i < depth; i++) prefix += "../";
+  /* -- Hamburger toggle -- */
+  const hamburger  = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-fetch(prefix + "components/header.html")
-  .then(res => res.text())
-  .then(data => {
-      document.getElementById("main-header").innerHTML = data;
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", () => {
+      const isOpen = hamburger.classList.toggle("open");
+      hamburger.setAttribute("aria-expanded", isOpen);
+      mobileMenu.classList.toggle("open", isOpen);
+      mobileMenu.setAttribute("aria-hidden", !isOpen);
 
-      // Initialize all sponsor animations safely
-      initializeSponsors();
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    });
 
-      // Mobile X close button logic
-      const closeBtn = document.getElementById("mobileClose");
-      const navToggle = document.getElementById("nav-toggle");
-      if (closeBtn && navToggle) {
-          closeBtn.addEventListener("click", () => {
-              navToggle.checked = false;
-          });
+    document.addEventListener("click", e => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        closeMenu();
       }
+    });
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") closeMenu();
+    });
+  }
+
+  function closeMenu() {
+    if (!hamburger) return;
+    hamburger.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
+    mobileMenu?.classList.remove("open");
+    mobileMenu?.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  const dropdown    = document.getElementById("subsystemsDropdown");
+  const dropBtn     = dropdown?.querySelector(".nav-drop-btn");
+  const dropPanel   = dropdown?.querySelector(".dropdown-panel");
+
+  if (dropdown && dropBtn) {
+    dropBtn.addEventListener("click", e => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle("open");
+      dropBtn.setAttribute("aria-expanded", isOpen);
+    });
+
+    document.addEventListener("click", e => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("open");
+        dropBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    dropdown.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        dropdown.classList.remove("open");
+        dropBtn.setAttribute("aria-expanded", "false");
+        dropBtn.focus();
+      }
+    });
+  }
+
+  const mobSubBtn   = document.getElementById("mobSubBtn");
+  const mobSubPanel = document.getElementById("mobSubPanel");
+
+  if (mobSubBtn && mobSubPanel) {
+    mobSubBtn.addEventListener("click", () => {
+      const isOpen = mobSubBtn.classList.toggle("open");
+      mobSubPanel.classList.toggle("open", isOpen);
+      mobSubBtn.setAttribute("aria-expanded", isOpen);
+    });
+  }
+}
+
+function markActivePage() {
+  const page = window.location.pathname.split("/").pop() || "index.html";
+
+  document.querySelectorAll(".nav-link[href], .mob-link[href]").forEach(link => {
+    const href = link.getAttribute("href");
+    if (href && (href === page || href.endsWith("/" + page))) {
+      link.classList.add("active");
+    }
   });
+}
 
-/* ---------- LOAD FOOTER ---------- */
-fetch(prefix + "components/footer.html")
-  .then(res => res.text())
-  .then(data => {
-      document.getElementById("main-footer").innerHTML = data;
-  });
+let sponsorInit = false;
 
-let sponsorsInitialized = false;
+async function initSponsorMarquee() {
+  if (sponsorInit) return;
+  sponsorInit = true;
 
-async function initializeSponsors() {
-    if (sponsorsInitialized) return;
-    sponsorsInitialized = true;
+  const track = document.getElementById("sponsor-track");
+  if (!track) return;
+  if (track.dataset.initialized) return;
+  track.dataset.initialized = "true";
 
-    const SPONSOR_PATH = prefix + "assets/images/sponsors/";
-    const ROTATE_INTERVAL = 5000;
-    const SCROLL_SPEED = 1;
+  const SPONSOR_PATH = "assets/images/sponsors/";
 
-    // Load manifest
-    const manifest = await fetch(SPONSOR_PATH + "manifest.json").then(res => res.json());
-    const sponsorList = manifest.sponsors;
-    const SPONSOR_COUNT = sponsorList.length;
+  let manifest;
+  try {
+    manifest = await fetch(SPONSOR_PATH + "manifest.json").then(r => r.json());
+  } catch {
+    console.warn("Sponsor manifest not found.");
+    return;
+  }
 
-    /* 1) TOP-RIGHT ROTATING SPONSOR */
-    let currentSponsor = 0;
-    const rotatingImg = document.getElementById("top-rotating-sponsor");
+  const sponsors = manifest.sponsors ?? [];
+  if (!sponsors.length) return;
 
-    function rotateTopSponsor() {
-        currentSponsor = (currentSponsor + 1) % SPONSOR_COUNT;
-        if (rotatingImg) rotatingImg.src = SPONSOR_PATH + sponsorList[currentSponsor];
-    }
+  function buildSet() {
+    const frag = document.createDocumentFragment();
+    sponsors.forEach(name => {
+      const img = document.createElement("img");
+      img.src       = SPONSOR_PATH + name;
+      img.alt       = name.replace(/\.[^.]+$/, "").replace(/[-_]/g, " ");
+      img.className = "sponsor-logo";
+      img.loading   = "lazy";
+      frag.appendChild(img);
+    });
+    return frag;
+  }
 
-    if (rotatingImg) {
-        rotateTopSponsor();
-        setInterval(rotateTopSponsor, ROTATE_INTERVAL);
-    }
+  track.appendChild(buildSet());
+  track.appendChild(buildSet()); // duplicate for seamless loop
 
-    /* 2) INLINE CROSSFADE SPONSOR */
-    const inlineImg = document.getElementById("inline-sponsor");
-    let inlineIndex = 0;
+  const imgs = [...track.querySelectorAll("img")];
+  await Promise.all(
+    imgs.map(img =>
+      img.decode ? img.decode().catch(() => {}) :
+      new Promise(res => img.complete ? res() : (img.onload = res))
+    )
+  );
 
-    if (inlineImg) {
-        inlineImg.src = SPONSOR_PATH + sponsorList[0];
-        inlineImg.style.opacity = 1;
+  let pos    = 0;
+  const SPEED = 1.2;
+  let raf;
 
-        function rotateInlineSponsor() {
-            inlineImg.style.opacity = 0;
-            setTimeout(() => {
-                inlineIndex = (inlineIndex + 1) % SPONSOR_COUNT;
-                inlineImg.src = SPONSOR_PATH + sponsorList[inlineIndex];
-                inlineImg.style.opacity = 1;
-            }, 500);
-        }
+  function animate() {
+    pos -= SPEED;
+    const halfWidth = track.scrollWidth / 2;
+    if (Math.abs(pos) >= halfWidth) pos = 0;
+    track.style.transform = `translate3d(${pos}px, 0, 0)`;
+    raf = requestAnimationFrame(animate);
+  }
 
-        setInterval(rotateInlineSponsor, ROTATE_INTERVAL);
-    }
+  animate();
 
-    /* 3) ULTRA-SMOOTH MARQUEE */
-    const track = document.getElementById("sponsor-track");
+  const strip = track.closest(".sponsor-strip");
+  strip?.addEventListener("mouseenter", () => cancelAnimationFrame(raf));
+  strip?.addEventListener("mouseleave", () => { raf = requestAnimationFrame(animate); });
 
-    if (track) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    cancelAnimationFrame(raf);
+    track.style.transform = "none";
+  }
+}
 
-        // Prevent double init
-        if (track.dataset.initialized) return;
-        track.dataset.initialized = "true";
+function initScrollShrink() {
+  const navbar = document.querySelector(".navbar");
+  if (!navbar) return;
 
-        // Populate once
-        sponsorList.forEach(name => {
-            const img = document.createElement("img");
-            img.src = SPONSOR_PATH + name;
-            img.className = "sponsor-logo";
-            track.appendChild(img);
-        });
+  const threshold = 60;
 
-        // Duplicate content for seamless loop
-        track.innerHTML += track.innerHTML;
+  function onScroll() {
+    navbar.classList.toggle("scrolled", window.scrollY > threshold);
+  }
 
-        let pos = 0;
-        const SPEED = 1.5;
-
-        function animate() {
-            pos -= SPEED;
-
-            const halfWidth = track.scrollWidth / 2;
-
-            if (Math.abs(pos) >= halfWidth) {
-                pos = 0; // clean reset
-            }
-
-            track.style.transform = `translate3d(${pos}px, 0, 0)`;
-            requestAnimationFrame(animate);
-        }
-
-        // Wait until all images are decoded
-        const images = track.querySelectorAll("img");
-
-        Promise.all(
-            [...images].map(img =>
-                img.decode ? img.decode().catch(() => {}) :
-                new Promise(res => img.complete ? res() : img.onload = res)
-            )
-        ).then(() => {
-            animate();
-        });
-    }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll(); // run once on load
 }

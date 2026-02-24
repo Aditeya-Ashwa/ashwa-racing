@@ -1,143 +1,268 @@
-/* ===== TI STYLE FOOTER ===== */
+/* ============================================================
+   ASHWA RACING — FOOTER
+   System: Barlow Condensed + Barlow · dark motorsport
+   ============================================================ */
 
-.ti-footer {
-    background: radial-gradient(
-        circle at top,
-        #1a1a1a 0%,
-        #0b0b0b 65%
-    );
-    color: #ccc;
-    padding: 80px 6% 32px;
-    font-size: 0.85rem;
+/* ─── Base ──────────────────────────────────────────────────── */
+.footer {
+  background: var(--black, #0a0a0a);
+  color: rgba(255,255,255,0.45);
+  font-family: var(--font-body, 'Barlow', sans-serif);
+  border-top: 2px solid var(--red, #e8001d);
 }
 
-/* Top grid */
-.ti-footer-top {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 48px;
-    margin-bottom: 40px;
+/* ─── Top section ───────────────────────────────────────────── */
+.footer-top {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+  padding: 80px 6% 64px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.ti-footer-col h4 {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 16px;
-    color: #fff;
+/* ─── Brand column ──────────────────────────────────────────── */
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.ti-footer-col ul {
-    list-style: none;
+.footer-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  width: fit-content;
 }
 
-.ti-footer-col ul li {
-    margin-bottom: 10px;
+.footer-logo {
+  height: 42px;
+  width: auto;
+  filter: invert(1) brightness(0.85);
+  transition: opacity 0.2s ease;
+}
+.footer-brand-link:hover .footer-logo { opacity: 0.7; }
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  padding-left: 4px;
+  border-left: 2px solid var(--red, #e8001d);
 }
 
-.ti-footer-col ul li a {
-    color: #bbb;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.footer-ashwa {
+  font-family: 'Samarkan', serif;
+  font-size: 24px;
+  color: var(--red, #e8001d);
+  letter-spacing: 1px;
+  line-height: 1.05;
 }
 
-.ti-footer-col ul li a:hover {
-    color: #fff;
+.footer-racing {
+  font-family: 'Xenotron', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.footer-tagline {
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.3);
+  font-weight: 300;
 }
 
 /* Socials */
-.ti-footer-socials {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 18px;
+.footer-socials {
+  display: flex;
+  gap: 10px;
 }
 
-.ti-footer-socials a {
-    color: #ccc;
-    font-size: 1.1rem;
-    transition: color 0.2s ease;
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.ti-footer-socials a:hover {
-    color: #e53935;
+.footer-socials a:hover {
+  background: var(--red, #e8001d);
+  border-color: var(--red, #e8001d);
+  color: #fff;
+  transform: translateY(-3px);
 }
 
-.ti-footer-contact p {
-    font-size: 0.85rem;
-    color: #aaa;
+/* ─── Nav columns ───────────────────────────────────────────── */
+.footer-nav-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
 }
 
-.ti-footer-contact i {
-    margin-right: 6px;
+.footer-col-label {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red, #e8001d);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* Divider */
-.ti-footer-divider {
-    height: 1px;
-    background: rgba(255,255,255,0.08);
-    margin: 32px 0;
+.footer-col-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
 }
 
-/* Bottom bar */
-.ti-footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.ti-footer-brand {
-    display: flex;
+.footer-col ul li {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.footer-col ul li a {
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.18s ease, padding-left 0.18s ease;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  color: #fff;
+  padding-left: 4px;
+}
+
+/* "Soon" items */
+.footer-link-soon {
+  color: rgba(255,255,255,0.2);
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: default;
+  user-select: none;
+}
+
+.soon-tag {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+
+/* Contact links */
+.footer-contact-link {
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.18s ease;
+}
+
+.footer-contact-link:hover { color: #fff; }
+
+.footer-contact-link i,
+.footer-location i {
+  color: var(--red, #e8001d);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.55;
+}
+
+/* ─── Divider ───────────────────────────────────────────────── */
+.footer-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  max-width: 1400px;
+  margin: 0 6%;
+}
+
+/* ─── Bottom bar ────────────────────────────────────────────── */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 24px 6%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-copy,
+.footer-credit {
+  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+
+.footer-credit { color: rgba(255,255,255,0.15); }
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .footer-nav-cols { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+}
+
+@media (max-width: 860px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 64px 6% 48px;
+  }
+  .footer-brand-col { max-width: 360px; }
+}
+
+@media (max-width: 560px) {
+  .footer-nav-cols { grid-template-columns: 1fr 1fr; gap: 28px; }
+
+  .footer-bottom {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 }
 
-.brand-mark {
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.brand-sub {
-    font-size: 0.75rem;
-    color: #999;
-}
-
-.ti-footer-legal {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    font-size: 0.75rem;
-}
-
-.ti-footer-legal a {
-    color: #aaa;
-    text-decoration: none;
-}
-
-.ti-footer-legal a:hover {
-    color: #fff;
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-    .ti-footer-top {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
-    }
-}
-
-@media (max-width: 480px) {
-    .ti-footer {
-        padding: 60px 20px 28px;
-    }
-
-    .ti-footer-top {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    .ti-footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+@media (max-width: 380px) {
+  .footer-nav-cols { grid-template-columns: 1fr; }
+  .footer-top { padding: 48px 5% 40px; }
 }

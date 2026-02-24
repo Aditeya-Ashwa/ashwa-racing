@@ -1,45 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sponsors | Ashwa Racing</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsors | Ashwa Racing</title>
 
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
-<link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
-<link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+  <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
+  <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/components/header.css">
-    <link rel="stylesheet" href="assets/css/components/footer.css">
-    <link rel="stylesheet" href="assets/css/pages/sponsors.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/components/header.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/pages/sponsors.css">
 </head>
-
 <body>
 
 <header id="main-header"></header>
 
-<main class="sponsor-container">
+<!-- ═══════════════════════════
+     HERO
+════════════════════════════ -->
+<section class="sp-hero">
+  <div class="sp-hero-bg"></div>
+  <div class="sp-hero-overlay"></div>
+  <div class="sp-hero-grid"></div>
+  <div class="sp-hero-stripe"></div>
 
-    <!-- HERO -->
-    <section class="sponsor-hero">
-        <h1>Our Sponsors</h1>
-        <p>
-            Ashwa Racing is supported by pioneering companies pushing the boundaries of
-            engineering, performance, and innovation.
-        </p>
-        <div class="hero-divider"></div>
-    </section>
+  <div class="sp-hero-content">
+    <div class="sp-eyebrow">
+      <span class="eyebrow-dash"></span>
+      <span>2025–26 Season</span>
+    </div>
+    <h1 class="sp-hero-title">OUR<br><em>PARTNERS</em></h1>
+    <p class="sp-hero-desc">
+      Ashwa Racing is supported by pioneering companies pushing the boundaries of
+      engineering, performance, and innovation.
+    </p>
+    <a href="contact.html" class="sp-cta">
+      Become a Partner <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
 
-    <!-- JS injects sponsor sections here -->
-    <div id="sponsor-sections"></div>
+  <!-- Tier quick-jump -->
+  <nav class="tier-nav" id="tier-nav" aria-label="Sponsor tier navigation">
+    <!-- Injected by JS -->
+  </nav>
+</section>
 
-</main>
+<!-- ═══════════════════════════
+     SPONSOR SECTIONS
+     JS injects tier sections
+════════════════════════════ -->
+<main id="sponsor-sections"></main>
 
 <footer id="main-footer"></footer>
 

@@ -1,301 +1,324 @@
+/* ============================================================
+   ASHWA RACING — sponsors.js
+   Tier-aware rendering: each tier gets its own card layout,
+   distinct accent colour, and scroll-reveal stagger.
+   ============================================================ */
+
+"use strict";
+
+// ─── Tier config ──────────────────────────────────────────────
+// Controls visual treatment, section titles, nav labels, and card class
+const TIERS = {
+  "EXECUTIVE SPONSOR": {
+    key:      "executive",
+    label:    "Executive",
+    title:    "Executive Sponsors",
+    cardClass: "sp-card-executive",
+    gridClass: "sp-grid-executive"
+  },
+  "PLATINUM SPONSOR": {
+    key:      "platinum",
+    label:    "Platinum",
+    title:    "Platinum Sponsors",
+    cardClass: "sp-card-platinum",
+    gridClass: "sp-grid-platinum"
+  },
+  "GOLD SPONSOR": {
+    key:      "gold",
+    label:    "Gold",
+    title:    "Gold Sponsors",
+    cardClass: "sp-card-gold",
+    gridClass: "sp-grid-gold"
+  },
+  "SILVER SPONSOR": {
+    key:      "silver",
+    label:    "Silver",
+    title:    "Silver Sponsors",
+    cardClass: "sp-card-silver",
+    gridClass: "sp-grid-silver"
+  },
+  "TECHNICAL PARTNERS": {
+    key:      "technical",
+    label:    "Technical",
+    title:    "Technical Partners",
+    cardClass: "sp-card-technical",
+    gridClass: "sp-grid-technical"
+  }
+};
+
+// ─── Sponsor data ─────────────────────────────────────────────
 const sponsorData = {
   "EXECUTIVE SPONSOR": [
-        {
-      //   name: "RV College of Engineering",
+    {
       logo: "assets/images/sponsors/rvce.svg",
+      name: "RV College of Engineering",
       url: "https://rvce.edu.in",
-      description: "Established in 1963 with three engineering branches (Civil, Mechanical and Electrical), RVCE now offers 13 undergraduate engineering programmes, 13 master's degree programmes and doctoral studies. Rated as one of the top ten self-financing engineering institutions in the country. The current annual student intake for UG and PG programmes is over 2,000. With a highly qualified and dedicated faculty, it utilises its expertise in various disciplines to conduct Research and Development (R&D) for industry and defence establishments in the country."
+      description: "Established in 1963, RVCE now offers 13 undergraduate and 13 master's degree programmes. Rated among the top ten self-financing engineering institutions in India with an annual intake of over 2,000 students."
     },
     {
-      //   name: "Infineon",
       logo: "assets/images/sponsors/infineon.svg",
+      name: "Infineon Technologies",
       url: "https://www.infineon.com",
-      description: "Semiconductor solutions supporting power electronics and control systems."
+      description: "Semiconductor solutions supporting power electronics, sensor integration, and microcontroller systems — powering Ashwa's electrical and testing programme."
     },
     {
-      //   name: "Bosch",
       logo: "assets/images/sponsors/bosch.svg",
+      name: "Bosch",
       url: "https://www.bosch.in/",
-      description: "The Bosch Group is a leading global supplier of technology and services. It employs roughly 412,000 associates worldwide (as of December 31, 2025). According to preliminary figures, the company generated sales of 91 billion euros in 2025. Its operations are divided into four business sectors: Mobility, Industrial Technology, Consumer Goods, and Energy and Building Technology."
+      description: "A leading global supplier of technology and services with 412,000 associates worldwide. Bosch's mobility division provides critical components across our powertrain and safety systems."
     },
     {
-      //   name: "Adani",
       logo: "assets/images/sponsors/adani.svg",
+      name: "Adani Group",
       url: "https://www.adani.com/",
-      description: "Over the years, Adani Group has positioned itself to be the market leader in its transport logistics and energy utility portfolio businesses focusing on large scale infrastructure development in India with O&M practices benchmarked to global standards. With four IG rated businesses, it is the only Infrastructure Investment Grade issuer in India."
+      description: "Market leader in transport logistics and energy utility portfolio businesses. Adani Group supports Ashwa Racing's infrastructure and logistics capabilities across competition seasons."
     },
     {
       logo: "assets/images/sponsors/dynamatics.svg",
+      name: "Dynamatic Technologies",
       url: "https://dynamatics.com/",
-      description: "Dynamatic Technologies Limited delivers precision-engineered products for the global Metallurgy, Aerospace,Hydraulics, and Security applications.Dynamatic Hydraulics® specialises in the manufacture of highly engineered hydraulic gear pumps. Dynamatic-Oldland Aerospace® pioneer in Indian Private Sector for manufacture of complex aerostructures and flight-critical assemblies for global OEMs including Airbus, Boeing, Bell Helicopter, Deutsche Aircraft, Dassault Aviation and HAL, having state-of-the-art facilities in India and the UK.",
+      description: "Delivers precision-engineered products for Metallurgy, Aerospace, and Hydraulics applications — pioneering Indian private sector manufacture of complex aerostructures for global OEMs."
     }
   ],
 
   "PLATINUM SPONSOR": [
-    {
-      logo: "assets/images/sponsors/skf.svg",
-      url: "https://www.skf.com/in"
-    },
-    {
-      logo: "assets/images/sponsors/analogdevices.svg",
-      url: "https://www.analog.com/en/index.html"
-    },
-    {
-      logo: "assets/images/sponsors/vrl.svg",
-      url: "https://vrlgroup.in/vrl_group_home.aspx"
-    },
-    {
-      logo: "assets/images/sponsors/pegasyssystemspvtltd.svg",
-      url: "https://pegasyssystems.com/"
-    },
-    {
-      logo: "assets/images/sponsors/motul.svg",
-      url: "https://www.motul.com/en-IN"
-    },
-    {
-      logo: "assets/images/sponsors/lapp.svg",
-      url: "https://www.lapp.com/en_US/us/"
-    },
-    {
-      logo: "assets/images/sponsors/henkel.svg",
-      url: "https://www.henkel.in/"
-    },
-
+    { logo: "assets/images/sponsors/skf.svg",                url: "https://www.skf.com/in",                       name: "SKF" },
+    { logo: "assets/images/sponsors/analogdevices.svg",      url: "https://www.analog.com/en/index.html",         name: "Analog Devices" },
+    { logo: "assets/images/sponsors/vrl.svg",                url: "https://vrlgroup.in/vrl_group_home.aspx",      name: "VRL Logistics" },
+    { logo: "assets/images/sponsors/pegasyssystemspvtltd.svg", url: "https://pegasyssystems.com/",               name: "Pegasys Systems" },
+    { logo: "assets/images/sponsors/motul.svg",              url: "https://www.motul.com/en-IN",                  name: "Motul" },
+    { logo: "assets/images/sponsors/lapp.svg",               url: "https://www.lapp.com/en_US/us/",               name: "LAPP" },
+    { logo: "assets/images/sponsors/henkel.svg",             url: "https://www.henkel.in/",                       name: "Henkel" }
   ],
 
   "GOLD SPONSOR": [
-    {
-      logo: "assets/images/sponsors/delhivery.svg",
-      url: "https://www.delhivery.com"
-    },
-
-    {
-      logo: "assets/images/sponsors/sansera.png",
-      url: "https://sansera.in/"
-    },
-    {
-      logo: "assets/images/sponsors/aruanigrid.svg",
-      url: "https://aruanigrid.com/"
-    }
+    { logo: "assets/images/sponsors/delhivery.svg",  url: "https://www.delhivery.com",  name: "Delhivery" },
+    { logo: "assets/images/sponsors/sansera.png",    url: "https://sansera.in/",        name: "Sansera Engineering" },
+    { logo: "assets/images/sponsors/aruanigrid.svg", url: "https://aruanigrid.com/",    name: "Aruani Grid" }
   ],
 
   "SILVER SPONSOR": [
-
-    {
-      logo: "assets/images/sponsors/fastolex.svg",
-      url: "https://www.tatanexarc.com/company/fastolex-products-utn3938fas42bno/"
-    },
-    {
-      logo: "assets/images/sponsors/speedworks.svg",
-      url: "https://www.speedworks.cc/"
-    },
+    { logo: "assets/images/sponsors/fastolex.svg",    url: "https://www.tatanexarc.com/company/fastolex-products-utn3938fas42bno/", name: "Fastolex" },
+    { logo: "assets/images/sponsors/speedworks.svg",  url: "https://www.speedworks.cc/",                                           name: "Speedworks" }
   ],
 
   "TECHNICAL PARTNERS": [
-    {
-      logo: "assets/images/sponsors/uniflex.svg",
-      url: "https://myuniflex.com/"
-    },
-    {
-      logo: "assets/images/sponsors/mercedes.svg",
-      url: "https://www.akshayamotors.mercedes-benz.co.in/passengercars/about-us.html"
-    },
-    {
-      logo: "assets/images/sponsors/barrelexhaust.webp",
-      url: "https://www.barrelexhaust.com/"
-    },
-    {
-      logo: "assets/images/sponsors/royalbrothers.svg",
-      url: "https://www.royalbrothers.com/bangalore/bike-rentals"
-    },
-    {
-      logo: "assets/images/sponsors/bender.svg",
-      url: "https://www.bender-in.com/"
-    },
-    {
-      logo: "assets/images/sponsors/bmcairfilter.svg",
-      url: "https://www.bmcairfilters.com/en"
-    },
-    {
-      logo: "assets/images/sponsors/dmgmori.svg",
-      url: "https://in.dmgmori.com/"
-    },
-    {
-      logo: "assets/images/sponsors/elcoats.svg",
-      url: "https://elcoats.com/"
-    },
-    {
-      logo: "assets/images/sponsors/ansys.svg",
-      url: "https://www.ansys.com/en-in"
-    },
-    {
-      logo: "assets/images/sponsors/icp.jpg",
-      url: "http://www.icp-india.com/"
-    },
-    {
-      logo: "assets/images/sponsors/impulsepower.jpg",
-      url: "https://impulse-power.com/"
-    },
-    {
-      logo:"assets/images/sponsors/joesgarage.jpg",
-      url: "https://www.instagram.com/joesgarageindia/?hl=en"
-    },
-    {
-      logo: "assets/images/sponsors/lioncircuits.svg",
-      url: "https://www.lioncircuits.com/"
-    },
-    {
-      logo: "assets/images/sponsors/motousher.svg",
-      url: "https://www.motousher.com/"
-    },
-    {
-      logo: "assets/images/sponsors/magodlaser.avif",
-      url: "https://www.magodlaser.in/",
-    },
-    {
-      logo: "assets/images/sponsors/pankaj.png",
-      url: "https://pankaj.com/",
-    },
-    {
-      logo: "assets/images/sponsors/pcbway.svg",
-      url: "https://www.pcbway.com/",
-    },
-        {
-      logo: "assets/images/sponsors/powerhaus.jpg",
-      url: "https://www.powerhaus.in/MainPageFiles/index.htm",
-    },
-    {
-      logo: "assets/images/sponsors/pcbpower.webp",
-      url: "https://www.pcbpower.com"
-    },
-    {
-      logo: "assets/images/sponsors/pcprocess.png",
-      url: "https://www.pcprocess.in/"
-    },
-    {
-      logo: "assets/images/sponsors/triumphlaser.avif",
-      url: "https://www.justdial.com/Bangalore/Triumph-Laser-Peenya-2nd-Stage/080PXX80-XX80-180307235407-G2Q7_BZDET"
-    },
-    {
-      logo: "assets/images/sponsors/solidworks.svg",
-      url: "https://www.solidworks.com/"
-    },
-    {
-      logo: "assets/images/sponsors/sve.png",
-      url: "#"
-    },
-    {
-      logo: "assets/images/sponsors/team88india.svg",
-      url: "https://www.instagram.com/team88india/?hl=en"
-    },
-    {
-      logo: "assets/images/sponsors/nd.png",
-      url: "#"
-    },
-    {
-      logo: "assets/images/sponsors/btpl.png",
-      url: "#"
-    },
-
-    {
-      logo: "assets/images/sponsors/huntsman.svg",
-      url: "https://www.huntsman.com"
-    }
+    { logo: "assets/images/sponsors/uniflex.svg",         url: "https://myuniflex.com/",          name: "Uniflex" },
+    { logo: "assets/images/sponsors/mercedes.svg",        url: "https://www.akshayamotors.mercedes-benz.co.in/passengercars/about-us.html", name: "Mercedes-Benz" },
+    { logo: "assets/images/sponsors/barrelexhaust.webp",  url: "https://www.barrelexhaust.com/",  name: "Barrel Exhaust" },
+    { logo: "assets/images/sponsors/royalbrothers.svg",   url: "https://www.royalbrothers.com/bangalore/bike-rentals", name: "Royal Brothers" },
+    { logo: "assets/images/sponsors/bender.svg",          url: "https://www.bender-in.com/",      name: "Bender" },
+    { logo: "assets/images/sponsors/bmcairfilter.svg",    url: "https://www.bmcairfilters.com/en", name: "BMC Air Filter" },
+    { logo: "assets/images/sponsors/dmgmori.svg",         url: "https://in.dmgmori.com/",         name: "DMG Mori" },
+    { logo: "assets/images/sponsors/elcoats.svg",         url: "https://elcoats.com/",            name: "Elcoats" },
+    { logo: "assets/images/sponsors/ansys.svg",           url: "https://www.ansys.com/en-in",     name: "Ansys" },
+    { logo: "assets/images/sponsors/icp.jpg",             url: "http://www.icp-india.com/",       name: "ICP India" },
+    { logo: "assets/images/sponsors/impulsepower.jpg",    url: "https://impulse-power.com/",      name: "Impulse Power" },
+    { logo: "assets/images/sponsors/joesgarage.jpg",      url: "https://www.instagram.com/joesgarageindia/?hl=en", name: "Joe's Garage" },
+    { logo: "assets/images/sponsors/lioncircuits.svg",    url: "https://www.lioncircuits.com/",   name: "Lion Circuits" },
+    { logo: "assets/images/sponsors/motousher.svg",       url: "https://www.motousher.com/",      name: "Motousher" },
+    { logo: "assets/images/sponsors/magodlaser.avif",     url: "https://www.magodlaser.in/",      name: "Magod Laser" },
+    { logo: "assets/images/sponsors/pankaj.png",          url: "https://pankaj.com/",             name: "Pankaj" },
+    { logo: "assets/images/sponsors/pcbway.svg",          url: "https://www.pcbway.com/",         name: "PCBWay" },
+    { logo: "assets/images/sponsors/powerhaus.jpg",       url: "https://www.powerhaus.in/MainPageFiles/index.htm", name: "Powerhaus" },
+    { logo: "assets/images/sponsors/pcbpower.webp",       url: "https://www.pcbpower.com",        name: "PCB Power" },
+    { logo: "assets/images/sponsors/pcprocess.png",       url: "https://www.pcprocess.in/",       name: "PC Process" },
+    { logo: "assets/images/sponsors/triumphlaser.avif",   url: "https://www.justdial.com/Bangalore/Triumph-Laser-Peenya-2nd-Stage/080PXX80-XX80-180307235407-G2Q7_BZDET", name: "Triumph Laser" },
+    { logo: "assets/images/sponsors/solidworks.svg",      url: "https://www.solidworks.com/",     name: "SolidWorks" },
+    { logo: "assets/images/sponsors/sve.png",             url: "#",                               name: "SVE" },
+    { logo: "assets/images/sponsors/team88india.svg",     url: "https://www.instagram.com/team88india/?hl=en", name: "Team 88 India" },
+    { logo: "assets/images/sponsors/nd.png",              url: "#",                               name: "ND" },
+    { logo: "assets/images/sponsors/btpl.png",            url: "#",                               name: "BTPL" },
+    { logo: "assets/images/sponsors/huntsman.svg",        url: "https://www.huntsman.com",        name: "Huntsman" }
   ]
 };
 
-
+// ─── DOM refs ──────────────────────────────────────────────────
 const container = document.getElementById("sponsor-sections");
+const tierNav   = document.getElementById("tier-nav");
 
-// Add intersection observer for scroll animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
+// ─── Card builders ────────────────────────────────────────────
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+function buildExecutiveCard(sponsor) {
+  const card = document.createElement("div");
+  card.className = "sp-card-executive";
 
-      // Stagger animation for cards
-      const cards = entry.target.querySelectorAll('.sponsor-card');
-      cards.forEach((card, index) => {
-        setTimeout(() => {
-          card.classList.add('visible');
-        }, index * 80);
-      });
-    }
-  });
-}, observerOptions);
+  const logoWrap = document.createElement("div");
+  logoWrap.className = "sp-card-exec-logo";
 
-Object.entries(sponsorData).forEach(([category, sponsors]) => {
+  const img = document.createElement("img");
+  img.src     = sponsor.logo;
+  img.alt     = sponsor.name || "Executive sponsor";
+  img.loading = "lazy";
+
+  if (sponsor.url && sponsor.url !== "#") {
+    const link = document.createElement("a");
+    link.href   = sponsor.url;
+    link.target = "_blank";
+    link.rel    = "noopener noreferrer";
+    link.setAttribute("aria-label", `Visit ${sponsor.name}`);
+    link.appendChild(img);
+    logoWrap.appendChild(link);
+  } else {
+    logoWrap.appendChild(img);
+  }
+
+  const body = document.createElement("div");
+  body.className = "sp-card-exec-body";
+
+  if (sponsor.name) {
+    const name = document.createElement("div");
+    name.className   = "sp-card-exec-name";
+    name.textContent = sponsor.name;
+    body.appendChild(name);
+  }
+
+  if (sponsor.description) {
+    const desc = document.createElement("p");
+    desc.className   = "sp-card-exec-desc";
+    desc.textContent = sponsor.description;
+    body.appendChild(desc);
+  }
+
+  if (sponsor.url && sponsor.url !== "#") {
+    const visitLink = document.createElement("a");
+    visitLink.href      = sponsor.url;
+    visitLink.target    = "_blank";
+    visitLink.rel       = "noopener noreferrer";
+    visitLink.className = "sp-card-exec-link";
+    visitLink.innerHTML = `Visit <i class="fas fa-arrow-right"></i>`;
+    body.appendChild(visitLink);
+  }
+
+  card.appendChild(logoWrap);
+  card.appendChild(body);
+  return card;
+}
+
+function buildLogoCard(sponsor, cardClass) {
+  const card = document.createElement("div");
+  card.className = cardClass;
+
+  const img = document.createElement("img");
+  img.src     = sponsor.logo;
+  img.alt     = sponsor.name || "Sponsor";
+  img.loading = "lazy";
+  img.title   = sponsor.name || "";
+
+  if (sponsor.url && sponsor.url !== "#") {
+    const link = document.createElement("a");
+    link.href   = sponsor.url;
+    link.target = "_blank";
+    link.rel    = "noopener noreferrer";
+    link.setAttribute("aria-label", `Visit ${sponsor.name}`);
+    link.appendChild(img);
+    card.appendChild(link);
+  } else {
+    card.appendChild(img);
+  }
+
+  return card;
+}
+
+// ─── Section builder ─────────────────────────────────────────
+function buildSection(categoryKey, sponsors) {
+  const tier = TIERS[categoryKey];
+  if (!tier) return;
+
   const section = document.createElement("section");
-  section.className = `sponsor-section sponsor-${category
-    .toLowerCase()
-    .replace(/\s+/g, "-")}`;
+  section.className          = `sp-tier-section`;
+  section.dataset.tier       = tier.key;
+  section.id                 = `tier-${tier.key}`;
 
-  const heading = document.createElement("h2");
-  heading.className = "sponsor-section-title";
+  // Header
+  const header = document.createElement("div");
+  header.className = "sp-tier-header";
 
-  // Add decorative line before heading
-  const decorativeLine = document.createElement("span");
-  decorativeLine.className = "title-decoration";
-  heading.appendChild(decorativeLine);
+  const labelGroup = document.createElement("div");
+  labelGroup.className = "sp-tier-label-group";
 
-  const titleText = document.createTextNode(category);
-  heading.appendChild(titleText);
+  const badge = document.createElement("div");
+  badge.className   = "sp-tier-badge";
+  badge.textContent = tier.label;
 
+  const title = document.createElement("h2");
+  title.className   = "sp-tier-title";
+  title.textContent = tier.title;
+
+  labelGroup.appendChild(badge);
+  labelGroup.appendChild(title);
+
+  const count = document.createElement("div");
+  count.className   = "sp-tier-count";
+  count.textContent = `${sponsors.length} partner${sponsors.length !== 1 ? "s" : ""}`;
+
+  header.appendChild(labelGroup);
+  header.appendChild(count);
+
+  // Grid
   const grid = document.createElement("div");
-  grid.className = "sponsor-grid";
+  grid.className = tier.gridClass;
 
   sponsors.forEach(sponsor => {
-    const card = document.createElement("div");
-    card.className = "sponsor-card";
-
-    const imageWrapper = document.createElement("div");
-    imageWrapper.className = "sponsor-image-wrapper";
-
-    const img = document.createElement("img");
-    img.src = sponsor.logo;
-    img.alt = sponsor.name || `${category} sponsor`;
-    img.loading = "lazy";
-
-    if (sponsor.url) {
-      const link = document.createElement("a");
-      link.href = sponsor.url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.setAttribute('aria-label', `Visit ${sponsor.name || 'sponsor'} website`);
-      link.appendChild(img);
-      imageWrapper.appendChild(link);
+    let card;
+    if (tier.key === "executive") {
+      card = buildExecutiveCard(sponsor);
     } else {
-      imageWrapper.appendChild(img);
+      card = buildLogoCard(sponsor, tier.cardClass);
     }
-
-    card.appendChild(imageWrapper);
-
-    if (sponsor.name) {
-      const name = document.createElement("h3");
-      name.className = "sponsor-name";
-      name.textContent = sponsor.name;
-      card.appendChild(name);
-    }
-
-    if (sponsor.description) {
-      const desc = document.createElement("p");
-      desc.className = "sponsor-desc";
-      desc.textContent = sponsor.description;
-      card.appendChild(desc);
-    }
-
     grid.appendChild(card);
   });
 
-  section.appendChild(heading);
+  section.appendChild(header);
   section.appendChild(grid);
   container.appendChild(section);
 
-  // Observe section for scroll animations
-  observer.observe(section);
-});
+  return section;
+}
+
+// ─── Tier nav builder ─────────────────────────────────────────
+function buildTierNav() {
+  Object.entries(sponsorData).forEach(([categoryKey, sponsors]) => {
+    const tier = TIERS[categoryKey];
+    if (!tier) return;
+
+    const btn = document.createElement("a");
+    btn.className        = "tier-nav-btn";
+    btn.href             = `#tier-${tier.key}`;
+    btn.dataset.tier     = tier.key;
+    btn.setAttribute("aria-label", `Jump to ${tier.title}`);
+
+    btn.innerHTML = `
+      <span class="tier-nav-count">${sponsors.length}</span>
+      <span class="tier-nav-label">${tier.label}</span>
+    `;
+
+    tierNav?.appendChild(btn);
+  });
+}
+
+// ─── Intersection observer — scroll reveal ────────────────────
+function initReveal() {
+  const sectionObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("visible");
+
+      // Stagger cards inside
+      entry.target.querySelectorAll(
+        ".sp-card-executive, .sp-card-platinum, .sp-card-gold, .sp-card-silver, .sp-card-technical"
+      ).forEach((card, i) => {
+        setTimeout(() => card.classList.add("visible"), i * 60);
+      });
+
+      sectionObs.unobserve(entry.target);
+    });
+  }, { threshold: 0.07, rootMargin: "0px 0px -40px 0px" });
+
+  document.querySelectorAll(".sp-tier-section").forEach(s => sectionObs.observe(s));
+}
+
+// ─── Init ─────────────────────────────────────────────────────
+buildTierNav();
+Object.entries(sponsorData).forEach(([key, sponsors]) => buildSection(key, sponsors));
+initReveal();

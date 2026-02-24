@@ -1,122 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recruitment | Ashwa Racing</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recruitment | Ashwa Racing</title>
 
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
-<link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
-<link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+  <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
+  <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/components/header.css">
-    <link rel="stylesheet" href="assets/css/components/footer.css">
-    <link rel="stylesheet" href="assets/css/pages/recruitment.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/components/header.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/pages/recruitment.css">
 </head>
-
 <body>
 
 <header id="main-header"></header>
 
-<!-- HERO -->
-<section class="recruit-hero">
-    <div class="recruit-hero-bg"></div>
+<!-- ═══════════════════════════
+     HERO
+════════════════════════════ -->
+<section class="rc-hero">
+  <div class="rc-hero-bg"></div>
+  <div class="rc-hero-overlay"></div>
+  <div class="rc-hero-grid"></div>
+  <div class="rc-hero-stripe"></div>
 
-    <div class="recruit-hero-content">
-        <div class="status-badge">
-            <i class="fas fa-circle"></i> Recruitment Closed
-        </div>
-
-        <h1 class="recruit-title">
-            Ashwa <span>Racing</span>
-        </h1>
-
-        <p class="recruit-subtitle">RV College of Engineering</p>
-
-        <p class="recruit-desc">
-            Join India's premier Formula Student team. Design. Build. Race.
-            Push the boundaries of automotive engineering and become part of something extraordinary.
-        </p>
-
-        <div class="hero-actions">
-            <button class="btn-primary" disabled>Applications Closed</button>
-            <a href="team.html" class="btn-secondary">Explore Departments</a>
-        </div>
+  <div class="rc-hero-content">
+    <!-- Status badge -->
+    <div class="rc-status rc-status--closed" id="rc-status-badge">
+      <span class="rc-status-dot"></span>
+      <span class="rc-status-text">Recruitment Closed</span>
     </div>
+
+    <div class="rc-eyebrow">
+      <span class="eyebrow-dash"></span>
+      <span>RV College of Engineering</span>
+    </div>
+
+    <h1 class="rc-hero-title">JOIN THE<br><em>GRID.</em></h1>
+
+    <p class="rc-hero-desc">
+      Join India's premier Formula Student team. Design. Build. Race.
+      Push the boundaries of automotive engineering and become part of something extraordinary.
+    </p>
+
+    <div class="rc-hero-actions">
+      <button class="rc-btn-primary" id="rc-apply-btn" disabled>
+        Applications Closed
+      </button>
+      <a href="team.html" class="rc-btn-ghost">
+        Explore Subsystems <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Stats pinned to hero bottom -->
+  <div class="rc-hero-stats">
+    <div class="rhs"><span class="rhs-num">20<sup>+</sup></span><span class="rhs-label">Years of Excellence</span></div>
+    <div class="rhs-div"></div>
+    <div class="rhs"><span class="rhs-num">80<sup>+</sup></span><span class="rhs-label">Team Members</span></div>
+    <div class="rhs-div"></div>
+    <div class="rhs"><span class="rhs-num">15<sup>+</sup></span><span class="rhs-label">Competition Awards</span></div>
+    <div class="rhs-div"></div>
+    <div class="rhs"><span class="rhs-num">10</span><span class="rhs-label">Subsystems</span></div>
+  </div>
 </section>
 
-<!-- STATS -->
-<section class="stats-bar">
-    <div class="stat-item">
-        <span class="stat-number">20+</span>
-        <span class="stat-label">Years of Excellence</span>
+<!-- ═══════════════════════════
+     WHY JOIN — split layout
+════════════════════════════ -->
+<section class="rc-why">
+  <div class="rc-why-header reveal">
+    <div class="rc-section-label">
+      <span class="label-dash"></span>Why Join Us
     </div>
-    <div class="stat-item">
-        <span class="stat-number">80+</span>
-        <span class="stat-label">Team Members</span>
+    <h2 class="rc-section-heading">More Than<br><em>A Team.</em></h2>
+    <p>
+      Ashwa Racing builds engineers, leaders, and innovators.
+      Our alumni work at Tesla, Mercedes, Bosch, and top startups worldwide.
+    </p>
+  </div>
+
+  <div class="rc-benefits-grid">
+    <div class="rc-benefit reveal" style="--delay:0.05s">
+      <div class="rc-benefit-num">01</div>
+      <div class="rc-benefit-icon"><i class="fas fa-trophy"></i></div>
+      <h3>Track Record of Excellence</h3>
+      <p>Consistently ranked among India's top Formula Student teams across combustion, electric, and hybrid categories.</p>
     </div>
-    <div class="stat-item">
-        <span class="stat-number">15+</span>
-        <span class="stat-label">Awards Won</span>
+
+    <div class="rc-benefit reveal" style="--delay:0.1s">
+      <div class="rc-benefit-num">02</div>
+      <div class="rc-benefit-icon"><i class="fas fa-globe"></i></div>
+      <h3>Global Community</h3>
+      <p>Compete internationally alongside 500+ Formula Student teams from the world's best engineering universities.</p>
     </div>
+
+    <div class="rc-benefit reveal" style="--delay:0.15s">
+      <div class="rc-benefit-num">03</div>
+      <div class="rc-benefit-icon"><i class="fas fa-wrench"></i></div>
+      <h3>Hands-On Engineering</h3>
+      <p>Design, fabricate, test, and race a real Formula-style car — from concept sketch to podium finish.</p>
+    </div>
+
+    <div class="rc-benefit reveal" style="--delay:0.2s">
+      <div class="rc-benefit-num">04</div>
+      <div class="rc-benefit-icon"><i class="fas fa-rocket"></i></div>
+      <h3>Industry-Ready Skills</h3>
+      <p>Apply engineering principles end-to-end: CAD, simulation, manufacturing, testing, and race strategy.</p>
+    </div>
+
+    <div class="rc-benefit reveal" style="--delay:0.25s">
+      <div class="rc-benefit-num">05</div>
+      <div class="rc-benefit-icon"><i class="fas fa-users"></i></div>
+      <h3>Mentorship & Network</h3>
+      <p>Work directly with industry mentors and a network of alumni who have gone on to lead at top-tier firms.</p>
+    </div>
+
+    <div class="rc-benefit reveal" style="--delay:0.3s">
+      <div class="rc-benefit-num">06</div>
+      <div class="rc-benefit-icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Leadership Opportunities</h3>
+      <p>Take ownership of subsystems, manage budgets, lead supplier relationships, and drive the team forward.</p>
+    </div>
+  </div>
 </section>
 
-<!-- WHY JOIN -->
-<section class="why-join-section">
-    <div class="section-header">
-        <span class="section-tagline">Why Join Us</span>
-        <h2 class="section-title">More Than <span>A Team</span></h2>
-        <p class="section-desc">
-            Ashwa Racing builds engineers, leaders, and innovators.
-            Our alumni work at Tesla, Mercedes, Bosch, and top startups worldwide.
-        </p>
+<!-- ═══════════════════════════
+     PROCESS — vertical timeline
+════════════════════════════ -->
+<section class="rc-process">
+  <div class="rc-process-inner">
+    <div class="rc-process-header reveal">
+      <div class="rc-section-label">
+        <span class="label-dash"></span>How It Works
+      </div>
+      <h2 class="rc-section-heading">The Recruitment<br><em>Process</em></h2>
     </div>
 
-    <div class="benefits-grid">
-        <div class="benefit-card">
-            <i class="fas fa-trophy"></i>
-            <h3>Track Record of Excellence</h3>
-            <p>Consistently ranked among India’s top Formula Student teams.</p>
+    <div class="rc-timeline">
+      <div class="rc-tl-item reveal" style="--delay:0.05s">
+        <div class="rc-tl-node">
+          <span class="rc-tl-num">01</span>
         </div>
+        <div class="rc-tl-content">
+          <div class="rc-tl-label">Applications Open</div>
+          <h3 class="rc-tl-title">Online Application</h3>
+          <p>Fill in the recruitment form with your background, interests, and preferred subsystem. Applications are reviewed by subsystem leads.</p>
+        </div>
+      </div>
 
-        <div class="benefit-card">
-            <i class="fas fa-globe"></i>
-            <h3>Global Community</h3>
-            <p>Compete internationally with 500+ Formula Student teams worldwide.</p>
+      <div class="rc-tl-item reveal" style="--delay:0.1s">
+        <div class="rc-tl-node">
+          <span class="rc-tl-num">02</span>
         </div>
+        <div class="rc-tl-content">
+          <div class="rc-tl-label">Shortlisting</div>
+          <h3 class="rc-tl-title">Technical Screening</h3>
+          <p>Shortlisted candidates are given a brief technical task relevant to their chosen subsystem — no prior racing experience required.</p>
+        </div>
+      </div>
 
-        <div class="benefit-card">
-            <i class="fas fa-tools"></i>
-            <h3>Hands-On Engineering</h3>
-            <p>Design, fabricate, test, and race a real Formula-style car.</p>
+      <div class="rc-tl-item reveal" style="--delay:0.15s">
+        <div class="rc-tl-node">
+          <span class="rc-tl-num">03</span>
         </div>
+        <div class="rc-tl-content">
+          <div class="rc-tl-label">Evaluation</div>
+          <h3 class="rc-tl-title">Interview & Workshop Visit</h3>
+          <p>Selected candidates are invited for a conversation with the team and a tour of the workshop to understand what the role involves day-to-day.</p>
+        </div>
+      </div>
 
-        <div class="benefit-card">
-            <i class="fas fa-rocket"></i>
-            <h3>Industry-Ready Skills</h3>
-            <p>Apply engineering principles from CAD to track validation.</p>
+      <div class="rc-tl-item reveal" style="--delay:0.2s">
+        <div class="rc-tl-node">
+          <span class="rc-tl-num">04</span>
         </div>
+        <div class="rc-tl-content">
+          <div class="rc-tl-label">Onboarding</div>
+          <h3 class="rc-tl-title">Welcome to the Paddock</h3>
+          <p>Successful candidates are formally inducted into their subsystem and begin contributing to the current race car development cycle.</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- FIND YOUR PLACE -->
-<section class="dept-preview">
-    <div class="centered-header">
-        <span class="section-tagline">About the Team</span>
-        <h2 class="section-title">Engineering <span>Excellence</span></h2>
-        <p class="section-desc">
-            From aerodynamics to electronics, business to design —
-            Ashwa Racing offers opportunities across disciplines.
-        </p>
-        <a href="team.html" class="btn-outline">Find Your Place</a>
+<!-- ═══════════════════════════
+     SUBSYSTEMS CTA
+════════════════════════════ -->
+<section class="rc-subsystems">
+  <div class="rc-subsystems-inner reveal">
+    <div class="rc-section-label rc-section-label--light">
+      <span class="label-dash"></span>Find Your Place
     </div>
+    <h2 class="rc-subsystems-heading">Engineering<br><em>Across Every Discipline</em></h2>
+    <p>
+      From aerodynamics to electronics, business to data systems —
+      Ashwa Racing offers engineering and non-engineering roles across 10 subsystems.
+    </p>
+    <a href="team.html" class="rc-subsystems-link">
+      Explore All Subsystems <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <!-- Subsystem name strip -->
+  <div class="rc-sub-strip" aria-hidden="true">
+    <div class="rc-sub-track">
+      <span>Electrical &amp; Testing</span><span class="sep">◆</span>
+      <span>Chassis &amp; Workshop</span><span class="sep">◆</span>
+      <span>Aerodynamics</span><span class="sep">◆</span>
+      <span>Engine</span><span class="sep">◆</span>
+      <span>Suspension &amp; Admin</span><span class="sep">◆</span>
+      <span>Brakes &amp; Logistics</span><span class="sep">◆</span>
+      <span>Drivetrain &amp; HR</span><span class="sep">◆</span>
+      <span>IT Systems</span><span class="sep">◆</span>
+      <span>Finance</span><span class="sep">◆</span>
+      <span>Sponsorship &amp; Marketing</span><span class="sep">◆</span>
+      <!-- Duplicate for seamless loop -->
+      <span>Electrical &amp; Testing</span><span class="sep">◆</span>
+      <span>Chassis &amp; Workshop</span><span class="sep">◆</span>
+      <span>Aerodynamics</span><span class="sep">◆</span>
+      <span>Engine</span><span class="sep">◆</span>
+      <span>Suspension &amp; Admin</span><span class="sep">◆</span>
+      <span>Brakes &amp; Logistics</span><span class="sep">◆</span>
+      <span>Drivetrain &amp; HR</span><span class="sep">◆</span>
+      <span>IT Systems</span><span class="sep">◆</span>
+      <span>Finance</span><span class="sep">◆</span>
+      <span>Sponsorship &amp; Marketing</span><span class="sep">◆</span>
+    </div>
+  </div>
 </section>
 
 <footer id="main-footer"></footer>

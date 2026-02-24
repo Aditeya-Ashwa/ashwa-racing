@@ -1,120 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | Ashwa Racing</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Ashwa Racing</title>
 
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
-<link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
-<link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+  <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
+  <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/pages/index.css" />
-    <link rel="stylesheet" href="assets/css/components/header.css" />
-    <link rel="stylesheet" href="assets/css/components/footer.css" />
-    <link rel="stylesheet" href="assets/css/pages/about.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/components/header.css" />
+  <link rel="stylesheet" href="assets/css/components/footer.css" />
+  <link rel="stylesheet" href="assets/css/pages/about.css" />
 </head>
-
 <body>
 
 <header id="main-header"></header>
 
-<!-- ABOUT HERO (same as home hero) -->
-<section class="hero-ti-real">
-    <div class="hero-bg active"
-        style="background-image:url('assets/images/team/2021\ hybrd.webp')"></div>
+<!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="about-hero">
+  <div class="about-hero-bg" style="background-image:url('assets/images/team/2021 hybrd.webp')"></div>
+  <div class="about-hero-overlay"></div>
+  <div class="about-hero-grid"></div>
+  <div class="about-hero-stripe"></div>
 
-    <div class="hero-panel">
-
-        <h1 class="hero-title">
-            About <span>Ashwa Racing</span>
-        </h1>
-
-        <p class="hero-desc">
-            Ashwa Racing is the Formula Student team of R.V. College of Engineering (RVCE), Bengaluru —
-            engineering high-performance race cars through precision, innovation, and competition.
-        </p>
+  <div class="about-hero-content">
+    <div class="about-eyebrow">
+      <span class="eyebrow-dash"></span>
+      <span>RV College of Engineering · Since 2003</span>
     </div>
+    <h1 class="about-hero-title">
+      WHO<br>WE<br><em>ARE.</em>
+    </h1>
+    <p class="about-hero-desc">
+      Ashwa Racing is the Formula Student team of RV College of Engineering, Bengaluru —
+      engineering high-performance race cars through precision, innovation, and two decades of competition.
+    </p>
+  </div>
+
+  <!-- Inline stat strip -->
+  <div class="about-hero-stats">
+    <div class="hs"><span class="hs-num">2003</span><span class="hs-label">Founded</span></div>
+    <div class="hs-div"></div>
+    <div class="hs"><span class="hs-num">15<sup>+</sup></span><span class="hs-label">Prototypes Built</span></div>
+    <div class="hs-div"></div>
+    <div class="hs"><span class="hs-num">3</span><span class="hs-label">Powertrain Types</span></div>
+    <div class="hs-div"></div>
+    <div class="hs"><span class="hs-num">FB26</span><span class="hs-label">Top 5 EDP</span></div>
+  </div>
 </section>
 
-<!-- ABOUT STORY -->
-<section class="about-story-section">
-    <div class="about-story-header">
-        <h2>About Ashwa Racing</h2>
-        <p>
-            From inception to impact — our journey is one of innovation, growth, and engineering excellence.
-        </p>
+<!-- ═══════════════════════════════════════
+     STORY STEPS
+════════════════════════════════════════ -->
+<section class="story-section">
+
+  <!-- Step 01 — Who We Are -->
+  <article class="story-step">
+    <div class="story-step-media">
+      <img src="assets/images/team/2012.jpg" alt="Ashwa Racing team photo" loading="lazy">
+      <div class="story-step-tag">Est. 2003</div>
     </div>
-
-    <!-- STORY STEPS -->
-    <div class="about-story-steps">
-
-        <div class="story-step">
-            <div class="story-image">
-                <img src="assets/images/team/2012.jpg" alt="Ashwa Racing Team">
-            </div>
-            <div class="story-content">
-                <h3>Who We Are</h3>
-                <p>
-                    Established in 2003 under the Ashwa Mobility Foundation, Ashwa Racing is one of India’s
-                    premier collegiate motorsports teams with consistent global Formula Student participation.
-                </p>
-            </div>
-        </div>
-
-        <div class="story-step">
-            <div class="story-content">
-                <h3>Mission & Vision</h3>
-                <p>
-                    Our vision is to become a national leader across Formula Student categories and drive
-                    sustainable mobility through student-led innovation.
-                </p>
-                <p>
-                    Our mission is to provide industry-grade engineering exposure, foster academic-industry
-                    collaboration, and develop high-performance prototypes.
-                </p>
-            </div>
-            <div class="story-image">
-                <img src="assets/images/team/2012.jpg" alt="Mission and Vision">
-            </div>
-        </div>
-
-        <div class="story-step">
-            <div class="story-image">
-                <img src="assets/images/team/2012.jpg" alt="Ashwa Racing History">
-            </div>
-            <div class="story-content">
-                <h3>History & Impact</h3>
-                <p>
-                    Over two decades, Ashwa Racing has built more than 15 prototype race cars across combustion,
-                    hybrid, and electric powertrains — shaping engineers and contributing to India’s automotive R&D ecosystem.
-                </p>
-            </div>
-        </div>
-
+    <div class="story-step-content">
+      <div class="step-label">01 — Origin</div>
+      <h2 class="step-heading">Who We<br><em>Are</em></h2>
+      <p>
+        Established in 2003 under the Ashwa Mobility Foundation, Ashwa Racing is one of India's
+        premier collegiate motorsports teams — with consistent national and global Formula Student
+        participation spanning over two decades.
+      </p>
     </div>
+  </article>
+
+  <!-- Step 02 — Mission & Vision -->
+  <article class="story-step story-step--reverse story-step--dark">
+    <div class="story-step-media">
+      <img src="assets/images/team/2012.jpg" alt="Mission and Vision" loading="lazy">
+      <div class="story-step-tag">Mission &amp; Vision</div>
+    </div>
+    <div class="story-step-content">
+      <div class="step-label">02 — Purpose</div>
+      <h2 class="step-heading">Built to<br><em>Lead.</em></h2>
+      <p>
+        Our vision is to become a national leader across Formula Student categories and drive
+        sustainable mobility through student-led innovation.
+      </p>
+      <p>
+        Our mission is to provide industry-grade engineering exposure, foster academic-industry
+        collaboration, and develop high-performance prototypes that push the limits of what
+        students can build.
+      </p>
+    </div>
+  </article>
+
+  <!-- Step 03 — History & Impact -->
+  <article class="story-step">
+    <div class="story-step-media">
+      <img src="assets/images/team/2012.jpg" alt="Ashwa Racing history" loading="lazy">
+      <div class="story-step-tag">15+ Prototypes</div>
+    </div>
+    <div class="story-step-content">
+      <div class="step-label">03 — Legacy</div>
+      <h2 class="step-heading">History &amp;<br><em>Impact</em></h2>
+      <p>
+        Over two decades, Ashwa Racing has built more than 15 prototype race cars across combustion,
+        hybrid, and electric powertrains — shaping engineers who go on to lead at India's top
+        automotive and technology companies, and contributing to the nation's automotive R&amp;D ecosystem.
+      </p>
+    </div>
+  </article>
+
 </section>
 
-<!-- VOICES OF OUR LEGACY -->
-<section class="engineering-focus voices-focus">
-    <div class="engineering-header">
-        <h2>Voices of Our Legacy</h2>
-        <p>
-            Alumni, mentors, and faculty who shaped Ashwa Racing across generations.
-        </p>
+<!-- ═══════════════════════════════════════
+     VOICES SECTION
+════════════════════════════════════════ -->
+<section class="voices-section">
+  <div class="voices-header">
+    <div class="voices-label">
+      <span class="label-dash"></span>Alumni &amp; Mentors
     </div>
+    <h2 class="voices-title">Voices of<br><em>Our Legacy</em></h2>
+    <p>Alumni, mentors, and faculty who shaped Ashwa Racing across generations.</p>
+  </div>
 
-    <div class="engineering-grid voices-grid" id="voices-grid">
-        <!-- JS injects rotating cards here -->
-    </div>
+  <div class="voices-grid" id="voices-grid">
+    <!-- Injected by about-testimonials.js -->
+  </div>
+
+  <div class="voices-nav">
+    <button class="voices-prev" id="voicesPrev" aria-label="Previous testimonials">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="voices-dots" id="voicesDots"></div>
+    <button class="voices-next" id="voicesNext" aria-label="Next testimonials">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
 </section>
 
 <footer id="main-footer"></footer>

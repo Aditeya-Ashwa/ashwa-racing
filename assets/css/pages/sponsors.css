@@ -1,560 +1,518 @@
-/* =========================
-   BASE
-========================= */
+/* ============================================================
+   ASHWA RACING — SPONSORS PAGE
+   System: Barlow Condensed + Barlow · dark motorsport-editorial
+   Tier hierarchy: Executive → Platinum → Gold → Silver → Technical
+   ============================================================ */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', Arial, sans-serif;
+/* ─── Tokens ────────────────────────────────────────────────── */
+:root {
+  --red:          #e8001d;
+  --black:        #0a0a0a;
+  --charcoal:     #141414;
+  --dark-grey:    #1c1c1c;
+  --mid-grey:     #2a2a2a;
+  --off-white:    #f7f6f4;
+  --white:        #ffffff;
+  --text-muted:   #888;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+  --ease-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Tier accent colours */
+  --exec-accent:    #e8001d;          /* Red — flagship */
+  --plat-accent:    #c0c0c0;          /* Platinum silver */
+  --gold-accent:    #f0b429;          /* Gold */
+  --silver-accent:  #9ca3af;          /* Silver grey */
+  --tech-accent:    rgba(255,255,255,0.25); /* Subtle white */
 }
 
-body {
-  background: #fafafa;
-  color: #111;
-  overflow-x: hidden;
-}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--charcoal); color: var(--white); overflow-x: hidden; }
 
-/* =========================
+/* ═══════════════════════════════════════════════════════════════
    HERO
-========================= */
-
-.sponsor-hero {
-  background: linear-gradient(135deg, #b60002 0%, #8b0001 100%);
-  color: #fff;
-  padding: 120px 6% 100px;
+═══════════════════════════════════════════════════════════════ */
+.sp-hero {
   position: relative;
+  height: 100svh; min-height: 560px; max-height: 900px;
+  background: var(--black);
   overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end;
 }
 
-.sponsor-hero::before {
+.sp-hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('assets/images/team/Costwin.jpg');
+  background-size: cover; background-position: center 40%;
+  filter: brightness(0.22) saturate(0.6);
+  transform: scale(1.04);
+  transition: transform 8s var(--ease-expo);
+}
+.sp-hero:hover .sp-hero-bg { transform: scale(1.0); }
+
+.sp-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.93) 0%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,0.05) 100%);
+}
+
+.sp-hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.sp-hero-stripe {
+  position: absolute; top: 0; right: 9%; z-index: 2;
+  width: 3px; height: 100%;
+  background: var(--red);
+}
+.sp-hero-stripe::before {
   content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
-  pointer-events: none;
+  position: absolute; top: 0; left: -14px;
+  width: 1px; height: 100%;
+  background: var(--red); opacity: 0.28;
 }
 
-.sponsor-hero h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  margin-bottom: 16px;
-  position: relative;
-  z-index: 1;
-  letter-spacing: -0.02em;
-}
-
-.sponsor-hero p {
-  font-size: 1.1rem;
-  line-height: 1.7;
+.sp-hero-content {
+  position: relative; z-index: 3;
+  padding: 0 7% 44px;
   max-width: 700px;
+}
+
+.sp-eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--font-display);
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+}
+.eyebrow-dash { display: block; width: 28px; height: 2px; background: var(--red); flex-shrink: 0; }
+
+.sp-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 13vw, 10rem);
+  font-weight: 800; line-height: 0.86;
+  letter-spacing: -0.02em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 20px;
+}
+.sp-hero-title em { font-style: italic; color: var(--red); display: block; }
+
+.sp-hero-desc {
+  font-size: clamp(0.88rem, 1.3vw, 1rem);
+  line-height: 1.7; color: rgba(255,255,255,0.5);
+  font-weight: 300; max-width: 480px; margin-bottom: 28px;
+}
+
+.sp-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-display);
+  font-size: 0.9rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--red);
+  border-bottom: 2px solid var(--red);
+  padding-bottom: 3px;
+  text-decoration: none;
+  transition: gap 0.2s ease, opacity 0.2s ease;
+}
+.sp-cta:hover { gap: 16px; opacity: 0.8; }
+
+/* ─── Tier quick-nav ────────────────────────────────────────── */
+.tier-nav {
+  position: relative; z-index: 3;
+  display: flex; flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.tier-nav-btn {
+  flex: 1; min-width: 80px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 16px 10px;
+  background: transparent; border: none;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  cursor: pointer; text-decoration: none;
   position: relative;
-  z-index: 1;
-  opacity: 0.95;
+  transition: background 0.2s ease;
+}
+.tier-nav-btn:last-child { border-right: none; }
+.tier-nav-btn:hover { background: rgba(255,255,255,0.04); }
+
+.tier-nav-btn::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  transform: scaleX(0);
+  transition: transform 0.3s var(--ease-expo);
+}
+.tier-nav-btn:hover::after { transform: scaleX(1); }
+
+/* Tier-specific bottom colours */
+.tier-nav-btn[data-tier="executive"]::after  { background: var(--exec-accent); }
+.tier-nav-btn[data-tier="platinum"]::after   { background: var(--plat-accent); }
+.tier-nav-btn[data-tier="gold"]::after       { background: var(--gold-accent); }
+.tier-nav-btn[data-tier="silver"]::after     { background: var(--silver-accent); }
+.tier-nav-btn[data-tier="technical"]::after  { background: rgba(255,255,255,0.35); }
+
+.tier-nav-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  transition: color 0.2s ease;
+}
+.tier-nav-btn:hover .tier-nav-label { color: var(--white); }
+
+.tier-nav-count {
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 800;
+  color: rgba(255,255,255,0.15);
+  line-height: 1; transition: color 0.2s ease;
+}
+.tier-nav-btn[data-tier="executive"]:hover .tier-nav-count { color: var(--exec-accent); }
+.tier-nav-btn[data-tier="platinum"]:hover .tier-nav-count  { color: var(--plat-accent); }
+.tier-nav-btn[data-tier="gold"]:hover .tier-nav-count      { color: var(--gold-accent); }
+.tier-nav-btn[data-tier="silver"]:hover .tier-nav-count    { color: var(--silver-accent); }
+.tier-nav-btn[data-tier="technical"]:hover .tier-nav-count { color: rgba(255,255,255,0.6); }
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION WRAPPER (per tier)
+═══════════════════════════════════════════════════════════════ */
+.sp-tier-section {
+  padding: 80px 7%;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.55s var(--ease-expo), transform 0.55s var(--ease-expo);
+}
+.sp-tier-section.visible { opacity: 1; transform: translateY(0); }
+
+/* Alternating bg */
+.sp-tier-section:nth-child(even) { background: var(--charcoal); }
+.sp-tier-section:nth-child(odd)  { background: var(--dark-grey); }
+
+/* Section header */
+.sp-tier-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
 }
 
-/* =========================
-   SECTIONS
-========================= */
+.sp-tier-label-group { display: flex; flex-direction: column; gap: 6px; }
 
-.sponsor-section {
-  padding: 64px 6%;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.sponsor-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.sponsor-section:nth-child(even) { background: #ffffff; }
-.sponsor-section:nth-child(odd)  { background: #fafafa; }
-
-.sponsor-section-title {
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #b60002;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  display: inline-block;
-}
-
-.title-decoration {
-  display: block;
-  width: 48px;
-  height: 4px;
-  background: linear-gradient(90deg, #b60002, #ff4444);
-  margin-bottom: 10px;
+.sp-tier-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 4px 12px 4px 4px;
   border-radius: 2px;
+  width: fit-content;
+}
+/* Tier badge variants */
+.sp-tier-section[data-tier="executive"]  .sp-tier-badge { color: var(--exec-accent);   border-left: 3px solid var(--exec-accent); }
+.sp-tier-section[data-tier="platinum"]   .sp-tier-badge { color: var(--plat-accent);   border-left: 3px solid var(--plat-accent); }
+.sp-tier-section[data-tier="gold"]       .sp-tier-badge { color: var(--gold-accent);   border-left: 3px solid var(--gold-accent); }
+.sp-tier-section[data-tier="silver"]     .sp-tier-badge { color: var(--silver-accent); border-left: 3px solid var(--silver-accent); }
+.sp-tier-section[data-tier="technical"]  .sp-tier-badge { color: rgba(255,255,255,0.4); border-left: 3px solid rgba(255,255,255,0.2); }
+
+.sp-tier-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.02em; line-height: 1;
+  color: var(--white);
 }
 
-/* =========================
-   CARD BASE
-========================= */
+.sp-tier-count {
+  font-family: var(--font-display);
+  font-size: 0.68rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--text-muted);
+  padding-bottom: 4px;
+}
 
-.sponsor-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  opacity: 0;
-  transform: translateY(16px);
-  position: relative;
+/* ═══════════════════════════════════════════════════════════════
+   EXECUTIVE — Large featured cards with description
+═══════════════════════════════════════════════════════════════ */
+.sp-grid-executive {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 2px;
+}
+
+.sp-card-executive {
+  background: var(--mid-grey);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0;
   overflow: hidden;
-  height: auto;
-  align-self: start;
+  border-left: 3px solid transparent;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.3s var(--ease-expo);
+  opacity: 0; transform: translateY(16px);
 }
-
-.sponsor-card.visible {
-  opacity: 1;
-  transform: translateY(0);
+.sp-card-executive.visible {
+  opacity: 1; transform: translateY(0);
 }
-
-.sponsor-card:hover {
-  box-shadow: 0 8px 24px rgba(182,0,2,0.12);
+.sp-card-executive:hover {
+  background: #333;
+  border-left-color: var(--exec-accent);
   transform: translateY(-3px);
 }
 
-/* =========================
-   IMAGE WRAPPER — default
-========================= */
-
-.sponsor-image-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.sp-card-exec-logo {
+  background: #222;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px 20px;
 }
-
-.sponsor-image-wrapper a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  transition: transform 0.3s ease;
+.sp-card-exec-logo a {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; text-decoration: none;
 }
-
-.sponsor-image-wrapper img {
-  display: block;
-  width: 100%;
-  height: 100%;
+.sp-card-exec-logo img {
+  max-width: 120px; max-height: 56px;
   object-fit: contain;
+  filter: brightness(0) invert(1) opacity(0.7);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.sp-card-executive:hover .sp-card-exec-logo img {
+  filter: brightness(1) invert(0) opacity(1);
+  transform: scale(1.05);
 }
 
-/* =========================
-   EXECUTIVE SPONSOR
-========================= */
-
-.sponsor-executive-sponsor .sponsor-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+.sp-card-exec-body {
+  padding: 24px 22px;
+  display: flex; flex-direction: column; gap: 8px;
+  border-left: 1px solid rgba(255,255,255,0.06);
 }
 
-.sponsor-executive-sponsor .sponsor-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 28px;
-  padding: 28px 32px;
-  border: 1px solid rgba(182,0,2,0.12);
-  background: linear-gradient(160deg, #fff 0%, #fdf9f9 100%);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  overflow: visible;
+.sp-card-exec-name {
+  font-family: var(--font-display);
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--exec-accent);
 }
 
-/* Logo — fixed box, left-aligned */
-.sponsor-executive-sponsor .sponsor-image-wrapper {
-  flex: 0 0 140px;
-  width: 140px;
-  height: 64px;
-  margin: 0;
-  justify-content: flex-start;
-}
-
-.sponsor-executive-sponsor .sponsor-image-wrapper a {
-  width: 140px;
-  height: 64px;
-  justify-content: flex-start;
-}
-
-.sponsor-executive-sponsor .sponsor-image-wrapper img {
-  width: 140px;
-  height: 64px;
-  object-fit: contain;
-  object-position: left center;
-}
-
-/* Text */
-.sponsor-executive-sponsor .sponsor-content {
-  flex: 1 1 0;
-  min-width: 0;
-}
-
-.sponsor-executive-sponsor .sponsor-name {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 6px;
-}
-
-.sponsor-executive-sponsor .sponsor-desc {
-  font-size: 0.82rem;
-  line-height: 1.55;
-  color: #666;
-  margin: 0;
+.sp-card-exec-desc {
+  font-size: 0.8rem; line-height: 1.65;
+  color: rgba(255,255,255,0.4); font-weight: 300;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* =========================
-   PLATINUM SPONSOR
-========================= */
+.sp-card-exec-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-display);
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--exec-accent);
+  text-decoration: none; margin-top: 4px;
+  opacity: 0; transition: opacity 0.2s ease, gap 0.2s ease;
+}
+.sp-card-executive:hover .sp-card-exec-link { opacity: 1; }
+.sp-card-exec-link:hover { gap: 10px; }
 
-.sponsor-platinum-sponsor .sponsor-grid {
+/* ═══════════════════════════════════════════════════════════════
+   PLATINUM — Medium logo cards, slight shadow treatment
+═══════════════════════════════════════════════════════════════ */
+.sp-grid-platinum {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 16px;
-  align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2px;
 }
 
-.sponsor-platinum-sponsor .sponsor-card {
-  padding: 20px 16px;
-  text-align: center;
-  align-self: start;
-  overflow: hidden;
+.sp-card-platinum {
+  background: var(--mid-grey);
+  padding: 28px 18px;
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 3/2;
+  position: relative; overflow: hidden;
+  border-top: 2px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.3s var(--ease-expo);
+  opacity: 0; transform: translateY(16px);
 }
-
-.sponsor-platinum-sponsor .sponsor-image-wrapper {
-  width: 100%;
-  height: 80px;
-  margin: 0 auto;
-  padding: 8px;
-}
-
-.sponsor-platinum-sponsor .sponsor-image-wrapper a {
-  width: 100%;
-  height: 100%;
-}
-
-.sponsor-platinum-sponsor .sponsor-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: grayscale(20%);
-  opacity: 0.9;
-  transition: all 0.3s ease;
-}
-
-.sponsor-platinum-sponsor .sponsor-card:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.06);
+.sp-card-platinum.visible { opacity: 1; transform: translateY(0); }
+.sp-card-platinum:hover {
+  background: #333;
+  border-top-color: var(--plat-accent);
+  transform: translateY(-4px);
 }
 
 /* Shine sweep */
-.sponsor-platinum-sponsor .sponsor-card::after {
+.sp-card-platinum::after {
   content: '';
-  position: absolute;
-  inset: 0;
-  left: -100%;
-  width: 100%;
-  background: linear-gradient(90deg, transparent, rgba(229,228,226,0.3), transparent);
+  position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(192,192,192,0.08), transparent);
   transition: left 0.7s ease;
   pointer-events: none;
 }
+.sp-card-platinum:hover::after { left: 150%; }
 
-.sponsor-platinum-sponsor .sponsor-card:hover::after {
-  left: 100%;
+.sp-card-platinum a {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%; text-decoration: none;
 }
-
-/* =========================
-   SHARED TEXT
-========================= */
-
-.sponsor-name {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 8px;
-}
-
-.sponsor-desc {
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: #666;
-}
-
-/* =========================
-   GOLD / SILVER / TECHNICAL
-========================= */
-
-.sponsor-gold-sponsor .sponsor-grid,
-.sponsor-silver-sponsor .sponsor-grid,
-.sponsor-technical-partners .sponsor-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 8px;
-  align-items: center;
-}
-
-.sponsor-gold-sponsor .sponsor-card,
-.sponsor-silver-sponsor .sponsor-card,
-.sponsor-technical-partners .sponsor-card {
-  background: transparent;
-  box-shadow: none;
-  border-radius: 8px;
-  padding: 16px 12px;
-  align-self: center;
-  overflow: visible;
-}
-
-.sponsor-gold-sponsor .sponsor-image-wrapper,
-.sponsor-silver-sponsor .sponsor-image-wrapper,
-.sponsor-technical-partners .sponsor-image-wrapper {
-  width: 100%;
-  height: 70px;
-  margin: 0 auto;
-  padding: 8px;
-}
-
-.sponsor-gold-sponsor .sponsor-image-wrapper a,
-.sponsor-silver-sponsor .sponsor-image-wrapper a,
-.sponsor-technical-partners .sponsor-image-wrapper a {
-  width: 100%;
-  height: 100%;
-}
-
-.sponsor-gold-sponsor img,
-.sponsor-silver-sponsor img,
-.sponsor-technical-partners img {
-  width: 100%;
-  height: 100%;
+.sp-card-platinum img {
+  max-width: 110px; max-height: 52px;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
+  filter: brightness(0) invert(1) opacity(0.55);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.sp-card-platinum:hover img {
+  filter: brightness(1) invert(0) opacity(1);
+  transform: scale(1.07);
 }
 
-.sponsor-gold-sponsor .sponsor-card:hover img,
-.sponsor-silver-sponsor .sponsor-card:hover img,
-.sponsor-technical-partners .sponsor-card:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.06);
+/* ═══════════════════════════════════════════════════════════════
+   GOLD — Warm-tinted logo grid
+═══════════════════════════════════════════════════════════════ */
+.sp-grid-gold {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 2px;
 }
 
-.sponsor-gold-sponsor .sponsor-card:hover {
-  box-shadow: 0 6px 24px rgba(255,215,0,0.35);
+.sp-card-gold {
+  background: var(--dark-grey);
+  padding: 22px 14px;
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 3/2;
+  border-bottom: 2px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.3s var(--ease-expo);
+  opacity: 0; transform: translateY(16px);
+}
+.sp-card-gold.visible { opacity: 1; transform: translateY(0); }
+.sp-card-gold:hover {
+  background: #262626;
+  border-bottom-color: var(--gold-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(240,180,41,0.12);
 }
 
-.sponsor-silver-sponsor .sponsor-card:hover {
-  box-shadow: 0 6px 24px rgba(192,192,192,0.45);
+.sp-card-gold a {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%; text-decoration: none;
+}
+.sp-card-gold img {
+  max-width: 100px; max-height: 46px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.6);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.sp-card-gold:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.08);
 }
 
-/* =========================
-   LINKS
-========================= */
-
-.sponsor-card a {
-  text-decoration: none;
-  color: inherit;
+/* ═══════════════════════════════════════════════════════════════
+   SILVER — Subtle grey logo grid
+═══════════════════════════════════════════════════════════════ */
+.sp-grid-silver {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 2px;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+.sp-card-silver {
+  background: var(--dark-grey);
+  padding: 20px 12px;
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 3/2;
+  border-bottom: 2px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.3s var(--ease-expo);
+  opacity: 0; transform: translateY(16px);
+}
+.sp-card-silver.visible { opacity: 1; transform: translateY(0); }
+.sp-card-silver:hover {
+  background: #262626;
+  border-bottom-color: var(--silver-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(156,163,175,0.1);
 }
 
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1024px) {
-  .sponsor-section {
-    padding: 56px 5%;
-  }
+.sp-card-silver a {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%; text-decoration: none;
+}
+.sp-card-silver img {
+  max-width: 96px; max-height: 42px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.5);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.sp-card-silver:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.08);
 }
 
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-  .sponsor-hero {
-    padding: 80px 5% 60px;
-  }
-
-  .sponsor-section {
-    padding: 44px 4%;
-  }
-
-  .sponsor-section-title {
-    font-size: 1.1rem;
-    margin-bottom: 24px;
-  }
-
-  /* Executive — tighten but keep horizontal */
-  .sponsor-executive-sponsor .sponsor-card {
-    gap: 16px;
-    padding: 18px 20px;
-  }
-
-  .sponsor-executive-sponsor .sponsor-image-wrapper,
-  .sponsor-executive-sponsor .sponsor-image-wrapper a {
-    flex: 0 0 100px;
-    width: 100px;
-    height: 48px;
-  }
-
-  .sponsor-executive-sponsor .sponsor-image-wrapper img {
-    width: 100px;
-    height: 48px;
-  }
-
-  .sponsor-executive-sponsor .sponsor-name {
-    font-size: 0.9rem;
-  }
-
-  .sponsor-executive-sponsor .sponsor-desc {
-    -webkit-line-clamp: 3;
-    font-size: 0.76rem;
-  }
-
-  /* Platinum */
-  .sponsor-platinum-sponsor .sponsor-grid {
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-    gap: 10px;
-  }
-
-  .sponsor-platinum-sponsor .sponsor-image-wrapper {
-    height: 60px;
-    padding: 6px;
-  }
-
-  /* Gold / Silver / Technical */
-  .sponsor-gold-sponsor .sponsor-grid,
-  .sponsor-silver-sponsor .sponsor-grid,
-  .sponsor-technical-partners .sponsor-grid {
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-    gap: 6px;
-  }
-
-  .sponsor-gold-sponsor .sponsor-image-wrapper,
-  .sponsor-silver-sponsor .sponsor-image-wrapper,
-  .sponsor-technical-partners .sponsor-image-wrapper {
-    height: 56px;
-    padding: 6px;
-  }
+/* ═══════════════════════════════════════════════════════════════
+   TECHNICAL PARTNERS — Dense compact grid
+═══════════════════════════════════════════════════════════════ */
+.sp-grid-technical {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 2px;
 }
 
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width: 480px) {
-  .sponsor-hero {
-    padding: 70px 4% 50px;
-  }
-
-  .sponsor-section {
-    padding: 36px 4%;
-  }
-
-  /* Executive — stack vertically on tiny screens */
-  .sponsor-executive-sponsor .sponsor-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 16px;
-  }
-
-  .sponsor-executive-sponsor .sponsor-image-wrapper,
-  .sponsor-executive-sponsor .sponsor-image-wrapper a {
-    flex: none;
-    width: 110px;
-    height: 44px;
-  }
-
-  .sponsor-executive-sponsor .sponsor-image-wrapper img {
-    width: 110px;
-    height: 44px;
-  }
-
-  .sponsor-executive-sponsor .sponsor-desc {
-    -webkit-line-clamp: 2;
-  }
-
-  /* Platinum */
-  .sponsor-platinum-sponsor .sponsor-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-
-  .sponsor-platinum-sponsor .sponsor-image-wrapper {
-    height: 50px;
-    padding: 4px;
-  }
-
-  /* Gold / Silver / Technical */
-  .sponsor-gold-sponsor .sponsor-grid,
-  .sponsor-silver-sponsor .sponsor-grid,
-  .sponsor-technical-partners .sponsor-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-  }
-
-  .sponsor-gold-sponsor .sponsor-image-wrapper,
-  .sponsor-silver-sponsor .sponsor-image-wrapper,
-  .sponsor-technical-partners .sponsor-image-wrapper {
-    height: 48px;
-    padding: 4px;
-  }
-
-  .sponsor-gold-sponsor .sponsor-card,
-  .sponsor-silver-sponsor .sponsor-card,
-  .sponsor-technical-partners .sponsor-card {
-    padding: 10px 6px;
-  }
-
-  .title-decoration {
-    width: 36px;
-    height: 3px;
-  }
+.sp-card-technical {
+  background: #181818;
+  padding: 18px 10px;
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 3/2;
+  transition: background 0.2s ease, transform 0.25s var(--ease-expo);
+  opacity: 0; transform: translateY(12px);
+}
+.sp-card-technical.visible { opacity: 1; transform: translateY(0); }
+.sp-card-technical:hover {
+  background: #222;
+  transform: translateY(-2px);
 }
 
-/* =========================
-   ACCESSIBILITY
-========================= */
+.sp-card-technical a {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%; text-decoration: none;
+}
+.sp-card-technical img {
+  max-width: 80px; max-height: 36px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.45);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.sp-card-technical:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.1);
+}
 
+/* ─── Accessibility ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .sponsor-section,
-  .sponsor-card {
-    opacity: 1;
-    transform: none;
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .sp-tier-section, .sp-card-executive, .sp-card-platinum,
+  .sp-card-gold, .sp-card-silver, .sp-card-technical {
+    opacity: 1; transform: none;
   }
 }
 
-.sponsor-card a:focus-visible {
-  outline: 3px solid #b60002;
-  outline-offset: 4px;
-  border-radius: 4px;
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .sp-grid-executive { grid-template-columns: 1fr; }
+  .sp-tier-section { padding: 64px 5%; }
+}
+
+@media (max-width: 640px) {
+  .sp-hero-content { padding: 0 5% 36px; }
+  .tier-nav { overflow-x: auto; flex-wrap: nowrap; }
+  .tier-nav-btn { min-width: 68px; padding: 12px 8px; }
+  .sp-card-executive { grid-template-columns: 1fr; }
+  .sp-card-exec-logo { padding: 20px; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .sp-grid-platinum { grid-template-columns: repeat(3, 1fr); }
+  .sp-grid-gold, .sp-grid-silver { grid-template-columns: repeat(3, 1fr); }
+  .sp-grid-technical { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 400px) {
+  .sp-grid-technical { grid-template-columns: repeat(3, 1fr); }
 }
