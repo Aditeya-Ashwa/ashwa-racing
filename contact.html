@@ -1,96 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Ashwa Racing</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
-<link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
-<link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Ashwa Racing</title>
 
-    <!-- CSS FILES -->
-    <link rel="stylesheet" href="assets/css/pages/contact.css">
-    <link rel="stylesheet" href="assets/css/components/header.css">
-    <link rel="stylesheet" href="assets/css/components/footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
+  <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="assets/css/components/header.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/pages/contact.css">
 </head>
+<body>
 
-<body class="contact-body">
+<header id="main-header"></header>
 
-    <header id="main-header"></header>
+<!-- ═══════════════════════════
+     HERO
+════════════════════════════ -->
+<section class="ct-hero">
+  <div class="ct-hero-bg"></div>
+  <div class="ct-hero-overlay"></div>
+  <div class="ct-hero-grid"></div>
+  <div class="ct-hero-stripe"></div>
 
-    <section class="contact-section">
-        <div class="contact-card">
+  <div class="ct-hero-content">
+    <div class="ct-eyebrow">
+      <span class="eyebrow-dash"></span>
+      <span>Ashwa Racing · RVCE</span>
+    </div>
+    <h1 class="ct-hero-title">GET IN<br><em>TOUCH.</em></h1>
+    <p class="ct-hero-desc">
+      Whether you're a student looking to join, a company interested in partnership,
+      or a racing enthusiast — we'd love to hear from you.
+    </p>
+  </div>
+</section>
 
-            <!-- Left Side -->
-            <div class="contact-info">
-                <h1>Get In <span>Touch !</span></h1>
-                <p>
-                    Whether you're a student looking to join, a company interested in sponsorship,
-                    or just a racing enthusiast, we'd love to hear from you. Reach out to Ashwa Racing today.
-                </p>
+<!-- ═══════════════════════════
+     CONTACT BODY
+     Left: info + reach-outs
+     Right: form
+════════════════════════════ -->
+<section class="ct-main">
 
-                <div class="contact-details-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>444447777</span>
-                </div>
+  <!-- ─── Left ─── -->
+  <div class="ct-left">
 
-                <div class="contact-details-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:ashwaracing@gmail.com">ashwaracing@gmail.com</a>
-                </div>
+    <!-- Contact details -->
+    <div class="ct-info-block reveal">
+      <div class="ct-section-label">
+        <span class="label-dash"></span>Contact Details
+      </div>
 
-                <div class="contact-details-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>RV College of Engineering, Bengaluru</span>
-                </div>
-            </div>
-
-            <!-- Right Side: Form -->
-            <div class="contact-form-container">
-                <form>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="First Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Last Name" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <input type="email" class="form-control" placeholder="Email Address" required>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Contact No">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Zip/Postal">
-                        </div>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <textarea class="form-control" placeholder="Message"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-submit">Submit</button>
-                </form>
-            </div>
-
+      <div class="ct-detail">
+        <div class="ct-detail-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <div class="ct-detail-label">Email</div>
+          <a class="ct-detail-value" href="mailto:ashwaracing@rvce.edu.in">ashwaracing@rvce.edu.in</a>
         </div>
-    </section>
+      </div>
 
-    <footer id="main-footer"></footer>
+      <div class="ct-detail">
+        <div class="ct-detail-icon"><i class="fas fa-phone-alt"></i></div>
+        <div>
+          <div class="ct-detail-label">Phone</div>
+          <a class="ct-detail-value" href="tel:+918208072332">+91 82080 72332</a>
+        </div>
+      </div>
 
-    <!-- Standard Header Script (if needed for nav) -->
-    <script src="assets/js/components/header.js"></script>
+      <div class="ct-detail">
+        <div class="ct-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <div class="ct-detail-label">Workshop</div>
+          <span class="ct-detail-value">RV College of Engineering,<br>Mysore Road, Bengaluru — 560059</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enquiry types -->
+    <div class="ct-enquiry-block reveal" style="--delay:0.08s">
+      <div class="ct-section-label">
+        <span class="label-dash"></span>I'm Reaching Out About
+      </div>
+      <div class="ct-enquiry-grid">
+        <button class="ct-eq-btn active" data-eq="general">General</button>
+        <button class="ct-eq-btn" data-eq="sponsorship">Sponsorship</button>
+        <button class="ct-eq-btn" data-eq="recruitment">Recruitment</button>
+        <button class="ct-eq-btn" data-eq="media">Media / Press</button>
+      </div>
+    </div>
+
+    <!-- Socials -->
+    <div class="ct-social-block reveal" style="--delay:0.14s">
+      <div class="ct-section-label">
+        <span class="label-dash"></span>Follow Us
+      </div>
+      <div class="ct-socials">
+        <a href="https://www.instagram.com/ashwa_racing" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/ashwa-racing/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.youtube.com/@AshwaRacingRVCE" target="_blank" rel="noopener" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://github.com/Ashwa-Racing" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── Right: Form ─── -->
+  <div class="ct-right reveal" style="--delay:0.05s">
+    <div class="ct-form-header">
+      <h2 class="ct-form-title">Send a<br><em>Message</em></h2>
+    </div>
+
+    <form class="ct-form" id="ct-form" novalidate>
+
+      <div class="ct-form-row">
+        <div class="ct-field">
+          <label for="ct-first">First Name <span class="req">*</span></label>
+          <input type="text" id="ct-first" name="firstName" autocomplete="given-name" required>
+          <div class="ct-field-error" id="err-first"></div>
+        </div>
+        <div class="ct-field">
+          <label for="ct-last">Last Name <span class="req">*</span></label>
+          <input type="text" id="ct-last" name="lastName" autocomplete="family-name" required>
+          <div class="ct-field-error" id="err-last"></div>
+        </div>
+      </div>
+
+      <div class="ct-field">
+        <label for="ct-email">Email Address <span class="req">*</span></label>
+        <input type="email" id="ct-email" name="email" autocomplete="email" required>
+        <div class="ct-field-error" id="err-email"></div>
+      </div>
+
+      <div class="ct-form-row">
+        <div class="ct-field">
+          <label for="ct-phone">Phone <span class="ct-optional">(optional)</span></label>
+          <input type="tel" id="ct-phone" name="phone" autocomplete="tel">
+        </div>
+        <div class="ct-field">
+          <label for="ct-subject">Subject</label>
+          <input type="text" id="ct-subject" name="subject">
+        </div>
+      </div>
+
+      <!-- Hidden enquiry type -->
+      <input type="hidden" id="ct-enquiry-type" name="enquiryType" value="general">
+
+      <div class="ct-field">
+        <label for="ct-message">Message <span class="req">*</span></label>
+        <textarea id="ct-message" name="message" rows="5" required></textarea>
+        <div class="ct-field-error" id="err-message"></div>
+        <div class="ct-char-count"><span id="ct-char-num">0</span> / 1000</div>
+      </div>
+
+      <!-- Honeypot — hidden from humans -->
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;">
+
+      <button type="submit" class="ct-submit" id="ct-submit-btn">
+        <span class="ct-submit-text">Send Message</span>
+        <span class="ct-submit-icon"><i class="fas fa-arrow-right"></i></span>
+        <span class="ct-submit-loading" hidden>
+          <i class="fas fa-circle-notch fa-spin"></i> Sending…
+        </span>
+      </button>
+
+    </form>
+
+    <!-- Success state -->
+    <div class="ct-success" id="ct-success" hidden>
+      <div class="ct-success-icon"><i class="fas fa-check"></i></div>
+      <!-- <h3>Message Sent</h3> -->
+      <p>Thanks for reaching out. We'll get back to you as soon as possible.</p>
+      <!-- <button class="ct-reset-btn" id="ct-reset-btn">Send Another</button> -->
+    </div>
+
+  </div>
+
+</section>
+
+<footer id="main-footer"></footer>
+
+<script src="assets/js/components/header.js"></script>
+<script src="assets/js/pages/contact.js"></script>
 
 </body>
-
 </html>

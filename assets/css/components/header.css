@@ -376,18 +376,40 @@
   padding: 0 24px;
 }
 
+/* Base */
 .sponsor-logo {
   height: 34px;
   width: auto;
   object-fit: contain;
-  filter: grayscale(100%) invert(1) brightness(0.55);
-  transition: filter 0.3s ease, transform 0.3s ease;
   flex-shrink: 0;
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
+/* SVG (safe to invert fully) */
+.logo-svg {
+  filter: invert(1) grayscale(100%) ;
+}
+
+/* PNG (usually safe for mono) */
+.logo-png {
+  filter:invert(1) grayscale(100%) ;
+}
+
+/* JPG (danger — avoid invert) */
+.logo-jpg {
+  filter: grayscale(100%) invert(1);
+}
+
+/* WEBP / AVIF */
+.logo-modern {
+  filter: grayscale(100%) invert(1);
+}
+
+/* Hover */
 .sponsor-logo:hover {
-  filter: grayscale(0%) invert(0) brightness(1);
+  filter: none;
   transform: scale(1.1);
+  opacity: 1;
 }
 
 /* ─── Scroll-shrink state (added via JS) ────────────────────── */

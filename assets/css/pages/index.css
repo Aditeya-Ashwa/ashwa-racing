@@ -91,6 +91,10 @@ body {
 .focus-section .section-label::before,
 .blog-section .section-label::before { background: var(--red); }
 
+.blog-section img{
+
+}
+
 /* ─── Button System ─────────────────────────────────────────── */
 .btn-primary {
   display: inline-flex;
@@ -625,13 +629,8 @@ body {
   max-height: 52px;
   max-width: 150px;
   object-fit: contain;
-  /* filter: grayscale(0%) opacity(1);
-  transition: filter 0.3s ease, transform 0.3s ease; */
 }
-/* .sponsors-logos img:hover {
-  filter: grayscale(0%) opacity(1);
-  transform: scale(1.08);
-} */
+
 
 /* ═══════════════════════════════════════════════════════════════
    BLOG

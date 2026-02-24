@@ -133,6 +133,21 @@ async function initSponsorMarquee() {
       img.src       = SPONSOR_PATH + name;
       img.alt       = name.replace(/\.[^.]+$/, "").replace(/[-_]/g, " ");
       img.className = "sponsor-logo";
+
+const ext = name.split('.').pop().toLowerCase();
+
+if (ext === "svg") {
+  img.classList.add("logo-svg");
+} 
+else if (ext === "png") {
+  img.classList.add("logo-png");
+} 
+else if (ext === "jpg" || ext === "jpeg") {
+  img.classList.add("logo-jpg");
+} 
+else if (ext === "webp" || ext === "avif") {
+  img.classList.add("logo-modern");
+}
       img.loading   = "lazy";
       frag.appendChild(img);
     });

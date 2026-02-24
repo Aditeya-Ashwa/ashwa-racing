@@ -35,7 +35,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 
 .blog-hero-bg {
   position: absolute; inset: 0;
-  background-image: url('assets/images/team/2025.webp');
+  background-image: url('/assets/images/prototypes/XX5C.jpg');
   background-size: cover; background-position: center 30%;
   filter: brightness(0.22) saturate(0.65);
   transform: scale(1.04);

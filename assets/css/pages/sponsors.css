@@ -43,7 +43,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 
 .sp-hero-bg {
   position: absolute; inset: 0;
-  background-image: url('assets/images/team/Costwin.jpg');
+  background-image: url('../../images/team/Hyperloop.webp');
   background-size: cover; background-position: center 40%;
   filter: brightness(0.22) saturate(0.6);
   transform: scale(1.04);
@@ -263,7 +263,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 }
 
 .sp-card-exec-logo {
-  background: #222;
+  background: #c5c5c5;
   display: flex; align-items: center; justify-content: center;
   padding: 24px 20px;
 }
@@ -274,7 +274,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 .sp-card-exec-logo img {
   max-width: 120px; max-height: 56px;
   object-fit: contain;
-  filter: brightness(0) invert(1) opacity(0.7);
+  /* filter: brightness(0) invert(1) opacity(0.7); */
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 .sp-card-executive:hover .sp-card-exec-logo img {
@@ -337,7 +337,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 }
 .sp-card-platinum.visible { opacity: 1; transform: translateY(0); }
 .sp-card-platinum:hover {
-  background: #333;
+  background: var(--white);
   border-top-color: var(--plat-accent);
   transform: translateY(-4px);
 }
@@ -359,12 +359,12 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 .sp-card-platinum img {
   max-width: 110px; max-height: 52px;
   object-fit: contain;
-  filter: brightness(0) invert(1) opacity(0.55);
+  filter: grayscale(100%) invert(1) opacity(1);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 .sp-card-platinum:hover img {
   filter: brightness(1) invert(0) opacity(1);
-  transform: scale(1.07);
+  transform: scale(1.3  );
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -377,7 +377,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 }
 
 .sp-card-gold {
-  background: var(--dark-grey);
+  background: var(--mid-grey);
   padding: 22px 14px;
   display: flex; align-items: center; justify-content: center;
   aspect-ratio: 3/2;
@@ -387,7 +387,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 }
 .sp-card-gold.visible { opacity: 1; transform: translateY(0); }
 .sp-card-gold:hover {
-  background: #262626;
+  background: var(--off-white);
   border-bottom-color: var(--gold-accent);
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(240,180,41,0.12);
@@ -400,12 +400,12 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 .sp-card-gold img {
   max-width: 100px; max-height: 46px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0.6);
+  filter: grayscale(100%) invert(1);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 .sp-card-gold:hover img {
   filter: grayscale(0%) brightness(1);
-  transform: scale(1.08);
+  transform: scale(1.5);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -441,12 +441,12 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 .sp-card-silver img {
   max-width: 96px; max-height: 42px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0.5);
+  filter: grayscale(100%) invert(1);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 .sp-card-silver:hover img {
-  filter: grayscale(0%) brightness(1);
-  transform: scale(1.08);
+  filter: grayscale(0%) ;
+  transform: scale(2);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -459,7 +459,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 }
 
 .sp-card-technical {
-  background: #181818;
+  background: var(--dark-grey);
   padding: 18px 10px;
   display: flex; align-items: center; justify-content: center;
   aspect-ratio: 3/2;
@@ -468,7 +468,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 }
 .sp-card-technical.visible { opacity: 1; transform: translateY(0); }
 .sp-card-technical:hover {
-  background: #222;
+  background: var(--white);
   transform: translateY(-2px);
 }
 
@@ -479,12 +479,12 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 .sp-card-technical img {
   max-width: 80px; max-height: 36px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0.45);
+  filter: invert(1) grayscale(100%) ;
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 .sp-card-technical:hover img {
   filter: grayscale(0%) brightness(1);
-  transform: scale(1.1);
+  transform: scale(1.45);
 }
 
 /* ─── Accessibility ─────────────────────────────────────────── */

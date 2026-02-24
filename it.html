@@ -1,198 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IT | Ashwa Racing</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
-<link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
-<link rel="manifest" href="assets/images/favicon/site.webmanifest" />
-    <link rel="stylesheet" href="assets/css/pages/it.css" />
-    <link rel="stylesheet" href="assets/css/components/footer.css" />
-    <link rel="stylesheet" href="assets/css/components/header.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Subsystem | Ashwa Racing</title>
+
+  <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
+  <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="assets/css/components/header.css" />
+  <link rel="stylesheet" href="assets/css/components/footer.css" />
+  <link rel="stylesheet" href="assets/css/pages/it.css" />
 </head>
-
 <body>
-    <canvas id="it-hero-canvas"></canvas>
-    
-    <div class="floating-bits"></div>
 
-    <header id="main-header"></header>
+<header id="main-header"></header>
 
-    <section class="it-hero">
-        <div class="hero-grid"></div>
-        <div class="it-hero-content">
-            <div class="hero-badge">IT SUBSYSTEM</div>
-            <h1 class="glitch" data-text="Information Technology">Information Technology</h1>
-            <p class="subtitle">Engineering the digital backbone of Ashwa Racing</p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">4</span>
-                    <span class="stat-label">Core Domains</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">6</span>
-                    <span class="stat-label">Roadmap Goals</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">∞</span>
-                    <span class="stat-label">Innovation</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Three.js canvas — fixed behind everything -->
+<canvas id="it-hero-canvas"></canvas>
 
-    <div class="page-container">
-        <section class="it-about">
-            <h2><span class="section-number">01</span>What We Do</h2>
-            <div class="about-content">
-                <p class="lead-text">
-                    The Information Technology (IT) subsystem drives the digital innovation at Ashwa Racing. 
-                    From designing and maintaining the official website to developing custom software for the team's 
-                    operations, IT ensures seamless digital performance on and off the track.
-                </p>
-                <p>
-                    Our responsibilities include developing and maintaining the team's <strong>custom ERP platform</strong>, 
-                    handling <strong>Driverless simulation and machine learning systems</strong>, integrating 
-                    <strong>data acquisition pipelines</strong>, and ensuring the technological ecosystem of Ashwa Racing 
-                    remains scalable, secure, and efficient.
-                </p>
-            </div>
-        </section>
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="it-hero">
+  <div class="it-hero-grid"></div>
+  <div class="it-hero-stripe"></div>
 
-        <section class="it-domains">
-            <h2><span class="section-number">02</span>Our Domains</h2>
-            <div class="domains-grid">
-                <div class="domain-card" data-index="1">
-                    <div class="card-number">01</div>
-                    <div class="card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
-                            <polyline points="7.5 19.79 7.5 14.6 3 12"/>
-                            <polyline points="21 12 16.5 14.6 16.5 19.79"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
-                    </div>
-                    <h3>Website Development</h3>
-                    <p>Building and maintaining Ashwa Racing's digital presence with modern web technologies and high-performance UI/UX.</p>
-                </div>
-                <div class="domain-card" data-index="2">
-                    <div class="card-number">02</div>
-                    <div class="card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 16v-4"/>
-                            <path d="M12 8h.01"/>
-                        </svg>
-                    </div>
-                    <h3>Driverless Machine Learning</h3>
-                    <p>Developing perception, planning, and control models to support autonomous racing simulations.</p>
-                </div>
-                <div class="domain-card" data-index="3">
-                    <div class="card-number">03</div>
-                    <div class="card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <path d="M3 9h18"/>
-                            <path d="M9 21V9"/>
-                        </svg>
-                    </div>
-                    <h3>Custom ERP</h3>
-                    <p>Creating in-house management tools for inventory, documentation, resource planning, and workflow automation.</p>
-                </div>
-                <div class="domain-card" data-index="4">
-                    <div class="card-number">04</div>
-                    <div class="card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2v20M2 12h20"/>
-                            <circle cx="12" cy="12" r="4"/>
-                        </svg>
-                    </div>
-                    <h3>Systems & Infrastructure</h3>
-                    <p>Maintaining servers, APIs, version control, pipelines, and ensuring smooth internal deployments.</p>
-                </div>
-            </div>
-        </section>
+  <!-- Left: terminal -->
+  <div class="it-hero-left">
+    <div class="terminal" id="it-terminal">
+      <div class="terminal-bar">
+        <span class="tb-dot tb-close"></span>
+        <span class="tb-dot tb-min"></span>
+        <span class="tb-dot tb-max"></span>
+        <span class="tb-title">ashwa@rvce — bash</span>
+      </div>
+      <div class="terminal-body" id="terminal-body"></div>
+    </div>
+  </div>
 
-        <section class="it-vision">
-            <h2><span class="section-number">03</span>Vision & Roadmap</h2>
-
-            <p class="vision-intro">
-                Ashwa Racing's IT subsystem is built on a simple idea — 
-                to create a digital ecosystem that is <strong>fast</strong>, <strong>automated</strong>, <strong>scalable</strong>, and <strong>reliable</strong>.  
-                Our long-term vision focuses on enabling smarter engineering decisions, 
-                reducing manual effort across subsystems, and building tooling that accelerates innovation.
-            </p>
-
-            <div class="roadmap-grid">
-                <div class="roadmap-card">
-                    <div class="roadmap-status">In Progress</div>
-                    <h3>Migration to MERN Architecture</h3>
-                    <p>
-                        Transform our static website into a fully dynamic, component-driven MERN platform with unified API, 
-                        real-time content updates, and improved performance.
-                    </p>
-                </div>
-
-                <div class="roadmap-card">
-                    <div class="roadmap-status">Planned</div>
-                    <h3>Unified Data & Telemetry Hub</h3>
-                    <p>
-                        Build a web-based interface that centralizes vehicle logs, test run analytics, 
-                        sensor health, and simulation outputs as a single source of truth.
-                    </p>
-                </div>
-
-                <div class="roadmap-card">
-                    <div class="roadmap-status">Active</div>
-                    <h3>Automation & Internal Tooling</h3>
-                    <p>
-                        Reduce repetitive manual work by creating internal scripts, dashboards, and automated workflows 
-                        to give every team member more time for actual engineering.
-                    </p>
-                </div>
-
-                <div class="roadmap-card">
-                    <div class="roadmap-status">Research</div>
-                    <h3>Driverless ML Advancement</h3>
-                    <p>
-                        Expand simulation capabilities, improve perception pipelines, and integrate real-time model 
-                        evaluation tools for full autonomous stack validation.
-                    </p>
-                </div>
-
-                <div class="roadmap-card">
-                    <div class="roadmap-status">Planned</div>
-                    <h3>Design System & UI Standards</h3>
-                    <p>
-                        Create a unified design language for all Ashwa software ensuring consistency, 
-                        accessibility, performance, and faster development cycles.
-                    </p>
-                </div>
-
-                <div class="roadmap-card">
-                    <div class="roadmap-status">Active</div>
-                    <h3>Knowledge Base & Documentation Hub</h3>
-                    <p>
-                        Build a centralized repository of tutorials, onboarding guides, and documentation 
-                        to make learning fast and reduce dependency on senior members.
-                    </p>
-                </div>
-            </div>
-        </section>
+  <!-- Right: headline -->
+  <div class="it-hero-right">
+    <div class="it-badge">
+      <span class="it-badge-dot"></span>
+      <span>IT Subsystem · RVCE</span>
     </div>
 
-    <footer id="main-footer"></footer>
+    <h1 class="it-hero-title">
+      INFORMATION<br><em>TECHNOLOGY</em>
+    </h1>
 
-    <script src="assets/js/components/header.js"></script>
-    <script type="module" src="assets/js/pages/it.js"></script>
+    <p class="it-hero-desc">
+      Engineering the digital backbone of Ashwa Racing —
+      from the website you're reading to the systems that keep the car on track.
+    </p>
+
+    <div class="it-hero-stats">
+      <div class="its"><span class="its-n">4</span><span class="its-l">Domains</span></div>
+      <div class="its-sep"></div>
+      <div class="its"><span class="its-n">6</span><span class="its-l">Roadmap Goals</span></div>
+      <div class="its-sep"></div>
+      <div class="its"><span class="its-n">∞</span><span class="its-l">Commits</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     WHAT WE DO
+══════════════════════════════════════ -->
+<section class="it-section it-about">
+  <div class="it-section-inner">
+    <div class="it-section-label">
+      <span class="sec-num">01</span><span class="sec-dash"></span>What We Do
+    </div>
+
+    <div class="it-about-grid">
+      <div class="it-about-text reveal">
+        <h2 class="it-heading">The Digital<br><em>Engine Room</em></h2>
+        <p class="it-lead">
+          The IT subsystem drives digital innovation at Ashwa Racing — from the public-facing
+          website to the internal tooling that powers day-to-day operations.
+        </p>
+        <p>
+          Our responsibilities span the team's <strong>custom ERP platform</strong>,
+          <strong>driverless simulation and machine learning systems</strong>,
+          <strong>data acquisition pipelines</strong>, and the broader technology ecosystem
+          that keeps Ashwa Racing scalable, secure, and efficient.
+        </p>
+        <p>If it involves code, infrastructure, or data — IT owns it.</p>
+      </div>
+
+      <div class="it-about-code reveal" style="--delay:.08s">
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-lang">typescript</span>
+            <span class="code-file">ashwa-it.ts</span>
+          </div>
+<pre class="code-body"><code><span class="c-kw">type</span> <span class="c-type">Domain</span> <span class="c-op">=</span>
+  <span class="c-str">"web"</span> <span class="c-op">|</span> <span class="c-str">"ml"</span> <span class="c-op">|</span> <span class="c-str">"erp"</span> <span class="c-op">|</span> <span class="c-str">"infra"</span><span class="c-op">;</span>
+
+<span class="c-kw">interface</span> <span class="c-type">AshwaIT</span> <span class="c-op">{</span>
+  <span class="c-prop">domains</span><span class="c-op">:</span> <span class="c-type">Domain</span><span class="c-op">[];</span>
+  <span class="c-prop">mission</span><span class="c-op">:</span> <span class="c-type">string</span><span class="c-op">;</span>
+  <span class="c-prop">deploy</span><span class="c-op">:</span> <span class="c-op">()</span> <span class="c-op">=></span> <span class="c-type">Promise</span><span class="c-op">&lt;</span><span class="c-type">void</span><span class="c-op">&gt;;</span>
+<span class="c-op">}</span>
+
+<span class="c-kw">const</span> <span class="c-var">it</span><span class="c-op">:</span> <span class="c-type">AshwaIT</span> <span class="c-op">= {</span>
+  <span class="c-prop">domains</span><span class="c-op">:</span> <span class="c-op">[</span><span class="c-str">"web"</span><span class="c-op">,</span> <span class="c-str">"ml"</span><span class="c-op">,</span>
+           <span class="c-str">"erp"</span><span class="c-op">,</span> <span class="c-str">"infra"</span><span class="c-op">],</span>
+  <span class="c-prop">mission</span><span class="c-op">:</span> <span class="c-str">"build fast, ship often"</span><span class="c-op">,</span>
+  <span class="c-prop">deploy</span><span class="c-op">: async () => {</span>
+    <span class="c-kw">await</span> <span class="c-fn">push</span><span class="c-op">(</span><span class="c-str">"production"</span><span class="c-op">);</span>
+  <span class="c-op">}</span>
+<span class="c-op">};</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     DOMAINS
+══════════════════════════════════════ -->
+<section class="it-section it-domains">
+  <div class="it-section-inner">
+    <div class="it-section-label">
+      <span class="sec-num">02</span><span class="sec-dash"></span>Our Domains
+    </div>
+    <h2 class="it-heading reveal">Four Pillars,<br><em>One Stack</em></h2>
+
+    <div class="domains-grid">
+
+      <div class="domain-card reveal" style="--delay:.04s">
+        <div class="dc-num">01</div>
+        <div class="dc-icon"><i class="fas fa-globe"></i></div>
+        <h3>Website Development</h3>
+        <p>Building and maintaining Ashwa Racing's digital presence with modern web standards, performance-first architecture, and editorial-grade design.</p>
+        <div class="dc-tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UX</span>
+        </div>
+      </div>
+
+      <div class="domain-card reveal" style="--delay:.08s">
+        <div class="dc-num">02</div>
+        <div class="dc-icon"><i class="fas fa-brain"></i></div>
+        <h3>Driverless ML</h3>
+        <p>Developing perception, planning, and control models to support autonomous racing simulations across the Ashwa driverless programme.</p>
+        <div class="dc-tags">
+          <span>Python</span><span>PyTorch</span><span>ROS</span><span>SLAM</span>
+        </div>
+      </div>
+
+      <div class="domain-card reveal" style="--delay:.12s">
+        <div class="dc-num">03</div>
+        <div class="dc-icon"><i class="fas fa-layer-group"></i></div>
+        <h3>Custom ERP</h3>
+        <p>In-house management tooling for inventory, documentation, resource planning, and workflow automation — built for how a Formula Student team actually works.</p>
+        <div class="dc-tags">
+          <span>Node.js</span><span>MongoDB</span><span>React</span><span>REST</span>
+        </div>
+      </div>
+
+      <div class="domain-card reveal" style="--delay:.16s">
+        <div class="dc-num">04</div>
+        <div class="dc-icon"><i class="fas fa-server"></i></div>
+        <h3>Systems &amp; Infrastructure</h3>
+        <p>Servers, APIs, CI/CD pipelines, version control, and deployments — the invisible layer that keeps everything else running.</p>
+        <div class="dc-tags">
+          <span>Linux</span><span>Git</span><span>Docker</span><span>CI/CD</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ROADMAP
+══════════════════════════════════════ -->
+<section class="it-section it-roadmap">
+  <div class="it-section-inner">
+    <div class="it-section-label">
+      <span class="sec-num">03</span><span class="sec-dash"></span>Vision &amp; Roadmap
+    </div>
+    <h2 class="it-heading reveal">Where We're<br><em>Going</em></h2>
+
+    <p class="it-vision-intro reveal" style="--delay:.06s">
+      Fast. Automated. Scalable. Reliable. Our long-term vision is a digital ecosystem
+      that makes smarter engineering decisions possible, reduces manual effort across every
+      subsystem, and builds tooling that outlasts any single season.
+    </p>
+
+    <div class="roadmap-list">
+
+      <div class="roadmap-item reveal" style="--delay:.04s">
+        <div class="ri-left">
+          <div class="ri-status ri-active">In Progress</div>
+          <div class="ri-num">01</div>
+        </div>
+        <div class="ri-content">
+          <h3>Migration to MERN Architecture</h3>
+          <p>Transform the static site into a fully dynamic, component-driven platform with unified API, real-time content updates, and improved long-term maintainability.</p>
+          <div class="ri-bar"><div class="ri-bar-fill" style="--pct:65%"></div></div>
+          <div class="ri-bar-label"><span class="ri-pct">65%</span> complete</div>
+        </div>
+      </div>
+
+      <div class="roadmap-item reveal" style="--delay:.08s">
+        <div class="ri-left">
+          <div class="ri-status ri-planned">Planned</div>
+          <div class="ri-num">02</div>
+        </div>
+        <div class="ri-content">
+          <h3>Unified Data &amp; Telemetry Hub</h3>
+          <p>A web-based interface centralising vehicle logs, test run analytics, sensor health, and simulation outputs as a single source of truth for all subsystems.</p>
+          <div class="ri-bar"><div class="ri-bar-fill" style="--pct:10%"></div></div>
+          <div class="ri-bar-label"><span class="ri-pct">Scoping</span> phase</div>
+        </div>
+      </div>
+
+      <div class="roadmap-item reveal" style="--delay:.12s">
+        <div class="ri-left">
+          <div class="ri-status ri-active">Active</div>
+          <div class="ri-num">03</div>
+        </div>
+        <div class="ri-content">
+          <h3>Automation &amp; Internal Tooling</h3>
+          <p>Scripts, dashboards, and automated workflows that eliminate repetitive manual work — giving every team member more time for actual engineering.</p>
+          <div class="ri-bar"><div class="ri-bar-fill" style="--pct:45%"></div></div>
+          <div class="ri-bar-label"><span class="ri-pct">45%</span> complete</div>
+        </div>
+      </div>
+
+      <div class="roadmap-item reveal" style="--delay:.16s">
+        <div class="ri-left">
+          <div class="ri-status ri-research">Research</div>
+          <div class="ri-num">04</div>
+        </div>
+        <div class="ri-content">
+          <h3>Driverless ML Advancement</h3>
+          <p>Expanding simulation capabilities, improving perception pipelines, and integrating real-time model evaluation for full autonomous stack validation.</p>
+          <div class="ri-bar"><div class="ri-bar-fill" style="--pct:25%"></div></div>
+          <div class="ri-bar-label"><span class="ri-pct">Research</span> &amp; prototyping</div>
+        </div>
+      </div>
+
+      <div class="roadmap-item reveal" style="--delay:.2s">
+        <div class="ri-left">
+          <div class="ri-status ri-planned">Planned</div>
+          <div class="ri-num">05</div>
+        </div>
+        <div class="ri-content">
+          <h3>Design System &amp; UI Standards</h3>
+          <p>A unified design language for all Ashwa software — visual consistency, accessibility, performance, and faster development cycles across every product.</p>
+          <div class="ri-bar"><div class="ri-bar-fill" style="--pct:20%"></div></div>
+          <div class="ri-bar-label"><span class="ri-pct">Foundations</span> laid</div>
+        </div>
+      </div>
+
+      <div class="roadmap-item reveal" style="--delay:.24s">
+        <div class="ri-left">
+          <div class="ri-status ri-active">Active</div>
+          <div class="ri-num">06</div>
+        </div>
+        <div class="ri-content">
+          <h3>Knowledge Base &amp; Documentation Hub</h3>
+          <p>A centralised repository of tutorials, onboarding guides, and technical documentation — making learning fast and reducing dependency on institutional memory.</p>
+          <div class="ri-bar"><div class="ri-bar-fill" style="--pct:30%"></div></div>
+          <div class="ri-bar-label"><span class="ri-pct">30%</span> seeded</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer id="main-footer"></footer>
+
+<script src="assets/js/components/header.js"></script>
+<script type="module" src="assets/js/pages/it.js"></script>
+
 </body>
 </html>

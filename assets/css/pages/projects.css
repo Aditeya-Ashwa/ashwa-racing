@@ -58,7 +58,7 @@ body { font-family: var(--font-body); background: var(--white); color: var(--bla
 
 .proj-hero-bg {
   position: absolute; inset: 0;
-  background-image: url('assets/images/prototypes/Prototypesbanner.png');
+  background-image: url('../../images/prototypes/Prototypesbanner.png');
   background-size: cover; background-position: center;
   filter: brightness(0.28) saturate(0.7);
   transform: scale(1.04);

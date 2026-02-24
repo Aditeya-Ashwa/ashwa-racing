@@ -8,21 +8,24 @@ fetch('/assets/posts/index.json')
     const container = document.getElementById('blog-preview');
     if (!container) return;
 
-    // Latest 3 posts
+    // Ensure container has correct grid class
+    container.classList.add('blog-grid');
+
     posts.slice(0, 3).forEach(post => {
-      const card = document.createElement('article');
-      card.className = 'blog-preview-card';
+
+      const card = document.createElement('a');
+      card.href = `/blog_post.html?slug=${post.slug}`;
+      card.className = 'blog-card';
 
       card.innerHTML = `
-        <a href="/blog_post.html?slug=${post.slug}">
-          <img src="${post.cover}" alt="${post.title}">
-          <div class="blog-preview-content">
-            <h3>${post.title}</h3>
-            <p class="blog-preview-meta">
-              ${post.date} · ${post.author}
-            </p>
+        <img src="${post.cover}" alt="${post.title}">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            ${post.date} · ${post.author}
           </div>
-        </a>
+          <h3>${post.title}</h3>
+          <p>${post.excerpt ?? ''}</p>
+        </div>
       `;
 
       container.appendChild(card);

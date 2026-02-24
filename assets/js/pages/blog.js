@@ -221,44 +221,226 @@ if (!isPostPage) {
    SINGLE POST PAGE (blog_post.html)
 ════════════════════════════════════════════════════════════ */
 if (isPostPage) {
+
   const params  = new URLSearchParams(window.location.search);
   const slug    = params.get("slug");
   const content = document.getElementById("post-content");
 
   if (!slug || !content) {
-  console.warn("Missing slug or post container.");
-} else {
+    console.warn("Missing slug or content container");
+  } else {
 
-  // Show skeleton in post content while loading
-  content.innerHTML = `
-    <div style="display:flex;flex-direction:column;gap:14px;padding:40px 0;">
-      <div class="blog-skeleton-line wide" style="height:16px;border-radius:2px;"></div>
-      <div class="blog-skeleton-line mid"  style="height:16px;border-radius:2px;"></div>
-      <div class="blog-skeleton-line wide" style="height:16px;border-radius:2px;"></div>
-      <div class="blog-skeleton-line short"style="height:16px;border-radius:2px;"></div>
-    </div>`;
-
-  fetch(`/assets/posts/${encodeURIComponent(slug)}.md`)
-    .then(r => {
-      if (!r.ok) throw new Error(`Post not found: ${slug}`);
-      return r.text();
-    })
-    .then(md => {
-      if (typeof marked !== "undefined") {
-        content.innerHTML = marked.parse(md);
-      } else {
-        // Basic fallback if marked.js isn't loaded
-        content.innerHTML = `<pre style="white-space:pre-wrap;">${md}</pre>`;
-      }
-    })
-    .catch(err => {
-      content.innerHTML = `
-        <div style="text-align:center;padding:60px 0;color:rgba(255,255,255,0.3);">
-          <p style="font-family:var(--font-display);letter-spacing:.1em;text-transform:uppercase;">
-            Post not found.
-          </p>
-        </div>`;
-      console.warn("Blog post load error:", err);
+  // ── Helpers ─────────────────────────────────────────────
+  function formatDate(str) {
+    if (!str) return "";
+    return new Date(str).toLocaleDateString("en-GB", {
+      day: "numeric", month: "long", year: "numeric"
     });
+  }
+
+  function estimateReadTime(text) {
+    const words = text.trim().split(/\s+/).length;
+    return `${Math.max(1, Math.round(words / 200))} min read`;
+  }
+
+  // ── Reading progress bar ─────────────────────────────────
+  function initProgressBar() {
+    const bar = document.getElementById("post-progress-bar");
+    if (!bar || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docH      = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = docH > 0 ? `${(scrollTop / docH) * 100}%` : "0%";
+    }, { passive: true });
+  }
+
+  // ── Build hero from post metadata ────────────────────────
+  function buildHero(post) {
+    const heroEl   = document.getElementById("post-hero");
+    const skeletonEl = document.getElementById("post-hero-skeleton");
+    if (!heroEl) return;
+
+    const tag      = post.tags?.length ? post.tags[0] : "Ashwa Racing";
+    const readTime = post.readTime || estimateReadTime(post._rawText || "");
+
+    heroEl.innerHTML = `
+      ${post.cover ? `<div class="post-hero-img" style="background-image:url('${post.cover}')"></div>` : ""}
+      <div class="post-hero-overlay"></div>
+      <div class="post-hero-grid"></div>
+      <div class="post-hero-stripe"></div>
+      <div class="post-hero-content">
+        <div class="post-hero-tag">${tag}</div>
+        <h1 class="post-hero-title">${post.title}</h1>
+        <div class="post-hero-meta">
+          <span class="author">${post.author || "Ashwa Racing"}</span>
+          <span class="post-hero-meta-sep">·</span>
+          <span>${formatDate(post.date)}</span>
+          <span class="post-hero-meta-sep">·</span>
+          <span class="read-time">${readTime}</span>
+        </div>
+      </div>
+    `;
+
+    // Update page title
+    document.title = `${post.title} | Ashwa Racing`;
+  }
+
+  // ── Generate TOC from rendered headings ──────────────────
+  function buildTOC() {
+    const tocNav = document.getElementById("post-toc-nav");
+    const tocEl  = document.getElementById("post-toc");
+    if (!tocNav) return;
+
+    const headings = content.querySelectorAll("h2, h3");
+    if (headings.length < 2) {
+      if (tocEl) tocEl.style.display = "none";
+      return;
+    }
+
+    // Give each heading an id if it doesn't have one
+    headings.forEach((h, i) => {
+      if (!h.id) {
+        h.id = `section-${i}-${h.textContent.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+      }
+    });
+
+    // Build links
+    headings.forEach(h => {
+      const link = document.createElement("a");
+      link.href      = `#${h.id}`;
+      link.className = `toc-link${h.tagName === "H3" ? " toc-h3" : ""}`;
+      link.textContent = h.textContent;
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      tocNav.appendChild(link);
+    });
+
+    // Highlight active section on scroll
+    const tocLinks = tocNav.querySelectorAll(".toc-link");
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove("active"));
+          const active = tocNav.querySelector(`[href="#${entry.target.id}"]`);
+          active?.classList.add("active");
+        }
+      });
+    }, { rootMargin: "-20% 0px -70% 0px" });
+
+    headings.forEach(h => obs.observe(h));
+  }
+
+  // ── Build post footer (tags + share) ─────────────────────
+  function buildPostFooter(post) {
+    const bar = document.getElementById("post-footer-bar");
+    if (!bar) return;
+
+    // Tags
+    const tagsEl = document.getElementById("post-tags");
+    if (tagsEl && post.tags?.length) {
+      post.tags.forEach(tag => {
+        const span = document.createElement("span");
+        span.className   = "post-tag";
+        span.textContent = tag;
+        tagsEl.appendChild(span);
+      });
+    }
+
+    // Share: copy link
+    const copyBtn = document.getElementById("share-copy");
+    copyBtn?.addEventListener("click", () => {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        copyBtn.classList.add("copied");
+        copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(() => {
+          copyBtn.classList.remove("copied");
+          copyBtn.innerHTML = '<i class="fas fa-link"></i>';
+        }, 2000);
+      });
+    });
+
+    // Share: Twitter / X
+    const twitterBtn = document.getElementById("share-twitter");
+    if (twitterBtn) {
+      const tweetText = encodeURIComponent(`${post.title} — Ashwa Racing`);
+      const tweetUrl  = encodeURIComponent(window.location.href);
+      twitterBtn.href = `https://twitter.com/intent/tweet?text=${tweetText}&url=${tweetUrl}`;
+    }
+
+    // Share: LinkedIn
+    const linkedinBtn = document.getElementById("share-linkedin");
+    if (linkedinBtn) {
+      linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`;
+    }
+
+    bar.hidden = false;
+  }
+
+  // ── Render markdown ──────────────────────────────────────
+  function renderMarkdown(md) {
+    // Remove skeleton
+    document.getElementById("post-skeleton")?.remove();
+
+    if (typeof marked !== "undefined") {
+      marked.setOptions({ breaks: true, gfm: true });
+      content.innerHTML = marked.parse(md);
+    } else {
+      content.innerHTML = `<pre style="white-space:pre-wrap;font-size:.9rem;">${md}</pre>`;
+    }
+  }
+
+  // ── Not found state ──────────────────────────────────────
+  function showNotFound() {
+    document.getElementById("post-hero-skeleton")?.remove();
+    document.getElementById("post-skeleton")?.remove();
+    content.innerHTML = `
+      <div style="text-align:center;padding:80px 0;color:#aaa;">
+        <p style="font-family:var(--font-display);font-size:1.2rem;
+                  letter-spacing:.12em;text-transform:uppercase;color:#ccc;">
+          Post Not Found
+        </p>
+        <a href="blog_index.html"
+           style="display:inline-block;margin-top:20px;font-family:var(--font-display);
+                  font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;
+                  color:var(--red);text-decoration:none;border-bottom:1px solid var(--red);">
+          ← Back to Blog
+        </a>
+      </div>`;
+  }
+
+  // ── Main load sequence ───────────────────────────────────
+  // 1. Fetch index.json to get metadata for the hero
+  // 2. Fetch the .md file for content
+  // Both run in parallel via Promise.all
+
+  initProgressBar();
+
+  Promise.all([
+    fetch("/assets/posts/index.json")
+      .then(r => r.ok ? r.json() : [])
+      .catch(() => []),
+    fetch(`/assets/posts/${encodeURIComponent(slug)}.md`)
+      .then(r => {
+        if (!r.ok) throw new Error("not found");
+        return r.text();
+      })
+  ])
+  .then(([posts, md]) => {
+    const meta = posts.find(p => p.slug === slug) || {};
+    meta._rawText = md;
+
+    buildHero(meta);
+    renderMarkdown(md);
+    buildTOC();
+    buildPostFooter(meta);
+  })
+  .catch(err => {
+    console.warn("Blog post load error:", err);
+    showNotFound();
+  });
+
 }
 }
