@@ -441,7 +441,7 @@ body {
 .split-content p {
   font-size: clamp(0.9rem, 1.3vw, 1rem);
   line-height: 1.75;
-  color: #FFFFFF73;
+  color: #252525;
   margin-bottom: 32px;
   font-weight: 300;
   max-width: 480px;
