@@ -1,8 +1,5 @@
 const isPostPage = window.location.pathname.includes('blog_post.html');
 
-// =======================
-// BLOG LIST
-// =======================
 if (!isPostPage) {
   fetch('/assets/posts/index.json')
     .then(res => res.json())
@@ -26,9 +23,6 @@ if (!isPostPage) {
     });
 }
 
-// =======================
-// SINGLE POST
-// =======================
 if (isPostPage) {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get('slug');

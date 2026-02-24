@@ -1,4 +1,10 @@
 /* ===== BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
 
 body {
   font-family: 'Poppins', Arial, sans-serif;
@@ -17,7 +23,7 @@ body {
 .recruit-hero-bg {
   position: absolute;
   inset: 0;
-  background: url('../images/team/2021\ hybrd.jpg') center / cover no-repeat;
+  background: url('../../images/team/2021\ hybrd.webp') center / cover no-repeat;
   opacity: 0.9;
 }
 
