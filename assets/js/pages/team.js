@@ -7,17 +7,6 @@ let activeSubsystem = "All";
 // ─── Data ────────────────────────────────────────────────────
 const teamData = [
   {
-    name: "Aditeya Sarkar",
-    roles: ["Member"],
-    subsystem: ["Electrical & Testing", "IT"],
-    year: "2027",
-    experience: "Designed the BSPD. Worked on firmware for DAQ. Responsible for website design alongside IT 28. Part of 2nd Place BPP team at Formula Bharat 2026.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/aditeya-sarkar/",
-      github: "https://github.com/GigglePaste"
-    }
-  },
-  {
     name: "N Akshay Urs",
     roles: ["Project Manager", "Subsystem Lead"],
     subsystem: ["Leads", "Electrical & Testing"],
@@ -25,39 +14,6 @@ const teamData = [
     experience: "Designed Rear & Side IO. Worked on firmware for DAQ. Made the harness for RZ-XX6C. One of the drivers for the RZ-XX6C. Responsible for top 5 finish under EDP at Formula Bharat 2026.",
     social: {
       linkedin: "https://www.linkedin.com/in/n-akshayurs/",
-      github: null
-    }
-  },
-  {
-    name: "Anshul Joshi",
-    roles: ["Member"],
-    subsystem: ["Suspension & Admin"],
-    year: "2027",
-    experience: "Delivered exceptional suspension work within a tight timeline, ensuring RZ-XX6C stood on her own four wheels. Contributed to P6 finish at FB 2026.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/an-joshi/",
-      github: null
-    }
-  },
-  {
-    name: "Aashrith Rao",
-    roles: ["Member"],
-    subsystem: ["Electrical & Testing", "Finance"],
-    year: "2027",
-    experience: "Designed the APPS. Responsible for top 20 finish under CDP at FB 2026.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/aashrith-rao-893010326/",
-      github: null
-    }
-  },
-  {
-    name: "Samith Belegadde Sirish",
-    roles: ["Subsystem Lead"],
-    subsystem: ["Sponsorship & Marketing"],
-    year: "2027",
-    experience: "Secured 45+ sponsors for the 2026–27 race season. Part of 2nd Place BPP team at Formula Bharat 2026.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/samith-belegadde-sirish-162bb425b/",
       github: null
     }
   },
@@ -84,13 +40,13 @@ const teamData = [
     }
   },
   {
-    name: "Talin Thimmaiah",
-    roles: ["Subsystem Lead"],
-    subsystem: ["Engine"],
+    name: "Anshul Joshi",
+    roles: ["Member"],
+    subsystem: ["Suspension & Admin"],
     year: "2027",
-    experience: "Leading engine development and performance tuning for the 2027 race season.",
+    experience: "Delivered exceptional suspension work within a tight timeline, ensuring RZ-XX6C stood on her own four wheels. Contributed to P6 finish at FB 2026.",
     social: {
-      linkedin: null,
+      linkedin: "https://www.linkedin.com/in/an-joshi/",
       github: null
     }
   },
@@ -99,9 +55,99 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Electrical & Testing", "Finance"],
     year: "2027",
-    experience: "Contributing to electrical systems and financial operations for the 2027 season.",
+    experience: "Designed the Power Distribution Board handling 300+ Watts of power around the car. Main proponent behind EDP position at Formula Bharat 2026.",
     social: {
       linkedin: null,
+      github: null
+    }
+  },
+
+  {
+    name: "Samith Belegadde Sirish",
+    roles: ["Subsystem Lead"],
+    subsystem: ["Sponsorship & Marketing"],
+    year: "2027",
+    experience: "Secured 45+ sponsors for the 2026–27 race season. Part of 2nd Place BPP team at Formula Bharat 2026.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/samith-belegadde-sirish-162bb425b/",
+      github: null
+    }
+  },
+  {
+    name: "Talin Thimmaiah",
+    roles: ["Subsystem Lead"],
+    subsystem: ["Engine"],
+    year: "2027",
+    experience: "Leading engine development and performance tuning for the 2027 race season. Worked on all engine components including sensors, ensuring a reliable power output.",
+    social: {
+      linkedin: null,
+      github: null
+    }
+  },
+
+  {
+    name: "Aman Kumar Gupta",
+    roles: ["Member"],
+    subsystem: ["Drivetrain & Human Resources"],
+    year: "2027",
+    experience: "Designed drive shafts, DT Sprocket etc for the powertrain components of the car. Responsible for top 5 finish under EDP at Formula Bharat 2026. Designed the team jersey and car livery.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/aman-kumar-gupta-867996297/",
+      github: null
+    }
+  },
+  {
+    name: "Preetham Paravastu",
+    roles: ["Member"],
+    subsystem: ["Brakes & Logistics"],
+    year: "2027",
+    experience: "Designed the front pedal assembly taking driver ergonomics into account. Part of EDP team. Also worked in implementation of a mechanical brake biasing system.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/preetham-paravastu-90a97a2ba/",
+      github: null
+    }
+  },
+  {
+    name: "Ranjith DS",
+    roles: ["Member"],
+    subsystem: ["Drivetrain & Human Resources"],
+    year: "2027",
+    experience: "Designed drive shafts, DT Sprocket etc for the powertrain components of the car. Part of EDP team.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/ranjithds28/",
+      github: null
+    }
+  },
+  {
+    name: "Tejas",
+    roles: ["Member"],
+    subsystem: ["Engine"],
+    year: "2027",
+    experience: "Designed fully sealed and tested oil and fuel tanks, reducing space taken. Part of EDP team.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/ranjithds28/",
+      github: null
+    }
+  },
+  {
+    name: "Aditeya Sarkar",
+    roles: ["Member"],
+    subsystem: ["Electrical & Testing", "IT"],
+    year: "2027",
+    experience: "Designed the BSPD. Worked on firmware for DAQ. Responsible for website design alongside IT 28. Part of 2nd Place BPP team at Formula Bharat 2026.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/aditeya-sarkar/",
+      github: "https://github.com/GigglePaste"
+    }
+  },
+  {
+    name: "Aashrith Rao",
+    roles: ["Member"],
+    subsystem: ["Electrical & Testing", "Finance"],
+    year: "2027",
+    experience: "Designed the APPS. Responsible for top 20 finish under CDP at FB 2026.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/aashrith-rao-893010326/",
       github: null
     }
   },
