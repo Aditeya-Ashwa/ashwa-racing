@@ -55,7 +55,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Electrical & Testing", "Finance"],
     year: "2027",
-    experience: "Designed the Power Distribution Board handling 300+ Watts of power around the car. Main proponent behind EDP position at Formula Bharat 2026.",
+    experience: "Designed the Power Distribution Board handling 300+ Watts of power around the car. Main proponent behind EDP position at Formula Bharat 2026. One of the drivers for the RZ-XX6C.",
     social: {
       linkedin: null,
       github: null
@@ -65,7 +65,7 @@ const teamData = [
   {
     name: "Samith Belegadde Sirish",
     roles: ["Subsystem Lead"],
-    subsystem: ["Sponsorship & Marketing"],
+    subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2027",
     experience: "Secured 45+ sponsors for the 2026–27 race season. Part of 2nd Place BPP team at Formula Bharat 2026.",
     social: {
@@ -152,16 +152,38 @@ const teamData = [
     }
   },
   {
+    name: "Hemanth",
+    roles: ["Subsystem Lead"],
+    subsystem: ["Brakes & Logistics"],
+    year: "2026",
+    experience: "Designed and manufactured an ergonomically optimized pedal assembly and implemented the team’s first real-time brake bias adjuster for dynamic brake force tuning. Possess strong overall vehicle-level understanding, with particular expertise in braking systems.",
+    social: {
+      linkedin: null,
+      github: null
+    } 
+  },
+{
+  name: "Vansh",
+  roles: ["Member"],
+  subsystem: ["Sponsorship, Marketing & Public Relations"],
+  year: "2026",
+  experience: "Magician of sponsorship. Absolute unit!",
+  social: {
+    linkedin: null,
+    github: null
+  }
+},
+  {
     name: "Vibin",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2026",
     experience: "Designed and implemented a 600W motor controller, laid the foundations for the AWD hub motor system, and developed the VCU and CAN watchdog.",
     social: {
-      linkedin: null,
+      linkedin: "#",
       github: null
     },
-    easterEgg: true
+    easterEgg: false
   },
 ];
 

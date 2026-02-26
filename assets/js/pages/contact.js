@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const subjectInput = document.getElementById("ct-subject");
       const labels = {
         general:     "",
-        sponsorship: "Sponsorship Enquiry",
+        sponsorship: "Sponsorship & Marketing Enquiry",
         recruitment: "Recruitment Enquiry",
         media:       "Media / Press Enquiry"
       };
