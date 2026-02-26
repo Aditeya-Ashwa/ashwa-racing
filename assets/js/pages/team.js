@@ -22,7 +22,7 @@ const teamData = [
     roles: ["Subsystem Lead", "Chief Engineer"],
     subsystem: ["Leads", "Chassis & Workshop Management"],
     year: "2027",
-    experience: "Designed the LV enclosure and chassis, and served as one of the drivers for the RZ-XX6C. Responsible for top 5 finish under EDP at Formula Bharat 2026.",
+    experience: "Designed the LV enclosure and assembly of MASTER CAD, and served as one of the drivers for the RZ-XX6C.",
     social: {
       linkedin: "https://www.linkedin.com/in/sathvik-s-naik-b186342a8/",
       github: null
@@ -160,19 +160,19 @@ const teamData = [
     social: {
       linkedin: null,
       github: null
-    } 
+    }
   },
-{
-  name: "Vansh",
-  roles: ["Member"],
-  subsystem: ["Sponsorship, Marketing & Public Relations"],
-  year: "2026",
-  experience: "Magician of sponsorship. Absolute unit!",
-  social: {
-    linkedin: null,
-    github: null
-  }
-},
+  {
+    name: "Vansh",
+    roles: ["Member"],
+    subsystem: ["Sponsorship, Marketing & Public Relations"],
+    year: "2026",
+    experience: "Magician of sponsorship. Absolute unit!",
+    social: {
+      linkedin: null,
+      github: null
+    }
+  },
   {
     name: "Vibin",
     roles: ["Member"],
@@ -188,13 +188,13 @@ const teamData = [
 ];
 
 // ─── DOM refs ─────────────────────────────────────────────────
-const grid        = document.getElementById("member-profiles-grid");
-const countEl     = document.getElementById("member-count");
-const descBox     = document.getElementById("subsystem-desc");
-const yearFilter  = document.getElementById("year-filter");
-const subFilter   = document.getElementById("subsystem-filter");
-const yearItems   = yearFilter.children;
-const subItems    = subFilter.children;
+const grid = document.getElementById("member-profiles-grid");
+const countEl = document.getElementById("member-count");
+const descBox = document.getElementById("subsystem-desc");
+const yearFilter = document.getElementById("year-filter");
+const subFilter = document.getElementById("subsystem-filter");
+const yearItems = yearFilter.children;
+const subItems = subFilter.children;
 
 const PROFILE_BASE = "assets/images/team/members/";
 
@@ -298,8 +298,8 @@ function initCard3D(card) {
   const canvas = card.querySelector(".member-3d canvas");
   if (!canvas || typeof THREE === "undefined") return;
 
-  const scene    = new THREE.Scene();
-  const camera   = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
   camera.position.z = 2.5;
 
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
@@ -357,7 +357,7 @@ function scrollStep(direction, wrapper, items) {
 
   let target = activeIdx + direction;
   const last = items.length - 1;
-  if (target <= 0)    target = 1;
+  if (target <= 0) target = 1;
   if (target >= last) target = last - 1;
 
   const el = items[target];
@@ -367,23 +367,23 @@ function scrollStep(direction, wrapper, items) {
 }
 
 // ─── Arrow Buttons ────────────────────────────────────────────
-document.getElementById("year-left").onclick  = () => scrollStep(-1, yearFilter, yearItems);
-document.getElementById("year-right").onclick = () => scrollStep(1,  yearFilter, yearItems);
-document.getElementById("subsystem-left").onclick  = () => scrollStep(-1, subFilter, subItems);
-document.getElementById("subsystem-right").onclick = () => scrollStep(1,  subFilter, subItems);
+document.getElementById("year-left").onclick = () => scrollStep(-1, yearFilter, yearItems);
+document.getElementById("year-right").onclick = () => scrollStep(1, yearFilter, yearItems);
+document.getElementById("subsystem-left").onclick = () => scrollStep(-1, subFilter, subItems);
+document.getElementById("subsystem-right").onclick = () => scrollStep(1, subFilter, subItems);
 
 // ─── Wheel Scroll ─────────────────────────────────────────────
 yearFilter.addEventListener("wheel", e => { e.preventDefault(); scrollStep(e.deltaY > 0 ? 1 : -1, yearFilter, yearItems); });
-subFilter.addEventListener("wheel",  e => { e.preventDefault(); scrollStep(e.deltaY > 0 ? 1 : -1, subFilter,  subItems);  });
+subFilter.addEventListener("wheel", e => { e.preventDefault(); scrollStep(e.deltaY > 0 ? 1 : -1, subFilter, subItems); });
 
 // ─── Filter Click Activation ──────────────────────────────────
 document.querySelectorAll(".filter-btn").forEach(btn => {
   btn.addEventListener("click", () => {
-    const item    = btn.closest(".year-item");
+    const item = btn.closest(".year-item");
     const wrapper = item.parentElement;
-    const isYear  = wrapper.id === "year-filter";
-    const type    = isYear ? "year" : "subsystem";
-    const val     = item.dataset[type];
+    const isYear = wrapper.id === "year-filter";
+    const type = isYear ? "year" : "subsystem";
+    const val = item.dataset[type];
 
     // Update subsystem description
     if (!isYear && descBox) {

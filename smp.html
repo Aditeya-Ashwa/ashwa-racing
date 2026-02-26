@@ -4,60 +4,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sponsorship Marketing and Public Relations | Ashwa Racing</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
-<link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
-<link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    <title>Sponsorship, Marketing & PR (SMP) | Ashwa Racing</title>
 
     <!-- CSS FILES -->
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+
     <link rel="stylesheet" href="assets/css/pages/smp.css">
+    <link rel="stylesheet" href="assets/css/pages/contact.css">
     <link rel="stylesheet" href="assets/css/components/header.css">
     <link rel="stylesheet" href="assets/css/components/footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
-<body>
+<body class="smp-light-body">
+
 
     <!-- HEADER -->
     <header id="main-header"></header>
 
-        <!-- BUILD MODE -->
-    <section class="build-mode">
-    <div class="build-container">
+    <main class="smp-main-content">
+        <!-- 1. HERO SECTION -->
+        <section class="smp-hero">
+            <div class="hero-container" style="padding: 0 5%; width: 100%; max-width: none;">
+                <div class="hero-text-wrap">
+                    <h1 class="smp-hero-title">Engineering excellence,<br><span class="highlight-red">backed by
+                            partnership.</span></h1>
+                    <p class="hero-lead">The SMP subsystem secures financial and technical partnerships while
+                        strengthening Ashwa Racing’s brand presence to support the development and testing of our first
+                        all-electric Formula Student prototype.</p>
+                    <a href="#smp-contact" class="btn btn-ashwa-red btn-rounded"
+                        style="position: relative; z-index: 10;">Partner With Us <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
 
-        <div class="build-animation">
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring delay"></div>
-        </div>
+        <!-- 2. TRUST SECTION (SPONSOR MARQUEE) -->
+        <section class="smp-marquee-section">
+            <div class="marquee-track-container">
+                <div class="marquee-track">
+                    <img src="assets/images/sponsors/motul.svg" alt="Motul" class="marquee-logo">
+                    <img src="assets/images/sponsors/infineon.svg" alt="Infineon" class="marquee-logo">
+                    <img src="assets/images/sponsors/skf.svg" alt="SKF" class="marquee-logo">
+                    <img src="assets/images/sponsors/solidworks.svg" alt="Solidworks" class="marquee-logo">
+                    <img src="assets/images/sponsors/lapp.svg" alt="LAPP" class="marquee-logo">
+                    <img src="assets/images/sponsors/dmgmori.svg" alt="DMG Mori" class="marquee-logo">
+                    <img src="assets/images/sponsors/motul.svg" alt="Motul" class="marquee-logo">
+                    <img src="assets/images/sponsors/infineon.svg" alt="Infineon" class="marquee-logo">
+                    <img src="assets/images/sponsors/skf.svg" alt="SKF" class="marquee-logo">
+                    <img src="assets/images/sponsors/solidworks.svg" alt="Solidworks" class="marquee-logo">
+                    <img src="assets/images/sponsors/lapp.svg" alt="LAPP" class="marquee-logo">
+                    <img src="assets/images/sponsors/dmgmori.svg" alt="DMG Mori" class="marquee-logo">
+                </div>
+            </div>
+        </section>
 
-        <h1>Ashwa Racing</h1>
+        <!-- 3. WHAT WE DO: BENTO GLASS CARDS -->
+        <section class="smp-what-we-do">
+            <div class="smp-container">
+                <h2 class="section-title text-center">The SMP Function</h2>
+                <div class="bento-grid mt-50">
+                    <div class="glass-card">
+                        <div class="dc-num">01</div>
+                        <div class="bento-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Industry Alliances</h3>
+                        <p>Executing targeted outreach to industry-specific sponsors to secure critical tech & financial
+                            support.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="dc-num">02</div>
+                        <div class="bento-icon"><i class="fas fa-coins"></i></div>
+                        <h3>Securing Funding</h3>
+                        <p>Acquiring resources to enable procurement, manufacturing, and endurance testing of our EV
+                            prototypes.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="dc-num">03</div>
+                        <div class="bento-icon"><i class="fas fa-bullhorn"></i></div>
+                        <h3>Professional Brand</h3>
+                        <p>Projecting a professional, industry-ready brand that clearly communicates technical impact.
+                        </p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="dc-num">04</div>
+                        <div class="bento-icon"><i class="fas fa-globe"></i></div>
+                        <h3>Digital & Outreach</h3>
+                        <p>Managing social media outreach to expand visibility among large corporate and industrial
+                            partners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <p class="build-status">
-        Website under active development
-        </p>
 
-        <p class="build-desc">
-        Our new digital platform is being engineered alongside the car.<br>
-        Check back soon for subsystem insights, competition updates, and technical documentation.
-        </p>
 
-        <div class="build-meta">
-        <span>Status:</span> Engineering · Testing · Deployment
-        </div>
+        <!-- 4. SPONSORSHIP SLABS (re-styled glass) -->
+        <section class="smp-slabs">
+            <div class="smp-container">
+                <h2 class="section-title text-center">Sponsorship Slabs</h2>
+                <p class="section-desc text-center mb-50">Explore our partnership tiers and elevate your brand presence.
+                </p>
+                <div class="slabs-grid-container">
+                    <div class="slabs-grid">
 
-    </div>
-    </section>
+                        <!-- Executive -->
+                        <div class="card-wrapper">
+                            <div class="slab-card slab-title pixel-card" data-variant="red">
+                                <canvas class="pixel-canvas"></canvas>
+                                <div class="card-content">
+                                    <div class="tier-header">
+                                        <h3>Executive</h3><span class="tier-amount">₹5,00,000</span>
+                                    </div>
+                                    <ul class="perks-list">
+                                        <li><i class="fas fa-check-circle"></i> Brand Visibility (Highest logo size,
+                                            logo on prototype nose and race helmet)</li>
+                                        <li><i class="fas fa-check-circle"></i> Regular team updates & newsletter</li>
+                                        <li><i class="fas fa-check-circle"></i> Hyperlink on team's website</li>
+                                        <li><i class="fas fa-check-circle"></i> Fractional ownership of the car (36
+                                            hours)</li>
+                                        <li><i class="fas fa-check-circle"></i> Track day experience</li>
+                                        <li><i class="fas fa-check-circle"></i> Car demo & experience on company
+                                            premises</li>
+                                        <li><i class="fas fa-check-circle"></i> Car for company promotional events</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Platinum -->
+                        <div class="card-wrapper">
+                            <div class="slab-card slab-platinum pixel-card" data-variant="blue">
+                                <canvas class="pixel-canvas"></canvas>
+                                <div class="card-content">
+                                    <div class="tier-header">
+                                        <h3>Platinum</h3><span class="tier-amount">₹3,00,000</span>
+                                    </div>
+                                    <ul class="perks-list">
+                                        <li><i class="fas fa-check-circle"></i> Brand Visibility (High logo size, logo
+                                            on prototype nose and race helmet)</li>
+                                        <li><i class="fas fa-check-circle"></i> Regular team updates & newsletter</li>
+                                        <li><i class="fas fa-check-circle"></i> Hyperlink on team's website</li>
+                                        <li><i class="fas fa-check-circle"></i> Fractional ownership of the car (18
+                                            hours)</li>
+                                        <li><i class="fas fa-check-circle"></i> Track day experience</li>
+                                        <li><i class="fas fa-check-circle"></i> Car demo & experience on company
+                                            premises</li>
+                                        <li><i class="fas fa-check-circle"></i> Car for company promotional events</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gold -->
+                        <div class="card-wrapper">
+                            <div class="slab-card slab-gold pixel-card" data-variant="yellow">
+                                <canvas class="pixel-canvas"></canvas>
+                                <div class="card-content">
+                                    <div class="tier-header">
+                                        <h3>Gold</h3><span class="tier-amount">₹2,00,000</span>
+                                    </div>
+                                    <ul class="perks-list">
+                                        <li><i class="fas fa-check-circle"></i> Brand Visibility</li>
+                                        <li><i class="fas fa-check-circle"></i> Regular team updates & newsletter</li>
+                                        <li><i class="fas fa-check-circle"></i> Hyperlink on team's website</li>
+                                        <li><i class="fas fa-check-circle"></i> Fractional ownership of the car (10
+                                            hours)</li>
+                                        <li><i class="fas fa-check-circle"></i> Track day experience</li>
+                                        <li><i class="fas fa-check-circle"></i> Car demo & experience on company
+                                            premises</li>
+                                        <li><i class="fas fa-check-circle"></i> Car for company promotional events</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Silver -->
+                        <div class="card-wrapper">
+                            <div class="slab-card slab-silver pixel-card" data-variant="default">
+                                <canvas class="pixel-canvas"></canvas>
+                                <div class="card-content">
+                                    <div class="tier-header">
+                                        <h3>Silver</h3><span class="tier-amount">₹1,00,000</span>
+                                    </div>
+                                    <ul class="perks-list">
+                                        <li><i class="fas fa-check-circle"></i> Brand Visibility</li>
+                                        <li><i class="fas fa-check-circle"></i> Regular team updates & newsletter</li>
+                                        <li><i class="fas fa-check-circle"></i> Hyperlink on team's website</li>
+                                        <li><i class="fas fa-check-circle"></i> Fractional ownership of the car (5
+                                            hours)</li>
+                                        <li><i class="fas fa-check-circle"></i> Track day experience</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Titanium -->
+                        <div class="card-wrapper">
+                            <div class="slab-card slab-silver pixel-card" data-variant="green">
+                                <canvas class="pixel-canvas"></canvas>
+                                <div class="card-content">
+                                    <div class="tier-header">
+                                        <h3>Titanium</h3><span class="tier-amount">₹60,000</span>
+                                    </div>
+                                    <ul class="perks-list">
+                                        <li><i class="fas fa-check-circle"></i> Brand Visibility</li>
+                                        <li><i class="fas fa-check-circle"></i> Regular team updates & newsletter</li>
+                                        <li><i class="fas fa-check-circle"></i> Hyperlink on team's website</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Associate -->
+                        <div class="card-wrapper">
+                            <div class="slab-card slab-bronze pixel-card" data-variant="default">
+                                <canvas class="pixel-canvas"></canvas>
+                                <div class="card-content">
+                                    <div class="tier-header">
+                                        <h3>Associate</h3><span class="tier-amount">₹35,000</span>
+                                    </div>
+                                    <ul class="perks-list">
+                                        <li><i class="fas fa-check-circle"></i> Brand Visibility (Prototype Excluded)
+                                        </li>
+                                        <li><i class="fas fa-check-circle"></i> Regular team updates & newsletter</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- 5. PROPOSAL DECK -->
+        <section class="smp-deck-mockup">
+            <div class="smp-container">
+                <div class="deck-card-wrapper">
+                    <div class="split-layout align-center">
+                        <div class="mockup-content">
+                            <h2 class="section-title">The 2025-26 Proposal</h2>
+                            <p class="section-desc" style="margin-left:0;">Our materials are designed to clearly
+                                communicate
+                                technical work and sponsor benefits in a professional format for corporate partners.</p>
+                            <a href="#" class="btn btn-outline-ashwa btn-pill mt-20">View Proposal Deck</a>
+                        </div>
+                        <div class="mockup-3d-wrapper">
+                            <div class="tilt-container" id="tilt-box">
+                                <div class="proposal-deck">
+                                    <div class="glare-layer"></div>
+                                    <div class="deck-cover">
+                                        <div class="deck-logo">ASHWA RACING</div>
+                                        <div class="deck-title">SPONSORSHIP<br>PROPOSAL</div>
+                                        <div class="deck-year">2025-26 SEASON</div>
+                                        <div class="deck-accent"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+
+        <!-- 6. PARTNER NETWORK -->
+        <section class="smp-partner-network" id="partner-network">
+            <div class="smp-container text-center partner-network-content">
+                <h2 class="section-title">Global Partner Network</h2>
+                <p class="section-desc">Join our ecosystem of engineering excellence. The SMP subsystem fuels Ashwa
+                    Racing’s performance by building strong industry partnerships.</p>
+                <div class="network-stats">
+                    <div class="stat-item">
+                        <h3 class="stat-num" data-val="40">0</h3>
+                        <p>Sponsors Reached</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-num" data-val="20">0</h3>
+                        <p>Competitions Attended</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-num" data-val="1">0</h3>
+                        <p>EV Prototype Supported</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CONTACT FORM -->
+        <section class="smp-contact-section" id="smp-contact">
+            <div class="smp-container split-layout">
+                <div class="contact-info">
+                    <h2 class="section-title">Become a Partner</h2>
+                    <p class="section-desc mb-40" style="margin-left:0;">Without sponsorship, achieving targets would
+                        not be feasible. Join us in engineering excellence.</p>
+                    <div class="contact-methods">
+                        <div class="method-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>Email Us</h5>
+                                <a href="mailto:ashwaracing@rvce.edu.in">ashwaracing@rvce.edu.in</a>
+                            </div>
+                        </div>
+                        <a href="https://www.linkedin.com/company/ashwa-racing/" target="_blank" rel="noopener"
+                            class="method-item" style="text-decoration: none; display: flex; align-items: center;">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <h5>Network with Us</h5>
+                                <span
+                                    style="color: var(--text-muted); font-size: 0.9rem; transition: color 0.3s ease;">LinkedIn
+                                    Outreach</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="ct-form" id="ct-form" novalidate>
+
+                        <div class="ct-form-row">
+                            <div class="ct-field">
+                                <label for="ct-first">First Name <span class="req">*</span></label>
+                                <input type="text" id="ct-first" name="firstName" autocomplete="given-name" required>
+                                <div class="ct-field-error" id="err-first"></div>
+                            </div>
+                            <div class="ct-field">
+                                <label for="ct-last">Last Name <span class="req">*</span></label>
+                                <input type="text" id="ct-last" name="lastName" autocomplete="family-name" required>
+                                <div class="ct-field-error" id="err-last"></div>
+                            </div>
+                        </div>
+
+                        <div class="ct-field">
+                            <label for="ct-email">Email Address <span class="req">*</span></label>
+                            <input type="email" id="ct-email" name="email" autocomplete="email" required>
+                            <div class="ct-field-error" id="err-email"></div>
+                        </div>
+
+                        <div class="ct-form-row">
+                            <div class="ct-field">
+                                <label for="ct-phone">Phone <span class="ct-optional">(optional)</span></label>
+                                <input type="tel" id="ct-phone" name="phone" autocomplete="tel">
+                            </div>
+                            <div class="ct-field">
+                                <label for="ct-subject">Subject</label>
+                                <input type="text" id="ct-subject" name="subject"
+                                    placeholder="Sponsorship & Marketing Enquiry">
+                            </div>
+                        </div>
+
+                        <!-- Hidden enquiry type defaulting to sponsorship for SMP page -->
+                        <input type="hidden" id="ct-enquiry-type" name="enquiryType" value="sponsorship">
+
+                        <div class="ct-field">
+                            <label for="ct-message">Message <span class="req">*</span></label>
+                            <textarea id="ct-message" name="message" rows="5" required></textarea>
+                            <div class="ct-field-error" id="err-message"></div>
+                            <div class="ct-char-count"><span id="ct-char-num">0</span> / 1000</div>
+                        </div>
+
+                        <!-- Honeypot -->
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"
+                            style="position:absolute;left:-9999px;opacity:0;">
+
+                        <button type="submit" class="ct-submit" id="ct-submit-btn">
+                            <span class="ct-submit-text">Send Message</span>
+                            <span class="ct-submit-icon"><i class="fas fa-arrow-right"></i></span>
+                            <span class="ct-submit-loading" hidden>
+                                <i class="fas fa-circle-notch fa-spin"></i> Sending…
+                            </span>
+                        </button>
+
+                    </form>
+
+                    <!-- Success state -->
+                    <div class="ct-success" id="ct-success" hidden>
+                        <div class="ct-success-icon"><i class="fas fa-check"></i></div>
+                        <p>Thanks for reaching out. We'll get back to you as soon as possible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- FOOTER -->
     <footer id="main-footer"></footer>
 
-
+    <!-- JS FILES -->
     <!-- JS FILES -->
     <script src="assets/js/components/header.js"></script>
-
+    <script src="assets/js/smp.js"></script>
+    <script src="assets/js/pages/contact.js"></script>
 
 </body>
 
