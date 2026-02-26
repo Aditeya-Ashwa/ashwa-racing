@@ -241,7 +241,7 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.8);
   margin-bottom: 40px;
 }
 .eyebrow-dash {
@@ -279,7 +279,7 @@ body {
 .hero-desc {
   font-size: clamp(0.9rem, 1.4vw, 1.05rem);
   line-height: 1.65;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.8);
   font-weight: 300;
   margin-bottom: 36px;
   max-width: 420px;
@@ -329,7 +329,7 @@ body {
   font-family: var(--font-display);
   font-size: 0.6rem;
   letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255);
 }
 .scroll-track {
   width: 40px; height: 1px;

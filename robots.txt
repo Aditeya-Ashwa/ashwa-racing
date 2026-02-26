@@ -1,7 +1,5 @@
 User-agent: *
 Disallow:
-
-# Allow all major search engines
 User-agent: Googlebot
 Allow: /
 
@@ -11,6 +9,5 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-# Sitemap location
 Sitemap: https://ashwa-racing.github.io/sitemap.xml
 Sitemap: https://ashwa-racing.github.io/sitemap.txt
