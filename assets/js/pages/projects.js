@@ -1,45 +1,20 @@
 /* ============================================================
    ASHWA RACING — projects.js
    Programme viewer: CV / EV / HYB / HYP / DV
-   Each programme has its own accent colour + identity.
    ============================================================ */
 
 "use strict";
 
-// ─── Programme identity config ───────────────────────────────
+// ─── Programme identity ───────────────────────────────────────
 const PROGRAMMES = {
-  cv: {
-    code:    "CV",
-    tag:     "Combustion Vehicle",
-    accent:  "#e8001d",
-    cssVar:  "--cv-accent"
-  },
-  ev: {
-    code:    "EV",
-    tag:     "Electric Vehicle",
-    accent:  "#00c2a8",
-    cssVar:  "--ev-accent"
-  },
-  hyb: {
-    code:    "HYB",
-    tag:     "Hybrid Vehicle",
-    accent:  "#f59e0b",
-    cssVar:  "--hyb-accent"
-  },
-  hyp: {
-    code:    "HYL",
-    tag:     "Hyperloop",
-    accent:  "#7c3aed",
-    cssVar:  "--hyp-accent"
-  },
-  dv: {
-    code:    "DRV",
-    tag:     "Driverless Vehicle",
-    accent:  "#3b82f6",
-    cssVar:  "--dv-accent"
-  }
+  cv:  { code: "CV",  tag: "Combustion Vehicle",  accent: "#e8001d", cssVar: "--cv-accent"  },
+  ev:  { code: "EV",  tag: "Electric Vehicle",     accent: "#00c2a8", cssVar: "--ev-accent"  },
+  hyb: { code: "HYB", tag: "Hybrid Vehicle",       accent: "#f59e0b", cssVar: "--hyb-accent" },
+  hyp: { code: "HYL", tag: "Hyperloop",            accent: "#7c3aed", cssVar: "--hyp-accent" },
+  dv:  { code: "DRV", tag: "Driverless Vehicle",   accent: "#3b82f6", cssVar: "--dv-accent"  }
 };
 
+// ─── Project data ─────────────────────────────────────────────
 const projectData = {
   cv: {
     title: "High-Performance Combustion Platform",
@@ -53,7 +28,6 @@ const projectData = {
           "assets/images/prototypes/RZ-05-C/5.webp",
           "assets/images/prototypes/RZ-05-C/6.webp",
           "assets/images/prototypes/RZ-05-C/7.webp",
-          // "assets/images/prototypes/RZ-05-C/8.webp",
         ],
         changes: [
           "Founding prototype — RZ05 Combustion",
@@ -62,19 +36,13 @@ const projectData = {
           "In-house intake, exhaust & muffler development",
           "Double wishbone push-rod suspension architecture"
         ],
-        desc: "RZ05 marked Ashwa Racing’s historic debut at Formula SAE Australasia, becoming the first student-built Formula Student car from Asia to compete at the event. It laid the technical and competitive foundation of the combustion programme.",
+        desc: "RZ05 marked Ashwa Racing's historic debut at Formula SAE Australasia, becoming the first student-built Formula Student car from Asia to compete at the event. It laid the technical and competitive foundation of the combustion programme.",
+        specs: { weight: "350 kg", power: "60 HP", acceleration: "4.5s", topSpeed: "100 kmph" },
         achievements: [
           "Best Endeavour Award — Formula SAE Australasia",
           "Best Cost Award — Formula SAE Australasia",
           "First Asian entry at FSAE Australasia"
-        ],
-        specs: {
-          weight: "350 kg",
-          power: "60 HP",
-          topSpeed: "100 kmph",
-          acceleration: "4.5s",
-          lateral: "1.4 G"
-        },
+        ]
       },
       2006: {
         images: [
@@ -107,18 +75,12 @@ const projectData = {
           "Integration of MOTEC M800 programmable ECU"
         ],
         desc: "RZ06 marked a significant technological leap over its predecessor. Featuring a carbon-fiber reinforced steel frame, it represented a major structural and design advancement for Ashwa Racing at Formula SAE Australasia.",
+        specs: { weight: "300 kg", power: "70 HP", acceleration: "4.21s", topSpeed: "100 kmph" },
         achievements: [
           "Best Asian Entry Award — Formula SAE Australasia",
           "Overall Rank: 20th",
           "Cost Event: 8th"
-        ],
-        specs: {
-          weight: "300 kg",
-          power: "70 HP",
-          topSpeed: "100 kmph",
-          acceleration: "4.21s",
-          lateral: "1.4 G"
-        },
+        ]
       },
       2007: {
         images: [
@@ -154,18 +116,12 @@ const projectData = {
           "Improved acceleration performance (4.05 sec)",
           "MOTEC M800 programmable ECU integration"
         ],
-        desc: "RZ07 marked Ashwa Racing’s first European competition appearance at Formula Student Germany. The car represented a major milestone in the team’s global expansion and industry collaboration efforts.",
+        desc: "RZ07 marked Ashwa Racing's first European competition appearance at Formula Student Germany. The car represented a major milestone in the team's global expansion and industry collaboration efforts.",
+        specs: { weight: "280 kg", power: "73 HP", acceleration: "4.05s", topSpeed: "100 kmph" },
         achievements: [
           "Young Achiever Award — Rotary International (2007)",
           "First European competition entry — Formula Student Germany"
-        ],
-        specs: {
-          weight: "280 kg",
-          power: "73 HP",
-          topSpeed: "100 kmph",
-          acceleration: "4.05s",
-          lateral: "1.4 G"
-        },
+        ]
       },
       2008: {
         images: [
@@ -191,17 +147,11 @@ const projectData = {
           "Further structural and weight optimisation"
         ],
         desc: "RZ08 represented the consolidation of three years of combustion development. Competing at Formula Student Germany, the platform focused on precision manufacturing, improved intake architecture, and deeper industry collaboration.",
+        specs: { weight: "260 kg", power: "73 HP", acceleration: "3.90s", topSpeed: "100 kmph" },
         achievements: [
           "Competed at Formula Student Germany",
           "Strengthened international technical collaborations"
-        ],
-        specs: {
-          weight: "260 kg",
-          power: "73 HP",
-          topSpeed: "100 kmph",
-          acceleration: "3.90s",
-          lateral: "1.4 G"
-        },
+        ]
       },
       2009: {
         images: [
@@ -223,14 +173,8 @@ const projectData = {
           "Aluminium honeycomb bulkhead integration",
           "Further weight optimisation to 255 kg"
         ],
-        desc: "The 2009 prototype, RZ09, marked Ashwa Racing’s strong international presence — competing at Formula Student Germany and earning recognition in Italy. The platform demonstrated engineering maturity, strong industry collaboration, and competitive dynamic performance.",
-        specs: {
-          weight: "255 kg",
-          power: "70 HP",
-          topSpeed: "100 kmph",
-          acceleration: "3.89s",
-          lateral: "1.4 G"
-        },
+        desc: "The 2009 prototype, RZ09, marked Ashwa Racing's strong international presence — competing at Formula Student Germany and earning recognition in Italy. The platform demonstrated engineering maturity, strong industry collaboration, and competitive dynamic performance.",
+        specs: { weight: "255 kg", power: "70 HP", acceleration: "3.89s", topSpeed: "100 kmph" },
         achievements: [
           "Best Endeavor Award — Formula Student Italy",
           "Young Achiever Award — Rotary International",
@@ -256,14 +200,8 @@ const projectData = {
           "Improved self-sustaining business model integration",
           "Refined intake RAM and exhaust 4-2-1 system"
         ],
-        desc: "The year 2010 saw the rollout of RZ10 — a newly branded evolution of Ashwa’s combustion platform. With improved ergonomics, structural refinement using Chromoly 4130, and stronger systems integration, the car marked a mature phase of development.",
-        specs: {
-          weight: "250 kg",
-          power: "75 HP",
-          topSpeed: "100 kmph",
-          acceleration: "8s",
-          lateral: "1.4 G"
-        },
+        desc: "The year 2010 saw the rollout of RZ10 — a newly branded evolution of Ashwa's combustion platform. With improved ergonomics, structural refinement using Chromoly 4130, and stronger systems integration, the car marked a mature phase of development.",
+        specs: { weight: "250 kg", power: "75 HP", acceleration: "8s", topSpeed: "100 kmph" },
         achievements: [
           "Continued Formula Student campaign",
           "Highest power output in combustion lineage till 2010"
@@ -289,13 +227,7 @@ const projectData = {
           "Pneumatically actuated paddle shift integration"
         ],
         desc: "In 2011, Ashwa Racing introduced RZX1 — marking the transition into the RZX combustion series. The car competed at Formula Student Italy and carried forward structural and drivetrain refinements from RZ10 while improving ergonomics and systems integration.",
-        specs: {
-          weight: "280 kg",
-          power: "70 HP",
-          topSpeed: "120 kmph",
-          acceleration: "0s",
-          lateral: "1.4 G"
-        },
+        specs: { weight: "280 kg", power: "70 HP", acceleration: "—", topSpeed: "120 kmph" },
         achievements: [
           "Competed at Formula Student Italy",
           "Launch of RZX combustion generation"
@@ -317,13 +249,7 @@ const projectData = {
           "MOTEC M800 ECU retained"
         ],
         desc: "RZX2 represented Ashwa Racing at Formula Student Italy in 2012. The car achieved 2nd place in the Cost Report and set the fastest technical inspection clearance at the event, demonstrating high design maturity and documentation precision.",
-        specs: {
-          weight: "302 kg",
-          power: "~75 HP",
-          topSpeed: "120 kmph",
-          acceleration: "—",
-          lateral: "1.4 G"
-        },
+        specs: { weight: "302 kg", power: "~75 HP", acceleration: "—", topSpeed: "120 kmph" },
         achievements: [
           "2nd Place — Cost Report (Formula Student Italy)",
           "Fastest Technical Inspection Clearance (17 minutes)",
@@ -352,21 +278,15 @@ const projectData = {
           "Enhanced intake RAM and stainless 4-2-1 exhaust",
           "Driver-focused ergonomic custom seat design"
         ],
-        desc: "RZX4 marked a major achievement in Ashwa Racing’s combustion lineage by securing the top place in the Design event in 2014. The platform reflected engineering maturity, documentation strength, and optimized subsystem integration across chassis, suspension, drivetrain, and electronics.",
-        specs: {
-          weight: "300 kg",
-          power: "70 HP",
-          topSpeed: "120 kmph",
-          acceleration: "4.21s",
-          lateral: "1.4 G"
-        },
+        desc: "RZX4 marked a major achievement in Ashwa Racing's combustion lineage by securing the top place in the Design event in 2014. The platform reflected engineering maturity, documentation strength, and optimized subsystem integration across chassis, suspension, drivetrain, and electronics.",
+        specs: { weight: "300 kg", power: "70 HP", acceleration: "4.21s", topSpeed: "120 kmph" },
         achievements: [
           "Top Place — Design Event (2014 Combustion Prototype)",
           "Successful Formula Student campaign"
         ],
         badge: "DESIGN WINNER"
       },
-            2015: {
+      2015: {
         images: [
           "assets/images/prototypes/RZ-X5-C/1.jpg",
           "assets/images/prototypes/RZ-X5-C/2.jpg",
@@ -389,14 +309,8 @@ const projectData = {
           "Refined suspension geometry and weight distribution",
           "Mature competition-ready systems integration"
         ],
-        desc: "RZX5 marked one of Ashwa Racing’s strongest competitive years in combustion. Securing Top Place in Design along with podium finishes in Endurance and Fuel Efficiency, the 2015 prototype demonstrated a balanced, highly integrated engineering platform.",
-        specs: {
-          weight: "310 kg",
-          power: "~75 HP",
-          topSpeed: "120 kmph",
-          acceleration: "—",
-          lateral: "1.4 G"
-        },
+        desc: "RZX5 marked one of Ashwa Racing's strongest competitive years in combustion. Securing Top Place in Design along with podium finishes in Endurance and Fuel Efficiency, the 2015 prototype demonstrated a balanced, highly integrated engineering platform.",
+        specs: { weight: "310 kg", power: "~75 HP", acceleration: "—", topSpeed: "120 kmph" },
         achievements: [
           "Top Place — Design Event (2015 Combustion)",
           "2nd — Endurance",
@@ -431,13 +345,7 @@ const projectData = {
           "Enhanced cooling and ECU integration"
         ],
         desc: "RZX6 represented a major performance jump in the combustion platform. With a lighter 250 kg chassis and a strong 6th place Design finish, the 2016 prototype reflected improved systems integration and competitive engineering maturity.",
-        specs: {
-          weight: "250 kg",
-          power: "~53 HP",
-          topSpeed: "110 kmph",
-          acceleration: "—",
-          lateral: "1.4 G"
-        },
+        specs: { weight: "250 kg", power: "~53 HP", acceleration: "—", topSpeed: "110 kmph" },
         achievements: [
           "6th — Design Event",
           "Total Points: 235",
@@ -475,13 +383,7 @@ const projectData = {
           "Refined intake and exhaust system"
         ],
         desc: "RZX7 marked a strong performance year for the combustion platform with improved acceleration, lighter chassis architecture and enhanced drivetrain efficiency. Competing at both Formula Italy and Formula Bharat, the team demonstrated international competitiveness.",
-        specs: {
-          weight: "230 kg",
-          power: "73 HP",
-          topSpeed: "120 kmph",
-          acceleration: "3.90s",
-          lateral: "1.4 G"
-        },
+        specs: { weight: "230 kg", power: "73 HP", acceleration: "3.90s", topSpeed: "120 kmph" },
         achievements: [
           "Italy — Rank 11 (224.20 pts)",
           "Bharat — Rank 25 (262.09 pts)"
@@ -518,14 +420,8 @@ const projectData = {
           "Strong Bharat overall finish (8th)",
           "Refined chassis and powertrain integration"
         ],
-        desc: "RZX8C strengthened Ashwa Racing’s combustion platform with consistent power output and improved event performance. The car secured a Top 10 overall finish at Formula Bharat and was recognized as one of the fastest combustion student cars in India that season.",
-        specs: {
-          weight: "260 kg",
-          power: "73 HP",
-          topSpeed: "120 kmph",
-          acceleration: "3.90s",
-          lateral: "1.4 G"
-        },
+        desc: "RZX8C strengthened Ashwa Racing's combustion platform with consistent power output and improved event performance. The car secured a Top 10 overall finish at Formula Bharat and was recognized as one of the fastest combustion student cars in India that season.",
+        specs: { weight: "260 kg", power: "73 HP", acceleration: "3.90s", topSpeed: "120 kmph" },
         achievements: [
           "Bharat — Rank 8 (402.10 pts)",
           "Fastest Combustion Acceleration — 4.259s",
@@ -574,60 +470,14 @@ const projectData = {
           "Refined chassis & driveline integration"
         ],
         desc: "RZX9C focused on strong static performance, achieving a top 10 static rank at Formula Bharat. The platform maintained consistent powertrain architecture while refining design and cost presentation.",
-        specs: {
-          weight: "260 kg",
-          power: "73 HP",
-          topSpeed: "100 kmph",
-          acceleration: "3.90s",
-          // lateral: "1.4 G"
-        },
+        specs: { weight: "260 kg", power: "73 HP", acceleration: "3.90s", topSpeed: "100 kmph" },
         achievements: [
           "Overall Rank 13 — 249.97 pts",
           "Static Rank 9",
           "Design Event — 110 pts"
         ],
         badge: "STATIC STRENGTH"
-      },
-//       2023: {
-//         image: "assets/images/prototypes/XX5C.jpg",
-//         changes: [
-// "Data to be added, Stay tuned"
-//         ],
-//         desc: "More to come, stay tuned",
-//         achievements: [
-//           "We strive to win!",
-//         ]
-//       },
-//       2024: {
-//         image: "assets/images/prototypes/XX5C.jpg",
-//         changes: [
-// "Data to be added, Stay tuned"
-//         ],
-//         desc: "More to come, stay tuned",
-//         achievements: [
-//           "We strive to win!",
-//         ]
-//       },
-//       2025: {
-//         image: "assets/images/prototypes/XX5C.jpg",
-//         changes: [
-// "Data to be added, Stay tuned"
-//         ],
-//         desc: "More to come, stay tuned",
-//         achievements: [
-//           "We strive to win!",
-//         ]
-//       },
-//       2026: {
-//         image: "assets/images/prototypes/XX5C.jpg",
-//         changes: [
-// "Data to be added, Stay tuned"
-//         ],
-//         desc: "More to come, stay tuned",
-//         achievements: [
-//           "We strive to win!",
-//         ]
-//       },
+      }
     }
   },
 
@@ -655,12 +505,7 @@ const projectData = {
           "International competition debut — USA"
         ],
         desc: "Ashwa Racing's first Hybrid prototype marked a major technological leap. Competing at Formula Hybrid New Hampshire, the team placed in the top ten overall, successfully integrating combustion and electric subsystems into a single competitive platform.",
-        specs: {
-          weight: "310 kg",
-          power: "45 BHP",
-          topSpeed: "74 kmph",
-          acceleration: "-"
-        },
+        specs: { weight: "310 kg", power: "45 BHP", acceleration: "—", topSpeed: "74 kmph" },
         achievements: [
           "Top 10 Overall — Formula Hybrid New Hampshire",
           "First International Hybrid Entry",
@@ -690,7 +535,6 @@ const projectData = {
           "assets/images/prototypes/RZ-X6-H/postevent/8.jpg",
           "assets/images/prototypes/RZ-X6-H/postevent/9.jpg",
           "assets/images/prototypes/RZ-X6-H/postevent/10.jpg",
-
         ],
         changes: [
           "RZX6H — Refined hybrid architecture",
@@ -699,12 +543,7 @@ const projectData = {
           "Weight reduction vs previous hybrid"
         ],
         desc: "RZX6H marked a major competitive leap in the hybrid programme. With improved production techniques and optimized manufacturing processes, the team secured 4th overall at Formula Hybrid New Hampshire.",
-        specs: {
-          weight: "280 kg",
-          power: "70 HP",
-          topSpeed: "-",
-          acceleration: "-"
-        },
+        specs: { weight: "280 kg", power: "70 HP", acceleration: "—", topSpeed: "—" },
         achievements: [
           "4th Overall — Formula Hybrid",
           "Design Event — 2nd Place",
@@ -736,13 +575,8 @@ const projectData = {
           "Refined endurance reliability",
           "Improved event execution strategy"
         ],
-        desc: "RZX7H marked Ashwa Racing’s first major hybrid podium at Formula Hybrid New Hampshire, finishing 2nd overall with strong dominance in dynamic events.",
-        specs: {
-          weight: "—",
-          power: "—",
-          topSpeed: "100 km/h",
-          acceleration: "4.05 s",
-        },
+        desc: "RZX7H marked Ashwa Racing's first major hybrid podium at Formula Hybrid New Hampshire, finishing 2nd overall with strong dominance in dynamic events.",
+        specs: { weight: "—", power: "—", acceleration: "4.05s", topSpeed: "100 kmph" },
         achievements: [
           "2nd Overall — Formula Hybrid",
           "1st — Acceleration (Electric)",
@@ -787,14 +621,8 @@ const projectData = {
           "Strong static + dynamic event balance",
           "Improved accumulator packaging and hybrid integration"
         ],
-        desc: "RZX8H reinforced Ashwa Racing’s hybrid dominance with another 2nd Overall finish at Formula Hybrid New Hampshire. The platform demonstrated improved systems integration, high static scores, and consistent dynamic performance.",
-        specs: {
-          weight: "300 kg",
-          power: "73 HP",
-          topSpeed: "100 km/h",
-          acceleration: "4.05 s",
-          lateral: "1.4 G"
-        },
+        desc: "RZX8H reinforced Ashwa Racing's hybrid dominance with another 2nd Overall finish at Formula Hybrid New Hampshire. The platform demonstrated improved systems integration, high static scores, and consistent dynamic performance.",
+        specs: { weight: "300 kg", power: "73 HP", acceleration: "4.05s", topSpeed: "100 kmph" },
         achievements: [
           "2nd Overall — Formula Hybrid",
           "2nd — Design (183.24/200)",
@@ -831,19 +659,14 @@ const projectData = {
           "Refined accumulator packaging and systems integration"
         ],
         desc: "The 2019 Hybrid secured 3rd Overall at Formula Hybrid New Hampshire. With a perfect 150/150 in Project Management and strong Design performance, the platform reflected a highly mature development process and refined hybrid integration.",
-        specs: {
-          weight: "300 kg",
-          power: "73 HP",
-          topSpeed: "100 km/h",
-          acceleration: "—"
-        },
+        specs: { weight: "300 kg", power: "73 HP", acceleration: "—", topSpeed: "100 kmph" },
         achievements: [
           "3rd Overall — Formula Hybrid",
           "1st — Project Management (150/150)",
           "2nd — Design (184.62/200)"
         ],
         badge: "PROJECT MANAGEMENT MASTERCLASS"
-      },
+      }
     }
   },
 
@@ -851,16 +674,11 @@ const projectData = {
     title: "Hyperloop Pod Development",
     years: {
       2023: {
-        image: "assets/images/team/Hyperloop.webp",
-        changes: [
-                  "This was the first prototype"
-        ],
-        desc: "Ashwa's entry into the Hyperloop space — a full pod prototype developed and tested for international-level competition at ETH Zurich",
-        achievements: [
-          "First time forae into Hyperloop technology"
-        ]
-      },
-
+        images: ["assets/images/team/Hyperloop.webp"],
+        changes: ["First prototype — competed at ETH Zurich"],
+        desc: "Ashwa's entry into the Hyperloop space — a full pod prototype developed and tested for international-level competition at ETH Zurich.",
+        achievements: ["First foray into Hyperloop technology"]
+      }
     }
   },
 
@@ -868,14 +686,10 @@ const projectData = {
     title: "Next-Generation Electric Prototype",
     years: {
       2026: {
-        image: "assets/images/prototypes/XX5C.jpg",
-        changes: [
-                  "Coming soon !"
-        ],
+        images: ["assets/images/prototypes/XX5C.jpg"],
+        changes: ["Coming soon!"],
         desc: "Electric platform engineered for safety, efficiency, and energy density — designed to pass the most rigorous scrutineering.",
-        achievements: [
-          "We strive to win!",
-        ]
+        achievements: ["We strive to win!"]
       }
     }
   },
@@ -884,25 +698,27 @@ const projectData = {
     title: "Autonomous & Driverless Platform",
     years: {
       2027: {
-        image: "assets/images/prototypes/XX5C.jpg",
-        changes: [
-                  "Coming soon !"
-        ],
+        images: ["assets/images/prototypes/XX5C.jpg"],
+        changes: ["Coming soon!"],
         desc: "The driverless programme builds on Ashwa's existing vehicle platforms, layering perception, planning, and control systems for autonomous competition.",
-        achievements: [
-          "We strive to win!",
-        ]
+        achievements: ["We strive to win!"]
       }
     }
   }
 };
 
-// ─── State ───────────────────────────────────────────────────
-let activeProgKey  = "cv";
-let activeYear     = null;
+/* ============================================================
+   RUNTIME — fixed: render token, hoisted helpers, no viewer in reveal
+   ============================================================ */
 
-let imageInterval = null;
-let activeImageIndex = 0;
+"use strict";
+
+// ─── State ────────────────────────────────────────────────────
+let activeProgKey    = "cv";
+let activeYear       = null;
+let slideshowTimer   = null;
+let renderToken      = 0;      // incremented every renderYear call;
+                               // stale async callbacks check this before acting
 
 // ─── DOM refs ─────────────────────────────────────────────────
 const viewer      = document.getElementById("prog-viewer");
@@ -914,102 +730,120 @@ const progImage   = document.getElementById("prog-image");
 const progContent = document.getElementById("prog-content");
 const stripe      = document.querySelector(".proj-hero-stripe");
 
-// ─── Render year data ─────────────────────────────────────────
+// Set transition once on the element, never inside a loop/interval
+progImage.style.transition = "opacity 0.25s ease";
+
+// ─── Hoisted helpers ──────────────────────────────────────────
+
+// Preload an array of image paths; resolve with only those that loaded
+function preloadImages(paths) {
+  return Promise.all(
+    paths.map(p => new Promise(resolve => {
+      const img   = new Image();
+      img.onload  = () => resolve(p);
+      img.onerror = () => resolve(null);
+      img.src     = p;
+    }))
+  ).then(r => r.filter(Boolean));
+}
+
+// Swap the visible image with a fade, but only if the token still matches
+function swapImage(src, alt, token) {
+  if (token !== renderToken) return;
+  progImage.style.opacity = "0";
+  setTimeout(() => {
+    if (token !== renderToken) return;
+    progImage.src = src;
+    progImage.alt = alt;
+    progImage.style.opacity = "1";
+  }, 260);
+}
+
+// ─── Render year ──────────────────────────────────────────────
 function renderYear(progKey, year) {
   const data     = projectData[progKey].years[year];
   const identity = PROGRAMMES[progKey];
+
+  // Invalidate all in-flight async work from previous calls
+  renderToken += 1;
+  const myToken = renderToken;
+
+  // Kill previous slideshow immediately
+  if (slideshowTimer) { clearInterval(slideshowTimer); slideshowTimer = null; }
+
+  // ── Text content — render synchronously, no waiting ──
   const spec = data.specs || {};
 
-  const specHTML = spec.weight ? `
-  <div class="prog-specs">
-    <div class="prog-spec"><span>Weight</span><strong>${spec.weight}</strong></div>
-    <div class="prog-spec"><span>Power</span><strong>${spec.power}</strong></div>
-    <div class="prog-spec"><span>Acceleration</span><strong>${spec.acceleration}</strong></div>
-    <div class="prog-spec"><span>Top Speed</span><strong>${spec.topSpeed}</strong></div>
-  </div>
-` : "";
+  // Only show specs block if at least one value is a real measurement
+  const hasRealSpecs = Object.values(spec).some(
+    v => v && v !== "—" && v !== "-" && v !== ""
+  );
+  const specHTML = hasRealSpecs ? `
+    <div class="prog-specs">
+      <div class="prog-spec"><span>Weight</span><strong>${spec.weight  || "—"}</strong></div>
+      <div class="prog-spec"><span>Power</span><strong>${spec.power   || "—"}</strong></div>
+      <div class="prog-spec"><span>0–100</span><strong>${spec.acceleration || "—"}</strong></div>
+      <div class="prog-spec"><span>Top Speed</span><strong>${spec.topSpeed || "—"}</strong></div>
+    </div>` : "";
 
-// ─── Image Slideshow (safe loading) ─────────────────────────
-if (imageInterval) clearInterval(imageInterval);
+  const badgeHTML = data.badge
+    ? `<div class="prog-badge">${data.badge}</div>` : "";
 
-const rawImages = data.images || (data.image ? [data.image] : []);
-activeImageIndex = 0;
-
-progImage.style.transition = "opacity 0.4s ease";
-
-// Preload and filter valid images
-function preloadImages(imagePaths) {
-  return Promise.all(
-    imagePaths.map(path => {
-      return new Promise(resolve => {
-        const img = new Image();
-        img.onload  = () => resolve(path);
-        img.onerror = () => resolve(null); // skip broken image
-        img.src = path;
-      });
-    })
-  ).then(results => results.filter(Boolean)); // remove nulls
-}
-
-preloadImages(rawImages).then(validImages => {
-
-  if (!validImages.length) {
-    // Optional: fallback image
-    progImage.src = "assets/images/fallback.jpg";
-    progImage.alt = "Image not available";
-    return;
-  }
-
-  function showImage(index) {
-    progImage.style.opacity = "0";
-
-    setTimeout(() => {
-      progImage.src = validImages[index];
-      progImage.alt = `${identity.tag} — ${year}`;
-      progImage.style.opacity = "1";
-    }, 200);
-  }
-
-  showImage(activeImageIndex);
-
-  if (validImages.length > 1) {
-    imageInterval = setInterval(() => {
-      activeImageIndex = (activeImageIndex + 1) % validImages.length;
-      showImage(activeImageIndex);
-    }, 3000);
-  }
-});
-
-  // Content block
-  const changeItems = data.changes
-    .map(c => `<li>${c}</li>`)
-    .join("");
-
-  const achItems = data.achievements
-    .map(a => `<li>${a}</li>`)
-    .join("");
+  const changeItems = data.changes.map(c => `<li>${c}</li>`).join("");
+  const achItems    = data.achievements.map(a => `<li>${a}</li>`).join("");
 
   progContent.innerHTML = `
     <div>
       <div class="prog-changes-label">Updates for ${year}</div>
       <ul class="prog-changes">${changeItems}</ul>
     </div>
-
     <p class="prog-desc">${data.desc}</p>
     ${specHTML}
-
+    ${badgeHTML}
     <div>
       <div class="prog-ach-label">Achievements</div>
       <ul class="prog-achievements">${achItems}</ul>
-    </div>
-  `;
+    </div>`;
 
   // Update active year button
   progYears.querySelectorAll(".year-btn").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.year === String(year));
   });
-
   activeYear = year;
+
+  // ── Images — async, guarded by token ──
+  const rawImages = data.images || (data.image ? [data.image] : []);
+
+  // Fade out current image while we wait
+  progImage.style.opacity = "0";
+
+  preloadImages(rawImages).then(valid => {
+    if (myToken !== renderToken) return;  // superseded — bail out
+
+    if (!valid.length) {
+      // No valid images — just clear
+      progImage.src = "";
+      progImage.style.opacity = "1";
+      return;
+    }
+
+    let idx = 0;
+    // Show first image immediately (swapImage handles the fade-in)
+    swapImage(valid[0], `${identity.tag} — ${year}`, myToken);
+
+    // Start slideshow only if there are multiple images
+    if (valid.length > 1) {
+      slideshowTimer = setInterval(() => {
+        if (myToken !== renderToken) {
+          clearInterval(slideshowTimer);
+          slideshowTimer = null;
+          return;
+        }
+        idx = (idx + 1) % valid.length;
+        swapImage(valid[idx], `${identity.tag} — ${year}`, myToken);
+      }, 3500);
+    }
+  });
 }
 
 // ─── Switch programme ─────────────────────────────────────────
@@ -1020,51 +854,45 @@ function switchProgramme(progKey) {
 
   activeProgKey = progKey;
 
-  // Fade viewer out
-  viewer.style.opacity = "0";
-  viewer.style.transition = "opacity 0.2s ease";
+  viewer.style.transition = "opacity 0.18s ease";
+  viewer.style.opacity    = "0";
 
   setTimeout(() => {
-    // Update CSS accent variable on :root
     document.documentElement.style.setProperty("--prog-accent", identity.accent);
 
-    // Identity bar
     progCode.textContent  = identity.code;
     progTag.textContent   = identity.tag;
     progTitle.textContent = proto.title;
 
-    // Stripe colour (hero)
     if (stripe) stripe.dataset.prog = progKey;
 
-    // Year buttons
+    // Rebuild year buttons
     progYears.innerHTML = "";
     years.forEach(year => {
-      const btn = document.createElement("button");
-      btn.className    = "year-btn";
-      btn.textContent  = year;
+      const btn       = document.createElement("button");
+      btn.className   = "year-btn";
+      btn.textContent = year;
       btn.dataset.year = year;
       btn.addEventListener("click", () => renderYear(progKey, year));
       progYears.appendChild(btn);
     });
 
-    // Render latest year
-    renderYear(progKey, years[0]);
-
-    // Nav buttons active state
     document.querySelectorAll(".prog-nav-btn").forEach(btn => {
       btn.classList.toggle("active", btn.dataset.prog === progKey);
     });
 
+    renderYear(progKey, years[0]);
+
     viewer.style.opacity = "1";
-  }, 200);
+  }, 180);
 }
 
-// ─── Programme nav listeners ──────────────────────────────────
+// ─── Programme nav ────────────────────────────────────────────
 document.querySelectorAll(".prog-nav-btn").forEach(btn => {
   btn.addEventListener("click", () => switchProgramme(btn.dataset.prog));
 });
 
-// ─── Build overview cards ─────────────────────────────────────
+// ─── Overview cards ───────────────────────────────────────────
 function buildOverviewCards() {
   const grid = document.getElementById("all-progs-grid");
   if (!grid) return;
@@ -1085,47 +913,46 @@ function buildOverviewCards() {
       <div class="prog-card-name">${identity.tag}</div>
       <div class="prog-card-title">${proto.title}</div>
       <div class="prog-card-years">
-        ${years.length > 1
-          ? `${years[years.length - 1]} – ${years[0]}`
-          : years[0]
-        } · ${years.length} season${years.length !== 1 ? "s" : ""}
+        ${years.length > 1 ? `${years[years.length-1]} – ${years[0]}` : years[0]}
+        · ${years.length} season${years.length !== 1 ? "s" : ""}
       </div>
-      <i class="fas fa-arrow-up-right prog-card-arrow"></i>
-    `;
+      <i class="fas fa-arrow-up-right prog-card-arrow"></i>`;
 
-    // Click → scroll to viewer + switch
     function activate() {
       switchProgramme(key);
       viewer.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-
     card.addEventListener("click", activate);
-    card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") activate(); });
-
+    card.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") activate();
+    });
     grid.appendChild(card);
   });
 }
 
-// ─── Scroll reveal ───────────────────────────────────────────
+// ─── Scroll reveal — cards only, never the viewer ─────────────
+// Targeting .prog-viewer here would set opacity:0 on it and race
+// against switchProgramme's own fade, causing a flash on load.
 function initReveal() {
-  const targets = document.querySelectorAll(".prog-card, .prog-viewer");
-  targets.forEach((el, i) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(20px)";
-    el.style.transition = `opacity 0.5s var(--ease-expo) ${i * 0.05}s, transform 0.5s var(--ease-expo) ${i * 0.05}s`;
+  const cards = document.querySelectorAll(".prog-card");
+  cards.forEach((el, i) => {
+    el.style.opacity   = "0";
+    el.style.transform = "translateY(18px)";
+    el.style.transition =
+      `opacity 0.5s var(--ease-expo) ${i * 0.06}s,
+       transform 0.5s var(--ease-expo) ${i * 0.06}s`;
   });
 
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = "1";
-        e.target.style.transform = "translateY(0)";
-        obs.unobserve(e.target);
-      }
+      if (!e.isIntersecting) return;
+      e.target.style.opacity   = "1";
+      e.target.style.transform = "translateY(0)";
+      obs.unobserve(e.target);
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
 
-  targets.forEach(el => obs.observe(el));
+  cards.forEach(el => obs.observe(el));
 }
 
 // ─── Init ─────────────────────────────────────────────────────
