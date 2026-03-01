@@ -406,8 +406,7 @@ const teamData = [
       linkedin: null,
       github: null
     }
-    }
-  },
+    },
   {
     name: "U P Madhavan",
     roles: ["Subsystem Lead"],
