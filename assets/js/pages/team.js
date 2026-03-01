@@ -151,6 +151,14 @@ const teamData = [
     social: { linkedin: null, github: null }
   },
   {
+    name: "Sarah Das",
+    roles: ["Member"],
+    subsystem: ["Brakes & Logistics"],
+    year: "2028",
+    experience: "Member of the Brakes & Logistics subsystem.",
+    social: { linkedin: null, github: null }
+  },
+  {
     name: "Arya Sunil",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
