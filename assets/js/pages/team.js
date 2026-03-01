@@ -1,17 +1,217 @@
 "use strict";
 
 // ─── State ───────────────────────────────────────────────────
-let activeYear = "2027";
+let activeYear = "2026";
 let activeSubsystem = "All";
 
 // ─── Data ────────────────────────────────────────────────────
 const teamData = [
   {
+    name: "Ananth Krishna",
+    roles: ["Member"],
+    subsystem: ["Chassis & Workshop Management"],
+    year: "2028",
+    experience: "Member of the Chassis & Workshop Management team.",
+    social: { linkedin: "https://www.linkedin.com/in/ananth-krishna-679060243", github: null }
+  },
+  {
+    name: "Dilan Da Silva",
+    roles: ["Member"],
+    subsystem: ["Sponsorship, Marketing & Public Relations"],
+    year: "2028",
+    experience: "Handles sponsor outreach and follow-ups, leads newsletter drafting, and contributes to social media content strategy.",
+    social: { linkedin: "https://www.linkedin.com/in/dilan-d-silva-a8297b32a", github: null }
+  },
+  {
+    name: "Sughosha Rao R",
+    roles: ["Member"],
+    subsystem: ["Electrical & Testing"],
+    year: "2028",
+    experience: "Working on PCB designs including accumulator precharge circuits and brake light systems using pressure transducers.",
+    social: { linkedin: null, github: null }
+  },
+  {
+    name: "Dilraj Singh",
+    roles: ["Member"],
+    subsystem: ["Sponsorship, Marketing & Public Relations", "IT"],
+    year: "2028",
+    experience: "Manages social media content and contributes to website development.",
+    social: { linkedin: "https://www.linkedin.com/in/dilraj-singh-cos007", github: "https://github.com/Dilraj07" }
+  },
+  {
+    name: "Damian C Dani",
+    roles: ["Member"],
+    subsystem: ["Drivetrain & Human Resources"],
+    year: "2028",
+    experience: "Member of the Drivetrain & HR team.",
+    social: { linkedin: "https://www.linkedin.com/in/damian-c-dani-56a25b353", github: null }
+  },
+  {
+    name: "Praful P I",
+    roles: ["Member"],
+    subsystem: ["Brakes & Logistics"],
+    year: "2028",
+    experience: "Member of the Brakes & Logistics subsystem.",
+    social: { linkedin: null, github: null }
+  },
+  {
+    name: "Ganesha K L",
+    roles: ["Member"],
+    subsystem: ["Suspension & Admin"],
+    year: "2028",
+    experience: "Member of the Suspension & Admin team.",
+    social: { linkedin: "https://www.linkedin.com/in/ganesha-kalburgi-388042268", github: null }
+  },
+  {
+    name: "Anarghya Hatti",
+    roles: ["Member"],
+    subsystem: ["Electrical & Testing"],
+    year: "2028",
+    experience: "Member of the Electrical & Testing subsystem.",
+    social: { linkedin: "https://www.linkedin.com/in/anarghya-hatti-94a377251", github: null }
+  },
+  {
+    name: "Lakshana Jeevanandan",
+    roles: ["Member"],
+    subsystem: ["Sponsorship, Marketing & Public Relations"],
+    year: "2028",
+    experience: "Member of the Sponsorship, Marketing & PR team.",
+    social: { linkedin: "https://www.linkedin.com/in/lakshana-jeevanandan-a1568432a", github: "https://github.com/lakshana009" }
+  },
+  {
+    name: "K M Sri Raghava",
+    roles: ["Member"],
+    subsystem: ["Electrical & Testing"],
+    year: "2028",
+    experience: "Member of the Electrical & Testing subsystem.",
+    social: { linkedin: null, github: null }
+  },
+  {
+    name: "Shrinidhi R",
+    roles: ["Member"],
+    subsystem: ["Suspension & Admin"],
+    year: "2028",
+    experience: "Member of the Suspension & Admin team.",
+    social: { linkedin: "https://www.linkedin.com/in/shrinidhi-ramesh-852026341", github: null }
+  },
+  {
+    name: "Pritha Nandy",
+    roles: ["Member"],
+    subsystem: ["Electrical & Testing"],
+    year: "2028",
+    experience: "Member of the Electrical & Testing subsystem.",
+    social: { linkedin: null, github: null }
+  },
+  {
+    name: "Samyak Nahar",
+    roles: ["Member"],
+    subsystem: ["Chassis & Workshop Management"],
+    year: "2028",
+    experience: "Member of the Chassis & Workshop Management team.",
+    social: { linkedin: "https://www.linkedin.com/in/samyak-nahar-00709132b", github: null }
+  },
+  {
+    name: "Prithvi Krishna Shambhu",
+    roles: ["Member"],
+    subsystem: ["Chassis & Workshop Management"],
+    year: "2028",
+    experience: "Member of the Chassis & Workshop Management team.",
+    social: { linkedin: null, github: null }
+  },
+  {
+    name: "Shreni Shetty",
+    roles: ["Member"],
+    subsystem: ["Drivetrain & Human Resources"],
+    year: "2028",
+    experience: "Member of the Drivetrain & HR team.",
+    social: { linkedin: "https://www.linkedin.com/in/shreni-shetty", github: "https://github.com/ShreniShetty" }
+  },
+  {
+    name: "Ishita K. Bharadhwaj",
+    roles: ["Member"],
+    subsystem: ["Chassis & Workshop Management"],
+    year: "2028",
+    experience: "Designed the accumulator mezzanine section and busbars housing safety and shutdown circuits, and manufactured the charging cart for the electric prototype.",
+    social: { linkedin: "https://www.linkedin.com/in/ishita-bharadhwaj-b12741384", github: null }
+  },
+  {
+    name: "Mrunal M",
+    roles: ["Member"],
+    subsystem: ["Electrical & Testing"],
+    year: "2028",
+    experience: "Member of the Electrical & Testing subsystem.",
+    social: { linkedin: null, github: null }
+  },
+  {
+    name: "Mayank S",
+    roles: ["Member"],
+    subsystem: ["Electrical & Testing"],
+    year: "2028",
+    experience: "Member of the Electrical & Testing subsystem.",
+    social: { linkedin: null, github: null }
+  },
+  {
+    name: "Arya Sunil",
+    roles: ["Member"],
+    subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
+    year: "2028",
+    experience: "Contributes to both Engine development and Sponsorship & Marketing initiatives.",
+    social: { linkedin: "https://www.linkedin.com/in/arya-sunil-a781a5318", github: null }
+  },
+  {
+    name: "Prajwal G Koli",
+    roles: ["Member"],
+    subsystem: ["Suspension & Admin"],
+    year: "2028",
+    experience: "Member of the Suspension & Admin team.",
+    social: { linkedin: null, github: null }
+  },
+  {
+    name: "Tejas Nagendra Naik",
+    roles: ["Member"],
+    subsystem: ["Chassis & Workshop Management"],
+    year: "2028",
+    experience: "Member of the Chassis & Workshop Management team.",
+    social: { linkedin: null, github: null }
+  },
+  {
+    name: "Neil S Wesley",
+    roles: ["Member"],
+    subsystem: ["Suspension & Admin"],
+    year: "2028",
+    experience: "Assisted in procurement, basic manufacturing, and drafting administrative documents.",
+    social: { linkedin: null, github: null }
+  },
+  {
+    name: "Vinay Krishna B V",
+    roles: ["Member"],
+    subsystem: ["Sponsorship, Marketing & Public Relations", "Finance"],
+    year: "2028",
+    experience: "Contributes to Sponsorship, Marketing & PR initiatives and financial operations.",
+    social: { linkedin: "https://www.linkedin.com/in/vinay-krishna-b-v-182428317", github: null }
+  },
+  {
+    name: "Jainaav Pramod",
+    roles: ["Member"],
+    subsystem: ["Sponsorship, Marketing & Public Relations"],
+    year: "2028",
+    experience: "Designed sponsor and Formula Bharat social media posts and contributed to multiple editions of the team newsletter.",
+    social: { linkedin: "https://www.linkedin.com/in/jainaav-pramod-b1b319383/", github: "https://github.com/JainavPS" }
+  },
+  {
+    name: "Thanusha HU",
+    roles: ["Member"],
+    subsystem: ["Suspension & Admin"],
+    year: "2028",
+    experience: "Member of the Suspension & Admin team.",
+    social: { linkedin: "https://www.linkedin.com/in/thanusha-h-u-438091354", github: null }
+  },
+  {
     name: "N Akshay Urs",
     roles: ["Project Manager", "Subsystem Lead"],
     subsystem: ["Leads", "Electrical & Testing"],
     year: "2027",
-    experience: "Designed Rear & Side IO. Worked on firmware for DAQ. Made the harness for RZ-XX6C. One of the drivers for the RZ-XX6C. Responsible for top 5 finish under EDP at Formula Bharat 2026.",
+    experience: "Designed Rear & Side IO. Worked on firmware for DAQ. Made the harness for RZ-XX6C. One of the drivers for the RZ-XX6C. Part of EDP team, achieving P5 at Formula Bharat 2026.",
     social: {
       linkedin: "https://www.linkedin.com/in/n-akshayurs/",
       github: null
@@ -22,7 +222,7 @@ const teamData = [
     roles: ["Subsystem Lead", "Chief Engineer"],
     subsystem: ["Leads", "Chassis & Workshop Management"],
     year: "2027",
-    experience: "Designed the LV enclosure and chassis, and served as one of the drivers for the RZ-XX6C. Responsible for top 5 finish under EDP at Formula Bharat 2026.",
+    experience: "Designed the LV enclosure and chassis. One of the drivers for the RZ-XX6C. Part of EDP team, achieving P5 at Formula Bharat 2026.",
     social: {
       linkedin: "https://www.linkedin.com/in/sathvik-s-naik-b186342a8/",
       github: null
@@ -44,7 +244,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2027",
-    experience: "Delivered exceptional suspension work within a tight timeline, ensuring RZ-XX6C stood on her own four wheels. Contributed to P6 finish at FB 2026.",
+    experience: "Delivered exceptional suspension work within a tight timeline, ensuring RZ-XX6C stood on her own four wheels. Part of EDP team, achieving P5 at Formula Bharat 2026. Contributed to P6 finish at FB 2026.",
     social: {
       linkedin: "https://www.linkedin.com/in/an-joshi/",
       github: null
@@ -53,9 +253,9 @@ const teamData = [
   {
     name: "Vinith Prabhu",
     roles: ["Member"],
-    subsystem: ["Electrical & Testing", "Finance"],
+    subsystem: ["Electrical & Testing"],
     year: "2027",
-    experience: "Designed the Power Distribution Board handling 300+ Watts of power around the car. Main proponent behind EDP position at Formula Bharat 2026. One of the drivers for the RZ-XX6C.",
+    experience: "Designed the Power Distribution Board handling 300+ Watts of power around the car. Main proponent behind EDP position at Formula Bharat 2026, achieving P5 at Formula Bharat 2026. One of the drivers for the RZ-XX6C.",
     social: {
       linkedin: null,
       github: null
@@ -67,7 +267,7 @@ const teamData = [
     roles: ["Subsystem Lead"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2027",
-    experience: "Secured 45+ sponsors for the 2026–27 race season. Part of 2nd Place BPP team at Formula Bharat 2026.",
+    experience: "Secured sponsors for the 2026–27 race season. Part of BPP team, achieving 2nd Place at Formula Bharat 2026.",
     social: {
       linkedin: "https://www.linkedin.com/in/samith-belegadde-sirish-162bb425b/",
       github: null
@@ -90,7 +290,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2027",
-    experience: "Designed drive shafts, DT Sprocket etc for the powertrain components of the car. Responsible for top 5 finish under EDP at Formula Bharat 2026. Designed the team jersey and car livery.",
+    experience: "Designed drive shafts, DT Sprocket etc for the powertrain components of the car. Part of EDP team, achieving P5 at Formula Bharat 2026. Designed the team jersey and car livery.",
     social: {
       linkedin: "https://www.linkedin.com/in/aman-kumar-gupta-867996297/",
       github: null
@@ -101,7 +301,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2027",
-    experience: "Designed the front pedal assembly taking driver ergonomics into account. Part of EDP team. Also worked in implementation of a mechanical brake biasing system.",
+    experience: "Designed the front pedal assembly taking driver ergonomics into account. Part of EDP team, achieving P5 at Formula Bharat 2026. Also worked in implementation of a mechanical brake biasing system.",
     social: {
       linkedin: "https://www.linkedin.com/in/preetham-paravastu-90a97a2ba/",
       github: null
@@ -112,7 +312,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2027",
-    experience: "Designed drive shafts, DT Sprocket etc for the powertrain components of the car. Part of EDP team.",
+    experience: "Designed drive shafts, DT Sprocket etc for the powertrain components of the car. Part of EDP team, achieving P5 at Formula Bharat 2026.",
     social: {
       linkedin: "https://www.linkedin.com/in/ranjithds28/",
       github: null
@@ -123,7 +323,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2027",
-    experience: "Designed fully sealed and tested oil and fuel tanks, reducing space taken. Part of EDP team.",
+    experience: "Designed fully sealed and tested oil and fuel tanks, reducing space taken. Part of EDP team, achieving P5 at Formula Bharat 2026.",
     social: {
       linkedin: "https://www.linkedin.com/in/ranjithds28/",
       github: null
@@ -134,7 +334,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Electrical & Testing", "IT"],
     year: "2027",
-    experience: "Designed the BSPD. Worked on firmware for DAQ. Responsible for website design alongside IT 28. Part of 2nd Place BPP team at Formula Bharat 2026.",
+    experience: "Designed the BSPD. Worked on firmware for DAQ. Responsible for website design alongside IT 28.Part of BPP team, achieving 2nd Place at Formula Bharat 2026.",
     social: {
       linkedin: "https://www.linkedin.com/in/aditeya-sarkar/",
       github: "https://github.com/GigglePaste"
@@ -145,34 +345,79 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Electrical & Testing", "Finance"],
     year: "2027",
-    experience: "Designed the APPS. Responsible for top 20 finish under CDP at FB 2026.",
+    experience: "Designed the APPS. Part of CDP team, achieving top 20 finish at Formula Bharat 2026.",
     social: {
       linkedin: "https://www.linkedin.com/in/aashrith-rao-893010326/",
       github: null
     }
   },
   {
-    name: "Hemanth",
-    roles: ["Subsystem Lead"],
-    subsystem: ["Brakes & Logistics"],
+    name: "Pranav Ramakrishnan",
+    roles: ["Member"],
+    subsystem: ["Sponsorship, Marketing & Public Relations", "Finance"],
+    year: "2027",
+    experience: "Responsible for finances of RZ-XX6C. Part of BPP team, achieving P2 at Formula Bharat 2026.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/aashrith-rao-893010326/",
+      github: null
+    }
+  },
+  {
+    name: "Gaurav Raju",
+    roles: ["Chief Engineer"],
+    subsystem: ["Leads","Chassis & Workshop Management"],
     year: "2026",
-    experience: "Designed and manufactured an ergonomically optimized pedal assembly and implemented the team’s first real-time brake bias adjuster for dynamic brake force tuning. Possess strong overall vehicle-level understanding, with particular expertise in braking systems.",
+    experience: "Chief Engineer of the 2026 batch, leading the development of Ashwa Racing’s first Electric Formula Student prototype.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/gaurav-raju-9a2b92258",
+      github: null
+    }
+  },
+  {
+    name: "Vansh Vikas Jain",
+    roles: ["Member"],
+    subsystem: ["Sponsorship, Marketing & Public Relations"],
+    year: "2026",
+    experience: "Leads sponsorship and marketing initiatives, securing 20+ sponsors including major industry partners. Focused on building long-term strategic collaborations that strengthen the team’s financial and brand presence.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/vansh-jain-a55b272b6",
+      github: null
+    }
+  },
+  { name: "Hemanth", roles: ["Subsystem Lead"], subsystem: ["Brakes & Logistics"], year: "2026", experience: "Designed and manufactured an ergonomically optimized pedal assembly and implemented the team’s first real-time brake bias adjuster, enabling dynamic brake force tuning. Strong vehicle-level understanding with specialized expertise in braking systems.", social: { linkedin: null, github: null } },
+  {
+    name: "Sandeep N Uttarkar",
+    roles: ["Member"],
+    subsystem: ["Electrical & Testing"],
+    year: "2026",
+    experience: "Designed and developed the BMS/AMS architecture and supporting firmware for the vehicle.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/sandeepnu0620/",
+      github: "https://github.com/SandeepASHWARACING"
+    }
+  },
+  {
+    name: "G Venkat Shreyas",
+    roles: ["Subsystem Lead"],
+    subsystem: ["Leads","Electrical & Testing", "Finance"],
+    year: "2026",
+    experience: "Managed team finances within a ₹15 lakh budget for both electric and combustion programs, supported international competition logistics, and contributed to accumulator design and energy requirement analysis for performance and endurance targets.",
     social: {
       linkedin: null,
       github: null
-    } 
+    }
   },
-{
-  name: "Vansh",
-  roles: ["Member"],
-  subsystem: ["Sponsorship, Marketing & Public Relations"],
-  year: "2026",
-  experience: "Magician of sponsorship. Absolute unit!",
-  social: {
-    linkedin: null,
-    github: null
-  }
-},
+  {
+    name: "U P Madhavan",
+    roles: ["Subsystem Lead"],
+    subsystem: ["Leads","Sponsorship, Marketing & Public Relations"],
+    year: "2026",
+    experience: "Manufacturing lead overseeing sponsor onboarding (10+ partners), fundraising, vendor selection, and procurement for machining and raw materials.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/madhavan-pari-28651526b",
+      github: null
+    }
+  },
   {
     name: "Vibin",
     roles: ["Member"],
@@ -197,6 +442,7 @@ const yearItems   = yearFilter.children;
 const subItems    = subFilter.children;
 
 const PROFILE_BASE = "assets/images/team/members/";
+const DEFAULT_PROFILE_IMAGE = "assets/images/team/default.webp";
 
 // ─── Card Builder ─────────────────────────────────────────────
 function createMemberCard(member) {
@@ -222,12 +468,12 @@ function createMemberCard(member) {
 
     <div class="profile-header">
       <div class="profile-img-container">
-        <img
-          src="${imgPath}"
-          alt="Photo of ${member.name}"
-          loading="lazy"
-          onerror="this.parentElement.style.background='#2a2a2a'"
-        >
+          <img
+            src="${imgPath}"
+            alt="Photo of ${member.name}"
+            loading="lazy"
+            class="member-img"
+          >
       </div>
       <div class="profile-info-overlay">
         <p class="member-name">${member.name}</p>
@@ -246,6 +492,13 @@ function createMemberCard(member) {
       ${githubLink}
     </div>
   `;
+    // Handle image fallback
+  const img = card.querySelector(".member-img");
+
+  img.addEventListener("error", function () {
+    if (this.src.includes("default.webp")) return; // prevent loop
+    this.src = DEFAULT_PROFILE_IMAGE;
+  });
 
   return card;
 }
