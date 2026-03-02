@@ -4,60 +4,405 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chassis & Workshop Mangement | Ashwa Racing</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
-<link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
-<link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    <title>Chassis & Workshop | Ashwa Racing</title>
 
     <!-- CSS FILES -->
-    <link rel="stylesheet" href="assets/css/pages/chassis-workshop.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="assets/css/pages/chassis-workshop.css?v=2">
     <link rel="stylesheet" href="assets/css/components/header.css">
     <link rel="stylesheet" href="assets/css/components/footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="cw-dark-body">
 
     <!-- HEADER -->
     <header id="main-header"></header>
 
-        <!-- BUILD MODE -->
-    <section class="build-mode">
-    <div class="build-container">
+    <main class="cw-main-content">
+        <!-- 1. Hero Section -->
+        <section class="cw-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-container">
+                <div class="hero-text-wrap">
+                    <h1 class="cw-hero-title">The Backbone of<br><span class="highlight-red">Ashwa Racing.</span></h1>
+                    <p class="hero-lead">Engineering a high-performance spaceframe chassis with a target weight sub-36
+                        kg, while simultaneously optimizing vehicle packaging and driver ergonomics without compromising
+                        structural integrity or safety for the 2025-26 season.</p>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Explore the Build</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
 
-        <div class="build-animation">
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring delay"></div>
-        </div>
+        <!-- 2. The Philosophy: "Compact-First" (Split Layout) -->
+        <section class="cw-philosophy split-section">
+            <div class="split-media">
+                <!-- Using a placeholder for wireframe comparison, or standard image styling -->
+                <div class="wireframe-visual">
+                    <div class="wireframe prev-year">2024 Envelope</div>
+                    <div class="wireframe curr-year">2025 Envelope</div>
+                </div>
+                <div class="split-media-tag">Targeting a sub-36 kg framework.</div>
+            </div>
 
-        <h1>Ashwa Racing</h1>
+            <div class="split-content">
+                <div class="section-label">THE PHILOSOPHY</div>
+                <h2 class="section-heading">Compact-<br><em>First.</em></h2>
+                <p>
+                    By shrinking the chassis envelope, we dramatically reduced parasitic weight and lowered the overall
+                    center of gravity. Our compact-first philosophy prioritizes a tighter packaging space without
+                    compromising driver ergonomics or torsional rigidity.
+                </p>
+                <div class="callout-badge">
+                    <i class="fas fa-compress-arrows-alt"></i> Targeting a sub-36 kg framework.
+                </div>
+            </div>
+        </section>
 
-        <p class="build-status">
-        Website under active development
-        </p>
+        <!-- Problems Solved -->
+        <section class="cw-problems bento-section">
+            <div class="container text-center">
+                <div class="section-label">CHALLENGES SOLVED</div>
+                <h2 class="section-heading">Overcoming Design<br><em>Constraints.</em></h2>
+                <div class="bento-grid mt-50">
+                    <div class="glass-card">
+                        <div class="bento-icon"><i class="fas fa-tools"></i></div>
+                        <h3 class="kpi-value">
+                            Inaccurate<br>Fabrication</h3>
+                        <p>Moved from MDF fixtures to laser-cut Sheet Metal fixtures to ensure aerospace-grade precision
+                            during welding.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="bento-icon"><i class="fas fa-weight-hanging"></i></div>
+                        <h3 class="kpi-value">
+                            Excessive<br>Mass</h3>
+                        <p>Solving the weight penalties of previous over-engineered frames through "compact-first"
+                            envelope shrinking.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="bento-icon"><i class="fas fa-chair"></i></div>
+                        <h3 class="kpi-value">
+                            Ergonomic<br>Constraints</h3>
+                        <p>Addressing driver fatigue through data-driven cockpit layouts and driver-in-the-loop feedback
+                            mechanisms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <p class="build-desc">
-        Our new digital platform is being engineered alongside the car.<br>
-        Check back soon for subsystem insights, competition updates, and technical documentation.
-        </p>
+        <!-- 3. Key Performance Indicators (Bento Grid) -->
+        <section class="cw-kpi bento-section">
+            <div class="container text-center">
+                <h2 class="section-heading">Key <em>Performance</em> Indicators</h2>
+                <div class="bento-grid mt-50">
+                    <div class="glass-card">
+                        <div class="dc-num">MASS</div>
+                        <h3 class="kpi-value">&lt; 36 kg</h3>
+                        <p>Target weight, reduced from 40 kg to lower the polar moment of inertia for faster
+                            transitions.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="dc-num">RIGIDITY</div>
+                        <h3 class="kpi-value">2000 Nm/deg</h3>
+                        <p>Torsional stiffness target, ensuring stable suspension geometry under high lateral loads.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="dc-num">PACKAGING</div>
+                        <div class="bento-icon"><i class="fas fa-layer-group"></i></div>
+                        <p>Minimizing the overall vehicle footprint through tight component packaging.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="dc-num">PRECISION</div>
+                        <div class="bento-icon"><i class="fas fa-ruler-combined"></i></div>
+                        <p>Implementing high-tolerance sheet metal fixturing to eliminate welding distortion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="build-meta">
-        <span>Status:</span> Engineering · Testing · Deployment
-        </div>
+        <!-- 4. The Workshop Standard (Static Hover Image) -->
+        <section class="cw-workshop-standard"
+            style="background-color: #111111; padding: 6rem 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+            <div class="workshop-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: center; max-width: 1400px; margin: 0 auto;">
+                <!-- Left Column (Text Content) -->
+                <div class="workshop-text">
+                    <div class="workshop-subheading"
+                        style="color: #dc2626; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.75rem; font-family: var(--font-primary, sans-serif);">
+                        MANUFACTURING
+                    </div>
+                    <h2 class="workshop-heading"
+                        style="color: #ffffff; font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.25rem; text-transform: uppercase; font-family: var(--font-display, 'Barlow Condensed', sans-serif);">
+                        THE WORKSHOP<br>
+                        <em style="color: #dc2626; font-style: italic;">STANDARD.</em>
+                    </h2>
+                    <p class="workshop-paragraph"
+                        style="color: #9ca3af; font-size: 1.125rem; line-height: 1.6; font-weight: 300; max-width: 500px; font-family: var(--font-primary, 'Barlow', sans-serif); margin-bottom: 1rem;">
+                        We transitioned from standard MDF fixtures to precision laser-cut sheet metal. This critical
+                        change eliminates welding distortion and ensures aerospace-grade precision across the entire
+                        spaceframe.
+                    </p>
+                    <p class="workshop-paragraph"
+                        style="color: #9ca3af; font-size: 1.125rem; line-height: 1.6; font-weight: 300; max-width: 500px; font-family: var(--font-primary, 'Barlow', sans-serif);">
+                        Standardized inspection protocols at every junction keep the car race-ready, reliable, and
+                        stiff enough for grueling endurance events.
+                    </p>
+                </div>
 
-    </div>
-    </section>
+                <!-- Right Column (The Image) -->
+                <div class="workshop-image-container"
+                    style="position: relative; border-radius: 1rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05); aspect-ratio: 4/3;">
+                    <img src="../../assets/images/gallery/IMG_3970_Original.webp" alt="Workshop Manufacturing"
+                        class="workshop-hover-img"
+                        style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: all 700ms ease-in-out; transform: scale(1);">
+                </div>
+
+            </div>
+        </section>
+        <style>
+            .workshop-hover-img:hover {
+                filter: grayscale(0%) !important;
+                transform: scale(1.05) !important;
+            }
+        </style>
+
+        <!-- 5. Material Science: Why AISI 1018 Steel? (Interactive Tabs) -->
+        <section class="cw-materials">
+            <div class="container">
+                <div class="materials-header text-center">
+                    <div class="section-label">MATERIAL SCIENCE</div>
+                    <h2 class="section-heading">Why AISI 1018 <em>Steel?</em></h2>
+                </div>
+
+                <div class="tabs-container mt-50">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="openTab(event, 'tab-weldability')">01 /
+                            Weldability</button>
+                        <button class="tab-btn" onclick="openTab(event, 'tab-machinability')">02 /
+                            Machinability</button>
+                        <button class="tab-btn" onclick="openTab(event, 'tab-ductility')">03 / Predictable
+                            Ductility</button>
+                    </div>
+
+                    <div id="tab-weldability" class="tab-content active">
+                        <p>Low carbon content ensures strong, consistent beads and minimizes cracking during the intense
+                            fabrication process of the spaceframe.</p>
+                    </div>
+                    <div id="tab-machinability" class="tab-content">
+                        <p>Provides high ease of notch preparation for complex tube junctions, allowing for precise
+                            fitment before welding.</p>
+                    </div>
+                    <div id="tab-ductility" class="tab-content">
+                        <p>Provides a reliable failure mode that absorbs energy plastically during impacts, protecting
+                            the driver effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Engineering & Tech Stack -->
+        <section class="cw-tech-stack">
+            <!-- Marquee -->
+            <div class="marquee-track-container">
+                <div class="marquee-track">
+                    <div class="marquee-logo text-logo">SolidWorks 2025</div>
+                    <div class="marquee-logo text-logo">Ansys 2023 R2</div>
+                    <div class="marquee-logo text-logo">OptimumK</div>
+                    <div class="marquee-logo text-logo">Star-CCM+</div>
+                    <div class="marquee-logo text-logo">SolidWorks 2025</div>
+                    <div class="marquee-logo text-logo">Ansys 2023 R2</div>
+                    <div class="marquee-logo text-logo">OptimumK</div>
+                    <div class="marquee-logo text-logo">Star-CCM+</div>
+                </div>
+            </div>
+
+            <div class="container mt-50">
+                <div class="split-layout align-center">
+                    <div class="tech-cards">
+                        <div class="feature-card">
+                            <h4>SolidWorks 2025</h4>
+                            <p>Utilized for 3D CAD modeling, complex assembly packaging, and weldment design.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Ansys 2023 R2</h4>
+                            <p>Employed for Finite Element Analysis (FEA) to validate torsional rigidity and impact
+                                safety.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Ergonomic Mapping</h4>
+                            <p>Quantitative analysis of driver reach zones and sightlines to dictate structural node
+                                placement.</p>
+                        </div>
+                    </div>
+                    <div class="tech-stack-desc">
+                        <h2 class="section-heading">Engineering &<br><em>Tech Stack</em></h2>
+                        <p>Utilizing industry-standard tools to seamlessly transition from initial 3D layouts, through
+                            rigorous structural FEA validation, to the physical manufacturing jigs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 7. Advanced Packaging (The X-Ray Advantage Slider) -->
+        <section class="xray-section cw-dark-section">
+            <div class="xray-container">
+
+                <!-- Left Column (Text Content) -->
+                <div class="xray-content">
+                    <div class="xray-subheading">ADVANCED PACKAGING</div>
+                    <h2 class="xray-heading">
+                        THE <em class="xray-accent">X-RAY</em><br>ADVANTAGE.
+                    </h2>
+                    <p class="xray-paragraph">
+                        We adopted a 'compact-first' philosophy. By shrinking the chassis envelope, we reduced parasitic
+                        weight and centralized the vehicle's center of gravity. Drag the slider to see how tightly the
+                        components are packaged within the bare spaceframe.
+                    </p>
+                </div>
+
+                <!-- Right Column (The Interactive Slider) -->
+                <div class="xray-slider-wrapper" id="xray-slider">
+
+                    <!-- Bottom Image (Bare Chassis) -->
+                    <img src="assets/images/Chassis/Chassis%20Isometric.webp" alt="Bare Chassis" class="xray-base-img">
+
+                    <div class="xray-label xray-label-right">
+                        BARE CHASSIS
+                    </div>
+
+                    <!-- Top/Clipped Image (Fully Packaged) -->
+                    <div class="xray-overlay" id="xray-overlay">
+                        <img src="assets/images/Chassis/Master%20CAD%20Isometric.webp" alt="Master CAD"
+                            class="xray-top-img">
+                    </div>
+
+                    <div class="xray-label xray-label-left" id="xray-label-left">
+                        MASTER CAD
+                    </div>
+
+                    <!-- The Handle -->
+                    <div class="xray-handle" id="xray-handle">
+                        <div class="xray-handle-thumb">
+                            <i class="fas fa-arrows-alt-h"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
 
     <!-- FOOTER -->
     <footer id="main-footer"></footer>
 
-
     <!-- JS FILES -->
     <script src="assets/js/components/header.js"></script>
+    <script>
+        // Very basic simple tab functionality for Material Science
+        function openTab(evt, tabId) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
 
+        // Initialize X-Ray Slider
+        document.addEventListener('DOMContentLoaded', () => {
+            const xrayWrapper = document.getElementById('xray-slider');
+            const xrayOverlay = document.getElementById('xray-overlay');
+            const xrayHandle = document.getElementById('xray-handle');
+            const xrayLabelLeft = document.getElementById('xray-label-left');
+
+            if (xrayWrapper && xrayOverlay && xrayHandle) {
+                let isDragging = false;
+
+                const updateSlider = (clientX) => {
+                    const rect = xrayWrapper.getBoundingClientRect();
+                    let x = clientX - rect.left;
+                    let percentage = (x / rect.width) * 100;
+
+                    // Constrain percentage between 0 and 100
+                    percentage = Math.max(0, Math.min(percentage, 100));
+
+                    // Apply clipping and movement
+                    requestAnimationFrame(() => {
+                        xrayOverlay.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+                        xrayHandle.style.left = `${percentage}%`;
+
+                        // Fade out left label if slider obscures it
+                        if (percentage < 25) {
+                            xrayLabelLeft.style.opacity = '0';
+                        } else {
+                            xrayLabelLeft.style.opacity = '1';
+                        }
+                    });
+                };
+
+                const startDrag = (e) => {
+                    isDragging = true;
+                    xrayWrapper.style.cursor = 'grabbing';
+                    updateSlider(e.type.includes('mouse') ? e.clientX : e.touches[0].clientX);
+                };
+
+                const stopDrag = () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        xrayWrapper.style.cursor = 'col-resize';
+                    }
+                };
+
+                const drag = (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault(); // Prevent scrolling while sliding
+                    updateSlider(e.type.includes('mouse') ? e.clientX : e.touches[0].clientX);
+                };
+
+                // Mouse Events
+                xrayWrapper.addEventListener('mousedown', startDrag);
+                window.addEventListener('mouseup', stopDrag);
+                window.addEventListener('mousemove', drag, { passive: false });
+
+                // Touch Events
+                xrayWrapper.addEventListener('touchstart', startDrag, { passive: true });
+                window.addEventListener('touchend', stopDrag);
+                window.addEventListener('touchcancel', stopDrag);
+
+                // Active non-passive listener for touchmove to allow preventDefault
+                window.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    updateSlider(e.touches[0].clientX);
+                }, { passive: true });
+            }
+        });
+    </script>
 </body>
 
 </html>
