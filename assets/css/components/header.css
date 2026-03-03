@@ -1,3 +1,8 @@
+/* ============================================================
+   ASHWA RACING — HEADER
+   System: Barlow Condensed + Barlow · dark motorsport
+   ============================================================ */
+
 /* ─── Tokens ────────────────────────────────────────────────── */
 :root {
   --red:          #e8001d;
@@ -162,17 +167,31 @@
   position: relative;
 }
 
-.nav-drop-btn { /* inherits .nav-link */ }
-
-.drop-chevron {
-  transition: transform 0.22s ease;
+/* Drop buttons reuse .nav-link but ::after is the chevron, not the underline */
+.nav-drop-btn::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  opacity: 0.5;
+  transition: transform 0.22s ease, opacity 0.22s ease;
   flex-shrink: 0;
-  opacity: 0.6;
+  /* reset absolute positioning inherited from .nav-link::after */
+  position: static;
+  background: none;
+  height: 7px; width: 7px; /* explicit override */
 }
 
-.nav-dropdown.open .drop-chevron {
-  transform: rotate(180deg);
+.nav-drop-btn:hover::after,
+.nav-dropdown.open .nav-drop-btn::after {
   opacity: 1;
+}
+
+.nav-dropdown.open .nav-drop-btn::after {
+  transform: rotate(225deg) translateY(2px);
 }
 
 .dropdown-panel {
@@ -203,6 +222,12 @@
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+/* Narrow single-column panel for small dropdowns (e.g. Team) */
+.dropdown-panel--narrow {
+  min-width: 220px;
+  grid-template-columns: 1fr;
 }
 
 .dropdown-col {
@@ -278,7 +303,6 @@
 
 /* ─── Mobile menu ───────────────────────────────────────────── */
 .mobile-menu {
-  display: none; /* shown by JS toggle */
   background: var(--charcoal);
   border-top: 1px solid var(--border);
   overflow: hidden;
@@ -321,11 +345,27 @@
 
 .mob-link:hover { color: var(--text-nav-h); padding-left: 6px; }
 
-.mob-accordion-btn .drop-chevron {
-  transition: transform 0.25s ease;
+.mob-accordion-btn {
+  justify-content: space-between;
 }
-.mob-accordion-btn.open .drop-chevron {
-  transform: rotate(180deg);
+
+/* CSS-only chevron for mobile accordion buttons */
+.mob-accordion-btn::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  opacity: 0.45;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  flex-shrink: 0;
+}
+
+.mob-accordion-btn.open::after {
+  transform: rotate(225deg) translateY(-2px);
+  opacity: 0.9;
 }
 
 /* Mobile accordion panel */
@@ -376,40 +416,18 @@
   padding: 0 24px;
 }
 
-/* Base */
 .sponsor-logo {
   height: 34px;
   width: auto;
   object-fit: contain;
-  flex-shrink: 0;
+  filter: grayscale(100%) invert(1) brightness(0.55);
   transition: filter 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
 }
 
-/* SVG (safe to invert fully) */
-.logo-svg {
-  filter: invert(1) grayscale(100%) ;
-}
-
-/* PNG (usually safe for mono) */
-.logo-png {
-  filter:invert(1) grayscale(100%) ;
-}
-
-/* JPG (danger — avoid invert) */
-.logo-jpg {
-  filter: grayscale(100%) invert(1);
-}
-
-/* WEBP / AVIF */
-.logo-modern {
-  filter: grayscale(100%) invert(1);
-}
-
-/* Hover */
 .sponsor-logo:hover {
-  filter: none;
+  filter: grayscale(0%) invert(0) brightness(1);
   transform: scale(1.1);
-  opacity: 1;
 }
 
 /* ─── Scroll-shrink state (added via JS) ────────────────────── */
@@ -426,24 +444,28 @@
     font-size 0.3s var(--ease-expo);
 }
 
-.drop-chevron {
-  font-size: 0.8rem;
-  margin-left: 6px;
-  display: inline-block;
-  transition: transform 0.25s ease;
-}
+/* ─── Desktop Hover Dropdown (no click needed) ─────────────── */
+@media (min-width: 961px) {
 
-/* rotate when open */
-.nav-dropdown.open .drop-chevron,
-.mob-accordion-btn.open .drop-chevron {
-  transform: rotate(180deg);
+  /* Show panel when hovering entire dropdown area */
+  .nav-dropdown:hover .dropdown-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Rotate chevron on hover */
+  .nav-dropdown:hover .nav-drop-btn::after {
+    transform: rotate(225deg) translateY(2px);
+    opacity: 1;
+  }
+
 }
 
 /* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .nav-desktop { display: none; }
   .hamburger   { display: flex; }
-  .mobile-menu { display: block; }
 }
 
 @media (max-width: 480px) {

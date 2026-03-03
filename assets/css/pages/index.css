@@ -32,22 +32,6 @@ body {
   overflow-x: hidden;
 }
 
-@font-face {
-  font-family: 'Samarkan';
-  src: url('../../fonts/SAMAN___.TTF') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Xenotron';
-  src: url('../../fonts/XENOTRON.TTF') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* ─── Shared Tokens ─────────────────────────────────────────── */
 .section-label {
   font-family: var(--font-display);
@@ -161,6 +145,30 @@ body {
 /* Dark section btn-line */
 .split-section--dark .btn-line,
 .focus-section .btn-line { color: var(--white); border-color: rgba(255,255,255,0.4); }
+
+.btn-line-right {
+  display: inline-flex;
+  margin-left: auto;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--red);
+  border-bottom: 2px solid var(--red);
+  padding-bottom: 3px;
+  transition: gap 0.2s ease, opacity 0.2s ease;
+}
+.btn-line-right:hover { gap: 16px; opacity: 0.8; }
+
+/* Dark section btn-line */
+.split-section--dark .btn-line-right,
+.focus-section .btn-line-right
+
+{ color: var(--white); border-color: rgba(255,255,255,0.4); }
 
 /* ═══════════════════════════════════════════════════════════════
    HERO

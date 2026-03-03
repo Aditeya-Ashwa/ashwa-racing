@@ -1,6 +1,8 @@
 "use strict";
-let   prefix    = "";
-fetch("components/header.html")
+
+const prefix = "../../"
+
+fetch(prefix + "components/header.html")
   .then(r => r.text())
   .then(html => {
     document.getElementById("main-header").innerHTML = html;
@@ -11,7 +13,7 @@ fetch("components/header.html")
   })
   .catch(err => console.warn("Header load failed:", err));
 
-fetch("components/footer.html")
+fetch(prefix + "components/footer.html")
   .then(r => r.text())
   .then(html => { document.getElementById("main-footer").innerHTML = html; })
   .catch(err => console.warn("Footer load failed:", err));
@@ -28,7 +30,6 @@ function initNav() {
       hamburger.setAttribute("aria-expanded", isOpen);
       mobileMenu.classList.toggle("open", isOpen);
       mobileMenu.setAttribute("aria-hidden", !isOpen);
-
       document.body.style.overflow = isOpen ? "hidden" : "";
     });
 
@@ -52,43 +53,58 @@ function initNav() {
     document.body.style.overflow = "";
   }
 
-  const dropdown    = document.getElementById("subsystemsDropdown");
-  const dropBtn     = dropdown?.querySelector(".nav-drop-btn");
-  const dropPanel   = dropdown?.querySelector(".dropdown-panel");
+  /* -- Helper: wire up a desktop dropdown -- */
+  function initDropdown(id) {
+    const dd  = document.getElementById(id);
+    const btn = dd?.querySelector(".nav-drop-btn");
+    if (!dd || !btn) return;
 
-  if (dropdown && dropBtn) {
-    dropBtn.addEventListener("click", e => {
+    btn.addEventListener("click", e => {
       e.stopPropagation();
-      const isOpen = dropdown.classList.toggle("open");
-      dropBtn.setAttribute("aria-expanded", isOpen);
+      // Close every other open dropdown first
+      document.querySelectorAll(".nav-dropdown.open").forEach(other => {
+        if (other !== dd) {
+          other.classList.remove("open");
+          other.querySelector(".nav-drop-btn")?.setAttribute("aria-expanded", "false");
+        }
+      });
+      const isOpen = dd.classList.toggle("open");
+      btn.setAttribute("aria-expanded", isOpen);
     });
 
     document.addEventListener("click", e => {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove("open");
-        dropBtn.setAttribute("aria-expanded", "false");
+      if (!dd.contains(e.target)) {
+        dd.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
       }
     });
 
-    dropdown.addEventListener("keydown", e => {
+    dd.addEventListener("keydown", e => {
       if (e.key === "Escape") {
-        dropdown.classList.remove("open");
-        dropBtn.setAttribute("aria-expanded", "false");
-        dropBtn.focus();
+        dd.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+        btn.focus();
       }
     });
   }
 
-  const mobSubBtn   = document.getElementById("mobSubBtn");
-  const mobSubPanel = document.getElementById("mobSubPanel");
+  initDropdown("teamDropdown");
+  initDropdown("subsystemsDropdown");
 
-  if (mobSubBtn && mobSubPanel) {
-    mobSubBtn.addEventListener("click", () => {
-      const isOpen = mobSubBtn.classList.toggle("open");
-      mobSubPanel.classList.toggle("open", isOpen);
-      mobSubBtn.setAttribute("aria-expanded", isOpen);
+  /* -- Helper: wire up a mobile accordion -- */
+  function initAccordion(btnId, panelId) {
+    const btn   = document.getElementById(btnId);
+    const panel = document.getElementById(panelId);
+    if (!btn || !panel) return;
+    btn.addEventListener("click", () => {
+      const isOpen = btn.classList.toggle("open");
+      panel.classList.toggle("open", isOpen);
+      btn.setAttribute("aria-expanded", isOpen);
     });
   }
+
+  initAccordion("mobTeamBtn", "mobTeamPanel");
+  initAccordion("mobSubBtn",  "mobSubPanel");
 }
 
 function markActivePage() {
@@ -113,7 +129,7 @@ async function initSponsorMarquee() {
   if (track.dataset.initialized) return;
   track.dataset.initialized = "true";
 
-  const SPONSOR_PATH = "assets/images/sponsors/";
+  const SPONSOR_PATH = prefix + "assets/images/sponsors/";
 
   let manifest;
   try {
@@ -134,21 +150,13 @@ async function initSponsorMarquee() {
       img.alt       = name.replace(/\.[^.]+$/, "").replace(/[-_]/g, " ");
       img.className = "sponsor-logo";
 
-const ext = name.split('.').pop().toLowerCase();
+      const ext = name.split('.').pop().toLowerCase();
+      if      (ext === "svg")                  img.classList.add("logo-svg");
+      else if (ext === "png")                  img.classList.add("logo-png");
+      else if (ext === "jpg" || ext === "jpeg") img.classList.add("logo-jpg");
+      else if (ext === "webp" || ext === "avif") img.classList.add("logo-modern");
 
-if (ext === "svg") {
-  img.classList.add("logo-svg");
-} 
-else if (ext === "png") {
-  img.classList.add("logo-png");
-} 
-else if (ext === "jpg" || ext === "jpeg") {
-  img.classList.add("logo-jpg");
-} 
-else if (ext === "webp" || ext === "avif") {
-  img.classList.add("logo-modern");
-}
-      img.loading   = "lazy";
+      img.loading = "lazy";
       frag.appendChild(img);
     });
     return frag;
@@ -165,7 +173,7 @@ else if (ext === "webp" || ext === "avif") {
     )
   );
 
-  let pos    = 0;
+  let pos = 0;
   const SPEED = 1.2;
   let raf;
 
@@ -200,5 +208,5 @@ function initScrollShrink() {
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll(); // run once on load
+  onScroll();
 }

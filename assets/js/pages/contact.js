@@ -27,6 +27,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const charNum      = document.getElementById("ct-char-num");
   const messageArea  = document.getElementById("ct-message");
 
+  // ─── Auto-select enquiry type from URL ─────────────────────
+const params = new URLSearchParams(window.location.search);
+const urlType = params.get("type");
+
+if (urlType && RECIPIENTS[urlType]) {
+  enquiryHidden.value = urlType;
+
+  // Activate correct pill
+  document.querySelectorAll(".ct-eq-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.eq === urlType);
+  });
+
+  // Update subject placeholder
+  const subjectInput = document.getElementById("ct-subject");
+  const labels = {
+    general:     "",
+    sponsorship: "Sponsorship & Marketing Enquiry",
+    recruitment: "Recruitment Enquiry",
+    media:       "Media / Press Enquiry"
+  };
+
+  if (subjectInput && labels[urlType]) {
+    subjectInput.placeholder = labels[urlType];
+  }
+
+  // Optional: scroll to form smoothly
+  document.getElementById("ct-form")
+    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
   // ─── Enquiry type pills ───────────────────────────────────
   document.querySelectorAll(".ct-eq-btn").forEach(btn => {
     btn.addEventListener("click", () => {

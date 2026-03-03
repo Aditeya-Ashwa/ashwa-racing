@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alumni & Network | Ashwa Racing</title>
+
+  <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
+  <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="assets/css/components/header.css" />
+  <link rel="stylesheet" href="assets/css/components/footer.css" />
+  <link rel="stylesheet" href="assets/css/pages/alumni.css" />
+</head>
+<body>
+
+<header id="main-header"></header>
+
+<!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="al-hero">
+  <div class="al-hero-bg"></div>
+  <div class="al-hero-overlay"></div>
+  <div class="al-hero-grid"></div>
+  <div class="al-hero-stripe"></div>
+
+  <div class="al-hero-content">
+    <div class="al-eyebrow">
+      <span class="eyebrow-dash"></span>
+      <span>20+ Years of Engineering Excellence</span>
+    </div>
+    <h1 class="al-hero-title">
+      OUR<br><em>ALUMNI</em><br>&amp; NETWORK
+    </h1>
+    <p class="al-hero-desc">
+      Every prototype Ashwa has built carries the fingerprints of hundreds of engineers.
+      This is where they are now.
+    </p>
+  </div>
+
+  <div class="al-hero-stats">
+    <div class="hs"><span class="hs-num">400<sup>+</sup></span><span class="hs-label">Alumni</span></div>
+    <div class="hs-div"></div>
+    <div class="hs"><span class="hs-num">20<sup>+</sup></span><span class="hs-label">Years Active</span></div>
+    <div class="hs-div"></div>
+    <div class="hs"><span class="hs-num">100<sup>+</sup></span><span class="hs-label">Companies</span></div>
+    <div class="hs-div"></div>
+    <div class="hs"><span class="hs-num">12<sup>+</sup></span><span class="hs-label">Countries</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     ORG STRUCTURE
+════════════════════════════════════════ -->
+<section class="al-org">
+  <div class="al-section-header">
+    <div class="al-label"><span class="label-dash"></span>Structure</div>
+    <h2 class="al-section-title">HOW WE'RE<br><em>Organised</em></h2>
+    <p class="al-section-desc">
+      Ashwa operates across multiple technical and management verticals,
+      each led by alumni who guide the next generation.
+    </p>
+  </div>
+
+  <div class="org-chart" id="org-chart">
+    <!-- Rendered by JS -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     NOTABLE ALUMNI
+════════════════════════════════════════ -->
+<section class="al-notable">
+  <div class="al-section-header">
+    <div class="al-label"><span class="label-dash"></span>People</div>
+    <h2 class="al-section-title">NOTABLE<br><em>Alumni</em></h2>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="al-filters" id="al-filters">
+    <button class="al-filter-btn active" data-filter="all">All</button>
+    <!-- More filter buttons injected by JS based on data -->
+  </div>
+
+  <div class="al-grid" id="al-grid">
+    <!-- Cards injected by JS -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════ -->
+<section class="al-testimonials">
+  <div class="al-section-header">
+    <div class="al-label"><span class="label-dash"></span>Voices</div>
+    <h2 class="al-section-title">WHAT THEY<br><em>Say</em></h2>
+  </div>
+  <div class="al-testi-track" id="al-testi-track">
+    <!-- Injected by JS -->
+  </div>
+  <div class="al-testi-dots" id="al-testi-dots"></div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CTA — JOIN THE NETWORK
+════════════════════════════════════════ -->
+<section class="al-cta">
+  <div class="al-cta-inner">
+    <div class="al-label"><span class="label-dash"></span>Stay Connected</div>
+    <h2 class="al-cta-title">ONCE ASHWA,<br><em>Always Ashwa.</em></h2>
+    <p class="al-cta-desc">Are you an alumnus? Get back in touch, mentor current members, or just say hello.</p>
+    <a href="contact.html" class="al-cta-btn">Reach Out</a>
+  </div>
+</section>
+
+<footer id="main-footer"></footer>
+
+<script src="assets/js/components/header.js"></script>
+<script src="assets/js/pages/alumni-data.js"></script>
+<script src="assets/js/pages/alumni.js"></script>
+</body>
+</html>
