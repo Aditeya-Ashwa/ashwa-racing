@@ -5,60 +5,257 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suspension & Admin | Ashwa Racing</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
-<link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
-<link rel="manifest" href="assets/images/favicon/site.webmanifest" />
 
-    <!-- CSS FILES -->
-    <link rel="stylesheet" href="assets/css/pages/suspension-admin.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="assets/css/components/header.css">
     <link rel="stylesheet" href="assets/css/components/footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/pages/suspension-admin.css">
 </head>
 
-<body>
+<body class="susp-body">
 
-    <!-- HEADER -->
     <header id="main-header"></header>
 
-        <!-- BUILD MODE -->
-    <section class="build-mode">
-    <div class="build-container">
+    <main class="susp-main">
+        <!-- SECTION 1: The Hero & Philosophy -->
+        <section class="susp-hero" id="hero-section">
+            <div class="susp-hero-bg"></div>
+            <div class="susp-hero-overlay"></div>
 
-        <div class="build-animation">
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring delay"></div>
-        </div>
+            <div class="susp-hero-content">
+                <span class="susp-subheading">KINEMATICS & VEHICLE DYNAMICS</span>
+                <h1 class="susp-main-heading">DELIVERING THE<br>GRIP<br>THE CAR<br><em>DEMANDS.</em></h1>
+                <p class="susp-hero-para">"Suspension design is a constant trade-off. You cannot optimize every
+                    parameter at once. Some gains demand compromises. We choose what matters most, accept the
+                    sacrifices, and engineer the best possible balance—because in this domain, the 'best of both worlds'
+                    does not exist."</p>
+            </div>
 
-        <h1>Ashwa Racing</h1>
+            <div class="susp-scroll-prompt"
+                onclick="document.getElementById('math-grip').scrollIntoView({behavior: 'smooth'})">
+                Explore Kinematics <i class="fas fa-chevron-down" style="margin-left:5px;"></i>
+            </div>
+        </section>
 
-        <p class="build-status">
-        Website under active development
-        </p>
+        <!-- SECTION 2: The Math of Mechanical Grip & Core Targets -->
+        <section id="math-grip" class="susp-math bg-darker">
+            <div class="susp-container split-50-50">
 
-        <p class="build-desc">
-        Our new digital platform is being engineered alongside the car.<br>
-        Check back soon for subsystem insights, competition updates, and technical documentation.
-        </p>
+                <!-- Left Column -->
+                <div class="math-left math-card reveal fade-in">
+                    <div class="math-block">
+                        <h2 class="susp-section-title">THE MATH OF<br><em>MECHANICAL GRIP</em></h2>
+                        <p class="susp-p">"In motorsports, horsepower is useless without mechanical grip. The suspension
+                            system and tyre selection determine exactly how much lateral and longitudinal force the car
+                            can
+                            safely withstand during a lap, which ultimately dictates our lap times."</p>
+                    </div>
+                    <div class="math-block mt-4">
+                        <h3 class="susp-accent-title mt-4">THE BOLD MOVE:<br><em>ZERO ARBs</em></h3>
+                        <p class="susp-p mb-0">"We made the strategic decision to completely eliminate both front and
+                            rear Anti-Roll Bars (ARBs). This approach drastically simplified our packaging, reduced
+                            component complexity, and allowed us to shed significant weight without compromising dynamic
+                            stability or suspension performance."</p>
+                    </div>
+                </div>
+                <!-- Right Column -->
+                <div class="math-right">
+                    <div class="math-rule reveal slide-left stagger-1">
+                        <span class="rule-label">TARGET:</span>
+                        <h3 class="rule-target-value">65 KG UNSPRUNG MASS.</h3>
+                    </div>
+                    <div class="math-rule reveal slide-left stagger-2">
+                        <span class="rule-label">MANDATE:</span>
+                        <p class="rule-desc">Minimize (and preferably eliminate) compliance in the
+                            suspension and steering setup to prevent deflection from
+                            altering geometric properties.</p>
+                    </div>
+                    <div class="math-rule reveal slide-left stagger-3">
+                        <span class="rule-label">DURABILITY:</span>
+                        <p class="rule-desc">Ensure the desired Factor of Safety (FOS) is met for every
+                            component under maximum loading, focusing strictly on
+                            fatigue life.</p>
+                    </div>
+                </div>
 
-        <div class="build-meta">
-        <span>Status:</span> Engineering · Testing · Deployment
-        </div>
+            </div>
+        </section>
 
-    </div>
-    </section>
+        <!-- SECTION 3: Kinematic Evolution -->
+        <section class="susp-kinematics">
+            <div class="susp-container split-55-45">
+                <div class="kine-image-wrap" id="kine-spring-container" style="position: relative;">
+                    <!-- 4 Corner Springs SVG -->
+                    <svg id="kine-springs-overlay"
+                        style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; overflow: visible;">
+                        <path id="kine-path-tl" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path id="kine-path-tr" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path id="kine-path-bl" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path id="kine-path-br" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
 
-    <!-- FOOTER -->
+                    <img src="assets/images/subsystem/suspension/suspension2.webp" alt="Lotus Shark Validation"
+                        class="kine-img" id="draggable-kine-img"
+                        style="position: relative; z-index: 10; cursor: grab; user-select: none; touch-action: none; transform-origin: center; transition: box-shadow 0.3s;">
+                </div>
+
+                <div class="kine-text-wrap text-column">
+                    <h2 class="susp-section-title">KINEMATICS &amp;<br><em>LOTUS SHARK VALIDATION</em></h2>
+                    <p class="susp-p">Our primary objective this season was to implement measurable kinematic
+                        improvements while strictly maintaining our mass targets. We utilized Lotus Shark for rigorous
+                        suspension kinematics analysis, focusing heavily on optimizing dynamic camber behavior and
+                        minimizing bump steer.</p>
+                    <p class="susp-p">Through iterative geometry design, we increased the upper A-Arm inclination with
+                        respect to the lower A-Arm to 105° in the front. This specific adjustment successfully brought
+                        the Front Instant Center (IC) closer to the wheel.</p>
+                    <p class="susp-p">By bringing the IC closer, we effectively reduced the Front View Swing Arm (FVSA)
+                        length. This singular geometric shift yielded a massive 45% increase in dynamic camber with bump
+                        compared to our previous prototype, drastically improving mid-corner mechanical grip.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Interactive Anatomy (Dynamic Teardown Index) -->
+        <section class="susp-anatomy bg-darker">
+            <div class="susp-container split-60-40">
+
+                <div class="anatomy-image-wrap" id="anatomy-spring-container" style="position: relative;">
+                    <!-- 4 Corner Springs SVG -->
+                    <svg id="anatomy-springs-overlay"
+                        style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; overflow: visible;">
+                        <path id="anatomy-path-tl" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path id="anatomy-path-tr" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path id="anatomy-path-bl" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path id="anatomy-path-br" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+
+                    <img src="assets/images/subsystem/suspension/suspension3.webp" alt="Dynamic Teardown Anatomy"
+                        class="anatomy-img" id="draggable-anatomy-img"
+                        style="position: relative; z-index: 10; cursor: grab; user-select: none; touch-action: none; transform-origin: center; transition: box-shadow 0.3s;">
+                </div>
+
+                <div class="anatomy-ledger-wrap">
+                    <h2 class="susp-section-title">SUBASSEMBLY NOMENCLATURE<br><em>&amp; MATERIALS</em></h2>
+
+                    <div class="parts-ledger custom-scrollbar">
+                        <div class="ledger-card">
+                            <div class="ledger-tags">
+                                <span class="ledger-tag">04</span>
+                                <span class="ledger-tag">07</span>
+                            </div>
+                            <div class="ledger-content">
+                                <h3 class="ledger-title">Wheel Hub &amp; Rear Upright</h3>
+                                <p class="ledger-desc">Machined from aerospace-grade Aluminum 7075 T6. Selected for its
+                                    exceptionally high strength-to-weight ratio and superior fatigue life under cyclic
+                                    track loads.</p>
+                            </div>
+                        </div>
+
+                        <div class="ledger-card">
+                            <div class="ledger-tags">
+                                <span class="ledger-tag">12</span>
+                                <span class="ledger-tag">13</span>
+                            </div>
+                            <div class="ledger-content">
+                                <h3 class="ledger-title">Lower Arm &amp; Upper Arm</h3>
+                                <p class="ledger-desc">Fabricated using AISI 1018 Carbon Steel Tubes. Chosen for high
+                                    strength to ensure desired FOS under tensile and compressive loading, offering
+                                    superior weldability.</p>
+                            </div>
+                        </div>
+
+                        <div class="ledger-card">
+                            <div class="ledger-tags">
+                                <span class="ledger-tag">14</span>
+                                <span class="ledger-tag">19</span>
+                            </div>
+                            <div class="ledger-content">
+                                <h3 class="ledger-title">Toe Rod &amp; Push Rod</h3>
+                                <p class="ledger-desc">Critical linkage components utilizing a combination of AL 6061 T6
+                                    and AISI 1018 Carbon Steel to balance overall weight and sheer strength.</p>
+                            </div>
+                        </div>
+
+                        <div class="ledger-card">
+                            <div class="ledger-tags">
+                                <span class="ledger-tag">16</span>
+                                <span class="ledger-tag">01</span>
+                                <span class="ledger-tag">02</span>
+                            </div>
+                            <div class="ledger-content">
+                                <h3 class="ledger-title">Damper, Tire &amp; Rim</h3>
+                                <p class="ledger-desc">Unsprung mass components rigorously selected to hit the strict 65
+                                    kg target, maximizing mechanical grip without parasitic weight penalties.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 5: Validation & Topology -->
+        <section class="susp-validation">
+            <div class="susp-container dual-pane">
+
+                <!-- Left Pane -->
+                <div class="val-pane">
+                    <div class="val-img-wrap">
+                        <img src="assets/images/subsystem/suspension/suspension5.webp" alt="FEA Boundary Conditions"
+                            class="val-img">
+                    </div>
+                    <div class="val-text">
+                        <h2 class="susp-section-title">BOUNDARY CONDITIONS<br><em>&amp; FOS</em></h2>
+                        <p class="susp-p">Before manufacturing, every component is subjected to rigorous FEA simulations
+                            in Ansys. We apply extreme boundary conditions to ensure that the required Factor of Safety
+                            is met under maximum simulated loading conditions, guaranteeing survival through endurance
+                            events.</p>
+                    </div>
+                </div>
+
+                <!-- Right Pane -->
+                <div class="val-pane">
+                    <div class="val-img-wrap">
+                        <img src="assets/images/subsystem/suspension/suspension4.webp" alt="Topology Optimization"
+                            class="val-img">
+                    </div>
+                    <div class="val-text">
+                        <h2 class="susp-section-title">COMPLIANCE &amp;<br><em>TOPOLOGY</em></h2>
+                        <p class="susp-p">Static structural heat maps allow us to identify low-stress regions. We
+                            perform topology optimization on every component to enable aggressive weight reduction
+                            without negatively affecting the part's stress limits or kinematic performance.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
     <footer id="main-footer"></footer>
 
-
-    <!-- JS FILES -->
     <script src="assets/js/components/header.js"></script>
-
-
+    <script src="assets/js/pages/suspension.js"></script>
 </body>
 
 </html>
