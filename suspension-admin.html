@@ -31,20 +31,20 @@
 
     <main class="susp-main">
         <!-- SECTION 1: The Hero & Philosophy -->
-        <section class="susp-hero" id="hero-section">
-            <div class="susp-hero-bg"></div>
-            <div class="susp-hero-overlay"></div>
+        <section class="hero" id="hero-section">
+            <div class="hero__bg" aria-hidden="true"></div>
+            <div class="hero__overlay" aria-hidden="true"></div>
 
-            <div class="susp-hero-content">
-                <span class="susp-subheading">KINEMATICS & VEHICLE DYNAMICS</span>
-                <h1 class="susp-main-heading">DELIVERING THE<br>GRIP<br>THE CAR<br><em>DEMANDS.</em></h1>
-                <p class="susp-hero-para">"Suspension design is a constant trade-off. You cannot optimize every
-                    parameter at once. Some gains demand compromises. We choose what matters most, accept the
-                    sacrifices, and engineer the best possible balance—because in this domain, the 'best of both worlds'
-                    does not exist."</p>
+            <div class="hero__center">
+                <p class="hero__tag">KINEMATICS &amp; VEHICLE DYNAMICS</p>
+                <h1 class="hero__title">DELIVERING THE GRIP<br>THE CAR<br><em>DEMANDS.</em></h1>
+                <p class="hero__quote">"Suspension design is a constant trade-off. You cannot optimize every parameter
+                    at once. Some gains demand compromises. We choose what matters most, accept the sacrifices, and
+                    engineer the best possible balance—because in this domain, the 'best of both worlds' does not
+                    exist."</p>
             </div>
 
-            <div class="susp-scroll-prompt"
+            <div class="hero__scroll"
                 onclick="document.getElementById('math-grip').scrollIntoView({behavior: 'smooth'})">
                 Explore Kinematics <i class="fas fa-chevron-down" style="margin-left:5px;"></i>
             </div>
@@ -94,46 +94,66 @@
             </div>
         </section>
 
-        <!-- SECTION 3: Kinematic Evolution -->
-        <section class="susp-kinematics">
-            <div class="susp-container split-55-45">
-                <div class="kine-image-wrap" id="kine-spring-container" style="position: relative;">
-                    <!-- 4 Corner Springs SVG -->
-                    <svg id="kine-springs-overlay"
-                        style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; overflow: visible;">
-                        <path id="kine-path-tl" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path id="kine-path-tr" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path id="kine-path-bl" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path id="kine-path-br" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
+        <!-- SECTION 3: Telemetry HUD Layout -->
+        <section class="hud-section" id="kinematics-hud">
 
-                    <img src="assets/images/subsystem/suspension/suspension2.webp" alt="Lotus Shark Validation"
-                        class="kine-img" id="draggable-kine-img"
-                        style="position: relative; z-index: 10; cursor: grab; user-select: none; touch-action: none; transform-origin: center; transition: box-shadow 0.3s;">
+            <div class="hud-image-wrapper" id="kine-spring-container">
+                <!-- 4 Corner Springs SVG -->
+                <svg id="kine-springs-overlay"
+                    style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; overflow: visible;">
+                    <path id="kine-path-tl" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path id="kine-path-tr" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path id="kine-path-bl" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path id="kine-path-br" fill="none" stroke="#E50000" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+
+                <img src="assets/images/subsystem/suspension/suspension2.webp" alt="Lotus Shark Kinematics"
+                    class="hud-img kine-img" id="draggable-kine-img"
+                    style="position: relative; z-index: 10; cursor: grab; user-select: none; touch-action: none; transform-origin: center;">
+            </div>
+
+            <!-- Data Nodes (Absolute Desktop / Relative Mobile) -->
+            <div class="hud-nodes-container">
+                <div class="data-node node-1">
+                    <h3 class="node-heading">01 // THE OBJECTIVE</h3>
+                    <p class="node-text">Maintain strict <strong style="color: white;">65 kg unsprung mass</strong>
+                        while optimizing dynamic camber &amp; bump steer. Strategic <strong
+                            style="color: #E50000;">elimination of all ARBs</strong> — simplified packaging, reduced
+                        complexity.</p>
+                    <p class="node-text" style="margin-top: 0.5rem; font-size: 0.78rem; color: #6b7280;">Lotus Shark ·
+                        SolidWorks · ANSYS FEA · Excel</p>
                 </div>
 
-                <div class="kine-text-wrap text-column">
-                    <h2 class="susp-section-title">KINEMATICS &amp;<br><em>LOTUS SHARK VALIDATION</em></h2>
-                    <p class="susp-p">Our primary objective this season was to implement measurable kinematic
-                        improvements while strictly maintaining our mass targets. We utilized Lotus Shark for rigorous
-                        suspension kinematics analysis, focusing heavily on optimizing dynamic camber behavior and
-                        minimizing bump steer.</p>
-                    <p class="susp-p">Through iterative geometry design, we increased the upper A-Arm inclination with
-                        respect to the lower A-Arm to 105° in the front. This specific adjustment successfully brought
-                        the Front Instant Center (IC) closer to the wheel.</p>
-                    <p class="susp-p">By bringing the IC closer, we effectively reduced the Front View Swing Arm (FVSA)
-                        length. This singular geometric shift yielded a massive 45% increase in dynamic camber with bump
-                        compared to our previous prototype, drastically improving mid-corner mechanical grip.</p>
+                <div class="data-node node-2">
+                    <h3 class="node-heading">02 // GEOMETRY SHIFT</h3>
+                    <p class="node-text">A-Arm inclination: <strong style="color: white;">99° → 105°</strong>. Front IC
+                        closer to wheel, shortened FVSA. Result: <strong style="color: #E50000;">45% increase in dynamic
+                            camber</strong> with bump vs. previous prototype.</p>
+                    <p class="node-text" style="margin-top: 0.5rem; font-size: 0.78rem; color: #6b7280;">FOS validated ·
+                        Topology-optimized · Zero compliance · Clearance for packaging</p>
+                </div>
+
+                <div class="data-node node-3">
+                    <h3 class="node-heading">03 // MATERIALS</h3>
+                    <p class="node-text"><strong style="color: white;">A-Arms:</strong> AISI 1018 Steel — strength,
+                        weldability. <strong style="color: white;">Uprights/Hubs:</strong> Al 7075 T6 — high
+                        strength-to-weight, fatigue life.</p>
+                    <p class="node-text" style="margin-top: 0.5rem; font-size: 0.78rem; color: #6b7280;">Validated:
+                        <strong style="color: #E50000;">Lotus Shark</strong> · ANSYS FEA · Driver feedback
+                    </p>
                 </div>
             </div>
+
         </section>
 
         <!-- SECTION 4: Interactive Anatomy (Dynamic Teardown Index) -->
         <section class="susp-anatomy bg-darker">
+            <h2 class="susp-section-title" style="text-align: center; max-width: 1200px; margin: 0 auto 3rem;">
+                SUBASSEMBLY NOMENCLATURE<br><em>&amp; MATERIALS</em></h2>
             <div class="susp-container split-60-40">
 
                 <div class="anatomy-image-wrap" id="anatomy-spring-container" style="position: relative;">
@@ -156,8 +176,6 @@
                 </div>
 
                 <div class="anatomy-ledger-wrap">
-                    <h2 class="susp-section-title">SUBASSEMBLY NOMENCLATURE<br><em>&amp; MATERIALS</em></h2>
-
                     <div class="parts-ledger custom-scrollbar">
                         <div class="ledger-card">
                             <div class="ledger-tags">
