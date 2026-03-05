@@ -139,15 +139,14 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   transition: background 0.2s ease;
 }
 .tier-nav-btn:last-child { border-right: none; }
-.tier-nav-btn:hover { background: rgba(255,255,255,0.04); }
 
+/* Always show bottom bar */
 .tier-nav-btn::after {
   content: '';
   position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-  transform: scaleX(0);
+  transform: scaleX(1);
   transition: transform 0.3s var(--ease-expo);
 }
-.tier-nav-btn:hover::after { transform: scaleX(1); }
 
 /* Tier-specific bottom colours */
 .tier-nav-btn[data-tier="executive"]::after  { background: var(--exec-accent); }
@@ -160,22 +159,21 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   font-family: var(--font-display);
   font-size: 0.68rem; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  transition: color 0.2s ease;
+  color: var(--white);
 }
-.tier-nav-btn:hover .tier-nav-label { color: var(--white); }
 
 .tier-nav-count {
   font-family: var(--font-display);
   font-size: 1.1rem; font-weight: 800;
-  color: rgba(255,255,255,0.15);
-  line-height: 1; transition: color 0.2s ease;
+  line-height: 1;
 }
-.tier-nav-btn[data-tier="executive"]:hover .tier-nav-count { color: var(--exec-accent); }
-.tier-nav-btn[data-tier="platinum"]:hover .tier-nav-count  { color: var(--plat-accent); }
-.tier-nav-btn[data-tier="gold"]:hover .tier-nav-count      { color: var(--gold-accent); }
-.tier-nav-btn[data-tier="silver"]:hover .tier-nav-count    { color: var(--silver-accent); }
-.tier-nav-btn[data-tier="technical"]:hover .tier-nav-count { color: rgba(255,255,255,0.6); }
+
+/* Always use tier colors */
+.tier-nav-btn[data-tier="executive"] .tier-nav-count { color: var(--exec-accent); }
+.tier-nav-btn[data-tier="platinum"]  .tier-nav-count { color: var(--plat-accent); }
+.tier-nav-btn[data-tier="gold"]      .tier-nav-count { color: var(--gold-accent); }
+.tier-nav-btn[data-tier="silver"]    .tier-nav-count { color: var(--silver-accent); }
+.tier-nav-btn[data-tier="technical"] .tier-nav-count { color: rgba(255,255,255,0.6); }
 
 /* ═══════════════════════════════════════════════════════════════
    SECTION WRAPPER (per tier)

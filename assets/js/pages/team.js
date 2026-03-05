@@ -95,6 +95,22 @@ const teamData = [
     social: { linkedin: "https://www.linkedin.com/in/shrinidhi-ramesh-852026341", github: null }
   },
   {
+    name: "Heer Maloo ",
+    roles: ["Member"],
+    subsystem: ["Drivetrain & Human Resources"," Sponsorship, Marketing & Public Relations"],
+    year: "2028",
+    experience: "Member of the SMP & DTHR teams.",
+    social: { linkedin: "www.linkedin.com/in/heer-maloo-490198260", github: "https://github.com/heermaloo03" }
+  },
+  {
+    name: "Hansel Biju Mathew",
+    roles: ["Member"],
+    subsystem: ["Drivetrain & Human Resources"],
+    year: "2028",
+    experience: "Member of the SMP & DTHR teams.",
+    social: { linkedin: null, github: null}
+  },
+  {
     name: "Pritha Nandy",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],

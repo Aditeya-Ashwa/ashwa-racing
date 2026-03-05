@@ -311,7 +311,7 @@
 }
 
 .mobile-menu.open {
-  max-height: 100svh;
+  max-height: 87vh;
   overflow-y: auto;
 }
 

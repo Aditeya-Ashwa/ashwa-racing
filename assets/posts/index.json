@@ -5,5 +5,25 @@
     "date": "2026-02-04",
     "author": "IT",
     "cover": "/assets/images/blog/XX6C.jpg"
+  },
+    {
+    "slug": "motul-sponsor-spotlight",
+    "title": "Sponsor Spotlight — Motul India: The Science Behind the Oil",
+    "date": "2026-03-01",
+    "author": "Ashwa Racing, Sponsorship & Marketing",
+    "cover": "/assets/images/blog/motul-sponsor-spotlight.webp",
+    "tags": ["Sponsor Spotlight", "Partners", "Engineering"],
+    "excerpt": "Motul has been part of Ashwa Racing for over 150 years of lubricant science. Here's why the oil matters and what their partnership means for the XX6C.",
+    "readTime": "6 min read"
+  },
+  {
+    "slug": "suspension-kinematics-2026",
+    "title": "Suspension & Admin — How We Kept the Tyres Planted on the XX6C",
+    "date": "2026-03-05",
+    "author": "Ashwa Racing, Suspension & Admin",
+    "cover": "/assets/images/blog/sus-front.webp",
+    "tags": ["Engineering", "Suspension", "Technical Insight", "Combustion", "XX6C"],
+    "excerpt": "Dynamic camber, bump steer, ARB elimination, and the geometry decisions behind the XX6C suspension — what we changed, what it cost us, and what we gained.",
+    "readTime": "8 min read"
   }
 ]

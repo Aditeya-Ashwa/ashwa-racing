@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ashwa Racing | Formula Student Team | RV College of Engineering</title>
-  <meta name="description"
-    content="Ashwa Racing is the premier Formula Student Team of RV College of Engineering. Since 2003, we design, engineer, and manufacture high-performance formula-style race cars.">
+  <meta name="description" content="Ashwa Racing is the premier Formula Student Team of RV College of Engineering. Since 2003, we design, engineer, and manufacture high-performance formula-style race cars.">
 
   <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
@@ -17,10 +15,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <link rel="stylesheet" href="assets/css/pages/index.css">
   <link rel="stylesheet" href="assets/css/components/header.css">
@@ -43,30 +39,54 @@
   }
   </script>
 </head>
-
 <body>
 
-  <div id="main-header"></div>
+  <header id="main-header"></header>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO — Blog-driven editorial slideshow
+       Slides are injected by index.js from index.json
+  ════════════════════════════════════════════════ -->
   <section class="hero" id="hero">
+
+    <!-- Background image slides (one per post) -->
     <div class="hero-slides" id="hero-slides"></div>
+
+    <!-- Vignette / dark gradient overlay -->
     <div class="hero-overlay"></div>
+
+    <!-- Grid texture -->
     <div class="hero-grid"></div>
+
+    <!-- Red diagonal accent -->
     <div class="hero-stripe"></div>
+
+    <!-- Editorial content panel (updated per slide) -->
     <div class="hero-content" id="hero-content">
+      <!-- Populated by JS -->
     </div>
+
+    <!-- Prev / Next arrows -->
     <button class="hero-arrow hero-arrow--prev" id="hero-prev" aria-label="Previous slide">
       <i class="fas fa-chevron-left"></i>
     </button>
     <button class="hero-arrow hero-arrow--next" id="hero-next" aria-label="Next slide">
       <i class="fas fa-chevron-right"></i>
     </button>
+
+    <!-- Dot indicators (injected by JS) -->
     <div class="hero-dots" id="hero-dots"></div>
+
+    <!-- Scroll hint -->
     <div class="hero-scroll">
       <div class="scroll-track"><div class="scroll-thumb"></div></div>
       <span>SCROLL</span>
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════
+       TICKER — Scrolling stats marquee
+  ════════════════════════════════════════════════ -->
   <div class="ticker-strip" aria-hidden="true">
     <div class="ticker-track">
       <span>Formula Bharat 2026</span>
@@ -92,11 +112,13 @@
     </div>
   </div>
 
+  <!-- ═══════════════════════════════════════════════
+       WHO WE ARE — Offset image / text split
+  ════════════════════════════════════════════════ -->
   <section class="split-section" id="about-preview">
     <div class="split-media">
-      <img src="assets/images/team/Costwin.jpg" alt="Ashwa Racing Cost Presentation win Formula Bharat 2025"
-        loading="lazy">
-      <div class="split-media-tag">2nd Place Cost celebration · Formula Bharat 2025</div>
+      <img src="assets/images/team/Costwin.jpg" alt="Ashwa Racing Cost Presentation win Formula Bharat 2025" loading="lazy">
+      <div class="split-media-tag">FB 2026 — 2nd Place BPP</div>
     </div>
 
     <div class="split-content">
@@ -108,10 +130,13 @@
         race cars. With over two decades of innovation, Ashwa remains one of India's leading
         collegiate motorsports teams.
       </p>
-      <a href="about.html" class="btn-line">Our Legacy<i class="fas fa-arrow-right"></i></a>
+      <a href="about.html" class="btn-line">Our Legacy <i class="fas fa-arrow-right"></i></a>
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════
+       STATS — Four bold numbers
+  ════════════════════════════════════════════════ -->
   <section class="stats-band">
     <div class="stat-item">
       <span class="stat-num">20<sup>+</sup></span>
@@ -124,20 +149,23 @@
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
-      <span class="stat-num">P6</span>
-      <span class="stat-label">Overall Finish FB26</span>
+      <span class="stat-num">T5</span>
+      <span class="stat-label">EDP Finish FB26</span>
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
-      <span class="stat-num">9</span>
+      <span class="stat-num">10</span>
       <span class="stat-label">Subsystems</span>
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════
+       OUR CARS — Dark reverse split
+  ════════════════════════════════════════════════ -->
   <section class="split-section split-section--dark split-section--reverse" id="cars-preview">
     <div class="split-media">
       <img src="assets/images/prototypes/XX5C.jpg" alt="Ashwa Racing Formula Student car XX5C" loading="lazy">
-      <div class="split-media-tag">RZ-XX5C running Endurance · Formula Bharat 2025</div>
+      <div class="split-media-tag">RZ-XX6C · 2026</div>
     </div>
 
     <div class="split-content">
@@ -152,55 +180,14 @@
     </div>
   </section>
 
-  <section class="sponsors-section">
-    <div class="sponsors-inner">
-      <div class="sponsors-header">
-        <div class="section-label">PARTNERS</div>
-        <h2 class="section-heading">Our <em>Sponsors</em></h2>
-        <p>Industry leaders and technical partners enabling our engineering, manufacturing, and competition efforts.</p>
-      </div>
-
-      <div class="sponsors-logos">
-        <img src="assets/images/sponsors/infineon.svg" alt="Infineon Technologies">
-        <img src="assets/images/sponsors/bosch.svg" alt="Bosch GmbH">
-        <img src="assets/images/sponsors/adani.svg" alt="Adani Group Ltd.">
-        <img src="assets/images/sponsors/dynamatics.svg" alt="Dynamatics Tecnologies Ltd.">
-        <img src="assets/images/sponsors/motul.svg" alt="Motul Group">
-        <img src="assets/images/sponsors/lapp.svg" alt="LAPP Group">
-        <img src="assets/images/sponsors/analogdevices.svg" alt="Analog Devices">
-        <img src="assets/images/sponsors/vrl.svg" alt="VRL Logistics Ltd.">
-        <img src="assets/images/sponsors/uniflex.svg" alt="Uniflex">
-        <img src="assets/images/sponsors/dmgmori.svg" alt="DMGMORI">
-        <img src="assets/images/sponsors/skf.svg" alt="SKF">
-        <img src="assets/images/sponsors/henkel.svg" alt="Henkel">
-
-      </div>
-
-      <a href="sponsors.html" class="btn-line" style="margin-bottom: 60px;">View All Partners <i
-          class="fas fa-arrow-right"></i></a>
-
-      <div class="partner-callout"
-        style="padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: flex-start;">
-
-        <h3
-          style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; text-transform: uppercase; color: var(--black); line-height: 1; margin-bottom: 16px;">
-          Become a <em style="color: var(--red); font-style: italic;">Partner</em></h3>
-        <p style="color: #666; font-size: 1rem; line-height: 1.6; margin-bottom: 30px; max-width: 600px;">
-          Join our ecosystem of engineering excellence. Our partnerships fuel out-of-the-box
-          innovation, allowing us to build cutting-edge prototypes while offering sponsors
-          exceptional brand visibility and access to top engineering talent.
-        </p>
-        <a href="smp.html" class="btn-line">Sponsorship Details <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
-
+  <!-- ═══════════════════════════════════════════════
+       ENGINEERING FOCUS — Tight grid, dark bg
+  ════════════════════════════════════════════════ -->
   <section class="focus-section">
     <div class="focus-header">
       <div class="section-label">SUBSYSTEMS</div>
       <h2 class="section-heading">Engineering<br><em>Focus Areas</em></h2>
-      <p>Our team operates across multidisciplinary domains, combining engineering rigour, operational excellence, and
-        strategic coordination.</p>
+      <p>Our team operates across multidisciplinary domains, combining engineering rigour, operational excellence, and strategic coordination.</p>
     </div>
 
     <div class="focus-grid">
@@ -242,7 +229,7 @@
       </a>
       <a href="team.html?sub=Marketing" class="focus-card">
         <div class="focus-card-num">07</div>
-        <h3>Sponsorship, Marketing &amp; Public Relations</h3>
+        <h3>Sponsorship &amp; Marketing</h3>
         <p>Industry outreach, branding, media strategy, and partner relations.</p>
         <i class="fas fa-arrow-right focus-arrow"></i>
       </a>
@@ -258,22 +245,41 @@
         <p>Powertrain integration, performance tuning, and team development.</p>
         <i class="fas fa-arrow-right focus-arrow"></i>
       </a>
-      <a href="team.html?sub=Engine" class="focus-card">
-        <div class="focus-card-num">10</div>
-        <h3>Engine</h3>
-        <p>Something here please</p>
-        <i class="fas fa-arrow-right focus-arrow"></i>
-      </a>
+    </div>
+  </section>
 
+  <!-- ═══════════════════════════════════════════════
+       SPONSORS
+  ════════════════════════════════════════════════ -->
+  <section class="sponsors-section">
+    <div class="sponsors-inner">
+      <div class="sponsors-header">
+        <div class="section-label">PARTNERS</div>
+        <h2 class="section-heading">Our <em>Sponsors</em></h2>
+        <p>Industry leaders and technical partners enabling our engineering, manufacturing, and competition efforts.</p>
+      </div>
+
+      <div class="sponsors-logos">
+        <img src="assets/images/sponsors/infineon.svg" alt="Infineon">
+        <img src="assets/images/sponsors/bosch.svg" alt="Bosch">
+        <img src="assets/images/sponsors/adani.svg" alt="Adani">
+        <img src="assets/images/sponsors/motul.svg" alt="Motul">
+        <img src="assets/images/sponsors/lapp.svg" alt="LAPP">
+        <img src="assets/images/sponsors/analogdevices.svg" alt="Analog Devices">
+        <img src="assets/images/sponsors/vrl.svg" alt="VRL Logistics">
+        <img src="assets/images/sponsors/uniflex.svg" alt="Uniflex">
+        <img src="assets/images/sponsors/dmgmori.svg" alt="DMGMORI">
+        <img src="assets/images/sponsors/huntsman.svg" alt="Huntsman">
+      </div>
+
+      <a href="sponsors.html" class="btn-line">View All Partners <i class="fas fa-arrow-right"></i></a>
     </div>
   </section>
 
   <footer id="main-footer"></footer>
 
-  <script src="assets/js/components/header.js" defer></script>
+  <script src="assets/js/components/header.js"></script>
   <script src="assets/js/pages/index.js"></script>
-  <script src="assets/js/pages/blog-preview.js"></script>
 
 </body>
-
 </html>
