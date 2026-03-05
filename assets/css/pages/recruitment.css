@@ -151,7 +151,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 .rc-hero-title {
   font-family: var(--font-display);
   font-size: clamp(5rem, 13vw, 10rem);
-  font-weight: 800; line-height: 0.86;
+  font-weight: 800; line-height: 0.75;
   letter-spacing: -0.02em; text-transform: uppercase;
   color: var(--white); margin-bottom: 22px;
   animation: slideUp 0.8s var(--ease-expo) both;

@@ -15,10 +15,10 @@
   --ease-expo:    cubic-bezier(0.16, 1, 0.3, 1);
 
   --cv-accent:    #e8001d;
-  --ev-accent:    #00c2a8;
+  --ev-accent:    #3b82f6;
   --hyb-accent:   #f59e0b;
   --hyp-accent:   #7c3aed;
-  --dv-accent:    #3b82f6;
+  --dv-accent:    #00c2a8;
   --prog-accent:  var(--cv-accent);
 }
 
@@ -254,6 +254,7 @@ body {
   flex-shrink: 0;
   max-width: 380px;
   padding-bottom: 2px;
+  /* color: ; */
 }
 .prog-years::-webkit-scrollbar { display: none; }
 

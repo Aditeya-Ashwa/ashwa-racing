@@ -1,12 +1,4 @@
-/* ============================================================
-   ASHWA RACING — RECRUITMENT PAGE JS
-   ============================================================ */
-
 document.addEventListener("DOMContentLoaded", () => {
-
-  /* ============================================================
-     1. SCROLL REVEAL ANIMATION
-     ============================================================ */
 
   const revealElements = document.querySelectorAll(".reveal");
 
@@ -29,14 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     revealObserver.observe(el);
   });
 
-
-  /* ============================================================
-     2. RECRUITMENT STATUS SYSTEM
-     ============================================================ */
-
   const recruitmentConfig = {
-    isOpen: false, // 🔴 CHANGE TO TRUE WHEN RECRUITMENT OPENS
-    formURL: "https://forms.gle/YOUR_FORM_LINK",
+    isOpen: true, //
+    formURL: "https://forms.gle/hrbQxbTiwtwteNa18",
     openDate: "2026-07-01",
     closeDate: "2026-07-20"
   };
@@ -52,20 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let isCurrentlyOpen = recruitmentConfig.isOpen;
 
-    // Optional automatic date logic
     if (today >= openDate && today <= closeDate) {
       isCurrentlyOpen = true;
     }
 
     if (isCurrentlyOpen) {
-      // Update badge
       statusBadge.classList.remove("rc-status--closed");
       statusBadge.classList.add("rc-status--open");
       statusText.textContent = "Recruitment Open";
 
-      // Update button
       applyBtn.disabled = false;
-      applyBtn.textContent = "Apply Now";
+      applyBtn.textContent = "Apply Now (Use your RVCE mail ID)";
       applyBtn.addEventListener("click", () => {
         window.open(recruitmentConfig.formURL, "_blank");
       });
@@ -82,22 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateRecruitmentStatus();
 
-
-  /* ============================================================
-     3. HERO PARALLAX (SUBTLE)
-     ============================================================ */
-
   const heroBg = document.querySelector(".rc-hero-bg");
 
   window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
     heroBg.style.transform = `scale(1.04) translateY(${scrollY * 0.03}px)`;
   });
-
-
-  /* ============================================================
-     4. STAT NUMBER ANIMATION
-     ============================================================ */
 
   const statNumbers = document.querySelectorAll(".rhs-num");
 
