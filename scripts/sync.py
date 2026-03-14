@@ -1,8 +1,8 @@
 """
 Ashwa Racing — Team Data Sync Script
 
-- Reads teamData array from assets/js/team.js (file has other code too — only touches the array)
-- Reads ALUMNI array from assets/js/alumni-data.js (only touches ALUMNI, not ORG_STRUCTURE)
+- Reads teamData array from assets/js/pages/team.js (file has other code too — only touches the array)
+- Reads ALUMNI array from assets/js/pages/alumni-data.js (only touches ALUMNI, not ORG_STRUCTURE)
 - Merges sheet data by name — updates form fields, preserves manual fields
 - Downloads new photos from Drive
 - Alumni logic: current year + next 2 = current team, rest = alumni
@@ -342,8 +342,8 @@ def main():
 
     # 3. Read existing JS files
     print("\n📖 Reading existing JS files...")
-    team_entries,   team_content   = read_js_entries("assets/js/team.js",        "teamData")
-    alumni_entries, alumni_content = read_js_entries("assets/js/alumni-data.js", "ALUMNI")
+    team_entries,   team_content   = read_js_entries("assets/js/pages/team.js",        "teamData")
+    alumni_entries, alumni_content = read_js_entries("assets/js/pages/alumni-data.js", "ALUMNI")
 
     # 4. Merge sheet data
     print("\n🔀 Merging...")
@@ -358,8 +358,8 @@ def main():
     # 5. Write back into files (only replaces the arrays, not the whole file)
     print("\n📝 Writing JS files...")
     # Fix these two lines:
-    write_array_into_file("assets/js/team.js",        team_content,   "teamData", team_entries,   is_alumni=False)
-    write_array_into_file("assets/js/alumni-data.js", alumni_content, "ALUMNI",   alumni_entries, is_alumni=True)
+    write_array_into_file("assets/js/pages/team.js",        team_content,   "teamData", team_entries,   is_alumni=False)
+    write_array_into_file("assets/js/pages/alumni-data.js", alumni_content, "ALUMNI",   alumni_entries, is_alumni=True)
 
     print("\n🎉 Sync complete!")
 

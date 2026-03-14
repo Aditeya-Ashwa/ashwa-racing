@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name  "Ashwa Sync Bot"
           git config user.email "sync@ashwaracing.com"
-          git add assets/js/team.js assets/js/alumni-data.js assets/images/team/members/
+          git add assets/js/pages/team.js assets/js/pages/alumni-data.js assets/images/team/members/
           git diff --staged --quiet \
             && echo "Nothing changed, skipping commit." \
             || (git commit -m "🔄 Auto-sync team data $(date +'%Y-%m-%d')" && git pull --rebase && git push)
