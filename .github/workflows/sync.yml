@@ -1,0 +1,40 @@
+name: Sync Team Data
+
+on:
+  schedule:
+    - cron: '30 18 * * *'  # Runs at 00:00 IST (18:30 UTC) every night
+  workflow_dispatch:        # Can also be triggered manually from Actions tab
+
+permissions:
+  contents: write           # Needed to commit and push changes
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run sync script
+        env:
+          SHEET_CSV_URL:        ${{ secrets.SHEET_CSV_URL }}
+          DRIVE_ROOT_FOLDER_ID: ${{ secrets.DRIVE_ROOT_FOLDER_ID }}
+        run: python scripts/sync.py
+
+      - name: Commit and push
+        run: |
+          git config user.name  "Ashwa Sync Bot"
+          git config user.email "sync@ashwaracing.com"
+          git add teamData.js alumniData.js assets/images/team/members/
+          git diff --staged --quiet \
+            && echo "Nothing changed, skipping commit." \
+            || (git commit -m "🔄 Auto-sync team data $(date +'%Y-%m-%d')" && git push)
