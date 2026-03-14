@@ -1,11 +1,14 @@
 """
 Ashwa Racing — Team Data Sync Script
 
-- Reads teamData array from assets/js/pages/team.js (file has other code too — only touches the array)
-- Reads ALUMNI array from assets/js/pages/alumni-data.js (only touches ALUMNI, not ORG_STRUCTURE)
-- Merges sheet data by name — updates form fields, preserves manual fields
-- Downloads new photos from Drive
+- Reads existing team.js + alumni-data.js (never wipes manual entries)
+- Reads "Parsed Team Data" sheet (form submissions)
+- Merges by name — updates only form fields, preserves manual fields
+- Everyone goes into team.js (teamData array)
+- Alumni only (year below current year) also go into alumni-data.js (ALUMNI array)
 - Alumni logic: current year + next 2 = current team, rest = alumni
+  e.g. 2026 → 2026, 2027, 2028 = current | 2025 and below = alumni
+- Downloads new photos from Drive (folder must be public)
 """
 
 import os
@@ -20,9 +23,21 @@ from datetime import datetime
 SHEET_CSV_URL        = os.environ["SHEET_CSV_URL"]
 DRIVE_ROOT_FOLDER_ID = os.environ["DRIVE_ROOT_FOLDER_ID"]
 
-# Fields only set manually in JS — never overwritten by sync
+TEAM_JS_PATH   = "assets/js/pages/team.js"
+ALUMNI_JS_PATH = "assets/js/pages/alumni-data.js"
+
+# Manual flags preserved in JS — never overwritten by sync
 MANUAL_FLAGS = {
     "Vibin": {"easterEgg": True}
+}
+
+# Prototype key → programme id (for alumni-data.js renderer)
+PROGRAMME_MAP = {
+    "Combustion": "cv",
+    "Hybrid":     "hybrid",
+    "Electric":   "ev",
+    "Hyperloop":  "hyperloop",
+    "Driverless": "dv"
 }
 
 # ─── Alumni Year Logic ────────────────────────────────────────
@@ -51,15 +66,37 @@ def js_val(val):
     escaped = str(val).replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ")
     return f'"{escaped}"'
 
+def parse_current_job(current_job):
+    """
+    Parses 'Position, Company' or 'Degree, Institute' into (position, company).
+    e.g. 'Software Engineer, Google' → ('Software Engineer', 'Google')
+         'MBA, IIM Bangalore'        → ('MBA', 'IIM Bangalore')
+         'MBA'                       → ('MBA', '')
+    """
+    if not current_job:
+        return "", ""
+    parts = [p.strip() for p in current_job.split(",", 1)]
+    position = parts[0]
+    company  = parts[1] if len(parts) > 1 else ""
+    return position, company
+
+def get_programme(prototypes):
+    """Returns the programme id from the first prototype key."""
+    if not prototypes:
+        return ""
+    first_key = list(prototypes.keys())[0]
+    return PROGRAMME_MAP.get(first_key, "")
+
+def get_top_role(roles):
+    """Returns the most senior role from a list."""
+    priority = ["Team Captain", "Chief Engineer", "Project Manager", "Subsystem Lead", "Member"]
+    for p in priority:
+        if p in roles:
+            return p
+    return roles[0] if roles else "Member"
+
 # ─── Extract array blocks from JS file ───────────────────────
 def extract_entry_blocks(content, array_name):
-    """
-    Finds 'const ARRAY_NAME = [' in content,
-    then extracts each top-level { } block inside it
-    by counting braces (handles nested objects like social: {}).
-    Returns list of raw block strings.
-    """
-    # Find the start of the array
     pattern = rf'const\s+{array_name}\s*=\s*\['
     m = re.search(pattern, content)
     if not m:
@@ -67,8 +104,6 @@ def extract_entry_blocks(content, array_name):
         return []
 
     array_start = m.end()
-
-    # Find the closing ] of the array by counting brackets
     depth = 1
     i = array_start
     while i < len(content) and depth > 0:
@@ -79,10 +114,9 @@ def extract_entry_blocks(content, array_name):
         i += 1
     array_content = content[array_start:i-1]
 
-    # Now extract each top-level { } block from array_content
     blocks = []
-    depth = 0
-    start = -1
+    depth  = 0
+    start  = -1
     for j, ch in enumerate(array_content):
         if ch == '{':
             if depth == 0:
@@ -96,7 +130,7 @@ def extract_entry_blocks(content, array_name):
 
     return blocks
 
-# ─── Parse a single JS object block into a Python dict ────────
+# ─── Parse a JS object block ──────────────────────────────────
 def parse_js_block(block):
     entry = {}
 
@@ -109,43 +143,44 @@ def parse_js_block(block):
         if not m:
             return None
         val = m.group(1)
-        if val == "null":
-            return None
-        return val.strip('"').replace('\\"', '"')
+        return None if val == "null" else val.strip('"').replace('\\"', '"')
 
     def get_array(key):
         m = re.search(rf'{key}:\s*(\[[^\]]*\])', block)
-        if not m:
-            return []
         try:
-            return json.loads(m.group(1))
+            return json.loads(m.group(1)) if m else []
         except:
             return []
 
-    entry["name"]       = get_str("name") or ""
-    entry["year"]       = get_str("year") or ""
-    entry["experience"] = get_str("experience") or ""
-    entry["roles"]      = get_array("roles") or ["Member"]
+    entry["name"]       = get_str("name")       or ""
+    entry["year"]       = get_str("year")        or ""
+    entry["experience"] = get_str("experience")  or ""
+    entry["roles"]      = get_array("roles")     or ["Member"]
     entry["subsystem"]  = get_array("subsystem") or []
     entry["linkedin"]   = get_null_or_str("linkedin")
     entry["github"]     = get_null_or_str("github")
     entry["gmail"]      = get_null_or_str("gmail")
     entry["easterEgg"]  = bool(re.search(r'easterEgg:\s*true', block))
+    entry["testimony"]  = get_str("testimony")
+    entry["currentJob"] = get_str("currentJob")
 
-    # prototypes (optional)
     m = re.search(r'prototypes:\s*(\{[^}]*\})', block)
     try:
         entry["prototypes"] = json.loads(m.group(1)) if m else {}
     except:
         entry["prototypes"] = {}
 
-    # testimony (alumni only)
-    entry["testimony"]  = get_str("testimony")
-    entry["currentJob"] = get_str("currentJob")
+    # Alumni-specific fields (from alumni-data.js ALUMNI array)
+    entry["role"]      = get_str("role")
+    entry["batch"]     = get_str("batch")
+    entry["photo"]     = get_str("photo")
+    entry["company"]   = get_str("company")
+    entry["position"]  = get_str("position")
+    entry["programme"] = get_str("programme")
 
     return entry
 
-# ─── Read JS file entries ─────────────────────────────────────
+# ─── Read JS file ─────────────────────────────────────────────
 def read_js_entries(filepath, array_name):
     if not os.path.exists(filepath):
         print(f"  ⚠️ {filepath} not found.")
@@ -156,7 +191,7 @@ def read_js_entries(filepath, array_name):
 
     blocks  = extract_entry_blocks(content, array_name)
     entries = [parse_js_block(b) for b in blocks]
-    entries = [e for e in entries if e.get("name")]  # skip empty
+    entries = [e for e in entries if e.get("name")]
 
     print(f"  ✅ Read {len(entries)} entries from {filepath}")
     return entries, content
@@ -167,15 +202,14 @@ def read_sheet():
     r = requests.get(SHEET_CSV_URL, timeout=30)
     r.raise_for_status()
     rows = list(csv.DictReader(io.StringIO(r.text)))
-    # Filter out empty rows
     rows = [r for r in rows if r.get("Name", "").strip()]
     print(f"✅ {len(rows)} entries read from sheet.")
     return rows
 
 # ─── Parse Sheet Row ──────────────────────────────────────────
 def parse_row(row):
-    roles      = [r.strip() for r in row.get("Roles", "Member").split(",") if r.strip()]
-    subsystems = [s.strip() for s in row.get("Subsystems", "").split(",")   if s.strip()]
+    roles      = [r.strip() for r in row.get("Roles",      "Member").split(",") if r.strip()]
+    subsystems = [s.strip() for s in row.get("Subsystems", "").split(",")        if s.strip()]
     try:
         prototypes = json.loads(row.get("Prototype Roles", "{}") or "{}")
     except:
@@ -197,7 +231,7 @@ def parse_row(row):
         "photo_id":   row.get("Photo File ID", "").strip(),
     }
 
-# ─── Merge sheet into existing entries ────────────────────────
+# ─── Merge ────────────────────────────────────────────────────
 def merge(existing, sheet_rows):
     lookup = {e["name"].lower().strip(): i for i, e in enumerate(existing)}
 
@@ -210,7 +244,6 @@ def merge(existing, sheet_rows):
 
         if key in lookup:
             e = existing[lookup[key]]
-            # Only update fields that come from the form
             if sheet["roles"]:      e["roles"]      = sheet["roles"]
             if sheet["subsystem"]:  e["subsystem"]  = sheet["subsystem"]
             if sheet["experience"]: e["experience"] = sheet["experience"]
@@ -220,6 +253,8 @@ def merge(existing, sheet_rows):
             if sheet["prototypes"]: e["prototypes"] = sheet["prototypes"]
             if sheet["testimony"]:  e["testimony"]  = sheet["testimony"]
             if sheet["currentJob"]: e["currentJob"] = sheet["currentJob"]
+            # Update year in case batch changed
+            if sheet["year"]:       e["year"]       = sheet["year"]
             print(f"  ✏️  Updated: {sheet['name']}")
         else:
             existing.append(sheet)
@@ -245,7 +280,7 @@ def sync_photos(sheet_rows):
         url = f"https://drive.google.com/uc?export=download&id={file_id}&confirm=t"
         r   = requests.get(url, stream=True, timeout=30)
         if r.status_code != 200 or "text/html" in r.headers.get("Content-Type", ""):
-            print(f"  ❌ Failed to download photo for: {name}")
+            print(f"  ❌ Failed: {name}")
             continue
 
         os.makedirs(os.path.dirname(dest), exist_ok=True)
@@ -254,12 +289,8 @@ def sync_photos(sheet_rows):
                 f.write(chunk)
         print(f"  ✅ Downloaded: {name}.webp")
 
-# ─── Write updated array back into JS file ───────────────────
-def write_array_into_file(filepath, original_content, array_name, entries, is_alumni=False):
-    """
-    Replaces just the array in the file, leaving all other code untouched.
-    """
-    # Build new array string
+# ─── Write teamData array into team.js ───────────────────────
+def write_team_js(filepath, original_content, entries):
     lines = []
     for e in entries:
         manual = MANUAL_FLAGS.get(e.get("name", ""), {})
@@ -280,18 +311,50 @@ def write_array_into_file(filepath, original_content, array_name, entries, is_al
 
         if e.get("prototypes"):
             lines.append(f'    prototypes: {js_val(e["prototypes"])},')
-        if is_alumni and e.get("testimony"):
+        if e.get("testimony"):
             lines.append(f'    testimony: {js_val(e["testimony"])},')
-        if is_alumni and e.get("currentJob"):
+        if e.get("currentJob"):
             lines.append(f'    currentJob: {js_val(e["currentJob"])},')
         for flag, val in manual.items():
             lines.append(f'    {flag}: {js_val(val)},')
 
         lines.append("  },")
 
-    new_array_content = "\n".join(lines)
+    _write_array(filepath, original_content, "teamData", "\n".join(lines))
+    print(f"  ✅ {filepath} updated — {len(entries)} entries")
 
-    # Find array boundaries in original file
+# ─── Write ALUMNI array into alumni-data.js ──────────────────
+def write_alumni_js(filepath, original_content, entries):
+    lines = []
+    for e in entries:
+        position, company = parse_current_job(e.get("currentJob", "") or "")
+        programme         = get_programme(e.get("prototypes", {}))
+        top_role          = get_top_role(e.get("roles", ["Member"]))
+        year              = e.get("year", "")
+        photo             = f'assets/images/team/members/{year}/{e.get("name", "")}.webp'
+
+        # Preserve existing photo if already set and not default
+        existing_photo = e.get("photo", "")
+        if existing_photo and "default.webp" not in existing_photo:
+            photo = existing_photo
+
+        lines.append("  {")
+        lines.append(f'    name: {js_val(e.get("name", ""))},')
+        lines.append(f'    role: {js_val(top_role)},')
+        lines.append(f'    batch: {js_val(year)},')
+        lines.append(f'    photo: {js_val(photo)},')
+        lines.append(f'    company: {js_val(company)},')
+        lines.append(f'    position: {js_val(position)},')
+        lines.append(f'    linkedin: {js_val(e.get("linkedin"))},')
+        lines.append(f'    programme: {js_val(programme)},')
+        lines.append(f'    testimony: {js_val(e.get("testimony", "") or "")},')
+        lines.append("  },")
+
+    _write_array(filepath, original_content, "ALUMNI", "\n".join(lines))
+    print(f"  ✅ {filepath} updated — {len(entries)} entries")
+
+# ─── Write array back into file (surgical replace) ───────────
+def _write_array(filepath, original_content, array_name, new_array_content):
     pattern = rf'const\s+{array_name}\s*=\s*\['
     m = re.search(pattern, original_content)
     if not m:
@@ -307,9 +370,8 @@ def write_array_into_file(filepath, original_content, array_name, entries, is_al
         elif original_content[i] == ']':
             depth -= 1
         i += 1
-    array_end = i - 1  # position of closing ]
+    array_end = i - 1
 
-    # Replace only the array contents
     new_content = (
         original_content[:array_start]
         + "\n"
@@ -320,8 +382,6 @@ def write_array_into_file(filepath, original_content, array_name, entries, is_al
 
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(new_content)
-
-    print(f"  ✅ {filepath} updated — {len(entries)} entries")
 
 # ─── Main ─────────────────────────────────────────────────────
 def main():
@@ -342,24 +402,26 @@ def main():
 
     # 3. Read existing JS files
     print("\n📖 Reading existing JS files...")
-    team_entries,   team_content   = read_js_entries("assets/js/pages/team.js",        "teamData")
-    alumni_entries, alumni_content = read_js_entries("assets/js/pages/alumni-data.js", "ALUMNI")
+    team_entries,   team_content   = read_js_entries(TEAM_JS_PATH,   "teamData")
+    alumni_entries, alumni_content = read_js_entries(ALUMNI_JS_PATH, "ALUMNI")
 
-    # 4. Merge sheet data
-    print("\n🔀 Merging...")
-    sheet_current = [r for r in sheet_rows if r.get("Year", "") in current_years]
-    sheet_alumni  = [r for r in sheet_rows if r.get("Year", "") not in current_years]
+    # 4. Merge — everyone goes into team.js
+    print("\n🔀 Merging team data...")
+    team_entries = merge(team_entries, sheet_rows)
 
-    team_entries   = merge(team_entries,   sheet_current)
-    alumni_entries = merge(alumni_entries, sheet_alumni)
+    # 5. Merge — only alumni go into alumni-data.js
+    sheet_alumni = [r for r in sheet_rows if r.get("Year", "") not in current_years]
+    if sheet_alumni:
+        print("\n🔀 Merging alumni data...")
+        alumni_entries = merge(alumni_entries, sheet_alumni)
 
-    print(f"\n👥 Current team: {len(team_entries)} | Alumni: {len(alumni_entries)}")
+    print(f"\n👥 Total team entries: {len(team_entries)}")
+    print(f"🎓 Total alumni entries: {len(alumni_entries)}")
 
-    # 5. Write back into files (only replaces the arrays, not the whole file)
+    # 6. Write JS files
     print("\n📝 Writing JS files...")
-    # Fix these two lines:
-    write_array_into_file("assets/js/pages/team.js",        team_content,   "teamData", team_entries,   is_alumni=False)
-    write_array_into_file("assets/js/pages/alumni-data.js", alumni_content, "ALUMNI",   alumni_entries, is_alumni=True)
+    write_team_js  (TEAM_JS_PATH,   team_content,   team_entries)
+    write_alumni_js(ALUMNI_JS_PATH, alumni_content, alumni_entries)
 
     print("\n🎉 Sync complete!")
 

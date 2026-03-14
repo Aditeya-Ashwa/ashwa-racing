@@ -88,10 +88,6 @@ function renderOrgChart() {
 
     </div>`;
 }
-```
-
-The key structural change is the HTML skeleton it now produces:
-```
 // .org-chart-inner
 //   .org-box--root          ← standalone, centered
 //   .org-vline--md          ← spine down
