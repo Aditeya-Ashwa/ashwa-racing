@@ -618,26 +618,28 @@ function scrollStep(direction, wrapper, items) {
 }
 
 // ─── Arrow Buttons ────────────────────────────────────────────
-document.getElementById("year-left").onclick = () => scrollStep(-1, yearFilter, yearItems);
-document.getElementById("year-right").onclick = () => scrollStep(1, yearFilter, yearItems);
-document.getElementById("subsystem-left").onclick = () => scrollStep(-1, subFilter, subItems);
-document.getElementById("subsystem-right").onclick = () => scrollStep(1, subFilter, subItems);
+document.getElementById("year-left").onclick  = () => scrollStep(-1, yearFilter, yearFilter.children);
+document.getElementById("year-right").onclick = () => scrollStep(1,  yearFilter, yearFilter.children);
+document.getElementById("subsystem-left").onclick  = () => scrollStep(-1, subFilter, subItems);
+document.getElementById("subsystem-right").onclick = () => scrollStep(1,  subFilter, subItems);
 
 // ─── Wheel Scroll ─────────────────────────────────────────────
-yearFilter.addEventListener("wheel", e => { e.preventDefault(); scrollStep(e.deltaY > 0 ? 1 : -1, yearFilter, yearItems); });
-subFilter.addEventListener("wheel", e => { e.preventDefault(); scrollStep(e.deltaY > 0 ? 1 : -1, subFilter, subItems); });
+yearFilter.addEventListener("wheel", e => {
+  e.preventDefault();
+  scrollStep(e.deltaY > 0 ? 1 : -1, yearFilter, yearFilter.children);
+});
+subFilter.addEventListener("wheel", e => {
+  e.preventDefault();
+  scrollStep(e.deltaY > 0 ? 1 : -1, subFilter, subItems);
+});
 
-// ─── Filter Click Activation ──────────────────────────────────
-document.querySelectorAll(".filter-btn").forEach(btn => {
+// ─── Subsystem Filter Click (static buttons) ──────────────────
+subFilter.querySelectorAll(".filter-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const item = btn.closest(".year-item");
-    const wrapper = item.parentElement;
-    const isYear = wrapper.id === "year-filter";
-    const type = isYear ? "year" : "subsystem";
-    const val = item.dataset[type];
+    const val  = item.dataset.subsystem;
 
-    // Update subsystem description
-    if (!isYear && descBox) {
+    if (descBox) {
       const desc = item.dataset.desc || "Members of Ashwa Racing.";
       descBox.style.opacity = "0";
       setTimeout(() => {
@@ -646,16 +648,9 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
       }, 150);
     }
 
-    // Deactivate siblings
-    wrapper.querySelectorAll(".filter-btn").forEach(x => x.classList.remove("active"));
+    subFilter.querySelectorAll(".filter-btn").forEach(x => x.classList.remove("active"));
     btn.classList.add("active");
-
-    if (isYear) {
-      activeYear = val;
-    } else {
-      activeSubsystem = val;
-    }
-
+    activeSubsystem = val;
     renderMembers(activeYear, activeSubsystem);
   });
 });
@@ -674,16 +669,45 @@ backToTopBtn.addEventListener("click", () => {
 
 // ─── Init ─────────────────────────────────────────────────────
 window.addEventListener("load", () => {
+
+  // ── Dynamically build year filter from teamData ──
+  const years   = [...new Set(teamData.map(m => m.year))].sort();
+  const spacers = yearFilter.querySelectorAll(".spacer");
+
+  years.forEach(year => {
+    const item       = document.createElement("div");
+    item.className   = "year-item";
+    item.dataset.year = year;
+
+    const btn        = document.createElement("button");
+    btn.className    = "filter-btn";
+    btn.textContent  = year;
+
+    // Attach click listener right here while we have the reference
+    btn.addEventListener("click", () => {
+      yearFilter.querySelectorAll(".filter-btn").forEach(x => x.classList.remove("active"));
+      btn.classList.add("active");
+      activeYear = year;
+      renderMembers(activeYear, activeSubsystem);
+    });
+
+    item.appendChild(btn);
+    yearFilter.insertBefore(item, spacers[spacers.length - 1]);
+  });
+
+  // Set first year as active
+  const firstYearItem = [...yearFilter.children].find(el => el.dataset.year);
+  if (firstYearItem) {
+    activeYear = firstYearItem.dataset.year;
+    firstYearItem.querySelector(".filter-btn").classList.add("active");
+  }
+
   renderMembers(activeYear, activeSubsystem);
 
-  // Set first filter active and center scroll
-  const firstYearBtn = yearItems[1]?.querySelector(".filter-btn");
-  firstYearBtn?.classList.add("active");
-
   setTimeout(() => {
-    const iy = yearItems[1];
-    if (iy) yearFilter.scrollLeft = iy.offsetLeft - yearFilter.clientWidth / 2 + iy.clientWidth / 2;
-
+    if (firstYearItem) {
+      yearFilter.scrollLeft = firstYearItem.offsetLeft - yearFilter.clientWidth / 2 + firstYearItem.clientWidth / 2;
+    }
     const is = subItems[1];
     if (is) subFilter.scrollLeft = is.offsetLeft - subFilter.clientWidth / 2 + is.clientWidth / 2;
   }, 100);
