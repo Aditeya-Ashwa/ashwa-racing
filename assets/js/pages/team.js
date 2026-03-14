@@ -4,14 +4,13 @@ let activeYear = "2026";
 let activeSubsystem = "All";
 
 const teamData = [
-  // ─── 2028 BATCH ───────────────────────────────────────────────
   {
     name: "Ananth Krishna",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2028",
     experience: "Member of the Chassis & Workshop Management team.",
-    social: { linkedin: "https://www.linkedin.com/in/ananth-krishna-679060243", github: null, gmail: "ananth.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/ananth-krishna-679060243", github: null, gmail: "ananth.ashwa@gmail.com" },
   },
   {
     name: "Dilan Da Silva",
@@ -19,7 +18,7 @@ const teamData = [
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2028",
     experience: "Handles sponsor outreach and follow-ups, leads newsletter drafting, and contributes to social media content strategy.",
-    social: { linkedin: "https://www.linkedin.com/in/dilan-d-silva-a8297b32a", github: null, gmail: "dilandsilva.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/dilan-d-silva-a8297b32a", github: null, gmail: "dilandsilva.ashwa@gmail.com" },
   },
   {
     name: "Sughosha Rao R",
@@ -27,7 +26,7 @@ const teamData = [
     subsystem: ["Electrical & Testing"],
     year: "2028",
     experience: "Working on PCB designs including accumulator precharge circuits and brake light systems using pressure transducers.",
-    social: { linkedin: null, github: null, gmail: "sughosharaor.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "sughosharaor.ashwa@gmail.com" },
   },
   {
     name: "Dilraj Singh",
@@ -35,7 +34,7 @@ const teamData = [
     subsystem: ["Sponsorship, Marketing & Public Relations", "IT"],
     year: "2028",
     experience: "Manages social media content and contributes to website development.",
-    social: { linkedin: "https://www.linkedin.com/in/dilraj-singh-cos007", github: "https://github.com/Dilraj07", gmail: "dilrajsingh.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/dilraj-singh-cos007", github: "https://github.com/Dilraj07", gmail: "dilrajsingh.ashwa@gmail.com" },
   },
   {
     name: "Damian C Dani",
@@ -43,7 +42,7 @@ const teamData = [
     subsystem: ["Drivetrain & Human Resources"],
     year: "2028",
     experience: "Member of the Drivetrain & HR team.",
-    social: { linkedin: "https://www.linkedin.com/in/damian-c-dani-56a25b353", github: null, gmail: "damiancdani.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/damian-c-dani-56a25b353", github: null, gmail: "damiancdani.ashwa@gmail.com" },
   },
   {
     name: "Praful P I",
@@ -51,7 +50,7 @@ const teamData = [
     subsystem: ["Brakes & Logistics"],
     year: "2028",
     experience: "Member of the Brakes & Logistics subsystem.",
-    social: { linkedin: null, github: null, gmail: "praful.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "praful.ashwa@gmail.com" },
   },
   {
     name: "Ganesha K L",
@@ -59,7 +58,7 @@ const teamData = [
     subsystem: ["Suspension & Admin"],
     year: "2028",
     experience: "Member of the Suspension & Admin team.",
-    social: { linkedin: "https://www.linkedin.com/in/ganesha-kalburgi-388042268", github: null, gmail: "ganeshakl.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/ganesha-kalburgi-388042268", github: null, gmail: "ganeshakl.ashwa@gmail.com" },
   },
   {
     name: "Anarghya Hatti",
@@ -67,7 +66,7 @@ const teamData = [
     subsystem: ["Electrical & Testing"],
     year: "2028",
     experience: "Member of the Electrical & Testing subsystem.",
-    social: { linkedin: "https://www.linkedin.com/in/anarghya-hatti-94a377251", github: null, gmail: "anarghya.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/anarghya-hatti-94a377251", github: null, gmail: "anarghya.ashwa@gmail.com" },
   },
   {
     name: "Lakshana Jeevanandan",
@@ -75,7 +74,7 @@ const teamData = [
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2028",
     experience: "Member of the Sponsorship, Marketing & PR team.",
-    social: { linkedin: "https://www.linkedin.com/in/lakshana-jeevanandan-a1568432a", github: "https://github.com/lakshana009", gmail: "lakshanajeevanandan.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/lakshana-jeevanandan-a1568432a", github: "https://github.com/lakshana009", gmail: "lakshanajeevanandan.ashwa@gmail.com" },
   },
   {
     name: "K M Sri Raghava",
@@ -83,7 +82,7 @@ const teamData = [
     subsystem: ["Electrical & Testing"],
     year: "2028",
     experience: "Member of the Electrical & Testing subsystem.",
-    social: { linkedin: null, github: null, gmail: "raghava.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "raghava.ashwa@gmail.com" },
   },
   {
     name: "Shrinidhi R",
@@ -91,7 +90,7 @@ const teamData = [
     subsystem: ["Suspension & Admin"],
     year: "2028",
     experience: "Member of the Suspension & Admin team.",
-    social: { linkedin: "https://www.linkedin.com/in/shrinidhi-ramesh-852026341", github: null, gmail: "shrinidhir.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/shrinidhi-ramesh-852026341", github: null, gmail: "shrinidhir.ashwa@gmail.com" },
   },
   {
     name: "Heer Maloo",
@@ -99,7 +98,7 @@ const teamData = [
     subsystem: ["Drivetrain & Human Resources", "Sponsorship, Marketing & Public Relations"],
     year: "2028",
     experience: "Member of the Drivetrain & HR and Sponsorship, Marketing & PR teams.",
-    social: { linkedin: "https://www.linkedin.com/in/heer-maloo-490198260", github: "https://github.com/heermaloo03", gmail: "heermaloo.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/heer-maloo-490198260", github: "https://github.com/heermaloo03", gmail: "heermaloo.ashwa@gmail.com" },
   },
   {
     name: "Hansel Biju Mathew",
@@ -107,7 +106,7 @@ const teamData = [
     subsystem: ["Drivetrain & Human Resources"],
     year: "2028",
     experience: "Member of the Drivetrain & Human Resources team.",
-    social: { linkedin: null, github: null, gmail: "hansel.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "hansel.ashwa@gmail.com" },
   },
   {
     name: "Pritha Nandy",
@@ -115,7 +114,7 @@ const teamData = [
     subsystem: ["Electrical & Testing"],
     year: "2028",
     experience: "Member of the Electrical & Testing subsystem.",
-    social: { linkedin: null, github: null, gmail: "pritha.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "pritha.ashwa@gmail.com" },
   },
   {
     name: "Samyak Nahar",
@@ -123,7 +122,7 @@ const teamData = [
     subsystem: ["Chassis & Workshop Management"],
     year: "2028",
     experience: "Member of the Chassis & Workshop Management team.",
-    social: { linkedin: "https://www.linkedin.com/in/samyak-nahar-00709132b", github: null, gmail: "samyaknahar.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/samyak-nahar-00709132b", github: null, gmail: "samyaknahar.ashwa@gmail.com" },
   },
   {
     name: "Prithvi Krishna Shambhu",
@@ -131,7 +130,7 @@ const teamData = [
     subsystem: ["Chassis & Workshop Management"],
     year: "2028",
     experience: "Member of the Chassis & Workshop Management team.",
-    social: { linkedin: null, github: null, gmail: "prithviks.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "prithviks.ashwa@gmail.com" },
   },
   {
     name: "Shreni Shetty",
@@ -139,7 +138,7 @@ const teamData = [
     subsystem: ["Drivetrain & Human Resources"],
     year: "2028",
     experience: "Member of the Drivetrain & HR team.",
-    social: { linkedin: "https://www.linkedin.com/in/shreni-shetty", github: "https://github.com/ShreniShetty", gmail: "shrenishetty.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/shreni-shetty", github: "https://github.com/ShreniShetty", gmail: "shrenishetty.ashwa@gmail.com" },
   },
   {
     name: "Ishita K. Bharadhwaj",
@@ -147,7 +146,7 @@ const teamData = [
     subsystem: ["Chassis & Workshop Management"],
     year: "2028",
     experience: "Designed the accumulator mezzanine section and busbars housing safety and shutdown circuits, and manufactured the charging cart for the electric prototype.",
-    social: { linkedin: "https://www.linkedin.com/in/ishita-bharadhwaj-b12741384", github: null, gmail: "ishitab.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/ishita-bharadhwaj-b12741384", github: null, gmail: "ishitab.ashwa@gmail.com" },
   },
   {
     name: "Mrunal M",
@@ -155,7 +154,7 @@ const teamData = [
     subsystem: ["Electrical & Testing"],
     year: "2028",
     experience: "Member of the Electrical & Testing subsystem.",
-    social: { linkedin: null, github: null, gmail: "mrunal.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "mrunal.ashwa@gmail.com" },
   },
   {
     name: "Mayank S",
@@ -163,7 +162,7 @@ const teamData = [
     subsystem: ["Electrical & Testing"],
     year: "2028",
     experience: "Member of the Electrical & Testing subsystem.",
-    social: { linkedin: null, github: null, gmail: "mayanks.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "mayanks.ashwa@gmail.com" },
   },
   {
     name: "Sarah Das",
@@ -171,7 +170,7 @@ const teamData = [
     subsystem: ["Brakes & Logistics"],
     year: "2028",
     experience: "Member of the Brakes & Logistics subsystem.",
-    social: { linkedin: null, github: null, gmail: "sarahdas.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "sarahdas.ashwa@gmail.com" },
   },
   {
     name: "Arya Sunil",
@@ -179,7 +178,7 @@ const teamData = [
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2028",
     experience: "Contributes to both Engine development and Sponsorship & Marketing initiatives.",
-    social: { linkedin: "https://www.linkedin.com/in/arya-sunil-a781a5318", github: null, gmail: "aryas.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/arya-sunil-a781a5318", github: null, gmail: "aryas.ashwa@gmail.com" },
   },
   {
     name: "Prajwal G Koli",
@@ -187,7 +186,7 @@ const teamData = [
     subsystem: ["Suspension & Admin"],
     year: "2028",
     experience: "Member of the Suspension & Admin team.",
-    social: { linkedin: null, github: null, gmail: "prajwalgopalkashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "prajwalgopalkashwa@gmail.com" },
   },
   {
     name: "Tejas Nagendra Naik",
@@ -195,7 +194,7 @@ const teamData = [
     subsystem: ["Chassis & Workshop Management"],
     year: "2028",
     experience: "Member of the Chassis & Workshop Management team.",
-    social: { linkedin: null, github: null, gmail: "tejasn.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "tejasn.ashwa@gmail.com" },
   },
   {
     name: "Neil S Wesley",
@@ -203,7 +202,7 @@ const teamData = [
     subsystem: ["Suspension & Admin"],
     year: "2028",
     experience: "Assisted in procurement, basic manufacturing, and drafting administrative documents.",
-    social: { linkedin: null, github: null, gmail: "neils.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "neils.ashwa@gmail.com" },
   },
   {
     name: "Vinay Krishna B V",
@@ -211,7 +210,7 @@ const teamData = [
     subsystem: ["Sponsorship, Marketing & Public Relations", "Finance"],
     year: "2028",
     experience: "Contributes to Sponsorship, Marketing & PR initiatives and financial operations.",
-    social: { linkedin: "https://www.linkedin.com/in/vinay-krishna-b-v-182428317", github: null, gmail: "vinaykrishna.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/vinay-krishna-b-v-182428317", github: null, gmail: "vinaykrishna.ashwa@gmail.com" },
   },
   {
     name: "Jainaav Pramod",
@@ -219,7 +218,7 @@ const teamData = [
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2028",
     experience: "Designed sponsor and Formula Bharat social media posts and contributed to multiple editions of the team newsletter.",
-    social: { linkedin: "https://www.linkedin.com/in/jainaav-pramod-b1b319383/", github: "https://github.com/JainavPS", gmail: "jainaav.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/jainaav-pramod-b1b319383/", github: "https://github.com/JainavPS", gmail: "jainaav.ashwa@gmail.com" },
   },
   {
     name: "Thanusha HU",
@@ -227,7 +226,7 @@ const teamData = [
     subsystem: ["Suspension & Admin"],
     year: "2028",
     experience: "Member of the Suspension & Admin team.",
-    social: { linkedin: "https://www.linkedin.com/in/thanusha-h-u-438091354", github: null, gmail: "thanusha.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/thanusha-h-u-438091354", github: null, gmail: "thanusha.ashwa@gmail.com" },
   },
   {
     name: "Priyansh Gupta",
@@ -235,7 +234,7 @@ const teamData = [
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2028",
     experience: "Member of the Sponsorship, Marketing & Public Relations team.",
-    social: { linkedin: "https://www.linkedin.com/in/priyansh-gupta-a64328356", github: "https://github.com/prawnsgupta", gmail: "priyanshgupta.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/priyansh-gupta-a64328356", github: "https://github.com/prawnsgupta", gmail: "priyanshgupta.ashwa@gmail.com" },
   },
   {
     name: "Chakshu M Diwakar",
@@ -243,16 +242,15 @@ const teamData = [
     subsystem: ["Suspension & Admin", "Aero"],
     year: "2028",
     experience: "Currently creating a Lap-Time Simulator.",
-    social: { linkedin: "https://www.linkedin.com/in/chakshu-m-diwakar-5a5777216", github: null, gmail: "chakshumd.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/chakshu-m-diwakar-5a5777216", github: null, gmail: "chakshumd.ashwa@gmail.com" },
   },
-  // ─── 2027 BATCH ───────────────────────────────────────────────
   {
     name: "N Akshay Urs",
     roles: ["Project Manager", "Subsystem Lead"],
     subsystem: ["Leads", "Electrical & Testing"],
     year: "2027",
     experience: "Designed Rear & Side IO. Worked on firmware for DAQ. Made the harness for RZ-XX6C. One of the drivers for the RZ-XX6C. Part of EDP team, achieving P5 at Formula Bharat 2026.",
-    social: { linkedin: "https://www.linkedin.com/in/n-akshayurs/", github: null }
+    social: { linkedin: "https://www.linkedin.com/in/n-akshayurs/", github: null, gmail: null },
   },
   {
     name: "Sathvik S Naik",
@@ -260,7 +258,7 @@ const teamData = [
     subsystem: ["Leads", "Chassis & Workshop Management"],
     year: "2027",
     experience: "Designed the LV enclosure and chassis. One of the drivers for the RZ-XX6C. Part of EDP team, achieving P5 at Formula Bharat 2026.",
-    social: { linkedin: "https://www.linkedin.com/in/sathvik-s-naik-b186342a8/", github: null }
+    social: { linkedin: "https://www.linkedin.com/in/sathvik-s-naik-b186342a8/", github: null, gmail: null },
   },
   {
     name: "Shravan CS",
@@ -268,7 +266,7 @@ const teamData = [
     subsystem: ["Leads", "Brakes & Logistics"],
     year: "2027",
     experience: "Leading the team as Captain while managing the Brakes & Logistics subsystem.",
-    social: { linkedin: null, github: null }
+    social: { linkedin: null, github: null, gmail: null },
   },
   {
     name: "Anshul Joshi",
@@ -276,7 +274,7 @@ const teamData = [
     subsystem: ["Suspension & Admin"],
     year: "2027",
     experience: "Delivered exceptional suspension work within a tight timeline, ensuring RZ-XX6C stood on her own four wheels. Part of EDP team, achieving P5 at Formula Bharat 2026. Contributed to P6 finish at FB 2026.",
-    social: { linkedin: "https://www.linkedin.com/in/an-joshi/", github: null }
+    social: { linkedin: "https://www.linkedin.com/in/an-joshi/", github: null, gmail: null },
   },
   {
     name: "Vinith Prabhu",
@@ -284,7 +282,7 @@ const teamData = [
     subsystem: ["Electrical & Testing"],
     year: "2027",
     experience: "Designed the Power Distribution Board handling 300+ Watts of power around the car. Main proponent behind EDP position at Formula Bharat 2026, achieving P5 at Formula Bharat 2026. One of the drivers for the RZ-XX6C.",
-    social: { linkedin: null, github: null }
+    social: { linkedin: null, github: null, gmail: null },
   },
   {
     name: "Samith Belegadde Sirish",
@@ -292,7 +290,7 @@ const teamData = [
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2027",
     experience: "Secured sponsors for the 2026–27 race season. Part of BPP team, achieving 2nd Place at Formula Bharat 2026.",
-    social: { linkedin: "https://www.linkedin.com/in/samith-belegadde-sirish-162bb425b/", github: null }
+    social: { linkedin: "https://www.linkedin.com/in/samith-belegadde-sirish-162bb425b/", github: null, gmail: null },
   },
   {
     name: "Talin Thimmaiah",
@@ -300,7 +298,7 @@ const teamData = [
     subsystem: ["Engine"],
     year: "2027",
     experience: "Leading engine development and performance tuning for the 2027 race season. Worked on all engine components including sensors, ensuring a reliable power output.",
-    social: { linkedin: null, github: null }
+    social: { linkedin: null, github: null, gmail: null },
   },
   {
     name: "Aman Kumar Gupta",
@@ -308,7 +306,7 @@ const teamData = [
     subsystem: ["Drivetrain & Human Resources"],
     year: "2027",
     experience: "Designed drive shafts, DT Sprocket etc for the powertrain components of the car. Part of EDP team, achieving P5 at Formula Bharat 2026. Designed the team jersey and car livery.",
-    social: { linkedin: "https://www.linkedin.com/in/aman-kumar-gupta-867996297/", github: null }
+    social: { linkedin: "https://www.linkedin.com/in/aman-kumar-gupta-867996297/", github: null, gmail: null },
   },
   {
     name: "Preetham Paravastu",
@@ -316,7 +314,7 @@ const teamData = [
     subsystem: ["Brakes & Logistics"],
     year: "2027",
     experience: "Designed the front pedal assembly taking driver ergonomics into account. Part of EDP team, achieving P5 at Formula Bharat 2026. Also worked in implementation of a mechanical brake biasing system.",
-    social: { linkedin: "https://www.linkedin.com/in/preetham-paravastu-90a97a2ba/", github: null }
+    social: { linkedin: "https://www.linkedin.com/in/preetham-paravastu-90a97a2ba/", github: null, gmail: null },
   },
   {
     name: "Ranjith DS",
@@ -324,7 +322,7 @@ const teamData = [
     subsystem: ["Drivetrain & Human Resources"],
     year: "2027",
     experience: "Designed drive shafts, DT Sprocket etc for the powertrain components of the car. Part of EDP team, achieving P5 at Formula Bharat 2026.",
-    social: { linkedin: "https://www.linkedin.com/in/ranjithds28/", github: null }
+    social: { linkedin: "https://www.linkedin.com/in/ranjithds28/", github: null, gmail: null },
   },
   {
     name: "Tejas",
@@ -332,15 +330,16 @@ const teamData = [
     subsystem: ["Engine"],
     year: "2027",
     experience: "Designed fully sealed and tested oil and fuel tanks, reducing space taken. Part of EDP team, achieving P5 at Formula Bharat 2026.",
-    social: { linkedin: null, github: null }
+    social: { linkedin: null, github: null, gmail: null },
   },
   {
     name: "Aditeya Sarkar",
-    roles: ["Member"],
+    roles: ["Subsystem Lead"],
     subsystem: ["Electrical & Testing", "IT"],
     year: "2027",
-    experience: "Designed the BSPD. Worked on firmware for DAQ. Responsible for website design alongside IT 28. Part of BPP team, achieving 2nd Place at Formula Bharat 2026.",
-    social: { linkedin: "https://www.linkedin.com/in/aditeya-sarkar/", github: "https://github.com/AditeyaDC", gmail: "aditeya.ashwa@gmail.com" }
+    experience: "Designed the BSPD. Worked on firmware for DAQ. Responsible for website design alongside IT 28.Part of BPP team, achieving 2nd Place at Formula Bharat 2026.",
+    social: { linkedin: "https://www.linkedin.com/in/aditeya-sarkar/", github: "https://github.com/AditeyaDC", gmail: "aditeya.ashwa@gmail.com" },
+    prototypes: {"Combustion": "Member / Part of team", "Driverless": "Member / Part of team"},
   },
   {
     name: "Aashrith Rao",
@@ -348,7 +347,7 @@ const teamData = [
     subsystem: ["Electrical & Testing", "Finance"],
     year: "2027",
     experience: "Designed the APPS. Part of CDP team, achieving top 20 finish at Formula Bharat 2026.",
-    social: { linkedin: "https://www.linkedin.com/in/aashrith-rao-893010326/", github: null }
+    social: { linkedin: "https://www.linkedin.com/in/aashrith-rao-893010326/", github: null, gmail: null },
   },
   {
     name: "Pranav Ramakrishnan",
@@ -356,16 +355,15 @@ const teamData = [
     subsystem: ["Sponsorship, Marketing & Public Relations", "Finance"],
     year: "2027",
     experience: "Responsible for finances of RZ-XX6C. Part of BPP team, achieving P2 at Formula Bharat 2026.",
-    social: { linkedin: "https://www.linkedin.com/in/pranav-ramakrishnan-387358297", github: null, gmail: "pranavramakrishnan.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/pranav-ramakrishnan-387358297", github: null, gmail: "pranavramakrishnan.ashwa@gmail.com" },
   },
-  // ─── 2026 BATCH ───────────────────────────────────────────────
   {
     name: "Gaurav Raju",
     roles: ["Chief Engineer"],
     subsystem: ["Leads", "Chassis & Workshop Management"],
     year: "2026",
     experience: "Chief Engineer of the 2026 batch, leading the development of Ashwa Racing's first Electric Formula Student prototype.",
-    social: { linkedin: "https://www.linkedin.com/in/gaurav-raju-9a2b92258", github: null, gmail: "gauravraju.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/gaurav-raju-9a2b92258", github: null, gmail: "gauravraju.ashwa@gmail.com" },
   },
   {
     name: "Vansh Vikas Jain",
@@ -373,7 +371,7 @@ const teamData = [
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2026",
     experience: "Secured 20+ sponsors including industry giants like Adani Group, Motul, Henkel, SKF, Delhivery, and BMC. Turns conversations into long-term collaborations, building partnerships that fuel performance on and off the track.",
-    social: { linkedin: "https://www.linkedin.com/in/vansh-jain-a55b272b6", github: null, gmail: "vanshjain.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/vansh-jain-a55b272b6", github: null, gmail: "vanshjain.ashwa@gmail.com" },
   },
   {
     name: "Hemanth",
@@ -381,7 +379,7 @@ const teamData = [
     subsystem: ["Brakes & Logistics"],
     year: "2026",
     experience: "Designed and manufactured an ergonomically optimized pedal assembly and implemented the team's first real-time brake bias adjuster, enabling dynamic brake force tuning. Strong vehicle-level understanding with specialized expertise in braking systems.",
-    social: { linkedin: null, github: null }
+    social: { linkedin: null, github: null, gmail: null },
   },
   {
     name: "Sandeep N Uttarkar",
@@ -389,15 +387,15 @@ const teamData = [
     subsystem: ["Electrical & Testing"],
     year: "2026",
     experience: "Designed and developed the BMS/AMS architecture and supporting firmware for the vehicle.",
-    social: { linkedin: "https://www.linkedin.com/in/sandeepnu0620/", github: "https://github.com/SandeepASHWARACING", gmail: "sandeepnuttarkar.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/sandeepnu0620/", github: "https://github.com/SandeepASHWARACING", gmail: "sandeepnuttarkar.ashwa@gmail.com" },
   },
   {
     name: "G Venkat Shreyas",
     roles: ["Subsystem Lead"],
-    subsystem: ["Finance","Electrical & Testing"],
+    subsystem: ["Finance", "Electrical & Testing"],
     year: "2026",
     experience: "Managed funds for XX6E and XX6C within a ₹15 lakh budget, stabilized operations during a leadership transition, secured representation for Formula Hybrid Electric 2026, and represented Ashwa at European Hyperloop Week 2024 at ETH Zurich. Also contributed to accumulator design and energy requirement analysis for performance and endurance targets.",
-    social: { linkedin: null, github: null, gmail: "venkatshreyas.ashwa@gmail.com" }
+    social: { linkedin: null, github: null, gmail: "venkatshreyas.ashwa@gmail.com" },
   },
   {
     name: "U P Madhavan",
@@ -405,7 +403,7 @@ const teamData = [
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2026",
     experience: "Manufacturing lead overseeing sponsor onboarding (10+ partners), fundraising, vendor selection, and procurement for machining and raw materials.",
-    social: { linkedin: "https://www.linkedin.com/in/madhavan-pari-28651526b", github: null, gmail: "upmadhavan.ashwa@gmail.com" }
+    social: { linkedin: "https://www.linkedin.com/in/madhavan-pari-28651526b", github: null, gmail: "upmadhavan.ashwa@gmail.com" },
   },
   {
     name: "Vibin",
@@ -413,8 +411,8 @@ const teamData = [
     subsystem: ["Electrical & Testing"],
     year: "2026",
     experience: "Designed and implemented a 600W motor controller, laid the foundations for the AWD hub motor system, and developed the VCU and CAN watchdog.",
-    social: { linkedin: "#", github: null },
-    easterEgg: true
+    social: { linkedin: "#", github: null, gmail: null },
+    easterEgg: true,
   },
 ];
 
