@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          sparse-checkout: false
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name  "Ashwa Sync Bot"
           git config user.email "sync@ashwaracing.com"
-          git add teamData.js alumniData.js assets/images/team/members/
+          git add assets/js/team.js assets/js/alumni-data.js assets/images/team/members/
           git diff --staged --quiet \
             && echo "Nothing changed, skipping commit." \
             || (git commit -m "🔄 Auto-sync team data $(date +'%Y-%m-%d')" && git pull --rebase && git push)
