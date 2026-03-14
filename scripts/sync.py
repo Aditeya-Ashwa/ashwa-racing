@@ -357,8 +357,9 @@ def main():
 
     # 5. Write back into files (only replaces the arrays, not the whole file)
     print("\n📝 Writing JS files...")
-    write_array_into_file("assets/js/team.js",        team_content,   "teamData", is_alumni=False)
-    write_array_into_file("assets/js/alumni-data.js", alumni_content, "ALUMNI",   is_alumni=True)
+    # Fix these two lines:
+    write_array_into_file("assets/js/team.js",        team_content,   "teamData", team_entries,   is_alumni=False)
+    write_array_into_file("assets/js/alumni-data.js", alumni_content, "ALUMNI",   alumni_entries, is_alumni=True)
 
     print("\n🎉 Sync complete!")
 
