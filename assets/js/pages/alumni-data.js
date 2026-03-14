@@ -349,13 +349,13 @@ const ORG_STRUCTURE = {
 const ALUMNI = [
   {
     name: "Ravikiran K",
-    roles: ["Member", "Team Captain"],
-    subsystem: ["Sponsorship", "Marketing & Public Relations", "Leads"],
-    year: "2025",
-    experience: "Raised 5 lakhs and multiple sponsors for the team, 1st place BPP in Formula Bharat 2024, 2nd place Cost and Manufacturing Formula Bharat 2025, organised F1 simulator event in 8th mile 2023, Led Ashwa team of 2025,",
-    social: { linkedin: null, github: null, gmail: "ravikiran.ashwa@gmail.com" },
-    prototypes: {"Combustion": "Team Captain"},
+    role: "Team Captain",
+    batch: "2025",
+    photo: "assets/images/team/members/2025/Ravikiran K.webp",
+    company: "",
+    position: "MBA",
+    linkedin: null,
+    programme: "cv",
     testimony: "My journey at Ashwa Racing was the most transformative experience of my life. I learnt volumes about team building, project management, leadership and so on while simultaneously discovering my own shortcomings and strengths. These experiences not only added to my knowledge base but also created lifelong memories which I will carry forward into through every walk of life. I have had the enormous privilege of leading an amazingly talented team of individuals and the journey has only fueled my drive to one day achieve the success I aspire towards.",
-    currentJob: "MBA",
   },
 ];
