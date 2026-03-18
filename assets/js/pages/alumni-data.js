@@ -358,4 +358,15 @@ const ALUMNI = [
     programme: "cv",
     testimony: "My journey at Ashwa Racing was the most transformative experience of my life. I learnt volumes about team building, project management, leadership and so on while simultaneously discovering my own shortcomings and strengths. These experiences not only added to my knowledge base but also created lifelong memories which I will carry forward into through every walk of life. I have had the enormous privilege of leading an amazingly talented team of individuals and the journey has only fueled my drive to one day achieve the success I aspire towards.",
   },
+  {
+    name: "Chinmay Vanahalli",
+    role: "Chief Engineer",
+    batch: "2025",
+    photo: "assets/images/team/members/2025/Chinmay Vanahalli.webp",
+    company: "Ather Energy",
+    position: "Product Engineer",
+    linkedin: "https://www.linkedin.com/in/chinmay-v-ab703620b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    programme: "cv",
+    testimony: "My journey in Ashwa is something I will cherish forever. From the late-night manufacturing and testing sessions to the chaos of assembly or inventory session, the experience transformed me into a much better engineer. Being part of this team taught me to push my limits, thrive in a fast-paced environment, and truly understand my own strengths and weaknesses. Most importantly, Ashwa connected me with like-minded, hardworking individuals who are driven to achieve a common goal.",
+  },
 ];
