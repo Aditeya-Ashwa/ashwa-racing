@@ -25,5 +25,15 @@
     "tags": ["Engineering", "Suspension", "Technical Insight", "Combustion", "XX6C"],
     "excerpt": "Dynamic camber, bump steer, ARB elimination, and the geometry decisions behind the XX6C suspension — what we changed, what it cost us, and what we gained.",
     "readTime": "8 min read"
+  },
+  {
+    "slug": "ashwa-website-chronicles",
+    "title": "The Ashwa Racing Website: A Forensic Analysis of Organised Chaos",
+    "date": "2026-03-18",
+    "author": "Ashwa Racing, Web & Electrical",
+    "cover": "/assets/images/blog/git-log.webp",
+    "tags": ["Behind the Scenes", "Web", "Culture", "2026"],
+    "excerpt": "150 commits. Three prayers. One bot. And a commit called 'she'. A forensic breakdown of how the Ashwa Racing website actually got built.",
+    "readTime": "6 min read"
   }
 ]
