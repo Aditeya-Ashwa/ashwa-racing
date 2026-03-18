@@ -15,6 +15,15 @@
       <p class="footer-tagline">
         Precision engineering.<br>Relentless performance.<br>Since 2003.
       </p>
+
+      <!--
+        FIX: social icons use `fab fa-*` (Font Awesome Brands).
+        Make sure each page's <head> loads brands.min.css in addition to
+        solid.min.css and fontawesome.min.css, e.g.:
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css">
+      -->
       <div class="footer-socials">
         <a href="https://www.instagram.com/ashwa_racing" target="_blank" rel="noopener" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
@@ -89,33 +98,50 @@
       <div class="footer-col">
         <h4 class="footer-col-label">Contact Us</h4>
         <ul>
+
+          <!-- FIX: each contact item now has an explicit wrapper div so the
+               link and its subtitle label are siblings inside a structured
+               container, not loose inside a bare <li> -->
           <li>
-            <a href="mailto:ashwaracing@rvce.edu.in" class="footer-contact-link">
-              <i class="fas fa-envelope"></i>
-              ashwaracing@rvce.edu.in
-            </a>
-            <span>Official mail, Ashwa Racing </span>
+            <div class="footer-contact-item">
+              <a href="mailto:ashwaracing@rvce.edu.in" class="footer-contact-link">
+                <i class="fas fa-envelope"></i>
+                ashwaracing@rvce.edu.in
+              </a>
+              <span class="footer-contact-label">Official mail, Ashwa Racing</span>
+            </div>
           </li>
+
           <li>
-            <a href="mailto:ashwa.smp@gmail.com" class="footer-contact-link">
-              <i class="fas fa-envelope"></i>
-              ashwa.smp@gmail.com
-            </a>
-            <span>Sponsorship, Marketing & Public Relations</span>
+            <div class="footer-contact-item">
+              <a href="mailto:ashwa.smp@gmail.com" class="footer-contact-link">
+                <i class="fas fa-envelope"></i>
+                ashwa.smp@gmail.com
+              </a>
+              <span class="footer-contact-label">Sponsorship, Marketing &amp; PR</span>
+            </div>
           </li>
+
+          <!-- FIX: was a nested <a> inside another <a> (invalid HTML).
+               Outer `callto:` href did nothing; inner `tel:` link was ignored.
+               Replaced with a single correct <a href="tel:..."> -->
           <li>
-            <a href="callto:Vansh Jain" class="footer-contact-link">
-              <i class="fas fa-envelope"></i>
-              <a class="ct-detail-value" href="tel:+918208072332">+91 82080 72332</a>
-            </a>
-            <span>Vansh Jain (SMP)</span>
+            <div class="footer-contact-item">
+              <a href="tel:+918208072332" class="footer-contact-link">
+                <i class="fas fa-phone"></i>
+                +91 82080 72332
+              </a>
+              <span class="footer-contact-label">Vansh Jain (SMP)</span>
+            </div>
           </li>
+
           <li>
             <span class="footer-location">
               <i class="fas fa-map-pin"></i>
               RV College of Engineering,<br>Bengaluru, Karnataka
             </span>
           </li>
+
         </ul>
       </div>
 

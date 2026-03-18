@@ -212,22 +212,7 @@ body {
   max-width: 860px;
 }
 
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 20px;
-}
-.eyebrow-dash {
-  display: block; width: 28px; height: 2px;
-  background: var(--red);
-}
-
+/* FIX: removed duplicate .hero-eyebrow block — kept the correct single definition */
 .hero-eyebrow {
   display: flex;
   align-items: center;
@@ -658,6 +643,35 @@ body {
 .sponsors-logos img:hover {
   filter: grayscale(0%) opacity(1);
   transform: scale(1.08);
+}
+
+/* FIX: moved from inline styles on .partner-callout div in HTML */
+.partner-callout {
+  padding-top: 40px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.partner-callout__heading {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.partner-callout__heading em {
+  color: var(--red);
+  font-style: italic;
+}
+.partner-callout__body {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 600px;
 }
 
 /* ═══════════════════════════════════════════════════════════════

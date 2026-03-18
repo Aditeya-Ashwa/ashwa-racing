@@ -1,6 +1,11 @@
 "use strict";
 
-const prefix = "../../"
+/*
+  Path prefix for fetching shared components and assets.
+  All pages are assumed to live at the repo root (same depth as /components/).
+  If a page is nested deeper, update this value for that page.
+*/
+const prefix = "../../";
 
 fetch(prefix + "components/header.html")
   .then(r => r.text())
@@ -18,9 +23,10 @@ fetch(prefix + "components/footer.html")
   .then(html => { document.getElementById("main-footer").innerHTML = html; })
   .catch(err => console.warn("Footer load failed:", err));
 
+
 function initNav() {
 
-  /* -- Hamburger toggle -- */
+  /* ── Hamburger toggle ──────────────────────────────────────── */
   const hamburger  = document.getElementById("hamburger");
   const mobileMenu = document.getElementById("mobile-menu");
 
@@ -53,15 +59,31 @@ function initNav() {
     document.body.style.overflow = "";
   }
 
-  /* -- Helper: wire up a desktop dropdown -- */
+  /* ── Desktop dropdown ──────────────────────────────────────── */
+  /*
+    FIX: CSS :hover was removed from header.css to prevent the open/close
+    conflict on touch laptops. Desktop hover is now handled here via
+    mouseenter/mouseleave so the behaviour is identical but we have full
+    control. Click still works as a fallback for keyboard/touch users.
+  */
   function initDropdown(id) {
     const dd  = document.getElementById(id);
     const btn = dd?.querySelector(".nav-drop-btn");
     if (!dd || !btn) return;
 
+    // Open on hover (desktop pointer devices)
+    dd.addEventListener("mouseenter", () => {
+      dd.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+    });
+    dd.addEventListener("mouseleave", () => {
+      dd.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    });
+
+    // Click toggle as fallback (keyboard, touch)
     btn.addEventListener("click", e => {
       e.stopPropagation();
-      // Close every other open dropdown first
       document.querySelectorAll(".nav-dropdown.open").forEach(other => {
         if (other !== dd) {
           other.classList.remove("open");
@@ -91,7 +113,7 @@ function initNav() {
   initDropdown("teamDropdown");
   initDropdown("subsystemsDropdown");
 
-  /* -- Helper: wire up a mobile accordion -- */
+  /* ── Mobile accordion ──────────────────────────────────────── */
   function initAccordion(btnId, panelId) {
     const btn   = document.getElementById(btnId);
     const panel = document.getElementById(panelId);
@@ -107,8 +129,12 @@ function initNav() {
   initAccordion("mobSubBtn",  "mobSubPanel");
 }
 
+
 function markActivePage() {
-  const page = window.location.pathname.split("/").pop() || "index.html";
+  const path = window.location.pathname;
+  // FIX: pop() returns "" on directory roots (e.g. GitHub Pages /ashwa-racing/)
+  // Fall back to "index.html" so the Home nav link gets marked active correctly
+  const page = path.split("/").filter(Boolean).pop() || "index.html";
 
   document.querySelectorAll(".nav-link[href], .mob-link[href]").forEach(link => {
     const href = link.getAttribute("href");
@@ -118,15 +144,11 @@ function markActivePage() {
   });
 }
 
-let sponsorInit = false;
 
 async function initSponsorMarquee() {
-  if (sponsorInit) return;
-  sponsorInit = true;
-
   const track = document.getElementById("sponsor-track");
-  if (!track) return;
-  if (track.dataset.initialized) return;
+  // FIX: removed redundant sponsorInit module-level flag — dataset guard is enough
+  if (!track || track.dataset.initialized) return;
   track.dataset.initialized = "true";
 
   const SPONSOR_PATH = prefix + "assets/images/sponsors/";
@@ -150,13 +172,15 @@ async function initSponsorMarquee() {
       img.alt       = name.replace(/\.[^.]+$/, "").replace(/[-_]/g, " ");
       img.className = "sponsor-logo";
 
-      const ext = name.split('.').pop().toLowerCase();
-      if      (ext === "svg")                  img.classList.add("logo-svg");
-      else if (ext === "png")                  img.classList.add("logo-png");
+      const ext = name.split(".").pop().toLowerCase();
+      if      (ext === "svg")                   img.classList.add("logo-svg");
+      else if (ext === "png")                   img.classList.add("logo-png");
       else if (ext === "jpg" || ext === "jpeg") img.classList.add("logo-jpg");
       else if (ext === "webp" || ext === "avif") img.classList.add("logo-modern");
 
-      img.loading = "lazy";
+      // FIX: sponsor strip is in the sticky header — always in the viewport.
+      // lazy loading caused a pop-in flash; eager ensures logos are ready immediately.
+      img.loading = "eager";
       frag.appendChild(img);
     });
     return frag;
@@ -175,38 +199,66 @@ async function initSponsorMarquee() {
 
   let pos = 0;
   const SPEED = 1.2;
-  let raf;
+  let raf = null;
+  let running = false;
 
   function animate() {
     pos -= SPEED;
     const halfWidth = track.scrollWidth / 2;
     if (Math.abs(pos) >= halfWidth) pos = 0;
     track.style.transform = `translate3d(${pos}px, 0, 0)`;
+    if (running) raf = requestAnimationFrame(animate);
+  }
+
+  function start() {
+    if (running) return;
+    running = true;
     raf = requestAnimationFrame(animate);
   }
 
-  animate();
+  function stop() {
+    running = false;
+    if (raf) { cancelAnimationFrame(raf); raf = null; }
+  }
 
+  // FIX: pause the rAF loop when the sponsor strip scrolls out of view
+  // on long pages — avoids burning CPU/GPU for off-screen animation
   const strip = track.closest(".sponsor-strip");
-  strip?.addEventListener("mouseenter", () => cancelAnimationFrame(raf));
-  strip?.addEventListener("mouseleave", () => { raf = requestAnimationFrame(animate); });
+  if (strip) {
+    const io = new IntersectionObserver(
+      ([entry]) => entry.isIntersecting ? start() : stop(),
+      { threshold: 0 }
+    );
+    io.observe(strip);
+
+    strip.addEventListener("mouseenter", stop);
+    strip.addEventListener("mouseleave", () => { if (running || document.visibilityState === "visible") start(); });
+  } else {
+    start();
+  }
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    cancelAnimationFrame(raf);
+    stop();
     track.style.transform = "none";
   }
 }
+
 
 function initScrollShrink() {
   const navbar = document.querySelector(".navbar");
   if (!navbar) return;
 
   const threshold = 60;
+  // FIX: dirty-check avoids redundant classList mutations on every scroll tick
+  let wasScrolled = false;
 
   function onScroll() {
-    navbar.classList.toggle("scrolled", window.scrollY > threshold);
+    const isScrolled = window.scrollY > threshold;
+    if (isScrolled === wasScrolled) return;
+    wasScrolled = isScrolled;
+    navbar.classList.toggle("scrolled", isScrolled);
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  onScroll(); // run once on load to set initial state
 }

@@ -5,10 +5,10 @@
 
 /* ─── Base ──────────────────────────────────────────────────── */
 .footer {
-  background: var(--black, #0a0a0a);
+  background: var(--black);
   color: rgba(255,255,255,1);
-  font-family: var(--font-body, 'Barlow', sans-serif);
-  border-top: 2px solid var(--red, #e8001d);
+  font-family: var(--font-body);
+  border-top: 2px solid var(--red);
 }
 
 /* ─── Top section ───────────────────────────────────────────── */
@@ -42,20 +42,22 @@
   filter: invert(1) brightness(1);
   transition: opacity 0.2s ease;
 }
-.footer-brand-link:hover .footer-logo { opacity: 1; }
+/* FIX: removed no-op .footer-brand-link:hover .footer-logo { opacity: 1 }
+   — base opacity is already 1, the hover rule had no effect */
+.footer-brand-link:hover .footer-logo { opacity: 0.85; }
 
 .footer-brand-text {
   display: flex;
   flex-direction: column;
   line-height: 1;
   padding-left: 4px;
-  border-left: 2px solid var(--red, #e8001d);
+  border-left: 2px solid var(--red);
 }
 
 .footer-ashwa {
   font-family: 'Samarkan', serif;
   font-size: 24px;
-  color: var(--red, #e8001d);
+  color: var(--red);
   letter-spacing: 1px;
   line-height: 1.05;
 }
@@ -63,7 +65,7 @@
 .footer-racing {
   font-family: 'Xenotron', sans-serif;
   font-size: 12px;
-  color: rgba(255,255,255,1);
+  color: #ffffff;
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-top: 3px;
@@ -72,7 +74,7 @@
 .footer-tagline {
   font-size: 0.82rem;
   line-height: 1.75;
-  color: rgba(255,255,255,1);
+  color: rgba(255,255,255,0.55);
   font-weight: 300;
 }
 
@@ -89,15 +91,15 @@
   width: 36px; height: 36px;
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 4px;
-  color: rgba(255,255,255,1);
+  color: rgba(255,255,255,0.7);
   font-size: 0.9rem;
   text-decoration: none;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .footer-socials a:hover {
-  background: var(--red, #e8001d);
-  border-color: var(--red, #e8001d);
+  background: var(--red);
+  border-color: var(--red);
   color: #fff;
   transform: translateY(-3px);
 }
@@ -110,12 +112,12 @@
 }
 
 .footer-col-label {
-  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-family: var(--font-display);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--red, #e8001d);
+  color: var(--red);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -142,7 +144,7 @@
 }
 
 .footer-col ul li a {
-  color: rgba(255,255,255,1);
+  color: rgba(255,255,255,0.65);
   text-decoration: none;
   font-weight: 400;
   transition: color 0.18s ease, padding-left 0.18s ease;
@@ -166,7 +168,7 @@
 }
 
 .soon-tag {
-  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-family: var(--font-display);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -177,9 +179,18 @@
   border-radius: 2px;
 }
 
-/* Contact links */
+/* ─── Contact column ────────────────────────────────────────── */
+
+/* FIX: wrapper div for each contact entry — groups the link and its
+   subtitle label into a structured container */
+.footer-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
 .footer-contact-link {
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.55);
   text-decoration: none;
   font-size: 0.82rem;
   display: flex;
@@ -192,10 +203,18 @@
 
 .footer-contact-link i,
 .footer-location i {
-  color: var(--red, #e8001d);
+  color: var(--red);
   font-size: 0.75rem;
   flex-shrink: 0;
   margin-top: 2px;
+}
+
+/* FIX: explicit class for contact subtitle labels — was unstyled bare <span> */
+.footer-contact-label {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
+  padding-left: 20px; /* aligns under the text, past the icon */
+  line-height: 1.4;
 }
 
 .footer-location {
@@ -227,16 +246,16 @@
   margin: 0 auto;
 }
 
+/* FIX: .footer-copy and .footer-credit had identical declarations —
+   merged into a single rule */
 .footer-copy,
 .footer-credit {
-  font-family: var(--font-display, 'Barlow Condensed', sans-serif);
+  font-family: var(--font-display);
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,1);
+  color: rgba(255,255,255,0.4);
 }
-
-.footer-credit { color: rgba(255,255,255,1); }
 
 /* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 1100px) {

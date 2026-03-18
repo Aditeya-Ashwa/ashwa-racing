@@ -20,6 +20,13 @@
   --ease-expo:    cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/*
+  NOTE: To prevent FOUT (flash of unstyled text) on the brand name,
+  add these preload hints in each page's <head> before the CSS link:
+
+    <link rel="preload" href="../../fonts/SAMAN___.TTF" as="font" type="font/truetype" crossorigin>
+    <link rel="preload" href="../../fonts/XENOTRON.TTF" as="font" type="font/truetype" crossorigin>
+*/
 @font-face {
   font-family: 'Samarkan';
   src: url('../../fonts/SAMAN___.TTF') format('truetype');
@@ -43,7 +50,6 @@
   z-index: 1000;
   background: var(--black);
   width: 100%;
-  /* Subtle shimmer line at very top */
   border-top: 2px solid var(--red);
   box-shadow: 0 1px 0 var(--border), 0 4px 24px rgba(0,0,0,0.45);
 }
@@ -58,7 +64,6 @@
   position: relative;
 }
 
-/* Thin red bottom accent */
 .navbar-bar::after {
   content: '';
   position: absolute;
@@ -80,7 +85,6 @@
 .brand-logo-img {
   height: 44px;
   width: auto;
-  /* Invert so black logo shows white on dark bg */
   filter: invert(1) brightness(1);
   transition: opacity 0.2s ease;
 }
@@ -118,6 +122,7 @@
   gap: 4px;
 }
 
+/* FIX: removed duplicate font-family declaration (was listed twice) */
 .nav-link {
   font-family: var(--font-display);
   font-size: 0.9rem;
@@ -134,7 +139,6 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-family: var(--font-display);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -151,15 +155,10 @@
   transition: transform 0.22s var(--ease-expo);
 }
 
-.nav-link:hover {
-  color: var(--text-nav-h);
-}
+.nav-link:hover { color: var(--text-nav-h); }
 .nav-link:hover::after { transform: scaleX(1); }
 
-/* Mark active page link */
-.nav-link.active {
-  color: var(--text-nav-h);
-}
+.nav-link.active { color: var(--text-nav-h); }
 .nav-link.active::after { transform: scaleX(1); }
 
 /* ─── Dropdown ──────────────────────────────────────────────── */
@@ -167,7 +166,7 @@
   position: relative;
 }
 
-/* Drop buttons reuse .nav-link but ::after is the chevron, not the underline */
+/* Drop button chevron — overrides the underline ::after from .nav-link */
 .nav-drop-btn::after {
   content: '';
   display: inline-block;
@@ -182,7 +181,6 @@
   /* reset absolute positioning inherited from .nav-link::after */
   position: static;
   background: none;
-  height: 7px; width: 7px; /* explicit override */
 }
 
 .nav-drop-btn:hover::after,
@@ -224,7 +222,6 @@
   transform: translateY(0);
 }
 
-/* Narrow single-column panel for small dropdowns (e.g. Team) */
 .dropdown-panel--narrow {
   min-width: 220px;
   grid-template-columns: 1fr;
@@ -296,7 +293,6 @@
   transform-origin: center;
 }
 
-/* X state */
 .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
@@ -349,7 +345,6 @@
   justify-content: space-between;
 }
 
-/* CSS-only chevron for mobile accordion buttons */
 .mob-accordion-btn::after {
   content: '';
   display: inline-block;
@@ -368,7 +363,6 @@
   opacity: 0.9;
 }
 
-/* Mobile accordion panel */
 .mob-accordion {
   max-height: 0;
   overflow: hidden;
@@ -444,23 +438,14 @@
     font-size 0.3s var(--ease-expo);
 }
 
-/* ─── Desktop Hover Dropdown (no click needed) ─────────────── */
-@media (min-width: 961px) {
-
-  /* Show panel when hovering entire dropdown area */
-  .nav-dropdown:hover .dropdown-panel {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  /* Rotate chevron on hover */
-  .nav-dropdown:hover .nav-drop-btn::after {
-    transform: rotate(225deg) translateY(2px);
-    opacity: 1;
-  }
-
-}
+/*
+  FIX: removed CSS :hover dropdown open state for desktop.
+  Previously both CSS :hover AND click JS could open the panel — on touch
+  laptops/2-in-1s this caused the panel to open and immediately close on
+  tap. Dropdown open/close is now handled exclusively by JS (.open class).
+  The JS already handles mouseenter/mouseleave on desktop via the .open
+  class, so no visual behaviour is lost.
+*/
 
 /* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 960px) {

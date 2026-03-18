@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashwa Racing | We Definitely Have A Working Car | RV College of Engineering</title>
+  <meta name="description" content="Ashwa Racing is the premier Formula Student Team of RV College of Engineering. Since 2003, we have been 'almost ready to race'. We design, engineer, and then redesign the same race car every year.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #e8001d;
+      --red-dark: #b5001a;
+      --black: #0a0a0a;
+      --charcoal: #141414;
+      --dark-grey: #1c1c1c;
+      --mid-grey: #3a3a3a;
+      --light-grey: #f2f2f2;
+      --off-white: #f7f6f4;
+      --white: #ffffff;
+      --yellow: #FFD700;
+      --clown-orange: #FF6B1A;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+      --font-clown: 'Comic Neue', cursive;
+      --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E🤡%3C/text%3E%3C/svg%3E") 16 16, auto;
+    }
+
+    /* Confetti Rain */
+    .confetti-container {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    .confetti-piece {
+      position: absolute;
+      width: 10px; height: 10px;
+      top: -20px;
+      animation: confettiFall linear infinite;
+      opacity: 0.85;
+    }
+    @keyframes confettiFall {
+      0% { transform: translateY(-20px) rotate(0deg) translateX(0); opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateY(105vh) rotate(720deg) translateX(50px); opacity: 0; }
+    }
+
+    /* ── Shared Tokens ── */
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label::before {
+      content: '🎪';
+      font-size: 1rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .section-heading em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    /* ── Button System ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      padding: 13px 28px;
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid var(--red);
+      border-radius: 3px;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      animation: wiggle 2s ease-in-out infinite;
+    }
+    .btn-primary:hover {
+      background: var(--red-dark);
+      border-color: var(--red-dark);
+      transform: translateY(-2px) rotate(3deg);
+      box-shadow: 0 8px 24px rgba(232,0,29,0.35);
+    }
+    @keyframes wiggle {
+      0%, 90%, 100% { transform: rotate(0deg); }
+      92% { transform: rotate(-2deg); }
+      96% { transform: rotate(2deg); }
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      background: transparent;
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.35);
+      border-radius: 3px;
+      transition: all 0.2s ease;
+    }
+    .btn-ghost:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--red);
+      border-bottom: 2px solid var(--red);
+      padding-bottom: 3px;
+      transition: gap 0.2s ease, opacity 0.2s ease;
+    }
+    .btn-line:hover { gap: 16px; opacity: 0.8; }
+    .split-section--dark .btn-line { color: var(--white); border-color: rgba(255,255,255,0.4); }
+
+    /* ═══ HERO ═══ */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 580px;
+      max-height: 1000px;
+      background: var(--black);
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(232,0,29,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(255,165,0,0.08) 0%, transparent 40%),
+        var(--black);
+    }
+
+    /* The actual car reveal "image" */
+    .hero-car-reveal {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    .car-placeholder {
+      font-size: clamp(8rem, 20vw, 18rem);
+      opacity: 0.12;
+      filter: blur(2px);
+      animation: carBob 3s ease-in-out infinite;
+      user-select: none;
+    }
+    @keyframes carBob {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+    }
+
+    /* Grid overlay */
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 2;
+      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+    }
+
+    .hero-stripe {
+      position: absolute; top: 0; right: 10%; z-index: 3;
+      width: 3px; height: 100%;
+      background: var(--red);
+    }
+
+    .hero-content {
+      position: relative; z-index: 4;
+      padding: 0 7% 9vh;
+      max-width: 860px;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+    }
+    .eyebrow-dash {
+      display: block; width: 28px; height: 2px;
+      background: var(--red); flex-shrink: 0;
+    }
+    .hero-post-tag { color: var(--red); font-weight: 700; }
+    .hero-post-sep { color: rgba(255,255,255,0.25); }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 0.92;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .hero-subtitle {
+      font-family: var(--font-clown);
+      font-size: clamp(0.9rem, 2vw, 1.3rem);
+      color: rgba(255,255,255,0.4);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .hero-title .highlight { color: var(--red); }
+    .hero-title .strikethrough { text-decoration: line-through; opacity: 0.35; font-size: 0.7em; }
+
+    .hero-disclaimer {
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.35);
+      font-style: italic;
+      font-family: var(--font-clown);
+      margin-bottom: 28px;
+      max-width: 540px;
+      border-left: 2px solid rgba(255,255,255,0.1);
+      padding-left: 14px;
+    }
+    .hero-disclaimer strong { color: rgba(255,107,26,0.8); }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 48px; left: 7%;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.3);
+    }
+    .scroll-track { width: 40px; height: 1px; background: rgba(255,255,255,0.15); position: relative; overflow: hidden; }
+    .scroll-thumb {
+      position: absolute; top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: var(--red);
+      animation: scrollMove 2s ease-in-out infinite;
+    }
+    @keyframes scrollMove { 0% { left: -100%; } 50% { left: 0%; } 100% { left: 100%; } }
+
+    /* Floating achievement badges */
+    .hero-badge {
+      position: absolute;
+      z-index: 5;
+      background: rgba(232,0,29,0.15);
+      border: 1px solid rgba(232,0,29,0.3);
+      backdrop-filter: blur(8px);
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      animation: floatBadge 4s ease-in-out infinite;
+    }
+    .hero-badge .badge-emoji { font-size: 1.2rem; margin-right: 6px; }
+    .hero-badge-1 { top: 20%; right: 14%; animation-delay: 0s; }
+    .hero-badge-2 { top: 35%; right: 8%; animation-delay: 1.2s; }
+    .hero-badge-3 { top: 50%; right: 18%; animation-delay: 2.4s; }
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ═══ TICKER ═══ */
+    .ticker-strip {
+      background: var(--red);
+      padding: 14px 0;
+      overflow: hidden;
+      user-select: none;
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 25s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-track span {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: 0 28px;
+    }
+    .ticker-sep { color: rgba(255,255,255,0.4) !important; padding: 0 4px !important; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .ticker-strip:hover .ticker-track { animation-play-state: paused; }
+
+    /* ═══ SPLIT SECTIONS ═══ */
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+      overflow: hidden;
+    }
+    .split-section--dark {
+      background: var(--charcoal);
+    }
+    .split-section--dark .section-heading,
+    .split-section--dark p { color: var(--white); }
+    .split-section--dark p { opacity: 0.6; }
+    .split-section--reverse { direction: rtl; }
+    .split-section--reverse > * { direction: ltr; }
+
+    .split-media {
+      position: relative;
+      overflow: hidden;
+      background: var(--dark-grey);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .split-media img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s var(--ease-expo);
+      filter: saturate(0.85);
+    }
+    .split-section:hover .split-media img { transform: scale(1.03); filter: saturate(1); }
+
+    /* Fake loading state for the car image */
+    .split-media--loading {
+      background: #111;
+      min-height: 500px;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .split-media--loading .loading-emoji {
+      font-size: 5rem;
+      animation: spin 3s linear infinite;
+    }
+    .split-media--loading .loading-text {
+      font-family: var(--font-clown);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .split-media-tag {
+      position: absolute;
+      bottom: 24px; left: 24px;
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 2px;
+    }
+
+    .split-content {
+      padding: clamp(48px, 7vw, 96px) clamp(32px, 6vw, 72px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .split-content p {
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
+      line-height: 1.75;
+      color: #555;
+      margin-bottom: 20px;
+      font-weight: 300;
+      max-width: 480px;
+    }
+    .split-content p.footnote {
+      font-family: var(--font-clown);
+      font-size: 0.75rem;
+      color: #aaa;
+      font-style: italic;
+    }
+    .split-section--dark .split-content p.footnote { color: rgba(255,255,255,0.25); }
+
+    /* ═══ STATS BAND ═══ */
+    .stats-band {
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 7%;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 48px;
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .stat-num sup { font-size: 0.55em; color: var(--red); vertical-align: super; }
+    .stat-label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 8px;
+    }
+    .stat-sublabel {
+      font-family: var(--font-clown);
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.15);
+      font-style: italic;
+      margin-top: 4px;
+      max-width: 120px;
+      text-align: center;
+    }
+    .stat-divider { width: 1px; height: 52px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
+
+    /* ═══ SPONSORS ═══ */
+    .sponsors-section {
+      background: var(--off-white);
+      padding: 100px 7%;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .sponsors-inner { max-width: 1100px; margin: 0 auto; }
+    .sponsors-header { margin-bottom: 56px; max-width: 560px; }
+    .sponsors-header p { font-size: 0.95rem; line-height: 1.7; color: #555; font-weight: 300; }
+    .sponsors-header p.footnote { font-family: var(--font-clown); font-size: 0.75rem; font-style: italic; color: #aaa; margin-top: 8px; }
+
+    .sponsors-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 40px 32px;
+      align-items: center;
+      justify-items: center;
+      margin-bottom: 48px;
+    }
+    .sponsors-logos img {
+      max-height: 52px;
+      max-width: 150px;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.55);
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+    .sponsors-logos img:hover { filter: grayscale(0%) opacity(1); transform: scale(1.08) rotate(-2deg); }
+
+    .partner-callout {
+      padding-top: 40px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* ═══ FOCUS SECTION ═══ */
+    .focus-section {
+      background: var(--charcoal);
+      padding: 100px 7%;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .focus-header { position: sticky; top: 100px; }
+    .focus-header .section-heading { color: var(--white); }
+    .focus-header p { font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.45); font-weight: 300; margin-bottom: 32px; }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .focus-card {
+      background: #1e1e1e;
+      padding: 28px 24px;
+      text-decoration: none;
+      color: var(--white);
+      position: relative;
+      transition: background 0.25s ease, transform 0.3s var(--ease-expo);
+      border-left: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 180px;
+    }
+    .focus-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .focus-card:hover { background: #252525; transform: translateY(-4px); border-left-color: var(--red); }
+    .focus-card:hover::before { transform: scaleX(1); }
+
+    .focus-card-num {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .focus-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .focus-card p {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+      flex: 1;
+    }
+    .focus-card .real-job {
+      font-family: var(--font-clown);
+      font-size: 0.7rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.2);
+      margin-top: 4px;
+    }
+    .focus-arrow { font-size: 0.75rem; color: var(--red); opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease; margin-top: auto; }
+    .focus-card:hover .focus-arrow { opacity: 1; transform: translateX(4px); }
+
+    /* ═══ COUNTDOWN SECTION ═══ */
+    .countdown-section {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0008 50%, #0a0a0a 100%);
+      padding: 80px 7%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .countdown-section::before {
+      content: '🏎️';
+      position: absolute;
+      font-size: 20rem;
+      opacity: 0.03;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .countdown-label {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .countdown-label::before { content: '🎪'; font-size: 1rem; }
+    .countdown-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .countdown-subhead {
+      font-family: var(--font-clown);
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.3);
+      font-style: italic;
+      margin-bottom: 40px;
+    }
+    .countdown-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 28px;
+    }
+    .countdown-num {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      color: var(--red);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown-unit-label {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-top: 6px;
+    }
+    .countdown-colon {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      color: rgba(255,255,255,0.1);
+      line-height: 1;
+      animation: colonBlink 1s step-end infinite;
+      padding-bottom: 20px;
+    }
+    @keyframes colonBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    .countdown-fine-print {
+      font-family: var(--font-clown);
+      font-size: 0.7rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.15);
+      margin-top: 28px;
+    }
+
+    /* ═══ PROGRESS TRACKER ═══ */
+    .progress-section {
+      background: var(--off-white);
+      padding: 100px 7%;
+    }
+    .progress-inner { max-width: 900px; margin: 0 auto; }
+    .progress-inner .section-label { color: var(--red); }
+    .progress-inner .section-heading { color: var(--black); }
+    .progress-subhead {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 48px;
+      font-weight: 300;
+      font-style: italic;
+      font-family: var(--font-clown);
+    }
+    .progress-list { display: flex; flex-direction: column; gap: 20px; }
+    .progress-item { background: var(--white); border: 1px solid rgba(0,0,0,0.07); padding: 20px 24px; border-radius: 2px; }
+    .progress-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .progress-name {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+    .progress-pct {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--red);
+    }
+    .progress-bar-bg { height: 6px; background: rgba(0,0,0,0.08); border-radius: 3px; overflow: hidden; }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--red), #ff6b1a);
+      border-radius: 3px;
+      transition: width 1.5s var(--ease-expo);
+    }
+    .progress-note {
+      font-family: var(--font-clown);
+      font-size: 0.72rem;
+      font-style: italic;
+      color: #aaa;
+      margin-top: 6px;
+    }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 9998;
+      background: var(--charcoal);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-left: 3px solid var(--red);
+      padding: 16px 20px;
+      max-width: 300px;
+      opacity: 0;
+      transform: translateX(120%);
+      transition: opacity 0.4s ease, transform 0.4s var(--ease-expo);
+      border-radius: 2px;
+    }
+    .toast.show { opacity: 1; transform: translateX(0); }
+    .toast-title {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 4px;
+    }
+    .toast-body {
+      font-family: var(--font-clown);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 1100px) {
+      .focus-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 960px) {
+      .focus-section { grid-template-columns: 1fr; gap: 48px; }
+      .focus-header { position: static; }
+      .split-section { grid-template-columns: 1fr; min-height: unset; }
+      .split-media { height: 55vw; max-height: 440px; min-height: 300px; }
+      .split-section--reverse { direction: ltr; }
+      .stats-band { gap: 32px 0; }
+      .stat-item { padding: 0 28px; }
+      .stat-divider { display: none; }
+      .hero-badge { display: none; }
+      .countdown-grid { gap: 0; }
+      .countdown-unit { padding: 0 16px; }
+    }
+    @media (max-width: 640px) {
+      .hero-content { padding: 0 5% 10vh; }
+      .hero-scroll { display: none; }
+      .hero-title { font-size: clamp(2rem, 9vw, 3.5rem); }
+      .focus-grid { grid-template-columns: 1fr; }
+      .sponsors-logos { gap: 28px 20px; }
+      .split-content { padding: 40px 5%; }
+      .stats-band { flex-direction: column; gap: 28px; padding: 48px 7%; }
+      .stat-item { padding: 0; }
+      .ticker-track span { padding: 0 18px; font-size: 0.75rem; }
+      .progress-section { padding: 60px 5%; }
+      .toast { max-width: 260px; bottom: 16px; right: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Confetti -->
+  <div class="confetti-container" id="confetti"></div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <div class="toast-title">🔔 Workshop Update</div>
+    <div class="toast-body" id="toast-body">Suspension geometry has been "finalised" for the 12th time this semester.</div>
+  </div>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-car-reveal"><div class="car-placeholder">🏎️</div></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-stripe"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dash"></span>
+        <span class="hero-post-tag">Est. 2003 · Still Trying</span>
+        <span class="hero-post-sep">·</span>
+        <span style="color:rgba(255,255,255,0.35)">RV College of Engineering</span>
+      </div>
+      <h1 class="hero-title">
+        Ashwa<br>
+        <span class="highlight">Racing</span><br>
+        <span class="strikethrough">Formula 1</span>
+      </h1>
+      <p class="hero-subtitle">"The car is almost ready." — Every Ashwa member, every year since 2003.</p>
+      <p class="hero-disclaimer">
+        Disclaimer: No actual racing occurred during the production of this website. 
+        <strong>The car shown on our Instagram was photographed at a 97° angle specifically to hide the missing rear wing.</strong>
+        Any resemblance to a functional race car is purely coincidental.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#" class="btn-primary" onclick="return false;">Watch Us Qualify (Someday)</a>
+        <a href="#" class="btn-ghost" onclick="return false;">See Our Excuses <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-badge hero-badge-1"><span class="badge-emoji">🏆 . Cause Emojis feels good witch</span>P2 · Cost Presentation · 2025</div>
+    <div class="hero-badge hero-badge-2"><span class="badge-emoji">📊 . Cause Emojis feels good witch</span>Top 5 · Engineering Design*</div>
+    <div class="hero-badge hero-badge-3"><span class="badge-emoji">⚙️ . Cause Emojis feels good witch</span>Wheel falls: 0 · (Officially)</div>
+
+    <div class="hero-scroll">
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
+      <span>SCROLL (please, we need you)</span>
+    </div>
+  </section>
+
+  <div class="ticker-strip" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Formula Bharat 2026 — We Finished!</span>
+      <span class="ticker-sep">◆</span>
+      <span>Top 5 · Engineering Design (We Count Ties Differently)</span>
+      <span class="ticker-sep">◆</span>
+      <span>2nd Place · Business Presentation 🤑</span>
+      <span class="ticker-sep">◆</span>
+      <span>23 Years of Promising "This Year Will Be Different"</span>
+      <span class="ticker-sep">◆</span>
+      <span>45+ Sponsors Who Still Return Our Calls</span>
+      <span class="ticker-sep">◆</span>
+      <span>Brake Bias: Unknown. Vibes: Immaculate.</span>
+      <span class="ticker-sep">◆</span>
+      <span>Formula Bharat 2026 — We Finished!</span>
+      <span class="ticker-sep">◆</span>
+      <span>Top 5 · Engineering Design (We Count Ties Differently)</span>
+      <span class="ticker-sep">◆</span>
+      <span>2nd Place · Business Presentation 🤑</span>
+      <span class="ticker-sep">◆</span>
+      <span>23 Years of Promising "This Year Will Be Different"</span>
+      <span class="ticker-sep">◆</span>
+      <span>45+ Sponsors Who Still Return Our Calls</span>
+      <span class="ticker-sep">◆</span>
+      <span>Brake Bias: Unknown. Vibes: Immaculate.</span>
+      <span class="ticker-sep">◆</span>
+    </div>
+  </div>
+
+  <section class="split-section" id="about-preview">
+    <div class="split-media">
+      <img src="assets/images/team/Costwin.jpg" alt="Ashwa Racing Cost Presentation win Formula Bharat 2025" loading="lazy"
+           onerror="this.style.display='none'; this.parentElement.classList.add('split-media--loading'); this.parentElement.innerHTML='<div class=\'loading-emoji\'>⚙️</div><div class=\'loading-text\'>Car Photo Loading...<br>(Like the actual car)</div>'">
+      <div class="split-media-tag">2nd Place Business Pres. · The One Event We Can Drive In</div>
+    </div>
+    <div class="split-content">
+      <div class="section-label">ABOUT US (OR OUR MYTHOLOGY)</div>
+      <h2 class="section-heading">Built to<br><em>Complain.</em><br>Made to<br>"Iterate."</h2>
+      <p>
+        Ashwa Racing is the <em>premier*</em> Formula Student team from RV College of Engineering —
+        dedicated to designing, re-designing, over-designing, and then finally not manufacturing
+        any race car at all. With over two decades of innovation (and two decades of the same
+        freshman orientation speech), Ashwa remains one of India's most <em>enthusiastically average</em>
+        collegiate motorsports teams.
+      </p>
+      <p>
+        We once moved a suspension pickup point 3mm and called it "a complete rearchitecture."
+        Our design report is 247 pages. The car weighs roughly the same as the report.
+      </p>
+      <p class="footnote">* Premier in the sense that we are the only FSAE team at this specific college on this specific street.</p>
+      <a href="#" class="btn-line" onclick="return false;">Our Legacy (Mostly Memes) <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <section class="stats-band">
+    <div class="stat-item">
+      <span class="stat-num">20<sup>+</sup></span>
+      <span class="stat-label">Years of "Almost"</span>
+      <div class="stat-sublabel">years of consecutive "this year's our year"</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">45<sup>+</sup></span>
+      <span class="stat-label">Active Sponsors*</span>
+      <div class="stat-sublabel">*active = they've seen our name at least once</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">P6</span>
+      <span class="stat-label">Overall · FB26</span>
+      <div class="stat-sublabel">out of more than 6. we think.</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">∞</span>
+      <span class="stat-label">Design Iterations</span>
+      <div class="stat-sublabel">the CAD file has 2,847 suppressed features</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">9</span>
+      <span class="stat-label">Subsystems</span>
+      <div class="stat-sublabel">communicating via: "bro did u see my msg"</div>
+    </div>
+  </section>
+
+  <section class="split-section split-section--dark split-section--reverse" id="cars-preview">
+    <div class="split-media">
+      <img src="assets/images/prototypes/XX5C.jpg" alt="Ashwa Racing Formula Student car XX5C" loading="lazy"
+           onerror="this.style.display='none'; this.parentElement.classList.add('split-media--loading'); this.parentElement.innerHTML='<div class=\'loading-emoji\'>🔧</div><div class=\'loading-text\'>Image of car.<br>Car exists. Probably.</div>'">
+      <div class="split-media-tag">RZ-XX5C · Running in anger · Or maybe just running from us</div>
+    </div>
+    <div class="split-content">
+      <div class="section-label">ENGINEERING (OR WHAT WE CALL IT)</div>
+      <h2 class="section-heading">Every Car.<br><em>A New</em><br>Excuse.</h2>
+      <p>
+        Each Ashwa generation represents an "engineering progression" — which in practice means
+        we deleted last year's entire suspension geometry at 2am, two weeks before scrutineering,
+        and called it "a brave design philosophy pivot."
+      </p>
+      <p>
+        From chassis to telemetry, every system is student-built, student-broken,
+        student-hotfix-patched with zip ties at 4am, and then competition-proven (results vary).
+        Our ECU has been "almost configured" since October.
+      </p>
+      <p class="footnote">† RZ-XX5C did complete Endurance. We're not over it. We never will be.</p>
+      <a href="#" class="btn-line" onclick="return false;">View All Prototypes (And Their Trauma) <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <section class="countdown-section">
+    <div class="countdown-label">THE MOST IMPORTANT COUNTER ON THIS PAGE</div>
+    <h2 class="countdown-heading">Time Since Last<br><span style="color:var(--red);">"Final" Design Freeze</span></h2>
+    <p class="countdown-subhead">spoiler: it was not final.</p>
+    <div class="countdown-grid">
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-days">000</div>
+        <div class="countdown-unit-label">Days</div>
+      </div>
+      <div class="countdown-colon">:</div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-hours">00</div>
+        <div class="countdown-unit-label">Hours</div>
+      </div>
+      <div class="countdown-colon">:</div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-mins">00</div>
+        <div class="countdown-unit-label">Minutes</div>
+      </div>
+      <div class="countdown-colon">:</div>
+      <div class="countdown-unit">
+        <div class="countdown-num" id="cd-secs">00</div>
+        <div class="countdown-unit-label">Seconds</div>
+      </div>
+    </div>
+    <p class="countdown-fine-print">* Design freeze date set retrospectively. Original date was "sometime in November". None can confirm.</p>
+  </section>
+
+  <section class="progress-section">
+    <div class="progress-inner">
+      <div class="section-label">LIVE BUILD STATUS (UPDATED WEEKLY — OR WHEN CONVENIENT)</div>
+      <h2 class="section-heading">Car Build<br><em>Progress</em></h2>
+      <p class="progress-subhead">Realtime* figures from the workshop. (*Last synced: "We'll update it soon bro")</p>
+      <div class="progress-list">
+
+        <div class="progress-item">
+          <div class="progress-top">
+            <div class="progress-name">🔧 Chassis Fabrication</div>
+            <div class="progress-pct">94%</div>
+          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0" data-width="94"></div></div>
+          <div class="progress-note">Has been 94% for 3 months. The last 6% is "just some welding". The welder is "available next week".</div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-top">
+            <div class="progress-name">⚡ Electrical Harness</div>
+            <div class="progress-pct">67%</div>
+          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0" data-width="67"></div></div>
+          <div class="progress-note">Went from 80% back to 67% after someone "just changed one connector". There are 340 connectors.</div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-top">
+            <div class="progress-name">📐 Suspension Geometry</div>
+            <div class="progress-pct">108%</div>
+          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0" data-width="100"></div></div>
+          <div class="progress-note">108% because it has been redesigned so thoroughly we are now beyond completion into some kind of transcendent automotive geometry. Camber curve looks sick though.</div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-top">
+            <div class="progress-name">🧠 ECU Configuration</div>
+            <div class="progress-pct">12%</div>
+          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0" data-width="12"></div></div>
+          <div class="progress-note">Bro has been "looking into it". That was in August.</div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-top">
+            <div class="progress-name">📄 Design Report</div>
+            <div class="progress-pct">3%</div>
+          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0" data-width="3"></div></div>
+          <div class="progress-note">247 pages. Font size 9.5. Margin 0.4 inches. "Almost done" since October. Team captain has not slept.</div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-top">
+            <div class="progress-name">🚗 Actually Driving The Car</div>
+            <div class="progress-pct">?%</div>
+          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0" data-width="5"></div></div>
+          <div class="progress-note">Blocked by: chassis, harness, ECU, engine, brakes, suspension, driver seatfit, scrutineering paperwork, and "vibes".</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sponsors-section">
+    <div class="sponsors-inner">
+      <div class="sponsors-header">
+        <div class="section-label">PARTNERS (THANK YOU FOR YOUR PATIENCE)</div>
+        <h2 class="section-heading">Our <em>Sponsors</em></h2>
+        <p>Industry leaders and technical partners who believed in us enough to give us free stuff and have been gently wondering when the car will finish ever since.</p>
+        <p class="footnote">Several sponsors listed below have asked to remain anonymous. Specifically, the ones that received an invoice followed by a 9-month silence.</p>
+      </div>
+
+      <div class="sponsors-logos">
+        <img src="assets/images/sponsors/infineon.svg" alt="Infineon Technologies">
+        <img src="assets/images/sponsors/bosch.svg" alt="Bosch GmbH">
+        <img src="assets/images/sponsors/adani.svg" alt="Adani Group Ltd.">
+        <img src="assets/images/sponsors/dynamatics.svg" alt="Dynamatics Technologies Ltd.">
+        <img src="assets/images/sponsors/motul.svg" alt="Motul Group">
+        <img src="assets/images/sponsors/lapp.svg" alt="LAPP Group">
+        <img src="assets/images/sponsors/analogdevices.svg" alt="Analog Devices">
+        <img src="assets/images/sponsors/vrl.svg" alt="VRL Logistics Ltd.">
+        <img src="assets/images/sponsors/uniflex.svg" alt="Uniflex">
+        <img src="assets/images/sponsors/dmgmori.svg" alt="DMGMORI">
+        <img src="assets/images/sponsors/skf.svg" alt="SKF">
+        <img src="assets/images/sponsors/henkel.svg" alt="Henkel">
+      </div>
+
+      <a href="#" class="btn-line" onclick="return false;" style="margin-bottom: 60px;">View All 45+ Sponsors (And Their Unanswered Emails) <i class="fas fa-arrow-right"></i></a>
+
+      <div class="partner-callout">
+        <h3 style="font-family:var(--font-display);font-size:2.4rem;font-weight:800;text-transform:uppercase;color:var(--black);line-height:1;margin-bottom:16px;">
+          Become a <em style="color:var(--red);font-style:italic;">Brave</em> Partner</h3>
+        <p style="color:#666;font-size:1rem;line-height:1.6;margin-bottom:12px;max-width:600px;">
+          Join our ecosystem of "engineering excellence." Your brand will appear on a car that runs for approximately 22 kilometres before a suspension rod decides it has had enough.
+          Offer includes: one (1) photo of your logo on the car, access to our very energetic 3am build sessions, and a heartfelt "bro we couldn't have done it without you" at the awards dinner.
+        </p>
+        <p style="color:#aaa;font-size:0.75rem;line-height:1.6;margin-bottom:24px;max-width:540px;font-family:var(--font-clown);font-style:italic;">
+          * Sponsorship acknowledgement via Instagram story may take 4-8 weeks. Brand visibility at competition subject to car clearing technical inspection. Past performance is not indicative of future results. Ashwa Racing is not liable for any existential crises triggered by proximity to our design review sessions.
+        </p>
+        <a href="#" class="btn-line" onclick="return false;">Sponsorship Details (PDF is 63 Slides) <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="focus-section">
+    <div class="focus-header">
+      <div class="section-label">SUBSYSTEMS</div>
+      <h2 class="section-heading">Departments<br><em>That Blame</em><br>Each Other</h2>
+      <p>Our team operates across 9 multidisciplinary domains, each firmly believing their subsystem is the only one doing real work.</p>
+      <a href="#" class="btn-line" onclick="return false;">See Org Chart (It's Complicated) <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="focus-grid">
+
+      <a href="#" class="focus-card" onclick="return false;">
+        <div class="focus-card-num">01</div>
+        <h3>Electrical &amp; Testing</h3>
+        <p>Wiring, rewiring, unwiring, rewiring again. Sensor integration that works great on the bench. Testing means plugging it in and hoping.</p>
+        <div class="real-job">actual job: sending "is the harness done" to 4 different people at midnight</div>
+        <i class="fas fa-arrow-right focus-arrow"></i>
+      </a>
+
+      <a href="#" class="focus-card" onclick="return false;">
+        <div class="focus-card-num">02</div>
+        <h3>Suspension &amp; Admin</h3>
+        <p>Kinematics optimised 11 times. Geometry "finalised" in September, October, November, December, and February. Documentation: theoretically exists.</p>
+        <div class="real-job">actual job: explaining why the geometry changed again</div>
+        <i class="fas fa-arrow-right focus-arrow"></i>
+      </a>
+
+      <a href="#" class="focus-card" onclick="return false;">
+        <div class="focus-card-num">03</div>
+        <h3>Chassis &amp; Workshop</h3>
+        <p>Structural frame design. Fabrication supervision involving four people watching one person weld. "Resource management" means hiding the last roll of aluminum tape.</p>
+        <div class="real-job">actual job: finding the angle grinder that someone borrowed in October</div>
+        <i class="fas fa-arrow-right focus-arrow"></i>
+      </a>
+
+      <a href="#" class="focus-card" onclick="return false;">
+        <div class="focus-card-num">04</div>
+        <h3>Aerodynamics</h3>
+        <p>CFD-driven aero that produces 73N of downforce at 80 km/h. The car has not yet reached 80 km/h. A beautiful theoretical exercise.</p>
+        <div class="real-job">actual job: making renders that look incredible on instagram</div>
+        <i class="fas fa-arrow-right focus-arrow"></i>
+      </a>
+
+      <a href="#" class="focus-card" onclick="return false;">
+        <div class="focus-card-num">05</div>
+        <h3>Brakes &amp; Logistics</h3>
+        <p>Brake modelling, brake testing, brake pad procurement debate that lasted 6 weeks. Transport planning that involves one very stressed person and one minibus.</p>
+        <div class="real-job">actual job: arguing about brake bias. always arguing about brake bias.</div>
+        <i class="fas fa-arrow-right focus-arrow"></i>
+      </a>
+
+      <a href="#" class="focus-card" onclick="return false;">
+        <div class="focus-card-num">06</div>
+        <h3>IT Systems</h3>
+        <p>Telemetry that logs data no one has time to analyse. Internal tooling that only the person who built it can use. Digital infrastructure: three Google Drives and a shared folder named "FINAL_v2_ACTUAL_FINAL".</p>
+        <div class="real-job">actual job: fixing the website at 2am after someone "just updated one line"</div>
+        <i class="fas fa-arrow-right focus-arrow"></i>
+      </a>
+
+      <a href="#" class="focus-card" onclick="return false;">
+        <div class="focus-card-num">07</div>
+        <h3>Sponsorship, Marketing &amp; PR</h3>
+        <p>Industry outreach, branding, and the art of sending LinkedIn messages to engineers at Bosch hoping they forward it to someone with a budget. Media strategy: post when the car looks shiny.</p>
+        <div class="real-job">actual job: writing follow-up emails with the subject "just circling back 🙂"</div>
+        <i class="fas fa-arrow-right focus-arrow"></i>
+      </a>
+
+      <a href="#" class="focus-card" onclick="return false;">
+        <div class="focus-card-num">08</div>
+        <h3>Finance</h3>
+        <p>Budgeting, procurement, and the quarterly exercise of discovering that titanium costs more than expected. Financial governance: a spreadsheet that is technically accurate as of three weeks ago.</p>
+        <div class="real-job">actual job: explaining to the captain why we're ₹40,000 over on fasteners. again.</div>
+        <i class="fas fa-arrow-right focus-arrow"></i>
+      </a>
+
+      <a href="#" class="focus-card" onclick="return false;">
+        <div class="focus-card-num">09</div>
+        <h3>Drivetrain &amp; HR</h3>
+        <p>Powertrain integration, performance tuning, and "team development" which mostly means making sure no one quits before competition. Engine breaks in. Team holds together. Barely.</p>
+        <div class="real-job">actual job: motivational messages in the group chat that nobody reacts to</div>
+        <i class="fas fa-arrow-right focus-arrow"></i>
+      </a>
+
+      <a href="#" class="focus-card" onclick="return false;">
+        <div class="focus-card-num">10</div>
+        <h3>Engine</h3>
+        <p>Engine design, tuning, and thermal management for maximum power. The engine dyno session has been "scheduled for next weekend" since October. It is currently March.</p>
+        <div class="real-job">actual job: googling "CBR600RR idle issues" at 11pm the night before dynamic events</div>
+        <i class="fas fa-arrow-right focus-arrow"></i>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Shitty ass footer for a shit dev -->
+  <footer style="background:var(--black);padding:60px 7%;text-align:center;">
+    <p style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:800;text-transform:uppercase;color:var(--white);letter-spacing:0.05em;margin-bottom:12px;">
+      ASHWA RACING · EST. 2003 · <em style="color:var(--red)">STILL GOING</em>
+    </p>
+    <p style="font-family:var(--font-clown);font-size:0.85rem;color:rgba(255,255,255,0.25);font-style:italic;margin-bottom:24px;">
+      "Every lap is a learning experience." — us, about the lap we didn't complete.
+    </p>
+    <p style="font-family:var(--font-clown);font-size:0.65rem;color:rgba(255,255,255,0.1);font-style:italic;max-width:600px;margin:0 auto;line-height:1.8;">
+      This page is a work of satire produced with love, deep respect, and the specific kind of humour that only survives three consecutive all-nighters in a workshop that smells of cutting fluid and regret.
+      Happy April Fools, Ashwa. 🏎️🤡 Go build the car.
+    </p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const confettiContainer = document.getElementById("confetti");
+    const colors = ["#e8001d","#FF6B1A","#FFD700","#ffffff","#ff69b4","#00cfff"];
+    const shapes = ["■","●","▲","★","◆"];
+
+    function makeConfetti() {
+      const el = document.createElement("div");
+      el.className = "confetti-piece";
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const shape = shapes[Math.floor(Math.random() * shapes.length)];
+      const size = Math.random() * 10 + 6;
+      const left = Math.random() * 100;
+      const dur = Math.random() * 4 + 4;
+      const delay = Math.random() * 8;
+      el.textContent = shape;
+      el.style.cssText = `left:${left}%;font-size:${size}px;color:${color};animation-duration:${dur}s;animation-delay:${delay}s;`;
+      confettiContainer.appendChild(el);
+      setTimeout(() => el.remove(), (dur + delay) * 1000);
+    }
+    setInterval(makeConfetti, 300);
+    for (let i = 0; i < 20; i++) makeConfetti();
+
+    const freezeDate = new Date("2024-09-15T09:00:00");
+    function updateCountdown() {
+      const now = new Date();
+      const diff = now - freezeDate;
+      const days   = Math.floor(diff / 86400000);
+      const hours  = Math.floor((diff % 86400000) / 3600000);
+      const mins   = Math.floor((diff % 3600000) / 60000);
+      const secs   = Math.floor((diff % 60000) / 1000);
+      document.getElementById("cd-days").textContent  = String(days).padStart(3,"0");
+      document.getElementById("cd-hours").textContent = String(hours).padStart(2,"0");
+      document.getElementById("cd-mins").textContent  = String(mins).padStart(2,"0");
+      document.getElementById("cd-secs").textContent  = String(secs).padStart(2,"0");
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const progressObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fill = entry.target.querySelector(".progress-bar-fill");
+          if (fill) {
+            const w = fill.dataset.width;
+            setTimeout(() => { fill.style.width = Math.min(w, 100) + "%"; }, 200);
+          }
+          progressObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll(".progress-item").forEach(el => progressObserver.observe(el));
+
+    const revealTargets = document.querySelectorAll(".focus-card, .stat-item, .split-content, .sponsors-logos img, .progress-item");
+    revealTargets.forEach((el, i) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(24px)";
+      el.style.transition = `opacity 0.55s cubic-bezier(0.16,1,0.3,1) ${i*0.04}s, transform 0.55s cubic-bezier(0.16,1,0.3,1) ${i*0.04}s`;
+    });
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = "1";
+          e.target.style.transform = "translateY(0)";
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    revealTargets.forEach(el => revealObserver.observe(el));
+
+    const toasts = [
+      "Suspension geometry has been 'finalised' for the 12th time this semester.",
+      "🔔 The ECU is 'almost configured'. Has been since August.",
+      "📋 Design report submission: extended. Again. By popular demand.",
+      "⚠️ The angle grinder is missing. Workshop meeting called.",
+      "🏆 The business presentation trophy has been polished 4 times this week.",
+      "🔋 Harness routing 'approved'. Pending 1 more review. And then 1 more.",
+      "☕ Workshop snacks fund: depleted. Morale: somehow still high.",
+      "📐 Chassis jig has moved 3mm. Designer: 'it's fine'.",
+      "🚗 First shakedown: 'definitely happening this weekend'.",
+      "📸 Instagram post scheduled. Car not shown from that angle specifically.",
+    ];
+    let toastIdx = 0;
+    const toastEl = document.getElementById("toast");
+    const toastBody = document.getElementById("toast-body");
+
+    function showToast() {
+      toastBody.textContent = toasts[toastIdx % toasts.length];
+      toastIdx++;
+      toastEl.classList.add("show");
+      setTimeout(() => { toastEl.classList.remove("show"); }, 4500);
+    }
+
+    setTimeout(showToast, 3000);
+    setInterval(showToast, 11000);
+
+    /* ── Reduced motion ── */
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      confettiContainer.style.display = "none";
+      document.querySelectorAll(".ticker-track").forEach(el => el.style.animation = "none");
+    }
+  </script>
+</body>
+</html>

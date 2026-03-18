@@ -20,6 +20,10 @@ let heroPosts    = [];
 let heroIndex    = 0;
 let heroTimer    = null;
 
+// FIX: track whether this is the very first content render so we
+// skip the exit transition (no fallback content to fade out against)
+let isFirstRender = true;
+
 const HERO_MAX      = 5;
 const HERO_INTERVAL = 7500;
 
@@ -59,25 +63,37 @@ function renderContent(post) {
   const tag  = post.tags?.length ? post.tags[0] : "Latest";
   const slug = encodeURIComponent(post.slug || "");
 
+  // FIX: skip exit animation on very first render — there's nothing
+  // meaningful to fade out yet, and it caused the fallback to ghost-flash
+  if (isFirstRender) {
+    isFirstRender = false;
+    contentEl.innerHTML = buildContentHTML(tag, post, slug);
+    return;
+  }
+
   contentEl.classList.add("hero-content--exit");
 
   setTimeout(() => {
-    contentEl.innerHTML = `
-      <div class="hero-eyebrow">
-        <span class="eyebrow-dash"></span>
-        <span class="hero-post-tag">${tag}</span>
-        <span class="hero-post-sep">·</span>
-        <span class="hero-post-date">${fmtDate(post.date)}</span>
-      </div>
-      <h1 class="hero-post-title">${post.title}</h1>
-      ${post.excerpt ? `<p class="hero-post-excerpt">${post.excerpt}</p>` : ""}
-      <div class="hero-cta-group">
-        <a href="blog_post.html?slug=${slug}" class="btn-primary">Read now</a>
-        <a href="blog_index.html" class="btn-ghost">All Posts <i class="fas fa-arrow-right"></i></a>
-      </div>
-    `;
+    contentEl.innerHTML = buildContentHTML(tag, post, slug);
     contentEl.classList.remove("hero-content--exit");
   }, 220);
+}
+
+function buildContentHTML(tag, post, slug) {
+  return `
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dash"></span>
+      <span class="hero-post-tag">${tag}</span>
+      <span class="hero-post-sep">·</span>
+      <span class="hero-post-date">${fmtDate(post.date)}</span>
+    </div>
+    <h1 class="hero-post-title">${post.title}</h1>
+    ${post.excerpt ? `<p class="hero-post-excerpt">${post.excerpt}</p>` : ""}
+    <div class="hero-cta-group">
+      <a href="blog_post.html?slug=${slug}" class="btn-primary">Read now</a>
+      <a href="blog_index.html" class="btn-ghost">All Posts <i class="fas fa-arrow-right"></i></a>
+    </div>
+  `;
 }
 
 // ── Activate a slide ─────────────────────────────────────────
@@ -151,15 +167,10 @@ fetch("assets/posts/index.json")
     startTimer();
   })
   .catch(() => {
-    // Fallback stays; fake heroPosts so dots/timer work
-    heroPosts = [
-      { title: "Ashwa Racing", excerpt: "India's premier Formula Student team.", date: "", tags: ["Team"], slug: "" },
-      { title: "Ashwa Racing", excerpt: "", date: "", tags: ["Team"], slug: "" },
-      { title: "Ashwa Racing", excerpt: "", date: "", tags: ["Team"], slug: "" },
-      { title: "Ashwa Racing", excerpt: "", date: "", tags: ["Team"], slug: "" }
-    ];
-    buildDots(heroPosts.length);
-    startTimer();
+    // FIX: on fetch failure, fallback display stays as-is (already rendered
+    // by showFallback). Do NOT build dots or start the timer with fake posts —
+    // that would call renderContent() and produce broken ?slug= links.
+    // The static fallback hero is perfectly fine on its own.
   });
 
 
@@ -173,8 +184,10 @@ const revealTargets = document.querySelectorAll(
 revealTargets.forEach((el, i) => {
   el.style.opacity   = "0";
   el.style.transform = "translateY(24px)";
-  el.style.transition = `opacity 0.55s cubic-bezier(0.16,1,0.3,1) ${i * 0.04}s,
-                          transform 0.55s cubic-bezier(0.16,1,0.3,1) ${i * 0.04}s`;
+  // FIX: cap stagger delay at 300ms so the last item doesn't wait ~480ms
+  const delay = Math.min(i * 0.04, 0.3);
+  el.style.transition = `opacity 0.55s cubic-bezier(0.16,1,0.3,1) ${delay}s,
+                          transform 0.55s cubic-bezier(0.16,1,0.3,1) ${delay}s`;
 });
 
 const observer = new IntersectionObserver(

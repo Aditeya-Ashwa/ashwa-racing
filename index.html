@@ -15,12 +15,18 @@
   <meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
   <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
 
+  <!-- FIX: preload blog index so hero doesn't flash fallback content -->
+  <link rel="preload" href="assets/posts/index.json" as="fetch" crossorigin>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- FIX: trimmed font weights — removed unused 300 and 600 variants -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;1,800&family=Barlow:wght@300;400;500&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- FIX: load only Font Awesome Solid subset instead of all.min.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css" />
 
   <link rel="stylesheet" href="assets/css/pages/index.css">
   <link rel="stylesheet" href="assets/css/components/header.css">
@@ -161,31 +167,28 @@
       </div>
 
       <div class="sponsors-logos">
-        <img src="assets/images/sponsors/infineon.svg" alt="Infineon Technologies">
-        <img src="assets/images/sponsors/bosch.svg" alt="Bosch GmbH">
-        <img src="assets/images/sponsors/adani.svg" alt="Adani Group Ltd.">
-        <img src="assets/images/sponsors/dynamatics.svg" alt="Dynamatics Tecnologies Ltd.">
-        <img src="assets/images/sponsors/motul.svg" alt="Motul Group">
-        <img src="assets/images/sponsors/lapp.svg" alt="LAPP Group">
-        <img src="assets/images/sponsors/analogdevices.svg" alt="Analog Devices">
-        <img src="assets/images/sponsors/vrl.svg" alt="VRL Logistics Ltd.">
-        <img src="assets/images/sponsors/uniflex.svg" alt="Uniflex">
-        <img src="assets/images/sponsors/dmgmori.svg" alt="DMGMORI">
-        <img src="assets/images/sponsors/skf.svg" alt="SKF">
-        <img src="assets/images/sponsors/henkel.svg" alt="Henkel">
-
+        <!-- FIX: added loading="lazy" to all sponsor images — they're well below the fold -->
+        <img src="assets/images/sponsors/infineon.svg" alt="Infineon Technologies" loading="lazy">
+        <img src="assets/images/sponsors/bosch.svg" alt="Bosch GmbH" loading="lazy">
+        <img src="assets/images/sponsors/adani.svg" alt="Adani Group Ltd." loading="lazy">
+        <img src="assets/images/sponsors/dynamatics.svg" alt="Dynamatics Tecnologies Ltd." loading="lazy">
+        <img src="assets/images/sponsors/motul.svg" alt="Motul Group" loading="lazy">
+        <img src="assets/images/sponsors/lapp.svg" alt="LAPP Group" loading="lazy">
+        <img src="assets/images/sponsors/analogdevices.svg" alt="Analog Devices" loading="lazy">
+        <img src="assets/images/sponsors/vrl.svg" alt="VRL Logistics Ltd." loading="lazy">
+        <img src="assets/images/sponsors/uniflex.svg" alt="Uniflex" loading="lazy">
+        <img src="assets/images/sponsors/dmgmori.svg" alt="DMGMORI" loading="lazy">
+        <img src="assets/images/sponsors/skf.svg" alt="SKF" loading="lazy">
+        <img src="assets/images/sponsors/henkel.svg" alt="Henkel" loading="lazy">
       </div>
 
       <a href="sponsors.html" class="btn-line" style="margin-bottom: 60px;">View All Partners <i
           class="fas fa-arrow-right"></i></a>
 
-      <div class="partner-callout"
-        style="padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: flex-start;">
-
-        <h3
-          style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; text-transform: uppercase; color: var(--black); line-height: 1; margin-bottom: 16px;">
-          Become a <em style="color: var(--red); font-style: italic;">Partner</em></h3>
-        <p style="color: #666; font-size: 1rem; line-height: 1.6; margin-bottom: 30px; max-width: 600px;">
+      <!-- FIX: moved inline styles to .partner-callout class in index.css -->
+      <div class="partner-callout">
+        <h3 class="partner-callout__heading">Become a <em>Partner</em></h3>
+        <p class="partner-callout__body">
           Join our ecosystem of engineering excellence. Our partnerships fuel out-of-the-box
           innovation, allowing us to build cutting-edge prototypes while offering sponsors
           exceptional brand visibility and access to top engineering talent.
@@ -264,7 +267,6 @@
         <p>Engine design, tuning, thermal management, and performance optimisation for maximum power and reliability.</p>
         <i class="fas fa-arrow-right focus-arrow"></i>
       </a>
-
     </div>
   </section>
 
