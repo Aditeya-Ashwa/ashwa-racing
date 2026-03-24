@@ -436,6 +436,33 @@ const teamData = [
     testimony: "My journey in Ashwa is something I will cherish forever. From the late-night manufacturing and testing sessions to the chaos of assembly or inventory session, the experience transformed me into a much better engineer. Being part of this team taught me to push my limits, thrive in a fast-paced environment, and truly understand my own strengths and weaknesses. Most importantly, Ashwa connected me with like-minded, hardworking individuals who are driven to achieve a common goal.",
     currentJob: "Product Engineer, Ather Energy",
   },
+  {
+    name: "Amish Srivastava",
+    roles: ["Member"],
+    subsystem: ["Suspension & Admin"],
+    year: "2026",
+    experience: "Kinematics and Geometry optimization, Spring rates, Anti roll bar design, Rocker design, Car setup",
+    social: { linkedin: "https://www.linkedin.com/in/amish-s?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: null, gmail: "amish.ashwa@gmail.com" },
+    prototypes: {"Electric": "Member / Part of team"},
+  },
+  {
+    name: "Syed Nadeem",
+    roles: ["Member"],
+    subsystem: ["Sponsorship", "Marketing & Public Relations"],
+    year: "2026",
+    experience: "Helped raise sponsorship for both cv and ev cars. Finished in podium places in static events",
+    social: { linkedin: "https://www.linkedin.com/in/syed-nadeem-30ab66264?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: null, gmail: "syednadeem.ashwa@gmail.com" },
+    prototypes: {"Combustion": "Member / Part of team", "Electric": "Member / Part of team"},
+  },
+  {
+    name: "Dhruva Kashyap",
+    roles: ["Subsystem Lead"],
+    subsystem: ["Electrical & Testing"],
+    year: "2026",
+    experience: "Developed a data-centric vehicle system architecture on a modular DAQ and telemetry system. Designed DAQ, Power Unit, AMS Master, Precharge, and TSSI systems, among others. Contributed to the development of Electric Test Vehicle, Hyperloop, FS-XX6E and FS-XX6C prototypes.",
+    social: { linkedin: null, github: null, gmail: "dhruva.ashwa@gmail.com" },
+    prototypes: {"Electric": "Member / Part of team"},
+  },
 ];
 
 const grid = document.getElementById("member-profiles-grid");
