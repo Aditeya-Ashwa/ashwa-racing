@@ -359,6 +359,7 @@ const teamData = [
   },
   {
     name: "Gaurav Raju",
+    image: "Gaurav",
     roles: ["Chief Engineer"],
     subsystem: ["Leads", "Chassis & Workshop Management"],
     year: "2026",
@@ -489,7 +490,8 @@ function createMemberCard(member) {
   const card = document.createElement("div");
   card.classList.add("member-card");
 
-  const imgPath = `${PROFILE_BASE}${member.year}/${member.name}.webp`;
+  const imgName = member.image || member.name;
+  const imgPath = `${PROFILE_BASE}${member.year}/${imgName}.webp`;
 
   const linkedinLink = member.social.linkedin
     ? `<a href="${member.social.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>`

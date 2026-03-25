@@ -704,3 +704,256 @@ section {
   display: block;
   margin-top: -2px;
 }
+
+/* =========================================================================
+   MOBILE RESPONSIVE — Compact Layout (≤ 600px)
+   Blinkit/Zepto-style: tight padding, smaller fonts, optimal screen usage
+   ========================================================================= */
+@media (max-width: 768px) {
+
+  /* --- Global Section Padding --- */
+  section {
+    padding: 3rem 1rem;
+  }
+
+  /* --- Typography Scale-Down --- */
+  .susp-section-title {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  .susp-accent-title {
+    font-size: clamp(1.2rem, 4.5vw, 1.5rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .susp-p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 0.75rem;
+    text-align: left;
+  }
+
+  /* --- Hero Section --- */
+  .hero {
+    min-height: 85vh;
+  }
+
+  .hero__center {
+    padding: 0 1rem;
+  }
+
+  .hero__tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 1rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
+    margin-bottom: 1.2rem;
+    line-height: 0.9;
+  }
+
+  .hero__quote {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .hero__scroll {
+    font-size: 0.72rem;
+    bottom: 1.5rem;
+  }
+
+  /* --- Section 2: Math of Grip --- */
+  .split-50-50 {
+    gap: 1.5rem;
+  }
+
+  .math-card {
+    padding: 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  }
+
+  .math-right {
+    padding-left: 0;
+    gap: 1.25rem;
+  }
+
+  .math-rule {
+    padding-left: 0.75rem;
+  }
+
+  .rule-label {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .rule-target-value {
+    font-size: 1.3rem;
+  }
+
+  .rule-desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  /* --- Section 3: HUD / Data Nodes --- */
+  .hud-section {
+    margin: 2rem 0;
+    padding: 0 3%;
+  }
+
+  .hud-nodes-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    padding-top: 0.75rem;
+  }
+
+  .data-node {
+    width: 100%;
+    padding: 0.75rem;
+    border-left-width: 3px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  }
+
+  .node-heading {
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+  }
+
+  .node-text {
+    font-size: 0.68rem;
+    line-height: 1.35;
+  }
+
+  /* --- Section 4: Anatomy / Ledger --- */
+  .susp-anatomy {
+    padding: 3rem 1rem;
+  }
+
+  .susp-anatomy .susp-section-title {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
+  }
+
+  .split-60-40 {
+    gap: 1.5rem;
+  }
+
+  .parts-ledger {
+    max-height: none;
+    padding-right: 0;
+    gap: 0.5rem;
+  }
+
+  .ledger-card {
+    padding: 0.85rem;
+    border-radius: 6px;
+    gap: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .ledger-tag {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.35rem;
+  }
+
+  .ledger-title {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .ledger-desc {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    text-align: left;
+  }
+
+  /* --- Section 5: Validation Panes --- */
+  .dual-pane {
+    gap: 1rem;
+  }
+
+  .val-pane {
+    border-radius: 8px;
+  }
+
+  .val-text {
+    padding: 1.25rem;
+  }
+
+  .val-text .susp-section-title {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .val-text .susp-p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+}
+
+/* =========================================================================
+   SMALL-MEDIUM PHONES (≤ 400px) — Extra compact
+   ========================================================================= */
+@media (max-width: 480px) {
+
+  section {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .hero__quote {
+    font-size: 0.78rem;
+  }
+
+  .susp-section-title {
+    font-size: clamp(1.3rem, 5.5vw, 1.8rem);
+  }
+
+  .math-card {
+    padding: 1rem;
+  }
+
+  .hud-nodes-container {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .data-node {
+    padding: 0.6rem;
+  }
+
+  .node-heading {
+    font-size: 0.6rem;
+  }
+
+  .node-text {
+    font-size: 0.65rem;
+  }
+
+  .ledger-card {
+    padding: 0.7rem;
+  }
+
+  .ledger-title {
+    font-size: 0.9rem;
+  }
+
+  .ledger-desc {
+    font-size: 0.72rem;
+  }
+
+  .val-text {
+    padding: 1rem;
+  }
+}
