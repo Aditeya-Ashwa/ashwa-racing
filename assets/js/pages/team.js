@@ -463,6 +463,15 @@ const teamData = [
     social: { linkedin: null, github: null, gmail: "dhruva.ashwa@gmail.com" },
     prototypes: {"Electric": "Member / Part of team"},
   },
+  {
+    name: "Adithya Ranjith",
+    roles: ["Subsystem Lead"],
+    subsystem: ["Drivetrain & Human Resources"],
+    year: "2026",
+    experience: "Helped Design and Build the Drivetrain Architecture and System for the 2026 Electric Prototype.",
+    social: { linkedin: "https://www.linkedin.com/in/adithyaranjith", github: null, gmail: "adithyaranjith.ashwa@gmail.com" },
+    prototypes: {"Combustion": "Member / Part of team", "Electric": "Member / Part of team", "Hyperloop": "Member / Part of team"},
+  },
 ];
 
 const grid = document.getElementById("member-profiles-grid");
