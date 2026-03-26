@@ -359,7 +359,6 @@ const teamData = [
   },
   {
     name: "Gaurav Raju",
-    image: "Gaurav",
     roles: ["Chief Engineer"],
     subsystem: ["Leads", "Chassis & Workshop Management"],
     year: "2026",
