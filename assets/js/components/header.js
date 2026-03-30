@@ -1,264 +1,120 @@
 "use strict";
 
-/*
-  Path prefix for fetching shared components and assets.
-  All pages are assumed to live at the repo root (same depth as /components/).
-  If a page is nested deeper, update this value for that page.
-*/
 const prefix = "../../";
 
-fetch(prefix + "components/header.html")
-  .then(r => r.text())
-  .then(html => {
-    document.getElementById("main-header").innerHTML = html;
-    initNav();
-    initSponsorMarquee();
-    initScrollShrink();
-    markActivePage();
-  })
-  .catch(err => console.warn("Header load failed:", err));
+async function loadComponent(id, path, callback) {
+  try {
+    const html = await fetch(prefix + path).then(r => r.text());
+    document.getElementById(id).innerHTML = html;
+    callback?.();
+  } catch (err) {
+    console.warn(`${id} load failed:`, err);
+  }
+}
 
-fetch(prefix + "components/footer.html")
-  .then(r => r.text())
-  .then(html => { document.getElementById("main-footer").innerHTML = html; })
-  .catch(err => console.warn("Footer load failed:", err));
+loadComponent("main-header", "components/header.html", () => {
+  initNav();
+  initScrollShrink();
+});
 
+loadComponent("main-footer", "components/footer.html");
 
 function initNav() {
+  const $ = s => document.querySelector(s);
+  const $$ = s => document.querySelectorAll(s);
 
-  /* ── Hamburger toggle ──────────────────────────────────────── */
-  const hamburger  = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobile-menu");
+  const hamburger = $("#hamburger");
+  const mobileMenu = $("#mobile-menu");
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", () => {
-      const isOpen = hamburger.classList.toggle("open");
-      hamburger.setAttribute("aria-expanded", isOpen);
-      mobileMenu.classList.toggle("open", isOpen);
-      mobileMenu.setAttribute("aria-hidden", !isOpen);
-      document.body.style.overflow = isOpen ? "hidden" : "";
-    });
+  /* ── Mobile Menu Toggle */
+  const toggleMenu = (open) => {
+    hamburger.classList.toggle("open", open);
+    mobileMenu.classList.toggle("open", open);
+    hamburger.setAttribute("aria-expanded", open);
+    mobileMenu.setAttribute("aria-hidden", !open);
+    document.body.style.overflow = open ? "hidden" : "";
+  };
 
-    document.addEventListener("click", e => {
-      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-        closeMenu();
-      }
-    });
+  hamburger?.addEventListener("click", () => {
+    toggleMenu(!hamburger.classList.contains("open"));
+  });
 
-    document.addEventListener("keydown", e => {
-      if (e.key === "Escape") closeMenu();
-    });
-  }
+  document.addEventListener("click", e => {
+    if (!hamburger?.contains(e.target) && !mobileMenu?.contains(e.target)) {
+      toggleMenu(false);
+    }
+  });
 
-  function closeMenu() {
-    if (!hamburger) return;
-    hamburger.classList.remove("open");
-    hamburger.setAttribute("aria-expanded", "false");
-    mobileMenu?.classList.remove("open");
-    mobileMenu?.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  }
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") toggleMenu(false);
+  });
 
-  /* ── Desktop dropdown ──────────────────────────────────────── */
-  /*
-    FIX: CSS :hover was removed from header.css to prevent the open/close
-    conflict on touch laptops. Desktop hover is now handled here via
-    mouseenter/mouseleave so the behaviour is identical but we have full
-    control. Click still works as a fallback for keyboard/touch users.
-  */
-  function initDropdown(id) {
-    const dd  = document.getElementById(id);
-    const btn = dd?.querySelector(".nav-drop-btn");
-    if (!dd || !btn) return;
+  $$(".nav-dropdown").forEach(dd => {
+    const btn = dd.querySelector(".nav-drop-btn");
+    if (!btn) return;
 
-    // Open on hover (desktop pointer devices)
-    dd.addEventListener("mouseenter", () => {
-      dd.classList.add("open");
-      btn.setAttribute("aria-expanded", "true");
-    });
-    dd.addEventListener("mouseleave", () => {
-      dd.classList.remove("open");
-      btn.setAttribute("aria-expanded", "false");
-    });
+    const set = (state) => {
+      dd.classList.toggle("open", state);
+      btn.setAttribute("aria-expanded", state);
+    };
 
-    // Click toggle as fallback (keyboard, touch)
+    dd.addEventListener("mouseenter", () => set(true));
+    dd.addEventListener("mouseleave", () => set(false));
+
     btn.addEventListener("click", e => {
       e.stopPropagation();
-      document.querySelectorAll(".nav-dropdown.open").forEach(other => {
-        if (other !== dd) {
-          other.classList.remove("open");
-          other.querySelector(".nav-drop-btn")?.setAttribute("aria-expanded", "false");
-        }
-      });
-      const isOpen = dd.classList.toggle("open");
-      btn.setAttribute("aria-expanded", isOpen);
+      $$(".nav-dropdown.open").forEach(d => d !== dd && d.classList.remove("open"));
+      set(!dd.classList.contains("open"));
     });
 
     document.addEventListener("click", e => {
-      if (!dd.contains(e.target)) {
-        dd.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      }
+      if (!dd.contains(e.target)) set(false);
     });
+  });
 
-    dd.addEventListener("keydown", e => {
-      if (e.key === "Escape") {
-        dd.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-        btn.focus();
-      }
-    });
-  }
-
-  initDropdown("teamDropdown");
-  initDropdown("subsystemsDropdown");
-
-  /* ── Mobile accordion ──────────────────────────────────────── */
-  function initAccordion(btnId, panelId) {
-    const btn   = document.getElementById(btnId);
-    const panel = document.getElementById(panelId);
-    if (!btn || !panel) return;
+  /* ── Mobile Accordion */
+  $$(".mob-accordion-btn").forEach(btn => {
+    const panel = document.getElementById(btn.id.replace("Btn", "Panel"));
     btn.addEventListener("click", () => {
-      const isOpen = btn.classList.toggle("open");
-      panel.classList.toggle("open", isOpen);
-      btn.setAttribute("aria-expanded", isOpen);
+      const open = btn.classList.toggle("open");
+      panel?.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", open);
     });
-  }
-
-  initAccordion("mobTeamBtn", "mobTeamPanel");
-  initAccordion("mobSubBtn",  "mobSubPanel");
+  });
 }
 
 
+/* ── Active Page Highlight ─────────────────────── */
 function markActivePage() {
-  const path = window.location.pathname;
-  // FIX: pop() returns "" on directory roots (e.g. GitHub Pages /ashwa-racing/)
-  // Fall back to "index.html" so the Home nav link gets marked active correctly
-  const page = path.split("/").filter(Boolean).pop() || "index.html";
+  const page = location.pathname.split("/").filter(Boolean).pop() || "index.html";
 
   document.querySelectorAll(".nav-link[href], .mob-link[href]").forEach(link => {
     const href = link.getAttribute("href");
-    if (href && (href === page || href.endsWith("/" + page))) {
+    if (!href) return;
+
+    const cleanHref = href.replace(".html", "");
+    const cleanPage = page.replace(".html", "");
+
+    if (cleanHref === cleanPage) {
       link.classList.add("active");
     }
   });
 }
 
-
-async function initSponsorMarquee() {
-  const track = document.getElementById("sponsor-track");
-  // FIX: removed redundant sponsorInit module-level flag — dataset guard is enough
-  if (!track || track.dataset.initialized) return;
-  track.dataset.initialized = "true";
-
-  const SPONSOR_PATH = prefix + "assets/images/sponsors/";
-
-  let manifest;
-  try {
-    manifest = await fetch(SPONSOR_PATH + "manifest.json").then(r => r.json());
-  } catch {
-    console.warn("Sponsor manifest not found.");
-    return;
-  }
-
-  const sponsors = manifest.sponsors ?? [];
-  if (!sponsors.length) return;
-
-  function buildSet() {
-    const frag = document.createDocumentFragment();
-    sponsors.forEach(name => {
-      const img = document.createElement("img");
-      img.src       = SPONSOR_PATH + name;
-      img.alt       = name.replace(/\.[^.]+$/, "").replace(/[-_]/g, " ");
-      img.className = "sponsor-logo";
-
-      const ext = name.split(".").pop().toLowerCase();
-      if      (ext === "svg")                   img.classList.add("logo-svg");
-      else if (ext === "png")                   img.classList.add("logo-png");
-      else if (ext === "jpg" || ext === "jpeg") img.classList.add("logo-jpg");
-      else if (ext === "webp" || ext === "avif") img.classList.add("logo-modern");
-
-      // FIX: sponsor strip is in the sticky header — always in the viewport.
-      // lazy loading caused a pop-in flash; eager ensures logos are ready immediately.
-      img.loading = "eager";
-      frag.appendChild(img);
-    });
-    return frag;
-  }
-
-  track.appendChild(buildSet());
-  track.appendChild(buildSet()); // duplicate for seamless loop
-
-  const imgs = [...track.querySelectorAll("img")];
-  await Promise.all(
-    imgs.map(img =>
-      img.decode ? img.decode().catch(() => {}) :
-      new Promise(res => img.complete ? res() : (img.onload = res))
-    )
-  );
-
-  let pos = 0;
-  const SPEED = 1.2;
-  let raf = null;
-  let running = false;
-
-  function animate() {
-    pos -= SPEED;
-    const halfWidth = track.scrollWidth / 2;
-    if (Math.abs(pos) >= halfWidth) pos = 0;
-    track.style.transform = `translate3d(${pos}px, 0, 0)`;
-    if (running) raf = requestAnimationFrame(animate);
-  }
-
-  function start() {
-    if (running) return;
-    running = true;
-    raf = requestAnimationFrame(animate);
-  }
-
-  function stop() {
-    running = false;
-    if (raf) { cancelAnimationFrame(raf); raf = null; }
-  }
-
-  // FIX: pause the rAF loop when the sponsor strip scrolls out of view
-  // on long pages — avoids burning CPU/GPU for off-screen animation
-  const strip = track.closest(".sponsor-strip");
-  if (strip) {
-    const io = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting ? start() : stop(),
-      { threshold: 0 }
-    );
-    io.observe(strip);
-
-    strip.addEventListener("mouseenter", stop);
-    strip.addEventListener("mouseleave", () => { if (running || document.visibilityState === "visible") start(); });
-  } else {
-    start();
-  }
-
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    stop();
-    track.style.transform = "none";
-  }
-}
-
-
 function initScrollShrink() {
   const navbar = document.querySelector(".navbar");
   if (!navbar) return;
 
-  const threshold = 60;
-  // FIX: dirty-check avoids redundant classList mutations on every scroll tick
-  let wasScrolled = false;
+  let last = false;
 
-  function onScroll() {
-    const isScrolled = window.scrollY > threshold;
-    if (isScrolled === wasScrolled) return;
-    wasScrolled = isScrolled;
-    navbar.classList.toggle("scrolled", isScrolled);
-  }
+  const onScroll = () => {
+    const scrolled = scrollY > 60;
+    if (scrolled !== last) {
+      navbar.classList.toggle("scrolled", scrolled);
+      last = scrolled;
+    }
+  };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll(); // run once on load to set initial state
+  addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 }

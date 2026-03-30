@@ -1,9 +1,4 @@
-/* ============================================================
-   ASHWA RACING — HEADER
-   System: Barlow Condensed + Barlow · dark motorsport
-   ============================================================ */
 
-/* ─── Tokens ────────────────────────────────────────────────── */
 :root {
   --red:          #e8001d;
   --red-dark:     #b5001a;
@@ -20,41 +15,16 @@
   --ease-expo:    cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/*
-  NOTE: To prevent FOUT (flash of unstyled text) on the brand name,
-  add these preload hints in each page's <head> before the CSS link:
-
-    <link rel="preload" href="../../fonts/SAMAN___.TTF" as="font" type="font/truetype" crossorigin>
-    <link rel="preload" href="../../fonts/XENOTRON.TTF" as="font" type="font/truetype" crossorigin>
-*/
-@font-face {
-  font-family: 'Samarkan';
-  src: url('../../fonts/SAMAN___.TTF') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Xenotron';
-  src: url('../../fonts/XENOTRON.TTF') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ─── Base ──────────────────────────────────────────────────── */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: var(--black);
   width: 100%;
-  border-top: 2px solid var(--red);
+  border-bottom: 4px solid var(--red);
   box-shadow: 0 1px 0 var(--border), 0 4px 24px rgba(0,0,0,0.45);
 }
 
-/* ─── Main bar ──────────────────────────────────────────────── */
 .navbar-bar {
   display: flex;
   align-items: center;
@@ -72,7 +42,6 @@
   background: var(--border);
 }
 
-/* ─── Brand ─────────────────────────────────────────────────── */
 .brand {
   display: flex;
   align-items: center;
@@ -83,9 +52,9 @@
 }
 
 .brand-logo-img {
-  height: 44px;
+  height: 60px;
   width: auto;
-  filter: invert(1) brightness(1);
+  /* filter: invert(1) brightness(1); */
   transition: opacity 0.2s ease;
 }
 .brand:hover .brand-logo-img { opacity: 0.85; }
@@ -115,14 +84,12 @@
   margin-top: 2px;
 }
 
-/* ─── Desktop Nav ───────────────────────────────────────────── */
 .nav-desktop {
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-/* FIX: removed duplicate font-family declaration (was listed twice) */
 .nav-link {
   font-family: var(--font-display);
   font-size: 0.9rem;
@@ -166,7 +133,6 @@
   position: relative;
 }
 
-/* Drop button chevron — overrides the underline ::after from .nav-link */
 .nav-drop-btn::after {
   content: '';
   display: inline-block;
@@ -178,7 +144,6 @@
   opacity: 0.5;
   transition: transform 0.22s ease, opacity 0.22s ease;
   flex-shrink: 0;
-  /* reset absolute positioning inherited from .nav-link::after */
   position: static;
   background: none;
 }
@@ -266,7 +231,6 @@
   min-width: 20px;
 }
 
-/* ─── Hamburger ─────────────────────────────────────────────── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -297,7 +261,6 @@
 .hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-/* ─── Mobile menu ───────────────────────────────────────────── */
 .mobile-menu {
   background: var(--charcoal);
   border-top: 1px solid var(--border);
@@ -391,40 +354,6 @@
 .mob-accordion a:hover { color: var(--text-nav-h); }
 .mob-accordion a:last-child { border-bottom: none; }
 
-/* ─── Sponsor strip ─────────────────────────────────────────── */
-.sponsor-strip {
-  overflow: hidden;
-  background: var(--dark-grey);
-  border-top: 1px solid var(--border);
-  padding: 10px 0;
-  height: 60px;
-  display: flex;
-  align-items: center;
-}
-
-.sponsor-track {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-  will-change: transform;
-  padding: 0 24px;
-}
-
-.sponsor-logo {
-  height: 34px;
-  width: auto;
-  object-fit: contain;
-  filter: grayscale(100%) invert(1) brightness(0.55);
-  transition: filter 0.3s ease, transform 0.3s ease;
-  flex-shrink: 0;
-}
-
-.sponsor-logo:hover {
-  filter: grayscale(0%) invert(0) brightness(1);
-  transform: scale(1.1);
-}
-
-/* ─── Scroll-shrink state (added via JS) ────────────────────── */
 .navbar.scrolled .navbar-bar { height: 56px; }
 .navbar.scrolled .brand-logo-img { height: 36px; }
 .navbar.scrolled .brand-ashwa { font-size: 22px; }
@@ -438,15 +367,6 @@
     font-size 0.3s var(--ease-expo);
 }
 
-/*
-  FIX: removed CSS :hover dropdown open state for desktop.
-  Previously both CSS :hover AND click JS could open the panel — on touch
-  laptops/2-in-1s this caused the panel to open and immediately close on
-  tap. Dropdown open/close is now handled exclusively by JS (.open class).
-  The JS already handles mouseenter/mouseleave on desktop via the .open
-  class, so no visual behaviour is lost.
-*/
-
 /* ─── Responsive ────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .nav-desktop { display: none; }
@@ -457,7 +377,5 @@
   .navbar-bar { padding: 0 4%; }
   .brand-ashwa { font-size: 22px; }
   .brand-racing { font-size: 11px; }
-  .brand-logo-img { height: 36px; }
-  .sponsor-strip { height: 50px; }
-  .sponsor-logo { height: 26px; }
+  .brand-logo-img { height: 45px; }
 }

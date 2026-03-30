@@ -1,34 +1,23 @@
-// =======================
-// BLOG PREVIEW (HOMEPAGE)
-// =======================
+"use strict";
 
-fetch('/assets/posts/index.json')
-  .then(res => res.json())
+fetch("assets/posts/index.json")
+  .then(r => r.json())
   .then(posts => {
-    const container = document.getElementById('blog-preview');
-    if (!container) return;
+    const p = posts.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+    if (!p) return;
 
-    // Ensure container has correct grid class
-    container.classList.add('blog-grid');
+    const card = document.getElementById("blog-card");
+    const thumb = document.getElementById("blog-thumb");
+    const title = document.getElementById("blog-title");
+    const excerpt = document.getElementById("blog-excerpt");
+    const date = document.getElementById("blog-date");
 
-    posts.slice(0, 3).forEach(post => {
-
-      const card = document.createElement('a');
-      card.href = `/blog_post.html?slug=${post.slug}`;
-      card.className = 'blog-card';
-
-      card.innerHTML = `
-        <img src="${post.cover}" alt="${post.title}">
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            ${post.date} · ${post.author}
-          </div>
-          <h3>${post.title}</h3>
-          <p>${post.excerpt ?? ''}</p>
-        </div>
-      `;
-
-      container.appendChild(card);
-    });
+    if (card) card.href = `blog_post.html?slug=${encodeURIComponent(p.slug || "")}`;
+    if (thumb) { thumb.src = p.cover || ""; thumb.alt = p.title || ""; }
+    if (title) title.textContent = p.title || "";
+    if (excerpt) excerpt.textContent = p.excerpt || "";
+    if (date) date.textContent = p.date
+      ? new Date(p.date).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })
+      : "";
   })
-  .catch(err => console.error('Blog preview error:', err));
+  .catch(() => {}); // card stays hidden if fetch fails

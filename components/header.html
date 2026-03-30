@@ -1,25 +1,17 @@
 <header class="navbar" id="navbar">
 
-  <!-- ── Main bar ─────────────────────────────────── -->
   <div class="navbar-bar">
 
     <!-- Brand -->
-    <a href="index.html" class="brand" aria-label="Ashwa Racing — Home">
-      <img src="assets/images/favicon/ashwa-black.png" alt="" class="brand-logo-img">
-      <div class="brand-text">
-        <span class="brand-ashwa">Ashwa</span>
-        <span class="brand-racing">Racing</span>
-      </div>
+    <a href="index.html" class="brand" aria-label="Ashwa Racing Home">
+      <img src="assets/images/favicon/header.png" alt="Ashwa Racing Logo" class="brand-logo-img">
     </a>
 
     <!-- Desktop nav -->
-    <nav class="nav-desktop" aria-label="Primary">
-      <a href="about.html"       class="nav-link">About Us</a>
-      <a href="projects.html"    class="nav-link">Our Projects</a>
-      <a href="blog_index.html"  class="nav-link">News</a>
-      <a href="sponsors.html"    class="nav-link">Our Sponsors</a>
-      <a href="recruitment.html" class="nav-link">Join Us</a>
-      <a href="contact.html"     class="nav-link">Contact Us</a>
+    <nav class="nav-desktop" aria-label="Primary navigation">
+
+      
+      <a href="projects.html" class="nav-link">Cars</a>
 
       <!-- Team dropdown -->
       <div class="nav-dropdown" id="teamDropdown">
@@ -28,126 +20,54 @@
         </button>
         <div class="dropdown-panel dropdown-panel--narrow" role="menu">
           <div class="dropdown-col">
-            <a href="team.html"   role="menuitem"><span class="dd-num">01</span>Our Members</a>
-            <a href="alumni.html" role="menuitem"><span class="dd-num">02</span>Alumni &amp; Network</a>
+            <a href="about.html" role="menuitem">About</a>
+            <a href="team.html" role="menuitem">Members</a>
+            <a href="alumni.html" role="menuitem">Alumni</a>
           </div>
         </div>
       </div>
 
-      <!-- FIX: closing </div> was misplaced after </nav> — moved inside nav -->
-      <!-- Subsystems dropdown -->
-      <div class="nav-dropdown" id="subsystemsDropdown">
-        <button class="nav-link nav-drop-btn" aria-expanded="false" aria-haspopup="true">
-          Subsystems
-        </button>
-        <div class="dropdown-panel" role="menu">
-          <div class="dropdown-col">
-            <a href="aero.html" role="menuitem">
-              <span class="dd-num">01</span>Aerodynamics
-            </a>
-            <a href="brakes-logistics.html" role="menuitem">
-              <span class="dd-num">02</span>Brakes &amp; Logistics
-            </a>
-            <a href="chassis-workshop.html" role="menuitem">
-              <span class="dd-num">03</span>Chassis &amp; Workshop
-            </a>
-            <a href="drivetrain-hr.html" role="menuitem">
-              <span class="dd-num">04</span>Drivetrain &amp; HR
-            </a>
-            <a href="electrical-testing.html" role="menuitem">
-              <span class="dd-num">05</span>Electrical &amp; Testing
-            </a>
-          </div>
-          <div class="dropdown-col">
-            <a href="engine.html" role="menuitem">
-              <span class="dd-num">06</span>Engine
-            </a>
-            <a href="finance.html" role="menuitem">
-              <span class="dd-num">07</span>Finance
-            </a>
-            <a href="it.html" role="menuitem">
-              <span class="dd-num">08</span>IT Systems
-            </a>
-            <a href="smp.html" role="menuitem">
-              <span class="dd-num">09</span>Sponsorship, Marketing &amp; PR
-            </a>
-            <a href="suspension-admin.html" role="menuitem">
-              <span class="dd-num">10</span>Suspension &amp; Admin
-            </a>
-          </div>
-        </div>
-      </div>
+      <!-- Need to add a subsystem.html for acting like a index page for subsystems -->
+
+      <a href="recruitment.html" class="nav-link">Join Us</a>
+
+      <a href="sponsors.html" class="nav-link">Sponsors</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+
     </nav>
 
-    <!-- Mobile hamburger -->
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <button class="hamburger" id="hamburger"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu">
       <span></span><span></span><span></span>
     </button>
 
   </div>
 
-  <!-- ── Mobile menu ──────────────────────────────── -->
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <nav aria-label="Mobile primary">
-      <a href="about.html"       class="mob-link">About Us</a>
-      <a href="projects.html"    class="mob-link">Our Projects</a>
+    <nav aria-label="Mobile navigation">
+
+      <a href="about.html" class="mob-link">About</a>
+      <a href="projects.html" class="mob-link">Cars</a>
 
       <!-- Team accordion -->
       <button class="mob-link mob-accordion-btn" id="mobTeamBtn" aria-expanded="false">
         Team
       </button>
       <div class="mob-accordion" id="mobTeamPanel">
-        <a href="team.html">  <span class="dd-num">01</span>Our Members</a>
-        <a href="alumni.html"><span class="dd-num">02</span>Alumni &amp; Network</a>
-      </div>
-
-      <a href="blog_index.html"  class="mob-link">News</a>
-      <a href="sponsors.html"    class="mob-link">Our Sponsors</a>
-      <a href="recruitment.html" class="mob-link">Join Us</a>
-      <a href="contact.html"     class="mob-link">Contact Us</a>
-
-      <!-- Subsystems accordion -->
-      <button class="mob-link mob-accordion-btn" id="mobSubBtn" aria-expanded="false">
-        Subsystems
-      </button>
-      <div class="mob-accordion" id="mobSubPanel">
-        <a href="aero.html">
-          <span class="dd-num">01</span>Aerodynamics
+        <a href="team.html" role="menuitem">Members
         </a>
-        <a href="brakes-logistics.html">
-          <span class="dd-num">02</span>Brakes &amp; Logistics
+        <a href="alumni.html" role="menuitem">Alumni
         </a>
-        <a href="chassis-workshop.html">
-          <span class="dd-num">03</span>Chassis &amp; Workshop
-        </a>
-        <a href="drivetrain-hr.html">
-          <span class="dd-num">04</span>Drivetrain &amp; HR
-        </a>
-        <a href="electrical-testing.html">
-          <span class="dd-num">05</span>Electrical &amp; Testing
-        </a>
-        <a href="engine.html">
-          <span class="dd-num">06</span>Engine
-        </a>
-        <a href="finance.html">
-          <span class="dd-num">07</span>Finance
-        </a>
-        <a href="it.html">
-          <span class="dd-num">08</span>IT Systems
-        </a>
-        <a href="smp.html">
-          <span class="dd-num">09</span>Sponsorship, Marketing &amp; PR
-        </a>
-        <a href="suspension-admin.html">
-          <span class="dd-num">10</span>Suspension &amp; Admin
+        <a href="recruitment.html" role="menuitem">Join Us
         </a>
       </div>
+
+      <a href="sponsors.html" class="mob-link">Sponsors</a>
+      <a href="contact.html" class="mob-link">Contact</a>
+
     </nav>
-  </div>
-
-  <!-- ── Sponsor marquee ──────────────────────────── -->
-  <div class="sponsor-strip" aria-label="Our sponsors">
-    <div id="sponsor-track" class="sponsor-track"></div>
   </div>
 
 </header>
