@@ -1,30 +1,71 @@
 "use strict";
 
-/* ── Scroll-reveal ── */
-const revealEls = document.querySelectorAll(
-  ".stat, .split-body, .cta-card, .sponsors-grid img, .feed-card"
-);
+/* ── Init ───────────────────────── */
+document.addEventListener("DOMContentLoaded", () => {
+  initReveal();
+  initBlogPreview();
+});
 
-const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if (prefersReduced) {
-  const track = document.querySelector(".ticker-track");
-  if (track) track.style.animation = "none";
-} else {
-  revealEls.forEach((el, i) => {
-    el.style.cssText += `opacity:0;transform:translateY(20px);
-      transition:opacity .5s cubic-bezier(.16,1,.3,1) ${Math.min(i*.04,.3)}s,
-                 transform .5s cubic-bezier(.16,1,.3,1) ${Math.min(i*.04,.3)}s`;
+/* ── Scroll Reveal ───────────────── */
+function initReveal() {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const els = document.querySelectorAll(
+    ".stat, .split-body, .cta-card, .sponsors-grid img, .feed-card"
+  );
+
+  if (!els.length) return;
+
+  els.forEach((el, i) => {
+    el.classList.add("reveal");
+    el.style.transitionDelay = `${Math.min(i * 0.04, 0.3)}s`;
   });
 
-  const io = new IntersectionObserver(entries => {
+  const io = new IntersectionObserver((entries, obs) => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
-      e.target.style.opacity = "1";
-      e.target.style.transform = "translateY(0)";
-      io.unobserve(e.target);
+      e.target.classList.add("reveal-visible");
+      obs.unobserve(e.target);
     });
-  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+  }, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -40px"
+  });
 
-  revealEls.forEach(el => io.observe(el));
+  els.forEach(el => io.observe(el));
+}
+
+
+/* ── Blog Preview ───────────────── */
+async function initBlogPreview() {
+  const card = document.getElementById("blog-card");
+  if (!card) return; // 🔥 don’t fetch if not needed
+
+  try {
+    const posts = await fetch("assets/posts/index.json").then(r => r.json());
+    if (!posts?.length) return;
+
+    const p = posts.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+
+    const thumb = document.getElementById("blog-thumb");
+    const title = document.getElementById("blog-title");
+    const excerpt = document.getElementById("blog-excerpt");
+    const date = document.getElementById("blog-date");
+
+    card.href = `blog_post.html?slug=${encodeURIComponent(p.slug || "")}`;
+    if (thumb) { thumb.src = p.cover || ""; thumb.alt = p.title || ""; }
+    if (title) title.textContent = p.title || "";
+    if (excerpt) excerpt.textContent = p.excerpt || "";
+    if (date && p.date) {
+      date.textContent = new Date(p.date).toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric"
+      });
+    }
+
+  } catch {
+    // silent fail
+  }
 }
