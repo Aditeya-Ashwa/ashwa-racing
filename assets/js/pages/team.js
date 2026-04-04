@@ -390,14 +390,6 @@ const teamData = [
     social: { linkedin: "https://www.linkedin.com/in/sandeepnu0620/", github: "https://github.com/SandeepASHWARACING", gmail: "sandeepnuttarkar.ashwa@gmail.com" },
   },
   {
-    name: "G Venkat Shreyas",
-    roles: ["Subsystem Lead"],
-    subsystem: ["Finance", "Electrical & Testing"],
-    year: "2026",
-    experience: "Managed funds for XX6E and XX6C within a ₹15 lakh budget, stabilized operations during a leadership transition, secured representation for Formula Hybrid Electric 2026, and represented Ashwa at European Hyperloop Week 2024 at ETH Zurich. Also contributed to accumulator design and energy requirement analysis for performance and endurance targets.",
-    social: { linkedin: null, github: null, gmail: "venkatshreyas.ashwa@gmail.com" },
-  },
-  {
     name: "U P Madhavan",
     roles: ["Subsystem Lead"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
