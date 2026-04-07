@@ -236,25 +236,25 @@ const ORG_STRUCTURE = {
         // "Team" node removed per spec — only team leaders shown
       ]
     },
-    {
-      id: "dv",
-      label: "Driverless",
-      type: "programme",
-      members: [],
-      children: [
-        {
-          id: "dv-leads",   // IMPORTANT: unique id
-          label: "Team Leaders",
-          type: "subsystem",
-          members: [
-            { name: "Team Captain", photo: "assets/images/team/default.webp" },
-            { name: "Project Manager", photo: "assets/images/team/default.webp" },
-            { name: "Chief Engineer", photo: "assets/images/team/default.webp" },
-          ],
-          children: []
-        }
-      ]
-    },
+    // {
+    //   id: "dv",
+    //   label: "Driverless",
+    //   type: "programme",
+    //   members: [],
+    //   children: [
+    //     {
+    //       id: "dv-leads",   // IMPORTANT: unique id
+    //       label: "Team Leaders",
+    //       type: "subsystem",
+    //       members: [
+    //         { name: "Team Captain", photo: "assets/images/team/default.webp" },
+    //         { name: "Project Manager", photo: "assets/images/team/default.webp" },
+    //         { name: "Chief Engineer", photo: "assets/images/team/default.webp" },
+    //       ],
+    //       children: []
+    //     }
+    //   ]
+    // },
     {
       id: "hyperloop",
       label: "Hyperloop",

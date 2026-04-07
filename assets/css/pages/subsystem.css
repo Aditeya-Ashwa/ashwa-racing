@@ -501,6 +501,18 @@ body {
 }
 .prog-card:hover .prog-card-arrow { opacity: 1; transform: translate(0,0); }
 
+.all-progs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2px;
+}
+
+.prog-card:hover {
+  background: #222;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
 /* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════════════════════ */

@@ -43,7 +43,7 @@ body { font-family: var(--font-body); background: var(--black); color: var(--whi
 }
 .al-hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  background: url('../../images/prototypes/Prototypesbanner.png') center 30% / cover no-repeat;
+  background: url('../../images/prototypes/Prototypesbanner.webp') center 30% / cover no-repeat;
   filter: brightness(0.25) saturate(0.5); transform: scale(1.03);
 }
 .al-hero-overlay {

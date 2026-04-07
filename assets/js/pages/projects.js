@@ -693,17 +693,17 @@ const projectData = {
     }
   },
 
-  dv: {
-    title: "Autonomous & Driverless Platform",
-    years: {
-      2027: {
-        images: ["assets/images/prototypes/XX5C.jpg"],
-        changes: ["Coming soon!"],
-        desc: "The driverless programme builds on Ashwa's existing vehicle platforms, layering perception, planning, and control systems for autonomous competition.",
-        achievements: ["We strive to win!"]
-      }
-    }
-  }
+  // dv: {
+  //   title: "Autonomous & Driverless Platform",
+  //   years: {
+  //     2027: {
+  //       images: ["assets/images/prototypes/XX5C.jpg"],
+  //       changes: ["Coming soon!"],
+  //       desc: "The driverless programme builds on Ashwa's existing vehicle platforms, layering perception, planning, and control systems for autonomous competition.",
+  //       achievements: ["We strive to win!"]
+  //     }
+  //   }
+  // }
 };
 
 /* ============================================================
