@@ -16,7 +16,7 @@
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: var(--body); background: var(--white); color: var(--black); overflow-x: hidden; }
+body { font-family: var(--body); background: var(--white); color: var(--black); overflow-x: hidden; font-display: swap;}
 
 .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
 
@@ -291,13 +291,13 @@ h2 em { font-style: italic; color: var(--red); }
   grid-template-columns: repeat(4, 1fr);
   gap: 32px 48px;
 }
-.sponsors-grid--exec img { max-height: 64px; max-width: 180px; }
+.sponsors-grid--exec img { max-height: 250px; max-width: 220px; }
 
 .sponsors-grid--plat {
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   gap: 28px 32px;
 }
-.sponsors-grid--plat img { max-height: 44px; max-width: 130px; }
+.sponsors-grid--plat img { max-height: 90px; max-width: 120px; }
 
 .sponsors-grid img {
   object-fit: contain;
