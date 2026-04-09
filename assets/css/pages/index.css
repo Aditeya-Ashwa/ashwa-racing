@@ -272,13 +272,13 @@ h2 em { font-style: italic; color: var(--red); }
 
 .sponsors-tier-label {
   font-family: var(--display);
-  font-size: 0.62rem;
+  font-size: 0.95rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 28px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,1);
 }
 
 .sponsors-grid {
@@ -347,5 +347,5 @@ h2 em { font-style: italic; color: var(--red); }
   .ticker-track span { padding: 0 14px; font-size: 0.75rem; }
 
   .cta-body { padding: 22px 20px 26px; }
-  .sponsors-grid--exec { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .sponsors-grid--exec { grid-template-columns: repeat(1, 1fr); gap: 24px; }
 }
