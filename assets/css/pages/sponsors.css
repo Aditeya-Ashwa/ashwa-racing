@@ -102,7 +102,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 
 .sp-hero-desc {
   font-size: clamp(0.88rem, 1.3vw, 1rem);
-  line-height: 1.7; color: rgba(255,255,255,0.5);
+  line-height: 1.7; color: rgba(255,255,255,0.75);
   font-weight: 300; max-width: 480px; margin-bottom: 28px;
 }
 
@@ -187,8 +187,8 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 .sp-tier-section.visible { opacity: 1; transform: translateY(0); }
 
 /* Alternating bg */
-.sp-tier-section:nth-child(even) { background: var(--charcoal); }
-.sp-tier-section:nth-child(odd)  { background: var(--dark-grey); }
+.sp-tier-section:nth-child(even) { background: var(--off-white); }
+.sp-tier-section:nth-child(odd)  { background: var(--white); }
 
 /* Section header */
 .sp-tier-header {
@@ -222,7 +222,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 800; text-transform: uppercase;
   letter-spacing: 0.02em; line-height: 1;
-  color: var(--white);
+  color: var(--black);
 }
 
 .sp-tier-count {
@@ -236,15 +236,14 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
    EXECUTIVE — Large featured cards with description
 ═══════════════════════════════════════════════════════════════ */
 .sp-grid-executive {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  display:list-item;
   gap: 2px;
 }
 
 .sp-card-executive {
-  background: var(--mid-grey);
+  /* background: var(--mid-grey); */
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 350px 1fr;
   gap: 0;
   overflow: hidden;
   border-left: 3px solid transparent;
@@ -255,13 +254,11 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   opacity: 1; transform: translateY(0);
 }
 .sp-card-executive:hover {
-  background: #333;
   border-left-color: var(--exec-accent);
   transform: translateY(-3px);
 }
 
 .sp-card-exec-logo {
-  background: #c5c5c5;
   display: flex; align-items: center; justify-content: center;
   padding: 24px 20px;
 }
@@ -270,14 +267,8 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   width: 100%; text-decoration: none;
 }
 .sp-card-exec-logo img {
-  max-width: 120px; max-height: 56px;
+  max-width: 300px; max-height: 300px;
   object-fit: contain;
-  /* filter: brightness(0) invert(1) opacity(0.7); */
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-.sp-card-executive:hover .sp-card-exec-logo img {
-  filter: brightness(1) invert(0) opacity(1);
-  transform: scale(1.05);
 }
 
 .sp-card-exec-body {
@@ -288,16 +279,16 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 
 .sp-card-exec-name {
   font-family: var(--font-display);
-  font-size: 0.68rem; font-weight: 700;
+  font-size: 1.5rem; font-weight: 700;
   letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--exec-accent);
 }
 
 .sp-card-exec-desc {
-  font-size: 0.8rem; line-height: 1.65;
-  color: rgba(255,255,255,0.4); font-weight: 300;
+  font-size: 1.2rem; line-height: 1.65;
+  color: rgba(0,0,0,1); font-weight: 400;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  /* -webkit-line-clamp: 4; */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -305,7 +296,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 .sp-card-exec-link {
   display: inline-flex; align-items: center; gap: 6px;
   font-family: var(--font-display);
-  font-size: 0.68rem; font-weight: 700;
+  font-size: 1rem; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--exec-accent);
   text-decoration: none; margin-top: 4px;
@@ -314,20 +305,16 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 .sp-card-executive:hover .sp-card-exec-link { opacity: 1; }
 .sp-card-exec-link:hover { gap: 10px; }
 
-/* ═══════════════════════════════════════════════════════════════
-   PLATINUM — Medium logo cards, slight shadow treatment
-═══════════════════════════════════════════════════════════════ */
+/* This sheez are the greatest peoples :) */
 .sp-grid-platinum {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 2px;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px; /* optional: gives breathing room */
 }
 
 .sp-card-platinum {
-  background: var(--mid-grey);
   padding: 28px 18px;
   display: flex; align-items: center; justify-content: center;
-  aspect-ratio: 3/2;
   position: relative; overflow: hidden;
   border-top: 2px solid transparent;
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.3s var(--ease-expo);
@@ -335,7 +322,6 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 }
 .sp-card-platinum.visible { opacity: 1; transform: translateY(0); }
 .sp-card-platinum:hover {
-  background: var(--white);
   border-top-color: var(--plat-accent);
   transform: translateY(-4px);
 }
@@ -355,37 +341,27 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   width: 100%; height: 100%; text-decoration: none;
 }
 .sp-card-platinum img {
-  max-width: 110px; max-height: 52px;
-  object-fit: contain;
-  filter: grayscale(100%) invert(1) opacity(1);
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-.sp-card-platinum:hover img {
-  filter: brightness(1) invert(0) opacity(1);
-  transform: scale(1.3  );
+  max-width: 140px;
+  max-height: 80px;
+  width: 100%;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   GOLD — Warm-tinted logo grid
-═══════════════════════════════════════════════════════════════ */
+/* Gold grid :) */
 .sp-grid-gold {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 2px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
 }
 
 .sp-card-gold {
-  background: var(--mid-grey);
   padding: 22px 14px;
   display: flex; align-items: center; justify-content: center;
-  aspect-ratio: 3/2;
   border-bottom: 2px solid transparent;
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.3s var(--ease-expo);
   opacity: 0; transform: translateY(16px);
 }
 .sp-card-gold.visible { opacity: 1; transform: translateY(0); }
 .sp-card-gold:hover {
-  background: var(--off-white);
   border-bottom-color: var(--gold-accent);
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(240,180,41,0.12);
@@ -396,14 +372,10 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   width: 100%; height: 100%; text-decoration: none;
 }
 .sp-card-gold img {
-  max-width: 100px; max-height: 46px;
-  object-fit: contain;
-  filter: grayscale(100%) invert(1);
+  max-width: 140px;
+  max-height: 80px;
+  width: 100%;
   transition: filter 0.3s ease, transform 0.3s ease;
-}
-.sp-card-gold:hover img {
-  filter: grayscale(0%) brightness(1);
-  transform: scale(1.5);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -411,22 +383,19 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 ═══════════════════════════════════════════════════════════════ */
 .sp-grid-silver {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2px;
 }
 
 .sp-card-silver {
-  background: var(--dark-grey);
   padding: 20px 12px;
   display: flex; align-items: center; justify-content: center;
-  aspect-ratio: 3/2;
   border-bottom: 2px solid transparent;
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.3s var(--ease-expo);
   opacity: 0; transform: translateY(16px);
 }
 .sp-card-silver.visible { opacity: 1; transform: translateY(0); }
 .sp-card-silver:hover {
-  background: #262626;
   border-bottom-color: var(--silver-accent);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(156,163,175,0.1);
@@ -437,27 +406,19 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   width: 100%; height: 100%; text-decoration: none;
 }
 .sp-card-silver img {
-  max-width: 96px; max-height: 42px;
+  max-width: 200px; max-height: 150px;
   object-fit: contain;
-  filter: grayscale(100%) invert(1);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
-.sp-card-silver:hover img {
-  filter: grayscale(0%) ;
-  transform: scale(2);
-}
 
-/* ═══════════════════════════════════════════════════════════════
-   TECHNICAL PARTNERS — Dense compact grid
-═══════════════════════════════════════════════════════════════ */
+/* Technical */
 .sp-grid-technical {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2px;
 }
 
 .sp-card-technical {
-  background: var(--dark-grey);
   padding: 18px 10px;
   display: flex; align-items: center; justify-content: center;
   aspect-ratio: 3/2;
@@ -466,7 +427,6 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 }
 .sp-card-technical.visible { opacity: 1; transform: translateY(0); }
 .sp-card-technical:hover {
-  background: var(--white);
   transform: translateY(-2px);
 }
 
@@ -475,29 +435,22 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   width: 100%; height: 100%; text-decoration: none;
 }
 .sp-card-technical img {
-  max-width: 80px; max-height: 36px;
+  max-width: 150px; max-height: 120px;
   object-fit: contain;
-  filter: invert(1) grayscale(100%) ;
   transition: filter 0.3s ease, transform 0.3s ease;
-}
-.sp-card-technical:hover img {
-  filter: grayscale(0%) brightness(1);
-  transform: scale(1.45);
-}
-
-/* ─── Accessibility ─────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  .sp-tier-section, .sp-card-executive, .sp-card-platinum,
-  .sp-card-gold, .sp-card-silver, .sp-card-technical {
-    opacity: 1; transform: none;
-  }
 }
 
 /* ─── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 860px) {
   .sp-grid-executive { grid-template-columns: 1fr; }
+  .sp-grid-execut
   .sp-tier-section { padding: 64px 5%; }
+  .sp-card-exec-link { opacity: 1; }
+  .sp-grid-platinum, .sp-grid-gold, .sp-grid-silver, .sp-grid-technical {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+} 
 }
 
 @media (max-width: 640px) {
@@ -506,11 +459,17 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   .tier-nav-btn { min-width: 68px; padding: 12px 8px; }
   .sp-card-executive { grid-template-columns: 1fr; }
   .sp-card-exec-logo { padding: 20px; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .sp-grid-platinum { grid-template-columns: repeat(3, 1fr); }
-  .sp-grid-gold, .sp-grid-silver { grid-template-columns: repeat(3, 1fr); }
-  .sp-grid-technical { grid-template-columns: repeat(4, 1fr); }
+  .sp-grid-platinum, .sp-grid-gold, .sp-grid-silver, .sp-grid-technical {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+} 
 }
 
 @media (max-width: 400px) {
-  .sp-grid-technical { grid-template-columns: repeat(3, 1fr); }
+  .sp-grid-platinum, .sp-grid-gold, .sp-grid-silver, .sp-grid-technical {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+} 
 }
