@@ -270,6 +270,14 @@ const teamData = [
     social: { linkedin: "https://www.linkedin.com/in/sathvik-s-naik-b186342a8/", github: null, gmail: null },
   },
   {
+    name: "Vinith Prabhu",
+    roles: ["Member"],
+    subsystem: ["Electrical & Testing"],
+    year: "2027",
+    experience: "Designed the Power Distribution Board handling 300+ Watts of power around the car. Main proponent behind EDP position at Formula Bharat 2026, achieving P5 at Formula Bharat 2026. One of the drivers for the RZ-XX6C.",
+    social: { linkedin: null, github: null, gmail: null },
+  },
+  {
     name: "Shravan CS",
     roles: ["Subsystem Lead", "Team Captain"],
     subsystem: ["Leads", "Brakes & Logistics"],
@@ -286,14 +294,6 @@ const teamData = [
     social: { linkedin: "https://www.linkedin.com/in/an-joshi/", github: null, gmail: null },
   },
   {
-    name: "Vinith Prabhu",
-    roles: ["Member"],
-    subsystem: ["Electrical & Testing"],
-    year: "2027",
-    experience: "Designed the Power Distribution Board handling 300+ Watts of power around the car. Main proponent behind EDP position at Formula Bharat 2026, achieving P5 at Formula Bharat 2026. One of the drivers for the RZ-XX6C.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
     name: "Talin Thimmaiah",
     roles: ["Subsystem Lead"],
     subsystem: ["Engine"],
@@ -303,7 +303,7 @@ const teamData = [
   },
   {
     name: "Ranjith DS",
-    roles: ["Member"],
+    roles: ["Subsystem Lead"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2027",
     experience: "Designed drive shafts, DT Sprocket etc for the powertrain components of the car. Part of EDP team, achieving P5 at Formula Bharat 2026.",
