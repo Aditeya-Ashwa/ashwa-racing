@@ -424,6 +424,15 @@ const teamData = [
     social: { linkedin: "https://www.linkedin.com/in/adithyaranjith", github: null, gmail: "adithyaranjith.ashwa@gmail.com" },
     prototypes: {"Combustion": "Member / Part of team", "Electric": "Member / Part of team", "Hyperloop": "Member / Part of team"},
   },
+  {
+    name: "RZ-XX6-C",
+    roles: ["Member"],
+    subsystem: ["Chassis & Workshop Management", "Suspension & Admin", "Drivetrain & Human Resources", "Brakes & Logistics", "Engine", "Electrical & Testing", "Sponsorship", "Marketing & Public Relations", "Finance", "IT", "Aero"],
+    year: "2027",
+    experience: "The car. She is heavy, but she is ours.",
+    social: { linkedin: "https://www.linkedin.com/company/ashwa-racing/", github: "https://github.com/Ashwa-Racing", gmail: "rzxx6c.ashwa@gmail.com" },
+    prototypes: {"Combustion": "Member / Part of team"},
+  },
 ];
 
 const grid = document.getElementById("member-profiles-grid");
