@@ -1,6 +1,6 @@
 "use strict";
 
-const prefix = "../../";
+const prefix = "/";
 
 async function loadComponent(id, path, callback) {
   try {

@@ -8,7 +8,82 @@
 
   <link rel="icon" href="assets/images/favicon/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
-  <link rel="stylesheet" href="assets/css/pages/index.css">
+  <!-- To remove blocking of rendering by index.css, which now has the footer and the header css as well -->
+  <link rel="preload" href="assets/css/pages/index.css" as="style" onload="this.rel='stylesheet'"> 
+  <noscript><link rel="stylesheet" href="assets/css/pages/index.css"></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;1,800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Added CSS for hero to reduce LCP from 1500ms to just 500ms or even lower -->
+  <style>
+    /* ── Hero ── */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 500px;
+  max-height: 580px;
+  background: var(--black);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.hero-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 var(--pad) 9vh;
+  max-width: 680px;
+}
+.hero-content .label { color: rgba(255,255,255,0.45); }
+.hero-content .label::before { background: var(--red); }
+.hero-content h1 {
+  font-family: var(--display);
+  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.88;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.hero-content h1 em { color: var(--red); font-style: italic; }
+.hero-para {
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 28px;
+  max-width: 460px;
+}
+.hero-content .btn-line { color: var(--white); border-color: rgba(255,255,255,0.5); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px; left: var(--pad); z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--display);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.3);
+}
+.scroll-track { width: 40px; height: 1px; background: rgba(255,255,255,0.15); position: relative; overflow: hidden; }
+.scroll-thumb {
+  position: absolute; top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: var(--red);
+  animation: scrollMove 2s ease-in-out infinite;
+}
+@keyframes scrollMove { 0% { left: -100%; } 50% { left: 0; } 100% { left: 100%; } }
+  </style>
+
 </head>
 <body>
 
@@ -23,7 +98,13 @@
       <p class="label">ASHWA RACING · SINCE 2003</p>
       <h1>Built to<br><em>Compete.</em></h1>
       <p class="hero-para">RV College of Engineering's Formula Student team — two decades of designing, building, and racing high-performance cars on the world stage.</p>
-      <a href="about.html" class="btn-line">Discover the Team <i class="fas fa-arrow-right"></i></a>
+      <a href="about.html" class="btn-line">
+        Discover the Team
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+</a>
     </div>
     <div class="hero-scroll"><div class="scroll-track"><div class="scroll-thumb"></div></div><span>SCROLL</span></div>
   </section>
@@ -49,7 +130,13 @@
       <div class="cta-body">
         <h3>Be the part of the journey</h3>
         <p>Build the next car. Push your limits. Be the best.</p>
-        <span class="btn-line">Join Us  <i class="fas fa-arrow-right"></i></span>
+          <span class="btn-line">
+            Join Us
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </span>
       </div>
     </a>
     <a href="smp.html" class="cta-card">
@@ -57,7 +144,13 @@
       <div class="cta-body">
         <h3>Partner With Performance</h3>
         <p>Be part of a team pushing the limits of engineering and innovation.</p>
-        <span class="btn-line">Sponsor Us<i class="fas fa-arrow-right"></i></span>
+          <span class="btn-line">
+            Partner with Us
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </span>
       </div>
     </a>
   </section>
@@ -78,7 +171,12 @@
               <p id="blog-excerpt" class="feed-excerpt"></p>
             </div>
           </a>
-          <a href="blog.html" class="btn-line">All Posts <i class="fas fa-arrow-right"></i></a>
+          <a href="blog.html" class="btn-line">All Posts
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
         </div>
 
         <div class="feed-col">
@@ -90,7 +188,12 @@
               style="width:100%;margin:0;border:none;background:transparent;">
             </blockquote>
           </div>
-          <a href="https://www.instagram.com/ashwaracing" target="_blank" rel="noopener" class="btn-line">Follow us <i class="fas fa-arrow-right"></i></a>
+          <a href="https://www.instagram.com/ashwaracing" target="_blank" rel="noopener" class="btn-line">Follow Us
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
         </div>
 
         <div class="feed-col">
@@ -107,8 +210,12 @@
           </iframe>
 
           <a href="https://in.linkedin.com/company/ashwa-racing" target="_blank" rel="noopener" class="btn-line">
-            Follow us <i class="fas fa-arrow-right"></i>
-          </a>
+            Follow Us
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
         </div>
 
       </div>
@@ -167,7 +274,12 @@
         </a>
       </div>
 
-      <a href="sponsors.html" class="btn-line">View All Partners <i class="fas fa-arrow-right"></i></a>
+      <a href="sponsors.html" class="btn-line">View All Partners 
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
   </section>
 
   <section class="cta-trio">
@@ -175,24 +287,20 @@
         <div class="cta-body">
           <h3>Formula Student</h3>
           <p>Formula SAE challenges students to conceive, design, fabricate, and compete with small formula-style racing cars. Teams spend 8-12 months designing, building, and preparing their vehicles for a competition. These cars are judged in a series of static and dynamic events, including technical inspection, cost, presentation, engineering design, solo performance trials and high performance endurance.</p>
-            <span class="btn-line">Learn more <i class="fas fa-arrow-right"></i></span>
+            <span class="btn-line">Learn more 
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
         </div>
       </a>
   </section>
 
   <footer id="main-footer"></footer>
 
-  <script src="assets/js/components/header.js"></script>
-  <script src="assets/js/pages/index.js"></script>
-
-  <link rel="stylesheet" href="assets/css/components/header.css">
-
-
-  <link rel="stylesheet" href="assets/css/components/footer.css">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;1,800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css">
+  <script src="assets/js/components/header.js" defer></script>
+  <script src="assets/js/pages/index.js" defer></script>
 
 </body>
 </html>
