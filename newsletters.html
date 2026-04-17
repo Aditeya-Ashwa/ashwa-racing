@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletters | Ashwa Racing</title>
+  <link rel="icon" href="assets/images/favicon/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;1,800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/components/header.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/pages/newsletters.css"> <!-- reuse -->
+
+</head>
+<body>
+
+<header id="main-header"></header>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="blog-hero-bg"></div>
+  <div class="blog-hero-overlay"></div>
+
+  <div class="blog-hero-content">
+    <div class="blog-eyebrow">
+      <span class="eyebrow-dash"></span>
+      <span>Archive</span>
+    </div>
+    <h1 class="blog-hero-title">TEAM<br><em>NEWSLETTERS</em></h1>
+    <p class="blog-hero-desc">
+      Official Ashwa Racing newsletters documenting engineering progress,
+      competition journeys, and team milestones.
+    </p>
+  </div>
+
+  <div class="blog-filter-bar" id="filter-bar">
+    <button class="blog-filter-btn active" data-year="all">All Years</button>
+  </div>
+</section>
+
+<!-- GRID -->
+<main class="blog-main">
+
+  <div class="blog-meta-bar">
+    <div class="blog-post-count" id="count">— newsletters</div>
+  </div>
+
+  <div class="blog-grid" id="list"></div>
+
+  <div class="blog-empty" id="empty" hidden>
+    <p>No newsletters found.</p>
+  </div>
+
+</main>
+
+<footer id="main-footer"></footer>
+
+<script src="assets/js/components/header.js"></script>
+<script src="assets/js/pages/newsletters.js"></script>
+
+</body>
+</html>
