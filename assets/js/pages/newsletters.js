@@ -3,6 +3,16 @@ const basePDF = "assets/pdfs/newsletters/";
 const baseIMG = "assets/images/newsletters/";
 
 const files = [
+  "2026-02-general.pdf",
+  "2026-01-general.pdf",
+  "2025-12-general.pdf",
+  "2025-10-general.pdf",
+  "2025-07-general.pdf",
+  "2025-06-general.pdf",
+  "2025-05-general.pdf",
+  "2025-04-general.pdf",
+  "2025-03-general.pdf",
+  "2025-02-general.pdf",
   "2017-11-general.pdf",
   "2017-09-alumni.pdf",
   "2017-09-general.pdf",
