@@ -76,14 +76,6 @@
   letter-spacing: 0.2em;
   color: rgba(255,255,255,0.3);
 }
-.scroll-track { width: 40px; height: 1px; background: rgba(255,255,255,0.15); position: relative; overflow: hidden; }
-.scroll-thumb {
-  position: absolute; top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: var(--red);
-  animation: scrollMove 2s ease-in-out infinite;
-}
-@keyframes scrollMove { 0% { left: -100%; } 50% { left: 0; } 100% { left: 100%; } }
   </style>
 
 </head>
@@ -107,8 +99,6 @@
         </svg>
       </a>
 </a>
-    </div>
-    <div class="hero-scroll"><div class="scroll-track"><div class="scroll-thumb"></div></div><span>SCROLL</span></div>
   </section>
 
   <div class="ticker" aria-hidden="true">
@@ -164,7 +154,7 @@
       <div class="feed-grid">
 
         <div class="feed-col">
-          <div class="feed-source"><i class="fas fa-rss"></i>Newsletters</div>
+          <div class="feed-source">Newsletters</div>
           <a id="blog-card" href="newsletters.html" class="feed-card feed-card--blog">
             <div class="feed-card-img-wrap"><img id="blog-thumb" src="" alt="" loading="lazy"></div>
             <div class="feed-card-body">
@@ -182,7 +172,7 @@
         </div>
 
         <div class="feed-col">
-          <div class="feed-source"><i class="fab fa-instagram"></i> Instagram</div>
+          <div class="feed-source">Instagram</div>
           <div class="feed-card feed-card--embed">
             <blockquote class="instagram-media"
               data-instgrm-permalink="https://www.instagram.com/p/DUlPt1vE_oa/"
@@ -199,7 +189,7 @@
         </div>
 
         <div class="feed-col">
-          <div class="feed-source"><i class="fab fa-linkedin"></i> LinkedIn</div>
+          <div class="feed-source">LinkedIn</div>
 
           <iframe 
             src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7428324957132169216?collapsed=1" 

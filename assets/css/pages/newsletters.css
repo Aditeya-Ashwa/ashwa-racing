@@ -1,7 +1,3 @@
-/* ============================================================
-   ASHWA RACING — BLOG INDEX
-   System: Barlow Condensed + Barlow · dark motorsport-editorial
-   ============================================================ */
 
 /* ─── Tokens ────────────────────────────────────────────────── */
 :root {
@@ -281,7 +277,6 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 
 .blog-card-image {
   position: relative; overflow: hidden;
-  aspect-ratio: 16/9;
 }
 .blog-card-image img {
   width: 100%; height: 100%;
