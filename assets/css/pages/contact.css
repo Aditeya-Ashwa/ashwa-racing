@@ -368,10 +368,32 @@ a.ct-detail-value:hover { color: var(--red); }
   .ct-right { padding: 48px 5%; }
 }
 
-@media (max-width: 640px) {
-  .ct-hero-content { padding: 0 5% 44px; }
-  .ct-form-row { grid-template-columns: 1fr; }
-  .ct-left { padding: 40px 5%; gap: 28px; }
+@media (max-width: 768px) {
+  .ct-left { gap: 24px; padding: 40px 5%; }
   .ct-right { padding: 40px 5%; }
+  .ct-info-block, .ct-enquiry-block, .ct-social-block { flex: 1 1 220px; }
+}
+
+@media (max-width: 640px) {
+  .ct-hero { height: 55svh; min-height: 380px; }
+  .ct-hero-content { padding: 0 5% 32px; max-width: 100%; }
+  .ct-hero-title { font-size: clamp(2rem, 5vw, 3rem); }
+  .ct-form-row { grid-template-columns: 1fr; }
+  .ct-left { flex-direction: column; padding: 32px 5%; gap: 24px; }
+  .ct-right { padding: 32px 5%; }
   .ct-enquiry-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .ct-hero { height: 50svh; min-height: 320px; }
+  .ct-hero-content { padding: 0 4% 24px; }
+  .ct-hero-title { font-size: clamp(1.5rem, 4vw, 2.2rem); line-height: 1.1; }
+  .ct-hero-desc { font-size: 0.85rem; max-width: 100%; }
+  .ct-section { padding: 48px 4%; }
+  .ct-section-heading { font-size: clamp(1.6rem, 4vw, 2rem); }
+  .ct-left { align-items: stretch; gap: 16px; }
+  .ct-info-block, .ct-enquiry-block, .ct-social-block { flex: 1 1 auto; }
+  .ct-enquiry-grid { grid-template-columns: 1fr; }
+  .ct-info-d { gap: 8px; }
+  .connect-icon { width: 32px; height: 32px; }
 }

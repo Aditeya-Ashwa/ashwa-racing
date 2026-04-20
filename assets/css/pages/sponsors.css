@@ -443,33 +443,51 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 /* ─── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 860px) {
   .sp-grid-executive { grid-template-columns: 1fr; }
-  .sp-grid-execut
   .sp-tier-section { padding: 64px 5%; }
   .sp-card-exec-link { opacity: 1; }
   .sp-grid-platinum, .sp-grid-gold, .sp-grid-silver, .sp-grid-technical {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 12px;
-} 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+  }
 }
 
 @media (max-width: 640px) {
-  .sp-hero-content { padding: 0 5% 36px; }
-  .tier-nav { overflow-x: auto; flex-wrap: nowrap; }
-  .tier-nav-btn { min-width: 68px; padding: 12px 8px; }
+  .sp-hero { height: 55svh; min-height: 380px; }
+  .sp-hero-content { padding: 0 5% 32px; max-width: 100%; }
+  .sp-hero-title { font-size: clamp(2rem, 5vw, 3rem); }
+  .tier-nav { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 8px; }
+  .tier-nav-btn { min-width: 68px; padding: 10px 12px; font-size: 0.8rem; }
   .sp-card-executive { grid-template-columns: 1fr; }
   .sp-card-exec-logo { padding: 20px; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .sp-tier-section { padding: 60px 5%; }
   .sp-grid-platinum, .sp-grid-gold, .sp-grid-silver, .sp-grid-technical {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 12px;
-} 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sp-hero { height: 50svh; min-height: 300px; }
+  .sp-hero-content { padding: 0 4% 24px; }
+  .sp-hero-title { font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.1; }
+  .sp-hero-desc { font-size: 0.8rem; max-width: 100%; }
+  .tier-nav { gap: 6px; }
+  .tier-nav-btn { min-width: 60px; padding: 8px 10px; font-size: 0.75rem; }
+  .sp-tier-section { padding: 48px 4%; }
+  .sp-section-heading { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+  .sp-grid-platinum, .sp-grid-gold, .sp-grid-silver, .sp-grid-technical {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 8px;
+  }
 }
 
 @media (max-width: 400px) {
   .sp-grid-platinum, .sp-grid-gold, .sp-grid-silver, .sp-grid-technical {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 12px;
-} 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
 }

@@ -329,21 +329,45 @@ body { font-family: var(--font-body); background: var(--black); color: var(--whi
 .al-cta-btn:hover { background: transparent; color: var(--red); }
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
-@media (max-width: 900px) { .al-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { 
+  .al-grid { grid-template-columns: repeat(2, 1fr); } 
+}
+
+@media (max-width: 768px) {
+  .al-grid { grid-template-columns: repeat(2, 1fr); }
+  .al-org { padding: 60px 0 40px; }
+  .al-notable, .al-testimonials, .al-cta { padding: 60px 5%; }
+}
 
 @media (max-width: 600px) {
-  .al-hero-content { padding: 0 5% 28px; }
-  .al-org { padding: 64px 0 48px; }
-  .al-notable, .al-testimonials, .al-cta { padding: 64px 5%; }
+  .al-hero { height: 55svh; min-height: 380px; }
+  .al-hero-content { padding: 0 5% 28px; max-width: 100%; }
+  .al-hero-title { font-size: clamp(2rem, 5vw, 3rem); }
+  .al-org { padding: 48px 0 40px; }
+  .al-notable, .al-testimonials, .al-cta { padding: 54px 5%; }
   .al-filters { padding: 0 5%; }
   .al-grid { grid-template-columns: 1fr; }
   .al-hero-stats { flex-wrap: wrap; }
   .al-hero-stats .hs { min-width: 45%; }
   .al-hero-stats .hs-div { display: none; }
   .al-section-header { padding: 0 5%; }
-  /* Tighten branch padding on small screens */
   .org-col  { padding-left: 20px; padding-right: 20px; }
   .org-prog { padding-left: 8px;  padding-right: 8px; }
+}
+
+@media (max-width: 480px) {
+  .al-hero { height: 50svh; min-height: 300px; }
+  .al-hero-content { padding: 0 4% 20px; }
+  .al-hero-title { font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.1; }
+  .al-hero-desc { font-size: 0.8rem; max-width: 100%; }
+  .al-hero-stats { font-size: 0.85rem; }
+  .al-org { padding: 40px 0 32px; }
+  .al-notable, .al-testimonials, .al-cta { padding: 44px 4%; }
+  .al-grid { grid-template-columns: 1fr; }
+  .al-section-header { padding: 0 4%; margin-bottom: 24px; }
+  .al-section-title { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+  .org-col  { padding-left: 16px; padding-right: 16px; }
+  .org-prog { padding-left: 6px;  padding-right: 6px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

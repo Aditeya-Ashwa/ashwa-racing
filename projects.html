@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,40 +15,43 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <link rel="stylesheet" href="assets/css/components/header.css">
   <link rel="stylesheet" href="assets/css/components/footer.css">
   <link rel="stylesheet" href="assets/css/pages/projects.css">
 </head>
+
 <body>
 
-<header id="main-header"></header>
+  <header id="main-header"></header>
 
-<!-- ═══════════════════════════
+  <!-- ═══════════════════════════
      HERO
 ════════════════════════════ -->
-<section class="proj-hero">
-  <div class="proj-hero-bg"></div>
-  <div class="proj-hero-overlay"></div>
-  <div class="proj-hero-grid"></div>
-  <div class="proj-hero-stripe"></div>
+  <section class="proj-hero">
+    <div class="proj-hero-bg"></div>
+    <div class="proj-hero-overlay"></div>
+    <div class="proj-hero-grid"></div>
+    <div class="proj-hero-stripe"></div>
 
-  <div class="proj-hero-content">
-    <div class="proj-eyebrow">
-      <span class="eyebrow-dash"></span>
-      <span>Engineering Portfolio</span>
+    <div class="proj-hero-content">
+      <div class="proj-eyebrow">
+        <span class="eyebrow-dash"></span>
+        <span>Engineering Portfolio</span>
+      </div>
+      <h1 class="proj-hero-title">OUR<br><em>PROJECTS</em></h1>
+      <p class="proj-hero-desc">
+        Across combustion, electric, hybrid, hyperloop, and autonomous platforms —
+        Ashwa Racing engineers high-performance prototypes built for competition.
+      </p>
     </div>
-    <h1 class="proj-hero-title">OUR<br><em>PROJECTS</em></h1>
-    <p class="proj-hero-desc">
-      Across combustion, electric, hybrid, hyperloop, and autonomous platforms —
-      Ashwa Racing engineers high-performance prototypes built for competition.
-    </p>
-  </div>
 
-  <!-- Programme quick-nav -->
-  <!-- <nav class="prog-nav" aria-label="Programme navigation">
+    <!-- Programme quick-nav -->
+    <!-- <nav class="prog-nav" aria-label="Programme navigation">
     <button class="prog-nav-btn active" data-prog="cv">
       <span class="prog-nav-code">CV</span>
       <span class="prog-nav-name">Combustion</span>
@@ -69,7 +73,7 @@
       <span class="prog-nav-name">Driverless</span>
     </button>
   </nav> -->
-</section>
+  </section>
 
   <!-- ═══════════════════════════
       ALL PROGRAMMES OVERVIEW
@@ -88,40 +92,49 @@
     </div>
   </section>
 
-<!-- ═══════════════════════════
+  <!-- ═══════════════════════════
      PROGRAMME VIEWER
      One panel, swapped by JS
 ════════════════════════════ -->
-<section class="prog-viewer" id="prog-viewer">
+  <section class="prog-viewer" id="prog-viewer">
 
-  <!-- Programme identity bar -->
-  <div class="prog-identity" id="prog-identity">
-    <div class="prog-code" id="prog-code">CV</div>
-    <div class="prog-identity-text">
-      <div class="prog-tag" id="prog-tag">Combustion Vehicle</div>
-      <h2 class="prog-title" id="prog-title"></h2>
+    <!-- Programme identity bar -->
+    <div class="prog-identity" id="prog-identity">
+      <div class="prog-code" id="prog-code">CV</div>
+      <div class="prog-identity-text">
+        <div class="prog-tag" id="prog-tag">Combustion Vehicle</div>
+        <h2 class="prog-title" id="prog-title"></h2>
+      </div>
+      <!-- Year selector lives here -->
+      <div class="prog-years-wrapper">
+        <button class="prog-years-nav prog-years-nav--left" id="years-scroll-left" aria-label="Scroll years left">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="prog-years" id="prog-years"></div>
+        <button class="prog-years-nav prog-years-nav--right" id="years-scroll-right" aria-label="Scroll years right">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
     </div>
-    <!-- Year selector lives here -->
-    <div class="prog-years" id="prog-years"></div>
-  </div>
 
-  <!-- Main split: image + content -->
-  <div class="prog-split">
-    <div class="prog-image-wrap" id="prog-image-wrap">
-      <img id="prog-image" src="" alt="" loading="lazy">
-      <div class="prog-image-overlay" id="prog-image-overlay"></div>
+    <!-- Main split: image + content -->
+    <div class="prog-split">
+      <div class="prog-image-wrap" id="prog-image-wrap">
+        <img id="prog-image" src="" alt="" loading="lazy">
+        <div class="prog-image-overlay" id="prog-image-overlay"></div>
+      </div>
+
+      <div class="prog-content" id="prog-content">
+        <!-- Injected by JS -->
+      </div>
     </div>
 
-    <div class="prog-content" id="prog-content">
-      <!-- Injected by JS -->
-    </div>
-  </div>
+  </section>
 
-</section>
+  <footer id="main-footer"></footer>
 
-<footer id="main-footer"></footer>
-
-<script src="assets/js/components/header.js"></script>
-<script src="assets/js/pages/projects.js"></script>
+  <script src="assets/js/components/header.js"></script>
+  <script src="assets/js/pages/projects.js"></script>
 </body>
+
 </html>

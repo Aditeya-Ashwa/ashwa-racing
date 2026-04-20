@@ -7,11 +7,11 @@
 
 // ─── Programme identity ───────────────────────────────────────
 const PROGRAMMES = {
-  cv:  { code: "CV",  tag: "Combustion Vehicle",  accent: "#e8001d", cssVar: "--cv-accent"  },
-  ev:  { code: "EV",  tag: "Electric Vehicle",     accent: "#00c2a8", cssVar: "--ev-accent"  },
-  hyb: { code: "HYB", tag: "Hybrid Vehicle",       accent: "#f59e0b", cssVar: "--hyb-accent" },
-  hyp: { code: "HYL", tag: "Hyperloop",            accent: "#7c3aed", cssVar: "--hyp-accent" },
-  dv:  { code: "DRV", tag: "Driverless Vehicle",   accent: "#3b82f6", cssVar: "--dv-accent"  }
+  cv: { code: "CV", tag: "Combustion Vehicle", accent: "#e8001d", cssVar: "--cv-accent" },
+  ev: { code: "EV", tag: "Electric Vehicle", accent: "#00c2a8", cssVar: "--ev-accent" },
+  hyb: { code: "HYB", tag: "Hybrid Vehicle", accent: "#f59e0b", cssVar: "--hyb-accent" },
+  hyp: { code: "HYL", tag: "Hyperloop", accent: "#7c3aed", cssVar: "--hyp-accent" },
+  dv: { code: "DRV", tag: "Driverless Vehicle", accent: "#3b82f6", cssVar: "--dv-accent" }
 };
 
 // ─── Project data ─────────────────────────────────────────────
@@ -713,21 +713,21 @@ const projectData = {
 "use strict";
 
 // ─── State ────────────────────────────────────────────────────
-let activeProgKey    = "cv";
-let activeYear       = null;
-let slideshowTimer   = null;
-let renderToken      = 0;      // incremented every renderYear call;
-                               // stale async callbacks check this before acting
+let activeProgKey = "cv";
+let activeYear = null;
+let slideshowTimer = null;
+let renderToken = 0;      // incremented every renderYear call;
+// stale async callbacks check this before acting
 
 // ─── DOM refs ─────────────────────────────────────────────────
-const viewer      = document.getElementById("prog-viewer");
-const progCode    = document.getElementById("prog-code");
-const progTag     = document.getElementById("prog-tag");
-const progTitle   = document.getElementById("prog-title");
-const progYears   = document.getElementById("prog-years");
-const progImage   = document.getElementById("prog-image");
+const viewer = document.getElementById("prog-viewer");
+const progCode = document.getElementById("prog-code");
+const progTag = document.getElementById("prog-tag");
+const progTitle = document.getElementById("prog-title");
+const progYears = document.getElementById("prog-years");
+const progImage = document.getElementById("prog-image");
 const progContent = document.getElementById("prog-content");
-const stripe      = document.querySelector(".proj-hero-stripe");
+const stripe = document.querySelector(".proj-hero-stripe");
 
 // Set transition once on the element, never inside a loop/interval
 progImage.style.transition = "opacity 0.25s ease";
@@ -738,10 +738,10 @@ progImage.style.transition = "opacity 0.25s ease";
 function preloadImages(paths) {
   return Promise.all(
     paths.map(p => new Promise(resolve => {
-      const img   = new Image();
-      img.onload  = () => resolve(p);
+      const img = new Image();
+      img.onload = () => resolve(p);
       img.onerror = () => resolve(null);
-      img.src     = p;
+      img.src = p;
     }))
   ).then(r => r.filter(Boolean));
 }
@@ -760,7 +760,7 @@ function swapImage(src, alt, token) {
 
 // ─── Render year ──────────────────────────────────────────────
 function renderYear(progKey, year) {
-  const data     = projectData[progKey].years[year];
+  const data = projectData[progKey].years[year];
   const identity = PROGRAMMES[progKey];
 
   // Invalidate all in-flight async work from previous calls
@@ -779,8 +779,8 @@ function renderYear(progKey, year) {
   );
   const specHTML = hasRealSpecs ? `
     <div class="prog-specs">
-      <div class="prog-spec"><span>Weight</span><strong>${spec.weight  || "—"}</strong></div>
-      <div class="prog-spec"><span>Power</span><strong>${spec.power   || "—"}</strong></div>
+      <div class="prog-spec"><span>Weight</span><strong>${spec.weight || "—"}</strong></div>
+      <div class="prog-spec"><span>Power</span><strong>${spec.power || "—"}</strong></div>
       <div class="prog-spec"><span>0–100</span><strong>${spec.acceleration || "—"}</strong></div>
       <div class="prog-spec"><span>Top Speed</span><strong>${spec.topSpeed || "—"}</strong></div>
     </div>` : "";
@@ -789,7 +789,7 @@ function renderYear(progKey, year) {
     ? `<div class="prog-badge">${data.badge}</div>` : "";
 
   const changeItems = data.changes.map(c => `<li>${c}</li>`).join("");
-  const achItems    = data.achievements.map(a => `<li>${a}</li>`).join("");
+  const achItems = data.achievements.map(a => `<li>${a}</li>`).join("");
 
   progContent.innerHTML = `
     <div>
@@ -848,19 +848,19 @@ function renderYear(progKey, year) {
 // ─── Switch programme ─────────────────────────────────────────
 function switchProgramme(progKey) {
   const identity = PROGRAMMES[progKey];
-  const proto    = projectData[progKey];
-  const years    = Object.keys(proto.years).map(Number).sort((a, b) => b - a);
+  const proto = projectData[progKey];
+  const years = Object.keys(proto.years).map(Number).sort((a, b) => b - a);
 
   activeProgKey = progKey;
 
   viewer.style.transition = "opacity 0.18s ease";
-  viewer.style.opacity    = "0";
+  viewer.style.opacity = "0";
 
   setTimeout(() => {
     document.documentElement.style.setProperty("--prog-accent", identity.accent);
 
-    progCode.textContent  = identity.code;
-    progTag.textContent   = identity.tag;
+    progCode.textContent = identity.code;
+    progTag.textContent = identity.tag;
     progTitle.textContent = proto.title;
 
     if (stripe) stripe.dataset.prog = progKey;
@@ -868,8 +868,8 @@ function switchProgramme(progKey) {
     // Rebuild year buttons
     progYears.innerHTML = "";
     years.forEach(year => {
-      const btn       = document.createElement("button");
-      btn.className   = "year-btn";
+      const btn = document.createElement("button");
+      btn.className = "year-btn";
       btn.textContent = year;
       btn.dataset.year = year;
       btn.addEventListener("click", () => renderYear(progKey, year));
@@ -898,7 +898,7 @@ function buildOverviewCards() {
 
   Object.entries(projectData).forEach(([key, proto]) => {
     const identity = PROGRAMMES[key];
-    const years    = Object.keys(proto.years).sort((a, b) => b - a);
+    const years = Object.keys(proto.years).sort((a, b) => b - a);
 
     const card = document.createElement("div");
     card.className = "prog-card";
@@ -912,7 +912,7 @@ function buildOverviewCards() {
       <div class="prog-card-name">${identity.tag}</div>
       <div class="prog-card-title">${proto.title}</div>
       <div class="prog-card-years">
-        ${years.length > 1 ? `${years[years.length-1]} – ${years[0]}` : years[0]}
+        ${years.length > 1 ? `${years[years.length - 1]} – ${years[0]}` : years[0]}
         · ${years.length} season${years.length !== 1 ? "s" : ""}
       </div>
       <i class="fas fa-arrow-up-right prog-card-arrow"></i>`;
@@ -935,7 +935,7 @@ function buildOverviewCards() {
 function initReveal() {
   const cards = document.querySelectorAll(".prog-card");
   cards.forEach((el, i) => {
-    el.style.opacity   = "0";
+    el.style.opacity = "0";
     el.style.transform = "translateY(18px)";
     el.style.transition =
       `opacity 0.5s var(--ease-expo) ${i * 0.06}s,
@@ -945,7 +945,7 @@ function initReveal() {
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
-      e.target.style.opacity   = "1";
+      e.target.style.opacity = "1";
       e.target.style.transform = "translateY(0)";
       obs.unobserve(e.target);
     });
@@ -954,7 +954,53 @@ function initReveal() {
   cards.forEach(el => obs.observe(el));
 }
 
+// ─── Year scroll navigation ────────────────────────────────────
+function initYearScroll() {
+  const progYears = document.getElementById("prog-years");
+  const scrollLeftBtn = document.getElementById("years-scroll-left");
+  const scrollRightBtn = document.getElementById("years-scroll-right");
+
+  if (!progYears || !scrollLeftBtn || !scrollRightBtn) return;
+
+  const scrollDistance = 200; // pixels per scroll
+
+  function updateScrollButtons() {
+    const isAtStart = progYears.scrollLeft <= 0;
+    const isAtEnd = progYears.scrollLeft >= (progYears.scrollWidth - progYears.clientWidth - 10);
+
+    scrollLeftBtn.disabled = isAtStart;
+    scrollRightBtn.disabled = isAtEnd;
+
+    scrollLeftBtn.style.opacity = isAtStart ? "0.4" : "1";
+    scrollRightBtn.style.opacity = isAtEnd ? "0.4" : "1";
+    scrollLeftBtn.style.cursor = isAtStart ? "not-allowed" : "pointer";
+    scrollRightBtn.style.cursor = isAtEnd ? "not-allowed" : "pointer";
+  }
+
+  scrollLeftBtn.addEventListener("click", () => {
+    progYears.scrollBy({
+      left: -scrollDistance,
+      behavior: "smooth"
+    });
+    setTimeout(updateScrollButtons, 300);
+  });
+
+  scrollRightBtn.addEventListener("click", () => {
+    progYears.scrollBy({
+      left: scrollDistance,
+      behavior: "smooth"
+    });
+    setTimeout(updateScrollButtons, 300);
+  });
+
+  // Update button states on scroll or page load
+  progYears.addEventListener("scroll", updateScrollButtons);
+  window.addEventListener("resize", updateScrollButtons);
+  setTimeout(updateScrollButtons, 300);
+}
+
 // ─── Init ─────────────────────────────────────────────────────
 switchProgramme("cv");
 buildOverviewCards();
 initReveal();
+initYearScroll();

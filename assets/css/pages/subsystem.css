@@ -733,7 +733,6 @@ body {
 }
 
 .prog-card:hover .prog-card-icon {
-  transform: translateY(-2px);
   opacity: 1;
 }
 

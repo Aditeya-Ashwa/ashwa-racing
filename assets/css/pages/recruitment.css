@@ -290,9 +290,11 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 .rc-benefit-icon {
   font-size: 1.4rem; color: var(--red);
   margin-bottom: 14px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
-.rc-benefit:hover .rc-benefit-icon { transform: scale(1.15); }
+.rc-benefit:hover .rc-benefit-icon { 
+  color: rgba(232, 0, 29, 0.8);
+}
 
 .rc-benefit h3 {
   font-family: var(--font-display);
@@ -411,12 +413,12 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   color: var(--white); margin-bottom: 16px;
 }
 .rc-subsystems-heading em {
-  font-style: italic; color: rgba(255,255,255,0.6); display: block;
+  font-style: italic; color: var(--white); display: block;
 }
 
 .rc-subsystems-inner p {
   font-size: 0.95rem; line-height: 1.75;
-  color: rgba(255,255,255,0.65); font-weight: 300;
+  color: rgba(255,255,255,0.95); font-weight: 400;
   margin-bottom: 32px; max-width: 480px;
 }
 
@@ -473,16 +475,50 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   .rc-benefits-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 768px) {
+  .rc-benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .rc-hero-stats { padding: 12px 5%; flex-wrap: wrap; row-gap: 12px; }
+  .rhs { font-size: 0.9rem; }
+}
+
 @media (max-width: 640px) {
-  .rc-hero-content { padding: 0 5% 40px; }
+  .rc-hero { height: 55svh; min-height: 380px; }
+  .rc-hero-content { padding: 0 5% 32px; max-width: 100%; }
+  .rc-hero-title { font-size: clamp(2rem, 5vw, 3rem); }
   .rc-hero-stats { padding: 16px 5%; flex-wrap: wrap; row-gap: 16px; }
   .rhs-div { display: none; }
-  .rhs { padding-right: 28px; }
-  .rc-why, .rc-process { padding: 72px 5%; }
+  .rhs { padding-right: 28px; font-size: 0.85rem; }
+  .rc-why, .rc-process { padding: 60px 5%; }
   .rc-benefits-grid { grid-template-columns: 1fr; }
-  .rc-subsystems-inner { padding: 72px 5% 48px; }
-  .rc-hero-actions { gap: 10px; }
-  .rc-btn-primary, .rc-btn-ghost { padding: 10px 20px; font-size: 0.88rem; }
+  .rc-benefit { padding: 24px 20px; }
+  .rc-subsystems-inner { padding: 60px 5% 40px; }
+  .rc-hero-actions { gap: 10px; flex-wrap: wrap; }
+  .rc-btn-primary, .rc-btn-ghost { padding: 10px 16px; font-size: 0.8rem; width: 100%; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .rc-hero { height: 50svh; min-height: 300px; }
+  .rc-hero-content { padding: 0 4% 24px; }
+  .rc-status { padding: 6px 12px; font-size: 0.7rem; }
+  .rc-eyebrow { font-size: 0.65rem; gap: 8px; }
+  .rc-hero-title { font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.1; }
+  .rc-hero-desc { font-size: 0.8rem; max-width: 100%; }
+  .rc-hero-stats { padding: 12px 4%; row-gap: 12px; }
+  .rhs-num { font-size: 1.4rem; }
+  .rhs-label { font-size: 0.7rem; }
+  .rc-why, .rc-process { padding: 48px 4%; }
+  .rc-why-header, .rc-process-header { margin-bottom: 32px; }
+  .rc-section-heading { font-size: clamp(1.4rem, 4vw, 2rem); }
+  .rc-benefits-grid { grid-template-columns: 1fr; }
+  .rc-benefit { padding: 20px 16px; }
+  .rc-benefit-num { font-size: 0.55rem; margin-bottom: 12px; }
+  .rc-benefit-icon { font-size: 1.2rem; margin-bottom: 10px; }
+  .rc-benefit h3 { font-size: 0.95rem; }
+  .rc-benefit p { font-size: 0.75rem; }
+  .rc-timeline { padding-left: 36px; margin-left: 0; }
+  .rc-tl-num { width: 36px; height: 36px; font-size: 0.8rem; }
+  .rc-subsystems-inner { padding: 48px 4% 32px; }
+  .rc-subsystems-heading { font-size: clamp(1.8rem, 4vw, 2.5rem); }
 }
 
 /* ============================================================
