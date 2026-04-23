@@ -1,56 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Ashwa Racing</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
-<link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Ashwa Racing" />
-<link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Ashwa Racing</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Ashwa Racing">
+  <link rel="manifest" href="assets/images/favicon/site.webmanifest">
 
-    <!-- CSS FILES -->
-    <link rel="stylesheet" href="assets/css/pages/gallery.css">
-    <link rel="stylesheet" href="assets/css/components/header.css">
-    <link rel="stylesheet" href="assets/css/components/footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css">
+
+  <link rel="stylesheet" href="assets/css/components/header.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/pages/gallery.css">
 </head>
-
 <body>
 
-    <!-- HEADER -->
-    <header id="main-header"></header>
+  <header id="main-header"></header>
 
-    <!-- GALLERY SECTION -->
-    <section class="gallery-section">
-        <div class="gallery-header">
-            <h1>Gallery</h1>
-            <p>Engineering moments. Competition intensity. Precision in motion.</p>
+  <!-- HERO -->
+  <section class="gallery-hero">
+    <div class="gallery-hero__eyebrow">Visual Archive</div>
+    <h1 class="gallery-hero__title">Gallery</h1>
+    <p class="gallery-hero__sub">Engineering moments. Competition intensity. Precision in motion.</p>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="gallery-filters">
+    <button class="filter-btn active" data-filter="all">All <span class="filter-count"></span></button>
+    <button class="filter-btn" data-filter="car">Cars <span class="filter-count"></span></button>
+    <button class="filter-btn" data-filter="competition">Competition <span class="filter-count"></span></button>
+    <button class="filter-btn" data-filter="workshop">Workshop <span class="filter-count"></span></button>
+    <button class="filter-btn" data-filter="team">Team <span class="filter-count"></span></button>
+  </div>
+
+  <!-- MASONRY GRID (JS populates) -->
+  <section class="gallery-section"></section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lb-backdrop" id="lbBackdrop"></div>
+
+    <button class="lb-close" id="lbClose" aria-label="Close lightbox">
+      <i class="fas fa-times"></i>
+    </button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next image">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <div class="lb-inner">
+      <img class="lb-img" id="lbImg" src="" alt="">
+      <div class="lb-footer">
+        <span class="lb-counter" id="lbCounter"></span>
+        <div class="lb-caption">
+          <h3 id="lbTitle"></h3>
+          <p id="lbDesc"></p>
         </div>
-
-        <div class="gallery-grid" id="galleryGrid">
-            <!-- JS will populate this -->
-        </div>
-    </section>
-
-    <!-- Lightbox Modal -->
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img id="lightboxImg" src="" alt="">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
     </div>
+  </div>
 
-    <!-- FOOTER -->
-    <footer id="main-footer"></footer>
+  <footer id="main-footer"></footer>
 
-
-    <!-- JS FILES -->
-    <script src="assets/js/components/header.js"></script>
-    <script src="assets/js/pages/gallery.js"></script>
-
+  <script src="assets/js/components/header.js"></script>
+  <script src="assets/js/pages/gallery.js"></script>
 </body>
-
 </html>
