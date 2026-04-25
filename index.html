@@ -13,7 +13,6 @@
   <noscript><link rel="stylesheet" href="assets/css/pages/index.css"></noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="assets/videos/hero_preload.webp">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;1,800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
   <!-- Added CSS for hero to reduce LCP from 1500ms to just 500ms or even lower -->
   <style>
@@ -27,13 +26,6 @@
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-}
-.hero-video {
-  position: absolute; inset: 0;
-  top:0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: brightness(0.9);
 }
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
@@ -76,7 +68,44 @@
   letter-spacing: 0.2em;
   color: rgba(255,255,255,0.3);
 }
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Start slightly zoomed */
+  transform: scale(1.05);
+  filter: brightness(0.9);
+
+  animation: heroZoom 14s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.5) translate(-5%, -10%);
+  }
+}
   </style>
+
+<script>
+const img = document.querySelector(".hero-img");
+
+document.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 6;
+  const y = (e.clientY / window.innerHeight - 0.5) * 6;
+
+  img.style.transform = `
+    scale(1.1)
+    translate(${x}%, ${y}%)
+  `;
+});
+</script>
 
 </head>
 <body>
@@ -84,9 +113,13 @@
   <div id="main-header"></div>
 
   <section class="hero">
-    <video class="hero-video" autoplay muted loop poster="assets/videos/hero_preload.webp">
-      <source src="assets/videos/hero.webm" type="video/webm">
-    </video>
+    <picture>
+      <!-- Mobile portrait -->
+      <source media="(max-width: 768px)" srcset="assets/images/heroimg/hero-mobile.png">
+
+      <!-- Desktop -->
+      <img src="assets/images/heroimg/hero-desktop.png" class="hero-img" alt="Ashwa Racing Car">
+    </picture>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="label">ASHWA RACING · SINCE 2003</p>
@@ -118,7 +151,7 @@
 
   <section class="cta-trio">
     <a href="recruitment.html" class="cta-card">
-      <div class="cta-img" style="background-image:url('assets/images/team/2026.webp')"></div>
+      <div class="cta-img" style="background-image:url('assets/images/team/2026.png')"></div>
       <div class="cta-body">
         <h3>Be the part of the journey</h3>
         <p>Build the next car. Push your limits. Be the best.</p>
@@ -132,7 +165,7 @@
       </div>
     </a>
     <a href="smp.html" class="cta-card">
-      <div class="cta-img" style="background-image:url('assets/images/team/Costwin.webp')"></div>
+      <div class="cta-img" style="background-image:url('assets/images/team/Costwin.png')"></div>
       <div class="cta-body">
         <h3>Partner With Performance</h3>
         <p>Be part of a team pushing the limits of engineering and innovation.</p>

@@ -119,7 +119,7 @@ h2 em { font-style: italic; color: var(--red); }
   transition: filter 0.4s, transform 0.5s var(--expo);
   flex-shrink: 0;
 }
-.cta-card:hover .cta-img { filter: brightness(0.75) saturate(1); transform: scale(1.03); }
+.cta-card:hover .cta-img { filter: brightness(1) saturate(1); transform: scale(1.03); }
 
 .cta-body {
   padding: 28px 32px 32px;
