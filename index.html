@@ -10,6 +10,8 @@
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
   <!-- To remove blocking of rendering by index.css, which now has the footer and the header css as well -->
   <link rel="preload" href="assets/css/pages/index.css" as="style" onload="this.rel='stylesheet'"> 
+  <link rel="preload" as="image" href="assets/images/heroimg/hero-mobile.png">
+  <link rel="preload" as="image" href="assets/images/heroimg/hero-desktop.png">
   <noscript><link rel="stylesheet" href="assets/css/pages/index.css"></noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,10 +117,10 @@ document.addEventListener("mousemove", (e) => {
   <section class="hero">
     <picture>
       <!-- Mobile portrait -->
-      <source media="(max-width: 768px)" srcset="assets/images/heroimg/hero-mobile.png">
+      <source media="(max-width: 768px)" srcset="assets/images/heroimg/hero-mobile.png" fetchpriority="high">
 
       <!-- Desktop -->
-      <img src="assets/images/heroimg/hero-desktop.png" class="hero-img" alt="Ashwa Racing Car">
+      <img src="assets/images/heroimg/hero-desktop.png" class="hero-img" alt="Ashwa Racing Car" fetchpriority="high" width="1920" height="1080">
     </picture>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -206,13 +208,13 @@ document.addEventListener("mousemove", (e) => {
 
         <div class="feed-col">
           <div class="feed-source">Instagram</div>
-          <div class="feed-card feed-card--embed">
-            <blockquote class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/reel/DW33iD9E0QB/"
-              data-instgrm-version="14"
-              style="width:100%;margin:0;border:none;background:transparent;">
-            </blockquote>
-          </div>
+            <div class="feed-card feed-card--embed insta-lazy">
+              <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DW33iD9E0QB/"
+                data-instgrm-version="14"
+                style="width:100%;margin:0;border:none;background:transparent;">
+              </blockquote>
+            </div>
           <a href="https://www.instagram.com/ashwaracing" target="_blank" rel="noopener" class="btn-line">Follow Us
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round"
@@ -223,15 +225,14 @@ document.addEventListener("mousemove", (e) => {
 
         <div class="feed-col">
           <div class="feed-source">LinkedIn</div>
-          <iframe 
-            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7432765006745866240?collapsed=1" 
-            height="627" 
-            width="504" 
-            frameborder="0" 
-            allowfullscreen="" 
-            title="Embedded post"
-            style="border-radius: 12px; max-width: 100%;">
-          </iframe>
+            <iframe 
+              src="https://www.linkedin.com/embed/feed/update/urn:li:share:7432765006745866240?collapsed=1" 
+              height="627" 
+              width="504" 
+              frameborder="0" 
+              loading="lazy"
+              style="border-radius: 12px; max-width: 100%;">
+            </iframe>
 
           <a href="https://in.linkedin.com/company/ashwa-racing" target="_blank" rel="noopener" class="btn-line">
             Follow Us
@@ -325,6 +326,22 @@ document.addEventListener("mousemove", (e) => {
 
   <script src="assets/js/components/header.js" defer></script>
   <script src="assets/js/pages/index.js" defer></script>
+  
+  <script>
+  const el = document.querySelector('.insta-lazy');
+
+  const io = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      const s = document.createElement('script');
+      s.src = "https://www.instagram.com/embed.js";
+      s.async = true;
+      document.body.appendChild(s);
+      io.disconnect();
+    }
+  }, { rootMargin: "200px" });
+
+  io.observe(el);
+  </script>
 
 </body>
 </html>
