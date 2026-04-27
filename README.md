@@ -1,6 +1,6 @@
 # Ashwa Racing — Website
 
-The official website for Ashwa Racing, the Formula Student team of RV College of Engineering, Bengaluru. Live at [ashwa-racing.github.io](https://ashwa-racing.github.io).
+The official website for Ashwa Racing, the Formula Student team of RV College of Engineering, Bengaluru. Live at [ashwaracing.org](https://ashwaracing.org).
 
 Built without a framework. No build step, no bundler, no dependencies to install. Open `index.html` in a browser and it works.
 
@@ -9,7 +9,7 @@ Built without a framework. No build step, no bundler, no dependencies to install
 ## What's in the repo
 
 ```
-ashwa-racing.github.io/
+ashwaracing.org/
 │
 ├── index.html                  # Home — hero slideshow, sponsors strip, subsystem grid
 ├── about.html                  # Team history, mission, alumni testimonials
@@ -211,7 +211,7 @@ Each subsystem has a dedicated HTML page (`aero.html`, `chassis-workshop.html`, 
 
 The site deploys automatically to GitHub Pages on every push to `main`. The workflow is in `.github/workflows/`. No build step is involved — Pages serves the repo root directly.
 
-Custom domain is not currently configured; the site lives at the default `ashwa-racing.github.io` URL.
+Custom domain is not currently configured; the site lives at the default `ashwaracing.org` URL.
 
 ---
 

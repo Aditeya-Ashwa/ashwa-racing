@@ -9,4 +9,4 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-Sitemap: https://ashwa-racing.github.io/sitemap.xml
+Sitemap: https://ashwaracing.org/sitemap.xml
