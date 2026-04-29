@@ -42,8 +42,8 @@ function initNewsletterPreview() {
 
   const latest = {
     title: "Feb 2026 — GENERAL",
-    cover: "assets/images/newsletters/2026/2026-02.png",
-    pdf: "assets/pdfs/newsletters/2026/2026-02-general.pdf",
+    cover: "https://assets.ashwaracing.org/cdn-cgi/image/format=avif/images/newsletters/2026/2026-02.png",
+    pdf: "https://assets.ashwaracing.org/pdfs/newsletters/2026/2026-02-general.pdf",
     date: "Feb 2026"
   };
 

@@ -105,23 +105,23 @@
             <span class="code-lang">typescript</span>
             <span class="code-file">ashwa-it.ts</span>
           </div>
-<pre class="code-body"><code><span class="c-kw">type</span> <span class="c-type">Domain</span> <span class="c-op">=</span>
-  <span class="c-str">"web"</span> <span class="c-op">|</span> <span class="c-str">"ml"</span> <span class="c-op">|</span> <span class="c-str">"erp"</span> <span class="c-op">|</span> <span class="c-str">"infra"</span><span class="c-op">;</span>
+            <pre class="code-body"><code><span class="c-kw">type</span> <span class="c-type">Domain</span> <span class="c-op">=</span>
+              <span class="c-str">"web"</span> <span class="c-op">|</span> <span class="c-str">"ml"</span> <span class="c-op">|</span> <span class="c-str">"erp"</span> <span class="c-op">|</span> <span class="c-str">"infra"</span><span class="c-op">;</span>
 
-<span class="c-kw">interface</span> <span class="c-type">AshwaIT</span> <span class="c-op">{</span>
-  <span class="c-prop">domains</span><span class="c-op">:</span> <span class="c-type">Domain</span><span class="c-op">[];</span>
-  <span class="c-prop">mission</span><span class="c-op">:</span> <span class="c-type">string</span><span class="c-op">;</span>
-  <span class="c-prop">deploy</span><span class="c-op">:</span> <span class="c-op">()</span> <span class="c-op">=></span> <span class="c-type">Promise</span><span class="c-op">&lt;</span><span class="c-type">void</span><span class="c-op">&gt;;</span>
-<span class="c-op">}</span>
+            <span class="c-kw">interface</span> <span class="c-type">AshwaIT</span> <span class="c-op">{</span>
+              <span class="c-prop">domains</span><span class="c-op">:</span> <span class="c-type">Domain</span><span class="c-op">[];</span>
+              <span class="c-prop">mission</span><span class="c-op">:</span> <span class="c-type">string</span><span class="c-op">;</span>
+              <span class="c-prop">deploy</span><span class="c-op">:</span> <span class="c-op">()</span> <span class="c-op">=></span> <span class="c-type">Promise</span><span class="c-op">&lt;</span><span class="c-type">void</span><span class="c-op">&gt;;</span>
+            <span class="c-op">}</span>
 
-<span class="c-kw">const</span> <span class="c-var">it</span><span class="c-op">:</span> <span class="c-type">AshwaIT</span> <span class="c-op">= {</span>
-  <span class="c-prop">domains</span><span class="c-op">:</span> <span class="c-op">[</span><span class="c-str">"web"</span><span class="c-op">,</span> <span class="c-str">"ml"</span><span class="c-op">,</span>
-           <span class="c-str">"erp"</span><span class="c-op">,</span> <span class="c-str">"infra"</span><span class="c-op">],</span>
-  <span class="c-prop">mission</span><span class="c-op">:</span> <span class="c-str">"build fast, ship often"</span><span class="c-op">,</span>
-  <span class="c-prop">deploy</span><span class="c-op">: async () => {</span>
-    <span class="c-kw">await</span> <span class="c-fn">push</span><span class="c-op">(</span><span class="c-str">"production"</span><span class="c-op">);</span>
-  <span class="c-op">}</span>
-<span class="c-op">};</span></code></pre>
+            <span class="c-kw">const</span> <span class="c-var">it</span><span class="c-op">:</span> <span class="c-type">AshwaIT</span> <span class="c-op">= {</span>
+              <span class="c-prop">domains</span><span class="c-op">:</span> <span class="c-op">[</span><span class="c-str">"web"</span><span class="c-op">,</span> <span class="c-str">"ml"</span><span class="c-op">,</span>
+                      <span class="c-str">"erp"</span><span class="c-op">,</span> <span class="c-str">"infra"</span><span class="c-op">],</span>
+              <span class="c-prop">mission</span><span class="c-op">:</span> <span class="c-str">"build fast, ship often"</span><span class="c-op">,</span>
+              <span class="c-prop">deploy</span><span class="c-op">: async () => {</span>
+                <span class="c-kw">await</span> <span class="c-fn">push</span><span class="c-op">(</span><span class="c-str">"production"</span><span class="c-op">);</span>
+              <span class="c-op">}</span>
+            <span class="c-op">};</span></code></pre>
         </div>
       </div>
     </div>
