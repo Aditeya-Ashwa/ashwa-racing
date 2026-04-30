@@ -43,7 +43,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 
 .sp-hero-bg {
   position: absolute; inset: 0;
-  background-image: url('../../images/team/Hyperloop.webp');
+  background-image: url('https://ashwaracing.org/cdn-cgi/image/width=1920,format=auto/https://assets.ashwaracing.org/images/team/Hyperloop.webp');
   background-size: cover; background-position: center 40%;
   filter: brightness(0.22) saturate(0.6);
   transform: scale(1.04);

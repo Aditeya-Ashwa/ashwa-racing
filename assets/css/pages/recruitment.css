@@ -65,7 +65,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 
 .rc-hero-bg {
   position: absolute; inset: 0;
-  background: url('../../images/prototypes/RZ-X9-C/event/3.png') center / cover no-repeat;
+  background: url('https://ashwaracing.org/cdn-cgi/image/width=1920,format=auto/https://assets.ashwaracing.org/images/prototypes/RZ-X9-C/event/3.png') center / cover no-repeat;
   filter: brightness(0.25) saturate(0.7);
   transform: scale(1.04);
   transition: transform 8s var(--ease-expo);
