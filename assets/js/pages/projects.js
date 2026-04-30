@@ -3,6 +3,8 @@
    Programme viewer: CV / EV / HYB / HYP / DV
    ============================================================ */
 
+// max dimesnions are 1740
+
 "use strict";
 
 // ─── Programme identity ───────────────────────────────────────
@@ -21,13 +23,11 @@ const projectData = {
     years: {
       2005: {
         images: [
-          // "assets/images/prototypes/RZ-05-C/1.webp",
-          // "assets/images/prototypes/RZ-05-C/2.webp",
-          // "assets/images/prototypes/RZ-05-C/3.webp",
-          // "assets/images/prototypes/RZ-05-C/4.webp",
-          "assets/images/prototypes/RZ-05-C/5.webp",
-          // "assets/images/prototypes/RZ-05-C/6.webp",
-          // "assets/images/prototypes/RZ-05-C/7.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/7.jpg",
         ],
         changes: [
           "Founding prototype — RZ05 Combustion",
@@ -46,26 +46,16 @@ const projectData = {
       },
       2006: {
         images: [
-          // "assets/images/prototypes/RZ-06-C/event/1.webp",
-          // "assets/images/prototypes/RZ-06-C/event/6.webp",
-          // "assets/images/prototypes/RZ-06-C/event/9.webp",
-          // "assets/images/prototypes/RZ-06-C/event/10.webp",
-          // "assets/images/prototypes/RZ-06-C/event/11.webp",
-          // "assets/images/prototypes/RZ-06-C/event/12.webp",
-          // "assets/images/prototypes/RZ-06-C/event/13.webp",
-          // "assets/images/prototypes/RZ-06-C/event/14.webp",
-          // "assets/images/prototypes/RZ-06-C/event/17.webp",
-          // "assets/images/prototypes/RZ-06-C/event/19.webp",
-          // "assets/images/prototypes/RZ-06-C/event/20.webp",
-          // "assets/images/prototypes/RZ-06-C/event/21.webp",
-          "assets/images/prototypes/RZ-06-C/event/22.webp",
-          // "assets/images/prototypes/RZ-06-C/postevent/1.webp",
-          // "assets/images/prototypes/RZ-06-C/postevent/2.webp",
-          "assets/images/prototypes/RZ-06-C/postevent/3.webp",
-          // "assets/images/prototypes/RZ-06-C/postevent/6.webp",
-          // "assets/images/prototypes/RZ-06-C/postevent/7.webp",
-          // "assets/images/prototypes/RZ-06-C/postevent/8.webp",
-          // "assets/images/prototypes/RZ-06-C/postevent/9.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/event/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/event/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/event/9.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/event/11.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/event/13.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/event/14.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/event/21.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/event/22.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/postevent/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/postevent/3.jpg",
         ],
         changes: [
           "RZ06 Combustion — second-generation platform",
@@ -84,30 +74,16 @@ const projectData = {
       },
       2007: {
         images: [
-          // "assets/images/prototypes/RZ-07-C/1.webp",
-          // "assets/images/prototypes/RZ-07-C/2.webp",
-          // "assets/images/prototypes/RZ-07-C/3.webp",
-          // "assets/images/prototypes/RZ-07-C/4.webp",
-          // "assets/images/prototypes/RZ-07-C/5.webp",
-          // "assets/images/prototypes/RZ-07-C/6.webp",
-          // "assets/images/prototypes/RZ-07-C/7.webp",
-          // "assets/images/prototypes/RZ-07-C/8.webp",
-          // "assets/images/prototypes/RZ-07-C/9.webp",
-          // "assets/images/prototypes/RZ-07-C/10.webp",
-          // "assets/images/prototypes/RZ-07-C/11.webp",
-          // "assets/images/prototypes/RZ-07-C/12.webp",
-          // "assets/images/prototypes/RZ-07-C/13.webp",
-          "assets/images/prototypes/RZ-07-C/14.webp",
-          // "assets/images/prototypes/RZ-07-C/15.webp",
-          // "assets/images/prototypes/RZ-07-C/16.webp",
-          // "assets/images/prototypes/RZ-07-C/17.webp",
-          // "assets/images/prototypes/RZ-07-C/18.webp",
-          // "assets/images/prototypes/RZ-07-C/19.webp",
-          // "assets/images/prototypes/RZ-07-C/20.webp",
-          // "assets/images/prototypes/RZ-07-C/21.webp",
-          // "assets/images/prototypes/RZ-07-C/22.webp",
-          // "assets/images/prototypes/RZ-07-C/23.webp",
-          "assets/images/prototypes/RZ-07-C/24.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/10.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/11.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/12.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/16.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/17.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/23.jpg",
         ],
         changes: [
           "RZ07 Combustion — first European campaign",
@@ -125,19 +101,13 @@ const projectData = {
       },
       2008: {
         images: [
-          // "assets/images/prototypes/RZ-08-C/1.webp",
-          // "assets/images/prototypes/RZ-08-C/2.webp",
-          // "assets/images/prototypes/RZ-08-C/3.webp",
-          // "assets/images/prototypes/RZ-08-C/4.webp",
-          "assets/images/prototypes/RZ-08-C/5.webp",
-          // "assets/images/prototypes/RZ-08-C/6.webp",
-          "assets/images/prototypes/RZ-08-C/7.webp",
-          // "assets/images/prototypes/RZ-08-C/8.webp",
-          // "assets/images/prototypes/RZ-08-C/9.webp",
-          // "assets/images/prototypes/RZ-08-C/10.webp",
-          // "assets/images/prototypes/RZ-08-C/11.webp",
-          // "assets/images/prototypes/RZ-08-C/12.webp",
-          // "assets/images/prototypes/RZ-08-C/13.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/9.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/11.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/13.jpg",
         ],
         changes: [
           "RZ08 Combustion — evolutionary refinement of 2005–2007 platforms",
@@ -155,16 +125,10 @@ const projectData = {
       },
       2009: {
         images: [
-          "assets/images/prototypes/RZ-09-C/EVENT/1.webp",
-          // "assets/images/prototypes/RZ-09-C/EVENT/2.webp",
-          // "assets/images/prototypes/RZ-09-C/EVENT/3.webp",
-          // "assets/images/prototypes/RZ-09-C/EVENT/4.webp",
-          // "assets/images/prototypes/RZ-09-C/EVENT/5.webp",
-          // "assets/images/prototypes/RZ-09-C/EVENT/6.webp",
-          // "assets/images/prototypes/RZ-09-C/EVENT/7.webp",
-          // "assets/images/prototypes/RZ-09-C/EVENT/8.webp",
-          // "assets/images/prototypes/RZ-09-C/POST-EVENT/1.webp",
-          // "assets/images/prototypes/RZ-09-C/PRE-EVENT/1.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-09-C/EVENT/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-09-C/EVENT/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-09-C/EVENT/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-09-C/EVENT/8.jpg",
         ],
         changes: [
           "RZ09 Combustion — Italy & Germany campaign year",
@@ -183,15 +147,12 @@ const projectData = {
       },
       2010: {
         images: [
-          "assets/images/prototypes/RZ-X-C/1.webp",
-          // "assets/images/prototypes/RZ-X-C/2.webp",
-          // "assets/images/prototypes/RZ-X-C/3.webp",
-          // "assets/images/prototypes/RZ-X-C/4.webp",
-          // "assets/images/prototypes/RZ-X-C/5.webp",
-          // "assets/images/prototypes/RZ-X-C/6.webp",
-          // "assets/images/prototypes/RZ-X-C/7.webp",
-          "assets/images/prototypes/RZ-X-C/8.webp",
-          // "assets/images/prototypes/RZ-X-C/9.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X-C/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X-C/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X-C/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X-C/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X-C/8.jpg",
         ],
         changes: [
           "RZ10 — Rebranded next-generation combustion platform",
@@ -209,15 +170,11 @@ const projectData = {
       },
       2011: {
         images: [
-          // "assets/images/prototypes/RZ-X1-C/1.webp",
-          // "assets/images/prototypes/RZ-X1-C/2.webp",
-          "assets/images/prototypes/RZ-X1-C/3.webp",
-          // "assets/images/prototypes/RZ-X1-C/4.webp",
-          "assets/images/prototypes/RZ-X1-C/5.webp",
-          // "assets/images/prototypes/RZ-X1-C/6.webp",
-          // "assets/images/prototypes/RZ-X1-C/7.webp",
-          // "assets/images/prototypes/RZ-X1-C/8.webp",
-          // "assets/images/prototypes/RZ-X1-C/9.webp"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X1-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X1-C/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X1-C/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X1-C/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X1-C/8.jpg",
         ],
         changes: [
           "RZX1 — First generation of the RZX combustion lineage",
@@ -235,7 +192,7 @@ const projectData = {
       },
       2012: {
         images: [
-          "assets/images/prototypes/RZ-X2-C/1.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X2-C/1.jpg",
         ],
         changes: [
           "RZX2 — Second generation RZX combustion platform",
@@ -254,17 +211,15 @@ const projectData = {
       },
       2014: {
         images: [
-          // "assets/images/prototypes/RZ-X4-C/1.webp",
-          // "assets/images/prototypes/RZ-X4-C/2.webp",
-          "assets/images/prototypes/RZ-X4-C/3.webp",
-          // "assets/images/prototypes/RZ-X4-C/4.webp",
-          // "assets/images/prototypes/RZ-X4-C/5.webp",
-          // "assets/images/prototypes/RZ-X4-C/6.webp",
-          // "assets/images/prototypes/RZ-X4-C/7.webp",
-          "assets/images/prototypes/RZ-X4-C/8.webp",
-          // "assets/images/prototypes/RZ-X4-C/9.webp",
-          // "assets/images/prototypes/RZ-X4-C/10.webp",
-          // "assets/images/prototypes/RZ-X4-C/11.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/10.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/11.jpg",
         ],
         changes: [
           "RZX4 — Fourth generation RZX combustion platform",
@@ -284,16 +239,6 @@ const projectData = {
       },
       2015: {
         images: [
-          // "assets/images/prototypes/RZ-X5-C/1.webp",
-          // "assets/images/prototypes/RZ-X5-C/2.webp",
-          // "assets/images/prototypes/RZ-X5-C/3.webp",
-          // "assets/images/prototypes/RZ-X5-C/4.webp",
-          // "assets/images/prototypes/RZ-X5-C/5.webp",
-          // "assets/images/prototypes/RZ-X5-C/6.webp",
-          // "assets/images/prototypes/RZ-X5-C/7.webp",
-          // "assets/images/prototypes/RZ-X5-C/8.webp",
-          // "assets/images/prototypes/RZ-X5-C/9.webp",
-          // "assets/images/prototypes/RZ-X5-C/10.webp",
           "assets/images/prototypes/RZ-X5-C/11.webp"
         ],
         changes: [
@@ -317,24 +262,18 @@ const projectData = {
       },
       2016: {
         images: [
-          // "assets/images/prototypes/RZ-X6-C/EVENT/1.webp",
-          // "assets/images/prototypes/RZ-X6-C/EVENT/2.webp",
-          // "assets/images/prototypes/RZ-X6-C/EVENT/3.webp",
-          // "assets/images/prototypes/RZ-X6-C/EVENT/4.webp",
-          // "assets/images/prototypes/RZ-X6-C/EVENT/5.webp",
-          // "assets/images/prototypes/RZ-X6-C/EVENT/6.webp",
-          // "assets/images/prototypes/RZ-X6-C/EVENT/7.webp",
-          "assets/images/prototypes/RZ-X6-C/EVENT/8.webp",
-          // "assets/images/prototypes/RZ-X6-C/PRE-EVENT/1.webp",
-          // "assets/images/prototypes/RZ-X6-C/PRE-EVENT/2.webp",
-          // "assets/images/prototypes/RZ-X6-C/PRE-EVENT/3.webp",
-          // "assets/images/prototypes/RZ-X6-C/PRE-EVENT/4.webp",
-          "assets/images/prototypes/RZ-X6-C/PRE-EVENT/5.webp",
-          // "assets/images/prototypes/RZ-X6-C/PRE-EVENT/6.webp",
-          // "assets/images/prototypes/RZ-X6-C/PRE-EVENT/7.webp",
-          // "assets/images/prototypes/RZ-X6-C/PRE-EVENT/8.webp",
-          // "assets/images/prototypes/RZ-X6-C/PRE-EVENT/9.webp",
-          // "assets/images/prototypes/RZ-X6-C/PRE-EVENT/10.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/EVENT/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/EVENT/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/EVENT/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/EVENT/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/EVENT/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/EVENT/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/6.jpg",
+
         ],
         changes: [
           "RZX6 — Sixth generation combustion prototype",
@@ -354,25 +293,21 @@ const projectData = {
       },
       2017: {
         images: [
-          // "assets/images/prototypes/RZ-X7-C/EVENT/1.webp",
-          // "assets/images/prototypes/RZ-X7-C/EVENT/2.webp",
-          "assets/images/prototypes/RZ-X7-C/EVENT/3.webp",
-          // "assets/images/prototypes/RZ-X7-C/EVENT/4.webp",
-          "assets/images/prototypes/RZ-X7-C/EVENT/5.webp",
-          // "assets/images/prototypes/RZ-X7-C/EVENT/6.webp",
-          // "assets/images/prototypes/RZ-X7-C/EVENT/7.webp",
-          // "assets/images/prototypes/RZ-X7-C/EVENT/8.webp",
-          // "assets/images/prototypes/RZ-X7-C/EVENT/9.webp",
-          // "assets/images/prototypes/RZ-X7-C/EVENT/10.webp",
-          // "assets/images/prototypes/RZ-X7-C/POST-EVENT/1.webp",
-          // "assets/images/prototypes/RZ-X7-C/POST-EVENT/2.webp",
-          // "assets/images/prototypes/RZ-X7-C/POST-EVENT/3.webp",
-          // "assets/images/prototypes/RZ-X7-C/POST-EVENT/4.webp",
-          // "assets/images/prototypes/RZ-X7-C/POST-EVENT/5.webp",
-          "assets/images/prototypes/RZ-X7-C/POST-EVENT/6.webp",
-          "assets/images/prototypes/RZ-X7-C/POST-EVENT/7.webp",
-          // "assets/images/prototypes/RZ-X7-C/POST-EVENT/8.webp",
-          // "assets/images/prototypes/RZ-X7-C/POST-EVENT/9.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/9.jpg",
+
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/9.jpg",
+
         ],
         changes: [
           "RZX7 — Seventh generation combustion prototype",
@@ -391,26 +326,21 @@ const projectData = {
       },
       2018: {
         images: [
-          // "assets/images/prototypes/RZ-X8-C/EVENT/1.webp",
-          "assets/images/prototypes/RZ-X8-C/EVENT/2.webp",
-          // "assets/images/prototypes/RZ-X8-C/EVENT/3.webp",
-          "assets/images/prototypes/RZ-X8-C/EVENT/4.webp",
-          // "assets/images/prototypes/RZ-X8-C/EVENT/5.webp",
-          // "assets/images/prototypes/RZ-X8-C/EVENT/6.webp",
-          // "assets/images/prototypes/RZ-X8-C/EVENT/7.webp",
-          // "assets/images/prototypes/RZ-X8-C/EVENT/8.webp",
-          // "assets/images/prototypes/RZ-X8-C/EVENT/9.webp",
-          // "assets/images/prototypes/RZ-X8-C/EVENT/10.webp",
-          "assets/images/prototypes/RZ-X8-C/POST-EVENT/1.webp",
-          // "assets/images/prototypes/RZ-X8-C/POST-EVENT/2.webp",
-          // "assets/images/prototypes/RZ-X8-C/POST-EVENT/3.webp",
-          // "assets/images/prototypes/RZ-X8-C/POST-EVENT/4.webp",
-          // "assets/images/prototypes/RZ-X8-C/POST-EVENT/5.webp",
-          // "assets/images/prototypes/RZ-X8-C/POST-EVENT/6.webp",
-          "assets/images/prototypes/RZ-X8-C/POST-EVENT/7.webp",
-          // "assets/images/prototypes/RZ-X8-C/POST-EVENT/8.webp",
-          // "assets/images/prototypes/RZ-X8-C/POST-EVENT/9.webp",
-          // "assets/images/prototypes/RZ-X8-C/POST-EVENT/10.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/EVENT/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/EVENT/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/EVENT/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/EVENT/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/EVENT/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/EVENT/8.jpg",
+
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/10.jpg",
         ],
         changes: [
           "RZX8C — Eighth generation combustion prototype",
@@ -430,37 +360,17 @@ const projectData = {
       },
       2019: {
         images: [
-          // "assets/images/prototypes/RZ-X9-C/event/1.webp",
-          // "assets/images/prototypes/RZ-X9-C/event/2.webp",
-          // "assets/images/prototypes/RZ-X9-C/event/3.webp",
-          // "assets/images/prototypes/RZ-X9-C/event/4.webp",
-          // "assets/images/prototypes/RZ-X9-C/event/5.webp",
-          "assets/images/prototypes/RZ-X9-C/event/6.webp",
-          // "assets/images/prototypes/RZ-X9-C/event/7.webp",
-          // "assets/images/prototypes/RZ-X9-C/event/8.webp",
-          "assets/images/prototypes/RZ-X9-C/event/9.webp",
-          // "assets/images/prototypes/RZ-X9-C/event/10.webp",
-          // "assets/images/prototypes/RZ-X9-C/preevent/1.webp",
-          // "assets/images/prototypes/RZ-X9-C/preevent/2.webp",
-          "assets/images/prototypes/RZ-X9-C/preevent/3.webp",
-          "assets/images/prototypes/RZ-X9-C/preevent/4.webp",
-          // "assets/images/prototypes/RZ-X9-C/preevent/5.webp",
-          // "assets/images/prototypes/RZ-X9-C/preevent/6.webp",
-          // "assets/images/prototypes/RZ-X9-C/preevent/7.webp",
-          // "assets/images/prototypes/RZ-X9-C/preevent/8.webp",
-          // "assets/images/prototypes/RZ-X9-C/preevent/9.webp",
-          // "assets/images/prototypes/RZ-X9-C/preevent/10.webp",
-          // "assets/images/prototypes/RZ-X9-C/preevent/11.webp",
-          // "assets/images/prototypes/RZ-X9-C/postevent/1.webp",
-          // "assets/images/prototypes/RZ-X9-C/postevent/2.webp",
-          // "assets/images/prototypes/RZ-X9-C/postevent/3.webp",
-          // "assets/images/prototypes/RZ-X9-C/postevent/4.webp",
-          // "assets/images/prototypes/RZ-X9-C/postevent/5.webp",
-          // "assets/images/prototypes/RZ-X9-C/postevent/6.webp",
-          "assets/images/prototypes/RZ-X9-C/postevent/7.webp",
-          // "assets/images/prototypes/RZ-X9-C/postevent/8.webp",
-          // "assets/images/prototypes/RZ-X9-C/postevent/9.webp",
-          // "assets/images/prototypes/RZ-X9-C/postevent/10.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/event/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/event/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/event/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/event/9.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/postevent/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/postevent/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/postevent/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/postevent/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/preevent/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/preevent/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/preevent/7.jpg",
         ],
         changes: [
           "RZX9C — Ninth generation combustion prototype",
@@ -476,7 +386,55 @@ const projectData = {
           "Design Event — 110 pts"
         ],
         badge: "STATIC STRENGTH"
-      }
+      },
+      2025: {
+        images: [
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX5-C/event/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX5-C/event/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX5-C/event/4.JPG",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX5-C/event/5.JPG",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX5-C/event/6.JPG",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX5-C/event/7.HEIC",
+        ],
+        changes: [
+          "RZ-XX5-C — Ninth generation combustion prototype",
+          "Second Position in Cost Presentation",
+          "8th overall finish in Formula Bharat 2025",
+        ],
+        desc: "RZ-XX5-C focused on dynamic performance, achieving a top 10 overall rank at Formula Bharat. The platform maintained consistent powertrain architecture while refining design and cost presentation.",
+        specs: { weight: "260 kg", power: "73 HP", acceleration: "3.90s", topSpeed: "100 kmph" },
+        achievements: [
+          "Overall Rank 8",
+          "Cost Event — 2nd overall"
+        ],
+        badge: "ENDURANCE RUNNING CAR"
+      },
+      2026: {
+        images: [
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX6-C/event/1.JPG",
+          "https://assets.ashwaracing.org/cdn-cgi/image/width=1740,format=avif/images/prototypes/RZ-XX6-C/event/2.JPG",
+          "https://assets.ashwaracing.org/cdn-cgi/image/width=1740,format=avif/images/prototypes/RZ-XX6-C/event/3.JPG",
+          "https://assets.ashwaracing.org/cdn-cgi/image/width=1740,format=avif/images/prototypes/RZ-XX6-C/postevent/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/width=1740,format=avif/images/prototypes/RZ-XX6-C/postevent/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/width=1740,format=avif/images/prototypes/RZ-XX6-C/postevent/3.png",
+          "https://assets.ashwaracing.org/cdn-cgi/image/width=1740,format=avif/images/prototypes/RZ-XX6-C/postevent/4.png",
+          "https://assets.ashwaracing.org/cdn-cgi/image/width=1740,format=avif/images/prototypes/RZ-XX6-C/postevent/5.png",
+          "https://assets.ashwaracing.org/cdn-cgi/image/width=1740,format=avif/images/prototypes/RZ-XX6-C/postevent/6.png",
+        ],
+        changes: [
+          "RZ-XX6-C — Fourteenth generation combustion prototype",
+          "Continued Ashwa's strong finishes in Static Events",
+          "2nd Postion in BPP",
+          "5th Postion in EDP",
+          "Overall 6th position in Formula Bharat 2026",
+        ],
+        desc: "RZ-XX6-C was the first combustion prototype developed by 3rd years, focusing on experimental DAQ and Suspension setups.",
+        specs: { weight: "250 kg", power: "70 HP", acceleration: "4.00s", topSpeed: "110 kmph" },
+        achievements: [
+          "Overall Rank 6 at Formula Bharat 2026",
+        ],
+        badge: "First 3rd year combustion prototype"
+      },
     }
   },
 
@@ -681,17 +639,17 @@ const projectData = {
     }
   },
 
-  ev: {
-    title: "Next-Generation Electric Prototype",
-    years: {
-      2026: {
-        images: ["assets/images/prototypes/XX5C.jpg"],
-        changes: ["Coming soon!"],
-        desc: "Electric platform engineered for safety, efficiency, and energy density — designed to pass the most rigorous scrutineering.",
-        achievements: ["We strive to win!"]
-      }
-    }
-  },
+  // ev: {
+  //   title: "Next-Generation Electric Prototype",
+  //   years: {
+  //     2026: {
+  //       images: ["assets/images/prototypes/XX5C.jpg"],
+  //       changes: ["Coming soon!"],
+  //       desc: "Electric platform engineered for safety, efficiency, and energy density — designed to pass the most rigorous scrutineering.",
+  //       achievements: ["We strive to win!"]
+  //     }
+  //   }
+  // },
 
   // dv: {
   //   title: "Autonomous & Driverless Platform",

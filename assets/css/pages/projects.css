@@ -59,11 +59,11 @@ body {
 .proj-hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/assets/images/prototypes/Prototypesbanner.webp');
+  background-image: url('https://assets.ashwaracing.org/cdn-cgi/image/width=1080,format=avif/images/prototypes/Prototypes%20Banner.png');
   background-size: cover;
   background-position: center 30%;
-  filter: brightness(0.3) saturate(0.7);
-  transform: scale(1.04);
+  filter: brightness(1) saturate(1);
+  transform: scale(1);
   transition: transform 8s var(--ease-expo);
   z-index: 0;
 }
