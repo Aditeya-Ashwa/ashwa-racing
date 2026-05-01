@@ -8,204 +8,215 @@
 
   <link rel="icon" href="https://assets.ashwaracing.org/images/favicon/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="https://assets.ashwaracing.org/images/favicon/favicon.svg">
-  <!-- To remove blocking of rendering by index.css, which now has the footer and the header css as well -->
-  <link rel="preload" href="assets/css/pages/index.css" as="style" onload="this.rel='stylesheet'"> 
-  <noscript><link rel="stylesheet" href="assets/css/pages/index.css"></noscript>
+
+  <!-- Preconnect to origins used above the fold -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;1,800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Added CSS for hero to reduce LCP from 1500ms to just 500ms or even lower -->
+  <link rel="preconnect" href="https://assets.ashwaracing.org" crossorigin>
+
+  <!-- Fonts: display=swap already handles font-display, preload the critical woff2 -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Barlow:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Barlow:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Barlow:wght@400;500&display=swap"></noscript>
+
+  <!-- Preload LCP image — desktop and mobile variants -->
+  <link rel="preload" as="image" fetchpriority="high"
+    href="https://assets.ashwaracing.org/cdn-cgi/image/width=1440,format=avif,quality=85/images/heroimg/hero-desktop.jpg"
+    imagesrcset="
+      https://assets.ashwaracing.org/cdn-cgi/image/width=768,format=avif,quality=85/images/heroimg/hero-mobile.png 768w,
+      https://assets.ashwaracing.org/cdn-cgi/image/width=1440,format=avif,quality=85/images/heroimg/hero-desktop.jpg 1440w
+    "
+    imagesizes="100vw">
+
+  <!-- CSS: non-render-blocking load, noscript fallback -->
+  <link rel="preload" href="assets/css/pages/index.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/pages/index.css"></noscript>
+
+  <!-- Critical hero CSS inlined — prevents render-blocking and removes LCP delay -->
   <style>
+    /* ── Tokens needed by hero ── */
+    :root {
+      --red:     #e8001d;
+      --black:   #0a0a0a;
+      --white:   #ffffff;
+      --display: 'Barlow Condensed', sans-serif;
+      --body:    'Barlow', sans-serif;
+      --pad:     7%;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body), sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+
     /* ── Hero ── */
-.hero {
-  position: relative;
-  height: 100svh;
-  min-height: 500px;
-  max-height: 550px;
-  background: var(--black);
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-}
-.hero-overlay {
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%);
-}
-.hero-content {
-  position: relative; z-index: 2;
-  padding: 0 var(--pad) 9vh;
-  max-width: 680px;
-}
-.hero-content .label { color: rgba(255,255,255,0.45); }
-.hero-content .label::before { background: var(--red); }
-.hero-content h1 {
-  font-family: var(--display);
-  font-size: clamp(3.2rem, 9vw, 6.5rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 0.88;
-  color: var(--white);
-  margin-bottom: 20px;
-}
-.hero-content h1 em { color: var(--red); font-style: italic; }
-.hero-para {
-  font-size: clamp(0.85rem, 1.4vw, 1rem);
-  line-height: 1.7;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 28px;
-  max-width: 460px;
-}
-.hero-content .btn-line { color: var(--white); border-color: rgba(255,255,255,0.5); }
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 500px;
+      max-height: 550px;
+      background: var(--black);
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 var(--pad) 9vh;
+      max-width: 680px;
+    }
+    .hero-content .label { color: rgba(255,255,255,0.45); }
+    .hero-content .label::before { background: var(--red); }
+    .hero-content h1 {
+      font-family: var(--display), sans-serif;
+      font-size: clamp(3.2rem, 9vw, 6.5rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 0.88;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .hero-content h1 em { color: var(--red); font-style: italic; }
+    .hero-para {
+      font-size: clamp(0.85rem, 1.4vw, 1rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 28px;
+      max-width: 460px;
+    }
+    .hero-content .btn-line { color: var(--white); border-color: rgba(255,255,255,0.5); }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+      filter: brightness(0.9);
+      animation: heroZoom 14s ease-in-out infinite alternate;
+    }
+    @keyframes heroZoom {
+      0%   { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.5) translate(-5%, -10%); }
+    }
 
-.hero-scroll {
-  position: absolute;
-  bottom: 40px; left: var(--pad); z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-family: var(--display);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.3);
-}
-
-.hero-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  /* Start slightly zoomed */
-  transform: scale(1.05);
-  filter: brightness(0.9);
-
-  animation: heroZoom 14s ease-in-out infinite alternate;
-}
-
-@keyframes heroZoom {
-  0% {
-    transform: scale(1) translate(0, 0);
-  }
-  100% {
-    transform: scale(1.5) translate(-5%, -10%);
-  }
-}
+    /* ── Nav reserve height — prevents CLS from JS-injected header ── */
+    #main-header { min-height: 72px; contain: layout; }
   </style>
-
-<script>
-const img = document.querySelector(".hero-img");
-
-document.addEventListener("mousemove", (e) => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 6;
-  const y = (e.clientY / window.innerHeight - 0.5) * 6;
-
-  img.style.transform = `
-    scale(1.1)
-    translate(${x}%, ${y}%)
-  `;
-});
-</script>
-
 </head>
 <body>
 
   <div id="main-header"></div>
 
-  <section class="hero">
-    <picture>
-      <!-- Mobile portrait -->
-      <source media="(max-width: 768px)" srcset="https://assets.ashwaracing.org/cdn-cgi/image/format=avif/images/heroimg/hero-mobile.png" fetchpriority="high">
+  <main>
+    <section class="hero" aria-label="Ashwa Racing hero">
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcset="https://assets.ashwaracing.org/cdn-cgi/image/width=768,format=avif,quality=85/images/heroimg/hero-mobile.png"
+          width="768" height="1024">
+        <img
+          src="https://assets.ashwaracing.org/cdn-cgi/image/width=1440,format=avif,quality=85/images/heroimg/hero-desktop.jpg"
+          class="hero-img"
+          alt="Ashwa Racing Formula Student car on track"
+          width="1440" height="550"
+          fetchpriority="high"
+          decoding="sync">
+      </picture>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="label">ASHWA RACING · SINCE 2003</p>
+        <h1>Built to<br><em>Compete.</em></h1>
+        <p class="hero-para">RV College of Engineering's Formula Student team — two decades of designing, building, and racing high-performance cars on the world stage.</p>
+        <a href="about.html" class="btn-line">
+          Discover the Team
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" width="16" height="16">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
 
-      <!-- Desktop -->
-      <img src="https://assets.ashwaracing.org/cdn-cgi/image/format=avif/images/heroimg/hero-desktop.jpg" class="hero-img" alt="Ashwa Racing Car" fetchpriority="high">
-    </picture>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="label">ASHWA RACING · SINCE 2003</p>
-      <h1>Built to<br><em>Compete.</em></h1>
-      <p class="hero-para">RV College of Engineering's Formula Student team — two decades of designing, building, and racing high-performance cars on the world stage.</p>
-      <a href="about.html" class="btn-line">
-        Discover the Team
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-        </svg>
-      </a>
-</a>
-  </section>
-
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>Formula Bharat 2026</span><span>◆</span>
-      <span>Top 5 · Engineering Design</span><span>◆</span>
-      <span>2nd Place · Business Presentation</span><span>◆</span>
-      <span>20+ Years of Racing</span><span>◆</span>
-      <span>45+ Sponsors · 2026–27 Season</span><span>◆</span>
-      <span>Formula Bharat 2026</span><span>◆</span>
-      <span>Top 5 · Engineering Design</span><span>◆</span>
-      <span>2nd Place · Business Presentation</span><span>◆</span>
-      <span>20+ Years of Racing</span><span>◆</span>
-      <span>45+ Sponsors · 2026–27 Season</span><span>◆</span>
+    <div class="ticker" aria-label="Recent achievements" role="marquee">
+      <div class="ticker-track">
+        <span>Formula Bharat 2026</span><span aria-hidden="true">◆</span>
+        <span>Top 5 · Engineering Design</span><span aria-hidden="true">◆</span>
+        <span>2nd Place · Business Presentation</span><span aria-hidden="true">◆</span>
+        <span>20+ Years of Racing</span><span aria-hidden="true">◆</span>
+        <span>45+ Sponsors · 2026–27 Season</span><span aria-hidden="true">◆</span>
+        <span>Formula Bharat 2026</span><span aria-hidden="true">◆</span>
+        <span>Top 5 · Engineering Design</span><span aria-hidden="true">◆</span>
+        <span>2nd Place · Business Presentation</span><span aria-hidden="true">◆</span>
+        <span>20+ Years of Racing</span><span aria-hidden="true">◆</span>
+        <span>45+ Sponsors · 2026–27 Season</span><span aria-hidden="true">◆</span>
+      </div>
     </div>
-  </div>
 
-  <section class="cta-trio">
-    <a href="recruitment.html" class="cta-card">
-      <div class="cta-img" style="background-image:url('https://assets.ashwaracing.org/cdn-cgi/image/width=1570,format=avif/images/team/fullteam/2026-C.JPG')"></div>
-      <div class="cta-body">
-        <h3>Be the part of the journey</h3>
-        <p>Build the next car. Push your limits. Be the best.</p>
-          <span class="btn-line">
+    <!-- CTA Trio: images now sized correctly via CDN, explicit width/height for CLS -->
+    <section class="cta-trio" aria-label="Join and sponsor">
+      <a href="recruitment.html" class="cta-card">
+        <div class="cta-img" role="img" aria-label="Ashwa Racing full team 2026"
+          style="background-image:url('https://assets.ashwaracing.org/cdn-cgi/image/width=800,format=avif,quality=80/images/team/fullteam/2026-C.JPG')"></div>
+        <div class="cta-body">
+          <!-- FIX: h2 for correct heading hierarchy in a landmark section -->
+          <h2 class="cta-heading">Be part of the journey</h2>
+          <p>Build the next car. Push your limits. Be the best.</p>
+          <span class="btn-line" aria-hidden="true">
             Join Us
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" width="16" height="16">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
             </svg>
           </span>
-      </div>
-    </a>
-    <a href="smp.html" class="cta-card">
-      <div class="cta-img" style="background-image:url('https://assets.ashwaracing.org/cdn-cgi/image/width=1570,format=avif/images/prototypes/RZ-XX5-C/event/2.jpg')"></div>
-      <div class="cta-body">
-        <h3>Partner With Performance</h3>
-        <p>Be part of a team pushing the limits of engineering and innovation.</p>
-          <span class="btn-line">
-            Partner with Us
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
-          </span>
-      </div>
-    </a>
-  </section>
-
-  <section class="feed">
-    <div class="container">
-      <p class="label">LATEST</p>
-      <h2>From the <em>Garage</em></h2>
-      <div class="feed-grid">
-
-        <div class="feed-col">
-          <div class="feed-source">Newsletters</div>
-          <a id="blog-card" href="newsletters.html" class="feed-card feed-card--blog">
-            <div class="feed-card-img-wrap"><img id="blog-thumb" src="" alt="" loading="lazy"></div>
-            <div class="feed-card-body">
-              <p id="blog-date" class="feed-meta"></p>
-              <h3 id="blog-title"></h3>
-              <p id="blog-excerpt" class="feed-excerpt"></p>
-            </div>
-          </a>
-          <a href="newsletters.html" class="btn-line">All Newsletters
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
-          </a>
         </div>
+      </a>
+      <a href="smp.html" class="cta-card">
+        <div class="cta-img" role="img" aria-label="Ashwa Racing RZ-XX5C at Formula Bharat"
+          style="background-image:url('https://assets.ashwaracing.org/cdn-cgi/image/width=800,format=avif,quality=80/images/prototypes/RZ-XX5-C/event/2.jpg')"></div>
+        <div class="cta-body">
+          <h2 class="cta-heading">Partner With Performance</h2>
+          <p>Be part of a team pushing the limits of engineering and innovation.</p>
+          <span class="btn-line" aria-hidden="true">
+            Partner with Us
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" width="16" height="16">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </span>
+        </div>
+      </a>
+    </section>
 
-        <div class="feed-col">
-          <div class="feed-source">Instagram</div>
+    <section class="feed" aria-label="Latest from Ashwa Racing">
+      <div class="container">
+        <p class="label">LATEST</p>
+        <h2>From the <em>Garage</em></h2>
+        <div class="feed-grid">
+
+          <!-- Newsletters -->
+          <div class="feed-col">
+            <div class="feed-source" aria-hidden="true">Newsletters</div>
+            <a id="blog-card" href="newsletters.html" class="feed-card feed-card--blog">
+              <div class="feed-card-img-wrap">
+                <!-- width/height set to prevent CLS — JS will populate src -->
+                <img id="blog-thumb" src="" alt="Ashwa Racing latest newsletter cover" loading="lazy" width="600" height="450">
+              </div>
+              <div class="feed-card-body">
+                <p id="blog-date" class="feed-meta"></p>
+                <h3 id="blog-title"></h3>
+                <p id="blog-excerpt" class="feed-excerpt"></p>
+              </div>
+            </a>
+            <a href="newsletters.html" class="btn-line">All Newsletters
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" width="16" height="16">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Instagram: lazy-loaded via IntersectionObserver, title added for accessibility -->
+          <div class="feed-col">
+            <div class="feed-source" aria-hidden="true">Instagram</div>
             <div class="feed-card feed-card--embed insta-lazy">
               <blockquote class="instagram-media"
                 data-instgrm-permalink="https://www.instagram.com/reel/DW33iD9E0QB/"
@@ -213,132 +224,160 @@ document.addEventListener("mousemove", (e) => {
                 style="width:100%;margin:0;border:none;background:transparent;">
               </blockquote>
             </div>
-          <a href="https://www.instagram.com/ashwaracing" target="_blank" rel="noopener" class="btn-line">Follow Us
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
+            <a href="https://www.instagram.com/ashwaracing" target="_blank" rel="noopener noreferrer" class="btn-line" aria-label="Follow Ashwa Racing on Instagram">
+              Follow on Instagram
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" width="16" height="16">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- LinkedIn: facade replaces iframe until click — eliminates 640KB + bot scripts -->
+          <div class="feed-col">
+            <div class="feed-source" aria-hidden="true">LinkedIn</div>
+            <div class="feed-card feed-card--linkedin-facade" id="li-facade">
+              <div class="li-facade-inner">
+                <div class="li-facade-header">
+                  <div class="li-facade-avatar" aria-hidden="true">in</div>
+                  <div>
+                    <strong>Ashwa Racing</strong>
+                    <span>Formula Student Team · RVCE</span>
+                  </div>
+                </div>
+                <p class="li-facade-text">Follow us on LinkedIn for the latest competition updates, engineering insights, and team news from Ashwa Racing.</p>
+                <button class="li-facade-btn" id="li-load-btn" aria-label="Load LinkedIn post embed">
+                  View LinkedIn Post
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" width="14" height="14">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <a href="https://in.linkedin.com/company/ashwa-racing" target="_blank" rel="noopener noreferrer" class="btn-line" aria-label="Follow Ashwa Racing on LinkedIn">
+              Follow on LinkedIn
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" width="16" height="16">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsors" aria-label="Sponsors and partners">
+      <div class="container">
+        <p class="label">PARTNERS</p>
+        <h2>Our <em>Sponsors</em></h2>
+        <p class="sponsors-sub">Industry leaders enabling our engineering, manufacturing, and competition.</p>
+
+        <p class="sponsors-tier-label" aria-label="Executive sponsors tier">Executive Sponsors</p>
+        <div class="sponsors-grid sponsors-grid--exec">
+          <a href="https://www.rvce.edu.in" target="_blank" rel="noopener noreferrer" aria-label="RVCE - R.V. College of Engineering">
+            <img src="https://assets.ashwaracing.org/images/sponsors/rvce.svg" alt="RVCE" loading="lazy" width="220" height="80">
+          </a>
+          <a href="https://www.infineon.com" target="_blank" rel="noopener noreferrer" aria-label="Infineon Technologies">
+            <img src="https://assets.ashwaracing.org/images/sponsors/infineon.svg" alt="Infineon Technologies" loading="lazy" width="220" height="80">
+          </a>
+          <a href="https://www.bosch.com" target="_blank" rel="noopener noreferrer" aria-label="Bosch">
+            <img src="https://assets.ashwaracing.org/images/sponsors/bosch.svg" alt="Bosch" loading="lazy" width="220" height="80">
+          </a>
+          <a href="https://www.adani.com" target="_blank" rel="noopener noreferrer" aria-label="Adani Group">
+            <img src="https://assets.ashwaracing.org/images/sponsors/adani.svg" alt="Adani" loading="lazy" width="220" height="80">
+          </a>
+          <a href="https://www.dynamatics.com" target="_blank" rel="noopener noreferrer" aria-label="Dynamatics Technologies">
+            <img src="https://assets.ashwaracing.org/images/sponsors/dynamatics.svg" alt="Dynamatics Technologies" loading="lazy" width="220" height="80">
           </a>
         </div>
 
-        <div class="feed-col">
-          <div class="feed-source">LinkedIn</div>
-            <iframe 
-              src="https://www.linkedin.com/embed/feed/update/urn:li:share:7432765006745866240?collapsed=1" 
-              height="627" 
-              width="504" 
-              frameborder="0" 
-              loading="lazy"
-              style="border-radius: 12px; max-width: 100%;">
-            </iframe>
-
-          <a href="https://in.linkedin.com/company/ashwa-racing" target="_blank" rel="noopener" class="btn-line">
-            Follow Us
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
+        <p class="sponsors-tier-label" aria-label="Platinum sponsors tier">Platinum Sponsors</p>
+        <div class="sponsors-grid sponsors-grid--plat">
+          <a href="https://www.skf.com" target="_blank" rel="noopener noreferrer" aria-label="SKF">
+            <img src="https://assets.ashwaracing.org/images/sponsors/skf.svg" alt="SKF" loading="lazy" width="120" height="60">
+          </a>
+          <a href="https://www.analog.com" target="_blank" rel="noopener noreferrer" aria-label="Analog Devices">
+            <img src="https://assets.ashwaracing.org/images/sponsors/analogdevices.svg" alt="Analog Devices" loading="lazy" width="120" height="60">
+          </a>
+          <a href="https://www.vrl.in" target="_blank" rel="noopener noreferrer" aria-label="VRL Logistics">
+            <img src="https://assets.ashwaracing.org/images/sponsors/vrl.svg" alt="VRL Logistics" loading="lazy" width="120" height="60">
+          </a>
+          <a href="https://pegasyssystems.com/" target="_blank" rel="noopener noreferrer" aria-label="Pegasys Systems">
+            <img src="https://assets.ashwaracing.org/images/sponsors/pegasyssystemspvtltd.svg" alt="Pegasys Systems" loading="lazy" width="120" height="60">
+          </a>
+          <a href="https://www.motul.com" target="_blank" rel="noopener noreferrer" aria-label="Motul">
+            <img src="https://assets.ashwaracing.org/images/sponsors/motul.svg" alt="Motul" loading="lazy" width="120" height="60">
+          </a>
+          <a href="https://www.lappgroup.com" target="_blank" rel="noopener noreferrer" aria-label="LAPP Group">
+            <img src="https://assets.ashwaracing.org/images/sponsors/lapp.svg" alt="LAPP Group" loading="lazy" width="120" height="60">
+          </a>
+          <a href="https://www.henkel.com" target="_blank" rel="noopener noreferrer" aria-label="Henkel">
+            <img src="https://assets.ashwaracing.org/images/sponsors/henkel.svg" alt="Henkel" loading="lazy" width="120" height="60">
+          </a>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <script async src="//www.instagram.com/embed.js"></script>
-
-  <section class="sponsors">
-    <div class="container">
-      <p class="label">PARTNERS</p>
-      <h2>Our <em>Sponsors</em></h2>
-      <p class="sponsors-sub">Industry leaders enabling our engineering, manufacturing, and competition.</p>
-
-      <p class="sponsors-tier-label">Executive Sponsors</p>
-      <div class="sponsors-grid sponsors-grid--exec">
-        <a href="https://www.rvce.edu.in" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/rvce.svg" alt="RVCE" loading="lazy">
-        </a>
-        <a href="https://www.infineon.com" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/infineon.svg" alt="Infineon" loading="lazy">
-        </a>
-        <a href="https://www.bosch.com" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/bosch.svg" alt="Bosch" loading="lazy">
-        </a>
-        <a href="https://www.adani.com" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/adani.svg" alt="Adani" loading="lazy">
-        </a>
-        <a href="https://www.dynamatics.com" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/dynamatics.svg" alt="Dynamatics" loading="lazy">
+        <a href="sponsors.html" class="btn-line">View All Partners
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" width="16" height="16">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
         </a>
       </div>
+    </section>
 
-      <p class="sponsors-tier-label">Platinum Sponsors</p>
-      <div class="sponsors-grid sponsors-grid--plat">
-        <a href="https://www.skf.com" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/skf.svg" alt="SKF" loading="lazy">
-        </a>
-        <a href="https://www.analog.com" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/analogdevices.svg" alt="Analog Devices" loading="lazy">
-        </a>
-        <a href="https://www.vrl.in" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/vrl.svg" alt="VRL Logistics" loading="lazy">
-        </a>
-        <a href="https://pegasyssystems.com/" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/pegasyssystemspvtltd.svg" alt="Pegasys Systems" loading="lazy">
-        </a>
-        <a href="https://www.motul.com" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/motul.svg" alt="Motul" loading="lazy">
-        </a>
-        <a href="https://www.lappgroup.com" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/lapp.svg" alt="LAPP" loading="lazy">
-        </a>
-        <a href="https://www.henkel.com" target="_blank" rel="noopener">
-          <img src="https://assets.ashwaracing.org/images/sponsors/henkel.svg" alt="Henkel" loading="lazy">
-        </a>
-      </div>
-
-      <a href="sponsors.html" class="btn-line">View All Partners 
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-        </svg>
-      </a>
-  </section>
-
-  <section class="cta-trio">
-        <a href="https://www.fsaeonline.com/" class="cta-card cta-card--fs">
+    <section class="cta-trio" aria-label="About Formula Student">
+      <a href="https://www.fsaeonline.com/" class="cta-card cta-card--fs" target="_blank" rel="noopener noreferrer">
         <div class="cta-body">
-          <h3>Formula Student</h3>
-          <p>Formula SAE challenges students to conceive, design, fabricate, and compete with small formula-style racing cars. Teams spend 8-12 months designing, building, and preparing their vehicles for a competition. These cars are judged in a series of static and dynamic events, including technical inspection, cost, presentation, engineering design, solo performance trials and high performance endurance.</p>
-            <span class="btn-line">Learn more 
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
-            </span>
+          <h2 class="cta-heading">Formula Student</h2>
+          <p>Formula SAE challenges students to conceive, design, fabricate, and compete with small formula-style racing cars. Teams spend 8–12 months designing, building, and preparing their vehicles for a competition evaluated across static and dynamic events, including technical inspection, cost, presentation, engineering design, solo performance trials, and high-performance endurance.</p>
+          <span class="btn-line" aria-hidden="true">
+            Learn more
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" width="16" height="16">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </span>
         </div>
       </a>
-  </section>
+    </section>
+
+  </main>
 
   <footer id="main-footer"></footer>
 
   <script src="assets/js/components/header.js" defer></script>
   <script src="assets/js/pages/index.js" defer></script>
-  
+
   <script>
-  const el = document.querySelector('.insta-lazy');
-
-  const io = new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) {
-      const s = document.createElement('script');
-      s.src = "https://www.instagram.com/embed.js";
-      s.async = true;
-      document.body.appendChild(s);
-      io.disconnect();
+    /* ── Instagram: lazy load embed.js only when scrolled near ── */
+    const instaEl = document.querySelector('.insta-lazy');
+    if (instaEl) {
+      const io = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          const s = document.createElement('script');
+          s.src = 'https://www.instagram.com/embed.js';
+          s.async = true;
+          document.body.appendChild(s);
+          io.disconnect();
+        }
+      }, { rootMargin: '200px' });
+      io.observe(instaEl);
     }
-  }, { rootMargin: "200px" });
 
-  io.observe(el);
+    /* ── LinkedIn facade: load iframe only on explicit click ── */
+    const liBtn = document.getElementById('li-load-btn');
+    if (liBtn) {
+      liBtn.addEventListener('click', () => {
+        const facade = document.getElementById('li-facade');
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.linkedin.com/embed/feed/update/urn:li:share:7432765006745866240?collapsed=1';
+        iframe.title = 'Ashwa Racing LinkedIn post';
+        iframe.height = '627';
+        iframe.width = '100%';
+        iframe.frameBorder = '0';
+        iframe.style.cssText = 'border-radius:12px;max-width:100%;display:block;';
+        iframe.setAttribute('referrerpolicy', 'no-referrer');
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-popups');
+        facade.replaceWith(iframe);
+      });
+    }
   </script>
 
 </body>

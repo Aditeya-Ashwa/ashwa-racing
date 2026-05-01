@@ -7,7 +7,7 @@
   --charcoal:  #141414;
   --off-white: #f7f6f4;
   --white:     #ffffff;
-  --muted:     #888;
+  --muted:     #767676; /* min AA contrast on white bg */
   --display:   'Barlow Condensed', sans-serif;
   --body:      'Barlow', sans-serif;
   --expo:      cubic-bezier(0.16, 1, 0.3, 1);
@@ -16,7 +16,7 @@
 }
 
 html { scroll-behavior: smooth; }
-body { font-family: var(--body); background: var(--white); color: var(--black); overflow-x: hidden; font-display: swap;}
+body { font-family: var(--body); background: var(--white); color: var(--black); overflow-x: hidden;}
 
 .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
 
@@ -129,7 +129,7 @@ h2 em { font-style: italic; color: var(--red); }
   flex: 1;
 }
 .cta-card--fs .cta-body { padding: 36px var(--pad); max-width: 640px; }
-.cta-card h3 {
+.cta-card h3, .cta-heading {
   font-family: var(--display);
   font-size: 1.5rem;
   font-weight: 800;
@@ -160,14 +160,13 @@ h2 em { font-style: italic; color: var(--red); }
   text-decoration: none; color: var(--black);
   border: 1px solid rgba(0,0,0,0.07);
   overflow: hidden;
-  /* equal height: all cards same fixed height */
-  height: 625px;
+  min-height: 200px;
   transition: transform 0.25s var(--expo), box-shadow 0.25s;
 }
 .feed-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.08); }
 
 /* Blog */
-.feed-card--blog .feed-card-img-wrap { height: 450px; overflow: hidden; flex-shrink: 0; }
+.feed-card--blog .feed-card-img-wrap { height: 240px; overflow: hidden; flex-shrink: 0; }
 .feed-card--blog .feed-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s var(--expo); }
 .feed-card--blog:hover .feed-card-img-wrap img { transform: scale(1.05); }
 .feed-card-body { padding: 18px 20px; display: flex; flex-direction: column; gap: 7px; flex: 1; overflow: hidden; }
@@ -177,7 +176,7 @@ h2 em { font-style: italic; color: var(--red); }
 
 /* Instagram embed — constrained */
 .feed-card--embed {
-  height: 625px;
+  min-height: 500px;
   overflow: hidden;
   background: var(--white);
   border: 1px solid rgba(0,0,0,0.07);
@@ -190,7 +189,7 @@ h2 em { font-style: italic; color: var(--red); }
 }
 
 /* LinkedIn */
-.feed-card--linkedin { height: 420px; justify-content: center; }
+.feed-card--linkedin { min-height: 260px; justify-content: center; }
 .feed-card--linkedin .feed-card-body { padding: 28px; gap: 16px; justify-content: center; }
 .linkedin-header { display: flex; align-items: center; gap: 12px; }
 .linkedin-avatar { width: 38px; height: 38px; border-radius: 50%; object-fit: contain; background: var(--black); padding: 6px; flex-shrink: 0; }
@@ -252,6 +251,91 @@ h2 em { font-style: italic; color: var(--red); }
   transform: translateY(0);
 }
 
+
+/* ── LinkedIn Facade ── */
+/* Replaces the iframe entirely until user clicks, saves 640KB + bot scripts */
+.feed-card--linkedin-facade {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.07);
+  overflow: hidden;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.li-facade-inner {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.li-facade-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.li-facade-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: #0077b5;
+  color: #fff;
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.li-facade-header strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.li-facade-header span {
+  font-size: 0.72rem;
+  color: #555;
+}
+.li-facade-text {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #444;
+}
+.li-facade-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--red);
+  padding-bottom: 3px;
+  cursor: pointer;
+  transition: gap 0.2s;
+  align-self: flex-start;
+}
+.li-facade-btn:hover { gap: 14px; }
+
+/* ── Icon sizing ── */
+.icon { flex-shrink: 0; }
+
+/* ── CTA heading — h2 styled to match old h3 ── */
+.cta-heading {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0;
+}
+
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .cta-trio { grid-template-columns: 1fr; }
@@ -261,7 +345,7 @@ h2 em { font-style: italic; color: var(--red); }
 
   .feed-grid { grid-template-columns: 1fr; }
   .feed-card, .feed-card--embed, .feed-card--linkedin { height: auto; min-height: 320px; }
-  .feed-card--blog .feed-card-img-wrap { height: 450px; }
+  .feed-card--blog .feed-card-img-wrap { height: 220px; }
 
   .stats { gap: 0; }
   .stat { padding: 0 24px; }
