@@ -196,26 +196,26 @@ const ORG_STRUCTURE = {
     },
 
     // ── Hybrid (right) ──
-    {
-      id: "hyb",
-      label: "Hybrid",
-      type: "programme",
-      members: [],
-      children: [
-        {
-          id: "hyb-leads",
-          label: "Team Leaders",
-          type: "subsystem",
-          members: [
-            { name: "Team Captain", photo: "assets/images/team/default.webp" },
-            { name: "Project Manager", photo: "assets/images/team/default.webp" },
-            { name: "Chief Engineer", photo: "assets/images/team/default.webp" },
-          ],
-          children: []
-        }
-        // "Team" node removed per spec — only team leaders shown
-      ]
-    },
+    // {
+    //   id: "hyb",
+    //   label: "Hybrid",
+    //   type: "programme",
+    //   members: [],
+    //   children: [
+    //     {
+    //       id: "hyb-leads",
+    //       label: "Team Leaders",
+    //       type: "subsystem",
+    //       members: [
+    //         { name: "Team Captain", photo: "assets/images/team/default.webp" },
+    //         { name: "Project Manager", photo: "assets/images/team/default.webp" },
+    //         { name: "Chief Engineer", photo: "assets/images/team/default.webp" },
+    //       ],
+    //       children: []
+    //     }
+    //     // "Team" node removed per spec — only team leaders shown
+    //   ]
+    // },
     {
       id: "ev",
       label: "Electric",
@@ -255,25 +255,25 @@ const ORG_STRUCTURE = {
     //     }
     //   ]
     // },
-    {
-      id: "hyperloop",
-      label: "Hyperloop",
-      type: "programme",
-      members: [],
-      children: [
-        {
-          id: "hyperloop-leads",  // unique id
-          label: "Team Leaders",
-          type: "subsystem",
-          members: [
-            { name: "Team Captain", photo: "assets/images/team/default.webp" },
-            { name: "Project Manager", photo: "assets/images/team/default.webp" },
-            { name: "Chief Engineer", photo: "assets/images/team/default.webp" },
-          ],
-          children: []
-        }
-      ]
-    }
+    // {
+    //   id: "hyperloop",
+    //   label: "Hyperloop",
+    //   type: "programme",
+    //   members: [],
+    //   children: [
+    //     {
+    //       id: "hyperloop-leads",  // unique id
+    //       label: "Team Leaders",
+    //       type: "subsystem",
+    //       members: [
+    //         { name: "Team Captain", photo: "assets/images/team/default.webp" },
+    //         { name: "Project Manager", photo: "assets/images/team/default.webp" },
+    //         { name: "Chief Engineer", photo: "assets/images/team/default.webp" },
+    //       ],
+    //       children: []
+    //     }
+    //   ]
+    // }
   ],
 
   // ── Bottom subsystem columns ──
