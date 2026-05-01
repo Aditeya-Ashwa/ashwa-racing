@@ -59,7 +59,7 @@ body {
 .proj-hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://assets.ashwaracing.org/cdn-cgi/image/width=1080,format=avif/images/prototypes/Prototypes%20Banner.png');
+  background-image: url('https://ashwaracing.org/cdn-cgi/image/width=1920,format=auto/https://assets.ashwaracing.org/images/prototypes/Prototypes%20Banner.png');
   background-size: cover;
   background-position: center 30%;
   filter: brightness(1) saturate(1);
