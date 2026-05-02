@@ -1,3 +1,39 @@
+/* ── Font metric overrides — prevent CLS during web font swap ── */
+/* These match Barlow Condensed metrics closely to reduce layout shift */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Barlow Condensed Bold');
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Barlow Condensed ExtraBold');
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Barlow Regular');
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -335,6 +371,95 @@ h2 em { font-style: italic; color: var(--red); }
   letter-spacing: 0.03em;
   margin-bottom: 0;
 }
+
+
+/* ── Instagram Facade ── */
+.feed-card--insta-facade {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.07);
+  overflow: hidden;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.insta-facade-inner {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.insta-facade-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.insta-facade-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.insta-facade-header strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.insta-facade-header span {
+  font-size: 0.72rem;
+  color: #555;
+}
+.insta-facade-text {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #444;
+}
+.insta-facade-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--red);
+  padding-bottom: 3px;
+  cursor: pointer;
+  transition: gap 0.2s;
+  align-self: flex-start;
+}
+.insta-facade-btn:hover { gap: 14px; }
+
+/* ── footer-col-label as h3 (heading order fix) ── */
+h3.footer-col-label {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h3.footer-col-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
@@ -923,7 +1048,7 @@ h2 em { font-style: italic; color: var(--red); }
 
 /* "Soon" items */
 .footer-link-soon {
-  color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.45);
   font-size: 0.82rem;
   display: flex;
   align-items: center;
@@ -938,8 +1063,8 @@ h2 em { font-style: italic; color: var(--red); }
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.25);
   padding: 1px 6px;
   border-radius: 2px;
 }
