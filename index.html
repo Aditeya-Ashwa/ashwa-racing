@@ -34,6 +34,13 @@
 
   <!-- Critical hero CSS inlined — prevents render-blocking and removes LCP delay -->
   <style>
+
+    #main-header {
+      min-height: 72px;
+      contain: layout;
+      position: relative;  /* ADD */
+      z-index: 1000;       /* ADD */
+    }
     /* ── Tokens needed by hero ── */
     :root {
       --red:     #e8001d;
