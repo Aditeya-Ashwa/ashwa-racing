@@ -37,14 +37,6 @@ const teamData = [
     social: { linkedin: "https://www.linkedin.com/in/dilraj-singh-cos007", github: "https://github.com/Dilraj07", gmail: "dilrajsingh.ashwa@gmail.com" },
   },
   {
-    name: "Damian C Dani",
-    roles: ["Member"],
-    subsystem: ["Drivetrain & Human Resources"],
-    year: "2028",
-    experience: "Member of the Drivetrain & HR team.",
-    social: { linkedin: "https://www.linkedin.com/in/damian-c-dani-56a25b353", github: null, gmail: "damiancdani.ashwa@gmail.com" },
-  },
-  {
     name: "Praful P I",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
@@ -211,14 +203,6 @@ const teamData = [
     year: "2028",
     experience: "Contributes to Sponsorship, Marketing & PR initiatives and financial operations.",
     social: { linkedin: "https://www.linkedin.com/in/vinay-krishna-b-v-182428317", github: null, gmail: "vinaykrishna.ashwa@gmail.com" },
-  },
-  {
-    name: "Jainaav Pramod",
-    roles: ["Member"],
-    subsystem: ["Sponsorship, Marketing & Public Relations"],
-    year: "2028",
-    experience: "Designed sponsor and Formula Bharat social media posts and contributed to multiple editions of the team newsletter.",
-    social: { linkedin: "https://www.linkedin.com/in/jainaav-pramod-b1b319383/", github: "https://github.com/JainavPS", gmail: "jainaav.ashwa@gmail.com" },
   },
   {
     name: "Thanusha HU",
