@@ -876,7 +876,6 @@ h3.footer-col-label::after {
   .brand-logo-img { height: 45px; }
 }
 
-/* Footer.css */
 /* ============================================================
    ASHWA RACING — FOOTER
    System: Barlow Condensed + Barlow · dark motorsport
@@ -975,7 +974,6 @@ h3.footer-col-label::after {
   text-decoration: none;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
-
 .footer-socials a img {
   filter: brightness(0) invert(1);
   opacity: 0.65;
@@ -1048,7 +1046,7 @@ h3.footer-col-label::after {
 
 /* "Soon" items */
 .footer-link-soon {
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.2);
   font-size: 0.82rem;
   display: flex;
   align-items: center;
@@ -1063,8 +1061,8 @@ h3.footer-col-label::after {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
   padding: 1px 6px;
   border-radius: 2px;
 }
@@ -1148,30 +1146,133 @@ h3.footer-col-label::after {
 }
 
 /* ─── Responsive ────────────────────────────────────────────── */
+
 @media (max-width: 1100px) {
-  .footer-nav-cols { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+
+  .footer-nav-cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
 }
 
 @media (max-width: 860px) {
+
+  .footer-col-label {
+    justify-content: center;
+    text-align: center;
+
+    width: 100%;
+  }
+
+  .footer-col-label::after {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+
   .footer-top {
     grid-template-columns: 1fr;
+
+    justify-items: center;
+
     gap: 48px;
     padding: 64px 6% 48px;
   }
-  .footer-brand-col { max-width: 360px; }
+
+  .footer-brand-col {
+    max-width: 360px;
+    width: 100%;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-brand-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-nav-cols {
+    width: 100%;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    justify-items: center;
+    text-align: center;
+
+    gap: 32px;
+  }
+
+  .footer-nav-col {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-col-label {
+    text-align: center;
+  }
+
+  .footer-nav-col a,
+  .footer-nav-col p,
+  .footer-nav-col span {
+    text-align: center;
+  }
 }
 
 @media (max-width: 560px) {
-  .footer-nav-cols { grid-template-columns: 1fr 1fr; gap: 28px; }
+
+  .footer-top {
+    gap: 40px;
+    padding: 56px 5% 40px;
+  }
+
+  .footer-nav-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
 
   .footer-bottom {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    align-items: center;
+
+    text-align: center;
+
+    gap: 10px;
+  }
+
+  .footer-bottom-right {
+    justify-content: center;
+  }
+
+  .footer-brand-col {
+    max-width: 320px;
   }
 }
 
 @media (max-width: 380px) {
-  .footer-nav-cols { grid-template-columns: 1fr; }
-  .footer-top { padding: 48px 5% 40px; }
+
+  .footer-top {
+    padding: 48px 5% 36px;
+  }
+
+  .footer-nav-cols {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-brand-col {
+    max-width: 100%;
+  }
 }

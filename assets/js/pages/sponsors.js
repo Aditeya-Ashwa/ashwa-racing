@@ -166,19 +166,19 @@ function buildExecutiveCard(sponsor) {
   const body = document.createElement("div");
   body.className = "sp-card-exec-body";
 
-  if (sponsor.name) {
-    const name = document.createElement("div");
-    name.className   = "sp-card-exec-name";
-    name.textContent = sponsor.name;
-    body.appendChild(name);
-  }
+  // if (sponsor.name) {
+  //   const name = document.createElement("div");
+  //   name.className   = "sp-card-exec-name";
+  //   name.textContent = sponsor.name;
+  //   body.appendChild(name);
+  // }
 
-  if (sponsor.description) {
-    const desc = document.createElement("p");
-    desc.className   = "sp-card-exec-desc";
-    desc.textContent = sponsor.description;
-    body.appendChild(desc);
-  }
+  // if (sponsor.description) {
+  //   const desc = document.createElement("p");
+  //   desc.className   = "sp-card-exec-desc";
+  //   desc.textContent = sponsor.description;
+  //   body.appendChild(desc);
+  // }
 
   if (sponsor.url && sponsor.url !== "#") {
     const visitLink = document.createElement("a");
@@ -248,12 +248,7 @@ function buildSection(categoryKey, sponsors) {
   labelGroup.appendChild(badge);
   labelGroup.appendChild(title);
 
-  const count = document.createElement("div");
-  count.className   = "sp-tier-count";
-  count.textContent = `${sponsors.length} partner${sponsors.length !== 1 ? "s" : ""}`;
-
   header.appendChild(labelGroup);
-  header.appendChild(count);
 
   // Grid
   const grid = document.createElement("div");

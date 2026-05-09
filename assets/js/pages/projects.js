@@ -19,7 +19,7 @@ const PROGRAMMES = {
 // ─── Project data ─────────────────────────────────────────────
 const projectData = {
   cv: {
-    title: "High-Performance Combustion Platform",
+    title: "Combustion Platform",
     years: {
       2005: {
         images: [
@@ -439,21 +439,15 @@ const projectData = {
   },
 
   hyb: {
-    title: "Hybrid Powertrain Development",
+    title: "Hybrid Powertrain Platform",
     years: {
       2015: {
         images: [
-          "assets/images/prototypes/RZ-X5-H/event/1.webp",
-          // "assets/images/prototypes/RZ-X5-H/preevent/1.webp",
-          // "assets/images/prototypes/RZ-X5-H/preevent/2.webp",
-          // "assets/images/prototypes/RZ-X5-H/preevent/3.webp",
-          "assets/images/prototypes/RZ-X5-H/preevent/4.webp",
-          // "assets/images/prototypes/RZ-X5-H/preevent/5.webp",
-          // "assets/images/prototypes/RZ-X5-H/preevent/6.webp",
-          // "assets/images/prototypes/RZ-X5-H/preevent/7.webp",
-          // "assets/images/prototypes/RZ-X5-H/preevent/8.webp",
-          // "assets/images/prototypes/RZ-X5-H/preevent/9.webp",
-          // "assets/images/prototypes/RZ-X5-H/preevent/10.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X5-H/event/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X5-H/preevent/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X5-H/preevent/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X5-H/preevent/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X5-H/preevent/6.jpg",
         ],
         changes: [
           "First ever Hybrid prototype",
@@ -472,26 +466,18 @@ const projectData = {
       },
       2016: {
         images: [
-          // "assets/images/prototypes/RZ-X6-H/event/1.webp",
-          // "assets/images/prototypes/RZ-X6-H/event/2.webp",
-          // "assets/images/prototypes/RZ-X6-H/event/3.webp",
-          // "assets/images/prototypes/RZ-X6-H/event/4.webp",
-          "assets/images/prototypes/RZ-X6-H/event/5.webp",
-          // "assets/images/prototypes/RZ-X6-H/event/6.webp",
-          // "assets/images/prototypes/RZ-X6-H/event/7.webp",
-          // "assets/images/prototypes/RZ-X6-H/event/8.webp",
-          "assets/images/prototypes/RZ-X6-H/event/9.webp",
-          // "assets/images/prototypes/RZ-X6-H/event/10.webp",
-          // "assets/images/prototypes/RZ-X6-H/postevent/1.webp",
-          "assets/images/prototypes/RZ-X6-H/postevent/2.webp",
-          // "assets/images/prototypes/RZ-X6-H/postevent/3.webp",
-          // "assets/images/prototypes/RZ-X6-H/postevent/4.webp",
-          // "assets/images/prototypes/RZ-X6-H/postevent/5.webp",
-          "assets/images/prototypes/RZ-X6-H/postevent/6.webp",
-          // "assets/images/prototypes/RZ-X6-H/postevent/7.webp",
-          // "assets/images/prototypes/RZ-X6-H/postevent/8.webp",
-          // "assets/images/prototypes/RZ-X6-H/postevent/9.webp",
-          // "assets/images/prototypes/RZ-X6-H/postevent/10.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/event/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/event/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/event/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/event/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/event/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/event/9.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/postevent/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/postevent/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/postevent/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/postevent/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/postevent/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-H/postevent/7.jpg",
         ],
         changes: [
           "RZX6H — Refined hybrid architecture",
@@ -510,21 +496,16 @@ const projectData = {
       },
       2017: {
         images: [
-          // "assets/images/prototypes/RZ-X7-H/event/1.webp",
-          // "assets/images/prototypes/RZ-X7-H/event/2.webp",
-          // "assets/images/prototypes/RZ-X7-H/event/3.webp",
-          // "assets/images/prototypes/RZ-X7-H/event/4.webp",
-          // "assets/images/prototypes/RZ-X7-H/event/5.webp",
-          // "assets/images/prototypes/RZ-X7-H/event/6.webp",
-          // "assets/images/prototypes/RZ-X7-H/event/7.webp",
-          // "assets/images/prototypes/RZ-X7-H/event/8.webp",
-          "assets/images/prototypes/RZ-X7-H/event/9.webp",
-          // "assets/images/prototypes/RZ-X7-H/event/10.webp",
-          // "assets/images/prototypes/RZ-X7-H/preevent/1.webp",
-          // "assets/images/prototypes/RZ-X7-H/preevent/2.webp",
-          // "assets/images/prototypes/RZ-X7-H/preevent/3.webp",
-          "assets/images/prototypes/RZ-X7-H/preevent/4.webp",
-          // "assets/images/prototypes/RZ-X7-H/preevent/5.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-H/event/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-H/event/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-H/event/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-H/event/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-H/event/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-H/event/9.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-H/event/10.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-H/preevent/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-H/preevent/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-H/preevent/4.jpg",
         ],
         changes: [
           "RZX7H — Performance-optimized hybrid platform",
@@ -545,32 +526,25 @@ const projectData = {
       },
       2018: {
         images: [
-          "assets/images/prototypes/RZ-X8-H/event/1.webp",
-          // "assets/images/prototypes/RZ-X8-H/event/2.webp",
-          // "assets/images/prototypes/RZ-X8-H/event/3.webp",
-          // "assets/images/prototypes/RZ-X8-H/event/4.webp",
-          // "assets/images/prototypes/RZ-X8-H/event/5.webp",
-          // "assets/images/prototypes/RZ-X8-H/event/6.webp",
-          // "assets/images/prototypes/RZ-X8-H/event/7.webp",
-          // "assets/images/prototypes/RZ-X8-H/event/8.webp",
-          // "assets/images/prototypes/RZ-X8-H/event/9.webp",
-          // "assets/images/prototypes/RZ-X8-H/event/10.webp",
-          "assets/images/prototypes/RZ-X8-H/event/11.webp",
-          // "assets/images/prototypes/RZ-X8-H/event/12.webp",
-          // "assets/images/prototypes/RZ-X8-H/event/13.webp",
-          "assets/images/prototypes/RZ-X8-H/event/14.webp",
-          "assets/images/prototypes/RZ-X8-H/preevent/1.webp",
-          // "assets/images/prototypes/RZ-X8-H/preevent/2.webp",
-          // "assets/images/prototypes/RZ-X8-H/preevent/3.webp",
-          "assets/images/prototypes/RZ-X8-H/preevent/4.webp",
-          // "assets/images/prototypes/RZ-X8-H/preevent/5.webp",
-          "assets/images/prototypes/RZ-X8-H/preevent/6.webp",
-          "assets/images/prototypes/RZ-X8-H/preevent/7.webp",
-          // "assets/images/prototypes/RZ-X8-H/preevent/8.webp",
-          // "assets/images/prototypes/RZ-X8-H/preevent/9.webp",
-          // "assets/images/prototypes/RZ-X8-H/preevent/10.webp",
-          // "assets/images/prototypes/RZ-X8-H/postevent/1.webp",
-          // "assets/images/prototypes/RZ-X8-H/postevent/2.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/9.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/10.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/11.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/12.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/14.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/14.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/preevent/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/preevent/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/preevent/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/preevent/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/preevent/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/preevent/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/preevent/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/preevent/10.jpg",
         ],
         changes: [
           "RZX8H — Second-generation competitive hybrid platform",
@@ -591,23 +565,15 @@ const projectData = {
       },
       2019: {
         images: [
-          // "assets/images/prototypes/RZ-X9-H/event/1.webp",
-          "assets/images/prototypes/RZ-X9-H/event/2.webp",
-          // "assets/images/prototypes/RZ-X9-H/event/3.webp",
-          // "assets/images/prototypes/RZ-X9-H/event/4.webp",
-          // "assets/images/prototypes/RZ-X9-H/event/5.webp",
-          // "assets/images/prototypes/RZ-X9-H/event/6.webp",
-          "assets/images/prototypes/RZ-X9-H/event/7.webp",
-          // "assets/images/prototypes/RZ-X9-H/event/8.webp",
-          // "assets/images/prototypes/RZ-X9-H/event/9.webp",
-          // "assets/images/prototypes/RZ-X9-H/event/10.webp",
-          "assets/images/prototypes/RZ-X9-H/event/11.webp",
-          // "assets/images/prototypes/RZ-X9-H/event/12.webp",
-          // "assets/images/prototypes/RZ-X9-H/preevent/1.webp",
-          // "assets/images/prototypes/RZ-X9-H/preevent/2.webp",
-          "assets/images/prototypes/RZ-X9-H/preevent/3.webp",
-          // "assets/images/prototypes/RZ-X9-H/preevent/4.webp",
-          // "assets/images/prototypes/RZ-X9-H/preevent/5.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/event/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/event/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/event/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/event/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/event/10.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/event/11.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/preevent/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/preevent/3.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/preevent/5.webp",
         ],
         changes: [
           "3rd Overall — Formula Hybrid 2019",
@@ -628,10 +594,20 @@ const projectData = {
   },
 
   hyp: {
-    title: "Hyperloop Pod Development",
+    title: "Hyperloop Pod Platform",
     years: {
       2023: {
-        images: ["assets/images/team/Hyperloop.webp"],
+        images: [
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/9.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/10.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/11.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/12.jpg",
+        ],
         changes: ["First prototype — competed at ETH Zurich"],
         desc: "Ashwa's entry into the Hyperloop space — a full pod prototype developed and tested for international-level competition at ETH Zurich.",
         achievements: ["First foray into Hyperloop technology"]
@@ -766,6 +742,8 @@ function renderYear(progKey, year) {
   progYears.querySelectorAll(".year-btn").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.year === String(year));
   });
+  window._scrollYearToActive?.()
+  
   activeYear = year;
 
   // ── Images — async, guarded by token ──
@@ -867,7 +845,6 @@ function buildOverviewCards() {
 
     card.innerHTML = `
       <div class="prog-card-code">${identity.code}</div>
-      <div class="prog-card-name">${identity.tag}</div>
       <div class="prog-card-title">${proto.title}</div>
       <div class="prog-card-years">
         ${years.length > 1 ? `${years[years.length - 1]} – ${years[0]}` : years[0]}
@@ -912,49 +889,135 @@ function initReveal() {
   cards.forEach(el => obs.observe(el));
 }
 
-// ─── Year scroll navigation ────────────────────────────────────
 function initYearScroll() {
-  const progYears = document.getElementById("prog-years");
-  const scrollLeftBtn = document.getElementById("years-scroll-left");
-  const scrollRightBtn = document.getElementById("years-scroll-right");
+  const wrapper = document.getElementById("prog-years-wrapper");
+  const track   = document.getElementById("prog-years");
+  if (!wrapper || !track) return;
 
-  if (!progYears || !scrollLeftBtn || !scrollRightBtn) return;
+  // Inject arrows + fade edges once
+  const arrowL = document.createElement("button");
+  const arrowR = document.createElement("button");
+  const fadeL  = document.createElement("div");
+  const fadeR  = document.createElement("div");
 
-  const scrollDistance = 200; // pixels per scroll
+  arrowL.className = "years-arrow hidden"; arrowL.innerHTML = "&#8249;"; arrowL.setAttribute("aria-label", "Scroll left");
+  arrowR.className = "years-arrow hidden"; arrowR.innerHTML = "&#8250;"; arrowR.setAttribute("aria-label", "Scroll right");
+  fadeL.className  = "years-fade-edge left hidden";
+  fadeR.className  = "years-fade-edge right hidden";
 
-  function updateScrollButtons() {
-    const isAtStart = progYears.scrollLeft <= 0;
-    const isAtEnd = progYears.scrollLeft >= (progYears.scrollWidth - progYears.clientWidth - 10);
+  wrapper.prepend(arrowL);
+  wrapper.appendChild(arrowR);
+  wrapper.appendChild(fadeR);
+  wrapper.prepend(fadeL);
 
-    scrollLeftBtn.disabled = isAtStart;
-    scrollRightBtn.disabled = isAtEnd;
-
-    scrollLeftBtn.style.opacity = isAtStart ? "0.4" : "1";
-    scrollRightBtn.style.opacity = isAtEnd ? "0.4" : "1";
-    scrollLeftBtn.style.cursor = isAtStart ? "not-allowed" : "pointer";
-    scrollRightBtn.style.cursor = isAtEnd ? "not-allowed" : "pointer";
+  function syncUI() {
+    const atStart = track.scrollLeft <= 2;
+    const atEnd   = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    arrowL.classList.toggle("hidden", atStart);
+    arrowR.classList.toggle("hidden", atEnd);
+    fadeL.classList.toggle("hidden", atStart);
+    fadeR.classList.toggle("hidden", atEnd);
   }
 
-  scrollLeftBtn.addEventListener("click", () => {
-    progYears.scrollBy({
-      left: -scrollDistance,
-      behavior: "smooth"
-    });
-    setTimeout(updateScrollButtons, 300);
+  // Eased scroll to target position
+  let rafId = null;
+  function momentumScroll(delta, duration) {
+    cancelAnimationFrame(rafId);
+    const start  = track.scrollLeft;
+    const target = Math.max(0, Math.min(start + delta, track.scrollWidth - track.clientWidth));
+    const t0     = performance.now();
+    const ease   = t => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2;
+    function step(now) {
+      const p = Math.min((now - t0) / duration, 1);
+      track.scrollLeft = start + (target - start) * ease(p);
+      if (p < 1) rafId = requestAnimationFrame(step);
+      else { track.scrollLeft = target; syncUI(); }
+    }
+    rafId = requestAnimationFrame(step);
+  }
+
+  // Scroll active year into view
+  window._scrollYearToActive = function() {
+    const active = track.querySelector(".year-btn.active");
+    if (!active) return;
+    const tr = track.getBoundingClientRect();
+    const br = active.getBoundingClientRect();
+    const delta = br.left - tr.left - tr.width / 2 + br.width / 2;
+    momentumScroll(delta, 280);
+  };
+
+  arrowL.addEventListener("click", () => momentumScroll(-Math.max(track.clientWidth * 0.55, 140), 300));
+  arrowR.addEventListener("click", () => momentumScroll(+Math.max(track.clientWidth * 0.55, 140), 300));
+  track.addEventListener("scroll", syncUI, { passive: true });
+  window.addEventListener("resize", syncUI);
+
+  // Drag-to-scroll with momentum
+  let dragging = false, startX = 0, scrollX = 0, vel = 0, lastX = 0, lastT = 0;
+
+  track.addEventListener("mousedown", e => {
+    dragging = true; startX = e.clientX; scrollX = track.scrollLeft;
+    lastX = e.clientX; lastT = performance.now(); vel = 0;
+    track.classList.add("grabbing");
+    cancelAnimationFrame(rafId);
+    e.preventDefault();
+  });
+  window.addEventListener("mousemove", e => {
+    if (!dragging) return;
+    const now = performance.now(), dt = now - lastT;
+    if (dt > 0) vel = (e.clientX - lastX) / dt;
+    lastX = e.clientX; lastT = now;
+    track.scrollLeft = scrollX - (e.clientX - startX);
+    syncUI();
+  });
+  window.addEventListener("mouseup", () => {
+    if (!dragging) return;
+    dragging = false;
+    track.classList.remove("grabbing");
+    if (Math.abs(vel) > 0.05) launchCoast(vel);
   });
 
-  scrollRightBtn.addEventListener("click", () => {
-    progYears.scrollBy({
-      left: scrollDistance,
-      behavior: "smooth"
-    });
-    setTimeout(updateScrollButtons, 300);
+  track.addEventListener("touchstart", e => {
+    dragging = true; startX = e.touches[0].clientX; scrollX = track.scrollLeft;
+    lastX = startX; lastT = performance.now(); vel = 0;
+    cancelAnimationFrame(rafId);
+  }, { passive: true });
+  track.addEventListener("touchmove", e => {
+    if (!dragging) return;
+    const x = e.touches[0].clientX, now = performance.now(), dt = now - lastT;
+    if (dt > 0) vel = (x - lastX) / dt;
+    lastX = x; lastT = now;
+    track.scrollLeft = scrollX - (x - startX);
+    syncUI();
+  }, { passive: true });
+  track.addEventListener("touchend", () => {
+    dragging = false;
+    if (Math.abs(vel) > 0.05) launchCoast(vel);
   });
 
-  // Update button states on scroll or page load
-  progYears.addEventListener("scroll", updateScrollButtons);
-  window.addEventListener("resize", updateScrollButtons);
-  setTimeout(updateScrollButtons, 300);
+  function launchCoast(v) {
+    let momentum = v * 14;
+    function step() {
+      if (Math.abs(momentum) < 0.5) return;
+      track.scrollLeft -= momentum;
+      momentum *= 0.88;
+      syncUI();
+      rafId = requestAnimationFrame(step);
+    }
+    rafId = requestAnimationFrame(step);
+  }
+
+  // Keyboard nav
+  track.setAttribute("tabindex", "0");
+  track.addEventListener("keydown", e => {
+    const btns = [...track.querySelectorAll(".year-btn")];
+    const idx  = btns.findIndex(b => b.classList.contains("active"));
+    if (e.key === "ArrowLeft"  && idx > 0)              { btns[idx - 1].click(); e.preventDefault(); }
+    if (e.key === "ArrowRight" && idx < btns.length - 1){ btns[idx + 1].click(); e.preventDefault(); }
+    if (e.key === "Home") { btns[0].click(); e.preventDefault(); }
+    if (e.key === "End")  { btns[btns.length - 1].click(); e.preventDefault(); }
+  });
+
+  setTimeout(syncUI, 100);
 }
 
 // ─── Init ─────────────────────────────────────────────────────
