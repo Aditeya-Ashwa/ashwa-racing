@@ -1,12 +1,4 @@
 User-agent: *
-Disallow:
-User-agent: Googlebot
 Allow: /
 
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-Sitemap: https://ashwaracing.org/sitemap.xml
+Sitemap: https://www.ashwaracing.org/sitemap.xml
