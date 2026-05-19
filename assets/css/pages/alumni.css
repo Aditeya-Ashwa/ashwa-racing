@@ -43,8 +43,8 @@ body { font-family: var(--font-body); background: var(--black); color: var(--whi
 }
 .al-hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  background: url('../../images/prototypes/Prototypesbanner.webp') center 30% / cover no-repeat;
-  filter: brightness(0.25) saturate(0.5); transform: scale(1.03);
+  background: url('https://assets.ashwaracing.org/cdn-cgi/image/width=1440,format=avif/images/prototypes/RZ-07-C/17.jpg') center 30% / cover no-repeat;
+  filter: brightness(0.75) saturate(0.75);
 }
 .al-hero-overlay {
   position: absolute; inset: 0; z-index: 1;
