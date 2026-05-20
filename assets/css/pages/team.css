@@ -11,15 +11,20 @@
 }
 
 :root {
-  --red:       #e8001d;
-  --red-dark:  #b5001a;
-  --black:     #0a0a0a;
-  --charcoal:  #141414;
-  --dark-grey: #1e1e1e;
-  --mid-grey:  #3a3a3a;
-  --light-grey:#f2f2f2;
-  --white:     #ffffff;
-  --text-muted:#888;
+  --red:        #e8001d;
+  --red-dark:   #b5001a;
+  --black:      #0a0a0a;
+  --charcoal:   #141414;
+  --dark-grey:  #1e1e1e;
+  --mid-grey:   #3a3a3a;
+  --light-grey: #f2f2f2;
+  --white:      #ffffff;
+  --text-muted: #888;
+
+  /* Role accent colours — used for lead/captain elevation */
+  --gold:       #c9a84c;
+  --gold-dim:   rgba(201,168,76,0.12);
+
   --font-display: 'Barlow Condensed', sans-serif;
   --font-body:    'Barlow', sans-serif;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -29,17 +34,19 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: var(--white);
-  color: var(--black);
+  background: var(--charcoal);
+  color: var(--white);
   overflow-x: hidden;
 }
 
-/* ===== HERO ===== */
+/* ============================================================
+   HERO
+   ============================================================ */
 .team-hero {
   position: relative;
   height: 100svh;
   min-height: 560px;
-  max-height: 900px;
+  max-height: 960px;
   background: var(--black);
   overflow: hidden;
   display: flex;
@@ -51,157 +58,178 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center 30%;
-  filter: brightness(0.35) saturate(0.8);
-  transform: scale(1.03);
-  transition: transform 8s var(--ease-out-expo);
+  filter: brightness(0.32) saturate(0.75);
+  transform: scale(1.04);
+  transition: transform 9s var(--ease-out-expo);
 }
 
 .team-hero:hover .team-hero-bg {
   transform: scale(1.0);
 }
 
-/* Grid overlay — gives an F1 telemetry feel */
+/* Telemetry grid overlay */
 .hero-grid-overlay {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
   pointer-events: none;
 }
 
-/* Red diagonal stripe accent */
+/* Bottom vignette — anchors the text */
+.team-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 55%;
+  background: linear-gradient(transparent, rgba(10,10,10,0.92) 80%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Primary red vertical stripe */
 .hero-stripe {
   position: absolute;
   top: 0; right: 8%;
-  width: 4px;
+  width: 3px;
   height: 100%;
   background: var(--red);
   opacity: 0.9;
+  z-index: 3;
 }
 
-.hero-stripe::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -12px;
-  width: 2px; height: 100%;
-  background: var(--red);
-  opacity: 0.35;
+/* Secondary dimmer stripe */
+.hero-stripe--secondary {
+  right: calc(8% + 14px);
+  width: 1px;
+  opacity: 0.28;
 }
 
 .team-hero-content {
   position: relative;
   z-index: 3;
-  padding: 0 7% 8vh;
-  max-width: 780px;
+  padding: 0 7% 9vh;
+  max-width: 820px;
 }
 
+/* Eyebrow — already in HTML, now has CSS */
 .hero-eyebrow {
   display: flex;
   align-items: center;
   gap: 14px;
   font-family: var(--font-display);
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
   color: var(--red);
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   font-weight: 600;
 }
 
 .eyebrow-line {
   display: block;
-  width: 32px;
+  width: 28px;
   height: 2px;
   background: var(--red);
+  flex-shrink: 0;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(4rem, 10vw, 8rem);
+  font-size: clamp(4.2rem, 10.5vw, 8.5rem);
   font-weight: 800;
-  line-height: 0.92;
+  line-height: 0.9;
   color: var(--white);
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  margin-bottom: 28px;
-
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+  gap: 0.04em;
+}
+
+/* THE stays white, PEOPLE goes red-italic */
+.hero-title > span:first-child {
+  display: flex;
+  gap: 0.18em;
+  align-items: baseline;
 }
 
 .hero-title em {
   font-style: italic;
   color: var(--red);
-  display: block;
 }
 
 .hero-desc {
   font-size: 1rem;
-  line-height: 1.65;
-  color: rgba(255,255,255,0.6);
-  max-width: 420px;
-  margin-bottom: 40px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.52);
+  max-width: 400px;
+  margin-bottom: 44px;
   font-weight: 300;
+  letter-spacing: 0.01em;
 }
 
 .hero-stats {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
   flex-wrap: wrap;
 }
 
-.stat {
-  display: flex;
-  flex-direction: column;
-}
+.stat { display: flex; flex-direction: column; }
 
 .stat-num {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: var(--white);
   line-height: 1;
+  letter-spacing: -0.01em;
 }
 
 .stat-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 .stat-divider {
   width: 1px;
-  height: 36px;
-  background: rgba(255,255,255,0.15);
+  height: 38px;
+  background: rgba(255,255,255,0.14);
+  flex-shrink: 0;
 }
 
-/* Scroll hint */
+/* Scroll hint — was in CSS but missing from HTML, now present */
 .hero-scroll-hint {
   position: absolute;
-  bottom: 48px;
+  bottom: 52px;
   right: 7%;
   z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.35);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.28);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
 }
 
 .scroll-bar {
   width: 1px;
-  height: 60px;
-  background: rgba(255,255,255,0.15);
+  height: 64px;
+  background: rgba(255,255,255,0.1);
   position: relative;
   overflow: hidden;
+  writing-mode: horizontal-tb;
 }
 
 .scroll-bar::after {
@@ -212,7 +240,7 @@ body {
   width: 100%;
   height: 100%;
   background: var(--red);
-  animation: scrollDrop 1.8s ease-in-out infinite;
+  animation: scrollDrop 2s ease-in-out infinite;
 }
 
 @keyframes scrollDrop {
@@ -220,65 +248,75 @@ body {
   100% { top: 100%; }
 }
 
-/* ===== FILTERS ===== */
+/* ============================================================
+   FILTERS
+   ============================================================ */
 .team-filters {
   background: var(--black);
-  padding: 64px 0 60px;
+  padding: 56px 0 52px;
   position: relative;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  /* Intentional top separator — red line, not just opacity border */
+  border-top: 2px solid var(--red);
 }
 
-/* Large "FILTER" label running vertically on left */
 .filters-label {
   position: absolute;
-  left: 2.5%;
+  left: 28px;
   top: 50%;
   transform: translateY(-50%) rotate(-90deg);
   font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  color: rgba(255,255,255,0.12);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.08);
   text-transform: uppercase;
   pointer-events: none;
   display: none;
+  user-select: none;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
   .filters-label { display: block; }
 }
 
 .team-filters-inner {
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 7%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 28px;
+}
+
+/* Thin rule between year and subsystem groups */
+.filter-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 0 -1px;
 }
 
 .filter-group {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .filter-group-label {
   font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  color: var(--text-muted);
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  color: rgba(255,255,255,0.3);
   text-transform: uppercase;
 }
 
 .filter-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .filter-scroll {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -295,46 +333,31 @@ body {
 }
 
 .year-item.spacer {
-  width: 30vw;
+  width: 28vw;
   pointer-events: none;
 }
 
 .filter-btn {
-  padding: 8px 22px;
+  padding: 7px 20px;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.42);
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 2px;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease;
   position: relative;
-  overflow: hidden;
-}
-
-.filter-btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--red);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.2s ease;
-  z-index: -1;
 }
 
 .filter-btn:hover {
   color: var(--white);
-  border-color: rgba(255,255,255,0.3);
-}
-
-.filter-btn:hover::before {
-  transform: scaleX(0.08);
+  border-color: rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.04);
 }
 
 .filter-btn.active {
@@ -345,132 +368,181 @@ body {
 
 .nav-arrow {
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.4);
-  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.35);
+  padding: 0;
   cursor: pointer;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  transition: all 0.2s ease;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  transition: border-color 0.18s, color 0.18s;
   flex-shrink: 0;
-  height: 40px;
-  width: 40px;
+  height: 36px;
+  width: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .nav-arrow:hover {
-  border-color: rgba(255,255,255,0.35);
+  border-color: rgba(255,255,255,0.3);
   color: var(--white);
 }
 
+/* Subsystem description — redesigned with labelled tag */
 .subsystem-desc {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.3);
-  line-height: 1.6;
-  letter-spacing: 0.02em;
-  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
   border-left: 2px solid var(--red);
   padding-left: 16px;
+  transition: opacity 0.25s ease;
+  min-height: 24px;
+}
+
+.desc-tag {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  color: var(--red);
+  text-transform: uppercase;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.desc-text {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.32);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
   font-weight: 300;
 }
 
-/* ===== TEAM SECTION ===== */
+/* ============================================================
+   TEAM SECTION
+   ============================================================ */
 .team-section {
   background: var(--charcoal);
-  padding: 80px 7% 100px;
+  padding: 72px 7% 100px;
   min-height: 60vh;
 }
 
 .team-section-header {
-  max-width: 1280px;
-  margin: 0 auto 56px;
-  display: flex;
-  align-items: baseline;
+  max-width: 1320px;
+  margin: 0 auto 52px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
   gap: 24px;
-  flex-wrap: wrap;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
   padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.section-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .section-label {
   font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
   color: var(--text-muted);
   text-transform: uppercase;
 }
 
 .team-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
   font-weight: 700;
   color: var(--white);
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.section-meta-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
 }
 
 .member-count {
   font-family: var(--font-display);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
   color: var(--red);
   text-transform: uppercase;
-  margin-left: auto;
 }
 
-/* ===== MEMBER GRID ===== */
+.section-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--red);
+}
+
+/* ============================================================
+   MEMBER GRID
+   ============================================================ */
 .member-grid {
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
+  /* Max 4 columns at any viewport — prevents cramped 5-col layouts */
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  max-width: 1320px;
   gap: 2px;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.22s ease;
 }
 
-/* ===== NO MEMBERS ===== */
+/* ============================================================
+   NO MEMBERS STATE
+   ============================================================ */
 .no-members {
   grid-column: 1 / -1;
   text-align: center;
-  padding: 80px 20px;
-  color: rgba(255,255,255,0.3);
+  padding: 100px 20px;
+  color: rgba(255,255,255,0.22);
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  letter-spacing: 0.1em;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .no-members i {
   display: block;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 20px;
   color: var(--red);
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
-/* ===== MEMBER CARD ===== */
+/* ============================================================
+   MEMBER CARD — BASE
+   ============================================================ */
 .member-card {
   background: var(--dark-grey);
   position: relative;
   overflow: hidden;
   cursor: default;
-  transition: transform 0.4s var(--ease-out-expo), z-index 0s;
+  transition: transform 0.4s var(--ease-out-expo);
   animation: cardReveal 0.5s var(--ease-out-expo) both;
 }
 
 @keyframes cardReveal {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 .member-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.018);
   z-index: 2;
 }
 
-/* Red accent bar on left edge */
+/* Red left-edge accent — animates full height on hover */
 .member-card::before {
   content: '';
   position: absolute;
@@ -484,7 +556,33 @@ body {
 
 .member-card:hover::before { height: 100%; }
 
-/* ===== PROFILE HEADER ===== */
+/* ============================================================
+   ELEVATED CARD — TEAM CAPTAIN & CHIEF ENGINEER
+   Spans 2 columns when grid allows, gold treatment
+   ============================================================ */
+.member-card.is-command {
+  background: #191510;
+  border: 1px solid rgba(201,168,76,0.18);
+}
+
+/* Gold edge instead of red */
+.member-card.is-command::before {
+  background: var(--gold);
+}
+
+.member-card.is-command:hover::before { height: 100%; }
+
+/* ============================================================
+   SUBSYSTEM LEAD CARD
+   Slightly elevated — red-tinted dark background
+   ============================================================ */
+.member-card.is-lead {
+  background: #1a1212;
+}
+
+/* ============================================================
+   PROFILE HEADER (image + overlay)
+   ============================================================ */
 .profile-header {
   position: relative;
 }
@@ -502,27 +600,31 @@ body {
   object-fit: cover;
   object-position: top center;
   display: block;
-  transition: transform 0.6s var(--ease-out-expo), filter 0.4s ease;
-  filter: saturate(0.85);
+  transition: transform 0.65s var(--ease-out-expo), filter 0.4s ease;
+  filter: saturate(0.8) brightness(0.95);
 }
 
 .member-card:hover .profile-img-container img {
   transform: scale(1.05);
-  filter: saturate(1);
+  filter: saturate(1) brightness(1);
 }
 
-/* Info overlay that slides up on hover */
+/* Command cards get a slightly larger image area for visual weight */
+.member-card.is-command .profile-img-container {
+  aspect-ratio: 3/4;
+}
+
+/* Gradient overlay — anchors name/role text */
 .profile-info-overlay {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.92) 40%);
-  padding: 50px 20px 18px;
-  transform: translateY(0);
+  background: linear-gradient(transparent 0%, rgba(0,0,0,0.88) 45%);
+  padding: 56px 18px 16px;
 }
 
 .member-name {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--white);
   letter-spacing: 0.04em;
@@ -532,34 +634,70 @@ body {
 
 .member-role {
   font-family: var(--font-display);
-  font-size: 0.75rem;
-  color: var(--red);
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   margin-top: 4px;
-  font-weight: 600;
+  font-weight: 700;
 }
+
+/* Role colour varies by card type */
+.member-card.is-command .member-role { color: var(--gold); }
+.member-card.is-lead    .member-role { color: var(--red); }
+.member-card            .member-role { color: rgba(255,255,255,0.55); }
 
 .member-subsystem {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.4);
-  margin-top: 2px;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.38);
+  margin-top: 3px;
   letter-spacing: 0.04em;
+  line-height: 1.4;
 }
 
-/* ===== CONTRIBUTION SECTION ===== */
+/* ============================================================
+   ROLE BADGE — pinned top-right, replaces colour-only signal
+   ============================================================ */
+.role-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 2px;
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.role-badge.badge-command {
+  background: rgba(201,168,76,0.9);
+  color: #0a0a0a;
+}
+
+.role-badge.badge-lead {
+  background: rgba(232,0,29,0.88);
+  color: var(--white);
+}
+
+/* ============================================================
+   CONTRIBUTION SECTION
+   ============================================================ */
 .member-experience {
-  padding: 16px 20px 14px;
+  padding: 14px 18px 12px;
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .exp-label {
   font-family: var(--font-display);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
   color: var(--text-muted);
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 7px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -573,17 +711,20 @@ body {
 }
 
 .member-experience p {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   line-height: 1.65;
-  color: rgba(255,255,255,0.5);
+  /* Improved from 0.5 opacity — better WCAG contrast on dark-grey */
+  color: rgba(255,255,255,0.62);
   font-weight: 300;
 }
 
-/* ===== SOCIAL LINKS ===== */
+/* ============================================================
+   SOCIAL LINKS
+   ============================================================ */
 .member-social {
-  padding: 0 20px 18px;
+  padding: 0 18px 16px;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -591,13 +732,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px; height: 32px;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 4px;
-  color: rgba(255,255,255,0.4);
-  font-size: 0.85rem;
+  width: 30px; height: 30px;
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 2px;
+  color: rgba(255,255,255,0.38);
+  font-size: 0.8rem;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.18s;
 }
 
 .member-social a:hover {
@@ -607,7 +748,16 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===== 3D EASTER EGG ===== */
+/* Gold social links for command cards */
+.member-card.is-command .member-social a:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+/* ============================================================
+   3D EASTER EGG
+   ============================================================ */
 .member-3d {
   position: absolute;
   inset: 0;
@@ -627,47 +777,64 @@ body {
   display: block;
 }
 
-/* ===== BACK TO TOP ===== */
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
 .back-to-top {
   position: fixed;
   bottom: 32px; right: 32px;
-  width: 48px; height: 48px;
+  width: 46px; height: 46px;
   background: var(--red);
   color: var(--white);
   border: none;
-  border-radius: 4px;
+  border-radius: 2px;
   cursor: pointer;
   display: none;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  box-shadow: 0 8px 24px rgba(232,0,29,0.35);
-  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 24px rgba(232,0,29,0.3);
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
   z-index: 1000;
-  font-family: var(--font-display);
 }
 
 .back-to-top:hover {
   background: var(--red-dark);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(232,0,29,0.45);
+  box-shadow: 0 12px 28px rgba(232,0,29,0.42);
 }
 
-/* ===== RESPONSIVE ===== */
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+  .member-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   .hero-title {
-    font-size: clamp(3rem, 14vw, 6rem);
+    font-size: clamp(3.2rem, 14vw, 6rem);
   }
 
   .team-section {
-    padding: 60px 5% 80px;
+    padding: 56px 5% 80px;
   }
 
   .team-section-header {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .section-meta-right {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
     gap: 16px;
   }
 
-  .member-count { margin-left: 0; }
+  .section-rule { display: none; }
 }
 
 @media (max-width: 640px) {
@@ -675,21 +842,11 @@ body {
     font-size: clamp(2.8rem, 16vw, 5rem);
   }
 
-  .hero-stats {
-    gap: 16px;
-  }
+  .hero-stats { gap: 18px; }
+  .stat-num   { font-size: 1.5rem; }
 
-  .stat-num {
-    font-size: 1.4rem;
-  }
-
-  .team-filters {
-    padding: 48px 0 44px;
-  }
-
-  .team-filters-inner {
-    padding: 0 5%;
-  }
+  .team-filters { padding: 44px 0 40px; }
+  .team-filters-inner { padding: 0 5%; }
 
   .member-grid {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));

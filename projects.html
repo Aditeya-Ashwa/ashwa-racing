@@ -8,7 +8,7 @@
 
   <link rel="canonical" href="https://ashwaracing.org/projects.html" />
 
-  <meta name="description" content="Explore Ashwa Racing’s complete project portfolio spanning combustion, hybrid, hyperloop, and future autonomous platforms. Discover two decades of Formula Student prototypes, engineering evolution, and international competition achievements." />
+  <meta name="description" content="Explore Ashwa Racing's complete project portfolio spanning combustion, hybrid, hyperloop, and future autonomous platforms. Discover two decades of Formula Student prototypes, engineering evolution, and international competition achievements." />
 
   <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
@@ -34,88 +34,147 @@
   <header id="main-header"></header>
 
   <!-- ═══════════════════════════
-     HERO
-════════════════════════════ -->
+       HERO
+  ════════════════════════════ -->
   <section class="proj-hero">
     <div class="proj-hero-bg"></div>
     <div class="proj-hero-overlay"></div>
     <div class="proj-hero-grid"></div>
-    <div class="proj-hero-stripe"></div>
+
+    <!-- Vertical accent stripe — right side -->
+    <div class="proj-hero-stripe" id="proj-hero-stripe"></div>
+
+    <!-- Horizontal rule at bottom of hero -->
+    <div class="proj-hero-rule"></div>
 
     <div class="proj-hero-content">
-      <h1 class="proj-hero-title">OUR<br><em>PROJECTS</em></h1>
+
+      <!-- Eyebrow label -->
+      <div class="proj-eyebrow">
+        <span class="eyebrow-dash"></span>
+        Ashwa Racing · Engineering Archive
+      </div>
+
+      <!-- Main title -->
+      <h1 class="proj-hero-title">
+        OUR<br><em>PROJECTS</em>
+      </h1>
+
+      <!-- Descriptor -->
       <p class="proj-hero-desc">
         Across combustion, electric, hybrid, hyperloop, and autonomous platforms —
         Ashwa Racing engineers high-performance prototypes built for competition.
       </p>
     </div>
 
-    <!-- Programme quick-nav -->
-    <!-- <nav class="prog-nav" aria-label="Programme navigation">
-    <button class="prog-nav-btn active" data-prog="cv">
-      <span class="prog-nav-code">CV</span>
-      <span class="prog-nav-name">Combustion</span>
-    </button>
-    <button class="prog-nav-btn" data-prog="hyb">
-      <span class="prog-nav-code">HYB</span>
-      <span class="prog-nav-name">Hybrid</span>
-    </button>
-    <button class="prog-nav-btn" data-prog="hyp">
-      <span class="prog-nav-code">HYL</span>
-      <span class="prog-nav-name">Hyperloop</span>
-    </button> -->
-    <!-- <button class="prog-nav-btn" data-prog="ev">
-      <span class="prog-nav-code">EV</span>
-      <span class="prog-nav-name">Electric</span>
-    </button>
-    <button class="prog-nav-btn" data-prog="dv">
-      <span class="prog-nav-code">DRV</span>
-      <span class="prog-nav-name">Driverless</span>
-    </button> -->
-  </nav>
+    <!-- Telemetry stats bar — anchored to bottom of hero -->
+    <div class="proj-hero-stats" id="proj-hero-stats">
+      <div class="proj-stat">
+        <span class="proj-stat-value" data-target="3">0</span>
+        <span class="proj-stat-label">Platforms</span>
+      </div>
+      <div class="proj-stat-divider"></div>
+      <div class="proj-stat">
+        <span class="proj-stat-value" data-target="20">0</span>
+        <span class="proj-stat-label">Seasons</span>
+      </div>
+      <div class="proj-stat-divider"></div>
+      <div class="proj-stat">
+        <span class="proj-stat-value" data-target="17">0</span>
+        <span class="proj-stat-label">Prototypes</span>
+      </div>
+      <div class="proj-stat-divider"></div>
+      <div class="proj-stat">
+        <span class="proj-stat-value" data-target="5">0</span>
+        <span class="proj-stat-label">Countries Raced</span>
+      </div>
+      <div class="proj-stat-divider"></div>
+      <div class="proj-stat">
+        <span class="proj-stat-value" data-target="2005">2005</span>
+        <span class="proj-stat-label">Est.</span>
+      </div>
+    </div>
   </section>
 
-  <section class="all-progs">
-    <div class="all-progs-header">
-      <!-- <div class="section-label">
-        <span class="label-dash"></span>All Programmes
-      </div> -->
-      <h2 class="all-progs-title">The Full<br><em>Portfolio</em></h2>
+  <!-- ═══════════════════════════
+       PROGRAMME INDEX
+  ════════════════════════════ -->
+  <section class="prog-index" id="prog-index" aria-label="Programme selector">
+    <div class="prog-index-header">
+      <span class="prog-index-label">Select Programme</span>
+      <span class="prog-index-count" id="prog-index-count">— / —</span>
     </div>
-
-    <div class="all-progs-grid" id="all-progs-grid">
+    <div class="prog-index-list" id="prog-index-list">
       <!-- Injected by JS -->
     </div>
   </section>
 
-  <section class="prog-viewer" id="prog-viewer">
+  <!-- ═══════════════════════════
+       PROGRAMME VIEWER
+  ════════════════════════════ -->
+  <section class="prog-viewer" id="prog-viewer" aria-live="polite">
 
-    <!-- Programme identity bar -->
+    <!-- Identity bar -->
     <div class="prog-identity" id="prog-identity">
-      <div class="prog-code" id="prog-code">CV</div>
-      <div class="prog-identity-text">
-        <div class="prog-tag" id="prog-tag">Combustion Vehicle</div>
-        <h2 class="prog-title" id="prog-title"></h2>
-      </div>
-      <!-- Year selector lives here -->
-      <div class="prog-years-wrapper" id="prog-years-wrapper">
-        <div class="prog-years" id="prog-years"></div>
+
+      <!-- Large background watermark code -->
+      <div class="prog-code-bg" id="prog-code-bg" aria-hidden="true"></div>
+
+      <div class="prog-identity-inner">
+        <div class="prog-identity-left">
+          <div class="prog-code" id="prog-code">CV</div>
+          <div class="prog-identity-text">
+            <div class="prog-tag" id="prog-tag">Combustion Vehicle</div>
+            <h2 class="prog-title" id="prog-title"></h2>
+          </div>
+        </div>
+
+        <div class="prog-years-wrapper" id="prog-years-wrapper">
+          <!-- arrows + fade edges injected by JS -->
+          <div class="prog-years" id="prog-years" role="tablist" aria-label="Year selector"></div>
+        </div>
       </div>
     </div>
 
     <!-- Main split: image + content -->
     <div class="prog-split">
-      <div class="prog-image-wrap" id="prog-image-wrap">
+
+      <!-- Left: image panel -->
+      <div class="prog-image-panel" id="prog-image-wrap">
+        <div class="prog-image-accent" id="prog-image-accent"></div>
         <img id="prog-image" src="" alt="" loading="lazy">
-        <div class="prog-image-overlay" id="prog-image-overlay"></div>
+        <div class="prog-image-overlay"></div>
+
+        <!-- Slideshow counter -->
+        <div class="prog-slide-counter" id="prog-slide-counter" aria-hidden="true">
+          <span id="slide-current">01</span>
+          <span class="slide-sep">/</span>
+          <span id="slide-total">01</span>
+        </div>
+
+        <!-- Year badge overlaid on image -->
+        <div class="prog-year-badge" id="prog-year-badge" aria-hidden="true"></div>
       </div>
 
+      <!-- Right: content panel -->
       <div class="prog-content" id="prog-content">
         <!-- Injected by JS -->
       </div>
+
     </div>
 
   </section>
+
+  <!-- ═══════════════════════════
+       FULL PORTFOLIO GRID
+  ════════════════════════════ -->
+  <!-- <section class="all-progs" aria-label="Full programme portfolio">
+        <div class="all-progs-header">
+              <h2 class="all-progs-title">The Full<br><em>Portfolio</em></h2>
+                  </div>
+                      <div class="all-progs-grid" id="all-progs-grid">
+                          </div>
+                            </section>-->
 
   <footer id="main-footer"></footer>
 

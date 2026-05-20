@@ -1,22 +1,26 @@
 /* ============================================================
-   ASHWA RACING — projects.js
-   Programme viewer: CV / EV / HYB / HYP / DV
+   ASHWA RACING — projects.js  (redesigned)
+   Preserves all original data structures and interaction logic.
+   New additions: prog-index strips, stat counter, year badge,
+   slide counter, improved fade/token system.
    ============================================================ */
-
-// max dimesnions are 1740
 
 "use strict";
 
-// ─── Programme identity ───────────────────────────────────────
+/* ────────────────────────────────────────────────────────────
+   PROGRAMME IDENTITY
+──────────────────────────────────────────────────────────── */
 const PROGRAMMES = {
-  cv: { code: "CV", tag: "Combustion Vehicle", accent: "#e8001d", cssVar: "--cv-accent" },
-  ev: { code: "EV", tag: "Electric Vehicle", accent: "#00c2a8", cssVar: "--ev-accent" },
-  hyb: { code: "HYB", tag: "Hybrid Vehicle", accent: "#f59e0b", cssVar: "--hyb-accent" },
-  hyp: { code: "HYL", tag: "Hyperloop", accent: "#7c3aed", cssVar: "--hyp-accent" },
-  dv: { code: "DRV", tag: "Driverless Vehicle", accent: "#3b82f6", cssVar: "--dv-accent" }
+  cv:  { code: "CV",  tag: "Combustion Vehicle",   accent: "#e8001d", cssVar: "--cv-accent"  },
+  ev:  { code: "EV",  tag: "Electric Vehicle",     accent: "#00c2a8", cssVar: "--ev-accent"  },
+  hyb: { code: "HYB", tag: "Hybrid Vehicle",       accent: "#f59e0b", cssVar: "--hyb-accent" },
+  hyp: { code: "HYL", tag: "Hyperloop",            accent: "#7c3aed", cssVar: "--hyp-accent" },
+  dv:  { code: "DRV", tag: "Driverless Vehicle",   accent: "#3b82f6", cssVar: "--dv-accent"  }
 };
 
-// ─── Project data ─────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────
+   PROJECT DATA  (unchanged from original)
+──────────────────────────────────────────────────────────── */
 const projectData = {
   cv: {
     title: "Combustion Platform",
@@ -273,7 +277,6 @@ const projectData = {
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/3.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/4.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/6.jpg",
-
         ],
         changes: [
           "RZX6 — Sixth generation combustion prototype",
@@ -301,13 +304,11 @@ const projectData = {
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/6.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/8.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/9.jpg",
-
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/3.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/4.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/6.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/7.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/9.jpg",
-
         ],
         changes: [
           "RZX7 — Seventh generation combustion prototype",
@@ -332,7 +333,6 @@ const projectData = {
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/EVENT/4.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/EVENT/6.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/EVENT/8.jpg",
-
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/1.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/2.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/4.jpg",
@@ -424,8 +424,8 @@ const projectData = {
         changes: [
           "RZ-XX6-C — Fourteenth generation combustion prototype",
           "Continued Ashwa's strong finishes in Static Events",
-          "2nd Postion in BPP",
-          "5th Postion in EDP",
+          "2nd Position in BPP",
+          "5th Position in EDP",
           "Overall 6th position in Formula Bharat 2026",
         ],
         desc: "RZ-XX6-C was the first combustion prototype developed by 3rd years, focusing on experimental DAQ and Suspension setups.",
@@ -536,7 +536,6 @@ const projectData = {
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/11.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/12.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/14.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/event/14.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/preevent/1.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/preevent/2.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-H/preevent/4.jpg",
@@ -613,75 +612,61 @@ const projectData = {
         achievements: ["First foray into Hyperloop technology"]
       }
     }
-  },
-
-  // ev: {
-  //   title: "Next-Generation Electric Prototype",
-  //   years: {
-  //     2026: {
-  //       images: ["assets/images/prototypes/XX5C.jpg"],
-  //       changes: ["Coming soon!"],
-  //       desc: "Electric platform engineered for safety, efficiency, and energy density — designed to pass the most rigorous scrutineering.",
-  //       achievements: ["We strive to win!"]
-  //     }
-  //   }
-  // },
-
-  // dv: {
-  //   title: "Autonomous & Driverless Platform",
-  //   years: {
-  //     2027: {
-  //       images: ["assets/images/prototypes/XX5C.jpg"],
-  //       changes: ["Coming soon!"],
-  //       desc: "The driverless programme builds on Ashwa's existing vehicle platforms, layering perception, planning, and control systems for autonomous competition.",
-  //       achievements: ["We strive to win!"]
-  //     }
-  //   }
-  // }
+  }
 };
 
-/* ============================================================
-   RUNTIME — fixed: render token, hoisted helpers, no viewer in reveal
-   ============================================================ */
 
-"use strict";
-
-// ─── State ────────────────────────────────────────────────────
+/* ════════════════════════════════════════════════════════════
+   RUNTIME STATE
+════════════════════════════════════════════════════════════ */
 let activeProgKey = "cv";
-let activeYear = null;
+let activeYear    = null;
 let slideshowTimer = null;
-let renderToken = 0;      // incremented every renderYear call;
-// stale async callbacks check this before acting
+let renderToken   = 0;
+let slideIndex    = 0;
+let validImages   = [];
 
-// ─── DOM refs ─────────────────────────────────────────────────
-const viewer = document.getElementById("prog-viewer");
-const progCode = document.getElementById("prog-code");
-const progTag = document.getElementById("prog-tag");
-const progTitle = document.getElementById("prog-title");
-const progYears = document.getElementById("prog-years");
-const progImage = document.getElementById("prog-image");
-const progContent = document.getElementById("prog-content");
-const stripe = document.querySelector(".proj-hero-stripe");
+/* ── DOM refs ─────────────────────────────────────────────── */
+const viewer         = document.getElementById("prog-viewer");
+const progCodeEl     = document.getElementById("prog-code");
+const progCodeBgEl   = document.getElementById("prog-code-bg");
+const progTagEl      = document.getElementById("prog-tag");
+const progTitleEl    = document.getElementById("prog-title");
+const progYears      = document.getElementById("prog-years");
+const progImage      = document.getElementById("prog-image");
+const progContent    = document.getElementById("prog-content");
+const progImageAccent = document.getElementById("prog-image-accent");
+const progYearBadge  = document.getElementById("prog-year-badge");
+const slideCurrentEl = document.getElementById("slide-current");
+const slideTotalEl   = document.getElementById("slide-total");
+const heroStripe     = document.getElementById("proj-hero-stripe");
+const heroRule       = document.querySelector(".proj-hero-rule");
 
-// Set transition once on the element, never inside a loop/interval
-progImage.style.transition = "opacity 0.25s ease";
+progImage.style.transition = "opacity 0.28s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.4s ease";
 
-// ─── Hoisted helpers ──────────────────────────────────────────
 
-// Preload an array of image paths; resolve with only those that loaded
+/* ════════════════════════════════════════════════════════════
+   HELPERS
+════════════════════════════════════════════════════════════ */
+function pad2(n) { return n < 10 ? "0" + n : String(n); }
+
 function preloadImages(paths) {
   return Promise.all(
     paths.map(p => new Promise(resolve => {
       const img = new Image();
-      img.onload = () => resolve(p);
+      img.onload  = () => resolve(p);
       img.onerror = () => resolve(null);
       img.src = p;
     }))
   ).then(r => r.filter(Boolean));
 }
 
-// Swap the visible image with a fade, but only if the token still matches
-function swapImage(src, alt, token) {
+function updateSlideCounter(idx, total) {
+  if (slideCurrentEl) slideCurrentEl.textContent = pad2(idx + 1);
+  if (slideTotalEl)   slideTotalEl.textContent   = pad2(total);
+}
+
+function swapImage(src, alt, token, idx, total) {
   if (token !== renderToken) return;
   progImage.style.opacity = "0";
   setTimeout(() => {
@@ -689,28 +674,46 @@ function swapImage(src, alt, token) {
     progImage.src = src;
     progImage.alt = alt;
     progImage.style.opacity = "1";
-  }, 260);
+    updateSlideCounter(idx, total);
+  }, 280);
 }
 
-// ─── Render year ──────────────────────────────────────────────
+/* Update all accent-driven elements when programme changes */
+function applyAccent(accent) {
+  document.documentElement.style.setProperty("--prog-accent", accent);
+  if (heroStripe) heroStripe.style.background = accent;
+  if (progImageAccent) progImageAccent.style.background = accent;
+  if (heroRule) {
+    heroRule.style.background = `linear-gradient(to right,
+      transparent 0%, rgba(255,255,255,0.06) 20%,
+      ${accent} 50%, rgba(255,255,255,0.06) 80%, transparent 100%)`;
+  }
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   RENDER YEAR
+════════════════════════════════════════════════════════════ */
 function renderYear(progKey, year) {
-  const data = projectData[progKey].years[year];
+  const data     = projectData[progKey].years[year];
   const identity = PROGRAMMES[progKey];
 
-  // Invalidate all in-flight async work from previous calls
   renderToken += 1;
   const myToken = renderToken;
+  slideIndex = 0;
+  validImages = [];
 
-  // Kill previous slideshow immediately
   if (slideshowTimer) { clearInterval(slideshowTimer); slideshowTimer = null; }
 
-  // ── Text content — render synchronously, no waiting ──
-  const spec = data.specs || {};
+  /* ── Update year badge ── */
+  if (progYearBadge) progYearBadge.textContent = year;
 
-  // Only show specs block if at least one value is a real measurement
+  /* ── Text content (synchronous) ── */
+  const spec = data.specs || {};
   const hasRealSpecs = Object.values(spec).some(
     v => v && v !== "—" && v !== "-" && v !== ""
   );
+
   const specHTML = hasRealSpecs ? `
     <div class="prog-specs">
       <div class="prog-spec"><span>Weight</span><strong>${spec.weight || "—"}</strong></div>
@@ -723,98 +726,106 @@ function renderYear(progKey, year) {
     ? `<div class="prog-badge">${data.badge}</div>` : "";
 
   const changeItems = data.changes.map(c => `<li>${c}</li>`).join("");
-  const achItems = data.achievements.map(a => `<li>${a}</li>`).join("");
+  const achItems    = data.achievements.map(a => `<li>${a}</li>`).join("");
 
   progContent.innerHTML = `
     <div>
-      <div class="prog-changes-label">Updates for ${year}</div>
+      <div class="prog-section-label">Updates · ${year}</div>
       <ul class="prog-changes">${changeItems}</ul>
     </div>
     <p class="prog-desc">${data.desc}</p>
     ${specHTML}
     ${badgeHTML}
     <div>
-      <div class="prog-ach-label">Achievements</div>
+      <div class="prog-section-label">Achievements</div>
       <ul class="prog-achievements">${achItems}</ul>
     </div>`;
 
-  // Update active year button
+  /* ── Activate year button ── */
   progYears.querySelectorAll(".year-btn").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.year === String(year));
+    btn.setAttribute("aria-selected", btn.dataset.year === String(year));
   });
-  window._scrollYearToActive?.()
-  
+  window._scrollYearToActive?.();
+
   activeYear = year;
 
-  // ── Images — async, guarded by token ──
+  /* ── Images (async, token-guarded) ── */
   const rawImages = data.images || (data.image ? [data.image] : []);
-
-  // Fade out current image while we wait
   progImage.style.opacity = "0";
 
   preloadImages(rawImages).then(valid => {
-    if (myToken !== renderToken) return;  // superseded — bail out
+    if (myToken !== renderToken) return;
+
+    validImages = valid;
 
     if (!valid.length) {
-      // No valid images — just clear
       progImage.src = "";
       progImage.style.opacity = "1";
+      updateSlideCounter(0, 0);
       return;
     }
 
-    let idx = 0;
-    // Show first image immediately (swapImage handles the fade-in)
-    swapImage(valid[0], `${identity.tag} — ${year}`, myToken);
+    slideIndex = 0;
+    swapImage(valid[0], `${identity.tag} — ${year}`, myToken, 0, valid.length);
 
-    // Start slideshow only if there are multiple images
     if (valid.length > 1) {
       slideshowTimer = setInterval(() => {
         if (myToken !== renderToken) {
-          clearInterval(slideshowTimer);
-          slideshowTimer = null;
-          return;
+          clearInterval(slideshowTimer); slideshowTimer = null; return;
         }
-        idx = (idx + 1) % valid.length;
-        swapImage(valid[idx], `${identity.tag} — ${year}`, myToken);
+        slideIndex = (slideIndex + 1) % valid.length;
+        swapImage(valid[slideIndex], `${identity.tag} — ${year}`, myToken, slideIndex, valid.length);
       }, 3500);
     }
   });
 }
 
-// ─── Switch programme ─────────────────────────────────────────
+
+/* ════════════════════════════════════════════════════════════
+   SWITCH PROGRAMME
+════════════════════════════════════════════════════════════ */
 function switchProgramme(progKey) {
   const identity = PROGRAMMES[progKey];
-  const proto = projectData[progKey];
-  const years = Object.keys(proto.years).map(Number).sort((a, b) => b - a);
+  const proto    = projectData[progKey];
+  const years    = Object.keys(proto.years).map(Number).sort((a, b) => b - a);
 
   activeProgKey = progKey;
 
   viewer.style.transition = "opacity 0.18s ease";
-  viewer.style.opacity = "0";
+  viewer.style.opacity    = "0";
 
   setTimeout(() => {
-    document.documentElement.style.setProperty("--prog-accent", identity.accent);
+    applyAccent(identity.accent);
 
-    progCode.textContent = identity.code;
-    progTag.textContent = identity.tag;
-    progTitle.textContent = proto.title;
+    progCodeEl.textContent  = identity.code;
+    if (progCodeBgEl) progCodeBgEl.textContent = identity.code;
+    progTagEl.textContent   = identity.tag;
+    progTitleEl.textContent = proto.title;
 
-    if (stripe) stripe.dataset.prog = progKey;
-
-    // Rebuild year buttons
+    /* Rebuild year buttons */
     progYears.innerHTML = "";
     years.forEach(year => {
       const btn = document.createElement("button");
-      btn.className = "year-btn";
+      btn.className  = "year-btn";
       btn.textContent = year;
       btn.dataset.year = year;
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("aria-selected", "false");
       btn.addEventListener("click", () => renderYear(progKey, year));
       progYears.appendChild(btn);
     });
 
-    document.querySelectorAll(".prog-nav-btn").forEach(btn => {
-      btn.classList.toggle("active", btn.dataset.prog === progKey);
+    /* Update programme index active state */
+    document.querySelectorAll(".prog-index-item").forEach(item => {
+      item.classList.toggle("active", item.dataset.prog === progKey);
     });
+
+    /* Update index count */
+    const countEl = document.getElementById("prog-index-count");
+    const keys = Object.keys(projectData);
+    const idx  = keys.indexOf(progKey);
+    if (countEl) countEl.textContent = `${idx + 1} / ${keys.length}`;
 
     renderYear(progKey, years[0]);
 
@@ -822,19 +833,67 @@ function switchProgramme(progKey) {
   }, 180);
 }
 
-// ─── Programme nav ────────────────────────────────────────────
-document.querySelectorAll(".prog-nav-btn").forEach(btn => {
-  btn.addEventListener("click", () => switchProgramme(btn.dataset.prog));
-});
 
-// ─── Overview cards ───────────────────────────────────────────
+/* ════════════════════════════════════════════════════════════
+   BUILD PROGRAMME INDEX  (horizontal strips replacing nav)
+════════════════════════════════════════════════════════════ */
+function buildProgIndex() {
+  const list = document.getElementById("prog-index-list");
+  if (!list) return;
+
+  const keys = Object.keys(projectData);
+
+  const countEl = document.getElementById("prog-index-count");
+  if (countEl) countEl.textContent = `1 / ${keys.length}`;
+
+  keys.forEach(key => {
+    const identity = PROGRAMMES[key];
+    const proto    = projectData[key];
+    const years    = Object.keys(proto.years).map(Number).sort((a, b) => a - b);
+    const yearRange = years.length > 1
+      ? `${years[0]} – ${years[years.length - 1]}`
+      : String(years[0]);
+
+    const item = document.createElement("div");
+    item.className = "prog-index-item";
+    item.dataset.prog = key;
+    item.setAttribute("role", "button");
+    item.setAttribute("tabindex", "0");
+    item.setAttribute("aria-label", `${identity.tag} programme`);
+    item.style.setProperty("--item-accent", identity.accent);
+
+    item.innerHTML = `
+      <div class="prog-index-item-bg-code" aria-hidden="true">${identity.code}</div>
+      <div class="prog-index-item-dot" aria-hidden="true"></div>
+      <div class="prog-index-item-code">${identity.code}</div>
+      <div class="prog-index-item-name">${proto.title}</div>
+      <div class="prog-index-item-meta">${yearRange} · ${years.length} season${years.length !== 1 ? "s" : ""}</div>`;
+
+    function activate() {
+      switchProgramme(key);
+      viewer.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    item.addEventListener("click", activate);
+    item.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); activate(); }
+    });
+
+    list.appendChild(item);
+  });
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   BUILD OVERVIEW CARDS  (bottom portfolio section)
+════════════════════════════════════════════════════════════ */
 function buildOverviewCards() {
   const grid = document.getElementById("all-progs-grid");
   if (!grid) return;
 
   Object.entries(projectData).forEach(([key, proto]) => {
     const identity = PROGRAMMES[key];
-    const years = Object.keys(proto.years).sort((a, b) => b - a);
+    const years    = Object.keys(proto.years).sort((a, b) => b - a);
 
     const card = document.createElement("div");
     card.className = "prog-card";
@@ -850,58 +909,43 @@ function buildOverviewCards() {
         ${years.length > 1 ? `${years[years.length - 1]} – ${years[0]}` : years[0]}
         · ${years.length} season${years.length !== 1 ? "s" : ""}
       </div>
-      <i class="fas fa-arrow-up-right prog-card-arrow"></i>`;
+      <i class="fas fa-arrow-up-right prog-card-arrow" aria-hidden="true"></i>`;
 
     function activate() {
       switchProgramme(key);
       viewer.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+
     card.addEventListener("click", activate);
     card.addEventListener("keydown", e => {
-      if (e.key === "Enter" || e.key === " ") activate();
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); activate(); }
     });
     grid.appendChild(card);
   });
 }
 
-// ─── Scroll reveal — cards only, never the viewer ─────────────
-// Targeting .prog-viewer here would set opacity:0 on it and race
-// against switchProgramme's own fade, causing a flash on load.
-function initReveal() {
-  const cards = document.querySelectorAll(".prog-card");
-  cards.forEach((el, i) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(18px)";
-    el.style.transition =
-      `opacity 0.5s var(--ease-expo) ${i * 0.06}s,
-       transform 0.5s var(--ease-expo) ${i * 0.06}s`;
-  });
 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.style.opacity = "1";
-      e.target.style.transform = "translateY(0)";
-      obs.unobserve(e.target);
-    });
-  }, { threshold: 0.08 });
-
-  cards.forEach(el => obs.observe(el));
-}
-
+/* ════════════════════════════════════════════════════════════
+   YEAR SELECTOR — scroll / drag / keyboard
+════════════════════════════════════════════════════════════ */
 function initYearScroll() {
   const wrapper = document.getElementById("prog-years-wrapper");
   const track   = document.getElementById("prog-years");
   if (!wrapper || !track) return;
 
-  // Inject arrows + fade edges once
   const arrowL = document.createElement("button");
   const arrowR = document.createElement("button");
   const fadeL  = document.createElement("div");
   const fadeR  = document.createElement("div");
 
-  arrowL.className = "years-arrow hidden"; arrowL.innerHTML = "&#8249;"; arrowL.setAttribute("aria-label", "Scroll left");
-  arrowR.className = "years-arrow hidden"; arrowR.innerHTML = "&#8250;"; arrowR.setAttribute("aria-label", "Scroll right");
+  arrowL.className = "years-arrow hidden";
+  arrowL.innerHTML = "&#8249;";
+  arrowL.setAttribute("aria-label", "Scroll years left");
+
+  arrowR.className = "years-arrow hidden";
+  arrowR.innerHTML = "&#8250;";
+  arrowR.setAttribute("aria-label", "Scroll years right");
+
   fadeL.className  = "years-fade-edge left hidden";
   fadeR.className  = "years-fade-edge right hidden";
 
@@ -919,14 +963,13 @@ function initYearScroll() {
     fadeR.classList.toggle("hidden", atEnd);
   }
 
-  // Eased scroll to target position
   let rafId = null;
   function momentumScroll(delta, duration) {
     cancelAnimationFrame(rafId);
     const start  = track.scrollLeft;
     const target = Math.max(0, Math.min(start + delta, track.scrollWidth - track.clientWidth));
     const t0     = performance.now();
-    const ease   = t => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2;
+    const ease   = t => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2;
     function step(now) {
       const p = Math.min((now - t0) / duration, 1);
       track.scrollLeft = start + (target - start) * ease(p);
@@ -936,12 +979,11 @@ function initYearScroll() {
     rafId = requestAnimationFrame(step);
   }
 
-  // Scroll active year into view
-  window._scrollYearToActive = function() {
+  window._scrollYearToActive = function () {
     const active = track.querySelector(".year-btn.active");
     if (!active) return;
-    const tr = track.getBoundingClientRect();
-    const br = active.getBoundingClientRect();
+    const tr    = track.getBoundingClientRect();
+    const br    = active.getBoundingClientRect();
     const delta = br.left - tr.left - tr.width / 2 + br.width / 2;
     momentumScroll(delta, 280);
   };
@@ -951,7 +993,7 @@ function initYearScroll() {
   track.addEventListener("scroll", syncUI, { passive: true });
   window.addEventListener("resize", syncUI);
 
-  // Drag-to-scroll with momentum
+  /* Drag to scroll */
   let dragging = false, startX = 0, scrollX = 0, vel = 0, lastX = 0, lastT = 0;
 
   track.addEventListener("mousedown", e => {
@@ -995,18 +1037,18 @@ function initYearScroll() {
   });
 
   function launchCoast(v) {
-    let momentum = v * 14;
+    let m = v * 14;
     function step() {
-      if (Math.abs(momentum) < 0.5) return;
-      track.scrollLeft -= momentum;
-      momentum *= 0.88;
+      if (Math.abs(m) < 0.5) return;
+      track.scrollLeft -= m;
+      m *= 0.88;
       syncUI();
       rafId = requestAnimationFrame(step);
     }
     rafId = requestAnimationFrame(step);
   }
 
-  // Keyboard nav
+  /* Keyboard nav */
   track.setAttribute("tabindex", "0");
   track.addEventListener("keydown", e => {
     const btns = [...track.querySelectorAll(".year-btn")];
@@ -1020,8 +1062,72 @@ function initYearScroll() {
   setTimeout(syncUI, 100);
 }
 
-// ─── Init ─────────────────────────────────────────────────────
+
+/* ════════════════════════════════════════════════════════════
+   SCROLL REVEAL — cards only
+════════════════════════════════════════════════════════════ */
+function initReveal() {
+  const cards = document.querySelectorAll(".prog-card, .prog-index-item");
+  cards.forEach((el, i) => {
+    el.style.opacity   = "0";
+    el.style.transform = "translateY(16px)";
+    el.style.transition =
+      `opacity 0.5s cubic-bezier(0.16,1,0.3,1) ${i * 0.055}s,
+       transform 0.5s cubic-bezier(0.16,1,0.3,1) ${i * 0.055}s`;
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.opacity   = "1";
+      e.target.style.transform = "translateY(0)";
+      obs.unobserve(e.target);
+    });
+  }, { threshold: 0.06 });
+
+  cards.forEach(el => obs.observe(el));
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   STAT COUNTER ANIMATION
+════════════════════════════════════════════════════════════ */
+function initStatCounters() {
+  const statValues = document.querySelectorAll(".proj-stat-value[data-target]");
+  if (!statValues.length) return;
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el     = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      /* Don't animate "2005" — it's a year, not a count */
+      if (target > 1000) { el.textContent = target; obs.unobserve(el); return; }
+
+      const duration = 900;
+      const start    = performance.now();
+      function step(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(ease * target);
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  statValues.forEach(el => obs.observe(el));
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   INIT
+════════════════════════════════════════════════════════════ */
+buildProgIndex();
 switchProgramme("cv");
 buildOverviewCards();
 initReveal();
 initYearScroll();
+initStatCounters();

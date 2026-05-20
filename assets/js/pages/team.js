@@ -1,8 +1,11 @@
 "use strict";
 
-let activeYear = "2026";
+// ─── State ────────────────────────────────────────────────────
+// Initialised to null; set properly on first render from dynamic year list
+let activeYear      = null;
 let activeSubsystem = "All";
 
+// ─── Data ─────────────────────────────────────────────────────
 const teamData = [
   {
     name: "Ananth Krishna",
@@ -225,7 +228,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Suspension & Admin", "Aero"],
     year: "2028",
-    experience: "Currently creating a Lap-Time Simulator.",
+    experience: "Currently developing a Lap-Time Simulator.",
     social: { linkedin: "https://www.linkedin.com/in/chakshu-m-diwakar-5a5777216", github: null, gmail: "chakshumd.ashwa@gmail.com" },
   },
   {
@@ -235,7 +238,7 @@ const teamData = [
     year: "2027",
     experience: "The car. She is heavy, but she is ours.",
     social: { linkedin: "https://www.linkedin.com/company/ashwa-racing/", github: "https://github.com/Ashwa-Racing", gmail: "rzxx6c.ashwa@gmail.com" },
-    prototypes: {"Combustion": "Member / Part of team"},
+    prototypes: { "Combustion": "Member / Part of team" },
   },
   {
     name: "N Akshay Urs",
@@ -282,7 +285,7 @@ const teamData = [
     roles: ["Subsystem Lead"],
     subsystem: ["Engine"],
     year: "2027",
-    experience: "Leading engine development and performance tuning for the 2027 race season. Worked on all engine components including sensors, ensuring a reliable power output.",
+    experience: "Leading engine development and performance tuning for the 2027 race season. Worked on all engine components including sensors, ensuring reliable power output.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -290,7 +293,7 @@ const teamData = [
     roles: ["Subsystem Lead"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2027",
-    experience: "Designed drive shafts, DT Sprocket etc for the powertrain components of the car. Part of EDP team, achieving P5 at Formula Bharat 2026.",
+    experience: "Designed drive shafts, DT Sprocket and other powertrain components. Part of EDP team, achieving P5 at Formula Bharat 2026.",
     social: { linkedin: "https://www.linkedin.com/in/ranjithds28/", github: null, gmail: null },
   },
   {
@@ -298,13 +301,13 @@ const teamData = [
     roles: ["Subsystem Lead"],
     subsystem: ["Electrical & Testing", "IT"],
     year: "2027",
-    experience: "Designed the BSPD. Worked on firmware for DAQ. Responsible for website design alongside IT 28.Part of BPP team, achieving 2nd Place at Formula Bharat 2026.",
+    experience: "Designed the BSPD. Worked on firmware for DAQ. Responsible for website design alongside IT 28. Part of BPP team, achieving 2nd Place at Formula Bharat 2026.",
     social: { linkedin: "https://www.linkedin.com/in/aditeya-sarkar/", github: "https://github.com/AditeyaDC", gmail: "aditeya.ashwa@gmail.com" },
-    prototypes: {"Combustion": "Member / Part of team", "Driverless": "Member / Part of team"},
+    prototypes: { "Combustion": "Member / Part of team", "Driverless": "Member / Part of team" },
   },
   {
     name: "Pranav Ramakrishnan",
-    roles: ["Subsysteam Lead"],
+    roles: ["Subsystem Lead"],
     subsystem: ["Sponsorship, Marketing & Public Relations", "Finance"],
     year: "2027",
     experience: "Responsible for finances of RZ-XX6C. Part of BPP team, achieving P2 at Formula Bharat 2026.",
@@ -331,7 +334,7 @@ const teamData = [
     roles: ["Subsystem Lead"],
     subsystem: ["Brakes & Logistics"],
     year: "2026",
-    experience: "Designed and manufactured an ergonomically optimized pedal assembly and implemented the team's first real-time brake bias adjuster, enabling dynamic brake force tuning. Strong vehicle-level understanding with specialized expertise in braking systems.",
+    experience: "Designed and manufactured an ergonomically optimized pedal assembly and implemented the team's first real-time brake bias adjuster, enabling dynamic brake force tuning.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -362,12 +365,12 @@ const teamData = [
   {
     name: "Ravikiran K",
     roles: ["Member", "Team Captain"],
-    subsystem: ["Sponsorship", "Marketing & Public Relations", "Leads"],
+    subsystem: ["Sponsorship, Marketing & Public Relations", "Leads"],
     year: "2025",
-    experience: "Raised 5 lakhs and multiple sponsors for the team, 1st place BPP in Formula Bharat 2024, 2nd place Cost and Manufacturing Formula Bharat 2025, organised F1 simulator event in 8th mile 2023, Led Ashwa team of 2025,",
+    experience: "Raised 5 lakhs and multiple sponsors for the team, 1st place BPP in Formula Bharat 2024, 2nd place Cost and Manufacturing Formula Bharat 2025, organised F1 simulator event in 8th Mile 2023, Led Ashwa team of 2025.",
     social: { linkedin: null, github: null, gmail: "ravikiran.ashwa@gmail.com" },
-    prototypes: {"Combustion": "Team Captain"},
-    testimony: "My journey at Ashwa Racing was the most transformative experience of my life. I learnt volumes about team building, project management, leadership and so on while simultaneously discovering my own shortcomings and strengths. These experiences not only added to my knowledge base but also created lifelong memories which I will carry forward into through every walk of life. I have had the enormous privilege of leading an amazingly talented team of individuals and the journey has only fueled my drive to one day achieve the success I aspire towards.",
+    prototypes: { "Combustion": "Team Captain" },
+    testimony: "My journey at Ashwa Racing was the most transformative experience of my life. I learnt volumes about team building, project management, leadership and so on while simultaneously discovering my own shortcomings and strengths.",
     currentJob: "MBA",
   },
   {
@@ -375,10 +378,10 @@ const teamData = [
     roles: ["Member", "Chief Engineer"],
     subsystem: ["Chassis & Workshop Management", "Leads"],
     year: "2025",
-    experience: "Started my journey in Ashwa with hybrid project, we developed the Proof of Concept for a series-parallel hybrid powertrain, then helped with Hyperloop team for building Ashwa's first ever hyperloop pod. There, I contributed to the manufacturing and assembly of the pod and aeroshell. Signed off as Chief Engineer for the combustion prototype RZ-XX5C, leading the team through a successful campaign that saw the vehicle reach the endurance track at Formula Bharat 2025 and won 2nd place in Cost and manufacturing.",
-    social: { linkedin: "https://www.linkedin.com/in/chinmay-v-ab703620b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: null, gmail: "chinmayv.ashwa@gmail.com" },
-    prototypes: {"Combustion": "Chief Engineer", "Hybrid": "Member / Part of team", "Hyperloop": "Member / Part of team"},
-    testimony: "My journey in Ashwa is something I will cherish forever. From the late-night manufacturing and testing sessions to the chaos of assembly or inventory session, the experience transformed me into a much better engineer. Being part of this team taught me to push my limits, thrive in a fast-paced environment, and truly understand my own strengths and weaknesses. Most importantly, Ashwa connected me with like-minded, hardworking individuals who are driven to achieve a common goal.",
+    experience: "Started with hybrid project, developed PoC for a series-parallel hybrid powertrain, then contributed to Hyperloop manufacturing. Signed off as Chief Engineer for RZ-XX5C — vehicle completed endurance at Formula Bharat 2025, winning 2nd in Cost and Manufacturing.",
+    social: { linkedin: "https://www.linkedin.com/in/chinmay-v-ab703620b", github: null, gmail: "chinmayv.ashwa@gmail.com" },
+    prototypes: { "Combustion": "Chief Engineer", "Hybrid": "Member / Part of team", "Hyperloop": "Member / Part of team" },
+    testimony: "My journey in Ashwa is something I will cherish forever. From late-night manufacturing sessions to assembly chaos, the experience transformed me into a much better engineer.",
     currentJob: "Product Engineer, Ather Energy",
   },
   {
@@ -386,89 +389,126 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2026",
-    experience: "Kinematics and Geometry optimization, Spring rates, Anti roll bar design, Rocker design, Car setup",
-    social: { linkedin: "https://www.linkedin.com/in/amish-s?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github: null, gmail: "amish.ashwa@gmail.com" },
-    prototypes: {"Electric": "Member / Part of team"},
+    experience: "Kinematics and geometry optimization, spring rates, anti-roll bar design, rocker design, car setup.",
+    social: { linkedin: "https://www.linkedin.com/in/amish-s", github: null, gmail: "amish.ashwa@gmail.com" },
+    prototypes: { "Electric": "Member / Part of team" },
   },
   {
     name: "Syed Nadeem",
     roles: ["Member"],
-    subsystem: ["Sponsorship", "Marketing & Public Relations"],
+    subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2026",
-    experience: "Helped raise sponsorship for both cv and ev cars. Finished in podium places in static events",
-    social: { linkedin: "https://www.linkedin.com/in/syed-nadeem-30ab66264?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: null, gmail: "syednadeem.ashwa@gmail.com" },
-    prototypes: {"Combustion": "Member / Part of team", "Electric": "Member / Part of team"},
+    experience: "Helped raise sponsorship for both CV and EV cars. Finished in podium places in static events.",
+    social: { linkedin: "https://www.linkedin.com/in/syed-nadeem-30ab66264", github: null, gmail: "syednadeem.ashwa@gmail.com" },
+    prototypes: { "Combustion": "Member / Part of team", "Electric": "Member / Part of team" },
   },
   {
     name: "Dhruva Kashyap",
     roles: ["Subsystem Lead"],
     subsystem: ["Electrical & Testing"],
     year: "2026",
-    experience: "Developed a data-centric vehicle system architecture on a modular DAQ and telemetry system. Designed DAQ, Power Unit, AMS Master, Precharge, and TSSI systems, among others. Contributed to the development of Electric Test Vehicle, Hyperloop, FS-XX6E and FS-XX6C prototypes.",
+    experience: "Developed a data-centric vehicle system architecture on a modular DAQ and telemetry system. Designed DAQ, Power Unit, AMS Master, Precharge, and TSSI systems. Contributed to ETV, Hyperloop, FS-XX6E, and FS-XX6C prototypes.",
     social: { linkedin: null, github: null, gmail: "dhruva.ashwa@gmail.com" },
-    prototypes: {"Electric": "Member / Part of team"},
+    prototypes: { "Electric": "Member / Part of team" },
   },
   {
     name: "Adithya Ranjith",
     roles: ["Subsystem Lead"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2026",
-    experience: "Helped Design and Build the Drivetrain Architecture and System for the 2026 Electric Prototype.",
+    experience: "Designed and built the drivetrain architecture and system for the 2026 Electric Prototype.",
     social: { linkedin: "https://www.linkedin.com/in/adithyaranjith", github: null, gmail: "adithyaranjith.ashwa@gmail.com" },
-    prototypes: {"Combustion": "Member / Part of team", "Electric": "Member / Part of team", "Hyperloop": "Member / Part of team"},
+    prototypes: { "Combustion": "Member / Part of team", "Electric": "Member / Part of team", "Hyperloop": "Member / Part of team" },
   },
 ];
 
-const grid = document.getElementById("member-profiles-grid");
-const countEl = document.getElementById("member-count");
-const descBox = document.getElementById("subsystem-desc");
-const yearFilter = document.getElementById("year-filter");
-const subFilter = document.getElementById("subsystem-filter");
-const yearItems = yearFilter.children;
-const subItems = subFilter.children;
+// ─── DOM refs ──────────────────────────────────────────────────
+const grid        = document.getElementById("member-profiles-grid");
+const countEl     = document.getElementById("member-count");
+const descBox     = document.getElementById("subsystem-desc");
+const rosterHeading = document.getElementById("roster-heading");
+const yearFilter  = document.getElementById("year-filter");
+const subFilter   = document.getElementById("subsystem-filter");
 
-const PROFILE_BASE = "assets/images/team/members/";
-const DEFAULT_PROFILE_IMAGE = "assets/images/team/default.webp";
+const PROFILE_BASE           = "assets/images/team/members/";
+const DEFAULT_PROFILE_IMAGE  = "assets/images/team/default.webp";
 
+// ─── Role Classification ───────────────────────────────────────
+// Returns the highest-authority role class for a member
+function getRoleClass(member) {
+  const roles = member.roles.map(r => r.toLowerCase());
+  const isCommand =
+    roles.some(r => r.includes("team captain") || r.includes("chief engineer") || r.includes("project manager"));
+  const isLead =
+    !isCommand && roles.some(r => r.includes("lead"));
+  if (isCommand) return "is-command";
+  if (isLead)    return "is-lead";
+  return "";
+}
+
+// Human-readable badge text for top roles
+function getBadgeText(member) {
+  const roles = member.roles.map(r => r.toLowerCase());
+  if (roles.some(r => r.includes("team captain")))   return { text: "Team Captain",   cls: "badge-command" };
+  if (roles.some(r => r.includes("chief engineer"))) return { text: "Chief Engineer", cls: "badge-command" };
+  if (roles.some(r => r.includes("project manager"))) return { text: "Project Manager", cls: "badge-command" };
+  if (roles.some(r => r.includes("lead")))           return { text: "Subsystem Lead", cls: "badge-lead" };
+  return null;
+}
+
+// ─── Card Builder ──────────────────────────────────────────────
 function createMemberCard(member) {
   const card = document.createElement("div");
   card.classList.add("member-card");
 
+  const roleClass = getRoleClass(member);
+  if (roleClass) card.classList.add(roleClass);
+
   const imgName = member.image || member.name;
   const imgPath = `${PROFILE_BASE}${member.year}/${imgName}.webp`;
 
-  const linkedinLink = member.social.linkedin
+  // Social links
+  const linkedinLink = member.social.linkedin && member.social.linkedin !== "#"
     ? `<a href="${member.social.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>`
     : "";
-
   const githubLink = member.social.github
     ? `<a href="${member.social.github}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>`
     : "";
-
   const gmailLink = member.social.gmail
-    ? `<a href="mailto:${member.social.gmail}" target="_blank" rel="noopener" aria-label="Gmail"><i class="fas fa-envelope"></i></a>`
+    ? `<a href="mailto:${member.social.gmail}" aria-label="Email"><i class="fas fa-envelope"></i></a>`
     : "";
 
+  // Role badge HTML
+  const badge = getBadgeText(member);
+  const badgeHTML = badge
+    ? `<div class="role-badge ${badge.cls}">${badge.text}</div>`
+    : "";
+
+  // Easter egg canvas
   const easterEggCanvas = member.easterEgg
     ? `<div class="member-3d"><canvas></canvas></div>`
     : "";
+
+  // Subsystem display — strip duplicate entries cleanly
+  const uniqueSubs = [...new Set(member.subsystem)].join(" · ");
 
   card.innerHTML = `
     ${easterEggCanvas}
 
     <div class="profile-header">
       <div class="profile-img-container">
-          <img
-            src="${imgPath}"
-            alt="Photo of ${member.name}"
-            loading="lazy"
-            class="member-img"
-          >
+        <img
+          src="${imgPath}"
+          alt="Photo of ${member.name}"
+          loading="lazy"
+          class="member-img"
+        >
       </div>
+      ${badgeHTML}
       <div class="profile-info-overlay">
         <p class="member-name">${member.name}</p>
         <p class="member-role">${member.roles.join(" · ")}</p>
-        <p class="member-subsystem">${member.subsystem.join(" · ")}</p>
+        <p class="member-subsystem">${uniqueSubs}</p>
       </div>
     </div>
 
@@ -483,34 +523,51 @@ function createMemberCard(member) {
       ${gmailLink}
     </div>
   `;
-    // Handle image fallback
-  const img = card.querySelector(".member-img");
 
+  // Image error fallback — prevent infinite loop
+  const img = card.querySelector(".member-img");
   img.addEventListener("error", function () {
-    if (this.src.includes("default.webp")) return; // prevent loop
+    if (this.src.includes("default.webp")) return;
     this.src = DEFAULT_PROFILE_IMAGE;
   });
 
   return card;
 }
 
-// ─── Render ───────────────────────────────────────────────────
+// ─── Sort order ────────────────────────────────────────────────
+// Command > Lead > Member
+function roleSortWeight(member) {
+  const cls = getRoleClass(member);
+  if (cls === "is-command") return 0;
+  if (cls === "is-lead")    return 1;
+  return 2;
+}
+
+// ─── Render ────────────────────────────────────────────────────
 function renderMembers(year, subsystem) {
   grid.style.opacity = "0";
 
   setTimeout(() => {
     grid.innerHTML = "";
 
-    const results = teamData.filter(m =>
-      m.year === year &&
-      (subsystem === "All" || m.subsystem.includes(subsystem))
-    );
+    const results = teamData
+      .filter(m =>
+        m.year === year &&
+        (subsystem === "All" || m.subsystem.includes(subsystem))
+      )
+      .sort((a, b) => roleSortWeight(a) - roleSortWeight(b));
 
     // Update count
     if (countEl) {
       countEl.textContent = results.length
         ? `${results.length} member${results.length !== 1 ? "s" : ""}`
         : "—";
+    }
+
+    // Update dynamic heading
+    if (rosterHeading) {
+      const sub = subsystem === "All" ? "Full Team" : subsystem;
+      rosterHeading.textContent = `${sub} — ${year}`;
     }
 
     if (results.length === 0) {
@@ -522,7 +579,7 @@ function renderMembers(year, subsystem) {
     } else {
       results.forEach((member, i) => {
         const card = createMemberCard(member);
-        card.style.animationDelay = `${i * 0.06}s`;
+        card.style.animationDelay = `${i * 0.055}s`;
 
         if (member.easterEgg) {
           card.classList.add("easter-egg");
@@ -534,7 +591,7 @@ function renderMembers(year, subsystem) {
     }
 
     grid.style.opacity = "1";
-  }, 150);
+  }, 160);
 }
 
 // ─── 3D Easter Egg ────────────────────────────────────────────
@@ -542,7 +599,7 @@ function initCard3D(card) {
   const canvas = card.querySelector(".member-3d canvas");
   if (!canvas || typeof THREE === "undefined") return;
 
-  const scene = new THREE.Scene();
+  const scene  = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
   camera.position.z = 2.5;
 
@@ -556,11 +613,10 @@ function initCard3D(card) {
   }
 
   resize();
-
   scene.add(new THREE.HemisphereLight(0xffffff, 0x222222, 1.2));
 
   const loader = new THREE.TextureLoader();
-  const tex = loader.load(
+  const tex    = loader.load(
     "assets/images/team/members/2026/easteregg.png",
     () => renderer.render(scene, camera)
   );
@@ -568,7 +624,7 @@ function initCard3D(card) {
   if (THREE.SRGBColorSpace) tex.colorSpace = THREE.SRGBColorSpace;
   tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
 
-  const mat = new THREE.MeshStandardMaterial({ map: tex });
+  const mat  = new THREE.MeshStandardMaterial({ map: tex });
   const cube = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), [mat, mat, mat, mat, mat, mat]);
   scene.add(cube);
 
@@ -589,32 +645,27 @@ function initCard3D(card) {
 // ─── Filter Scroll Helper ─────────────────────────────────────
 function scrollStep(direction, wrapper, items) {
   let activeIdx = -1;
-
   for (let i = 0; i < items.length; i++) {
-    if (items[i].querySelector?.(".filter-btn.active")) {
-      activeIdx = i;
-      break;
-    }
+    if (items[i].querySelector?.(".filter-btn.active")) { activeIdx = i; break; }
   }
-
   if (activeIdx === -1) activeIdx = 1;
 
   let target = activeIdx + direction;
   const last = items.length - 1;
-  if (target <= 0) target = 1;
+  if (target <= 0)    target = 1;
   if (target >= last) target = last - 1;
 
   const el = items[target];
-  const x = el.offsetLeft - wrapper.clientWidth / 2 + el.clientWidth / 2;
+  const x  = el.offsetLeft - wrapper.clientWidth / 2 + el.clientWidth / 2;
   wrapper.scroll({ left: x, behavior: "smooth" });
   el.querySelector(".filter-btn")?.click();
 }
 
 // ─── Arrow Buttons ────────────────────────────────────────────
 document.getElementById("year-left").onclick  = () => scrollStep(-1, yearFilter, yearFilter.children);
-document.getElementById("year-right").onclick = () => scrollStep(1,  yearFilter, yearFilter.children);
-document.getElementById("subsystem-left").onclick  = () => scrollStep(-1, subFilter, subItems);
-document.getElementById("subsystem-right").onclick = () => scrollStep(1,  subFilter, subItems);
+document.getElementById("year-right").onclick = () => scrollStep( 1, yearFilter, yearFilter.children);
+document.getElementById("subsystem-left").onclick  = () => scrollStep(-1, subFilter, subFilter.children);
+document.getElementById("subsystem-right").onclick = () => scrollStep( 1, subFilter, subFilter.children);
 
 // ─── Wheel Scroll ─────────────────────────────────────────────
 yearFilter.addEventListener("wheel", e => {
@@ -623,20 +674,26 @@ yearFilter.addEventListener("wheel", e => {
 });
 subFilter.addEventListener("wheel", e => {
   e.preventDefault();
-  scrollStep(e.deltaY > 0 ? 1 : -1, subFilter, subItems);
+  scrollStep(e.deltaY > 0 ? 1 : -1, subFilter, subFilter.children);
 });
 
-// ─── Subsystem Filter Click (static buttons) ──────────────────
+// ─── Subsystem Filter Click ───────────────────────────────────
 subFilter.querySelectorAll(".filter-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const item = btn.closest(".year-item");
     const val  = item.dataset.subsystem;
 
+    // Update description block
     if (descBox) {
-      const desc = item.dataset.desc || "Members of Ashwa Racing.";
+      const tagEl  = descBox.querySelector(".desc-tag");
+      const textEl = descBox.querySelector(".desc-text");
+      const desc   = item.dataset.desc || "Members of Ashwa Racing.";
+      const label  = val === "All" ? "All Subsystems" : val.toUpperCase();
+
       descBox.style.opacity = "0";
       setTimeout(() => {
-        descBox.textContent = desc;
+        if (tagEl)  tagEl.textContent  = label;
+        if (textEl) textEl.textContent = desc;
         descBox.style.opacity = "1";
       }, 150);
     }
@@ -663,20 +720,19 @@ backToTopBtn.addEventListener("click", () => {
 // ─── Init ─────────────────────────────────────────────────────
 window.addEventListener("load", () => {
 
-  // ── Dynamically build year filter from teamData ──
+  // Build year filter dynamically from teamData
   const years   = [...new Set(teamData.map(m => m.year))].sort();
   const spacers = yearFilter.querySelectorAll(".spacer");
 
   years.forEach(year => {
-    const item       = document.createElement("div");
-    item.className   = "year-item";
-    item.dataset.year = year;
+    const item          = document.createElement("div");
+    item.className      = "year-item";
+    item.dataset.year   = year;
 
-    const btn        = document.createElement("button");
-    btn.className    = "filter-btn";
-    btn.textContent  = year;
+    const btn           = document.createElement("button");
+    btn.className       = "filter-btn";
+    btn.textContent     = year;
 
-    // Attach click listener right here while we have the reference
     btn.addEventListener("click", () => {
       yearFilter.querySelectorAll(".filter-btn").forEach(x => x.classList.remove("active"));
       btn.classList.add("active");
@@ -688,7 +744,7 @@ window.addEventListener("load", () => {
     yearFilter.insertBefore(item, spacers[spacers.length - 1]);
   });
 
-  // Set first year as active
+  // Activate the first available year
   const firstYearItem = [...yearFilter.children].find(el => el.dataset.year);
   if (firstYearItem) {
     activeYear = firstYearItem.dataset.year;
@@ -697,11 +753,16 @@ window.addEventListener("load", () => {
 
   renderMembers(activeYear, activeSubsystem);
 
+  // Centre the active filter items on load
   setTimeout(() => {
     if (firstYearItem) {
-      yearFilter.scrollLeft = firstYearItem.offsetLeft - yearFilter.clientWidth / 2 + firstYearItem.clientWidth / 2;
+      yearFilter.scrollLeft =
+        firstYearItem.offsetLeft - yearFilter.clientWidth / 2 + firstYearItem.clientWidth / 2;
     }
-    const is = subItems[1];
-    if (is) subFilter.scrollLeft = is.offsetLeft - subFilter.clientWidth / 2 + is.clientWidth / 2;
+    const firstSubItem = [...subFilter.children].find(el => el.dataset.subsystem);
+    if (firstSubItem) {
+      subFilter.scrollLeft =
+        firstSubItem.offsetLeft - subFilter.clientWidth / 2 + firstSubItem.clientWidth / 2;
+    }
   }, 100);
 });
