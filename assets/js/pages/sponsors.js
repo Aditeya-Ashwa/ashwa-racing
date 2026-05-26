@@ -88,18 +88,19 @@ const sponsorData = {
     { logo: "assets/images/sponsors/pegasyssystemspvtltd.svg", url: "https://pegasyssystems.com/",               name: "Pegasys Systems" },
     { logo: "assets/images/sponsors/motul.svg",              url: "https://www.motul.com/en-IN",                  name: "Motul" },
     { logo: "assets/images/sponsors/lapp.svg",               url: "https://www.lapp.com/en_US/us/",               name: "LAPP" },
-    { logo: "assets/images/sponsors/henkel.svg",             url: "https://www.henkel.in/",                       name: "Henkel" }
+    { logo: "assets/images/sponsors/henkel.svg",             url: "https://www.henkel.in/",                       name: "Henkel" },
+    { logo: "assets/images/sponsors/sansera.png",            url: "https://sansera.in/",                          name: "Sansera Engineering" }
   ],
 
   "GOLD SPONSOR": [
     { logo: "assets/images/sponsors/delhivery.svg",  url: "https://www.delhivery.com",  name: "Delhivery" },
-    { logo: "assets/images/sponsors/sansera.png",    url: "https://sansera.in/",        name: "Sansera Engineering" },
     { logo: "assets/images/sponsors/aruanigrid.svg", url: "https://aruanigrid.com/",    name: "Aruani Grid" }
   ],
 
   "SILVER SPONSOR": [
     { logo: "assets/images/sponsors/fastolex.svg",    url: "https://www.tatanexarc.com/company/fastolex-products-utn3938fas42bno/", name: "Fastolex" },
-    { logo: "assets/images/sponsors/speedworks.svg",  url: "https://www.speedworks.cc/",                                           name: "Speedworks" }
+    { logo: "assets/images/sponsors/speedworks.svg",  url: "https://www.speedworks.cc/",                                           name: "Speedworks" },
+    { logo: "https://assets.ashwaracing.org/images/sponsors/progressive-engineers.png", url: "https://www.progressiveengineers.co.in/", name: "Progressive Engineers" }
   ],
 
   "TECHNICAL PARTNERS": [
@@ -128,8 +129,7 @@ const sponsorData = {
     { logo: "assets/images/sponsors/sve.png",             url: "#",                               name: "SVE" },
     { logo: "assets/images/sponsors/team88india.svg",     url: "https://www.instagram.com/team88india/?hl=en", name: "Team 88 India" },
     { logo: "assets/images/sponsors/nd.png",              url: "#",                               name: "ND" },
-    { logo: "assets/images/sponsors/btpl.png",            url: "#",                               name: "BTPL" },
-    { logo: "assets/images/sponsors/huntsman.svg",        url: "https://www.huntsman.com",        name: "Huntsman" }
+    { logo: "assets/images/sponsors/btpl.png",            url: "#",                               name: "BTPL" }
   ]
 };
 
