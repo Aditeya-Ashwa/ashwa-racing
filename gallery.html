@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
 
   <link rel="canonical" href="https://ashwaracing.org/gallery.html" />
 
-  <meta name="description" content="Explore the Ashwa Racing gallery featuring Formula Student race cars, workshop builds, competition highlights, and the engineering journey behind two decades of motorsport innovation." />
-  
+  <meta name="description"
+    content="Explore the Ashwa Racing gallery featuring Formula Student race cars, workshop builds, competition highlights, and the engineering journey behind two decades of motorsport innovation." />
+
   <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
   <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
@@ -18,7 +20,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800&family=Barlow:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css">
 
@@ -26,28 +30,58 @@
   <link rel="stylesheet" href="assets/css/components/footer.css">
   <link rel="stylesheet" href="assets/css/pages/gallery.css">
 </head>
+
 <body>
 
   <header id="main-header"></header>
 
   <!-- HERO -->
   <section class="gallery-hero">
-    <div class="gallery-hero__eyebrow">Visual Archive</div>
-    <h1 class="gallery-hero__title">Gallery</h1>
-    <p class="gallery-hero__sub">Engineering moments. Competition intensity. Precision in motion.</p>
+    <div class="gallery-hero__content hero-reveal">
+      <div class="gallery-hero__eyebrow">Visual Archive</div>
+      <h1 class="gallery-hero__title">Gallery</h1>
+      <p class="gallery-hero__sub">Engineering moments. Competition intensity. Precision in motion.</p>
+
+      <div class="gallery-hero__chips" aria-label="Gallery categories">
+        <span class="gallery-hero__chip">Cars</span>
+        <span class="gallery-hero__chip">Competition</span>
+        <span class="gallery-hero__chip">Workshop</span>
+        <span class="gallery-hero__chip">Team</span>
+      </div>
+
+      <div class="gallery-hero__meta">
+        <div class="gallery-hero__meta-item">
+          <span class="gallery-hero__meta-label">Focus</span>
+          <span>Formula Student engineering and track moments.</span>
+        </div>
+        <div class="gallery-hero__meta-item">
+          <span class="gallery-hero__meta-label">Scope</span>
+          <span>Build, test, compete, and celebrate together.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-hero__collage hero-reveal" aria-hidden="true">
+      <figure class="collage-card is-primary is-float">
+        <img src="https://assets.ashwaracing.org/images/gallery/XX6C.webp"
+          data-fallback="assets/images/gallery/XX6C.webp" alt="" loading="eager" decoding="async">
+        <figcaption>RZ-XX6C</figcaption>
+      </figure>
+      <figure class="collage-card is-secondary is-float-alt">
+        <img src="https://assets.ashwaracing.org/images/gallery/IMG_3970_Original.webp"
+          data-fallback="assets/images/gallery/IMG_3970_Original.webp" alt="" loading="eager" decoding="async">
+        <figcaption>Endurance</figcaption>
+      </figure>
+      <figure class="collage-card is-tertiary is-float">
+        <img src="https://assets.ashwaracing.org/images/gallery/DSC_0698.webp"
+          data-fallback="assets/images/gallery/DSC_0698.webp" alt="" loading="eager" decoding="async">
+        <figcaption>Workshop</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <!-- FILTERS -->
-  <div class="gallery-filters">
-    <button class="filter-btn active" data-filter="all">All <span class="filter-count"></span></button>
-    <button class="filter-btn" data-filter="car">Cars <span class="filter-count"></span></button>
-    <button class="filter-btn" data-filter="competition">Competition <span class="filter-count"></span></button>
-    <button class="filter-btn" data-filter="workshop">Workshop <span class="filter-count"></span></button>
-    <button class="filter-btn" data-filter="team">Team <span class="filter-count"></span></button>
-  </div>
-
-  <!-- MASONRY GRID (JS populates) -->
-  <section class="gallery-section"></section>
+  <!-- GALLERY SECTIONS (JS populates) -->
+  <section class="gallery-section" id="gallery"></section>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
@@ -80,4 +114,5 @@
   <script src="assets/js/components/header.js"></script>
   <script src="assets/js/pages/gallery.js"></script>
 </body>
+
 </html>
