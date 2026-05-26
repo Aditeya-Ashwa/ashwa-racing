@@ -237,15 +237,15 @@ function buildSection(categoryKey, sponsors) {
   const labelGroup = document.createElement("div");
   labelGroup.className = "sp-tier-label-group";
 
-  const badge = document.createElement("div");
-  badge.className   = "sp-tier-badge";
-  badge.textContent = tier.label;
+  // const badge = document.createElement("div");
+  // badge.className   = "sp-tier-badge";
+  // badge.textContent = tier.label;
 
   const title = document.createElement("h2");
   title.className   = "sp-tier-title";
   title.textContent = tier.title;
 
-  labelGroup.appendChild(badge);
+  // labelGroup.appendChild(badge);
   labelGroup.appendChild(title);
 
   header.appendChild(labelGroup);
