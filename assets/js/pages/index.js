@@ -44,13 +44,13 @@ function initNewsletterPreview() {
   if (!card || !thumb) return;
 
   const latest = {
-    title:  "March-May 2026 — GENERAL",
+    title:  "June 2026 — GENERAL",
     // FIX: add width + quality to CDN URL — prevents oversized download
     // and ensures correct aspect ratio (600×450) matches img width/height attrs in HTML
-    cover:  "https://assets.ashwaracing.org/cdn-cgi/image/width=600,format=avif,quality=80/images/newsletters/2026/2026-03.png",
-    pdf:    "https://assets.ashwaracing.org/pdfs/newsletters/2026/2026-03-general.pdf",
-    date:   "March-May 2026",
-    excerpt: "Latest newsletter from Ashwa Racing — Post season junior training, manufacturing and cosolidation"
+    cover:  "https://assets.ashwaracing.org/cdn-cgi/image/width=600,format=avif,quality=80/images/newsletters/2026/2026-06.png",
+    pdf:    "https://assets.ashwaracing.org/pdfs/newsletters/2026/2026-06-general.pdf",
+    date:   "June 2026",
+    excerpt: "June 2026 newsletter from Ashwa Racing — RZ-XX7C electrical redesign consolidation; RZ-XX8E simulation work sets FDR and energy targets for the EV prototype; plus May expenses, sponsor roster, and team directory."
   };
 
   // Set src last — width/height attrs already on the img element in HTML prevent CLS
