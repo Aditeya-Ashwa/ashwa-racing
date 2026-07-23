@@ -1,14 +1,8 @@
-/* ============================================================
-   ASHWA RACING — sponsors.js
-   Tier-aware rendering: each tier gets its own card layout,
-   distinct accent colour, and scroll-reveal stagger.
-   ============================================================ */
-
 "use strict";
 
 // ─── Tier config ──────────────────────────────────────────────
 // Controls visual treatment, section titles, nav labels, and card class
-const TIERS = {
+export const TIERS = {
   "EXECUTIVE SPONSOR": {
     key:      "executive",
     label:    "Executive",
@@ -47,7 +41,7 @@ const TIERS = {
 };
 
 // ─── Sponsor data ─────────────────────────────────────────────
-const sponsorData = {
+export const sponsorData = {
   "EXECUTIVE SPONSOR": [
     {
       logo: "assets/images/sponsors/rvce.svg",
