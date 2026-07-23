@@ -2,7 +2,7 @@
 
 // ─── Tier config ──────────────────────────────────────────────
 // Controls visual treatment, section titles, nav labels, and card class
-export const TIERS = {
+const TIERS = {
   "EXECUTIVE SPONSOR": {
     key:      "executive",
     label:    "Executive",
@@ -41,7 +41,7 @@ export const TIERS = {
 };
 
 // ─── Sponsor data ─────────────────────────────────────────────
-export const sponsorData = {
+const sponsorData = {
   "EXECUTIVE SPONSOR": [
     {
       logo: "assets/images/sponsors/rvce.svg",
