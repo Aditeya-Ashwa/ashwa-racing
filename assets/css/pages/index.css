@@ -67,7 +67,7 @@
   --body:         'Barlow', sans-serif;
   --expo:         cubic-bezier(0.16, 1, 0.3, 1);
 
-  --pad:          clamp(120px, 4vw, 240px);
+  --pad:          clamp(30px, 4vw, 240px);
   --nav-h:        68px;
   --content-width: 1280px;
   --radius:       14px;
@@ -111,7 +111,7 @@ body {
 
 h2 {
   font-family: var(--display);
-  font-size: clamp(3rem, 7vw, 6rem);
+  font-size: clamp(0.5rem, 7vw, 6rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -584,9 +584,6 @@ h2 em { font-style: italic; color: var(--red); }
 
 }
 
-/* ============================================================
-   NEWS — uniform card grid (RennTeam pattern)
-   ============================================================ */
 .news { padding: var(--pad) 0; background: var(--off-white); }
 .news-grid {
   display: grid;
