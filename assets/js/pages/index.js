@@ -52,10 +52,6 @@ function escapeAttr(str) {
   return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
 }
 
-function escapeAttr(str) {
-  return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
-}
-
 function renderSponsorStrip() {
   const track = document.getElementById('sponsor-track');
   if (!track) return;
@@ -96,22 +92,66 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     renderSponsorStrip();
     initReveal();
+    initMaskReveal();
     initNewsletterPreview();
     initStatCounters();
 });
 
-/* ── Scroll reveal ────────────────────────────────────────── */
+/* ── Scroll reveal ────────────────────────────────────────────
+   Runs per-section groups (not one flat list) so each group's
+   stagger restarts from 0 — cards cascade in together as their
+   own section enters view, instead of inheriting a running delay
+   from earlier sections on the page.
+   ────────────────────────────────────────────────────────────── */
 function initReveal() {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const els = document.querySelectorAll(
-    ".bento-card, .sponsors-grid img, .news-card, .insta-tile"
-  );
-  if (!els.length) return;
+  const groups = [
+    document.querySelectorAll(".stat-bar-grid .stat"),
+    document.querySelectorAll(".bento .container > *"),
+    document.querySelectorAll(".sponsors-grid img"),
+    document.querySelectorAll(".spotlight-overlay > *:not(h2)"),
+    document.querySelectorAll(".news-grid .news-card"),
+    document.querySelectorAll(".insta-grid .insta-tile"),
+    document.querySelectorAll(".launch-teaser-content > *:not(.launch-teaser-heading)"),
+  ];
 
-  els.forEach((el, i) => {
-    el.classList.add("reveal");
-    el.style.transitionDelay = `${Math.min(i * 0.04, 0.3)}s`;
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("reveal-visible");
+      obs.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px" });
+
+  groups.forEach(list => {
+    list.forEach((el, i) => {
+      el.classList.add("reveal");
+      el.style.transitionDelay = `${Math.min(i * 0.08, 0.4)}s`;
+      io.observe(el);
+    });
+  });
+}
+
+/* ── Heading line-mask reveal ─────────────────────────────────
+   Wraps each target heading's existing markup in a clipped span
+   so the text slides up from behind a hard edge on scroll-in,
+   rather than a flat fade — the "premium studio" heading move.
+   Runs once per element (innerHTML rewrite), safe with the <em>/
+   <br> already inside these headings since it just wraps around
+   them.
+   ────────────────────────────────────────────────────────────── */
+function initMaskReveal() {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const targets = document.querySelectorAll(
+    ".spotlight-overlay > h2, .launch-teaser-heading, .news .container > h2, .insta-grid-section .container > h2"
+  );
+  if (!targets.length) return;
+
+  targets.forEach(el => {
+    el.classList.add("reveal-mask");
+    el.innerHTML = `<span class="reveal-mask-inner">${el.innerHTML}</span>`;
   });
 
   const io = new IntersectionObserver((entries, obs) => {
@@ -120,9 +160,9 @@ function initReveal() {
       entry.target.classList.add("reveal-visible");
       obs.unobserve(entry.target);
     });
-  }, { threshold: 0.1, rootMargin: "0px 0px -40px" });
+  }, { threshold: 0.3, rootMargin: "0px 0px -60px" });
 
-  els.forEach(el => io.observe(el));
+  targets.forEach(el => io.observe(el));
 }
 
 /* ── Newsletter preview (unchanged) ── */

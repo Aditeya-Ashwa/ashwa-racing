@@ -157,6 +157,144 @@ h2 em { font-style: italic; color: var(--red); }
 .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 12px 32px var(--red-glow); }
 
 /* ============================================================
+   LAUNCH TEASER — countdown banner, EV + combustion reveal.
+   Sits above the hero. Dark base with the diagonal stripe /
+   warm-glow motif from the teaser video, kept on-brand with the
+   existing --red tokens rather than introducing new colors.
+   ============================================================ */
+.launch-teaser {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+  padding: clamp(64px, 11vw, 130px) var(--pad);
+  border-bottom: 1px solid var(--hairline);
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.launch-teaser-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.78) grayscale(0.2) contrast(1.08);
+  animation: launchBgZoom 40s ease-in-out infinite alternate;
+}
+
+@keyframes launchBgZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.07); }
+}
+
+.launch-teaser-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.55) 42%, rgba(0,0,0,0.25) 100%),
+    radial-gradient(ellipse at 50% 105%, rgba(232, 0, 29, 0.14) 0%, transparent 55%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .launch-teaser-bg { animation: none; }
+}
+
+.launch-teaser-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.launch-teaser .label { justify-content: center; }
+
+.launch-teaser-heading {
+  font-family: var(--display);
+  font-size: clamp(2.1rem, 6vw, 4.4rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+}
+.launch-teaser-heading em { font-style: italic; color: var(--red); }
+
+.launch-teaser-sub {
+  font-size: clamp(0.88rem, 1.5vw, 1.05rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.62);
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: clamp(14px, 2.5vw, 28px);
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 76px;
+  padding: 14px 8px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top-color: rgba(232, 0, 29, 0.4);
+  border-radius: var(--radius);
+}
+
+.countdown-num {
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  font-family: var(--display);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 6px;
+}
+
+.launch-teaser-date {
+  font-family: var(--display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.launch-teaser-date span { text-transform: lowercase; }
+
+.launch-teaser-live {
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+/* ============================================================
    HERO
    ============================================================ */
 .hero {
@@ -669,6 +807,22 @@ h2 em { font-style: italic; color: var(--red); }
 /* ============================================================
    SCROLL REVEAL (used by index.js)
    ============================================================ */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s var(--expo), transform 0.5s var(--expo); }
-.reveal-visible { opacity: 1; transform: translateY(0); }
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  transition: opacity 0.7s var(--expo), transform 0.7s var(--expo);
+  will-change: opacity, transform;
+}
+.reveal-visible { opacity: 1; transform: translateY(0) scale(1); }
 
+/* Heading line-mask reveal — JS wraps the heading's existing
+   markup in .reveal-mask-inner; this clips it until it slides
+   up into place. */
+.reveal-mask { overflow: hidden; }
+.reveal-mask-inner {
+  display: inline-block;
+  transform: translateY(115%);
+  transition: transform 0.9s var(--expo);
+  will-change: transform;
+}
+.reveal-mask.reveal-visible .reveal-mask-inner { transform: translateY(0); }

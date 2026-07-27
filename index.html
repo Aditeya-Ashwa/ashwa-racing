@@ -46,6 +46,48 @@
   <main>
 
     <!-- ============================================================
+         LAUNCH TEASER — countdown banner for the EV + combustion
+         reveal event. Sits above the hero. Remove this whole
+         <section> (and its CSS block / script) once the event has
+         passed.
+         ============================================================ -->
+    <section class="launch-teaser" aria-label="Upcoming launch event countdown">
+      <div class="launch-teaser-bg" style="background-image:url('assets/images/prototypes/reveal.png')" aria-hidden="true"></div>
+      <div class="launch-teaser-overlay" aria-hidden="true"></div>
+
+      <div class="launch-teaser-content container">
+        <!-- <p class="label">Coming Soon</p> -->
+
+        <h2 class="launch-teaser-heading">Two Prototypes.<br><em>One Reveal.</em></h2>
+
+        <p class="launch-teaser-sub">
+          Be ready for the next age in Ashwa Racing's History.
+        </p>
+
+        <div class="countdown" id="launch-countdown" aria-label="Time remaining until launch event">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-mins">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-secs">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
+        <!-- <p class="launch-teaser-date">22<span>nd</span> August 2026</p> -->
+      </div>
+    </section>
+
+    <!-- ============================================================
          HERO
          ============================================================ -->
     <section class="hero" aria-label="Ashwa Racing hero">
@@ -409,6 +451,7 @@
 
   <script src="assets/js/components/header.js" defer></script>
   <script src="assets/js/pages/index.js" defer></script>
+  <script src="assets/js/pages/launch-countdown.js" defer></script>
 
 
 </body>
