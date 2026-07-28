@@ -40,10 +40,19 @@
     diff -= mins * 60000;
     var secs = Math.floor(diff / 1000);
 
-    els.days.textContent = pad(days);
-    els.hours.textContent = pad(hours);
-    els.mins.textContent = pad(mins);
-    els.secs.textContent = pad(secs);
+    function updateVal(el, val) {
+      if (el.textContent !== val) {
+        el.textContent = val;
+        el.classList.remove('tick');
+        void el.offsetWidth; // trigger reflow
+        el.classList.add('tick');
+      }
+    }
+
+    updateVal(els.days, pad(days));
+    updateVal(els.hours, pad(hours));
+    updateVal(els.mins, pad(mins));
+    updateVal(els.secs, pad(secs));
   }
 
   render();
