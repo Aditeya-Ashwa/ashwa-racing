@@ -451,7 +451,7 @@ h2 em { font-style: italic; color: var(--red); }
     flex-wrap: nowrap;
     gap: 48px;
     width: max-content;
-    animation: sponsor-scroll 30s linear infinite;
+    animation: sponsor-scroll 60s linear infinite;
 
     will-change: transform;
 }
