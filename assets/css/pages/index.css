@@ -781,6 +781,9 @@ h2 em { font-style: italic; color: var(--red); }
   padding: var(--pad) 0;
   background: linear-gradient(160deg, var(--ink) 0%, var(--ink-2) 100%);
 }
+.insta-grid-section h2 {
+  max-width: none;
+}
 .insta-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
