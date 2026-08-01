@@ -120,6 +120,7 @@ const sponsorData = {
     { logo: "assets/images/sponsors/pcprocess.png",       url: "https://www.pcprocess.in/",       name: "PC Process" },
     { logo: "assets/images/sponsors/triumphlaser.png",   url: "https://www.justdial.com/Bangalore/Triumph-Laser-Peenya-2nd-Stage/080PXX80-XX80-180307235407-G2Q7_BZDET", name: "Triumph Laser" },
     { logo: "assets/images/sponsors/solidworks.svg",      url: "https://www.solidworks.com/",     name: "SolidWorks" },
+    { logo: "assets/images/sponsors/realissimulation.svg",      url: "https://www.realis-simulation.com/",     name: "Realis Simulation" },
     { logo: "assets/images/sponsors/sve.png",             url: "#",                               name: "SVE" },
     // { logo: "assets/images/sponsors/team88india.png",     url: "https://www.instagram.com/team88india/?hl=en", name: "Team 88 India" },
     { logo: "assets/images/sponsors/nd.png",              url: "#",                               name: "ND" },
