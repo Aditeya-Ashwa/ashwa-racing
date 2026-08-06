@@ -317,7 +317,8 @@ def run_audit(root_dir):
         report_lines.append("| Page | Line | Target Reference | Issue |")
         report_lines.append("|---|---|---|---|")
         for page, target, line, issue in sorted(broken_local_links):
-            report_lines.append(f"| [{page}](file:///{os.path.join(root_dir, page).replace('\\', '/')}) | {line} | `{target}` | {issue} |")
+            page_path = os.path.join(root_dir, page).replace('\\', '/')
+            report_lines.append(f"| [{page}](file:///{page_path}) | {line} | `{target}` | {issue} |")
     else:
         report_lines.append("No broken local links or missing local assets found.")
     report_lines.append("")
@@ -328,7 +329,8 @@ def run_audit(root_dir):
         report_lines.append("| Page | Line | Target URL | Status Code | Error Message |")
         report_lines.append("|---|---|---|---|---|")
         for page, url, line, status, err in sorted(broken_external_links):
-            report_lines.append(f"| [{page}](file:///{os.path.join(root_dir, page).replace('\\', '/')}) | {line} | [{url}]({url}) | {status} | {err} |")
+            page_path = os.path.join(root_dir, page).replace('\\', '/')
+            report_lines.append(f"| [{page}](file:///{page_path}) | {line} | [{url}]({url}) | {status} | {err} |")
     else:
         report_lines.append("No broken external links found.")
     report_lines.append("")
@@ -339,7 +341,8 @@ def run_audit(root_dir):
         report_lines.append("| Page | Line | Target URL | Status Code | Notes |")
         report_lines.append("|---|---|---|---|---|")
         for page, url, line, status, err in sorted(warn_external_links):
-            report_lines.append(f"| [{page}](file:///{os.path.join(root_dir, page).replace('\\', '/')}) | {line} | [{url}]({url}) | {status} | {err} |")
+            page_path = os.path.join(root_dir, page).replace('\\', '/')
+            report_lines.append(f"| [{page}](file:///{page_path}) | {line} | [{url}]({url}) | {status} | {err} |")
     else:
         report_lines.append("No warnings.")
     report_lines.append("")
@@ -350,7 +353,8 @@ def run_audit(root_dir):
         report_lines.append("| Page | Issue |")
         report_lines.append("|---|---|")
         for page, issue in sorted(seo_metadata_issues):
-            report_lines.append(f"| [{page}](file:///{os.path.join(root_dir, page).replace('\\', '/')}) | {issue} |")
+            page_path = os.path.join(root_dir, page).replace('\\', '/')
+            report_lines.append(f"| [{page}](file:///{page_path}) | {issue} |")
     else:
         report_lines.append("All pages have title, description, and viewport metadata configured.")
     report_lines.append("")
