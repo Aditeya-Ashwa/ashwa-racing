@@ -331,7 +331,7 @@ def write_alumni_js(filepath, original_content, entries):
         programme         = get_programme(e.get("prototypes", {}))
         top_role          = get_top_role(e.get("roles", ["Member"]))
         year              = e.get("year", "")
-        photo             = f'assets/images/team/members/{year}/{e.get("name", "")}.webp'
+        photo             = f'https://assets.ashwaracing.org/images/team/members/{year}/{e.get("name", "")}.webp'
 
         # Preserve existing photo if already set and not default
         existing_photo = e.get("photo", "")

@@ -9,7 +9,7 @@ const voices = [
   {
     name: "Alumni",
     role: "Designated Role",
-    image: "assets/images/team/members/2028/image.jpeg",
+    image: "https://assets.ashwaracing.org/images/team/members/2028/image.jpeg",
     quote: "Testimonials coming soon! Watch this space for stories from the people who built Ashwa Racing across generations."
   }
   // Add more entries here as testimonials are collected:

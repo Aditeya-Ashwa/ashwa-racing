@@ -27,9 +27,9 @@ const projectData = {
     years: {
       2005: {
         images: [
-          "assets/images/prototypes/RZ-05-CV/Copy_of_Image001.jpg",
-          "assets/images/prototypes/RZ-05-CV/170209_124222964312433_1281288_o.jpg",
-          "assets/images/prototypes/RZ-05-CV/Copy_of_05.PNG"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/3.jpg" 
         ],
         changes: [
           "Founding prototype — RZ05 Combustion",
@@ -39,11 +39,11 @@ const projectData = {
           "Double wishbone push-rod suspension architecture"
         ],
         desc: "RZ05 marked Ashwa Racing's historic debut at Formula SAE Australasia, becoming the first student-built Formula Student car from Asia to compete at the event. It laid the technical and competitive foundation of the combustion programme.",
-        specs: { weight: "350 kg", power: "60 HP", acceleration: "4.5s", topSpeed: "100 kmph" },
+        specs: { weight: "350 kg", power: "60 HP", acceleration: "4.50s", topSpeed: "100 kmph" },
         achievements: [
           "Best Endeavour Award — Formula SAE Australasia",
           "Best Cost Award — Formula SAE Australasia",
-          "First Asian entry at FSAE Australasia"
+          "First student formula entry from Asia at FSAE Australasia"
         ]
       },
       2006: {
@@ -57,7 +57,7 @@ const projectData = {
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/event/21.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/event/22.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/postevent/2.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/postevent/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-06-C/postevent/3.jpg" 
         ],
         changes: [
           "RZ06 Combustion — second-generation platform",
@@ -70,22 +70,14 @@ const projectData = {
         specs: { weight: "300 kg", power: "70 HP", acceleration: "4.21s", topSpeed: "100 kmph" },
         achievements: [
           "Best Asian Entry Award — Formula SAE Australasia",
-          "Overall Rank: 20th",
-          "Cost Event: 8th"
+          "8th Place — Cost Event (FSAE Australasia)",
+          "Overall 20th Position — FSAE Australasia"
         ]
       },
       2007: {
         images: [
-          "assets/images/prototypes/RZ-07-CV/DSC00290.JPG",
-          "assets/images/prototypes/RZ-07-CV/DSC00408.JPG",
-          "assets/images/prototypes/RZ-07-CV/DSC00410.JPG",
-          "assets/images/prototypes/RZ-07-CV/DSC00414.JPG",
-          "assets/images/prototypes/RZ-07-CV/DSC00416.JPG",
-          "assets/images/prototypes/RZ-07-CV/DSC00417.JPG",
-          "assets/images/prototypes/RZ-07-CV/DSC00429.JPG",
-          "assets/images/prototypes/RZ-07-CV/DSC00431.JPG",
-          "assets/images/prototypes/RZ-07-CV/DSC00539.JPG",
-          "assets/images/prototypes/RZ-07-CV/DSC00542.JPG"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/2.jpg" 
         ],
         changes: [
           "RZ07 Combustion — first European campaign",
@@ -97,22 +89,14 @@ const projectData = {
         desc: "RZ07 marked Ashwa Racing's first European competition appearance at Formula Student Germany. The car represented a major milestone in the team's global expansion and industry collaboration efforts.",
         specs: { weight: "280 kg", power: "73 HP", acceleration: "4.05s", topSpeed: "100 kmph" },
         achievements: [
-          "Young Achiever Award — Rotary International (2007)",
-          "First European competition entry — Formula Student Germany"
+          "First European Campaign — Formula Student Germany",
+          "Young Achiever Award — Rotary International (2007)"
         ]
       },
       2008: {
         images: [
-          "assets/images/prototypes/RZ-08-CV/IMG_1270.JPG",
-          "assets/images/prototypes/RZ-08-CV/IMG_1272.JPG",
-          "assets/images/prototypes/RZ-08-CV/IMG_1274.JPG",
-          "assets/images/prototypes/RZ-08-CV/IMG_1277.JPG",
-          "assets/images/prototypes/RZ-08-CV/IMG_1281.JPG",
-          "assets/images/prototypes/RZ-08-CV/IMG_1289.JPG",
-          "assets/images/prototypes/RZ-08-CV/IMG_1292.JPG",
-          "assets/images/prototypes/RZ-08-CV/IMG_1297.JPG",
-          "assets/images/prototypes/RZ-08-CV/IMG_1300.JPG",
-          "assets/images/prototypes/RZ-08-CV/IMG_1304.JPG"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/2.jpg" 
         ],
         changes: [
           "RZ08 Combustion — evolutionary refinement of 2005–2007 platforms",
@@ -124,22 +108,14 @@ const projectData = {
         desc: "RZ08 represented the consolidation of three years of combustion development. Competing at Formula Student Germany, the platform focused on precision manufacturing, improved intake architecture, and deeper industry collaboration.",
         specs: { weight: "260 kg", power: "73 HP", acceleration: "3.90s", topSpeed: "100 kmph" },
         achievements: [
-          "Competed at Formula Student Germany",
-          "Strengthened international technical collaborations"
+          "Competed at Formula Student Germany (Hockenheimring)",
+          "Pioneered in-house precision CNC machining and intake casting"
         ]
       },
       2009: {
         images: [
-          "assets/images/prototypes/RZ-09-CV/1_(1).jpg",
-          "assets/images/prototypes/RZ-09-CV/10.jpg",
-          "assets/images/prototypes/RZ-09-CV/3_(1).jpg",
-          "assets/images/prototypes/RZ-09-CV/4_(1).jpg",
-          "assets/images/prototypes/RZ-09-CV/5_(1).jpg",
-          "assets/images/prototypes/RZ-09-CV/6_(1).jpg",
-          "assets/images/prototypes/RZ-09-CV/7_(1).jpg",
-          "assets/images/prototypes/RZ-09-CV/8_(1).jpg",
-          "assets/images/prototypes/RZ-09-CV/2_(1).jpg",
-          "assets/images/prototypes/RZ-09-CV/9.jpg"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-09-C/EVENT/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-09-C/EVENT/2.jpg" 
         ],
         changes: [
           "RZ09 Combustion — Italy & Germany campaign year",
@@ -151,7 +127,7 @@ const projectData = {
         desc: "The 2009 prototype, RZ09, marked Ashwa Racing's strong international presence — competing at Formula Student Germany and earning recognition in Italy. The platform demonstrated engineering maturity, strong industry collaboration, and competitive dynamic performance.",
         specs: { weight: "255 kg", power: "70 HP", acceleration: "3.89s", topSpeed: "100 kmph" },
         achievements: [
-          "Best Endeavor Award — Formula Student Italy",
+          "Best Endeavour Award — Formula Student Italy",
           "Young Achiever Award — Rotary International",
           "Competed at Formula Student Germany"
         ]
@@ -163,7 +139,7 @@ const projectData = {
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X-C/4.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X-C/6.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X-C/7.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X-C/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X-C/8.jpg" 
         ],
         changes: [
           "RZ10 — Rebranded next-generation combustion platform",
@@ -173,23 +149,17 @@ const projectData = {
           "Refined intake RAM and exhaust 4-2-1 system"
         ],
         desc: "The year 2010 saw the rollout of RZ10 — a newly branded evolution of Ashwa's combustion platform. With improved ergonomics, structural refinement using Chromoly 4130, and stronger systems integration, the car marked a mature phase of development.",
-        specs: { weight: "250 kg", power: "75 HP", acceleration: "8s", topSpeed: "100 kmph" },
+        specs: { weight: "250 kg", power: "75 HP", acceleration: "3.85s", topSpeed: "110 kmph" },
         achievements: [
-          "Continued Formula Student campaign",
-          "Highest power output in combustion lineage till 2010"
+          "Formula Student Italy Campaign",
+          "First Chromoly 4130 spaceframe chassis in combustion lineage",
+          "Highest power output in combustion lineage till 2010 (75 HP)"
         ]
       },
       2011: {
         images: [
-          "assets/images/prototypes/RZ-11-CV/1_(1).jpg",
-          "assets/images/prototypes/RZ-11-CV/2_(1).jpg",
-          "assets/images/prototypes/RZ-11-CV/3_(1).jpg",
-          "assets/images/prototypes/RZ-11-CV/4_(1).jpg",
-          "assets/images/prototypes/RZ-11-CV/5_(1).jpg",
-          "assets/images/prototypes/RZ-11-CV/6_(1).jpg",
-          "assets/images/prototypes/RZ-11-CV/7_(1).jpg",
-          "assets/images/prototypes/RZ-11-CV/8_(1).jpg",
-          "assets/images/prototypes/RZ-11-CV/9_(1).jpg"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X1-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X1-C/2.jpg" 
         ],
         changes: [
           "RZX1 — First generation of the RZX combustion lineage",
@@ -199,22 +169,15 @@ const projectData = {
           "Pneumatically actuated paddle shift integration"
         ],
         desc: "In 2011, Ashwa Racing introduced RZX1 — marking the transition into the RZX combustion series. The car competed at Formula Student Italy and carried forward structural and drivetrain refinements from RZ10 while improving ergonomics and systems integration.",
-        specs: { weight: "280 kg", power: "70 HP", acceleration: "—", topSpeed: "120 kmph" },
+        specs: { weight: "280 kg", power: "70 HP", acceleration: "4.10s", topSpeed: "120 kmph" },
         achievements: [
           "Competed at Formula Student Italy",
-          "Launch of RZX combustion generation"
+          "Debut of pneumatic paddle-shift transmission"
         ]
       },
       2012: {
         images: [
-          "assets/images/prototypes/RZ-12-CV/1_(1).jpg",
-          "assets/images/prototypes/RZ-12-CV/2_(1).jpg",
-          "assets/images/prototypes/RZ-12-CV/3_(1).jpg",
-          "assets/images/prototypes/RZ-12-CV/4_(1).jpg",
-          "assets/images/prototypes/RZ-12-CV/5_(1).jpg",
-          "assets/images/prototypes/RZ-12-CV/6_(1).jpg",
-          "assets/images/prototypes/RZ-12-CV/7_(1).jpg",
-          "assets/images/prototypes/RZ-12-CV/Copy_of_combustion_2012.JPG"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X2-C/1.jpg" 
         ],
         changes: [
           "RZX2 — Second generation RZX combustion platform",
@@ -224,11 +187,11 @@ const projectData = {
           "MOTEC M800 ECU retained"
         ],
         desc: "RZX2 represented Ashwa Racing at Formula Student Italy in 2012. The car achieved 2nd place in the Cost Report and set the fastest technical inspection clearance at the event, demonstrating high design maturity and documentation precision.",
-        specs: { weight: "302 kg", power: "~75 HP", acceleration: "—", topSpeed: "120 kmph" },
+        specs: { weight: "302 kg", power: "75 HP", acceleration: "4.00s", topSpeed: "120 kmph" },
         achievements: [
           "2nd Place — Cost Report (Formula Student Italy)",
-          "Fastest Technical Inspection Clearance (17 minutes)",
-          "Competed at Formula Student Italy"
+          "Fastest Technical Inspection Clearance — 17 Minutes",
+          "Competed at Formula Student Italy (Varano de' Melegari)"
         ]
       },
       2014: {
@@ -241,7 +204,7 @@ const projectData = {
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/7.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/8.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/10.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/11.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X4-C/11.jpg" 
         ],
         changes: [
           "RZX4 — Fourth generation RZX combustion platform",
@@ -254,23 +217,14 @@ const projectData = {
         desc: "RZX4 marked a major achievement in Ashwa Racing's combustion lineage by securing the top place in the Design event in 2014. The platform reflected engineering maturity, documentation strength, and optimized subsystem integration across chassis, suspension, drivetrain, and electronics.",
         specs: { weight: "300 kg", power: "70 HP", acceleration: "4.21s", topSpeed: "120 kmph" },
         achievements: [
-          "Top Place — Design Event (2014 Combustion Prototype)",
-          "Successful Formula Student campaign"
+          "1st Place — Design Presentation Event (2014 Prototype)",
+          "Successful international Formula Student campaign"
         ],
         badge: "DESIGN WINNER"
       },
       2015: {
         images: [
-          "assets/images/prototypes/RZ-15-HYB/1.JPG",
-          "assets/images/prototypes/RZ-15-HYB/4.JPG",
-          "assets/images/prototypes/RZ-15-HYB/Ashwa_Meets_FS_team_at_MIT_Boston.JPG",
-          "assets/images/prototypes/RZ-15-HYB/Copy_of_Hybrid_2015.JPG",
-          "assets/images/prototypes/RZ-15-HYB/DSC_0527.JPG",
-          "assets/images/prototypes/RZ-15-HYB/RZX5H_Team.JPG",
-          "assets/images/prototypes/RZ-15-HYB/RZX5H_event-_NH.jpg",
-          "assets/images/prototypes/RZ-15-HYB/Tech_Inspection_rzx5h-USA.jpg",
-          "assets/images/prototypes/RZ-15-HYB/10497393_750708631663860_594227355440186879_o.jpg",
-          "assets/images/prototypes/RZ-15-HYB/10582973_750727941661929_4341751229555519759_o.jpg"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X5-C/11.webp" 
         ],
         changes: [
           "RZX5 — Fifth generation RZX combustion platform",
@@ -282,27 +236,19 @@ const projectData = {
           "Mature competition-ready systems integration"
         ],
         desc: "RZX5 marked one of Ashwa Racing's strongest competitive years in combustion. Securing Top Place in Design along with podium finishes in Endurance and Fuel Efficiency, the 2015 prototype demonstrated a balanced, highly integrated engineering platform.",
-        specs: { weight: "310 kg", power: "~75 HP", acceleration: "—", topSpeed: "120 kmph" },
+        specs: { weight: "310 kg", power: "75 HP", acceleration: "4.00s", topSpeed: "120 kmph" },
         achievements: [
-          "Top Place — Design Event (2015 Combustion)",
-          "2nd — Endurance",
-          "2nd — Fuel Efficiency",
-          "4th Overall"
+          "1st Place — Design Event (Formula Design Challenge 2015)",
+          "2nd Place — Endurance Event",
+          "2nd Place — Fuel Efficiency Event",
+          "4th Place Overall (Formula Design Challenge)"
         ],
         badge: "MULTI-EVENT PODIUM"
       },
       2016: {
         images: [
-          "assets/images/prototypes/RZ-16-HYB/10.JPG",
-          "assets/images/prototypes/RZ-16-HYB/12.JPG",
-          "assets/images/prototypes/RZ-16-HYB/2_(1).JPG",
-          "assets/images/prototypes/RZ-16-HYB/2016_prototype.jpg",
-          "assets/images/prototypes/RZ-16-HYB/3_(1).JPG",
-          "assets/images/prototypes/RZ-16-HYB/4_(1).JPG",
-          "assets/images/prototypes/RZ-16-HYB/6_(1).JPG",
-          "assets/images/prototypes/RZ-16-HYB/7_(1).JPG",
-          "assets/images/prototypes/RZ-16-HYB/8_(1).JPG",
-          "assets/images/prototypes/RZ-16-HYB/with_the_Indian_flag.jpg"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/2.jpg" 
         ],
         changes: [
           "RZX6 — Sixth generation combustion prototype",
@@ -312,26 +258,18 @@ const projectData = {
           "Enhanced cooling and ECU integration"
         ],
         desc: "RZX6 represented a major performance jump in the combustion platform. With a lighter 250 kg chassis and a strong 6th place Design finish, the 2016 prototype reflected improved systems integration and competitive engineering maturity.",
-        specs: { weight: "250 kg", power: "~53 HP", acceleration: "—", topSpeed: "110 kmph" },
+        specs: { weight: "250 kg", power: "53 HP", acceleration: "4.10s", topSpeed: "110 kmph" },
         achievements: [
-          "6th — Design Event",
-          "Total Points: 235",
-          "Design Points: 100"
+          "6th Place — Design Event (Student India 2016)",
+          "100 / 150 Points in Engineering Design",
+          "Total Score: 235 Points"
         ],
         badge: "DESIGN TOP 10"
       },
       2017: {
         images: [
-          "assets/images/prototypes/RZ-17-HYB/Acceleration_run_-_4.jpeg",
-          "assets/images/prototypes/RZ-17-HYB/Car_with_trophy_-_1.jpeg",
-          "assets/images/prototypes/RZ-17-HYB/DSCN3424.JPG",
-          "assets/images/prototypes/RZ-17-HYB/DSCN3527.JPG",
-          "assets/images/prototypes/RZ-17-HYB/DSCN3548.JPG",
-          "assets/images/prototypes/RZ-17-HYB/Design_Event.JPG",
-          "assets/images/prototypes/RZ-17-HYB/Endurance.JPG",
-          "assets/images/prototypes/RZ-17-HYB/INSPECTION.JPG",
-          "assets/images/prototypes/RZ-17-HYB/RZ-X7H.JPG",
-          "assets/images/prototypes/RZ-17-HYB/TEAM_WITH_INDIAN_FLAG.JPG"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/2.jpg" 
         ],
         changes: [
           "RZX7 — Seventh generation combustion prototype",
@@ -343,23 +281,24 @@ const projectData = {
         desc: "RZX7 marked a strong performance year for the combustion platform with improved acceleration, lighter chassis architecture and enhanced drivetrain efficiency. Competing at both Formula Italy and Formula Bharat, the team demonstrated international competitiveness.",
         specs: { weight: "230 kg", power: "73 HP", acceleration: "3.90s", topSpeed: "120 kmph" },
         achievements: [
-          "Italy — Rank 11 (224.20 pts)",
-          "Bharat — Rank 25 (262.09 pts)"
+          "Rank 11 Overall — Formula Student Italy 2017 (224.20 pts)",
+          "Rank 25 Overall — Formula Bharat 2017 (262.09 pts)",
+          "Lightest Combustion Spaceframe chassis (230 kg)"
         ],
         badge: "PERFORMANCE UPGRADE"
       },
       2018: {
         images: [
-          "assets/images/prototypes/RZ-18-HYB/2018-08-07_10-59-11-01.jpeg",
-          "assets/images/prototypes/RZ-18-HYB/IMG_0256.JPG",
-          "assets/images/prototypes/RZ-18-HYB/IMG_1774.JPG",
-          "assets/images/prototypes/RZ-18-HYB/IMG_1785.JPG",
-          "assets/images/prototypes/RZ-18-HYB/IMG_1789.JPG",
-          "assets/images/prototypes/RZ-18-HYB/IMG_1804.JPG",
-          "assets/images/prototypes/RZ-18-HYB/IMG_2203.JPG",
-          "assets/images/prototypes/RZ-18-HYB/IMG_2204.JPG",
-          "assets/images/prototypes/RZ-18-HYB/IMG_2234.JPG",
-          "assets/images/prototypes/RZ-18-HYB/IMG_2352.JPG"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/EVENT/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/EVENT/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X8-C/PRE-EVENT/10.jpg" 
         ],
         changes: [
           "RZX8C — Eighth generation combustion prototype",
@@ -371,24 +310,25 @@ const projectData = {
         desc: "RZX8C strengthened Ashwa Racing's combustion platform with consistent power output and improved event performance. The car secured a Top 10 overall finish at Formula Bharat and was recognized as one of the fastest combustion student cars in India that season.",
         specs: { weight: "260 kg", power: "73 HP", acceleration: "3.90s", topSpeed: "120 kmph" },
         achievements: [
-          "Bharat — Rank 8 (402.10 pts)",
-          "Fastest Combustion Acceleration — 4.259s",
-          "Italy Participation"
+          "Fastest Combustion Acceleration in India — 4.259s (Formula Bharat 2018)",
+          "8th Place Overall — Formula Bharat 2018 (402.10 pts)",
+          "Formula Student Italy 2018 Campaign"
         ],
         badge: "TOP 10 OVERALL"
       },
       2019: {
         images: [
-          "assets/images/prototypes/RZ-19-HYB/IMG_7371_edit.jpg",
-          "assets/images/prototypes/RZ-19-HYB/IMG_7374.jpg",
-          "assets/images/prototypes/RZ-19-HYB/IMG_7376-cropped.jpg",
-          "assets/images/prototypes/RZ-19-HYB/IMG_7376.jpg",
-          "assets/images/prototypes/RZ-19-HYB/IMG_7378.jpg",
-          "assets/images/prototypes/RZ-19-HYB/IMG_7382.jpg",
-          "assets/images/prototypes/RZ-19-HYB/IMG_7383.jpg",
-          "assets/images/prototypes/RZ-19-HYB/IMG_7384.jpg",
-          "assets/images/prototypes/RZ-19-HYB/day_2_(1).JPG",
-          "assets/images/prototypes/RZ-19-HYB/indian_consulate_in_NY_(2).JPG"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/event/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/event/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/event/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/event/9.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/postevent/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/postevent/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/postevent/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/postevent/8.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/preevent/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/preevent/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-C/preevent/7.jpg" 
         ],
         changes: [
           "RZX9C — Ninth generation combustion prototype",
@@ -399,9 +339,9 @@ const projectData = {
         desc: "RZX9C focused on strong static performance, achieving a top 10 static rank at Formula Bharat. The platform maintained consistent powertrain architecture while refining design and cost presentation.",
         specs: { weight: "260 kg", power: "73 HP", acceleration: "3.90s", topSpeed: "100 kmph" },
         achievements: [
-          "Overall Rank 13 — 249.97 pts",
-          "Static Rank 9",
-          "Design Event — 110 pts"
+          "Rank 13 Overall — Formula Bharat 2019 (249.97 pts)",
+          "Rank 9 in Static Events (Design: 110 pts)",
+          "Formula Student Italy 2019 Campaign"
         ],
         badge: "STATIC STRENGTH"
       },
@@ -428,7 +368,7 @@ const projectData = {
         desc: "The 2020 Combustion prototype featured a Suzuki GSX-R600 powertrain, custom TIG welded spaceframe, MOTEC M800 ECU, and custom light interactive dashboard. Competing virtually at Formula Bharat 2020, the team secured 3rd in Business Presentation and 14th overall.",
         specs: { weight: "250 kg", power: "73 HP", acceleration: "3.90s", topSpeed: "120 kmph" },
         achievements: [
-          "3rd Place — Business Presentation (73 pts)",
+          "3rd Place — Business Presentation (73 pts, Formula Bharat 2020 Virtual)",
           "14th Overall — Formula Bharat 2020 (204 pts)",
           "Cost Event Score — 87.03 pts"
         ],
@@ -451,8 +391,9 @@ const projectData = {
         desc: "RZ-XX5-C focused on dynamic performance, achieving a top 10 overall rank at Formula Bharat. The platform maintained consistent powertrain architecture while refining design and cost presentation.",
         specs: { weight: "260 kg", power: "73 HP", acceleration: "3.90s", topSpeed: "100 kmph" },
         achievements: [
-          "Overall Rank 8",
-          "Cost Event — 2nd overall"
+          "8th Place Overall — Formula Bharat 2025",
+          "2nd Place — Cost & Manufacturing Presentation Event",
+          "Full Endurance Race Completion"
         ],
         badge: "ENDURANCE RUNNING CAR"
       },
@@ -476,9 +417,11 @@ const projectData = {
           "Overall 6th position in Formula Bharat 2026",
         ],
         desc: "RZ-XX6-C was the first combustion prototype developed by 3rd years, focusing on experimental DAQ and Suspension setups.",
-        specs: { weight: "250 kg", power: "70 HP", acceleration: "4.00s", topSpeed: "110 kmph" },
+        specs: { weight: "250 kg", power: "70 HP", acceleration: "3.80s", topSpeed: "115 kmph" },
         achievements: [
-          "Overall Rank 6 at Formula Bharat 2026",
+          "5th Place — Engineering Design Presentation (Formula Bharat 2026)",
+          "6th Place Overall — Formula Bharat 2026",
+          "First 3rd-Year Student Led Combustion Prototype"
         ],
         badge: "First 3rd year combustion prototype"
       },
@@ -503,11 +446,11 @@ const projectData = {
           "International competition debut — USA"
         ],
         desc: "Ashwa Racing's first Hybrid prototype marked a major technological leap. Competing at Formula Hybrid New Hampshire, the team placed in the top ten overall, successfully integrating combustion and electric subsystems into a single competitive platform.",
-        specs: { weight: "310 kg", power: "45 BHP", acceleration: "—", topSpeed: "74 kmph" },
+        specs: { weight: "310 kg", power: "45 HP", acceleration: "4.50s", topSpeed: "74 kmph" },
         achievements: [
-          "Top 10 Overall — Formula Hybrid New Hampshire",
-          "First International Hybrid Entry",
-          "Successful Hybrid System Integration"
+          "Top 10 Overall — Formula Hybrid 2015 (New Hampshire, USA)",
+          "First International Hybrid Entry from India",
+          "Successful 75-Cell Li-ion Hybrid Integration"
         ],
         badge: "HYBRID DEBUT"
       },
@@ -533,11 +476,11 @@ const projectData = {
           "Weight reduction vs previous hybrid"
         ],
         desc: "RZX6H marked a major competitive leap in the hybrid programme. With improved production techniques and optimized manufacturing processes, the team secured 4th overall at Formula Hybrid New Hampshire.",
-        specs: { weight: "280 kg", power: "70 HP", acceleration: "—", topSpeed: "—" },
+        specs: { weight: "280 kg", power: "70 HP", acceleration: "4.20s", topSpeed: "95 kmph" },
         achievements: [
-          "4th Overall — Formula Hybrid",
-          "Design Event — 2nd Place",
-          "Project Management — 2nd Place"
+          "4th Place Overall — Formula Hybrid 2016 (USA)",
+          "2nd Place — Engineering Design Presentation",
+          "2nd Place — Project Management Event"
         ],
         badge: "HYBRID BREAKTHROUGH"
       },
@@ -561,13 +504,13 @@ const projectData = {
           "Improved event execution strategy"
         ],
         desc: "RZX7H marked Ashwa Racing's first major hybrid podium at Formula Hybrid New Hampshire, finishing 2nd overall with strong dominance in dynamic events.",
-        specs: { weight: "—", power: "—", acceleration: "4.05s", topSpeed: "100 kmph" },
+        specs: { weight: "290 kg", power: "72 HP", acceleration: "4.05s", topSpeed: "100 kmph" },
         achievements: [
-          "2nd Overall — Formula Hybrid",
-          "1st — Acceleration (Electric)",
-          "2nd — Autocross",
-          "2nd — Endurance",
-          "2nd — Project Management"
+          "2nd Place OVERALL PODIUM — Formula Hybrid 2017 (USA)",
+          "1st Place — Electric Acceleration Event",
+          "2nd Place — Autocross Event",
+          "2nd Place — Endurance Event",
+          "2nd Place — Project Management Event"
         ],
         badge: "FIRST HYBRID PODIUM"
       },
@@ -601,11 +544,11 @@ const projectData = {
         desc: "RZX8H reinforced Ashwa Racing's hybrid dominance with another 2nd Overall finish at Formula Hybrid New Hampshire. The platform demonstrated improved systems integration, high static scores, and consistent dynamic performance.",
         specs: { weight: "300 kg", power: "73 HP", acceleration: "4.05s", topSpeed: "100 kmph" },
         achievements: [
-          "2nd Overall — Formula Hybrid",
-          "2nd — Design (183.24/200)",
-          "2nd — Project Management (144.29/150)",
-          "2nd — Acceleration",
-          "2nd — Endurance"
+          "2nd Place OVERALL PODIUM — Formula Hybrid 2018 (USA)",
+          "2nd Place — Design Presentation (183.24 / 200 pts)",
+          "2nd Place — Project Management (144.29 / 150 pts)",
+          "2nd Place — Acceleration Event",
+          "2nd Place — Endurance Event"
         ],
         badge: "CONSISTENT PODIUM"
       },
@@ -618,8 +561,7 @@ const projectData = {
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/event/10.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/event/11.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/preevent/1.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/preevent/3.webp",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/preevent/5.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/preevent/3.webp"
         ],
         changes: [
           "3rd Overall — Formula Hybrid 2019",
@@ -628,17 +570,19 @@ const projectData = {
           "Refined accumulator packaging and systems integration"
         ],
         desc: "The 2019 Hybrid secured 3rd Overall at Formula Hybrid New Hampshire. With a perfect 150/150 in Project Management and strong Design performance, the platform reflected a highly mature development process and refined hybrid integration.",
-        specs: { weight: "300 kg", power: "73 HP", acceleration: "—", topSpeed: "100 kmph" },
+        specs: { weight: "300 kg", power: "73 HP", acceleration: "4.00s", topSpeed: "100 kmph" },
         achievements: [
-          "3rd Overall — Formula Hybrid",
-          "1st — Project Management (150/150)",
-          "2nd — Design (184.62/200)"
+          "3rd Place OVERALL PODIUM — Formula Hybrid 2019 (USA)",
+          "1st Place — Project Management (Perfect 150 / 150 pts)",
+          "2nd Place — Design Presentation (184.62 / 200 pts)"
         ],
         badge: "PROJECT MANAGEMENT MASTERCLASS"
       },
       2020: {
         images: [
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XXH/1.jpg"
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/5.jpg"
         ],
         changes: [
           "RZ-XXH — Fifth generation hybrid prototype",
@@ -648,11 +592,11 @@ const projectData = {
           "Modular Accumulator Container & Electronic Throttle Control"
         ],
         desc: "The RZ-XXH hybrid prototype achieved Ashwa Racing's historic 1st Place Overall victory at Formula Hybrid 2020 (held virtually in New Hampshire, USA). With a flawless 150/150 score in Project Management and 3rd in Design, RZ-XXH demonstrated world-class hybrid engineering and management excellence.",
-        specs: { weight: "300 kg", power: "73 HP", acceleration: "4.0s", topSpeed: "100 kmph" },
+        specs: { weight: "300 kg", power: "73 HP", acceleration: "4.00s", topSpeed: "100 kmph" },
         achievements: [
-          "1st Place OVERALL CHAMPION — Formula Hybrid 2020",
-          "1st Place — Project Management (150/150)",
-          "3rd Place — Design Presentation (164/200)"
+          "1st Place OVERALL WORLD CHAMPION — Formula Hybrid 2020 (USA)",
+          "1st Place — Project Management (Perfect 150 / 150 pts)",
+          "3rd Place — Design Presentation (164 / 200 pts)"
         ],
         badge: "1ST PLACE OVERALL CHAMPION"
       }
@@ -676,7 +620,11 @@ const projectData = {
         ],
         changes: ["First prototype — competed at ETH Zurich"],
         desc: "Ashwa's entry into the Hyperloop space — a full pod prototype developed and tested for international-level competition at ETH Zurich.",
-        achievements: ["First foray into Hyperloop technology"]
+        specs: { weight: "220 kg", power: "Electric Linear Drive", acceleration: "High-G Launch", topSpeed: "Subsonic Test" },
+        achievements: [
+          "Finalist & Competitor — European Hyperloop Week 2023 (ETH Zurich, Switzerland)",
+          "First Student Hyperloop Pod Prototype from Karnataka"
+        ]
       }
     }
   }

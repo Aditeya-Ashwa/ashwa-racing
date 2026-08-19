@@ -34,7 +34,7 @@ const ORG_STRUCTURE = {
         {
           name:"Arunraj Subbaraj (Founder)",
           designation:"Director, Quality HDPE Packaging Industry",
-          photo:"assets/images/alumni-management/advisor/arunraj.webp"
+          photo:"https://assets.ashwaracing.org/images/alumni-management/advisor/arunraj.webp"
         }
       ]       // no member list per spec
     },
@@ -46,17 +46,17 @@ const ORG_STRUCTURE = {
         {
           name:"Bhuvan Doreswamy (Electrical Advisor)",
           designation:"Student, Masters of ECE, University of Minnesota. Former PD at Microchip",
-          photo:"assets/images/team/default.webp"
+          photo:"https://assets.ashwaracing.org/images/team/default.webp"
         },
         {
           name:"Darren Nishan Patrao (Mechanical Advisor)",
           designation:"Mechanical Engineer, Applied Materials.",
-          photo:"assets/images/team/default.webp"
+          photo:"https://assets.ashwaracing.org/images/team/default.webp"
         },
         {
           name:"Goutham SG (Advisor)",
           designation:"Designation",
-          photo:"assets/images/team/default.webp"
+          photo:"https://assets.ashwaracing.org/images/team/default.webp"
         }
       ]       // no member list per spec
     },
@@ -68,12 +68,12 @@ const ORG_STRUCTURE = {
         {
           name:"Hubert Reilard",
           designation:"Managing Partner, COMANO Advisory LLP. Former Managing Director, EFD Induction Group",
-          photo:"assets/images/alumni-management/industryleads/herbert.webp"
+          photo:"https://assets.ashwaracing.org/images/alumni-management/industryleads/herbert.webp"
         },
         {
           name:"Harish Kukreja",
           designation:"CEO at Aquarius Estates & Properties",
-          photo:"assets/images/alumni-management/"
+          photo:"https://assets.ashwaracing.org/images/team/default.webp"
         },
       ]       // no member list per spec
     }
@@ -87,37 +87,37 @@ const ORG_STRUCTURE = {
         {
           name: "Dr. M.P. Shyam",
           designation: "President, RSST",
-          photo: "assets/images/alumni-management/RSST/mpshyam.webp"
+          photo: "https://assets.ashwaracing.org/images/alumni-management/RSST/mpshyam.webp"
         },
         {
           name: "Dr. C. Vinod Hayagriv",
           designation: "Vice President, RSST",
-          photo: "assets/images/alumni-management/RSST/cvinod.webp"
+          photo: "https://assets.ashwaracing.org/images/alumni-management/RSST/cvinod.webp"
         },
         {
           name: "Mr. A.C. Chandrashekar Raju",
           designation: "Vice President, RSST",
-          photo: "assets/images/alumni-management/RSST/acchandrashekar.webp"
+          photo: "https://assets.ashwaracing.org/images/alumni-management/RSST/acchandrashekar.webp"
         },
         {
           name: "Mr. P.S. Venkatesh Babu",
           designation: "Treasurer, RSST",
-          photo: "assets/images/alumni-management/RSST/psvenkatesh.webp"
+          photo: "https://assets.ashwaracing.org/images/alumni-management/RSST/psvenkatesh.webp"
         },
         {
           name: "Dr. (h.c.) A.V.S. Murthy",
           designation: "Honorary Secretary, RSST",
-          photo: "assets/images/alumni-management/RSST/avsmurthy.webp"
+          photo: "https://assets.ashwaracing.org/images/alumni-management/RSST/avsmurthy.webp"
         },
         {
           name: "Mr. D.P. Nagaraj",
           designation: "Honorary Joint Secretary, RSST",
-          photo: "assets/images/alumni-management/RSST/dpnagaraj.webp"
+          photo: "https://assets.ashwaracing.org/images/alumni-management/RSST/dpnagaraj.webp"
         },
         {
           name: "Mr. Nikhil A Murthy",
           designation: "Assistant Secretary, RSST",
-          photo: "assets/images/alumni-management/RSST/nikhilamurthy.webp"
+          photo: "https://assets.ashwaracing.org/images/alumni-management/RSST/nikhilamurthy.webp"
         }
       ]
     },
@@ -129,12 +129,12 @@ const ORG_STRUCTURE = {
         { 
           name: "Dr. K.N. Subramanya",
           designation:"Principal, R.V. College of Engineering",
-          photo: "assets/images/alumni-management/RVCE/knsubramanya.webp" 
+          photo: "https://assets.ashwaracing.org/images/alumni-management/RVCE/knsubramanya.webp" 
         },
         {
           name: "Dr. Ranvindra S. Kulkarni (Faculty Advisor)",
           designation:"Professor, Department of Aerospace Engineering, R.V. College of Engineering",
-          photo: "assets/images/alumni-management/RVCE/ravindraskulkarni.webp" 
+          photo: "https://assets.ashwaracing.org/images/alumni-management/RVCE/ravindraskulkarni.webp" 
         },
       ]
     }
@@ -152,9 +152,9 @@ const ORG_STRUCTURE = {
           label: "Team Leaders",
           type: "subsystem",
           members: [
-            { name: "Shravan CS (Team Captain)", photo: "assets/images/team/members/2027/Shravan CS.webp" },
-            { name: "N Akshay Urs (Project Manager)", photo: "assets/images/team/members/2027/N Akshay Urs.webp" },
-            { name: "Sathvik S Naik (Chief Engineer)", photo: "assets/images/team/members/2027/Sathvik S Naik.webp" },
+            { name: "Shravan CS (Team Captain)", photo: "https://assets.ashwaracing.org/images/team/members/2027/Shravan CS.webp" },
+            { name: "N Akshay Urs (Project Manager)", photo: "https://assets.ashwaracing.org/images/team/members/2027/N Akshay Urs.webp" },
+            { name: "Sathvik S Naik (Chief Engineer)", photo: "https://assets.ashwaracing.org/images/team/members/2027/Sathvik S Naik.webp" },
           ],
           children: []
         }
@@ -207,9 +207,9 @@ const ORG_STRUCTURE = {
     //       label: "Team Leaders",
     //       type: "subsystem",
     //       members: [
-    //         { name: "Team Captain", photo: "assets/images/team/default.webp" },
-    //         { name: "Project Manager", photo: "assets/images/team/default.webp" },
-    //         { name: "Chief Engineer", photo: "assets/images/team/default.webp" },
+    //         { name: "Team Captain", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
+    //         { name: "Project Manager", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
+    //         { name: "Chief Engineer", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
     //       ],
     //       children: []
     //     }
@@ -227,9 +227,9 @@ const ORG_STRUCTURE = {
           label: "Team Leaders",
           type: "subsystem",
           members: [
-            { name: "Amitha A V (Team Captain)", photo: "assets/images/team/default.webp" },
-            { name: "Kritik Modawel (Project Manager)", photo: "assets/images/team/default.webp" },
-            { name: "Gaurav Raju (Chief Engineer)", photo: "assets/images/team/default.webp" },
+            { name: "Amitha A V (Team Captain)", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
+            { name: "Kritik Modawel (Project Manager)", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
+            { name: "Gaurav Raju (Chief Engineer)", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
           ],
           children: []
         }
@@ -247,9 +247,9 @@ const ORG_STRUCTURE = {
     //       label: "Team Leaders",
     //       type: "subsystem",
     //       members: [
-    //         { name: "Team Captain", photo: "assets/images/team/default.webp" },
-    //         { name: "Project Manager", photo: "assets/images/team/default.webp" },
-    //         { name: "Chief Engineer", photo: "assets/images/team/default.webp" },
+    //         { name: "Team Captain", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
+    //         { name: "Project Manager", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
+    //         { name: "Chief Engineer", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
     //       ],
     //       children: []
     //     }
@@ -266,9 +266,9 @@ const ORG_STRUCTURE = {
     //       label: "Team Leaders",
     //       type: "subsystem",
     //       members: [
-    //         { name: "Team Captain", photo: "assets/images/team/default.webp" },
-    //         { name: "Project Manager", photo: "assets/images/team/default.webp" },
-    //         { name: "Chief Engineer", photo: "assets/images/team/default.webp" },
+    //         { name: "Team Captain", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
+    //         { name: "Project Manager", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
+    //         { name: "Chief Engineer", photo: "https://assets.ashwaracing.org/images/team/default.webp" },
     //       ],
     //       children: []
     //     }
@@ -351,7 +351,7 @@ const ALUMNI = [
     name: "Ravikiran K",
     role: "Team Captain",
     batch: "2025",
-    photo: "assets/images/team/members/2025/Ravikiran K.webp",
+    photo: "https://assets.ashwaracing.org/images/team/members/2025/Ravikiran K.webp",
     company: "",
     position: "MBA",
     linkedin: null,
@@ -362,7 +362,7 @@ const ALUMNI = [
     name: "Chinmay Vanahalli",
     role: "Chief Engineer",
     batch: "2025",
-    photo: "assets/images/team/members/2025/Chinmay Vanahalli.webp",
+    photo: "https://assets.ashwaracing.org/images/team/members/2025/Chinmay Vanahalli.webp",
     company: "Ather Energy",
     position: "Product Engineer",
     linkedin: "https://www.linkedin.com/in/chinmay-v-ab703620b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
