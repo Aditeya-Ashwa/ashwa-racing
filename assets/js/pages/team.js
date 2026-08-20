@@ -430,7 +430,6 @@ const teamData = [
   },
   {
     name: "vivek ram",
-    image: "vivek_ram.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2005",
@@ -439,7 +438,6 @@ const teamData = [
   },
   {
     name: "venkat",
-    image: "venkat.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2005",
@@ -448,7 +446,6 @@ const teamData = [
   },
   {
     name: "varun gandhi",
-    image: "varun_gandhi.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management", "Engine"],
     year: "2005",
@@ -457,7 +454,6 @@ const teamData = [
   },
   {
     name: "suneet sharma",
-    image: "suneet_sharma.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2005",
@@ -466,7 +462,6 @@ const teamData = [
   },
   {
     name: "sajid",
-    image: "sajid.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2005",
@@ -483,7 +478,6 @@ const teamData = [
   },
   {
     name: "shravan",
-    image: "shravan.jpg",
     roles: ["Subsystem Lead"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2005",
@@ -500,7 +494,6 @@ const teamData = [
   },
   {
     name: "ramanan",
-    image: "ramanan.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2005",
@@ -509,7 +502,6 @@ const teamData = [
   },
   {
     name: "ramachandran",
-    image: "ramachandran.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2005",
@@ -518,7 +510,6 @@ const teamData = [
   },
   {
     name: "muniraj",
-    image: "muniraj.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
@@ -527,7 +518,6 @@ const teamData = [
   },
   {
     name: "mruthyunjaya",
-    image: "mruthyunjaya.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
@@ -536,7 +526,6 @@ const teamData = [
   },
   {
     name: "karthik",
-    image: "karthik.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2005",
@@ -545,7 +534,6 @@ const teamData = [
   },
   {
     name: "kirit",
-    image: "kirit.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
@@ -554,7 +542,6 @@ const teamData = [
   },
   {
     name: "manjunath",
-    image: "manjunath.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
@@ -563,7 +550,6 @@ const teamData = [
   },
   {
     name: "M.R Srinivas",
-    image: "M_R_Srinivas.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
@@ -572,7 +558,6 @@ const teamData = [
   },
   {
     name: "basavashekar",
-    image: "basavashekar.jpg",
     roles: ["Subsystem Lead"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
@@ -581,7 +566,6 @@ const teamData = [
   },
   {
     name: "anshul",
-    image: "anshul.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
@@ -590,7 +574,6 @@ const teamData = [
   },
   {
     name: "ashok",
-    image: "ashok.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
@@ -599,7 +582,6 @@ const teamData = [
   },
   {
     name: "arunraj subbaraj",
-    image: "arunraj_subbaraj.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2005",
@@ -608,7 +590,6 @@ const teamData = [
   },
   {
     name: "arun kumar",
-    image: "arun_kumar.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
@@ -617,7 +598,6 @@ const teamData = [
   },
   {
     name: "vandit goyal",
-    image: "vandit_goyal.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics", "Finance"],
     year: "2006",
@@ -626,7 +606,6 @@ const teamData = [
   },
   {
     name: "subhadip sen gupta",
-    image: "subhadip_sen_gupta.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2006",
@@ -635,7 +614,6 @@ const teamData = [
   },
   {
     name: "shrikant shetty",
-    image: "shrikant_shetty.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2006",
@@ -644,7 +622,6 @@ const teamData = [
   },
   {
     name: "sarvesh srinivasan",
-    image: "sarvesh_srinivasan.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2006",
@@ -653,7 +630,6 @@ const teamData = [
   },
   {
     name: "praveen",
-    image: "praveen.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2006",
@@ -662,7 +638,6 @@ const teamData = [
   },
   {
     name: "rahul chamaria",
-    image: "rahul_chamaria.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2006",
@@ -671,7 +646,6 @@ const teamData = [
   },
   {
     name: "richard d cotto",
-    image: "richard_d_cotto.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2006",
@@ -688,7 +662,6 @@ const teamData = [
   },
   {
     name: "nitin koshysam",
-    image: "nitin_koshysam.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2006",
@@ -697,7 +670,6 @@ const teamData = [
   },
   {
     name: "MR srinivas",
-    image: "MR_srinivas.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2006",
@@ -706,7 +678,6 @@ const teamData = [
   },
   {
     name: "deepak v",
-    image: "deepak_v.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2006",
@@ -715,7 +686,6 @@ const teamData = [
   },
   {
     name: "dhruv malhotra",
-    image: "dhruv_malhotra.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2006",
@@ -724,7 +694,6 @@ const teamData = [
   },
   {
     name: "harini ranga",
-    image: "harini_ranga.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2006",
@@ -733,7 +702,6 @@ const teamData = [
   },
   {
     name: "keerthan shetty",
-    image: "keerthan_shetty.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2006",
@@ -750,7 +718,6 @@ const teamData = [
   },
   {
     name: "akshay sangolli",
-    image: "akshay_sangolli.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2006",
@@ -759,7 +726,6 @@ const teamData = [
   },
   {
     name: "arunraj subbaraj",
-    image: "arunraj_subbaraj.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2006",
@@ -768,7 +734,6 @@ const teamData = [
   },
   {
     name: "ashok kumar",
-    image: "ashok_kumar.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management", "Engine"],
     year: "2006",
@@ -777,7 +742,6 @@ const teamData = [
   },
   {
     name: "vikram raghavan",
-    image: "vikram_raghavan.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources", "Finance"],
     year: "2007",
@@ -786,7 +750,6 @@ const teamData = [
   },
   {
     name: "vandit goyal",
-    image: "vandit_goyal.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics", "Finance"],
     year: "2007",
@@ -803,7 +766,6 @@ const teamData = [
   },
   {
     name: "rajesh kumar mehta",
-    image: "rajesh_kumar_mehta.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2007",
@@ -812,7 +774,6 @@ const teamData = [
   },
   {
     name: "saif saifuddin",
-    image: "saif_saifuddin.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2007",
@@ -821,7 +782,6 @@ const teamData = [
   },
   {
     name: "sarvesh srinivasan",
-    image: "sarvesh_srinivasan.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2007",
@@ -830,7 +790,6 @@ const teamData = [
   },
   {
     name: "rahul chamaria",
-    image: "rahul_chamaria.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2007",
@@ -839,7 +798,6 @@ const teamData = [
   },
   {
     name: "nitin koshysam",
-    image: "nitin_koshysam.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2007",
@@ -848,7 +806,6 @@ const teamData = [
   },
   {
     name: "nikhil manjunath",
-    image: "nikhil_manjunath.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2007",
@@ -857,7 +814,6 @@ const teamData = [
   },
   {
     name: "mudit khanna",
-    image: "mudit_khanna.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2007",
@@ -866,7 +822,6 @@ const teamData = [
   },
   {
     name: "harini ranga",
-    image: "harini_ranga.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2007",
@@ -875,7 +830,6 @@ const teamData = [
   },
   {
     name: "keerthan shetty",
-    image: "keerthan_shetty.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2007",
@@ -884,7 +838,6 @@ const teamData = [
   },
   {
     name: "kshtij tandon",
-    image: "kshtij_tandon.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2007",
@@ -893,7 +846,6 @@ const teamData = [
   },
   {
     name: "marvin saldhana",
-    image: "marvin_saldhana.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2007",
@@ -902,7 +854,6 @@ const teamData = [
   },
   {
     name: "deepak kumar",
-    image: "deepak_kumar.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2007",
@@ -911,7 +862,6 @@ const teamData = [
   },
   {
     name: "azeez sharif",
-    image: "azeez_sharif.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management", "Suspension & Admin"],
     year: "2007",
@@ -920,7 +870,6 @@ const teamData = [
   },
   {
     name: "arunraj subbaraj",
-    image: "arunraj_subbaraj.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2007",
@@ -929,7 +878,6 @@ const teamData = [
   },
   {
     name: "akshay sangolli",
-    image: "akshay_sangolli.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2007",
@@ -978,7 +926,6 @@ const teamData = [
   },
   {
     name: "Keerthan Shetty",
-    image: "Keerthan_Shetty.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2008",
@@ -1019,7 +966,6 @@ const teamData = [
   },
   {
     name: "Nikhil Manjunath",
-    image: "Nikhil_Manjunath.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2008",
@@ -1036,7 +982,6 @@ const teamData = [
   },
   {
     name: "Rahul Chamaria",
-    image: "Rahul_Chamaria.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2008",
@@ -1053,7 +998,6 @@ const teamData = [
   },
   {
     name: "Siddarth Mandal",
-    image: "Siddarth_Mandal.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2008",
@@ -1062,7 +1006,6 @@ const teamData = [
   },
   {
     name: "Vandit Goyal",
-    image: "Vandit_Goyal.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics", "Finance"],
     year: "2008",
@@ -1087,7 +1030,6 @@ const teamData = [
   },
   {
     name: "Ankit Sahu",
-    image: "Ankit_Sahu.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2009",
@@ -1096,7 +1038,6 @@ const teamData = [
   },
   {
     name: "Aravind Sambamurthy",
-    image: "Aravind_Sambamurthy.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing", "IT"],
     year: "2009",
@@ -1105,7 +1046,6 @@ const teamData = [
   },
   {
     name: "Bharath Swaminathan",
-    image: "Bharath_Swaminathan.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources", "Sponsorship, Marketing & Public Relations"],
     year: "2009",
@@ -1114,7 +1054,6 @@ const teamData = [
   },
   {
     name: "Datta N",
-    image: "Datta_N.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources", "Sponsorship, Marketing & Public Relations"],
     year: "2009",
@@ -1123,7 +1062,6 @@ const teamData = [
   },
   {
     name: "Keerthan Shetty",
-    image: "Keerthan_Shetty.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources", "Sponsorship, Marketing & Public Relations"],
     year: "2009",
@@ -1132,7 +1070,6 @@ const teamData = [
   },
   {
     name: "Manjunath Anand",
-    image: "Manjunath_Anand.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2009",
@@ -1141,7 +1078,6 @@ const teamData = [
   },
   {
     name: "Mudit Khanna",
-    image: "Mudit_Khanna.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources", "Sponsorship, Marketing & Public Relations"],
     year: "2009",
@@ -1150,7 +1086,6 @@ const teamData = [
   },
   {
     name: "Nanda Gopalan",
-    image: "Nanda_Gopalan.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics", "Suspension & Admin"],
     year: "2009",
@@ -1159,7 +1094,6 @@ const teamData = [
   },
   {
     name: "Navdeep Singh",
-    image: "Navdeep_Singh.jpg",
     roles: ["Team Captain"],
     subsystem: ["Engine"],
     year: "2009",
@@ -1168,7 +1102,6 @@ const teamData = [
   },
   {
     name: "Rajit Malik",
-    image: "Rajit_Malik.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2009",
@@ -1177,7 +1110,6 @@ const teamData = [
   },
   {
     name: "Sharath Sreedharan",
-    image: "Sharath_Sreedharan.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2009",
@@ -1186,7 +1118,6 @@ const teamData = [
   },
   {
     name: "Shubham Saurav",
-    image: "Shubham_Saurav.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2009",
@@ -1195,7 +1126,6 @@ const teamData = [
   },
   {
     name: "Siddarth Mandal",
-    image: "Siddarth_Mandal.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2009",
@@ -1204,7 +1134,6 @@ const teamData = [
   },
   {
     name: "Sirish Vissa",
-    image: "Sirish_Vissa.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources", "Sponsorship, Marketing & Public Relations"],
     year: "2009",
@@ -1221,7 +1150,6 @@ const teamData = [
   },
   {
     name: "Vandit Goyal",
-    image: "Vandit_Goyal.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources", "Sponsorship, Marketing & Public Relations"],
     year: "2009",
@@ -1230,7 +1158,6 @@ const teamData = [
   },
   {
     name: "Abhinit Lal",
-    image: "Abhinit_Lal.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2010",
@@ -1239,7 +1166,6 @@ const teamData = [
   },
   {
     name: "Achal Raghavan",
-    image: "Achal_Raghavan.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2010",
@@ -1248,7 +1174,6 @@ const teamData = [
   },
   {
     name: "Aniket Prabudha",
-    image: "Aniket_Prabudha.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources", "Finance"],
     year: "2010",
@@ -1257,7 +1182,6 @@ const teamData = [
   },
   {
     name: "Ankit Ratna",
-    image: "Ankit_Ratna.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2010",
@@ -1266,7 +1190,6 @@ const teamData = [
   },
   {
     name: "Arunraj Subbaraj",
-    image: "Arunraj_Subbaraj.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Sponsorship, Marketing & Public Relations"],
     year: "2010",
@@ -1275,7 +1198,6 @@ const teamData = [
   },
   {
     name: "Keerthan Shetty",
-    image: "Keerthan_Shetty.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2010",
@@ -1284,7 +1206,6 @@ const teamData = [
   },
   {
     name: "Madhur Khadbadi",
-    image: "Madhur_Khadbadi.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2010",
@@ -1293,7 +1214,6 @@ const teamData = [
   },
   {
     name: "Mayur Gowda",
-    image: "Mayur_Gowda.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2010",
@@ -1302,7 +1222,6 @@ const teamData = [
   },
   {
     name: "Nikhil Jali",
-    image: "Nikhil_Jali.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2010",
@@ -1311,7 +1230,6 @@ const teamData = [
   },
   {
     name: "Prabhu Dev",
-    image: "Prabhu_Dev.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2010",
@@ -1320,7 +1238,6 @@ const teamData = [
   },
   {
     name: "Prashanth",
-    image: "Prashanth.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2010",
@@ -1329,7 +1246,6 @@ const teamData = [
   },
   {
     name: "Rahul Anand",
-    image: "Rahul_Anand.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources", "Sponsorship, Marketing & Public Relations"],
     year: "2010",
@@ -1338,7 +1254,6 @@ const teamData = [
   },
   {
     name: "Raylan Vaz",
-    image: "Raylan_Vaz.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2010",
@@ -1347,7 +1262,6 @@ const teamData = [
   },
   {
     name: "Sharath Kumar P",
-    image: "Sharath_Kumar_P.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2010",
@@ -1356,7 +1270,6 @@ const teamData = [
   },
   {
     name: "Shravan Tirumalai",
-    image: "Shravan_Tirumalai.jpg",
     roles: ["Team Captain"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2010",
@@ -1365,7 +1278,6 @@ const teamData = [
   },
   {
     name: "Siddarth Mandal",
-    image: "Siddarth_Mandal.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2010",
@@ -1374,7 +1286,6 @@ const teamData = [
   },
   {
     name: "Sirish Vissa",
-    image: "Sirish_Vissa.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2010",
@@ -1383,7 +1294,6 @@ const teamData = [
   },
   {
     name: "Sriman Kumar",
-    image: "Sriman_Kumar.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2010",
@@ -1392,7 +1302,6 @@ const teamData = [
   },
   {
     name: "Utsav Kumar",
-    image: "Utsav_Kumar.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2010",
@@ -1401,7 +1310,6 @@ const teamData = [
   },
   {
     name: "Vandit Goyal",
-    image: "Vandit_Goyal.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2010",
@@ -1410,7 +1318,6 @@ const teamData = [
   },
   {
     name: "JEET SHETH",
-    image: "JEET_SHETH.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2011",
@@ -1419,7 +1326,6 @@ const teamData = [
   },
   {
     name: "KARAN GUPTA",
-    image: "KARAN_GUPTA.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2011",
@@ -1428,7 +1334,6 @@ const teamData = [
   },
   {
     name: "KUNAL GOEL",
-    image: "KUNAL_GOEL.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2011",
@@ -1437,7 +1342,6 @@ const teamData = [
   },
   {
     name: "KUSHAGRA PANDA",
-    image: "KUSHAGRA_PANDA.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2011",
@@ -1446,7 +1350,6 @@ const teamData = [
   },
   {
     name: "MANASVI MOHAN",
-    image: "MANASVI_MOHAN.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2011",
@@ -1455,7 +1358,6 @@ const teamData = [
   },
   {
     name: "MEHUL CHHAPIA",
-    image: "MEHUL_CHHAPIA.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2011",
@@ -1464,7 +1366,6 @@ const teamData = [
   },
   {
     name: "NISHANT JAIN",
-    image: "NISHANT_JAIN.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2011",
@@ -1473,7 +1374,6 @@ const teamData = [
   },
   {
     name: "OSHO MAHARAJA",
-    image: "OSHO_MAHARAJA.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2011",
@@ -1482,7 +1382,6 @@ const teamData = [
   },
   {
     name: "PRABHJEET SINGH",
-    image: "PRABHJEET_SINGH.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2011",
@@ -1491,7 +1390,6 @@ const teamData = [
   },
   {
     name: "RAJ GAURAV",
-    image: "RAJ_GAURAV.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2011",
@@ -1500,7 +1398,6 @@ const teamData = [
   },
   {
     name: "SUHAS AITHAL",
-    image: "SUHAS_AITHAL.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2011",
@@ -1509,7 +1406,6 @@ const teamData = [
   },
   {
     name: "SUHAS ATHREY",
-    image: "SUHAS_ATHREY.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2011",
@@ -1518,7 +1414,6 @@ const teamData = [
   },
   {
     name: "ANKIT JAJODIA",
-    image: "ANKIT_JAJODIA.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2012",
@@ -1527,7 +1422,6 @@ const teamData = [
   },
   {
     name: "ANKUR REVANKAR",
-    image: "ANKUR_REVANKAR.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2012",
@@ -1536,7 +1430,6 @@ const teamData = [
   },
   {
     name: "ARPIT AGARWAL",
-    image: "ARPIT_AGARWAL.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2012",
@@ -1545,7 +1438,6 @@ const teamData = [
   },
   {
     name: "GOPIKA HEMACHANDER",
-    image: "GOPIKA_HEMACHANDER.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2012",
@@ -1554,7 +1446,6 @@ const teamData = [
   },
   {
     name: "JAYESH CHANDIRAMANI",
-    image: "JAYESH_CHANDIRAMANI.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2012",
@@ -1563,7 +1454,6 @@ const teamData = [
   },
   {
     name: "KANAL SEBASTIAN",
-    image: "KANAL_SEBASTIAN.jpg",
     roles: ["Team Captain"],
     subsystem: ["Suspension & Admin"],
     year: "2012",
@@ -1572,7 +1462,6 @@ const teamData = [
   },
   {
     name: "KSHITIJ PURI",
-    image: "KSHITIJ_PURI.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2012",
@@ -1581,7 +1470,6 @@ const teamData = [
   },
   {
     name: "NAVEEN PRASAD",
-    image: "NAVEEN_PRASAD.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2012",
@@ -1590,7 +1478,6 @@ const teamData = [
   },
   {
     name: "RAMCHANDER GANAPATHY",
-    image: "RAMCHANDER_GANAPATHY.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2012",
@@ -1599,7 +1486,6 @@ const teamData = [
   },
   {
     name: "RANGARAJU DATLA",
-    image: "RANGARAJU_DATLA.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2012",
@@ -1608,7 +1494,6 @@ const teamData = [
   },
   {
     name: "SANJAM BHANDARI",
-    image: "SANJAM_BHANDARI.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2012",
@@ -1617,7 +1502,6 @@ const teamData = [
   },
   {
     name: "SAURABH KUMAR",
-    image: "SAURABH_KUMAR.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2012",
@@ -1626,7 +1510,6 @@ const teamData = [
   },
   {
     name: "SIVA SUBRAMANIAN",
-    image: "SIVA_SUBRAMANIAN.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2012",
@@ -1635,7 +1518,6 @@ const teamData = [
   },
   {
     name: "VARUN PRABHU",
-    image: "VARUN_PRABHU.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2012",
@@ -1644,7 +1526,6 @@ const teamData = [
   },
   {
     name: "ZOISH TOSHER HORMUSJEE",
-    image: "ZOISH_TOSHER_HORMUSJEE.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2012",
@@ -1653,7 +1534,6 @@ const teamData = [
   },
   {
     name: "AJAY KUMAR",
-    image: "AJAY_KUMAR.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2014",
@@ -1662,7 +1542,6 @@ const teamData = [
   },
   {
     name: "AKASH PAL",
-    image: "AKASH_PAL.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2014",
@@ -1671,7 +1550,6 @@ const teamData = [
   },
   {
     name: "GAUTHAM SUNDER",
-    image: "GAUTHAM_SUNDER.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2014",
@@ -1680,7 +1558,6 @@ const teamData = [
   },
   {
     name: "GOKUL KRISHNA",
-    image: "GOKUL_KRISHNA.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2014",
@@ -1689,7 +1566,6 @@ const teamData = [
   },
   {
     name: "KUNAL MEHTA",
-    image: "KUNAL_MEHTA.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing", "Finance"],
     year: "2014",
@@ -1698,7 +1574,6 @@ const teamData = [
   },
   {
     name: "MANAN GHELANI",
-    image: "MANAN_GHELANI.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2014",
@@ -1707,7 +1582,6 @@ const teamData = [
   },
   {
     name: "MD SAMRAN IQBAL",
-    image: "MD_SAMRAN_IQBAL.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing", "Finance"],
     year: "2014",
@@ -1716,7 +1590,6 @@ const teamData = [
   },
   {
     name: "NIKHIL NEEDAGI",
-    image: "NIKHIL_NEEDAGI.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2014",
@@ -1725,7 +1598,6 @@ const teamData = [
   },
   {
     name: "SANGRAM ROUT",
-    image: "SANGRAM_ROUT.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2014",
@@ -1734,7 +1606,6 @@ const teamData = [
   },
   {
     name: "SHARATH VASISHTA",
-    image: "SHARATH_VASISHTA.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2014",
@@ -1743,7 +1614,6 @@ const teamData = [
   },
   {
     name: "SIDDARTH GAUTHAM",
-    image: "SIDDARTH_GAUTHAM.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2014",
@@ -1752,7 +1622,6 @@ const teamData = [
   },
   {
     name: "TEJAS BABARIA",
-    image: "TEJAS_BABARIA.jpg",
     roles: ["Team Captain"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2014",
@@ -1761,7 +1630,6 @@ const teamData = [
   },
   {
     name: "ABHINANDAN VISWANATH",
-    image: "ABHINANDAN_VISWANATH.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2015",
@@ -1770,7 +1638,6 @@ const teamData = [
   },
   {
     name: "ABHISHEK C SHEKAR",
-    image: "ABHISHEK_C_SHEKAR.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2015",
@@ -1779,7 +1646,6 @@ const teamData = [
   },
   {
     name: "ADITYA SUDHAKAR",
-    image: "ADITYA_SUDHAKAR.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2015",
@@ -1788,7 +1654,6 @@ const teamData = [
   },
   {
     name: "ANUSH CHAKRAVARTHI",
-    image: "ANUSH_CHAKRAVARTHI.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2015",
@@ -1797,7 +1662,6 @@ const teamData = [
   },
   {
     name: "MANJEETH R",
-    image: "MANJEETH_R.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2015",
@@ -1806,7 +1670,6 @@ const teamData = [
   },
   {
     name: "MOHIT LAL",
-    image: "MOHIT_LAL.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2015",
@@ -1815,7 +1678,6 @@ const teamData = [
   },
   {
     name: "PAVAN N REDDY",
-    image: "PAVAN_N_REDDY.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2015",
@@ -1824,7 +1686,6 @@ const teamData = [
   },
   {
     name: "SACHIN MALAGAVI",
-    image: "SACHIN_MALAGAVI.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2015",
@@ -1833,7 +1694,6 @@ const teamData = [
   },
   {
     name: "SAICHAND",
-    image: "SAICHAND.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2015",
@@ -1842,7 +1702,6 @@ const teamData = [
   },
   {
     name: "SAIF AZIZ ABSAR",
-    image: "SAIF_AZIZ_ABSAR.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2015",
@@ -1851,7 +1710,6 @@ const teamData = [
   },
   {
     name: "VADIRAJ PATIL",
-    image: "VADIRAJ_PATIL.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2015",
@@ -1860,7 +1718,6 @@ const teamData = [
   },
   {
     name: "Aakash Maskara",
-    image: "Aakash_Maskara.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2016",
@@ -1869,7 +1726,6 @@ const teamData = [
   },
   {
     name: "Ankur Jairath",
-    image: "Ankur_Jairath.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2016",
@@ -1878,7 +1734,6 @@ const teamData = [
   },
   {
     name: "Anshul Dhadkar",
-    image: "Anshul_Dhadkar.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2016",
@@ -1887,7 +1742,6 @@ const teamData = [
   },
   {
     name: "Ayush Pandey",
-    image: "Ayush_Pandey.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2016",
@@ -1896,7 +1750,6 @@ const teamData = [
   },
   {
     name: "Biswajit Roy",
-    image: "Biswajit_Roy.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2016",
@@ -1905,7 +1758,6 @@ const teamData = [
   },
   {
     name: "Chandrakant Choppa",
-    image: "Chandrakant_Choppa.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2016",
@@ -1914,7 +1766,6 @@ const teamData = [
   },
   {
     name: "Deeksha Bhagat",
-    image: "Deeksha_Bhagat.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2016",
@@ -1923,7 +1774,6 @@ const teamData = [
   },
   {
     name: "GY Rohith Gajula",
-    image: "GY_Rohith_Gajula.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2016",
@@ -1932,7 +1782,6 @@ const teamData = [
   },
   {
     name: "Karan Chatrath",
-    image: "Karan_Chatrath.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2016",
@@ -1941,7 +1790,6 @@ const teamData = [
   },
   {
     name: "Krishna Kashyap Singh",
-    image: "Krishna_Kashyap_Singh.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2016",
@@ -1950,7 +1798,6 @@ const teamData = [
   },
   {
     name: "Mohammed Hannan Chishti",
-    image: "Mohammed_Hannan_Chishti.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2016",
@@ -1959,7 +1806,6 @@ const teamData = [
   },
   {
     name: "Naramsetty Vamsi",
-    image: "Naramsetty_Vamsi.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2016",
@@ -1968,7 +1814,6 @@ const teamData = [
   },
   {
     name: "Pallav Rawat",
-    image: "Pallav_Rawat.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2016",
@@ -1977,7 +1822,6 @@ const teamData = [
   },
   {
     name: "Rajat Kabra",
-    image: "Rajat_Kabra.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2016",
@@ -1986,7 +1830,6 @@ const teamData = [
   },
   {
     name: "Rishav Ranjan",
-    image: "Rishav_Ranjan.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2016",
@@ -1995,7 +1838,6 @@ const teamData = [
   },
   {
     name: "Vikas Jeevanagar",
-    image: "Vikas_Jeevanagar.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2016",
@@ -2012,7 +1854,6 @@ const teamData = [
   },
   {
     name: "Abin Vincent",
-    image: "Abin_Vincent.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2017",
@@ -2021,7 +1862,6 @@ const teamData = [
   },
   {
     name: "Aishwarya Bhatt",
-    image: "Aishwarya_Bhatt.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2017",
@@ -2030,7 +1870,6 @@ const teamData = [
   },
   {
     name: "Anushree H N",
-    image: "Anushree_H_N.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2017",
@@ -2039,7 +1878,6 @@ const teamData = [
   },
   {
     name: "Gokul Suresh",
-    image: "Gokul_Suresh.jpg",
     roles: ["Team Captain"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2017",
@@ -2056,7 +1894,6 @@ const teamData = [
   },
   {
     name: "Kiran B M",
-    image: "Kiran_B_M.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2017",
@@ -2089,7 +1926,6 @@ const teamData = [
   },
   {
     name: "Pranith Prasanna",
-    image: "Pranith_Prasanna.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2017",
@@ -2098,7 +1934,6 @@ const teamData = [
   },
   {
     name: "Pranjal Tyagi",
-    image: "Pranjal_Tyagi.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2017",
@@ -2115,7 +1950,6 @@ const teamData = [
   },
   {
     name: "Rounak Maru",
-    image: "Rounak_Maru.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2017",
@@ -2140,7 +1974,6 @@ const teamData = [
   },
   {
     name: "Upendra Arun",
-    image: "Upendra_Arun.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2017",
@@ -2149,7 +1982,6 @@ const teamData = [
   },
   {
     name: "ASHISH NAIR",
-    image: "ASHISH_NAIR.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2018",
@@ -2158,7 +1990,6 @@ const teamData = [
   },
   {
     name: "ATIQH AHMED",
-    image: "ATIQH_AHMED.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2018",
@@ -2167,7 +1998,6 @@ const teamData = [
   },
   {
     name: "DHANUSH S B",
-    image: "DHANUSH_S_B.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2018",
@@ -2176,7 +2006,6 @@ const teamData = [
   },
   {
     name: "MOHIT KONGAT NAIR",
-    image: "MOHIT_KONGAT_NAIR.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2018",
@@ -2185,7 +2014,6 @@ const teamData = [
   },
   {
     name: "NISCHAY JAIN",
-    image: "NISCHAY_JAIN.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2018",
@@ -2194,7 +2022,6 @@ const teamData = [
   },
   {
     name: "PRATEEK BHUSTALI",
-    image: "PRATEEK_BHUSTALI.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2018",
@@ -2203,7 +2030,6 @@ const teamData = [
   },
   {
     name: "RABINDRANATH MUKHERJEE",
-    image: "RABINDRANATH_MUKHERJEE.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2018",
@@ -2212,7 +2038,6 @@ const teamData = [
   },
   {
     name: "RAKESH H N",
-    image: "RAKESH_H_N.jpg",
     roles: ["Project Manager"],
     subsystem: ["Suspension & Admin"],
     year: "2018",
@@ -2221,7 +2046,6 @@ const teamData = [
   },
   {
     name: "SARTHAK KRISHNA",
-    image: "SARTHAK_KRISHNA.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2018",
@@ -2230,7 +2054,6 @@ const teamData = [
   },
   {
     name: "SHRIDHAR GANIGER",
-    image: "SHRIDHAR_GANIGER.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2018",
@@ -2239,7 +2062,6 @@ const teamData = [
   },
   {
     name: "SHRIRANG AGRAWAL",
-    image: "SHRIRANG_AGRAWAL.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2018",
@@ -2248,7 +2070,6 @@ const teamData = [
   },
   {
     name: "SIDHARTHA SAHU",
-    image: "SIDHARTHA_SAHU.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2018",
@@ -2257,7 +2078,6 @@ const teamData = [
   },
   {
     name: "SWEEKRUTH SHETTY",
-    image: "SWEEKRUTH_SHETTY.jpg",
     roles: ["Team Captain"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2018",
@@ -2266,7 +2086,6 @@ const teamData = [
   },
   {
     name: "VARUN V V",
-    image: "VARUN_V_V.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2018",
@@ -2275,7 +2094,6 @@ const teamData = [
   },
   {
     name: "AMOL MEHTA",
-    image: "AMOL_MEHTA.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2019",
@@ -2284,7 +2102,6 @@ const teamData = [
   },
   {
     name: "ASFAN KHAN",
-    image: "ASFAN_KHAN.jpg",
     roles: ["Team Captain"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2019",
@@ -2301,7 +2118,6 @@ const teamData = [
   },
   {
     name: "DENZIL A JOY",
-    image: "DENZIL_A_JOY.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2019",
@@ -2310,7 +2126,6 @@ const teamData = [
   },
   {
     name: "DHRUV BHANDARI",
-    image: "DHRUV_BHANDARI.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2019",
@@ -2319,7 +2134,6 @@ const teamData = [
   },
   {
     name: "GAUTAM SINGH",
-    image: "GAUTAM_SINGH.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2019",
@@ -2336,7 +2150,6 @@ const teamData = [
   },
   {
     name: "KOMAL JAIN",
-    image: "KOMAL_JAIN.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
@@ -2345,7 +2158,6 @@ const teamData = [
   },
   {
     name: "MOKSHITH BOHRA",
-    image: "MOKSHITH_BOHRA.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2019",
@@ -2362,7 +2174,6 @@ const teamData = [
   },
   {
     name: "NEHAL BALACHANDRAN",
-    image: "NEHAL_BALACHANDRAN.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2019",
@@ -2371,7 +2182,6 @@ const teamData = [
   },
   {
     name: "NITHIN M BANAKAR",
-    image: "NITHIN_M_BANAKAR.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2019",
@@ -2380,7 +2190,6 @@ const teamData = [
   },
   {
     name: "PRANAVE NANDA",
-    image: "PRANAVE_NANDA.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2019",
@@ -2397,7 +2206,6 @@ const teamData = [
   },
   {
     name: "RAHUL DEVAMANI",
-    image: "RAHUL_DEVAMANI.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2019",
@@ -2406,7 +2214,6 @@ const teamData = [
   },
   {
     name: "SRIVATSA DESHPANDE",
-    image: "SRIVATSA_DESHPANDE.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
@@ -2415,7 +2222,6 @@ const teamData = [
   },
   {
     name: "SUHAS B U",
-    image: "SUHAS_B_U.jpg",
     roles: ["Project Manager"],
     subsystem: ["Suspension & Admin"],
     year: "2019",
@@ -2424,7 +2230,6 @@ const teamData = [
   },
   {
     name: "TARUN KASA",
-    image: "TARUN_KASA.jpg",
     roles: ["Subsystem Lead"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
@@ -2433,7 +2238,6 @@ const teamData = [
   },
   {
     name: "UTKARSH AGARWAL",
-    image: "UTKARSH_AGARWAL.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2019",
@@ -2442,7 +2246,6 @@ const teamData = [
   },
   {
     name: "VENKATARAMANA DATTA",
-    image: "VENKATARAMANA_DATTA.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2019",
@@ -2451,7 +2254,6 @@ const teamData = [
   },
   {
     name: "YOGESH KUMAR",
-    image: "YOGESH_KUMAR.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2019",
@@ -2460,7 +2262,6 @@ const teamData = [
   },
   {
     name: "Bharat Elangovel",
-    image: "Bharat_Elangovel.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2020",
@@ -2469,7 +2270,6 @@ const teamData = [
   },
   {
     name: "Shreyash",
-    image: "Shreyash.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2020",
@@ -2478,7 +2278,6 @@ const teamData = [
   },
   {
     name: "Siddharth Reddy",
-    image: "Siddharth_Reddy.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2020",
@@ -2487,7 +2286,6 @@ const teamData = [
   },
   {
     name: "Sathvik Shetty",
-    image: "Sathvik_Shetty.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2020",
@@ -2496,7 +2294,6 @@ const teamData = [
   },
   {
     name: "Bharat Talikoti",
-    image: "Bharat_Talikoti.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2020",
@@ -2505,7 +2302,6 @@ const teamData = [
   },
   {
     name: "Ruthuarna",
-    image: "Ruthuarna.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2020",
@@ -2514,7 +2310,6 @@ const teamData = [
   },
   {
     name: "Manjunath BD",
-    image: "Manjunath_BD.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2020",
@@ -2523,7 +2318,6 @@ const teamData = [
   },
   {
     name: "Hariharan",
-    image: "Hariharan.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2020",
@@ -2540,7 +2334,6 @@ const teamData = [
   },
   {
     name: "Harshita",
-    image: "Harshita.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2020",
@@ -2549,7 +2342,6 @@ const teamData = [
   },
   {
     name: "Harish",
-    image: "Harish.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2020",
@@ -2558,7 +2350,6 @@ const teamData = [
   },
   {
     name: "Shashank",
-    image: "Shashank.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2020",
@@ -2567,7 +2358,6 @@ const teamData = [
   },
   {
     name: "Anirudh",
-    image: "Anirudh.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2020",
@@ -2576,7 +2366,6 @@ const teamData = [
   },
   {
     name: "Chinmay",
-    image: "Chinmay.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2020",
@@ -2593,7 +2382,6 @@ const teamData = [
   },
   {
     name: "Dattatraya",
-    image: "Dattatraya.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2020",
@@ -2602,7 +2390,6 @@ const teamData = [
   },
   {
     name: "Aakash Maskara",
-    image: "Aakash_Maskara.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2015",
@@ -2611,7 +2398,6 @@ const teamData = [
   },
   {
     name: "Ankur Jairath",
-    image: "Ankur_Jairath.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2015",
@@ -2620,7 +2406,6 @@ const teamData = [
   },
   {
     name: "Anshul Dhadkar",
-    image: "Anshul_Dhadkar.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2015",
@@ -2629,7 +2414,6 @@ const teamData = [
   },
   {
     name: "Ayush Pandey",
-    image: "Ayush_Pandey.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2015",
@@ -2638,7 +2422,6 @@ const teamData = [
   },
   {
     name: "Biswajit Roy",
-    image: "Biswajit_Roy.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2015",
@@ -2647,7 +2430,6 @@ const teamData = [
   },
   {
     name: "Chandrakant Choppa",
-    image: "Chandrakant_Choppa.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2015",
@@ -2656,7 +2438,6 @@ const teamData = [
   },
   {
     name: "Deeksha Bhagat",
-    image: "Deeksha_Bhagat.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2015",
@@ -2673,7 +2454,6 @@ const teamData = [
   },
   {
     name: "Karan Chatrath",
-    image: "Karan_Chatrath.jpg",
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2015",
@@ -2682,7 +2462,6 @@ const teamData = [
   },
   {
     name: "Krishna Kashyap Singh",
-    image: "Krishna_Kashyap_Singh.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2015",
@@ -2691,7 +2470,6 @@ const teamData = [
   },
   {
     name: "Mohammed Hannan Chishti",
-    image: "Mohammed_Hannan_Chishti.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2015",
@@ -2700,7 +2478,6 @@ const teamData = [
   },
   {
     name: "Naramsetty Vamsi",
-    image: "Naramsetty_Vamsi.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2015",
@@ -2709,7 +2486,6 @@ const teamData = [
   },
   {
     name: "Pallav Rawat",
-    image: "Pallav_Rawat.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2015",
@@ -2718,7 +2494,6 @@ const teamData = [
   },
   {
     name: "Rajat Kabra",
-    image: "Rajat_Kabra.jpg",
     roles: ["Team Captain"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2015",
@@ -2727,7 +2502,6 @@ const teamData = [
   },
   {
     name: "Rishav Ranjan",
-    image: "Rishav_Ranjan.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2015",
@@ -2736,7 +2510,6 @@ const teamData = [
   },
   {
     name: "Abdul Rehman",
-    image: "Abdul_Rehman.png",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2016",
@@ -2745,7 +2518,6 @@ const teamData = [
   },
   {
     name: "Abin Vincent",
-    image: "Abin_Vincent.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2016",
@@ -2754,7 +2526,6 @@ const teamData = [
   },
   {
     name: "Aishwarya Bhatt",
-    image: "Aishwarya_Bhatt.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2016",
@@ -2763,7 +2534,6 @@ const teamData = [
   },
   {
     name: "Anushree H N",
-    image: "Anushree_H_N.png",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2016",
@@ -2772,7 +2542,6 @@ const teamData = [
   },
   {
     name: "Gokul Suresh",
-    image: "Gokul_Suresh.jpg",
     roles: ["Team Captain"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2016",
@@ -2781,7 +2550,6 @@ const teamData = [
   },
   {
     name: "Govind Shenoy",
-    image: "Govind_Shenoy.png",
     roles: ["Subsystem Lead"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2016",
@@ -2790,7 +2558,6 @@ const teamData = [
   },
   {
     name: "Kiran B.M.",
-    image: "Kiran_B_M_.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2016",
@@ -2799,7 +2566,6 @@ const teamData = [
   },
   {
     name: "Lalith Keerthan",
-    image: "Lalith_Keerthan.png",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2016",
@@ -2816,7 +2582,6 @@ const teamData = [
   },
   {
     name: "Pranav Narahari",
-    image: "Pranav_Narahari.png",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2016",
@@ -2825,7 +2590,6 @@ const teamData = [
   },
   {
     name: "Pranith Prasanna",
-    image: "Pranith_Prasanna.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2016",
@@ -2834,7 +2598,6 @@ const teamData = [
   },
   {
     name: "Pranjal Tyagi",
-    image: "Pranjal_Tyagi.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2016",
@@ -2843,7 +2606,6 @@ const teamData = [
   },
   {
     name: "Raghu Vamsi",
-    image: "Raghu_Vamsi.png",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2016",
@@ -2852,7 +2614,6 @@ const teamData = [
   },
   {
     name: "Rounak Maru",
-    image: "Rounak_Maru.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2016",
@@ -2861,7 +2622,6 @@ const teamData = [
   },
   {
     name: "Santosh V N",
-    image: "Santosh_V_N.png",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2016",
@@ -2870,7 +2630,6 @@ const teamData = [
   },
   {
     name: "Shamveel Mohammed",
-    image: "Shamveel_Mohammed.png",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2016",
@@ -2879,7 +2638,6 @@ const teamData = [
   },
   {
     name: "Sohan Shetty",
-    image: "Sohan_Shetty.png",
     roles: ["Project Manager"],
     subsystem: ["Suspension & Admin"],
     year: "2016",
@@ -2888,7 +2646,6 @@ const teamData = [
   },
   {
     name: "Upendra Arun",
-    image: "Upendra_Arun.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2016",
@@ -2897,7 +2654,6 @@ const teamData = [
   },
   {
     name: "Ashish Nair",
-    image: "Ashish_Nair.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2017",
@@ -2906,7 +2662,6 @@ const teamData = [
   },
   {
     name: "Atiqh Ahmed",
-    image: "Atiqh_Ahmed.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2017",
@@ -2923,7 +2678,6 @@ const teamData = [
   },
   {
     name: "Mohit Kongat Nair",
-    image: "Mohit_Kongat_Nair.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2017",
@@ -2932,7 +2686,6 @@ const teamData = [
   },
   {
     name: "Nischay Jain",
-    image: "Nischay_Jain.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2017",
@@ -2941,7 +2694,6 @@ const teamData = [
   },
   {
     name: "Prateek Bhustali",
-    image: "Prateek_Bhustali.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2017",
@@ -2950,7 +2702,6 @@ const teamData = [
   },
   {
     name: "Rakesh HN",
-    image: "Rakesh_HN.jpg",
     roles: ["Project Manager"],
     subsystem: ["Suspension & Admin"],
     year: "2017",
@@ -2959,7 +2710,6 @@ const teamData = [
   },
   {
     name: "Rabindranath Mukherjee",
-    image: "Rabindranath_Mukherjee.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2017",
@@ -2968,7 +2718,6 @@ const teamData = [
   },
   {
     name: "Sarthak Krishna",
-    image: "Sarthak_Krishna.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2017",
@@ -2977,7 +2726,6 @@ const teamData = [
   },
   {
     name: "Shridhar Ganiger",
-    image: "Shridhar_Ganiger.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2017",
@@ -2986,7 +2734,6 @@ const teamData = [
   },
   {
     name: "Shrirang Agarwal",
-    image: "Shrirang_Agarwal.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2017",
@@ -2995,7 +2742,6 @@ const teamData = [
   },
   {
     name: "Sidhartha Sahu",
-    image: "Sidhartha_Sahu.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2017",
@@ -3004,7 +2750,6 @@ const teamData = [
   },
   {
     name: "Sweekruth Shetty",
-    image: "Sweekruth_Shetty.jpg",
     roles: ["Team Captain"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2017",
@@ -3013,7 +2758,6 @@ const teamData = [
   },
   {
     name: "Varun VV",
-    image: "Varun_VV.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2017",
@@ -3022,7 +2766,6 @@ const teamData = [
   },
   {
     name: "Amol Mehta",
-    image: "Amol_Mehta.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2018",
@@ -3031,7 +2774,6 @@ const teamData = [
   },
   {
     name: "Asfan Khan",
-    image: "Asfan_Khan.jpg",
     roles: ["Team Captain"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2018",
@@ -3040,7 +2782,6 @@ const teamData = [
   },
   {
     name: "Danvin",
-    image: "Danvin.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2018",
@@ -3049,7 +2790,6 @@ const teamData = [
   },
   {
     name: "Denzil Joel",
-    image: "Denzil_Joel.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2018",
@@ -3058,7 +2798,6 @@ const teamData = [
   },
   {
     name: "Dhruv Bhandari",
-    image: "Dhruv_Bhandari.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2018",
@@ -3067,7 +2806,6 @@ const teamData = [
   },
   {
     name: "Gautam Singh",
-    image: "Gautam_Singh.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2018",
@@ -3076,7 +2814,6 @@ const teamData = [
   },
   {
     name: "Komal",
-    image: "Komal.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2018",
@@ -3085,7 +2822,6 @@ const teamData = [
   },
   {
     name: "Mokshit",
-    image: "Mokshit.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2018",
@@ -3094,7 +2830,6 @@ const teamData = [
   },
   {
     name: "Nehal",
-    image: "Nehal.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2018",
@@ -3103,7 +2838,6 @@ const teamData = [
   },
   {
     name: "Nithin",
-    image: "Nithin.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2018",
@@ -3112,7 +2846,6 @@ const teamData = [
   },
   {
     name: "Pranave Nanda",
-    image: "Pranave_Nanda.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2018",
@@ -3121,7 +2854,6 @@ const teamData = [
   },
   {
     name: "Srivatsa",
-    image: "Srivatsa.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2018",
@@ -3130,7 +2862,6 @@ const teamData = [
   },
   {
     name: "Srinivas",
-    image: "Srinivas.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2018",
@@ -3139,7 +2870,6 @@ const teamData = [
   },
   {
     name: "Suhas BU",
-    image: "Suhas_BU.jpg",
     roles: ["Project Manager"],
     subsystem: ["Suspension & Admin"],
     year: "2018",
@@ -3148,7 +2878,6 @@ const teamData = [
   },
   {
     name: "Tarun Kasa",
-    image: "Tarun_Kasa.jpg",
     roles: ["Subsystem Lead"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2018",
@@ -3157,7 +2886,6 @@ const teamData = [
   },
   {
     name: "Uday V Naik",
-    image: "Uday_V_Naik.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2018",
@@ -3166,7 +2894,6 @@ const teamData = [
   },
   {
     name: "Utkarsh",
-    image: "Utkarsh.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2018",
@@ -3175,7 +2902,6 @@ const teamData = [
   },
   {
     name: "Venkateshwara Dutta",
-    image: "Venkateshwara_Dutta.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2018",
@@ -3184,7 +2910,6 @@ const teamData = [
   },
   {
     name: "Yogesh",
-    image: "Yogesh.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2018",
@@ -3193,7 +2918,6 @@ const teamData = [
   },
   {
     name: "Bharat Elangovel",
-    image: "Bharat_Elangovel.jpg",
     roles: ["Project Manager"],
     subsystem: ["Suspension & Admin"],
     year: "2019",
@@ -3202,7 +2926,6 @@ const teamData = [
   },
   {
     name: "Smith Patel",
-    image: "Smith_Patel.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2019",
@@ -3211,7 +2934,6 @@ const teamData = [
   },
   {
     name: "Shreyash",
-    image: "Shreyash.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2019",
@@ -3220,7 +2942,6 @@ const teamData = [
   },
   {
     name: "Siddharth Reddy",
-    image: "Siddharth_Reddy.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2019",
@@ -3229,7 +2950,6 @@ const teamData = [
   },
   {
     name: "Sathvik Shetty",
-    image: "Sathvik_Shetty.jpg",
     roles: ["Team Captain"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2019",
@@ -3238,7 +2958,6 @@ const teamData = [
   },
   {
     name: "Bharat Talikoti",
-    image: "Bharat_Talikoti.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2019",
@@ -3247,7 +2966,6 @@ const teamData = [
   },
   {
     name: "Rhea",
-    image: "Rhea.jpg",
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2019",
@@ -3256,7 +2974,6 @@ const teamData = [
   },
   {
     name: "Ruthuarna",
-    image: "Ruthuarna.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2019",
@@ -3265,7 +2982,6 @@ const teamData = [
   },
   {
     name: "Manjunath BD",
-    image: "Manjunath_BD.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2019",
@@ -3274,7 +2990,6 @@ const teamData = [
   },
   {
     name: "Hariharan",
-    image: "Hariharan.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
@@ -3283,7 +2998,6 @@ const teamData = [
   },
   {
     name: "Manasi Kadambi",
-    image: "Manasi_Kadambi.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
@@ -3292,7 +3006,6 @@ const teamData = [
   },
   {
     name: "Nachiket",
-    image: "Nachiket.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
@@ -3301,7 +3014,6 @@ const teamData = [
   },
   {
     name: "Harshita",
-    image: "Harshita.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
@@ -3310,7 +3022,6 @@ const teamData = [
   },
   {
     name: "Rishika",
-    image: "Rishika.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
@@ -3319,7 +3030,6 @@ const teamData = [
   },
   {
     name: "Harish",
-    image: "Harish.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2019",
@@ -3328,7 +3038,6 @@ const teamData = [
   },
   {
     name: "Shashank",
-    image: "Shashank.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2019",
@@ -3337,7 +3046,6 @@ const teamData = [
   },
   {
     name: "Anirudh",
-    image: "Anirudh.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2019",
@@ -3346,7 +3054,6 @@ const teamData = [
   },
   {
     name: "Chinmay",
-    image: "Chinmay.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2019",
@@ -3363,7 +3070,6 @@ const teamData = [
   },
   {
     name: "Dattatraya",
-    image: "Dattatraya.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2019",
@@ -3372,7 +3078,6 @@ const teamData = [
   },
   {
     name: "Sahil",
-    image: "Sahil.png",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2019",
@@ -3381,7 +3086,6 @@ const teamData = [
   },
   {
     name: "Ayan",
-    image: "Ayan.png",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2019",
@@ -3390,7 +3094,6 @@ const teamData = [
   },
   {
     name: "Aditya",
-    image: "Aditya.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2019",
@@ -3399,7 +3102,6 @@ const teamData = [
   },
   {
     name: "Abhay Agarwal",
-    image: "Abhay_Agarwal.jpg",
     roles: ["Project Manager"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2020",
@@ -3408,7 +3110,6 @@ const teamData = [
   },
   {
     name: "Abhinav Agarwal",
-    image: "Abhinav_Agarwal.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2020",
@@ -3417,7 +3118,6 @@ const teamData = [
   },
   {
     name: "Abhishek Sharma",
-    image: "Abhishek_Sharma.jpg",
     roles: ["Project Manager"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2020",
@@ -3426,7 +3126,6 @@ const teamData = [
   },
   {
     name: "Advait Parameswaran",
-    image: "Advait_Parameswaran.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2020",
@@ -3435,7 +3134,6 @@ const teamData = [
   },
   {
     name: "Ajeet Sunil",
-    image: "Ajeet_Sunil.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2020",
@@ -3444,7 +3142,6 @@ const teamData = [
   },
   {
     name: "Arjun",
-    image: "Arjun.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2020",
@@ -3453,7 +3150,6 @@ const teamData = [
   },
   {
     name: "Brahmanand D",
-    image: "Brahmanand_D.jpg",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2020",
@@ -3462,7 +3158,6 @@ const teamData = [
   },
   {
     name: "Dheeraj Omprasad",
-    image: "Dheeraj_Omprasad.jpg",
     roles: ["Subsystem Lead"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2020",
@@ -3471,7 +3166,6 @@ const teamData = [
   },
   {
     name: "Gunadeep Sai Teja",
-    image: "Gunadeep_Sai_Teja.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2020",
@@ -3480,7 +3174,6 @@ const teamData = [
   },
   {
     name: "Guruprakash Patil",
-    image: "Guruprakash_Patil.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2020",
@@ -3489,7 +3182,6 @@ const teamData = [
   },
   {
     name: "Kausthub",
-    image: "Kausthub.jpg",
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2020",
@@ -3498,7 +3190,6 @@ const teamData = [
   },
   {
     name: "Kireeti Krishnappa",
-    image: "Kireeti_Krishnappa.jpg",
     roles: ["Team Captain"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2020",
@@ -3507,7 +3198,6 @@ const teamData = [
   },
   {
     name: "Mishma Toppo",
-    image: "Mishma_Toppo.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2020",
@@ -3516,7 +3206,6 @@ const teamData = [
   },
   {
     name: "Nikhil Potdar",
-    image: "Nikhil_Potdar.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2020",
@@ -3525,7 +3214,6 @@ const teamData = [
   },
   {
     name: "Nivedh Das",
-    image: "Nivedh_Das.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2020",
@@ -3534,7 +3222,6 @@ const teamData = [
   },
   {
     name: "Raghuram",
-    image: "Raghuram.jpg",
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2020",
@@ -3543,7 +3230,6 @@ const teamData = [
   },
   {
     name: "Sarvesh Shashidhar",
-    image: "Sarvesh_Shashidhar.jpg",
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2020",
@@ -3552,7 +3238,6 @@ const teamData = [
   },
   {
     name: "Shreya NH",
-    image: "Shreya_NH.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2020",
@@ -3561,7 +3246,6 @@ const teamData = [
   },
   {
     name: "Siddhant Konwar Roy",
-    image: "Siddhant_Konwar_Roy.jpg",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2020",
@@ -3570,7 +3254,6 @@ const teamData = [
   },
   {
     name: "Subhendra",
-    image: "Subhendra.jpg",
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2020",
@@ -3579,7 +3262,6 @@ const teamData = [
   },
   {
     name: "Surya Anantha",
-    image: "Surya_Anantha.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2020",
@@ -3588,7 +3270,6 @@ const teamData = [
   },
   {
     name: "Tharun L",
-    image: "Tharun_L.jpg",
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2020",
@@ -3597,7 +3278,6 @@ const teamData = [
   },
   {
     name: "M Rithik Reddy",
-    image: "M_Rithik_Reddy.jpg",
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2020",
