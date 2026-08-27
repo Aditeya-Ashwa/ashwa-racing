@@ -53,6 +53,33 @@ function escapeAttr(str) {
   return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
 }
 
+(function () {
+  function initBgVideo(video) {
+    if (!video) return;
+
+    const reveal = () => video.classList.add('is-loaded');
+
+    if (video.readyState >= 4) {
+      reveal();
+    } else {
+      video.addEventListener('canplaythrough', reveal, { once: true });
+    }
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        video.removeEventListener('canplaythrough', reveal);
+      });
+    }
+  }
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document
+    .querySelectorAll('.hero-video, .spotlight-bg-video')
+    .forEach(initBgVideo);
+})();
+
 function renderSponsorStrip() {
   const track = document.getElementById('sponsor-track');
   if (!track) return;
@@ -173,11 +200,11 @@ function initNewsletterPreview() {
   if (!card || !thumb) return;
 
   const latest = {
-    title:   "June 2026 — General Newsletter",
-    cover:   "https://assets.ashwaracing.org/cdn-cgi/image/width=600,format=avif,quality=80/images/newsletters/2026/2026-06.png",
-    pdf:     "https://assets.ashwaracing.org/pdfs/newsletters/2026/2026-06-general.pdf",
-    date:    "June 2026",
-    excerpt: "RZ-XX7C electrical redesign consolidation; RZ-XX8E simulation work sets FDR and energy targets for the EV prototype; plus May expenses, sponsor roster, and team directory."
+    title:   "July 2026 — General Newsletter",
+    cover:   "assets/images/newsletters/2026/2026-07.png",
+    pdf:     "assets/pdfs/newsletters/2026/2026-07-general.pdf",
+    date:    "July 2026",
+    excerpt: "A decade of Formula Bharat's evolution, a new Lion Circuits partnership backing our PCB and manufacturing pipeline, June's ₹1,02,896 spend across the EV chassis weld and Formula Bharat combustion registration, plus the full 2026–2028 team directory and sponsor roster."
   };
 
   thumb.src = latest.cover;
