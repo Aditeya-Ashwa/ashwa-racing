@@ -46,49 +46,6 @@
   <main>
 
     <!-- ============================================================
-         LAUNCH TEASER — countdown banner for the EV + combustion
-         reveal event. Sits above the hero. Remove this whole
-         <section> (and its CSS block / script) once the event has
-         passed.
-         ============================================================ -->
-    <section class="launch-teaser" aria-label="Upcoming launch event countdown">
-      <div class="launch-teaser-bg" style="background-image:url('assets/images/prototypes/reveal.png')"
-        aria-hidden="true"></div>
-      <div class="launch-teaser-overlay" aria-hidden="true"></div>
-
-      <div class="launch-teaser-content container">
-        <!-- <p class="label">Coming Soon</p> -->
-
-        <h2 class="launch-teaser-heading">Two Prototypes.<br><em>One Reveal.</em></h2>
-
-        <p class="launch-teaser-sub">
-          Be ready for the next age in Ashwa Racing's History.
-        </p>
-
-        <div class="countdown" id="launch-countdown" aria-label="Time remaining until launch event">
-          <div class="countdown-unit">
-            <span class="countdown-num" id="cd-days">00</span>
-            <span class="countdown-label">Days</span>
-          </div>
-          <div class="countdown-unit">
-            <span class="countdown-num" id="cd-hours">00</span>
-            <span class="countdown-label">Hours</span>
-          </div>
-          <div class="countdown-unit">
-            <span class="countdown-num" id="cd-mins">00</span>
-            <span class="countdown-label">Minutes</span>
-          </div>
-          <div class="countdown-unit">
-            <span class="countdown-num" id="cd-secs">00</span>
-            <span class="countdown-label">Seconds</span>
-          </div>
-        </div>
-
-        <!-- <p class="launch-teaser-date">22<span>nd</span> August 2026</p> -->
-      </div>
-    </section>
-
-    <!-- ============================================================
          HERO
          ============================================================ -->
     <section class="hero" aria-label="Ashwa Racing hero">
@@ -101,15 +58,27 @@
           class="hero-img" alt="Ashwa Racing Formula Student car RZ-XX6-C on track at Formula Bharat 2026" width="1440"
           height="860" fetchpriority="high" decoding="sync">
       </picture>
+
+        <!-- Video sits above the poster img but starts invisible. JS adds
+       .is-loaded once the browser reports enough data buffered to
+       play through without stalling — that's the "fully loaded" gate.
+       Poster stays underneath permanently as the fallback. -->
+        <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="auto"
+          poster="https://assets.ashwaracing.org/cdn-cgi/image/width=1440,format=avif,quality=85/images/heroimg/hero-desktop.jpg"
+          aria-hidden="true">
+          <source src="assets/videos/hero_vid.mp4" type="video/mp4">
+        </video>
+
+
       <div class="hero-overlay" aria-hidden="true"></div>
 
       <div class="hero-content">
 
-        <h1>22 Years.Three Powertrains.</h1>
+        <h1>22 Years.Four Powertrains.</h1>
 
         <p class="hero-para">
           Two international hybrid championships. A combustion legacy two decades
-          deep. A hyperloop project under the belt. This is Ashwa Racing.
+          deep. A hyperloop project under the belt. A flagship EV project. This is Ashwa Racing.
         </p>
 
         <div class="hero-ctas">
@@ -136,7 +105,7 @@
           <span class="stat-label">Years Racing</span>
         </div>
         <div class="stat">
-          <span class="stat-num" data-count="3">0</span>
+          <span class="stat-num" data-count="4">0</span>
           <span class="stat-label">Powertrains</span>
         </div>
         <div class="stat">
@@ -144,8 +113,8 @@
           <span class="stat-label">Hybrid Championships</span>
         </div>
         <div class="stat">
-          <span class="stat-num" data-count="45" data-suffix="+">0</span>
-          <span class="stat-label">Industry Sponsors</span>
+          <span class="stat-num" data-count="25" data-suffix="+">0</span>
+          <span class="stat-label">Prototypes</span>
         </div>
       </div>
     </section>
@@ -212,15 +181,74 @@
       </div>
     </section>
 
+        <section class="spotlight spotlight--ev" aria-label="Current car spotlight">
+
+      <img class="spotlight-bg"
+        src="assets/images/prototypes/RZ-XX6-E/preevent/1.png"
+        alt="Ashwa Racing RZ-XX6-E Formula Student electric car">
+
+      <div class="spotlight-overlay">
+
+        <p class="label">Current EV Car</p>
+
+        <h2>
+          Meet <em>RZ-XX6-E</em>
+        </h2>
+
+        <p class="spotlight-text">
+          Our first fully electric prototype — built from the ground up, not
+          adapted from a combustion platform. New chassis, new electrical
+          architecture, new powertrain logic. A single Emrax 208 MV motor and
+          a 252V pack replace the engine entirely, backed by a rebuilt data
+          acquisition stack. Designed, manufactured and raced by the students
+          of Ashwa Racing.
+        </p>
+
+        <div class="spotlight-specs">
+
+          <div>
+            <span class="spotlight-spec-num">75kW</span>
+            <span class="spotlight-spec-label">Power</span>
+          </div>
+
+          <div>
+            <span class="spotlight-spec-num">4.8s</span>
+            <span class="spotlight-spec-label">0–100 km/h</span>
+          </div>
+
+          <div>
+            <span class="spotlight-spec-num">235kg</span>
+            <span class="spotlight-spec-label">Dry Weight</span>
+          </div>
+
+        </div>
+
+        <a href="projects.html" class="btn-line">
+          Full Specs
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+
+      </div>
+
+    </section>
+
     <section class="spotlight" aria-label="Current car spotlight">
 
       <img class="spotlight-bg"
         src="https://assets.ashwaracing.org/cdn-cgi/image/width=1600,format=avif,quality=100/images/prototypes/RZ-XX6-C/postevent/1.jpg"
         alt="Ashwa Racing RZ-XX6-C Formula Student car">
 
+          <video class="spotlight-bg-video" autoplay muted loop playsinline preload="auto"
+    poster="https://assets.ashwaracing.org/cdn-cgi/image/width=1600,format=avif,quality=100/images/prototypes/RZ-XX6-C/postevent/1.jpg"
+    aria-hidden="true">
+    <source src="assets/videos/cv_spotlight.mp4" type="video/mp4">
+  </video>
+
       <div class="spotlight-overlay">
 
-        <p class="label">Current Car</p>
+        <p class="label">Current Competition Car</p>
 
         <h2>
           Meet <em>RZ-XX6-C</em>
@@ -251,6 +279,8 @@
           </div>
 
         </div>
+
+        
 
         <a href="projects.html" class="btn-line">
           Full Specs
@@ -456,7 +486,6 @@
 
   <script src="assets/js/components/header.js" defer></script>
   <script src="assets/js/pages/index.js" defer></script>
-  <script src="assets/js/pages/launch-countdown.js" defer></script>
 
 
 </body>
