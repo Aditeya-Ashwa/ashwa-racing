@@ -425,7 +425,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2005",
-    experience: "Member of the Drivetrain & Human Resources team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Drivetrain & Human Resources team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -433,7 +433,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2005",
-    experience: "Member of the Electrical & Testing team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Electrical & Testing team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -441,7 +441,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2005",
-    experience: "Member of the Suspension & Admin team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Suspension & Admin team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -449,7 +449,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management", "Engine"],
     year: "2005",
-    experience: "Member of the Chassis & Workshop Management and Engine team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management and Engine team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -457,7 +457,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2005",
-    experience: "Member of the Finance and Suspension & Admin team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Finance and Suspension & Admin team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -465,7 +465,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2005",
-    experience: "Member of the Finance and Suspension & Admin team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Finance and Suspension & Admin team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -473,7 +473,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2005",
-    experience: "Member of the Suspension & Admin team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Suspension & Admin team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -489,7 +489,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2005",
-    experience: "Member of the Suspension & Admin team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Suspension & Admin team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -497,7 +497,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2005",
-    experience: "Member of the Suspension & Admin team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Suspension & Admin team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -505,7 +505,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2005",
-    experience: "Member of the Brakes & Logistics team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Brakes & Logistics team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -513,7 +513,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
-    experience: "Member of the Chassis & Workshop Management team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -521,7 +521,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
-    experience: "Member of the Chassis & Workshop Management team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -529,7 +529,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Engine", "Sponsorship, Marketing & Public Relations"],
     year: "2005",
-    experience: "Member of the Engine and Sponsorship, Marketing & Public Relations team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Engine and Sponsorship, Marketing & Public Relations team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -537,7 +537,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
-    experience: "Member of the Chassis & Workshop Management team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -545,7 +545,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
-    experience: "Member of the Chassis & Workshop Management team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -553,7 +553,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
-    experience: "Member of the Chassis & Workshop Management team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -561,7 +561,7 @@ const teamData = [
     roles: ["Subsystem Lead"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
-    experience: "Subsystem Lead of the Chassis & Workshop Management team for the 2005 (Combustion) prototype.",
+    experience: "Subsystem Lead of the Chassis & Workshop Management team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -569,7 +569,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
-    experience: "Member of the Chassis & Workshop Management team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -577,7 +577,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2005",
-    experience: "Member of the Chassis & Workshop Management team for the 2005 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team for the 2005 prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2097,7 +2097,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2019",
-    experience: "Member of the Brakes & Logistics team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Brakes & Logistics team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2105,7 +2105,7 @@ const teamData = [
     roles: ["Team Captain"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2019",
-    experience: "Team Captain of the Drivetrain & Human Resources team for the 2019 (Combustion) prototype.",
+    experience: "Team Captain and member of the Drivetrain & Human Resources team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2113,7 +2113,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2019",
-    experience: "Member of the Electrical & Testing team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Electrical & Testing team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2121,7 +2121,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2019",
-    experience: "Member of the Engine team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Engine team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2129,7 +2129,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Engine"],
     year: "2019",
-    experience: "Member of the Engine team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Engine team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2137,7 +2137,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2019",
-    experience: "Member of the Chassis & Workshop Management team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2145,7 +2145,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2019",
-    experience: "Member of the Chassis & Workshop Management team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2153,7 +2153,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
-    experience: "Member of the Sponsorship, Marketing & Public Relations team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Sponsorship, Marketing & Public Relations team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2161,7 +2161,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2019",
-    experience: "Member of the Suspension & Admin team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Suspension & Admin team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2169,7 +2169,7 @@ const teamData = [
     roles: ["Chief Engineer"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2019",
-    experience: "Chief Engineer of the Chassis & Workshop Management team for the 2019 (Combustion) prototype.",
+    experience: "Chief Engineer and member of the Chassis & Workshop Management team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2177,7 +2177,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2019",
-    experience: "Member of the Electrical & Testing team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Electrical & Testing team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2185,7 +2185,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2019",
-    experience: "Member of the Electrical & Testing team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Electrical & Testing team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2193,7 +2193,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2019",
-    experience: "Member of the Drivetrain & Human Resources team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Drivetrain & Human Resources team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2201,7 +2201,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2019",
-    experience: "Member of the Brakes & Logistics team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Brakes & Logistics team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2209,7 +2209,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2019",
-    experience: "Member of the Suspension & Admin team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Suspension & Admin team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2217,7 +2217,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
-    experience: "Member of the Sponsorship, Marketing & Public Relations team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Sponsorship, Marketing & Public Relations team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2225,7 +2225,7 @@ const teamData = [
     roles: ["Project Manager"],
     subsystem: ["Suspension & Admin"],
     year: "2019",
-    experience: "Project Manager of the Suspension & Admin team for the 2019 (Combustion) prototype.",
+    experience: "Project Manager and member of the Suspension & Admin team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2233,7 +2233,7 @@ const teamData = [
     roles: ["Subsystem Lead"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
-    experience: "Subsystem Lead of the Sponsorship, Marketing & Public Relations team for the 2019 (Combustion) prototype.",
+    experience: "Subsystem Lead of the Sponsorship, Marketing & Public Relations team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2241,7 +2241,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2019",
-    experience: "Member of the Finance and Suspension & Admin team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Finance and Suspension & Admin team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2249,7 +2249,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2019",
-    experience: "Member of the Brakes & Logistics team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Brakes & Logistics team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2257,7 +2257,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2019",
-    experience: "Member of the Chassis & Workshop Management team for the 2019 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2265,7 +2265,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2020",
-    experience: "Member of the Suspension & Admin team for the 2020 (Combustion) prototype.",
+    experience: "Member of Suspension & Admin",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2273,15 +2273,15 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2020",
-    experience: "Member of the Finance and Suspension & Admin team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Finance and Suspension & Admin team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
     name: "Siddharth Reddy",
-    roles: ["Chief Engineer"],
+    roles: ["Chief Engineer","Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2020",
-    experience: "Chief Engineer of the Finance and Suspension & Admin team for the 2020 (Combustion) prototype.",
+    experience: "Chief Engineer of the Finance and Suspension & Admin team",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2289,7 +2289,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2020",
-    experience: "Member of the Drivetrain & Human Resources team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Drivetrain & Human Resources team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2297,7 +2297,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Drivetrain & Human Resources"],
     year: "2020",
-    experience: "Member of the Drivetrain & Human Resources team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Drivetrain & Human Resources team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2305,7 +2305,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2020",
-    experience: "Member of the Brakes & Logistics team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Brakes & Logistics team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2313,7 +2313,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Brakes & Logistics"],
     year: "2020",
-    experience: "Member of the Brakes & Logistics team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Brakes & Logistics team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2321,7 +2321,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2020",
-    experience: "Member of the Sponsorship, Marketing & Public Relations team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Sponsorship, Marketing & Public Relations team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2329,7 +2329,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2020",
-    experience: "Member of the Sponsorship, Marketing & Public Relations team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Sponsorship, Marketing & Public Relations team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2337,7 +2337,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2020",
-    experience: "Member of the Sponsorship, Marketing & Public Relations team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Sponsorship, Marketing & Public Relations team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2345,7 +2345,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2020",
-    experience: "Member of the Chassis & Workshop Management team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2353,7 +2353,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2020",
-    experience: "Member of the Chassis & Workshop Management team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2361,7 +2361,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2020",
-    experience: "Member of the Chassis & Workshop Management team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2369,7 +2369,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Chassis & Workshop Management"],
     year: "2020",
-    experience: "Member of the Chassis & Workshop Management team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Chassis & Workshop Management team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2377,7 +2377,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2020",
-    experience: "Member of the Electrical & Testing team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Electrical & Testing team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2385,7 +2385,7 @@ const teamData = [
     roles: ["Member"],
     subsystem: ["Electrical & Testing"],
     year: "2020",
-    experience: "Member of the Electrical & Testing team for the 2020 (Combustion) prototype.",
+    experience: "Member of the Electrical & Testing team.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2917,51 +2917,11 @@ const teamData = [
     social: { linkedin: null, github: null, gmail: null },
   },
   {
-    name: "Bharat Elangovel",
-    roles: ["Project Manager"],
-    subsystem: ["Suspension & Admin"],
-    year: "2019",
-    experience: "Project Manager of the Suspension & Admin team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
     name: "Smith Patel",
     roles: ["Member"],
     subsystem: ["Suspension & Admin"],
     year: "2019",
     experience: "Member of the Suspension & Admin team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Shreyash",
-    roles: ["Member"],
-    subsystem: ["Finance", "Suspension & Admin"],
-    year: "2019",
-    experience: "Member of the Finance and Suspension & Admin team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Siddharth Reddy",
-    roles: ["Member"],
-    subsystem: ["Finance", "Suspension & Admin"],
-    year: "2019",
-    experience: "Member of the Finance and Suspension & Admin team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Sathvik Shetty",
-    roles: ["Team Captain"],
-    subsystem: ["Drivetrain & Human Resources"],
-    year: "2019",
-    experience: "Team Captain of the Drivetrain & Human Resources team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Bharat Talikoti",
-    roles: ["Member"],
-    subsystem: ["Drivetrain & Human Resources"],
-    year: "2019",
-    experience: "Member of the Drivetrain & Human Resources team for the 2019 (Hybrid) prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -2973,47 +2933,7 @@ const teamData = [
     social: { linkedin: null, github: null, gmail: null },
   },
   {
-    name: "Ruthuarna",
-    roles: ["Member"],
-    subsystem: ["Brakes & Logistics"],
-    year: "2019",
-    experience: "Member of the Brakes & Logistics team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Manjunath BD",
-    roles: ["Member"],
-    subsystem: ["Brakes & Logistics"],
-    year: "2019",
-    experience: "Member of the Brakes & Logistics team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Hariharan",
-    roles: ["Member"],
-    subsystem: ["Sponsorship, Marketing & Public Relations"],
-    year: "2019",
-    experience: "Member of the Sponsorship, Marketing & Public Relations team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Manasi Kadambi",
-    roles: ["Member"],
-    subsystem: ["Sponsorship, Marketing & Public Relations"],
-    year: "2019",
-    experience: "Member of the Sponsorship, Marketing & Public Relations team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
     name: "Nachiket",
-    roles: ["Member"],
-    subsystem: ["Sponsorship, Marketing & Public Relations"],
-    year: "2019",
-    experience: "Member of the Sponsorship, Marketing & Public Relations team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Harshita",
     roles: ["Member"],
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
@@ -3026,54 +2946,6 @@ const teamData = [
     subsystem: ["Sponsorship, Marketing & Public Relations"],
     year: "2019",
     experience: "Member of the Sponsorship, Marketing & Public Relations team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Harish",
-    roles: ["Chief Engineer"],
-    subsystem: ["Chassis & Workshop Management"],
-    year: "2019",
-    experience: "Chief Engineer of the Chassis & Workshop Management team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Shashank",
-    roles: ["Member"],
-    subsystem: ["Chassis & Workshop Management"],
-    year: "2019",
-    experience: "Member of the Chassis & Workshop Management team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Anirudh",
-    roles: ["Member"],
-    subsystem: ["Chassis & Workshop Management"],
-    year: "2019",
-    experience: "Member of the Chassis & Workshop Management team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Chinmay",
-    roles: ["Member"],
-    subsystem: ["Chassis & Workshop Management"],
-    year: "2019",
-    experience: "Member of the Chassis & Workshop Management team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Goutham",
-    roles: ["Member"],
-    subsystem: ["Electrical & Testing"],
-    year: "2019",
-    experience: "Member of the Electrical & Testing team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Dattatraya",
-    roles: ["Member"],
-    subsystem: ["Electrical & Testing"],
-    year: "2019",
-    experience: "Member of the Electrical & Testing team for the 2019 (Hybrid) prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
   {
@@ -3098,190 +2970,6 @@ const teamData = [
     subsystem: ["Engine"],
     year: "2019",
     experience: "Member of the Engine team for the 2019 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Abhay Agarwal",
-    roles: ["Project Manager"],
-    subsystem: ["Sponsorship, Marketing & Public Relations"],
-    year: "2020",
-    experience: "Project Manager of the Sponsorship, Marketing & Public Relations team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Abhinav Agarwal",
-    roles: ["Member"],
-    subsystem: ["Electrical & Testing"],
-    year: "2020",
-    experience: "Member of the Electrical & Testing team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Abhishek Sharma",
-    roles: ["Project Manager"],
-    subsystem: ["Drivetrain & Human Resources"],
-    year: "2020",
-    experience: "Project Manager of the Drivetrain & Human Resources team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Advait Parameswaran",
-    roles: ["Member"],
-    subsystem: ["Engine"],
-    year: "2020",
-    experience: "Member of the Engine team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Ajeet Sunil",
-    roles: ["Member"],
-    subsystem: ["Electrical & Testing"],
-    year: "2020",
-    experience: "Member of the Electrical & Testing team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Arjun",
-    roles: ["Member"],
-    subsystem: ["Engine"],
-    year: "2020",
-    experience: "Member of the Engine team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Brahmanand D",
-    roles: ["Member"],
-    subsystem: ["Sponsorship, Marketing & Public Relations"],
-    year: "2020",
-    experience: "Member of the Sponsorship, Marketing & Public Relations team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Dheeraj Omprasad",
-    roles: ["Subsystem Lead"],
-    subsystem: ["Sponsorship, Marketing & Public Relations"],
-    year: "2020",
-    experience: "Subsystem Lead of the Sponsorship, Marketing & Public Relations team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Gunadeep Sai Teja",
-    roles: ["Member"],
-    subsystem: ["Finance", "Suspension & Admin"],
-    year: "2020",
-    experience: "Member of the Finance and Suspension & Admin team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Guruprakash Patil",
-    roles: ["Member"],
-    subsystem: ["Finance", "Suspension & Admin"],
-    year: "2020",
-    experience: "Member of the Finance and Suspension & Admin team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Kausthub",
-    roles: ["Member"],
-    subsystem: ["Brakes & Logistics"],
-    year: "2020",
-    experience: "Member of the Brakes & Logistics team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Kireeti Krishnappa",
-    roles: ["Team Captain"],
-    subsystem: ["Drivetrain & Human Resources"],
-    year: "2020",
-    experience: "Team Captain of the Drivetrain & Human Resources team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Mishma Toppo",
-    roles: ["Member"],
-    subsystem: ["Electrical & Testing"],
-    year: "2020",
-    experience: "Member of the Electrical & Testing team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Nikhil Potdar",
-    roles: ["Member"],
-    subsystem: ["Suspension & Admin"],
-    year: "2020",
-    experience: "Member of the Suspension & Admin team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Nivedh Das",
-    roles: ["Member"],
-    subsystem: ["Engine"],
-    year: "2020",
-    experience: "Member of the Engine team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Raghuram",
-    roles: ["Member"],
-    subsystem: ["Finance", "Suspension & Admin"],
-    year: "2020",
-    experience: "Member of the Finance and Suspension & Admin team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Sarvesh Shashidhar",
-    roles: ["Member"],
-    subsystem: ["Electrical & Testing"],
-    year: "2020",
-    experience: "Member of the Electrical & Testing team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Shreya NH",
-    roles: ["Member"],
-    subsystem: ["Suspension & Admin"],
-    year: "2020",
-    experience: "Member of the Suspension & Admin team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Siddhant Konwar Roy",
-    roles: ["Member"],
-    subsystem: ["Suspension & Admin"],
-    year: "2020",
-    experience: "Member of the Suspension & Admin team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Subhendra",
-    roles: ["Chief Engineer"],
-    subsystem: ["Chassis & Workshop Management"],
-    year: "2020",
-    experience: "Chief Engineer of the Chassis & Workshop Management team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Surya Anantha",
-    roles: ["Member"],
-    subsystem: ["Chassis & Workshop Management"],
-    year: "2020",
-    experience: "Member of the Chassis & Workshop Management team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "Tharun L",
-    roles: ["Member"],
-    subsystem: ["Chassis & Workshop Management"],
-    year: "2020",
-    experience: "Member of the Chassis & Workshop Management team for the 2020 (Hybrid) prototype.",
-    social: { linkedin: null, github: null, gmail: null },
-  },
-  {
-    name: "M Rithik Reddy",
-    roles: ["Member"],
-    subsystem: ["Engine"],
-    year: "2020",
-    experience: "Member of the Engine team for the 2020 (Hybrid) prototype.",
     social: { linkedin: null, github: null, gmail: null },
   },
 ];
@@ -3389,11 +3077,36 @@ function createMemberCard(member) {
     </div>
   `;
 
-  // Image error fallback — prevent infinite loop
+  // Image error fallback — try space/underscore x webp/jpg combos, then default
   const img = card.querySelector(".member-img");
   img.addEventListener("error", function () {
     if (this.src.includes("default.webp")) return;
-    this.src = DEFAULT_PROFILE_IMAGE;
+
+    const stages = ["underscore-webp", "space-jpg", "underscore-jpg", "default"];
+    const current = this.dataset.stage;
+    const nextStage = current ? stages[stages.indexOf(current) + 1] : stages[0];
+
+    const base = imgPath.slice(0, imgPath.lastIndexOf("/") + 1);
+    const nameWithSpaces = member.name;
+    const nameWithUnderscores = member.name.replace(/ /g, "_");
+
+    switch (nextStage) {
+      case "underscore-webp":
+        this.src = `${base}${nameWithUnderscores}.webp`;
+        break;
+      case "space-jpg":
+        this.src = `${base}${nameWithSpaces}.jpg`;
+        break;
+      case "underscore-jpg":
+        this.src = `${base}${nameWithUnderscores}.jpg`;
+        break;
+      case "default":
+      default:
+        this.src = DEFAULT_PROFILE_IMAGE;
+        break;
+    }
+
+    this.dataset.stage = nextStage;
   });
 
   return card;

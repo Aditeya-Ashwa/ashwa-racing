@@ -12,15 +12,12 @@
 ──────────────────────────────────────────────────────────── */
 const PROGRAMMES = {
   cv:  { code: "CV",  tag: "Combustion Vehicle",   accent: "#e8001d", cssVar: "--cv-accent"  },
-  ev:  { code: "EV",  tag: "Electric Vehicle",     accent: "#00c2a8", cssVar: "--ev-accent"  },
+  ev:  { code: "EV",  tag: "Electric Vehicle",     accent: "#3b82f6", cssVar: "--ev-accent"  },
   hyb: { code: "HYB", tag: "Hybrid Vehicle",       accent: "#f59e0b", cssVar: "--hyb-accent" },
   hyp: { code: "HYL", tag: "Hyperloop",            accent: "#7c3aed", cssVar: "--hyp-accent" },
   dv:  { code: "DRV", tag: "Driverless Vehicle",   accent: "#3b82f6", cssVar: "--dv-accent"  }
 };
 
-/* ────────────────────────────────────────────────────────────
-   PROJECT DATA  (unchanged from original)
-──────────────────────────────────────────────────────────── */
 const projectData = {
   cv: {
     title: "Combustion Platform",
@@ -29,7 +26,10 @@ const projectData = {
         images: [
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/1.jpg",
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/2.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/3.jpg" 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/3.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/5.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/6.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-05-C/7.jpg", 
         ],
         changes: [
           "Founding prototype — RZ05 Combustion",
@@ -76,8 +76,21 @@ const projectData = {
       },
       2007: {
         images: [
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/1.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/2.jpg" 
+          // "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/2.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/10.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/11.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/13.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/14.webp", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/16.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/17.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/19.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/20.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/21.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/22.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/23.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/3.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-07-C/5.jpg", 
         ],
         changes: [
           "RZ07 Combustion — first European campaign",
@@ -96,7 +109,13 @@ const projectData = {
       2008: {
         images: [
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/1.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/2.jpg" 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/7.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/10.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-08-C/13.jpg", 
         ],
         changes: [
           "RZ08 Combustion — evolutionary refinement of 2005–2007 platforms",
@@ -115,7 +134,9 @@ const projectData = {
       2009: {
         images: [
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-09-C/EVENT/1.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-09-C/EVENT/2.jpg" 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-09-C/EVENT/2.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-09-C/EVENT/6.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-09-C/EVENT/8.jpg", 
         ],
         changes: [
           "RZ09 Combustion — Italy & Germany campaign year",
@@ -159,7 +180,8 @@ const projectData = {
       2011: {
         images: [
           "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X1-C/1.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X1-C/2.jpg" 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X1-C/5.jpg", 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X1-C/8.jpg", 
         ],
         changes: [
           "RZX1 — First generation of the RZX combustion lineage",
@@ -247,8 +269,15 @@ const projectData = {
       },
       2016: {
         images: [
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/1.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/2.jpg" 
+          "https://assets.ashwaracing.org/cdn-cgi/image/format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/PRE-EVENT/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/EVENT/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/EVENT/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/EVENT/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/EVENT/7.jpg",
+          // "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X6-C/EVENT/8.jpg",
         ],
         changes: [
           "RZX6 — Sixth generation combustion prototype",
@@ -268,8 +297,16 @@ const projectData = {
       },
       2017: {
         images: [
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/1.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/2.jpg" 
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/1.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/3.webp",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/4.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/5.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/EVENT/9.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/2.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/3.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/6.jpg",
+          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X7-C/POST-EVENT/7.jpg",
         ],
         changes: [
           "RZX7 — Seventh generation combustion prototype",
@@ -580,9 +617,7 @@ const projectData = {
       },
       2020: {
         images: [
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/2.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/4.jpg",
-          "https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-XX3-HY/event/5.jpg"
+          "assets/images/prototypes/RZ-XX-HY/IMG_4019.JPG"
         ],
         changes: [
           "RZ-XXH — Fifth generation hybrid prototype",
@@ -601,6 +636,27 @@ const projectData = {
         badge: "1ST PLACE OVERALL CHAMPION"
       }
     }
+  },
+
+  ev:{
+    title: "Electric Powertrain Platform",
+    years: {
+      2026:{
+        images: [
+          "assets/images/prototypes/RZ-XX6-E/preevent/1.png",
+        ],
+        changes: [
+          "RZ-XX6-E — Ashwa Racing's first fully electric prototype",
+          "Clean-sheet chassis and electrical architecture, not a converted combustion platform",
+          "New powertrain: Emrax 208 MV motor, 252V/200A HV battery pack",
+        ],
+        desc: "RZ-XX6-E is Ashwa Racing's first fully electric prototype, built from the ground up with a new chassis, electrical architecture, and data acquisition stack.",
+        specs: { weight: "235 kg", power: "75 kW", acceleration: "4.8s", topSpeed: "-" },
+        achievements: [
+        ],
+        badge: "First fully electric prototype"
+      }
+    },
   },
 
   hyp: {
