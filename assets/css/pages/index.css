@@ -397,6 +397,26 @@ h2 em { font-style: italic; color: var(--red); }
   .hero-season-dot { animation: none; opacity: 1; }
 }
 
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  z-index: 0; /* same stacking layer as .hero-img, sits above it once loaded */
+}
+
+.hero-video.is-loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; } /* poster image stays as the hero, no motion */
+}
+
 /* ============================================================
    STAT BAR — directly under hero, no gap, elevated panel look
    ============================================================ */
@@ -557,6 +577,8 @@ h2 em { font-style: italic; color: var(--red); }
 /* ============================================================
    CAR SPOTLIGHT
    ============================================================ */
+
+
 
 .spotlight {
     position: relative;
@@ -741,6 +763,63 @@ h2 em { font-style: italic; color: var(--red); }
         flex-wrap:wrap;
     }
 
+}
+
+.spotlight { position: relative; } /* only add if not already set — spotlight-bg is presumably already absolute/inset:0 */
+
+.spotlight-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spotlight-bg-video.is-loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spotlight-bg-video { display: none; }
+}
+
+/* EV */
+
+/* EV variant — blue accent instead of red */
+.spotlight--ev h2 em {
+    color: var(--ev-blue, #2E6FF2);
+}
+
+.spotlight--ev .btn-line:hover {
+    color: var(--ev-blue, #2E6FF2);
+}
+
+/* EV variant — blue accent instead of red */
+.spotlight--ev h2 em {
+    color: var(--ev-blue, #2E6FF2);
+}
+
+.spotlight--ev .btn-line:hover {
+    color: var(--ev-blue, #2E6FF2);
+}
+
+.spotlight--ev .label::before {
+    background: var(--ev-blue, #2E6FF2);
+}
+
+.spotlight--ev .btn-line::after {
+    background: var(--ev-blue, #2E6FF2);
+}
+
+.spotlight--ev .btn-line,
+.spotlight--ev .btn-line::after,
+.spotlight--ev .btn-line::before {
+    border-color: var(--ev-blue, #2E6FF2) !important;
+    /* background-color: var(--ev-blue, #2E6FF2) !important; */
 }
 
 .news { padding: var(--pad) 0; background: var(--off-white); }
