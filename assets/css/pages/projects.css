@@ -18,7 +18,7 @@
 
   /* Programme accents */
   --cv-accent:  #e8001d;
-  --ev-accent:  #00c2a8;
+  --ev-accent:  #3b82f6;
   --hyb-accent: #f59e0b;
   --hyp-accent: #7c3aed;
   --dv-accent:  #3b82f6;
@@ -154,7 +154,7 @@ body {
   display: block;
   width: 28px;
   height: 2px;
-  background: var(--red);
+  background: var(--prog-accent, var(--cv-accent));
   flex-shrink: 0;
 }
 
@@ -171,7 +171,7 @@ body {
 
 .proj-hero-title em {
   font-style: italic;
-  color: var(--red);
+  color: var(--prog-accent, var(--cv-accent));
   display: block;
 }
 
@@ -897,7 +897,7 @@ body {
 
 .all-progs-title em {
   font-style: italic;
-  color: var(--red);
+  color: var(--prog-accent, var(--cv-accent));
   display: block;
 }
 
