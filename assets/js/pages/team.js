@@ -2278,7 +2278,7 @@ const teamData = [
   },
   {
     name: "Siddharth Reddy",
-    roles: ["Chief Engineer","Member"],
+    roles: ["Chief Engineer", "Member"],
     subsystem: ["Finance", "Suspension & Admin"],
     year: "2020",
     experience: "Chief Engineer of the Finance and Suspension & Admin team",
