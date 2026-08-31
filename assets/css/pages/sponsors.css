@@ -1,10 +1,3 @@
-/* ============================================================
-   ASHWA RACING — SPONSORS PAGE
-   System: Barlow Condensed + Barlow · dark motorsport-editorial
-   Tier hierarchy: Executive → Platinum → Gold → Silver → Technical
-   ============================================================ */
-
-/* ─── Tokens ────────────────────────────────────────────────── */
 :root {
   --red:          #e8001d;
   --black:        #0a0a0a;
@@ -43,7 +36,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 
 .sp-hero-bg {
   position: absolute; inset: 0;
-  background-image: url('https://ashwaracing.org/cdn-cgi/image/width=1920,format=auto/https://assets.ashwaracing.org/images/team/Hyperloop.webp');
+  background-image: url("https://assets.ashwaracing.org/cdn-cgi/image/height=1740,format=avif/images/prototypes/RZ-X9-H/event/11.jpg");
   background-size: cover; background-position: center 40%;
   filter: brightness(0.22) saturate(0.6);
   transform: scale(1.04);
@@ -94,7 +87,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 
 .sp-hero-desc {
   font-size: clamp(0.88rem, 1.3vw, 1rem);
-  line-height: 1.7; color: rgba(255,255,255,0.75);
+  line-height: 1.7; color: rgba(255,255,255,1);
   font-weight: 300; max-width: 480px; margin-bottom: 28px;
 }
 
@@ -110,6 +103,67 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
   transition: gap 0.2s ease, opacity 0.2s ease;
 }
 .sp-cta:hover { gap: 16px; opacity: 0.8; }
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO SPONSOR WALL — diagonal cascading marquee, mixed tiers
+═══════════════════════════════════════════════════════════════ */
+.sp-hero-wall {
+  position: absolute; inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.sp-hero-wall-grid {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 140%; height: 180%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  display: flex;
+  gap: 2px;
+}
+
+.sp-wall-col {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sp-wall-track {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+.sp-wall-track.down { animation-name: sp-wall-scroll-down; }
+.sp-wall-track.up   { animation-name: sp-wall-scroll-up; }
+
+@keyframes sp-wall-scroll-up   { from { transform: translateY(0); }    to { transform: translateY(-50%); } }
+@keyframes sp-wall-scroll-down { from { transform: translateY(-50%); } to { transform: translateY(0); } }
+
+.sp-wall-chip {
+  background: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  height: 76px;
+  padding: 14px 10px;
+}
+.sp-wall-chip img {
+  max-width: 100%; max-height: 100%;
+  object-fit: contain;
+}
+
+/* slight size variation keeps tier hierarchy legible even when mixed */
+.sp-wall-chip--executive { height: 100px; padding: 20px 16px; }
+.sp-wall-chip--platinum  { height: 100px; padding: 20px 16px; }
+.sp-wall-chip--gold      { height: 100px; padding: 20px 16px; }
+.sp-wall-chip--silver    { height: 100px; padding: 20px 16px; }
+.sp-wall-chip--technical { height: 100px; padding: 20px 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-wall-track { animation: none !important; }
+}
 
 /* ─── Tier quick-nav ────────────────────────────────────────── */
 .tier-nav {
@@ -352,7 +406,7 @@ body { font-family: var(--font-body); background: var(--charcoal); color: var(--
 
 .sp-grid-gold {
   display: grid;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(3, max-content);
 
   justify-content: center;
   justify-items: center;

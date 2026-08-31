@@ -78,15 +78,16 @@ const sponsorData = {
   "PLATINUM SPONSOR": [
     { logo: "assets/images/sponsors/skf.svg",                url: "https://www.skf.com/in",                       name: "SKF" },
     { logo: "assets/images/sponsors/analogdevices.svg",      url: "https://www.analog.com/en/index.html",         name: "Analog Devices" },
+    { logo: "assets/images/sponsors/sansera.png",            url: "https://sansera.in/",                          name: "Sansera Engineering" },
     { logo: "assets/images/sponsors/vrl.svg",                url: "https://vrlgroup.in/vrl_group_home.aspx",      name: "VRL Logistics" },
     { logo: "assets/images/sponsors/pegasyssystemspvtltd.png", url: "https://pegasyssystems.com/",               name: "Pegasys Systems" },
     { logo: "assets/images/sponsors/motul.svg",              url: "https://www.motul.com/en-IN",                  name: "Motul" },
     { logo: "assets/images/sponsors/lapp.svg",               url: "https://www.lapp.com/en_US/us/",               name: "LAPP" },
     { logo: "assets/images/sponsors/henkel.svg",             url: "https://www.henkel.in/",                       name: "Henkel" },
-    { logo: "assets/images/sponsors/sansera.png",            url: "https://sansera.in/",                          name: "Sansera Engineering" }
   ],
 
   "GOLD SPONSOR": [
+    { logo: "assets/images/sponsors/tia.png",  url: "https://tiatechnology.in/",  name: "TIA Technology India" },
     { logo: "assets/images/sponsors/delhivery.svg",  url: "https://www.delhivery.com",  name: "Delhivery" },
     { logo: "assets/images/sponsors/aruanigrid.png", url: "https://aruanigrid.com/",    name: "Aruani Grid" }
   ],
@@ -99,7 +100,7 @@ const sponsorData = {
 
   "TECHNICAL PARTNERS": [
     { logo: "assets/images/sponsors/uniflex.svg",         url: "https://myuniflex.com/",          name: "Uniflex" },
-    // { logo: "assets/images/sponsors/mercedes.png",        url: "https://www.akshayamotors.mercedes-benz.co.in/passengercars/about-us.html", name: "Mercedes-Benz" },
+    { logo: "assets/images/sponsors/mercedes.png",        url: "https://www.akshayamotors.mercedes-benz.co.in/passengercars/about-us.html", name: "Mercedes-Benz" },
     { logo: "assets/images/sponsors/barrelexhaust.webp",  url: "https://www.barrelexhaust.com/",  name: "Barrel Exhaust" },
     { logo: "assets/images/sponsors/royalbrothers.svg",   url: "https://www.royalbrothers.com/bangalore/bike-rentals", name: "Royal Brothers" },
     { logo: "assets/images/sponsors/bender.svg",          url: "https://www.bender-in.com/",      name: "Bender" },
@@ -127,6 +128,8 @@ const sponsorData = {
     { logo: "assets/images/sponsors/btpl.png",            url: "#",                               name: "BTPL" }
   ]
 };
+
+
 
 // ─── DOM refs ──────────────────────────────────────────────────
 const container = document.getElementById("sponsor-sections");
@@ -266,6 +269,84 @@ function buildSection(categoryKey, sponsors) {
   return section;
 }
 
+// ─── Hero wall: flatten + interleave across all tiers ─────────
+// Round-robins through Exec/Platinum/Gold/Silver/Technical simultaneously
+// so no column is ever a run of same-tier logos, even though Technical
+// alone outnumbers the other four tiers combined.
+function interleaveAllTiers() {
+  const order = ["EXECUTIVE SPONSOR", "PLATINUM SPONSOR", "GOLD SPONSOR", "SILVER SPONSOR", "TECHNICAL PARTNERS"];
+  const queues = order.map(key =>
+    (sponsorData[key] || []).map(s => ({ ...s, tierKey: TIERS[key].key }))
+  );
+
+  const result = [];
+  let pulled = true;
+  while (pulled) {
+    pulled = false;
+    for (const q of queues) {
+      if (q.length) {
+        result.push(q.shift());
+        pulled = true;
+      }
+    }
+  }
+  return result;
+}
+
+function buildHeroWall(columnCount = 6) {
+  const wall = document.getElementById("hero-wall");
+  if (!wall) return;
+
+  const mixed = interleaveAllTiers();
+  if (!mixed.length) return;
+
+  const grid = document.createElement("div");
+  grid.className = "sp-hero-wall-grid";
+
+  const cols = Array.from({ length: columnCount }, () => []);
+  mixed.forEach((sponsor, i) => cols[i % columnCount].push(sponsor));
+
+  // stagger duration + alternate direction per column for the parallax feel
+  const durations = [42, 27, 50, 22, 36, 30];
+  const directions = ["down", "up", "down", "up", "down", "up"];
+
+  cols.forEach((list, i) => {
+    if (!list.length) return;
+
+    const col = document.createElement("div");
+    col.className = "sp-wall-col";
+
+    const track = document.createElement("div");
+    track.className = `sp-wall-track ${directions[i % directions.length]}`;
+    track.style.animationDuration = `${durations[i % durations.length]}s`;
+
+    const buildSet = () => {
+      const frag = document.createDocumentFragment();
+      list.forEach(sponsor => {
+        const chip = document.createElement("div");
+        chip.className = `sp-wall-chip sp-wall-chip--${sponsor.tierKey}`;
+
+        const img = document.createElement("img");
+        img.src = sponsor.logo;
+        img.alt = sponsor.name || "Sponsor";
+        img.loading = "lazy";
+
+        chip.appendChild(img);
+        frag.appendChild(chip);
+      });
+      return frag;
+    };
+
+    // duplicate once for the seamless 0 → -50% loop
+    track.appendChild(buildSet());
+    track.appendChild(buildSet());
+    col.appendChild(track);
+    grid.appendChild(col);
+  });
+
+  wall.appendChild(grid);
+}
+
 // ─── Tier nav builder ─────────────────────────────────────────
 function buildTierNav() {
   Object.entries(sponsorData).forEach(([categoryKey, sponsors]) => {
@@ -311,4 +392,5 @@ function initReveal() {
 // ─── Init ─────────────────────────────────────────────────────
 buildTierNav();
 Object.entries(sponsorData).forEach(([key, sponsors]) => buildSection(key, sponsors));
+buildHeroWall();
 initReveal();
