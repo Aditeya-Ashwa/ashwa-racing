@@ -200,11 +200,11 @@ function initNewsletterPreview() {
   if (!card || !thumb) return;
 
   const latest = {
-    title:   "July 2026 — General Newsletter",
-    cover:   "assets/images/newsletters/2026/2026-07.png",
-    pdf:     "assets/pdfs/newsletters/2026/2026-07-general.pdf",
-    date:    "July 2026",
-    excerpt: "A decade of Formula Bharat's evolution, a new Lion Circuits partnership backing our PCB and manufacturing pipeline, June's ₹1,02,896 spend across the EV chassis weld and Formula Bharat combustion registration, plus the full 2026–2028 team directory and sponsor roster."
+    title:   "June 2026 — General Newsletter",
+    cover:   "https://assets.ashwaracing.org/cdn-cgi/image/width=600,format=avif,quality=80/images/newsletters/2026/2026-06.png",
+    pdf:     "https://assets.ashwaracing.org/pdfs/newsletters/2026/2026-06-general.pdf",
+    date:    "June 2026",
+    excerpt: "RZ-XX7C electrical redesign consolidation; RZ-XX8E simulation work sets FDR and energy targets for the EV prototype; plus May expenses, sponsor roster, and team directory."
   };
 
   thumb.src = latest.cover;
