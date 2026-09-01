@@ -17,11 +17,12 @@ const teamData = [
   },
   {
     name: "Dilan Da Silva",
-    roles: ["Member"],
-    subsystem: ["Sponsorship, Marketing & Public Relations"],
+    roles: ["Subsystem Lead"],
+    subsystem: ["Sponsorship", "Marketing & Public Relations"],
     year: "2028",
-    experience: "Handles sponsor outreach and follow-ups, leads newsletter drafting, and contributes to social media content strategy.",
-    social: { linkedin: "https://www.linkedin.com/in/dilan-d-silva-a8297b32a", github: null, gmail: "dilandsilva.ashwa@gmail.com" },
+    experience: "Newsletter Drafting Sponsor Outreach Launch Event and Student Induction Program Graphic Design Social Media",
+    social: { linkedin: "https://www.linkedin.com/in/dilan-da-silva-a8297b32a", github: null, gmail: "dilandsilva.ashwa@gmail.com" },
+    prototypes: {"Combustion": "Member / Part of team", "Electric": "Member / Part of team"},
   },
   {
     name: "Sughosha Rao R",
