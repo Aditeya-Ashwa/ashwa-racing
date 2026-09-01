@@ -37,7 +37,7 @@ const sponsorData = [
     { logo: "assets/images/sponsors/motousher.svg",       url: "https://www.motousher.com/",      name: "Motousher" },
     { logo: "assets/images/sponsors/magodlaser.png",     url: "https://www.magodlaser.in/",      name: "Magod Laser" },
     { logo: "assets/images/sponsors/pankaj.png",          url: "https://pankaj.com/",             name: "Pankaj" },
-    // { logo: "assets/images/sponsors/pcbway.svg",          url: "https://www.pcbway.com/",         name: "PCBWay" },
+    { logo: "assets/images/sponsors/pcbway.svg",          url: "https://www.pcbway.com/",         name: "PCBWay" },
     { logo: "assets/images/sponsors/powerhaus.jpg",       url: "https://www.powerhaus.in/MainPageFiles/index.htm", name: "Powerhaus" },
     // { logo: "assets/images/sponsors/pcbpower.webp",       url: "https://www.pcbpower.com",        name: "PCB Power" },
     { logo: "assets/images/sponsors/pcprocess.png",       url: "https://www.pcprocess.in/",       name: "PC Process" },
